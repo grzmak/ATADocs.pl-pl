@@ -5,11 +5,11 @@
  -------- | ----- 
  Total Files | 530
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 43
+[ Handoff Success Files ](#handoff-success-list)| 42
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 1
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 8
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 9
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
 [ Ignored Files ](#ignored-list)| 478
 
@@ -25,7 +25,6 @@
  [ATADocs\DeployUse\configure-port-mirroring.md](https://github.com/Microsoft/ATADocs-pr/blob/954fa96db02f15965fc9c2f1ef09d50f21d8ca74/ATADocs/DeployUse/configure-port-mirroring.md) | HandedOffSuccess | [Details](#184c86f5d44023250fb0fed388b76b0db64f4f3a10)
  [ATADocs\DeployUse\install-ata-preinstall-software.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-preinstall-software.md) | HandedOffSuccess | [Details](#dabb2531fd656393b2de719a2303be017205aa4e12)
  [ATADocs\DeployUse\install-ata-step2.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-step2.md) | HandedOffSuccess | [Details](#00de46b6f50079b2df46e8b55a4dbdef5acaee5014)
- [ATADocs\DeployUse\install-ata-step4.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step4.md) | HandedOffSuccess | [Details](#2664440ca83cf3bb6dc66ad39ed0fa4a984230eb16)
  [ATADocs\DeployUse\install-ata-step5.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-step5.md) | HandedOffSuccess | [Details](#88999409ef976d50b6bb80803213b82146cee1fe17)
  [ATADocs\DeployUse\install-ata-step6.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step6.md) | HandedOffSuccess | [Details](#2817822f4978b38fe93cbaebe3ef3e335850ab9418)
  [ATADocs\DeployUse\manage-telemetry-settings.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/manage-telemetry-settings.md) | HandedOffSuccess | [Details](#bc5d8ba077f2e34195cced4f316f8c8a5158d86920)
@@ -77,6 +76,7 @@
  [ATADocs\DeployUse\install-ata.md](https://github.com/Microsoft/ATADocs-pr/blob/e1c5b6e0ea8a9ad06c19d050a1edf99813f26d72/ATADocs/DeployUse/install-ata.md) | OutofSyncHandedBackSuccess | [Details](#9c873287aa5d60286239968a243fde2dc6b170ba19)
  [ATADocs\DeployUse\install-ata-step1.md](https://github.com/Microsoft/ATADocs-pr/blob/e1c5b6e0ea8a9ad06c19d050a1edf99813f26d72/ATADocs/DeployUse/install-ata-step1.md) | OutofSyncHandedBackSuccess | [Details](#1a248d97a6723c3d8aa32a6afbcbe89739313c8c13)
  [ATADocs\DeployUse\install-ata-step3.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step3.md) | OutofSyncHandedBackSuccess | [Details](#c22a1ec5cf4a04ea70945765b3b8ffce5401c64515)
+ [ATADocs\DeployUse\install-ata-step4.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step4.md) | OutofSyncHandedBackSuccess | [Details](#2664440ca83cf3bb6dc66ad39ed0fa4a984230eb16)
  [ATADocs\DeployUse\modifying-ata-config-centercert.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/modifying-ata-config-centercert.md) | OutofSyncHandedBackSuccess | [Details](#824e91048771865b8f604a2ae2ad454b81550036113)
  [ATADocs\DeployUse\modifying-ata-config-centerip.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/modifying-ata-config-centerip.md) | OutofSyncHandedBackSuccess | [Details](#54caccd4f4337ed7193aa6b53c26bc5b96dd36ed114)
  [ATADocs\DeployUse\modifying-ata-config-dcpassword.md](https://github.com/Microsoft/ATADocs-pr/blob/e1c5b6e0ea8a9ad06c19d050a1edf99813f26d72/ATADocs/DeployUse/modifying-ata-config-dcpassword.md) | OutofSyncHandedBackSuccess | [Details](#f01e0ddc665e5b0620e023b8b7bb06e581092316116)
@@ -782,7 +782,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='2664440ca83cf3bb6dc66ad39ed0fa4a984230eb16'></a> Source: [ATADocs\DeployUse\install-ata-step4.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step4.md)
-* Status: HandedOffSuccess
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/3a613200b8ad927e4a1a3b2337813ab30830fdfd/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf)
 * Handoff Datetime: 2016-05-05 18:01:20
@@ -791,6 +791,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [ATADocs\DeployUse\install-ata-step4.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/3464d2ac48b6f9c3e546197fbafcdff366d0bace/ATADocs/DeployUse/install-ata-step4.md)
+* Current Handback File: [install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/96681e8369e0f0385c29586daec7eb51acd4092f/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-20 11:39:46
 * [Back to Top](#report-top)
 
 ##### <a name='88999409ef976d50b6bb80803213b82146cee1fe17'></a> Source: [ATADocs\DeployUse\install-ata-step5.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-step5.md)

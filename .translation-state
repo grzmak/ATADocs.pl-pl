@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "ce02b7f6d36035af66b8fe3380dc61dd1ec1caac",
-  "LastTranslatedCommit": "ed7f82960db4c8135352959e4c40cd43ad6dfe91",
+  "LastTranslatedCommit": "3464d2ac48b6f9c3e546197fbafcdff366d0bace",
   "Items": {
     "863b6725f0d6edbfb1469e413cf8ba7ddfe6a048": {
       "FileHash": "863b6725f0d6edbfb1469e413cf8ba7ddfe6a048",
@@ -259,14 +259,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": null,
-      "TargetFilePath": null,
-      "HandbackFilePath": null,
-      "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
+      "TargetFileCommit": "3464d2ac48b6f9c3e546197fbafcdff366d0bace",
+      "TargetFilePath": "ATADocs\\DeployUse\\install-ata-step4.md",
+      "HandbackFilePath": "ol-handback\\Microsoft\\ATADocs-pr.pl-pl\\master\\install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf",
+      "HandbackFileCommit": "96681e8369e0f0385c29586daec7eb51acd4092f",
+      "HandbackDateTime": "2016-05-20T11:39:46.133869Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "UpdatedDateTime": "2016-05-20T11:39:46.133869Z",
       "ArchiveFilePath": "ol-handoff\\Microsoft\\ATADocs-pr.pl-pl\\master\\archive\\install-ata-step4.2f79a925ca23bf573e0a526a5c2cb4eda0d405e8.pl-pl.xlf",
       "ArchiveFileCommit": "6d3b7a54c01d47011c85ec001f4d82a1d061e2f0",
       "ArchiveFileDateTime": "2016-04-28T10:01:17.4498297Z",
