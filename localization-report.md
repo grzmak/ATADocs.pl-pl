@@ -722,9 +722,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\install-ata.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/install-ata.md)
-* Current Handback File: [install-ata.ebb339fe6f06fe279a930dbf42e95a14d812c2f3.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata.ebb339fe6f06fe279a930dbf42e95a14d812c2f3.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\install-ata.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/install-ata.md)
+* Current Handback File: [install-ata.ebb339fe6f06fe279a930dbf42e95a14d812c2f3.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata.ebb339fe6f06fe279a930dbf42e95a14d812c2f3.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='dabb2531fd656393b2de719a2303be017205aa4e12'></a> Source: [ATADocs\DeployUse\install-ata-preinstall-software.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-preinstall-software.md)
@@ -749,9 +749,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\install-ata-step1.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/install-ata-step1.md)
-* Current Handback File: [install-ata-step1.be25407df296fc13c33daad4579bcbd3e4664b05.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step1.be25407df296fc13c33daad4579bcbd3e4664b05.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\install-ata-step1.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/install-ata-step1.md)
+* Current Handback File: [install-ata-step1.be25407df296fc13c33daad4579bcbd3e4664b05.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step1.be25407df296fc13c33daad4579bcbd3e4664b05.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='00de46b6f50079b2df46e8b55a4dbdef5acaee5014'></a> Source: [ATADocs\DeployUse\install-ata-step2.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/DeployUse/install-ata-step2.md)
@@ -776,9 +776,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\install-ata-step3.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/install-ata-step3.md)
-* Current Handback File: [install-ata-step3.82c3e0752e5bb0305f5acc701171b2086e5820d9.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step3.82c3e0752e5bb0305f5acc701171b2086e5820d9.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\install-ata-step3.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/install-ata-step3.md)
+* Current Handback File: [install-ata-step3.82c3e0752e5bb0305f5acc701171b2086e5820d9.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/install-ata-step3.82c3e0752e5bb0305f5acc701171b2086e5820d9.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='2664440ca83cf3bb6dc66ad39ed0fa4a984230eb16'></a> Source: [ATADocs\DeployUse\install-ata-step4.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/install-ata-step4.md)
@@ -1946,9 +1946,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\modifying-ata-config-centercert.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/modifying-ata-config-centercert.md)
-* Current Handback File: [modifying-ata-config-centercert.47a5010003ff67ec899123c54e6c8b85b9066f2c.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-centercert.47a5010003ff67ec899123c54e6c8b85b9066f2c.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\modifying-ata-config-centercert.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/modifying-ata-config-centercert.md)
+* Current Handback File: [modifying-ata-config-centercert.47a5010003ff67ec899123c54e6c8b85b9066f2c.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-centercert.47a5010003ff67ec899123c54e6c8b85b9066f2c.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='54caccd4f4337ed7193aa6b53c26bc5b96dd36ed114'></a> Source: [ATADocs\DeployUse\modifying-ata-config-centerip.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/modifying-ata-config-centerip.md)
@@ -1961,9 +1961,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\modifying-ata-config-centerip.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/modifying-ata-config-centerip.md)
-* Current Handback File: [modifying-ata-config-centerip.95510f0562110a9a517b1f38b65d31e2b365e77e.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-centerip.95510f0562110a9a517b1f38b65d31e2b365e77e.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\modifying-ata-config-centerip.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/modifying-ata-config-centerip.md)
+* Current Handback File: [modifying-ata-config-centerip.95510f0562110a9a517b1f38b65d31e2b365e77e.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-centerip.95510f0562110a9a517b1f38b65d31e2b365e77e.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='d757c9721c38ba4752f5005bc5e89e21a874ff5b115'></a> Source: [ATADocs\DeployUse\modifying-ata-config-consoleip.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/modifying-ata-config-consoleip.md)
@@ -1988,9 +1988,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\modifying-ata-config-dcpassword.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/modifying-ata-config-dcpassword.md)
-* Current Handback File: [modifying-ata-config-dcpassword.71593ec491df4d6ace15d09e924eb8cbd0ca77a8.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-dcpassword.71593ec491df4d6ace15d09e924eb8cbd0ca77a8.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\modifying-ata-config-dcpassword.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/modifying-ata-config-dcpassword.md)
+* Current Handback File: [modifying-ata-config-dcpassword.71593ec491df4d6ace15d09e924eb8cbd0ca77a8.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-config-dcpassword.71593ec491df4d6ace15d09e924eb8cbd0ca77a8.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='29080677d0a2afe12f8d872bcf32ba8b03e93117117'></a> Source: [ATADocs\DeployUse\modifying-ata-config-iiscert.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/modifying-ata-config-iiscert.md)
@@ -2015,9 +2015,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\modifying-ata-configuration.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/DeployUse/modifying-ata-configuration.md)
-* Current Handback File: [modifying-ata-configuration.373a9ee4d26d894405af0398021da33e811bd7aa.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-configuration.373a9ee4d26d894405af0398021da33e811bd7aa.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\DeployUse\modifying-ata-configuration.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/DeployUse/modifying-ata-configuration.md)
+* Current Handback File: [modifying-ata-configuration.373a9ee4d26d894405af0398021da33e811bd7aa.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/modifying-ata-configuration.373a9ee4d26d894405af0398021da33e811bd7aa.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='b30041b411c633308d20b5c833ca17c91deb9a01119'></a> Source: [ATADocs\DeployUse\operate-ata.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/DeployUse/operate-ata.md)
@@ -3266,9 +3266,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\index.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/ed7f82960db4c8135352959e4c40cd43ad6dfe91/ATADocs/index.md)
-* Current Handback File: [index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/3b78bbb0a8f9b49f55799b0b22e7f54d23e06c88/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-19 16:05:45
+* Current Target File: [ATADocs\index.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/afbe1b456017de5590329e2ef787620f28e28d4c/ATADocs/index.md)
+* Current Handback File: [index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/12e330e1b710d2fc8f89170be12dc172a0f42ec1/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-21 23:29:25
 * [Back to Top](#report-top)
 
 ##### <a name='755db60abb7859af5065e2c5ddfbfc6cfb7aeeda223'></a> Source: [ATADocs\md.style](https://github.com/Microsoft/ATADocs-pr/blob/ce02b7f6d36035af66b8fe3380dc61dd1ec1caac/ATADocs/md.style)
