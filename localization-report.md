@@ -3341,9 +3341,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\PlanDesign\ata-capacity-planning.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/f1493c111d968dda593d3aeffdd8380a9047e493/ATADocs/PlanDesign/ata-capacity-planning.md)
-* Current Handback File: [ata-capacity-planning.7dded00c6a8ca713a36c240993fc56aa469bbb4b.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/34c71577c31c9f85591622a46a3a6756f3934b5f/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-capacity-planning.7dded00c6a8ca713a36c240993fc56aa469bbb4b.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-23 19:26:27
+* Current Target File: [ATADocs\PlanDesign\ata-capacity-planning.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/314e452dab16125cc6aa8ee56d6d2c7b5dd287b4/ATADocs/PlanDesign/ata-capacity-planning.md)
+* Current Handback File: [ata-capacity-planning.7dded00c6a8ca713a36c240993fc56aa469bbb4b.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/7f2d2275a9bdbeab31a8afd2dc7572cb72a8b544/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-capacity-planning.7dded00c6a8ca713a36c240993fc56aa469bbb4b.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-24 12:37:43
 * [Back to Top](#report-top)
 
 ##### <a name='58dfd66b317a639ddd2df823cdd1c1dfa2a5e73c226'></a> Source: [ATADocs\PlanDesign\ata-prerequisites.md](https://github.com/Microsoft/ATADocs-pr/blob/283d8383a6e7674e3a9fba06f3a8f73dcb038ea2/ATADocs/PlanDesign/ata-prerequisites.md)
@@ -3356,9 +3356,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\PlanDesign\ata-prerequisites.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/f1493c111d968dda593d3aeffdd8380a9047e493/ATADocs/PlanDesign/ata-prerequisites.md)
-* Current Handback File: [ata-prerequisites.79e9e750461cccf39f17f01df458a3eb6f3e6c8b.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/34c71577c31c9f85591622a46a3a6756f3934b5f/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-prerequisites.79e9e750461cccf39f17f01df458a3eb6f3e6c8b.pl-pl.xlf)
-* Current Handback Datetime: 2016-05-23 19:26:27
+* Current Target File: [ATADocs\PlanDesign\ata-prerequisites.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/314e452dab16125cc6aa8ee56d6d2c7b5dd287b4/ATADocs/PlanDesign/ata-prerequisites.md)
+* Current Handback File: [ata-prerequisites.79e9e750461cccf39f17f01df458a3eb6f3e6c8b.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/7f2d2275a9bdbeab31a8afd2dc7572cb72a8b544/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-prerequisites.79e9e750461cccf39f17f01df458a3eb6f3e6c8b.pl-pl.xlf)
+* Current Handback Datetime: 2016-05-24 12:37:43
 * [Back to Top](#report-top)
 
 ##### <a name='2049435c40c899c1644707ffc5dd335179b48c37227'></a> Source: [ATADocs\PlanDesign\docfx.json](https://github.com/Microsoft/ATADocs-pr/blob/ce02b7f6d36035af66b8fe3380dc61dd1ec1caac/ATADocs/PlanDesign/docfx.json)
