@@ -1,9 +1,9 @@
 # [Poznawanie i eksplorowanie](/understand-explore/what-is-ata)
-# [Planowanie i projektowanie](/plan-design/ata-capacity-planning)
-# [Wdrażanie i użytkowanie](/deploy-use/install-ata)
-# [Rozwiązywanie problemów](/troubleshoot/troubleshooting-ata-using-logs)
+# [Planowanie i projektowanie](/plan-design/ata-architecture)
+# [Wdrażanie i użytkowanie](/deploy-use/preinstall-ata)
+# [Rozwiązywanie problemów](/troubleshoot/troubleshooting-ata-known-errors)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 
