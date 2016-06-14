@@ -31,7 +31,6 @@ Wykonanie poniższych kroków jest niezbędne w celu wdrożenia, skonfigurowania
 
 Aby skonfigurować usługę ATA, wykonaj następujące kroki:
 
--   [Kroki przed instalacją](install-ata-preinstall.md)
 
 -   [Krok 1. Pobieranie i instalowanie centrum usługi ATA](install-ata-step1.md)
 
@@ -48,11 +47,12 @@ Aby skonfigurować usługę ATA, wykonaj następujące kroki:
 
 ## Zobacz też
 
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
-- [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/plan-design/configure-event-collection)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO1-->
 
 

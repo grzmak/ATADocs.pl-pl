@@ -29,7 +29,9 @@ ms.suite: ems
 Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczególne składniki usługi ATA w dowolnym momencie.
 
 ## Dzienniki bramy usługi ATA
-Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**..
+W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
+
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
 Brama usługi ATA ma następujące dzienniki:
 
@@ -46,7 +48,7 @@ Brama usługi ATA ma następujące dzienniki:
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
 
 ### Dzienniki centrum usługi ATA
-Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.".
+Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
 
 Centrum usługi ATA ma następujące dzienniki:
 
@@ -90,13 +92,20 @@ Dzienniki wdrożenia centrum usługi ATA:
 
 -   **Microsoft Advanced Threat Analytics Center_20150601104213_1_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych centrum usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych centrum usługi ATA.
 
-Dzienniki wdrożenia bramy usługi ATA:
+Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 
 -   **Microsoft Advanced Threat Analytics Gateway_20151214014801.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bramy usługi ATA. Służy on głównie do śledzenia procesu wdrażania bramy usługi ATA.
 
 -   **Microsoft Advanced Threat Analytics Gateway_20151214014801_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
 
+## Zobacz też
+- [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
+- [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
+- [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
+- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

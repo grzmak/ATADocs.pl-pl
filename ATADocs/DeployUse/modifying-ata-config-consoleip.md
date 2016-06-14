@@ -36,7 +36,7 @@ Domyślnie adres URL konsoli usługi ATA to adres IP wybrany jako adres IP konso
 
 Ten adres URL jest używany w następujących scenariuszach:
 
--   Instalacja bram usługi ATA — podczas instalacji bramy usługi ATA rejestruje się ona w centrum usługi ATA. Ten proces rejestracji odbywa się przez nawiązanie połączenia z konsolą usługi ATA. Po wprowadzeniu nazwy FQDN dla adresu URL konsoli usługi ATA, należy się upewnić, że brama usługi ATA może rozpoznać nazwę FQDN jako adres IP konsoli usługi ATA jest powiązany z usługą IIS. Ponadto adres URL jest wykorzystywany do tworzenia skrótu do konsoli usługi ATA w bramach usługi ATA.
+-   Instalacja bram usługi ATA — podczas instalacji bramy usługi ATA rejestruje się ona w centrum usługi ATA. Ten proces rejestracji odbywa się przez nawiązanie połączenia z konsolą usługi ATA. Po wprowadzeniu nazwy FQDN dla adresu URL konsoli usługi ATA należy się upewnić, że brama usługi ATA może rozpoznać nazwę FQDN jako adres IP, z którym konsola usługi ATA jest powiązana w usłudze IIS. Ponadto adres URL jest wykorzystywany do tworzenia skrótu do konsoli usługi ATA w bramach usługi ATA.
 
 -   Alerty — Gdy usługa ATA wysyła alert rozwiązania SIEM lub e-mail, dołącza łącze do podejrzanego działania. Częścią hosta tego łącza jest ustawienie adresu URL konsoli usługi ATA.
 
@@ -83,11 +83,11 @@ Jeśli musisz zmienić adres IP używany przez usługi IIS dla konsoli usługi A
 
 
 ## Zobacz też
-- [Praca z konsolą usługi ATA](/advanced-threat-analytics/understand-explore/working-with-ata-console)
+- [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

@@ -29,10 +29,10 @@ ms.suite: ems
 
 >[!div class="step-by-step"]
 [« Certyfikat usług IIS](modifying-ata-config-iiscert.md)
-[Nazwa karty sieciowej przechwytywania »](modifying-ata-config-nicname.md)
+
 
 ## Zmienianie hasła do łączności z domeną
-Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa ATA przestanie działać w bramach usługi ATA.
+Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa bramy usługi ATA przestanie działać w bramach usługi ATA.
 
 Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat:
 `The supplied credential is invalid.`
@@ -45,11 +45,11 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Brama usługi ATA**..
+3.  Wybierz pozycję **Ogólne**..
 
     ![Obraz przedstawiający zmianę hasła bramy usługi ATA](media/ATA-GW-change-DC-password.JPG)
 
-4.  W obszarze **Ustawienia łączności domeny** zmień hasło.
+4.  W obszarze **Ogólne** zmień hasło.
 
 5.  Kliknij polecenie **Zapisz**..
 
@@ -57,14 +57,13 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
 >[!div class="step-by-step"]
 [« Certyfikat usług IIS](modifying-ata-config-iiscert.md)
-[Nazwa karty sieciowej przechwytywania »](modifying-ata-config-nicname.md)
 
 ## Zobacz też
-- [Praca z konsolą usługi ATA](/advanced-threat-analytics/understand-explore/working-with-ata-console)
+- [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

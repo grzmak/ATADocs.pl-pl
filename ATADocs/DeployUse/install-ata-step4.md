@@ -32,7 +32,9 @@ ms.suite: ems
 [Krok 5 »](install-ata-step5.md)
 
 ## Krok 4. Instalowanie bramy usługi ATA
-Przed zainstalowaniem bramy usługi ATA zweryfikuj, czy funkcja dublowania portów jest poprawnie skonfigurowana oraz czy ruch do i z kontrolerów domeny jest widoczny dla bramy usługi ATA. Aby uzyskać więcej informacji, zobacz [Weryfikowanie funkcji dublowania portów](/advanced-threat-analytics/plan-design/validate-port-mirroring).
+
+Przed zainstalowaniem bramy usługi ATA na dedykowanym serwerze zweryfikuj, czy funkcja dublowania portów jest poprawnie skonfigurowana oraz czy ruch do i z kontrolerów domeny jest widoczny dla bramy usługi ATA. Aby uzyskać więcej informacji, zobacz [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md).
+
 
 > [!IMPORTANT]
 > Upewnij się, że aktualizacja [KB2919355](http://support.microsoft.com/kb/2919355/) została zainstalowana.  Uruchom następujące polecenie cmdlet programu PowerShell, aby sprawdzić, czy zainstalowano poprawkę:
@@ -41,9 +43,10 @@ Przed zainstalowaniem bramy usługi ATA zweryfikuj, czy funkcja dublowania port�
 
 Na serwerze bramy usługi ATA wykonaj następujące kroki.
 
-1.  Wyodrębnij pliki z archiwum zip.
+1.  Wyodrębnij pliki z archiwum zip. 
+> [!NOTE] Instalowanie bezpośrednio z pliku zip zakończy się niepowodzeniem.
 
-2.  Z poziomu wiersza polecenia z podwyższonym poziomem uprawnień uruchom plik Microsoft ATA Gateway Setup.exe, a następnie postępuj zgodnie z instrukcjami kreatora instalacji.
+2.  Z poziomu wiersza polecenia z podwyższonym poziomem uprawnień uruchom plik **Microsoft ATA Gateway Setup.exe**, a następnie postępuj zgodnie z instrukcjami kreatora instalacji.
 
 3.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**..
 
@@ -61,7 +64,7 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
     -   Aktualizacja KB 3047154
 
         > [!IMPORTANT]
-        > -   Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji. Może to spowodować nieprawidłowe działanie funkcji dublowania portów.
+        > -   Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji (host, który uruchamia wirtualizację; można uruchomić ją na maszynie wirtualnej). Może to spowodować nieprawidłowe działanie funkcji dublowania portów. 
         > -   Nie instaluj programu Message Analyzer, programu Wireshark ani innego oprogramowania służącego do przechwytywania ruchu sieciowego w ramach bramy usługi ATA. Jeśli zachodzi potrzeba przechwytywania ruchu sieciowego, zainstaluj i zastosuj program Microsoft Network Monitor 3.4.
 
     -   Brama usługi ATA
@@ -70,7 +73,7 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 
     -   Niestandardowy zestaw kolekcji danych monitora wydajności
 
-5.  Po zakończeniu instalacji kliknij polecenie **Uruchom**, aby otworzyć przeglądarkę i zalogować się do konsoli usługi ATA.
+5.  Po zakończeniu instalacji, w przypadku bramy usługi ATA, kliknij przycisk **Uruchom**, aby otworzyć przeglądarkę, i zaloguj się do konsoli usługi ATA. W przypadku bramy ATA Lightweight Gateway kliknij przycisk **Zakończ**..
 
 
 >[!div class="step-by-step"]
@@ -79,11 +82,12 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 
 ## Zobacz też
 
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
-- [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/plan-design/configure-event-collection)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO1-->
 
 

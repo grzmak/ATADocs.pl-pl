@@ -32,17 +32,18 @@ ms.suite: ems
 [Krok 4 »](install-ata-step4.md)
 
 ## Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
-Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA.
+Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub w kontrolerze domeny. Jeśli brama zostanie zainstalowana w kontrolerze domeny, będzie ona zainstalowana jako brama ATA Lightweight Gateway. Więcej informacji dotyczących bramy ATA Lightweight Gateway można znaleźć w temacie [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture).. 
 
 Aby pobrać pakiet bramy usługi ATA:
 
-1.  Na maszynie bramy usługi ATA otwórz przeglądarkę i wprowadź adres IP skonfigurowany w centrum usługi ATA dla konsoli usługi ATA. Po otwarciu konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**..
+1.  W konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**..
 
     ![Ustawienia konfiguracji bramy usługi ATA](media/ATA-config-icon.JPG)
 
 2.  Na karcie **Bramy usługi ATA** kliknij pozycję **Pobierz instalatora bramy usługi ATA**..
 
 3.  Zapisz pakiet lokalnie.
+4.  Skopiuj pakiet na dedykowany serwer lub do kontrolera domeny, w którym instalujesz bramę usługi ATA. Alternatywnie możesz otworzyć konsolę usługi ATA na dedykowanym serwerze lub kontrolerze domeny i pominąć ten krok.
 
 Plik zip zawiera następujące składniki:
 
@@ -57,11 +58,11 @@ Plik zip zawiera następujące składniki:
 
 ## Zobacz też
 
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
-- [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/plan-design/configure-event-collection)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

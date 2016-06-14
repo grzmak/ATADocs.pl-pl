@@ -58,6 +58,10 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 6.  Zostanie wyświetlone powiadomienie z informacją o liczbie bram usługi ATA zsynchronizowanych z najnowszą konfiguracją.
 
 7.  Po zsynchronizowaniu wszystkich bram usługi ATA kliknij polecenie **Aktywuj**, aby aktywować nowy certyfikat.
+    >[!IMPORTANT]
+    >Zanim aktywujesz nową konfigurację, sprawdź, czy wszystkie bramy usługi ATA są zsynchronizowane z najnowszą konfiguracją. Aktywowanie nowej konfiguracji przed zsynchronizowaniem bram usługi ATA może spowodować, że bramy usługi ATA przestaną działać zgodnie z oczekiwaniami. Jeśli jakakolwiek z bram usługi ATA nie jest zsynchronizowana, po kliknięciu pozycji Aktywuj zostanie wyświetlony następujący komunikat o błędzie:
+    >
+    >    ![Błąd synchronizacji bramy usługi ATA](media/ataGW-not-synced.png)
 
 8.  Po aktywowaniu zmiany upewnij się, że bramy usługi ATA mogą synchronizować swoje konfiguracje.
 
@@ -66,11 +70,11 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 [Adres IP konsoli usługi ATA »](modifying-ata-config-consoleip.md)
 
 ## Zobacz też
-- [Praca z konsolą usługi ATA](/advanced-threat-analytics/understand-explore/working-with-ata-console)
+- [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

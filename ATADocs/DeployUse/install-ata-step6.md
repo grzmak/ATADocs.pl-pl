@@ -42,7 +42,7 @@ Podsieci dzierżawy krótkoterminowej to podsieci, w których przypisanie adres�
 3.  Dla identyfikatorów SID kont wystawionych jako przynęta wprowadź identyfikator SID konta użytkownika, dla którego nie będzie żadnych działań w sieci, a następnie kliknij znak plus. Na przykład: `S-1-5-21-72081277-1610778489-2625714895-10511`.
 
     > [!NOTE]
-    > Aby znaleźć identyfikator SID użytkownika, uruchom następujące polecenie cmdlet programu Windows PowerShell `Get-ADUser UserName`.
+    > Aby znaleźć identyfikator SID użytkownika, wyszukaj użytkownika w konsoli ATA, a następnie kliknij kartę **Informacje o koncie**. 
 
 4.  Konfigurowanie wykluczeń: można skonfigurować adresy IP, które mają być wykluczone z określonych podejrzanych działań. Zobacz [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md), aby uzyskać więcej informacji.
 
@@ -54,7 +54,7 @@ Gratulacje, usługa Microsoft Advanced Threat Analytics została pomyślnie wdro
 
 Sprawdź wiersz czasu ataku, aby wyświetlić wykryte podejrzane działania i wyszukać użytkowników lub komputery i wyświetlić ich profile.
 
-Należy pamiętać, że utworzenie profilów zachowania zajmuje usłudze ATA co najmniej trzy tygodnie, a więc w pierwszych trzech tygodniach nie będą widoczne żadne podejrzane działania.
+Usługa ATA natychmiast rozpocznie skanowanie w poszukiwaniu podejrzanych działań. Niektóre działania, np. niektóre działania związane z podejrzanym zachowaniem, nie będą dostępne, dopóki usługa ATA nie utworzy profilów zachowania (trwa to co najmniej trzy tygodnie).
 
 
 >[!div class="step-by-step"]
@@ -63,11 +63,12 @@ Należy pamiętać, że utworzenie profilów zachowania zajmuje usłudze ATA co 
 
 ## Zobacz też
 
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
-- [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/plan-design/configure-event-collection)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO1-->
 
 

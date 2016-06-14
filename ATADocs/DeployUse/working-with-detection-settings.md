@@ -44,9 +44,9 @@ Można wykluczyć adresy IP z następujących wykryć. W przypadku wprowadzenia 
 ## Zobacz też
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

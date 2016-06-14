@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Planowanie pojemności usługi ATA | Microsoft Advanced Threat Analytics
-description: Ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci
+title: Planowanie wdrożenia usługi ATA | Microsoft Advanced Threat Analytics
+description: Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci
 keywords:
 author: rkarlin
 manager: stevenpo
@@ -26,44 +26,90 @@ ms.suite: ems
 ---
 
 # Planowanie pojemności usługi ATA
-Informacje zawarte w tym temacie ułatwiają określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci.
+Ten temat ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci, ile będzie potrzebnych bram usługi ATA i bram ATA Lightweight Gateway oraz jaka pojemność serwera będzie wymagana dla centrum usługi ATA i bram usługi ATA.
 
 ## Ustalanie rozmiaru centrum usługi ATA
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni. Wymagana ilość miejsca na dysku dla bazy danych usługi ATA na każdy kontroler domeny jest zdefiniowana poniżej. Jeśli istnieje wiele kontrolerów domeny, zsumuj ilość miejsca na dysku wymaganego przez każdy kontroler domeny, aby obliczyć łączną ilość miejsca wymaganego dla bazy danych usługi ATA.
 
-|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|Przestrzeń dyskowa systemu operacyjnego (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;&#42;|
-|---------------------------|-------------------------|---------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
-|1000|4|48|200|1.5|45|30 (100)
-|10 000|4|48|200|15|450|200 (300)
-|40 000|8|64|200|60|1800|500 (1000)
-|100 000|12|96|200|150|4500|1000 (1500)
-|200 000|16|128|200|300|9000|2000 (2500)
+|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;&#42;|
+|---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
+|1000|2|32|0,3|9|30 (100)
+|10 000|4|48|3|90|200 (300)
+|40 000|8|64|12|360|500 (1000)
+|100 000|12|96|30|900|1000 (1500)
+|400 000|40|128|120|1800|2000 (2500)
 &#42;Łączna dzienna średnia liczba pakietów na sekundę ze wszystkich kontrolerów domeny monitorowanych przez wszystkie bramy usługi ATA.
 
 &#42;&#42;Dotyczy rdzeni fizycznych, a nie rdzeni hiperwątkowych.
 
 &#42;&#42;&#42;Wartość średnia (szczytowa)
 > [!NOTE]
-> -   Centrum usługi ATA może obsługiwać maksymalnie 200 000 ramek na sekundę zagregowanych ze wszystkich monitorowanych kontrolerów domeny.
-> -   W przypadku dużych wdrożeń (od około 100 000 pakietów na sekundę) wymagane jest umieszczenie dziennika bazy danych na innym dysku niż baza danych.
+> -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 ramek na sekundę zagregowanych ze wszystkich monitorowanych kontrolerów domeny.
 > -   Podane wielkości przestrzeni dyskowej to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
-> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte najstarsze dane z okresu 24 godzin. Ta operacja będzie powtarzana, dopóki nie pozostaną dane tylko z dwóch dni bądź jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych przestanie działać.
+> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Ta operacja będzie powtarzana, dopóki nie pozostaną dane tylko z dwóch dni bądź jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych przestanie działać.
 > -  Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
 > -  Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
 
-## Ustalanie rozmiaru bramy usługi ATA
-Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny.
+## Wybieranie odpowiedniego typu bramy dla danego wdrożenia
+Zaleca się stosowanie bram ATA Lightweight Gateway zamiast bram usługi ATA zawsze wtedy, gdy jest to możliwe, pod warunkiem, że kontrolery domeny są zgodne z tabelą ustalania rozmiaru zawartą poniżej.
+Większość kontrolerów domeny może i powinno być objętych przez bramę ATA Lightweight Gateway, chyba że kontrolery domeny nie spełniają wymagań opisanych w [Tabeli ustalania rozmiaru bramy ATA Lightweight Gateway](#ata-lightweight-gateway-sizing).
+Poniżej przedstawiono przykładowe scenariusze, w których wszystkie kontrolery domeny powinny być objęte przez bramy ATA Lightweight Gateway:
 
-|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|Przestrzeń dyskowa systemu operacyjnego (GB)|
-|---------------------------|-------------------------|---------------|-------------------|
-|10 000|4|12|80|
-|20 000|8|24|100|
-|40 000|16|64|200|
-&#42;Łączna liczba pakietów na sekundę ze wszystkich kontrolerów domeny monitorowanych przez daną bramę usługi ATA.
+-   Oddziały
+-   Wirtualne kontrolery domeny od dowolnego dostawcy IaaS
+
+
+## Ustalanie rozmiaru bramy ATA Lightweight Gateway
+Zaleca się stosowanie bram ATA Lightweight Gateway zamiast bram usługi ATA zawsze wtedy, gdy jest to możliwe, pod warunkiem, że kontrolery domeny są zgodne z tabelą ustalania rozmiaru zawartą tutaj.
+
+Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
+
+|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)&#42;&#42;&#42;|
+|---------------------------|-------------------------|---------------|
+|1000|2|6|
+|5000|6|16|
+    |10 000|10|24|
+
+&#42;Łączna liczba pakietów na sekundę w kontrolerze domeny monitorowanym przez daną bramę ATA Lightweight Gateway.
+
+&#42;&#42;Łączna liczba zainstalowanych w kontrolerze domeny rdzeni innych niż hiperwątkowe.<br>Chociaż hiperwątkowość jest dopuszczalna w przypadku użycia bram ATA Lightweight Gateway, podczas planowania pojemności należy policzyć faktyczną liczbę rdzeni, a nie rdzeni hiperwątkowych.
+
+&#42;&#42;&#42;Łączna ilość pamięci zainstalowanej w kontrolerze domeny.
+> [!NOTE]   Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
+
+
+## Ustalanie rozmiaru bramy usługi ATA
+
+Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące informacje.
+
+Większość kontrolerów domeny może być objętych przez bramę ATA Lightweight Gateway, co należy zaplanować zgodnie z tabelą ustalania rozmiaru bramy ATA Lightweight Gateway zawartą powyżej.
+
+Jeśli bramy usługi ATA nadal są wymagane, poniżej przedstawiono zagadnienia dotyczące liczby wymaganych bram usługi ATA:<br>
+
+-   **Lasy i domeny usługi Active Directory**<br>
+    Usługa ATA może monitorować ruch z wielu domen pochodzących z jednego lasu usługi Active Directory. Monitorowanie wielu lasów usługi Active Directory wymaga oddzielnych wdrożeń usługi ATA. Pojedyncze wdrożenie usługi ATA nie powinno być konfigurowane do monitorowania ruchu sieciowego z kontrolerów domeny znajdujących się w różnych lasach.
+
+-   **Dublowanie portów**<br>
+Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram usługi ATA dla centrum danych lub oddziału.
+
+-   **Pojemność**<br>
+    Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny. 
+<br>
+
+|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|
+|---------------------------|-------------------------|---------------|
+|1000|1|6|
+|5000|2|10|
+|10 000|3|12|
+|20 000|6|24|
+|50 000|16|48|
+&#42;Średnia łączna liczba pakietów na sekundę ze wszystkich kontrolerów domeny monitorowanych przez daną bramę usługi ATA w najbardziej zajętej godzinie dnia.
 
 &#42;Łączny ruch objęty funkcją dublowania portów kontrolera domeny nie może przekraczać wydajności karty sieciowej przechwytywania w bramie usługi ATA.
 
 &#42;&#42;Hiperwątkowość musi być wyłączona.
+
+
 
 ## Szacowanie ruchu kontrolera domeny
 Istnieją różne narzędzia, za pomocą których można określić średnią liczbę pakietów na sekundę kontrolerów domeny. Jeśli nie masz żadnych narzędzi do określenia tej wartości, możesz użyć Monitora wydajności do zebrania wymaganych informacji.
@@ -74,34 +120,33 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
     ![Obraz przedstawiający Monitor wydajności](media/ATA-traffic-estimation-1.png)
 
-2.  Rozwiń węzeł **Zestawy modułów zbierających dane**..
+2.  Rozwiń węzeł **Zestawy modułów zbierających dane**.
 
     ![Obraz przedstawiający zestawy modułów zbierających dane](media/ATA-traffic-estimation-2.png)
 
-3.  Kliknij prawym przyciskiem myszy pozycję **Zdefiniowany przez użytkownika**, a następnie wybierz pozycję **Nowy** &gt; **Zestaw modułów zbierających dane**..
+3.  Kliknij prawym przyciskiem myszy pozycję **Zdefiniowany przez użytkownika**, a następnie wybierz pozycję **Nowy** &gt; **Zestaw modułów zbierających dane**.
 
     ![Obraz przedstawiający nowy zestaw modułów zbierających dane](media/ATA-traffic-estimation-3.png)
 
-4.  Wprowadź nazwę dla zestawu modułów zbierających dane, a następnie wybierz pozycję **Utwórz ręcznie (zaawansowane)**..
+4.  Wprowadź nazwę dla zestawu modułów zbierających dane, a następnie wybierz pozycję **Utwórz ręcznie (zaawansowane)**.
 
-5.  W obszarze **Jakiego typu dane chcesz uwzględnić?** wybierz pozycję **Utwórz dzienniki danych i Licznik wydajności**..
+5.  W obszarze **Jakiego typu dane chcesz uwzględnić?** wybierz pozycję **Utwórz dzienniki danych i Licznik wydajności**.
 
     ![Obraz przedstawiający typ danych nowego zestawu modułów zbierających dane](media/ATA-traffic-estimation-5.png)
 
-6.  W obszarze **Które liczniki wydajności chcesz rejestrować?** kliknij przycisk **Dodaj**..
+6.  W obszarze **Które liczniki wydajności chcesz rejestrować?** kliknij przycisk **Dodaj**.
 
-7.  Rozwiń węzeł **Karta sieciowa**, wybierz pozycję **Pakiety/s**, a następnie wybierz odpowiednie wystąpienie. Jeśli nie masz pewności, możesz wybrać pozycję **&lt;Wszystkie wystąpienia&gt;**, kliknąć przycisk **Dodaj**, a następnie kliknąć przycisk **OK**..
+7.  Rozwiń węzeł **Karta sieciowa**, wybierz pozycję **Pakiety/s**, a następnie wybierz odpowiednie wystąpienie. Jeśli nie masz pewności, możesz wybrać pozycję **&lt;Wszystkie wystąpienia&gt;**, kliknąć przycisk **Dodaj**, a następnie kliknąć przycisk **OK**.
 
-    > [!NOTE]
-    > W tym celu w wierszu polecenia uruchom polecenie `ipconfig /all`, aby wyświetlić nazwę karty i konfigurację.
+    > [!NOTE] W tym celu w wierszu polecenia uruchom polecenie `ipconfig /all`, aby wyświetlić nazwę karty i konfigurację.
 
     ![Obraz przedstawiający dodawanie liczników wydajności](media/ATA-traffic-estimation-7.png)
 
-8.  Zmień wartość pozycji **Interwał próbkowania** na **1 sekundę**..
+8.  Zmień wartość pozycji **Interwał próbkowania** na **1 sekundę**.
 
 9. Ustaw lokalizację, w której mają być zapisywane dane.
 
-10. W obszarze **Czy utworzyć zestaw modułów zbierających dane?** wybierz polecenie **Uruchom teraz ten zestaw modułów zbierających dane**, a następnie kliknij przycisk **Zakończ**..
+10. W obszarze **Czy utworzyć zestaw modułów zbierających dane?** wybierz polecenie **Uruchom teraz ten zestaw modułów zbierających dane**, a następnie kliknij przycisk **Zakończ**.
 
     Powinien zostać wyświetlony właśnie utworzony zestaw modułów zbierających dane z zielonym trójkątem wskazującym, że zestaw działa.
 
@@ -117,10 +162,10 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
 ## Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
-- [Architektura usługi ATA](/advanced-threat-analytics/understand-explore/ata-architecture)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Architektura usługi ATA](ata-architecture.md)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

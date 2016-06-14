@@ -42,7 +42,7 @@ Każde podejrzane działanie zawiera następujące informacje:
 
 -   Możliwość wykonania następujących akcji:
 
-    -   Wysłanie podejrzanego działania do innych osób w organizacji za pomocą wiadomości e-mail. Wymaga to zainstalowania klienta poczty e-mail na komputerze używanym do przeglądania.
+    -   Udostępnienie podejrzanego działania innym osobom w organizacji za pomocą wiadomości e-mail.
 
     -   Wyeksportowanie podejrzanego działania do pliku programu Excel.
 
@@ -97,7 +97,7 @@ Aby filtrować listę podejrzanych działań:
     Działania, które zostały ręcznie odrzucone. Jeśli usługa ATA wykryje podobne podejrzane działanie, zostanie utworzone nowe wykrycie.
 
 ## Podawanie danych wejściowych dotyczących podejrzanego działania
-Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku niektórych podejrzanych działań (rekonesans DNS, ataki typu Pass the Ticket, nietypowe zachowanie i zdalne wykonywanie kodu) użytkownik jest proszony o podanie danych wejściowych umożliwiających ulepszenie wykrywania podejrzanych działań w przyszłości.
+Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku niektórych podejrzanych działań (rekonesans DNS, ataki typu Pass the Ticket, wyliczenie sesji SMB, nietypowe zachowanie i zdalne wykonywanie kodu) użytkownik jest proszony o podanie danych wejściowych umożliwiających ulepszenie wykrywania podejrzanych działań w przyszłości.
 
 1.  Prośba o podanie danych wejściowych jest automatycznie otwierana dla podejrzanych działań z możliwością podania danych wejściowych. Użytkownik zostanie poproszony o udzielenie odpowiedzi na pytania dotyczące działań w sieci oraz tego, czy powinny zostać uznane za podejrzane. W poniższym przykładzie użytkownik jest pytany, czy uruchamianie narzędzi do skanowania jest dozwolone przy użyciu określonego komputera.
 
@@ -113,11 +113,11 @@ Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku n
 Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących pozycji: **Otwarte**, **Rozwiązane** lub **Odrzucone**..
 
 ## Zobacz też
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 - [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

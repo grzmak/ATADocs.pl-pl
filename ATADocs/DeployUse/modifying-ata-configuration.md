@@ -39,14 +39,12 @@ Jeśli musisz zaktualizować lub zmienić konfigurację po początkowej instalac
 
 -   [Zmienianie hasła do łączności z domeną](modifying-ata-config-dcpassword.md)
 
--   [Zmienianie nazwy karty sieciowej przechwytywania](modifying-ata-config-nicname.md)
-
 ## Zobacz też
-- [Praca z konsolą usługi ATA](/advanced-threat-analytics/understand-explore/working-with-ata-console)
+- [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Aby uzyskać pomoc techniczną, skorzystaj z naszego forum](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=Apr16_HO4-->
+<!--HONumber=May16_HO1-->
 
 
