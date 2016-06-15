@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [ATADocs\Understand\ata-release-notes.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/Understand/ata-release-notes.md) | InSyncHandedBackSuccess | [Details](#a84b79d0b83235d5a00081e55d20b93b143061d5422)
- [ATADocs\Understand\ata-update-1.6-migration-guide.md](https://github.com/Microsoft/ATADocs-pr/blob/6232c8690885077d2bad4331db7740f542295df8/ATADocs/Understand/ata-update-1.6-migration-guide.md) | InSyncHandedBackSuccess | [Details](#460e8ac37e94b02ebc045297caf86fa9c65704e3425)
 
 ## Item Details
-##### <a name='a84b79d0b83235d5a00081e55d20b93b143061d5422'></a> Source: [ATADocs\Understand\ata-release-notes.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/Understand/ata-release-notes.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [ATADocs\Understand\ata-release-notes.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/0d9a16a3aba9a589a6efad027397d675040be26e/ATADocs/Understand/ata-release-notes.md)
-* Handoff File: [ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/3a613200b8ad927e4a1a3b2337813ab30830fdfd/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf)
-* Handoff Datetime: 2016-05-05 18:01:20
-* Handoff Reason: Include
-* Archive File: [ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/ab52bf14901ec1cb7f3769b53de311dd230cb96c/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/archive/ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf)
-* Archive Datetime: 2016-06-02 02:39:43
-* Handback File: [ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/e38ef64604e76e1ff65395304edd8ffed35b27e7/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf)
-* Handback Datetime: 2016-06-15 09:46:43
-* [Back to Top](#report-top)
-
-##### <a name='460e8ac37e94b02ebc045297caf86fa9c65704e3425'></a> Source: [ATADocs\Understand\ata-update-1.6-migration-guide.md](https://github.com/Microsoft/ATADocs-pr/blob/6232c8690885077d2bad4331db7740f542295df8/ATADocs/Understand/ata-update-1.6-migration-guide.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [ATADocs\Understand\ata-update-1.6-migration-guide.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/0d9a16a3aba9a589a6efad027397d675040be26e/ATADocs/Understand/ata-update-1.6-migration-guide.md)
-* Handoff File: [ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/1c94f179704c9b275f0718456e03f8b08db16855/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf)
-* Handoff Datetime: 2016-05-26 18:29:33
-* Handoff Reason: Include
-* Archive File: [ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/ab52bf14901ec1cb7f3769b53de311dd230cb96c/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/archive/ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf)
-* Archive Datetime: 2016-06-02 02:39:43
-* Handback File: [ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/e38ef64604e76e1ff65395304edd8ffed35b27e7/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-update-1.6-migration-guide.fe715980eb0702f6dda7862931a6921ccd723d15.pl-pl.xlf)
-* Handback Datetime: 2016-06-15 09:46:43
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
