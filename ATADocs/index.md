@@ -21,12 +21,12 @@ ms.assetid: c4a97980-6e19-4d10-bf69-f0b338266efa
     <section id="hero-content">
       <h1>Dokumentacja usługi Microsoft Advanced Threat Analytics</h1>
       <h2>Dowiedz się, w jaki sposób można wdrażać i zarządzać usługą Microsoft Advanced Threat Analytics (ATA), czyli lokalnie instalowanym produktem ułatwiającym specjalistom ds. zabezpieczeń IT ochronę firm przed zaawansowanymi atakami ukierunkowanymi.</h2>
-      <h3>Jesteś nowym użytkownikiem usługi ATA? <a href="https://www.microsoft.com/en-us/server-cloud/products/advanced-threat-analytics/" target="_blank">Odwiedź naszą stronę produktu &rarr;</a></h3>
+      <h3>Jesteś nowym użytkownikiem usługi ATA? <a href="http://go.microsoft.com/fwlink/?LinkId=816859" target="_blank">Odwiedź naszą stronę produktu &rarr;</a></h3>
     </section>
     <aside class="alert section-border">
       <p>Możemy zaczynać?</p>
       <ol class="action-list">
-        <li><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-microsoft-advanced-threat-analytics" target="_blank" class="button-bordered button-translucent">Wypróbuj teraz</a></li>
+        <li><a href="https://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics" target="_blank" class="button-bordered button-translucent">Wypróbuj teraz</a></li>
       </ol>
     </aside>
     <section id="featured" class="container">
@@ -191,6 +191,6 @@ ms.assetid: c4a97980-6e19-4d10-bf69-f0b338266efa
 </article>
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 
