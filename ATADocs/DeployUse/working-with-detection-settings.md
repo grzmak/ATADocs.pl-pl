@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Praca z ustawieniami wykrywania usługi ATA | Microsoft Advanced Threat Analytics
-description: Opis sposobu konfigurowania listy nietypowych adresów IP i podsieci, które powinny być obsługiwane inaczej niż pozostałe jednostki w sieci.
-keywords:
+title: "Praca z ustawieniami wykrywania usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu konfigurowania listy nietypowych adresów IP i podsieci, które powinny być obsługiwane inaczej niż pozostałe jednostki w sieci."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: f4f2ae30-4849-4a4f-8f6d-bfe99a32c746
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 3840a5f7abdd496ad245a3f1c2589ad1855fddb5
+
 
 ---
 
@@ -44,9 +38,10 @@ Można wykluczyć adresy IP z następujących wykryć. W przypadku wprowadzenia 
 ## Zobacz też
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

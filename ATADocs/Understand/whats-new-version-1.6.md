@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Co nowego w wersji 1.6 usługi ATA | Microsoft Advanced Threat Analytics
-description: Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.6 usługi ATA
-keywords:
+title: "Co nowego w wersji 1.6 usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.6 usługi ATA"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: a0d64aff-ca9e-4300-b3f8-eb3c8b8ae045
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: eee114a62e1854b5821c0ca4a6f276e9dcd121c8
+
 
 ---
 
@@ -147,10 +141,11 @@ Nowy, ulepszony aparat wykrywania korzysta z wbudowanej technologii wykrywania, 
 Procedura aktualizacji usługi ATA eksportuje dane (na wypadek, gdyby były potrzebne do badań w przyszłości) do folderu `<Center Installation Path>\Migration` w formacie JSON.
 
 ## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

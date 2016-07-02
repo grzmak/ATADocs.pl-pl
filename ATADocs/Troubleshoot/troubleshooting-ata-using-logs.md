@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA | Microsoft Advanced Threat Analytics
-description: Opis sposobu rozwiązywania problemów przy użyciu dzienników usługi ATA.
-keywords:
+title: "Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu rozwiązywania problemów przy użyciu dzienników usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 4f02b0fba381eb76ad500e198392ec7624a3028a
+
 
 ---
 
@@ -47,7 +41,7 @@ Brama usługi ATA ma następujące dzienniki:
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
 
-### Dzienniki centrum usługi ATA
+## Dzienniki centrum usługi ATA
 Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
 
 Centrum usługi ATA ma następujące dzienniki:
@@ -64,7 +58,7 @@ Centrum usługi ATA ma następujące dzienniki:
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
 
-### Dzienniki konsoli usługi ATA
+## Dzienniki konsoli usługi ATA
 Dzienniki konsoli usługi ATA (dzienniki interfejsu API zarządzania) znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Management\Logs**.
 
 Konsola usługi ATA ma następujące dzienniki:
@@ -81,7 +75,7 @@ Konsola usługi ATA ma następujące dzienniki:
 > [!NOTE]
 > Maksymalny rozmiar pierwszych dwóch plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
 
-### Dzienniki wdrożenia usługi ATA
+## Dzienniki wdrożenia usługi ATA
 Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Users\Administrator\AppData\Local\Temp** (lub w katalogu nadrzędnym folderu %temp%).
 
 Dzienniki wdrożenia centrum usługi ATA:
@@ -103,9 +97,10 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
