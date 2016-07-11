@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [ATADocs\index.md](https://github.com/Microsoft/ATADocs-pr/blob/b74b0ee3c9a7b1e60064705998fb8e3ebe2f5c8e/ATADocs/index.md) | OutofSyncHandedBackSuccess | [Details](#ba6b3362da29d3a375fbb4dc56adcd64fa2b44ad220)
 
 ## Item Details
+##### <a name='ba6b3362da29d3a375fbb4dc56adcd64fa2b44ad220'></a> Source: [ATADocs\index.md](https://github.com/Microsoft/ATADocs-pr/blob/b74b0ee3c9a7b1e60064705998fb8e3ebe2f5c8e/ATADocs/index.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/9815eb366871f5c11267a3ecb2f7aef977ab1ecf/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf)
+* Handoff Datetime: 2016-07-11 20:32:38
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [ATADocs\index.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/4e895d3e9e6e68e3c4d941a03ff90622419df837/ATADocs/index.md)
+* Current Handback File: [index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/a4731eee31363d867f3a3fa497f108bb704dc22b/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/index.cc3e62ac6c9901731450d753a0ecebc990048809.pl-pl.xlf)
+* Current Handback Datetime: 2016-07-03 20:31:36
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
