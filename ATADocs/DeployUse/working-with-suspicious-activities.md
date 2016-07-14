@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Praca z podejrzanymi działaniami | Microsoft Advanced Threat Analytics
-description: Opis sposobu przeglądania podejrzanych działań zidentyfikowanych przez usługę ATA.
-keywords:
+title: "Praca z podejrzanymi działaniami | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu przeglądania podejrzanych działań zidentyfikowanych przez usługę ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 44d7c899-816c-4f7f-91d3-84a09d291a24
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 1214560096227e00af36ff7cb1a0a95988a2ad40
+
 
 ---
 
@@ -61,9 +55,9 @@ Każde podejrzane działanie zawiera następujące informacje:
 ## Filtrowanie listy podejrzanych działań
 Aby filtrować listę podejrzanych działań:
 
-1.  W okienku **Filtruj według** po lewej stronie ekranu wybierz jedną z następujących pozycji: **Wszystkie**, **Otwarte**, **Rozwiązane** lub **Odrzucone**..
+1.  W okienku **Filtruj według** po lewej stronie ekranu wybierz jedną z następujących pozycji: **Wszystkie**, **Otwarte**, **Rozwiązane** lub **Odrzucone**.
 
-2.  Aby dokładniej przefiltrować listę, wybierz pozycję **Wysoki**, **Średni** lub **Niski**..
+2.  Aby dokładniej przefiltrować listę, wybierz pozycję **Wysoki**, **Średni** lub **Niski**.
 
 **Poziom ważności podejrzanego działania**
 
@@ -110,14 +104,15 @@ Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku n
 4.  Jeśli nie znasz odpowiedzi, możesz kliknąć przycisk **Anuluj**.
 
 ## Zmiana stanu podejrzanego działania
-Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących pozycji: **Otwarte**, **Rozwiązane** lub **Odrzucone**..
+Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących pozycji: **Otwarte**, **Rozwiązane** lub **Odrzucone**.
 
 ## Zobacz też
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

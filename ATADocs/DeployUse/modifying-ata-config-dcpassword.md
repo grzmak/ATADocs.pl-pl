@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną | Microsoft Advanced Threat Analytics
-description: Zawiera opis sposobu zmiany hasła do łączności z domeną w ramach bramy usługi ATA.
-keywords:
+title: "Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną | Microsoft Advanced Threat Analytics"
+description: "Zawiera opis sposobu zmiany hasła do łączności z domeną w ramach bramy usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 4a25561b-a5ed-44aa-9b72-366976b3c72a
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: df1dbed75ad0c88de5a6c51d2e5d7e521a2577c4
+
 
 ---
 
@@ -41,17 +35,17 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
 1.  Otwórz konsolę usługi ATA w bramie usługi ATA.
 
-2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**..
+2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Ogólne**..
+3.  Wybierz pozycję **Ogólne**.
 
     ![Obraz przedstawiający zmianę hasła bramy usługi ATA](media/ATA-GW-change-DC-password.JPG)
 
 4.  W obszarze **Ogólne** zmień hasło.
 
-5.  Kliknij polecenie **Zapisz**..
+5.  Kliknij polecenie **Zapisz**.
 
 6.  Po zmianie hasła ręcznie sprawdź, czy brama usługi ATA jest uruchomiona na serwerach bramy usługi ATA.
 
@@ -61,9 +55,10 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

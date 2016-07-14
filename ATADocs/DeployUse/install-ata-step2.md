@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Instalowanie usługi ATA — Krok 2 | Usługa Microsoft Advanced Threat Analytics
-description: Krok drugi procedury instalowania usługi ATA pomaga skonfigurować ustawienia łączności domeny na serwerze centrum usługi ATA
-keywords:
+title: "Instalowanie usługi ATA — Krok 2 | Usługa Microsoft Advanced Threat Analytics"
+description: "Krok drugi procedury instalowania usługi ATA pomaga skonfigurować ustawienia łączności domeny na serwerze centrum usługi ATA"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,22 +10,19 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: e1c5ff41-d989-46cb-aa38-5a3938f03c0f
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 73e2eb84e1e21cbc5afcb7a100f9a67da63c66a5
+
 
 ---
 
 # Instalowanie usługi ATA — Krok 2
 
->[!div class="step-by-step"] [« Krok 1](install-ata-step1.md)
+>[!div class="step-by-step"]
+[« Krok 1](install-ata-step1.md)
 [Krok 3 »](install-ata-step3.md)
 
 ## Krok 2. Konfigurowanie ogólnych ustawień bramy usługi ATA
@@ -54,17 +49,19 @@ Aby skonfigurować ogólne ustawienia bramy usługi ATA, wykonaj następujące c
 
 
 
->[!div class="step-by-step"] [« Krok 1](install-ata-step1.md)
+>[!div class="step-by-step"]
+[« Krok 1](install-ata-step1.md)
 [Krok 3 »](install-ata-step3.md)
 
 
 ## Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

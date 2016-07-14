@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Konfigurowanie funkcji dublowania portów | Microsoft Advanced Threat Analytics
-description: Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby usługi ATA
-keywords:
+title: "Konfigurowanie funkcji dublowania portów | Microsoft Advanced Threat Analytics"
+description: "Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby usługi ATA"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,21 +10,18 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: cdaddca3-e26e-4137-b553-8ed3f389c460
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 121f54e6d8da8220f1827188039e9a89c038f7ac
+ms.openlocfilehash: a4befce4003951b18a5e1a9d8bc1addf9e7ea255
+
 
 ---
 
 # Konfigurowanie funkcji dublowania portów
-> [!NOTE] Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz [Wybieranie odpowiednich bram dla danego wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#Choosing-the-right-gateway-type-for-your-deployment)
+> [!NOTE] 
+> Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz [Wybieranie odpowiednich bram dla danego wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment)
  
 Główne źródło danych używane przez usługę ATA to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Aby ruch sieciowy był widoczny dla usługi ATA, należy skonfigurować funkcję dublowania portów lub skorzystać z podsłuchu sieci.
 
@@ -72,9 +67,10 @@ Po skonfigurowaniu funkcji dublowania portów, ale przed zainstalowaniem bramy u
 ## Zobacz też
 - [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO5-->
 
 

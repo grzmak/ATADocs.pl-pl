@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5 | Microsoft Advanced Threat Analytics
-description: Procedury aktualizacji usługi ATA do wersji 1.5
-keywords:
+title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5 | Microsoft Advanced Threat Analytics"
+description: "Procedury aktualizacji usługi ATA do wersji 1.5"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 87293e71e053e2d7a962a5b7362b92e5df677c77
+
 
 ---
 
@@ -44,7 +38,7 @@ Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
 
 ## Aktualizowanie usługi ATA do wersji 1.5
 > [!NOTE]
-> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.5, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata)..
+> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.5, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
 Jeśli została już wdrożona usługa ATA w wersji 1.4, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji instalacji.
 
@@ -70,13 +64,13 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
     -   Jeśli centrum usługi ATA jest uruchomione jako maszyna wirtualna i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
 
-    -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, postępuj zgodnie z zalecaną procedurą, aby [utworzyć kopię zapasową bazy danych MongoDB](https://docs.mongodb.org/manual/core/backups/)..
+    -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, postępuj zgodnie z zalecaną procedurą, aby [utworzyć kopię zapasową bazy danych MongoDB](https://docs.mongodb.org/manual/core/backups/).
 
 2.  Uruchom plik aktualizacji, Microsoft ATA Center Update.exe, i postępuj zgodnie z instrukcjami na ekranie, aby zainstalować aktualizację.
 
-    1.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**..
+    1.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    2.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij przycisk **Dalej**..
+    2.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij przycisk **Dalej**.
 
     3.  Określ, czy chcesz przeprowadzić migrację pełną (domyślnie), czy częściową.
 
@@ -102,11 +96,11 @@ Aby pobrać pakiet bramy usługi ATA:
 
 1.  Usuń poprzednie wersje pakietu bramy usługi ATA, które zostały pobrane wcześniej.
 
-2.  Na maszynie bramy usługi ATA otwórz przeglądarkę i wprowadź adres IP skonfigurowany w centrum usługi ATA dla konsoli usługi ATA. Po otwarciu konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**..
+2.  Na maszynie bramy usługi ATA otwórz przeglądarkę i wprowadź adres IP skonfigurowany w centrum usługi ATA dla konsoli usługi ATA. Po otwarciu konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji](media/ATA-config-icon.JPG)
 
-3.  Na karcie **Bramy usługi ATA** kliknij pozycję **Pobierz instalatora bramy usługi ATA**..
+3.  Na karcie **Bramy usługi ATA** kliknij pozycję **Pobierz instalatora bramy usługi ATA**.
 
 4.  Zapisz pakiet lokalnie.
 
@@ -136,9 +130,10 @@ Jeśli wszystkie bramy usługi ATA zostaną pomyślnie zaktualizowane, wszystkie
 
 ## Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

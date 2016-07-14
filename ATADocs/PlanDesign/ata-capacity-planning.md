@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Planowanie wdrożenia usługi ATA | Microsoft Advanced Threat Analytics
-description: Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci
-keywords:
+title: "Planowanie wdrożenia usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
+ms.openlocfilehash: ff8eb5361d3dfeaa3715d325ed91c0ad422211ed
+
 
 ---
 
@@ -30,6 +24,8 @@ Ten temat ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do
 
 ## Ustalanie rozmiaru centrum usługi ATA
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni. Wymagana ilość miejsca na dysku dla bazy danych usługi ATA na każdy kontroler domeny jest zdefiniowana poniżej. Jeśli istnieje wiele kontrolerów domeny, zsumuj ilość miejsca na dysku wymaganego przez każdy kontroler domeny, aby obliczyć łączną ilość miejsca wymaganego dla bazy danych usługi ATA.
+> [!NOTE] 
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
@@ -51,18 +47,38 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 > -  Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
 
 ## Wybieranie odpowiedniego typu bramy dla danego wdrożenia
-Zaleca się stosowanie bram ATA Lightweight Gateway zamiast bram usługi ATA zawsze wtedy, gdy jest to możliwe, pod warunkiem, że kontrolery domeny są zgodne z tabelą ustalania rozmiaru zawartą poniżej.
-Większość kontrolerów domeny może i powinno być objętych przez bramę ATA Lightweight Gateway, chyba że kontrolery domeny nie spełniają wymagań opisanych w [Tabeli ustalania rozmiaru bramy ATA Lightweight Gateway](#ata-lightweight-gateway-sizing).
-Poniżej przedstawiono przykładowe scenariusze, w których wszystkie kontrolery domeny powinny być objęte przez bramy ATA Lightweight Gateway:
+We wdrożeniu ATA obsługiwane są dowolne kombinacje typów bramy ATA:
 
--   Oddziały
--   Wirtualne kontrolery domeny od dowolnego dostawcy IaaS
+- Wyłącznie bramy usługi ATA
+- Wyłącznie bramy ATA Lightweight Gateway
+- Kombinacja obu bram
+
+Podczas wybierania typu wdrożenia bramy należy uwzględnić następujące kwestie:
+
+|Typ bramy|Korzyści|Koszt|Topologia wdrożenia|Użycie kontrolera domeny|
+|----|----|----|----|-----|
+|Brama usługi ATA|Wdrożenie poza pasmem utrudnia osobom atakującym odkrycie usługi ATA|Wyższe|Instalacja obok kontrolera domeny (poza pasmem)|Obsługuje maksymalnie 50 000 pakietów na sekundę|
+|Brama ATA Lightweight Gateway|Nie wymaga dedykowanego serwera i konfiguracji dublowania portów|Niższe|Instalacja na kontrolerze domeny|Obsługuje maksymalnie 10 000 pakietów na sekundę|
+
+Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny powinny być objęte przez bramę ATA Lightweight Gateway:
+
+
+- Oddziały
+
+- Wirtualne kontrolery domeny wdrożone w chmurze (IaaS)
+
+
+Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny powinny być objęte przez bramę usługi ATA:
+
+
+- Główne centra danych (z kontrolerami domeny obsługującymi ponad 10 000 pakietów na sekundę)
 
 
 ## Ustalanie rozmiaru bramy ATA Lightweight Gateway
-Zaleca się stosowanie bram ATA Lightweight Gateway zamiast bram usługi ATA zawsze wtedy, gdy jest to możliwe, pod warunkiem, że kontrolery domeny są zgodne z tabelą ustalania rozmiaru zawartą tutaj.
 
 Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
+> [!NOTE] 
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)&#42;&#42;&#42;|
 |---------------------------|-------------------------|---------------|
@@ -75,16 +91,13 @@ Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontroler
 &#42;&#42;Łączna liczba zainstalowanych w kontrolerze domeny rdzeni innych niż hiperwątkowe.<br>Chociaż hiperwątkowość jest dopuszczalna w przypadku użycia bram ATA Lightweight Gateway, podczas planowania pojemności należy policzyć faktyczną liczbę rdzeni, a nie rdzeni hiperwątkowych.
 
 &#42;&#42;&#42;Łączna ilość pamięci zainstalowanej w kontrolerze domeny.
-> [!NOTE]   Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
+> [!NOTE]   
+> Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
 
 
 ## Ustalanie rozmiaru bramy usługi ATA
 
 Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące informacje.
-
-Większość kontrolerów domeny może być objętych przez bramę ATA Lightweight Gateway, co należy zaplanować zgodnie z tabelą ustalania rozmiaru bramy ATA Lightweight Gateway zawartą powyżej.
-
-Jeśli bramy usługi ATA nadal są wymagane, poniżej przedstawiono zagadnienia dotyczące liczby wymaganych bram usługi ATA:<br>
 
 -   **Lasy i domeny usługi Active Directory**<br>
     Usługa ATA może monitorować ruch z wielu domen pochodzących z jednego lasu usługi Active Directory. Monitorowanie wielu lasów usługi Active Directory wymaga oddzielnych wdrożeń usługi ATA. Pojedyncze wdrożenie usługi ATA nie powinno być konfigurowane do monitorowania ruchu sieciowego z kontrolerów domeny znajdujących się w różnych lasach.
@@ -95,6 +108,9 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
 -   **Pojemność**<br>
     Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny. 
 <br>
+
+> [!NOTE] 
+> Pamięć dynamiczna nie jest obsługiwana.
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|
 |---------------------------|-------------------------|---------------|
@@ -138,7 +154,8 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
 7.  Rozwiń węzeł **Karta sieciowa**, wybierz pozycję **Pakiety/s**, a następnie wybierz odpowiednie wystąpienie. Jeśli nie masz pewności, możesz wybrać pozycję **&lt;Wszystkie wystąpienia&gt;**, kliknąć przycisk **Dodaj**, a następnie kliknąć przycisk **OK**.
 
-    > [!NOTE] W tym celu w wierszu polecenia uruchom polecenie `ipconfig /all`, aby wyświetlić nazwę karty i konfigurację.
+    > [!NOTE]
+    > W tym celu w wierszu polecenia uruchom polecenie `ipconfig /all`, aby wyświetlić nazwę karty i konfigurację.
 
     ![Obraz przedstawiający dodawanie liczników wydajności](media/ATA-traffic-estimation-7.png)
 
@@ -163,9 +180,10 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 ## Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Architektura usługi ATA](ata-architecture.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

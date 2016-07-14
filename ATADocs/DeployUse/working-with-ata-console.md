@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Praca z konsolą usługi ATA | Microsoft Advanced Threat Analytics
-description: Opis sposobu logowania się do konsoli usługi ATA oraz składników konsoli
-keywords:
+title: "Praca z konsolą usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu logowania się do konsoli usługi ATA oraz składników konsoli"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 7f9ca7dcb227f5dde1225c55150fd1c737722ce1
+
 
 ---
 
@@ -39,14 +33,15 @@ Aby zezwolić użytkownikowi na logowanie się do konsoli usługi ATA bez nadawa
 
     ![Ikona serwera usługi ATA](media/ata-server-icon.png)
 
-    > [!NOTE] Możesz również otworzyć przeglądarkę z poziomu centrum usługi ATA lub bramy usługi ATA i przejść na adres IP skonfigurowany dla konsoli usługi ATA w instalacji centrum usługi ATA.    
+>[!NOTE]
+> Możesz również otworzyć przeglądarkę z poziomu centrum usługi ATA lub bramy usługi ATA i przejść na adres IP skonfigurowany dla konsoli usługi ATA w instalacji centrum usługi ATA.    
 
 2.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij pozycję **Zaloguj**.
 
 ![Obraz ekranu logowania usługi ATA](media/ATA-log-in-screen.jpg)
 
-    > [!NOTE]
-    > You have to log in with a user who is a member of the local administrator group OR of the Microsoft Advanced Threat Analytics Administrators group.
+> [!NOTE]
+> Należy zalogować się jako użytkownik, który należy do grupy administratorów lokalnych LUB grupy Administratorzy usługi Microsoft Advanced Threat Analytics.
 
 ## Konsola usługi ATA
 
@@ -125,9 +120,10 @@ W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka
 
 
 ## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

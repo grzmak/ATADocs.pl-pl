@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zmienianie konfiguracji usługi ATA — certyfikat usług IIS | Microsoft Advanced Threat Analytics
-description: Opis sposobu zmieniania certyfikatu używanego przez usługi IIS dla centrum usługi ATA.
-keywords:
+title: "Zmienianie konfiguracji usługi ATA — certyfikat usług IIS | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu zmieniania certyfikatu używanego przez usługi IIS dla centrum usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: e58a0390-57ef-4c68-a987-2e75e5f3d6b3
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 07888a46e26a7f87dc3b6424d97aba0813b43d02
+
 
 ---
 
@@ -45,13 +39,13 @@ Jeśli musisz zmienić certyfikat używany przez usługi IIS dla centrum usługi
 
 2.  Otwórz menedżera usług Internet Information Services (IIS).
 
-3.  Rozwiń nazwę serwera i rozwiń pozycję **Witryny**..
+3.  Rozwiń nazwę serwera i rozwiń pozycję **Witryny**.
 
-4.  Wybierz witrynę konsoli usługi Microsoft ATA i w okienku **Akcje** kliknij pozycję **Powiązania**..
+4.  Wybierz witrynę konsoli usługi Microsoft ATA i w okienku **Akcje** kliknij pozycję **Powiązania**.
 
     ![Akcje powiązań konsoli usługi ATA](media/ATA-console-change-IP-bindings.jpg)
 
-5.  Wybierz pozycję **HTTPS** i kliknij polecenie **Edytuj**..
+5.  Wybierz pozycję **HTTPS** i kliknij polecenie **Edytuj**.
 
 6.  W obszarze **Certyfikat SSL** wybierz nowy certyfikat.
 
@@ -64,9 +58,10 @@ Jeśli musisz zmienić certyfikat używany przez usługi IIS dla centrum usługi
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zmienianie konfiguracji usługi ATA — certyfikat centrum usługi ATA | Microsoft Advanced Threat Analytics
-description: Opis dwuetapowego procesu odnawiania lub wymiany certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA. 
-keywords:
+title: "Zmienianie konfiguracji usługi ATA — certyfikat centrum usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Opis dwuetapowego procesu odnawiania lub wymiany certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: c8855287-de3b-4cdd-be8f-2128f48a6f27
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 0cfeb67e663489d7264c88aafe04e77fcb63377f
+
 
 ---
 
@@ -45,15 +39,15 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 
 1.  Otwórz konsolę usługi ATA.
 
-2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**..
+2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Centrum usługi ATA**..
+3.  Wybierz pozycję **Centrum usługi ATA**.
 
 4.  W obszarze **Certyfikat** wybierz certyfikat z listy.
 
-5.  Kliknij polecenie **Zapisz**..
+5.  Kliknij polecenie **Zapisz**.
 
 6.  Zostanie wyświetlone powiadomienie z informacją o liczbie bram usługi ATA zsynchronizowanych z najnowszą konfiguracją.
 
@@ -72,9 +66,10 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

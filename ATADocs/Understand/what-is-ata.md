@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft Advanced Threat Analytics
-description: Informacje dotyczące usługi Microsoft Advanced Threat Analytics (ATA) i wykrywanych przez nią podejrzanych działań
-keywords:
+title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft Advanced Threat Analytics"
+description: "Informacje dotyczące usługi Microsoft Advanced Threat Analytics (ATA) i wykrywanych przez nią podejrzanych działań"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 283e7b4e-996a-4491-b7f6-ff06e73790d2
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 4831e7a773b69a87bbcd505a8116230f14611250
+
 
 ---
 
@@ -69,7 +63,6 @@ Aby umożliwiać wykrywanie przejęcia poświadczeń, usługa ATA używa zarówn
 
 Korzystając z analizy behawioralnej i uczenia maszynowego, usługa ATA jest w stanie wykrywać podejrzane działania, takie jak nietypowe logowania, nietypowy dostęp do zasobów i nietypowe godziny pracy, które mogą wskazywać na przejęcie poświadczeń.
 Aby zapewnić ochronę przed przejęciem poświadczeń, usługa ATA wykrywa następujące znane złośliwe ataki i techniki:
-:
 
  - **Atak siłowy** <br>Osoby atakujące usiłują odgadnąć poświadczenia użytkowników, podejmując dla wielu użytkowników próby uwierzytelnienia przy użyciu różnych haseł. Osoby atakujące często używają złożonych algorytmów lub słowników, aby wypróbować maksymalną liczbę wartości dozwoloną w danym systemie.
 
@@ -123,8 +116,7 @@ Osoba atakująca instaluje na kontrolerze domeny złośliwe oprogramowanie, któ
 Osoba atakująca dokonuje kradzieży poświadczeń KBTGT (bilet Golden Ticket protokołu Kerberos). Korzystając z tego biletu, osoba atakująca tworzy bilet uprawniający do przyznania biletu offline, którego następnie używa do uzyskania dostępu do zasobów w sieci.
 - **Zdalne wykonywanie kodu**<br>
 Osoby atakujące mogą próbować kontrolować sieć, zdalnie uruchamiając kod na kontrolerze domeny.
--   **Złośliwe żądania replikacji**
-W środowiskach usługi Active Directory (AD) replikacja między kontrolerami domeny odbywa się regularnie. Osoba atakująca może spreparować żądanie replikacji usługi AD (czasami podszywając się pod kontroler domeny), co umożliwi jej uzyskanie danych przechowywanych w usłudze AD, między innymi skrótów haseł, bez konieczności zastosowania bardziej natrętnych technik, takich jak kopiowanie woluminów w tle.
+-   **Złośliwe żądania replikacji** W środowiskach usługi Active Directory (AD) replikacja między kontrolerami domeny odbywa się regularnie. Osoba atakująca może spreparować żądanie replikacji usługi AD (czasami podszywając się pod kontroler domeny), co umożliwi jej uzyskanie danych przechowywanych w usłudze AD, między innymi skrótów haseł, bez konieczności zastosowania bardziej natrętnych technik, takich jak kopiowanie woluminów w tle.
 
 ## Co dalej?
 
@@ -133,9 +125,10 @@ W środowiskach usługi Active Directory (AD) replikacja między kontrolerami do
 -   Aby rozpocząć wdrażanie usługi ATA, zobacz [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
 ## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

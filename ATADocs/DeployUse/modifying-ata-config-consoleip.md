@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zmienianie konfiguracji usługi ATA — adres IP konsoli usługi ATA | Usługa Microsoft Advanced Threat Analytics
-description: Opisuje sposób zmiany adresu IP konsoli usługi ATA, używanego do tworzenia skrótów do konsoli usługi ATA w bramach usługi ATA.
-keywords:
+title: "Zmienianie konfiguracji usługi ATA — adres IP konsoli usługi ATA | Usługa Microsoft Advanced Threat Analytics"
+description: "Opisuje sposób zmiany adresu IP konsoli usługi ATA, używanego do tworzenia skrótów do konsoli usługi ATA w bramach usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 50118465-df34-4e04-b0cc-48808b6a96b1
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: ee775e66de1a56b5270b0d32c7d5ca33d4d7980c
+
 
 ---
 
@@ -29,7 +23,7 @@ ms.suite: ems
 
 >[!div class="step-by-step"]
 [« Certyfikat centrum usługi ATA](modifying-ata-config-centercert.md)
-[Certyfikat usług IIS »](modifying-ata-config-iiscert.md)
+[Certyfikat IIS »](modifying-ata-config-iiscert.md)
 
 ## Zmienianie adresu IP konsoli usługi ATA
 Domyślnie adres URL konsoli usługi ATA to adres IP wybrany jako adres IP konsoli usługi ATA podczas instalacji centrum usługi ATA.
@@ -53,9 +47,9 @@ Jeśli musisz zmienić adres IP używany przez usługi IIS dla konsoli usługi A
 
 2.  Otwórz Menedżera internetowych usług informacyjnych (IIS).
 
-3.  Rozwiń nazwę serwera i rozwiń pozycję **Witryny**..
+3.  Rozwiń nazwę serwera i rozwiń pozycję **Witryny**.
 
-4.  Wybierz witrynę konsoli usługi Microsoft ATA i w okienku **Akcje** kliknij pozycję **Powiązania**..
+4.  Wybierz witrynę konsoli usługi Microsoft ATA i w okienku **Akcje** kliknij pozycję **Powiązania**.
 
     ![Obraz akcji powiązań konsoli usługi ATA](media/ATA-console-change-IP-bindings.jpg)
 
@@ -79,15 +73,16 @@ Jeśli musisz zmienić adres IP używany przez usługi IIS dla konsoli usługi A
 
 >[!div class="step-by-step"]
 [« Certyfikat centrum usługi ATA](modifying-ata-config-centercert.md)
-[Certyfikat usług IIS »](modifying-ata-config-iiscert.md)
+[Certyfikat IIS »](modifying-ata-config-iiscert.md)
 
 
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

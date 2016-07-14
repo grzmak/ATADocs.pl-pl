@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Instalowanie usługi ATA — Krok 1 | Microsoft Advanced Threat Analytics
-description: Pierwszy krok w celu zainstalowania usługi ATA polega na pobraniu i zainstalowaniu centrum usługi ATA na wybranym serwerze.
-keywords:
+title: "Instalowanie usługi ATA — Krok 1 | Microsoft Advanced Threat Analytics"
+description: "Pierwszy krok w celu zainstalowania usługi ATA polega na pobraniu i zainstalowaniu centrum usługi ATA na wybranym serwerze."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
+ms.openlocfilehash: c89d4d6f6af58bcc822b9599dcda65d0719a7419
+
 
 ---
 
@@ -33,14 +27,15 @@ ms.suite: ems
 
 Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania nowej instalacji usługi ATA w wersji 1.6. Informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji znajdują się w temacie [Przewodnik po migracji usługi ATA dla wersji 1.6](/advanced-threat-analytics/understand-explore/ata-update-1.6-migration-guide).
 
-> [!IMPORTANT] Zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i będzie wymagać ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
+> [!IMPORTANT] 
+> Zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i będzie wymagać ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
 
 ## Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
 
 Na serwerze centrum usługi ATA wykonaj następujące kroki.
 
-1.  Pobierz usługę ATA z [Centrum usługi licencjonowania zbiorowego firmy Microsoft](https://www.microsoft.com/Licensing/servicecenter/default.aspx), [Centrum ewaluacji TechNet](http://www.microsoft.com/en-us/evalcenter/) lub z [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads).
+1.  Pobierz usługę ATA z [Centrum usługi licencjonowania zbiorowego firmy Microsoft](https://www.microsoft.com/Licensing/servicecenter/default.aspx), [Centrum ewaluacji TechNet](http://www.microsoft.com/evalcenter/) lub z [MSDN](https://msdn.microsoft.com/subscriptions/downloads).
 
 2.  Zaloguj się na komputerze, na którym instalujesz centrum usługi ATA, jako użytkownik, który jest członkiem lokalnej grupy administratorów.
 
@@ -94,17 +89,20 @@ Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone o
 
 
 
->[!div class="step-by-step"] [« Przed rozpoczęciem instalacji](preinstall-ata.md)
+>[!div class="step-by-step"]
+[« Przed rozpoczęciem instalacji](preinstall-ata.md)
 [Krok 2 »](install-ata-step2.md)
 
 ## Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/
+- home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

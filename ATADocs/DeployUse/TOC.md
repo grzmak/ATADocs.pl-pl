@@ -19,7 +19,7 @@
 #### [Zmienianie certyfikatu centrum usługi ATA](modifying-ata-config-centercert.md)
 #### [Zmienianie adresu IP konsoli usługi ATA](modifying-ata-config-consoleip.md)
 #### [Zmienianie certyfikatu usług IIS](modifying-ata-config-iiscert.md)
-#### [Zmienianie hasła kontrolera domeny](modifying-ata-config-dcpassword.md)
+#### [Zmienianie hasła do łączności z domeną](modifying-ata-config-dcpassword.md)
 ### [Praca z konsolą usługi ATA](working-with-ata-console.md)
 ### [Ustawianie alertów usługi ATA](setting-ata-alerts.md)
 ### [Określanie ustawień usługi Syslog i serwera poczty e-mail](setting-syslog-email-server-settings.md)
@@ -31,6 +31,6 @@
 # [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
 
 
-<!--HONumber=May16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 

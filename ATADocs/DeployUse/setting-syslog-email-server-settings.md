@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Ustawianie powiadomień usługi ATA | Microsoft Advanced Threat Analytics
-description: Opis sposobu ustawiania powiadomień usługi ATA wysyłanych do użytkownika (za pośrednictwem poczty e-mail lub funkcji przekazywania zdarzeń usługi ATA) w przypadku wykrycia podejrzanych działań 
-keywords:
+title: "Ustawianie powiadomień usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu ustawiania powiadomień usługi ATA wysyłanych do użytkownika (za pośrednictwem poczty e-mail lub funkcji przekazywania zdarzeń usługi ATA) w przypadku wykrycia podejrzanych działań"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,27 +10,23 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 14cb7513-5dc8-49cb-b3e0-94f469c443dd
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 66194d89c3e937923e576004a3ab4b7177f179c4
+
 
 ---
 
 ## Udostępnianie usłudze ATA ustawień serwera poczty e-mail
-Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**..
+Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**.
 
 1.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.
 
-2.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij przycisk **Zaloguj**..
+2.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij przycisk **Zaloguj**.
 
-3.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**..
+3.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
@@ -61,9 +55,9 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
 
 2.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.
 
-3.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij przycisk **Zaloguj**..
+3.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij przycisk **Zaloguj**.
 
-4.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**..
+4.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
@@ -80,9 +74,10 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
 
 
 ## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

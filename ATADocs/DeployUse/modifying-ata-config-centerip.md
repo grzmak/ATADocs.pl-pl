@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA | Microsoft Advanced Threat Analytics
-description: Zawiera opis sposobu zmiany adresu IP, portu lub certyfikatu centrum usługi ATA.
-keywords:
+title: "Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Zawiera opis sposobu zmiany adresu IP, portu lub certyfikatu centrum usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 373eb5722a5450bca87cf66933990249286138ab
+
 
 ---
 
@@ -37,7 +31,7 @@ Jeśli zajdzie potrzeba zmiany adresu IP i portu lub certyfikatu centrum usługi
 
 Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym się łączą. Regularnie nawiązują one połączenie z centrum usługi ATA i pobierają zmiany konfiguracji. Wprowadzanie zmian w sposobie nawiązywania połączenia przez bramy usługi ATA z centrum usługi ATA jest wykonywane w dwóch etapach.
 
--   Pierwszy etap: zaktualizuj adres IP i port centrum usługi ATA, które ma być używane przez bramę usługi ATA. W tym momencie centrum usługi ATA nadal nasłuchuje na oryginalnym adresie IP, a po następnej synchronizacji konfiguracji brama usługi ATA będzie mieć dwa adresy IP dla centrum usługi ATA. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego (pierwszego) adresu IP, nowy adres IP i port nie będą używane.
+-   Pierwszy etap: zaktualizuj adres IP i port, które mają być używane przez bramę usługi ATA. W tym momencie centrum usługi ATA nadal nasłuchuje na oryginalnym adresie IP, a po następnej synchronizacji konfiguracji brama usługi ATA będzie mieć dwa adresy IP dla centrum usługi ATA. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego (pierwszego) adresu IP, nowy adres IP i port nie będą używane.
 
 -   Drugi etap: po zsynchronizowaniu wszystkich bram usługi ATA z zaktualizowaną konfiguracją aktywuj nowy adres IP oraz port, na którym nasłuchuje centrum usługi ATA. Po aktywowaniu nowego adresu IP centrum usługi ATA zostanie z nim powiązane. Bramy usługi ATA nie będą mogły nawiązywać połączenia z oryginalnym adresem IP i będą teraz podejmowały próbę nawiązania połączenia z drugim (nowym) adresem IP centrum usługi ATA. Po nawiązaniu połączenia z centrum usługi ATA za pomocą nowego adresu IP brama usługi ATA pobierze najnowszą konfigurację i będzie mieć jeden adres IP dla centrum usługi ATA. Taka sytuacja będzie miała miejsce pod warunkiem, że proces nie zostanie ponownie rozpoczęty.
 
@@ -48,15 +42,15 @@ Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym 
 
 1.  Otwórz konsolę usługi ATA.
 
-2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**..
+2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Ogólne**..
+3.  Wybierz pozycję **Ogólne**.
 
 4.  W obszarze **Adres IP centrum usługi ATA: port** wybierz jeden z istniejących adresów IP lub wybierz polecenie **Dodaj niestandardowy adres IP**, a następnie wprowadź adres IP.
 
-5.  Kliknij polecenie **Zapisz**..
+5.  Kliknij polecenie **Zapisz**.
 
 6.  Zostanie wyświetlone powiadomienie z informacją o liczbie bram usługi ATA zsynchronizowanych z najnowszą konfiguracją.
 
@@ -82,9 +76,10 @@ Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym 
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

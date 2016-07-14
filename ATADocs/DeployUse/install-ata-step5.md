@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Instalowanie usługi ATA — Krok 5 | Microsoft Advanced Threat Analytics
-description: W kroku 5 procesu instalowania usługi ATA znajdują się informacje ułatwiające skonfigurowanie ustawień bramy usługi ATA.
-keywords:
+title: "Instalowanie usługi ATA — Krok 5 | Microsoft Advanced Threat Analytics"
+description: "W kroku 5 procesu instalowania usługi ATA znajdują się informacje ułatwiające skonfigurowanie ustawień bramy usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,22 +10,19 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
+ms.openlocfilehash: 6400a0eabefac91b418e00eb670b1329fa1b5fb5
+
 
 ---
 
 # Instalowanie usługi ATA — Krok 5
 
->[!div class="step-by-step"] [« Krok 4](install-ata-step4.md)
+>[!div class="step-by-step"]
+[« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
 
@@ -53,8 +48,9 @@ Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery do
  - **Kandydat synchronizatora domeny**<br>
 Wszystkie bramy usługi ATA ustawione jako kandydaci synchronizatora domeny mogą odpowiadać za synchronizację między usługą ATA i domeną usługi Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć sporo czasu i dużą część zasobów. Domyślnie tylko bramy usługi ATA są ustawione jako kandydaci synchronizatora domeny. <br>Zaleca się usunięcie ustawienia Kandydat synchronizatora domeny dla wszystkich bram usługi ATA dla lokacji zdalnych.<br>Jeśli kontroler domeny jest kontrolerem tylko do odczytu, nie należy ustawiać go jako kandydata synchronizatora domeny. Aby uzyskać więcej informacji, zobacz [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture#ata-lightweight-gateway-features).
 
-> [!NOTE] Pierwsze uruchomienie bramy usługi ATA potrwa kilka minut. Jest to spowodowane tworzeniem pamięci podręcznej analizatorów przechwytywania ruchu sieciowego.<br>
-Zmiany konfiguracji zostaną zastosowane względem bramy usługi ATA podczas następnej zaplanowanej synchronizacji między bramą usługi ATA a centrum usługi ATA.
+> [!NOTE] 
+> Pierwsze uruchomienie bramy usługi ATA potrwa kilka minut. Jest to spowodowane tworzeniem pamięci podręcznej analizatorów przechwytywania ruchu sieciowego.<br>
+> Zmiany konfiguracji zostaną zastosowane względem bramy usługi ATA podczas następnej zaplanowanej synchronizacji między bramą usługi ATA a centrum usługi ATA.
 
 
 
@@ -83,17 +79,19 @@ Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
     ![Obraz przedstawiający dodawanie liczników wydajności](media/ATA-performance-monitoring-add-counters.png)
 
 
->[!div class="step-by-step"] [« Krok 4](install-ata-step4.md)
+>[!div class="step-by-step"]
+[« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
 ## Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

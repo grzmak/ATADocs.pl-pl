@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Zarządzanie bazą danych usługi ATA | Usługa Microsoft Advanced Threat Analytics
-description: Procedury ułatwiające przenoszenie, tworzenie kopii zapasowej lub przywracanie bazy danych usługi ATA.
-keywords:
+title: "Zarządzanie bazą danych usługi ATA | Usługa Microsoft Advanced Threat Analytics"
+description: "Procedury ułatwiające przenoszenie, tworzenie kopii zapasowej lub przywracanie bazy danych usługi ATA."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 1d27dba8-fb30-4cce-a68a-f0b1df02b977
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 6c0e2abe43da5351568cf8db4e6ffe6fa919d835
+
 
 ---
 
@@ -29,10 +23,10 @@ ms.suite: ems
 Jeśli musisz przenieść bazę danych ATA, utworzyć jej kopię zapasową lub przywrócić ją, należy użyć poniższych procedur do pracy z MongoDB.
 
 ## Tworzenie kopii zapasowej bazy danych usługi ATA
-Zapoznaj się [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
+Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
 
 ## Przywracanie bazy danych usługi ATA
-Zapoznaj się [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
+Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
 
 ## Przenoszenie bazy danych usługi ATA na inny dysk
 
@@ -52,11 +46,14 @@ Zapoznaj się [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.o
 
 6.  Uruchom usługę **MongoDB**.
 
-7.  Otwórz wiersz polecenia i uruchom powłokę Mongo, uruchamiając plik `mongo.exe ATA` .
+7.  Otwórz wiersz polecenia i uruchom powłokę Mongo, uruchamiając plik `mongo.exe ATA`.
 
     Domyślna lokalizacja pliku mongo.exe to C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin
 
-8.  Uruchom następujące polecenie: `db.SystemProfiles.update( {_t: "CenterSystemProfile"} , {$set:{"Configuration.CenterDatabaseClientConfiguration.DataPath" : "<New DB Location>"}}) Instead of <New DB Location>`, gdzie &lt;New DB Location&gt; jest nową ścieżka folderu.
+8.  Uruchom następujące polecenie: `db.SystemProfiles.update( {_t: "CenterSystemProfile"} , {$set:{"Configuration.CenterDatabaseClientConfiguration.DataPath" : "<New DB Location>"}})`
+
+
+    Zamiast <New DB Location>, gdzie `&lt;New DB Location&gt;` jest nową ścieżką folderu.
 
 9.  Zaktualizuj klucz HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Center\DatabaseDataPath do nowej ścieżki folderu.
 
@@ -65,10 +62,12 @@ Zapoznaj się [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.o
 ## Zobacz też
 - [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/
+- home?forum=mata)
 
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

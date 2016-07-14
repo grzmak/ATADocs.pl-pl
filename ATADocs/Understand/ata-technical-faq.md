@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Często zadawane pytania dotyczące usługi ATA | Microsoft Advanced Threat Analytics
-description: Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami
-keywords:
+title: "Często zadawane pytania dotyczące usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: bb6bc2bf0d0df3112ecfdb33c8e9d6e41f183145
+
 
 ---
 
@@ -30,7 +24,7 @@ Ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA o
 
 
 ## Jak jest licencjonowana usługa ATA?
-Informacje o licencji zbiorczej można znaleźć w temacie [Jak kupić usługę Advanced Threat Analytics](https://www.microsoft.com/en-us/server-cloud/products/advanced-threat-analytics/Purchasing.aspx).
+Informacje o licencji zbiorczej można znaleźć w temacie [Jak kupić usługę Advanced Threat Analytics](https://www.microsoft.com/server-cloud/products/advanced-threat-analytics/Purchasing.aspx)
 
 
 ## Co zrobić, jeśli nie można uruchomić bramy usługi ATA?
@@ -54,7 +48,7 @@ Ruch zaszyfrowany (na przykład: LDAPS, IPSEC ESP) nie zostanie przeanalizowany.
 Usługa ATA obsługuje włączanie ochrony protokołu Kerberos, znanej także jako protokół FAST (Flexible Authentication Secure Tunneling), z wyjątkiem wykrywania nadmiernego przekazywania skrótu, które nie będzie działać.
 ## Ile bram usługi ATA potrzebuję?
 
-Po pierwsze zaleca się zastosowanie bram ATA Lightweight Gateway we wszystkich kontrolerach domeny, które mogą je obsługiwać. Aby to ustalić, zobacz temat [Ustalanie rozmiaru bramy ATA Lightweight Gateway](/advanced-threat-analytics/plan-design/ata-capacity-planning#ATA-Lightweight-Gateway-Sizing). 
+Po pierwsze zaleca się zastosowanie bram ATA Lightweight Gateway we wszystkich kontrolerach domeny, które mogą je obsługiwać. Aby to ustalić, zobacz temat [Ustalanie rozmiaru bramy ATA Lightweight Gateway](/advanced-threat-analytics/plan-design/ata-capacity-planning#ata-lightweight-gateway-sizing). 
 
 Jeśli wszystkie kontrolery domeny mogą być objęte przez bramy ATA Lightweight Gateway, nie ma potrzeby stosowania bram usługi ATA.
 
@@ -101,7 +95,7 @@ Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do ł�
 Usługa ATA ma dwukierunkową integrację z rozwiązaniem SIEM, zgodnie z poniższym opisem:
 
 1. Usługę ATA można skonfigurować do wysyłania alertu Syslog w razie podejrzanego działania do dowolnego serwera rozwiązania SIEM używającego formatu CEF.
-2. Usługę ATA można skonfigurować do odbierania alertu Syslog dla każdego zdarzenia systemu Windows o identyfikatorze 4776 z [tych rozwiązań SIEM](/advanced-threat-analytics/deploy-use/configure-event-collection#SIEM-support).
+2. Usługę ATA można skonfigurować do odbierania alertu Syslog dla każdego zdarzenia systemu Windows o identyfikatorze 4776 z [tych rozwiązań SIEM](/advanced-threat-analytics/deploy-use/configure-event-collection#siem-support).
 
 ## Czy usługa ATA monitoruje kontrolery domeny wizualizowane w rozwiązaniu IaaS?
 
@@ -143,10 +137,11 @@ Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i ko
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#Configuring-Windows-Event-Forwarding)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

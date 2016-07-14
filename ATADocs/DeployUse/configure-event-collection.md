@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Konfigurowanie zbierania zdarzeń | Usługa Microsoft Advanced Threat Analytics
-description: Opisuje opcje konfigurowania zbierania zdarzeń w usłudze ATA
-keywords:
+title: "Konfigurowanie zbierania zdarzeń | Usługa Microsoft Advanced Threat Analytics"
+description: "Opisuje opcje konfigurowania zbierania zdarzeń w usłudze ATA"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,21 +10,17 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
+ms.openlocfilehash: 17f30cbe478a868f3b6887bf48d8084934624191
+
 
 ---
 
 # Konfigurowanie zbierania zdarzeń
-W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje identyfikatora 4776 z dziennika zdarzeń systemu Windows. Może on zostać przekazany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez [skonfigurowanie funkcji przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding)..
+W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje identyfikatora 4776 z dziennika zdarzeń systemu Windows. Może on zostać przekazany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez [skonfigurowanie funkcji przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
 
 ## Zbieranie zdarzeń
 Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie ataków typu Pass-the-Hash przy użyciu zdarzenia 4776 systemu Windows. Może być ono odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
@@ -51,11 +45,11 @@ Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domen
 
 1.  W konfiguracji bramy usługi ATA włącz **Protokół UDP odbiornika programu Syslog**.
 
-    Ustaw adres IP nasłuchiwania zgodnie z opisem na obrazku poniżej. Domyślny port to 514.
+    Ustaw adres IP nasłuchiwania zgodnie z opisem na poniższym obrazie. Domyślny port to 514.
 
     ![Obraz włączania protokołu UDP odbiornika programu Syslog](media/ATA-enable-siem-forward-events.png)
 
-2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia 4776 systemu Windows na adres IP wybrany powyżej. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dla specyficznych wymagań formatowania dla każdego serwera SIEM.
+2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia 4776 systemu Windows na adres IP wybrany powyżej. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
 ### Obsługa rozwiązania SIEM
 Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
@@ -67,7 +61,7 @@ Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
 
 -   Znak separatora „\n” jest wymagany między wszystkimi polami.
 
--   Pola, w kolejności, są następujące:
+-   Pola wymienione w odpowiedniej kolejności:
 
     1.  Stała RsaSA (musi się pojawiać).
 
@@ -176,7 +170,8 @@ Message to oryginalny tekst zdarzenia ze zdarzenia systemu Windows
 
 Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 
->[!NOTE] Zbieranie zdarzeń systemu Windows przy użyciu modułu WinCollect nie jest obsługiwane.
+>[!NOTE] 
+> Zbieranie zdarzeń systemu Windows przy użyciu modułu WinCollect nie jest obsługiwane.
 
 ## Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
 Jeśli nie masz serwera SIEM, możesz skonfigurować kontrolery domeny do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 bezpośrednio do jednej z bram usługi ATA.
@@ -191,7 +186,7 @@ winrm quickconfig
 ```
 wecutil qc
 ```
-5.  Na każdym kontrolerze domeny w **Użytkownicy i komputery usługi Active Directory** przejdź do folderu **Wbudowane** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**.<br>
+5.  Na każdym kontrolerze domeny w **Użytkownicy i komputery usługi Active Directory** przejdź do folderu **Builtin (Wbudowane)** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**.<br>
 ![wef_ad_eventlogreaders](media/wef_ad_eventlogreaders.png)<br>
 Kliknij ją prawym przyciskiem myszy i wybierz polecenie **Właściwości**. Na karcie **Członkowie** dodaj konto komputera dla każdej bramy usługi ATA.
 ![Okienko wyskakujące czytnika dziennika zdarzeń wef_ad](media/wef_ad-event-log-reader-popup.png)
@@ -208,21 +203,21 @@ Ustaw **Protokół** na **HTTP** i **Port** na **5985**.<br>
     ![wef_http](media/wef_http.png)
 
 7.  [Opcjonalnie] Aby ustawić krótszy interwał sondowania, w bramie usługi ATA ustaw puls subskrypcji na 5 sekund w celu zwiększenia częstotliwości sondowania.
-    wecutil ss <CollectionName>/cm:custom
-    wecutil ss <CollectionName> /hi:5000
+    wecutil ss <CollectionName>/cm:custom wecutil ss <CollectionName> /hi:5000
 
 8. Na stronie konfiguracji bramy usługi ATA włącz **zbieranie przekazywania zdarzeń systemu Windows**.
 
 > [!NOTE]
-Po włączeniu tego ustawienia brama usługi ATA będzie w dzienniku zdarzeń przesłanych dalej szukać zdarzeń systemu Windows, które zostały przekazane do niej z kontrolerów domeny.
+> Po włączeniu tego ustawienia brama usługi ATA będzie przeszukiwać dziennik zdarzeń przesłanych dalej w celu znalezienia zdarzeń systemu Windows, które zostały przekazane do niej z kontrolerów domeny.
 
-Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/en-us/library/cc748890)
+Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
 
 ## Zobacz też
 - [Instalowanie usługi ATA](install-ata.md)
 - [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 

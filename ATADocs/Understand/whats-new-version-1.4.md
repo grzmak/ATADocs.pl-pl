@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Co nowego w wersji 1.4 usługi ATA | Microsoft Advanced Threat Analytics
-description: Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.4 usługi ATA
-keywords:
+title: "Co nowego w wersji 1.4 usługi ATA | Microsoft Advanced Threat Analytics"
+description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.4 usługi ATA"
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,16 +10,12 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: cbea47f9-34c1-42b6-ae9e-6a472b49e1a5
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
+ms.openlocfilehash: 3f7e2b32c43966cbb1adab1f88dd0e197313de65
+
 
 ---
 
@@ -64,7 +58,7 @@ Te informacje o wersji zawierają znane problemy w wersji 1.4 usługi Advanced T
 W tej wersji występują następujące znane problemy.
 
 ### Oprogramowanie do przechwytywania ruchu sieciowego
-Jedynym obsługiwanym oprogramowaniem do przechwytywania ruchu sieciowego, które można zainstalować na bramie usługi ATA, jest program [Microsoft Network Monitor 3.4](http://www.microsoft.com/en-us/download/details.aspx?id=4865). Nie należy instalować programu Microsoft Message Analyzer ani żadnego innego oprogramowania do przechwytywania ruchu sieciowego. Zainstalowanie innego oprogramowania spowoduje nieprawidłowe działanie bramy usługi ATA.
+Jedynym obsługiwanym oprogramowaniem do przechwytywania ruchu sieciowego, które można zainstalować na bramie usługi ATA, jest program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865). Nie należy instalować programu Microsoft Message Analyzer ani żadnego innego oprogramowania do przechwytywania ruchu sieciowego. Zainstalowanie innego oprogramowania spowoduje nieprawidłowe działanie bramy usługi ATA.
 
 ### Instalacja z pliku Zip
 Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio z pliku zip, ponieważ instalacja zakończy się niepowodzeniem.
@@ -104,8 +98,9 @@ Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji. Może 
 
 [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

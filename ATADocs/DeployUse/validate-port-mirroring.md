@@ -1,9 +1,7 @@
 ---
-# required metadata
-
-title: Weryfikowanie funkcji dublowania portów | Microsoft Advanced Threat Analytics
-description: Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowana.
-keywords:
+title: "Weryfikowanie funkcji dublowania portów | Microsoft Advanced Threat Analytics"
+description: "Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowana."
+keywords: 
 author: rkarlin
 manager: stevenpo
 ms.date: 04/28/2016
@@ -12,21 +10,18 @@ ms.prod: identity-ata
 ms.service: advanced-threat-analytics
 ms.technology: security
 ms.assetid: ebd41719-c91a-4fdd-bcab-2affa2a2cace
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
+translationtype: Human Translation
+ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
+ms.openlocfilehash: e1ce20c48323e1fca04211c2691f6dfb6fa57fe5
+
 
 ---
 
 # Weryfikowanie funkcji dublowania portów
-> [!NOTE] Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz [Wybieranie odpowiednich bram dla danego wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#Choosing-the-right-gateway-type-for-your-deployment)
+> [!NOTE] 
+> Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz [Wybieranie odpowiednich bram dla danego wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment)
  
 W poniższych krokach objaśniono proces weryfikowania, czy funkcja dublowania portów jest poprawnie skonfigurowana. Aby usługa ATA mogła działać prawidłowo, ruch do i z kontrolera domeny musi być widoczny dla bramy usługi ATA. Główne źródło danych używane przez usługę ATA to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Aby ruch sieciowy był widoczny dla usługi ATA, należy skonfigurować funkcję dublowania portów. Funkcja dublowania portów kopiuje ruch z jednego portu (portu źródłowego) do innego portu (portu docelowego).
 
@@ -204,11 +199,11 @@ Przykład sposobu uruchamiania skryptu:
 
     2.  Upewnij się, że tryb P-Mode jest włączony.
 
-    3.  Kliknij pozycję **Nowe przechwytywanie**..
+    3.  Kliknij pozycję **Nowe przechwytywanie**.
 
         ![Obraz przedstawiający tworzenie nowej karty przechwytywania](media/ATA-Port-Mirroring-Capture.jpg)
 
-3.  W oknie filtru wyświetlania wprowadź następujący filtr: **KerberosV5 LUB LDAP**, a następnie kliknij pozycję **Zastosuj**..
+3.  W oknie filtru wyświetlania wprowadź następujący filtr: **KerberosV5 LUB LDAP**, a następnie kliknij pozycję **Zastosuj**.
 
     ![Obraz przedstawiający stosowanie filtru KerberosV5 lub LDAP](media/ATA-Port-Mirroring-filter-settings.jpg)
 
@@ -225,9 +220,10 @@ Przykład sposobu uruchamiania skryptu:
 ## Zobacz też
 
 - [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=Jun16_HO4-->
 
 
