@@ -2064,9 +2064,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\DeployUse\setting-ata-alerts.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/74ae4533ecfc9e95c7f63690ae2d36df3b000cb9/ATADocs/DeployUse/setting-ata-alerts.md)
-* Current Handback File: [setting-ata-alerts.451097ef44392d0ea58f76d60633ef3a1b47ee2d.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/0631c57fb0a1b9d1f56229dbd0acc57c92f5a7dd/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/setting-ata-alerts.451097ef44392d0ea58f76d60633ef3a1b47ee2d.pl-pl.xlf)
-* Current Handback Datetime: 2016-07-02 16:26:37
+* Current Target File: [ATADocs\DeployUse\setting-ata-alerts.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/bacce7611d53c6fd634d9c5a983c5cfefc7daf7a/ATADocs/DeployUse/setting-ata-alerts.md)
+* Current Handback File: [setting-ata-alerts.451097ef44392d0ea58f76d60633ef3a1b47ee2d.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/21111d95408b84a2ad7eac79bc19376b832af946/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/setting-ata-alerts.451097ef44392d0ea58f76d60633ef3a1b47ee2d.pl-pl.xlf)
+* Current Handback Datetime: 2016-07-15 04:13:53
 * [Back to Top](#report-top)
 
 ##### <a name='5864070fe3ad5aedf1ff79d8386caba4b6a79adc120'></a> Source: [ATADocs\DeployUse\setting-syslog-email-server-settings.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/DeployUse/setting-syslog-email-server-settings.md)
@@ -4498,14 +4498,14 @@
 
 ##### <a name='4f72d56afb9f53157569789b68455dcf49016a69320'></a> Source: [ATADocs\Token\ATA.md](https://github.com/Microsoft/ATADocs-pr/blob/89d4e24a42285e2581007a747350037519b40287/ATADocs/Token/ATA.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [ATADocs\Token\ATA.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/74ae4533ecfc9e95c7f63690ae2d36df3b000cb9/ATADocs/Token/ATA.md)
+* Target File: [ATADocs\Token\ATA.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/bacce7611d53c6fd634d9c5a983c5cfefc7daf7a/ATADocs/Token/ATA.md)
 * Handoff File: [ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/d845612843c6bc90356dce09e37b16ebe96443ed/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf)
 * Handoff Datetime: 2016-06-27 09:23:08
 * Handoff Reason: Include
 * Archive File: [ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/13f00c721ab702924c62e435a076eb00686320b7/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/archive/ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf)
 * Archive Datetime: 2016-07-02 01:38:36
-* Handback File: [ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/0631c57fb0a1b9d1f56229dbd0acc57c92f5a7dd/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf)
-* Handback Datetime: 2016-07-02 16:26:37
+* Handback File: [ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/21111d95408b84a2ad7eac79bc19376b832af946/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ATA.802427cdba72b53cf44827c94a4e390a41905ad3.pl-pl.xlf)
+* Handback Datetime: 2016-07-15 04:13:53
 * [Back to Top](#report-top)
 
 ##### <a name='7841b8df8df43461ccedf07eac802a13b7934e86321'></a> Source: [ATADocs\Troubleshoot\docfx.json](https://github.com/Microsoft/ATADocs-pr/blob/9846208c1b977695ea4e4b0c4011013e577a33cc/ATADocs/Troubleshoot/docfx.json)
@@ -5718,9 +5718,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\Understand\ata-release-notes.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/74ae4533ecfc9e95c7f63690ae2d36df3b000cb9/ATADocs/Understand/ata-release-notes.md)
-* Current Handback File: [ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/0631c57fb0a1b9d1f56229dbd0acc57c92f5a7dd/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf)
-* Current Handback Datetime: 2016-07-02 16:26:37
+* Current Target File: [ATADocs\Understand\ata-release-notes.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/bacce7611d53c6fd634d9c5a983c5cfefc7daf7a/ATADocs/Understand/ata-release-notes.md)
+* Current Handback File: [ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/21111d95408b84a2ad7eac79bc19376b832af946/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/ata-release-notes.cd5912fb95129b60636ef4e9612fe0740d0ee2db.pl-pl.xlf)
+* Current Handback Datetime: 2016-07-15 04:13:53
 * [Back to Top](#report-top)
 
 ##### <a name='1121dd059d70dfcf900db1e71c62c58c1080ad06421'></a> Source: [ATADocs\Understand\ata-technical-faq.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/Understand/ata-technical-faq.md)
@@ -6922,14 +6922,14 @@
 
 ##### <a name='6a9c12c520e1a6051395d39739ef64d78310e920520'></a> Source: [ATADocs\Understand\TOC.md](https://github.com/Microsoft/ATADocs-pr/blob/5407cb4b98860b41b2c6f062cf47504f6d001b23/ATADocs/Understand/TOC.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [ATADocs\Understand\TOC.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/74ae4533ecfc9e95c7f63690ae2d36df3b000cb9/ATADocs/Understand/TOC.md)
+* Target File: [ATADocs\Understand\TOC.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/bacce7611d53c6fd634d9c5a983c5cfefc7daf7a/ATADocs/Understand/TOC.md)
 * Handoff File: [TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/d845612843c6bc90356dce09e37b16ebe96443ed/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf)
 * Handoff Datetime: 2016-06-27 09:23:08
 * Handoff Reason: Include
 * Archive File: [TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/13f00c721ab702924c62e435a076eb00686320b7/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/archive/TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf)
 * Archive Datetime: 2016-07-02 01:38:36
-* Handback File: [TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/0631c57fb0a1b9d1f56229dbd0acc57c92f5a7dd/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf)
-* Handback Datetime: 2016-07-02 16:26:37
+* Handback File: [TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/21111d95408b84a2ad7eac79bc19376b832af946/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/TOC.602662a4c6e9c6b6819467b610eac5b1ea8b47e7.pl-pl.xlf)
+* Handback Datetime: 2016-07-15 04:13:53
 * [Back to Top](#report-top)
 
 ##### <a name='58afbae96bce0075f0a58be648e82744ce279997521'></a> Source: [ATADocs\Understand\what-is-ata.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/Understand/what-is-ata.md)
