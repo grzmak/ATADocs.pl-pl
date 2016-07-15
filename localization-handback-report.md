@@ -1,29 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [ATADocs\Troubleshoot\troubleshooting-ata-known-errors.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/Troubleshoot/troubleshooting-ata-known-errors.md) | OutofSyncHandedBackSuccess | [Details](#cf2e1ab1fec4906e0bf2df8e0407b1951081e62f416)
 
 ## Item Details
-##### <a name='cf2e1ab1fec4906e0bf2df8e0407b1951081e62f416'></a> Source: [ATADocs\Troubleshoot\troubleshooting-ata-known-errors.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/Troubleshoot/troubleshooting-ata-known-errors.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf](https://github.com/Microsoft/EM.handoff/blob/0b0e07674fc4ed9a05d5f79bc290bd91e6cc7088/ol-handoff/Microsoft/ATADocs-pr.pl-pl/master/troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf)
-* Handoff Datetime: 2016-07-14 22:30:53
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\Troubleshoot\troubleshooting-ata-known-errors.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/4d0c1d821d22c8c01bb0986ffe2fbb8c4b99c79e/ATADocs/Troubleshoot/troubleshooting-ata-known-errors.md)
-* Current Handback File: [troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/6bcfb4da4cf60d6f458067be0eedab2254eb3908/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf)
-* Current Handback Datetime: 2016-07-15 07:03:24
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
