@@ -5658,9 +5658,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [ATADocs\Troubleshoot\troubleshooting-ata-known-errors.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/8a011a9f896c91543ef15cc8ffac0c2029c4e461/ATADocs/Troubleshoot/troubleshooting-ata-known-errors.md)
-* Current Handback File: [troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/8ff22e4d384f92679debf1473ec6357d214ceb25/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf)
-* Current Handback Datetime: 2016-07-14 18:39:53
+* Current Target File: [ATADocs\Troubleshoot\troubleshooting-ata-known-errors.md](https://github.com/Microsoft/ATADocs-pr.pl-pl/blob/4d0c1d821d22c8c01bb0986ffe2fbb8c4b99c79e/ATADocs/Troubleshoot/troubleshooting-ata-known-errors.md)
+* Current Handback File: [troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf](https://github.com/Microsoft/EM.handback/blob/6bcfb4da4cf60d6f458067be0eedab2254eb3908/ol-handback/Microsoft/ATADocs-pr.pl-pl/master/troubleshooting-ata-known-errors.09d3985d5b8120ee3069cc21c8701940c07afcce.pl-pl.xlf)
+* Current Handback Datetime: 2016-07-15 07:03:24
 * [Back to Top](#report-top)
 
 ##### <a name='d2d6549c731a90fb0cdd21ba910c1238d131bc43417'></a> Source: [ATADocs\Troubleshoot\troubleshooting-ata-using-ata-database.md](https://github.com/Microsoft/ATADocs-pr/blob/a5c7163bc7b1989672e587bfb4fa6a65cd4e3751/ATADocs/Troubleshoot/troubleshooting-ata-using-ata-database.md)
