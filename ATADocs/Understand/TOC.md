@@ -1,12 +1,17 @@
-# [Understand and Explore](what-is-ata.md)
-## [What is Microsoft Advanced Threat Analytics?](what-is-ata.md)
-## [ATA Release notes](ata-release-notes.md)
-### [What's new in ATA version 1.6](whats-new-version-1.6.md)
-#### [Update to ATA 1.6 - migration guide](ata-update-1.6-migration-guide.md)
-### [What's new in ATA version 1.5](whats-new-version-1.5.md)
-#### [Update to ATA 1.5 - migration guide](ata-update-1.5-migration-guide.md)
-### [What's new in ATA version 1.4](whats-new-version-1.4.md)
-## [Frequently asked questions](ata-technical-faq.md)
-# [Plan and Design](/advanced-threat-analytics/plan-design/ata-capacity-planning)
-# [Deploy and Use](/advanced-threat-analytics/deploy-use/install-ata)
-# [Troubleshoot](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
+# [Poznawanie i eksplorowanie](what-is-ata.md)
+## [Co to jest usługa Microsoft Advanced Threat Analytics?](what-is-ata.md)
+## [Informacje o wersji usługi ATA](ata-release-notes.md)
+### [Co nowego w wersji 1.6 usługi ATA](whats-new-version-1.6.md)
+#### [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
+### [Co nowego w wersji 1.5 usługi ATA](whats-new-version-1.5.md)
+#### [Aktualizacja usługi ATA do wersji 1.5 — przewodnik migracji](ata-update-1.5-migration-guide.md)
+### [Co nowego w wersji 1.4 usługi ATA](whats-new-version-1.4.md)
+## [Często zadawane pytania](ata-technical-faq.md)
+# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-capacity-planning)
+# [Wdrażanie i użytkowanie](/advanced-threat-analytics/deploy-use/install-ata)
+# [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
+
+
+<!--HONumber=Jun16_HO4-->
+
+

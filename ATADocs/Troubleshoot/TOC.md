@@ -1,8 +1,13 @@
-# [Understand and Explore](/advanced-threat-analytics/understand-explore/what-is-ata)
-# [Plan and Design](/advanced-threat-analytics/plan-design/ata-capacity-planning)
-# [Deploy and Use](/advanced-threat-analytics/deploy-use/install-ata)
-# [Troubleshoot](troubleshooting-ata-using-logs.md)
-## [Troubleshooting using known errors](troubleshooting-ata-known-errors.md)
-## [Troubleshoot using the logs](troubleshooting-ata-using-logs.md)
-## [Troubleshooting using the performance counters](troubleshooting-ata-using-perf-counters.md)
-## [Troubleshooting using the database](troubleshooting-ata-using-ata-database.md)
+# [Poznawanie i eksplorowanie](/advanced-threat-analytics/understand-explore/what-is-ata)
+# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-capacity-planning)
+# [Wdrażanie i użytkowanie](/advanced-threat-analytics/deploy-use/install-ata)
+# [Rozwiązywanie problemów](troubleshooting-ata-using-logs.md)
+## [Rozwiązywanie problemów przy użyciu znanych błędów](troubleshooting-ata-known-errors.md)
+## [Rozwiązywanie problemów przy użyciu dzienników](troubleshooting-ata-using-logs.md)
+## [Rozwiązywanie problemów przy użyciu liczników wydajności](troubleshooting-ata-using-perf-counters.md)
+## [Rozwiązywanie problemów przy użyciu bazy danych](troubleshooting-ata-using-ata-database.md)
+
+
+<!--HONumber=Jun16_HO4-->
+
+
