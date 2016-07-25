@@ -1,5 +1,5 @@
 ---
-title: "Co nowego w wersji 1.6 usługi ATA | Microsoft Advanced Threat Analytics"
+title: "Co nowego w wersji 1.6 usługi ATA | Microsoft ATA"
 description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.6 usługi ATA"
 keywords: 
 author: rkarlin
@@ -13,8 +13,8 @@ ms.assetid: a0d64aff-ca9e-4300-b3f8-eb3c8b8ae045
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: eee114a62e1854b5821c0ca4a6f276e9dcd121c8
+ms.sourcegitcommit: a5c7163bc7b1989672e587bfb4fa6a65cd4e3751
+ms.openlocfilehash: 6d153c67d8baa50f297b690970d8e5827f85a807
 
 
 ---
@@ -146,6 +146,6 @@ Procedura aktualizacji usługi ATA eksportuje dane (na wypadek, gdyby były potr
 [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO3-->
 
 

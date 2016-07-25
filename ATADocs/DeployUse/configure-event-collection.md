@@ -1,5 +1,5 @@
 ---
-title: "Konfigurowanie zbierania zdarzeń | Usługa Microsoft Advanced Threat Analytics"
+title: "Konfigurowanie zbierania zdarzeń | Microsoft ATA"
 description: "Opisuje opcje konfigurowania zbierania zdarzeń w usłudze ATA"
 keywords: 
 author: rkarlin
@@ -13,8 +13,8 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
-ms.openlocfilehash: 17f30cbe478a868f3b6887bf48d8084934624191
+ms.sourcegitcommit: a5c7163bc7b1989672e587bfb4fa6a65cd4e3751
+ms.openlocfilehash: 6876339e1303438da10a56e23d8eb831cc17050c
 
 
 ---
@@ -218,6 +218,6 @@ Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazyw
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Centrum kondycji usługi ATA | Microsoft Advanced Threat Analytics"
+title: "Centrum kondycji usługi ATA | Microsoft ATA"
 description: "Korzystając z centrum kondycji usługi ATA, można sprawdzić, czy usługa ATA działa prawidłowo, i otrzymywać alerty o potencjalnych problemach."
 keywords: 
 author: rkarlin
@@ -13,8 +13,8 @@ ms.assetid: d6c783b2-46c5-4211-b21a-d6b17f08d03d
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: b38b96f0b2e6061e97d8b46163a04d2310709491
+ms.sourcegitcommit: c512fd20f913c53ac936f7de288eb024d91cf9f1
+ms.openlocfilehash: 87c92ce4ca7834df7483071a18f78ca6c6bfccd0
 
 
 ---
@@ -41,11 +41,10 @@ Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pa
 ## Zobacz też
 - [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/
-- home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO3-->
 
 
