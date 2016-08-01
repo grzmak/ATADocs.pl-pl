@@ -3,26 +3,43 @@ title: "Planowanie wdrożenia usługi ATA | Microsoft ATA"
 description: "Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci"
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: a5c7163bc7b1989672e587bfb4fa6a65cd4e3751
-ms.openlocfilehash: a43184e0efa1de110f5c287c6079e80e1a9dd3de
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: e0174ecac39b2a8cd469ed698853c447a85e4251
 
 
 ---
 
 # Planowanie pojemności usługi ATA
-Ten temat ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci, ile będzie potrzebnych bram usługi ATA i bram ATA Lightweight Gateway oraz jaka pojemność serwera będzie wymagana dla centrum usługi ATA i bram usługi ATA.
+Ten temat ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do monitorowania sieci, ile będzie potrzebnych bram usługi ATA i/lub bram ATA Lightweight Gateway oraz jaka pojemność serwera będzie wymagana dla centrum usługi ATA i bram usługi ATA.
 
-## Ustalanie rozmiaru centrum usługi ATA
+##Korzystanie z narzędzia do określania rozmiaru
+Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia usługi ATA jest użycie [narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool). Uruchom narzędzie do określania rozmiaru usługi ATA i określ wymaganą pojemność usługi ATA za pomocą następujących pól wyników w pliku programu Excel:
+
+- Procesor CPU i pamięć centrum usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w tabeli centrum usługi ATA w pliku wyników do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
+
+- Magazyn centrum usługi ATA: dopasuj wartość pola **Średnia liczba pakietów/s** w tabeli centrum usługi ATA w pliku wyników do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
+- Brama usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w tabeli bramy usługi ATA w pliku wyników do wartości pola **PAKIETY/S** w [tabeli bramy usługi ATA](#ata-gateway-sizing) lub [tabeli ATA Lightweight Gateway](#ata-lightweight-gateway-sizing) w zależności od [wybranego typu bramy](#choosing-the-right-gateway-type-for-your-deployment).
+
+
+![Przykładowe narzędzie do planowania pojemności](media/capacity tool.png)
+
+
+
+Jeśli z jakiegoś powodu nie możesz użyć narzędzia do określania rozmiaru usługi ATA, musisz ręcznie zebrać informacje licznika pakietów na sekundę ze wszystkich kontrolerów domeny z okresu 24 godzin z bardzo krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
+Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
+
+
+
+### Ustalanie rozmiaru centrum usługi ATA
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni. Wymagana ilość miejsca na dysku dla bazy danych usługi ATA na każdy kontroler domeny jest zdefiniowana poniżej. Jeśli istnieje wiele kontrolerów domeny, zsumuj ilość miejsca na dysku wymaganego przez każdy kontroler domeny, aby obliczyć łączną ilość miejsca wymaganego dla bazy danych usługi ATA.
 > [!NOTE] 
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
@@ -74,7 +91,7 @@ Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny po
 - Główne centra danych (z kontrolerami domeny obsługującymi ponad 10 000 pakietów na sekundę)
 
 
-## Ustalanie rozmiaru bramy ATA Lightweight Gateway
+### Ustalanie rozmiaru bramy ATA Lightweight Gateway
 
 Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
 > [!NOTE] 
@@ -95,7 +112,7 @@ Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontroler
 > Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
 
 
-## Ustalanie rozmiaru bramy usługi ATA
+### Ustalanie rozmiaru bramy usługi ATA
 
 Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące informacje.
 
@@ -184,6 +201,6 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Jul16_HO4-->
 
 

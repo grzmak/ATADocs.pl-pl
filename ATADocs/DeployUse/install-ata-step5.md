@@ -3,18 +3,18 @@ title: "Instalacja usługi ATA — krok 5 | Microsoft ATA"
 description: "W kroku 5 procesu instalowania usługi ATA znajdują się informacje ułatwiające skonfigurowanie ustawień bramy usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: a5c7163bc7b1989672e587bfb4fa6a65cd4e3751
-ms.openlocfilehash: 3e9f68e9868dc9aaf20fe9d1c4fe2b8bdd685291
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 3580e748d21db73b6fa8384d84e03b9954b823f8
 
 
 ---
@@ -36,10 +36,11 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
   - **Opis**: <br>Wprowadź opis bramy usługi ATA (opcjonalnie).
   - **Kontrolery domeny po dublowaniu portów (FQDN)** (pozycja wymagana w przypadku bramy usługi ATA; nie można jej ustawić w przypadku bramy ATA Lightweight Gateway): <br>Wpisz pełną nazwę FQDN kontrolera domeny, a następnie kliknij znak plus, aby dodać go do listy. Na przykład **dc01.contoso.com**.<br /><br />![Obraz z przykładową nazwą FQDN](media/ATAGWDomainController.png)
 
-Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery domeny**: — Wszystkie kontrolery domeny, których ruch jest monitorowany za pośrednictwem funkcji dublowania portów przez bramę usługi ATA, muszą znajdować się na liście **Kontrolery domeny**. Jeśli kontroler domeny nie znajduje się na liście **Kontrolery domeny**, wykrywanie podejrzanych działań może nie funkcjonować zgodnie z oczekiwaniami.
-— Co najmniej jeden kontroler domeny znajdujący się na liście musi być serwerem wykazu globalnego. Umożliwi to rozpoznawanie przez usługę ATA obiektów użytkowników i komputerów znajdujących się w innych domenach w lesie.
+Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery domeny**:
 
- - **Karty sieciowe przechwytywania** (wymagane):<br>
+- Wszystkie kontrolery domeny, których ruch jest monitorowany za pośrednictwem funkcji dublowania portów przez bramę usługi ATA, muszą znajdować się na liście **Kontrolery domeny**. Jeśli kontroler domeny nie znajduje się na liście **Kontrolery domeny**, wykrywanie podejrzanych działań może nie funkcjonować zgodnie z oczekiwaniami.
+- Co najmniej jeden kontroler domeny znajdujący się na liście musi być serwerem wykazu globalnego. Umożliwi to rozpoznawanie przez usługę ATA obiektów użytkowników i komputerów znajdujących się w innych domenach w lesie.
+- **Karty sieciowe przechwytywania** (wymagane):<br>
      - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. Będą one odbierać zdublowany ruch kontrolera domeny.
      - W przypadku bramy ATA Lightweight Gateway powinny to być wszystkie karty sieciowe, które są wykorzystywane do komunikacji z innymi komputerami w organizacji.
 
@@ -92,6 +93,6 @@ Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Jul16_HO4-->
 
 
