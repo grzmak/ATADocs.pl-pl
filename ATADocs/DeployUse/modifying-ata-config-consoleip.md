@@ -1,20 +1,20 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA — adres IP konsoli usługi ATA | Usługa Microsoft Advanced Threat Analytics"
+title: "Zmienianie konfiguracji usługi ATA — adres IP konsoli usługi ATA | Microsoft ATA"
 description: "Opisuje sposób zmiany adresu IP konsoli usługi ATA, używanego do tworzenia skrótów do konsoli usługi ATA w bramach usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 50118465-df34-4e04-b0cc-48808b6a96b1
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: ee775e66de1a56b5270b0d32c7d5ca33d4d7980c
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 03062652dd14183629ab1234f2d151931998c108
 
 
 ---
@@ -83,6 +83,6 @@ Jeśli musisz zmienić adres IP używany przez usługi IIS dla konsoli usługi A
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

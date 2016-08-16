@@ -1,20 +1,20 @@
 ---
-title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft Advanced Threat Analytics"
+title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft ATA"
 description: "Informacje dotyczące usługi Microsoft Advanced Threat Analytics (ATA) i wykrywanych przez nią podejrzanych działań"
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 283e7b4e-996a-4491-b7f6-ff06e73790d2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: 4831e7a773b69a87bbcd505a8116230f14611250
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 074b6df258f7fd56bbd9a16f94fa5b2cde8869cb
 
 
 ---
@@ -129,6 +129,6 @@ Osoby atakujące mogą próbować kontrolować sieć, zdalnie uruchamiając kod 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

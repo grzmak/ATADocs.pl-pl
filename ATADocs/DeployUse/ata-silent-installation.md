@@ -1,20 +1,20 @@
 ---
-title: "Instalowanie usługi ATA w trybie dyskretnym | Usługa Microsoft Advanced Threat Analytics"
+title: "Instalacja dyskretna usługi ATA | Microsoft ATA"
 description: "Temat opisuje sposób instalacji usługi ATA w trybie dyskretnym."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d6e7d7bef97bfc4ffde07959dd9256f0319d685f
-ms.openlocfilehash: 2e51bc9cac43ff90000ca74cccd158e119cc6ec0
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: dce4cbaf894d383851a7039b6457a98c1d5ba5d4
 
 
 ---
@@ -217,6 +217,6 @@ Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

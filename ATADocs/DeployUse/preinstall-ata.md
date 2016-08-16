@@ -1,20 +1,20 @@
 ---
-title: "Przed zainstalowaniem usługi ATA — wszystkie czynności | Microsoft Advanced Threat Analytics"
+title: "Przed zainstalowaniem usługi ATA — wszystkie czynności | Microsoft ATA"
 description: "Zawiera szczegółowe omówienie niezbędnych czynności, które należy wykonać przed wdrożeniem usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 3715b69e-e631-449b-9aed-144d0f9bcee7
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: b4fc459fbab3d63de12efebb125762c18946bbdc
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 1a6efd51647e267b4eb88af1b4815e5ee416d598
 
 
 ---
@@ -38,6 +38,6 @@ Przed zainstalowaniem usługi ATA należy wykonać następujące czynności:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

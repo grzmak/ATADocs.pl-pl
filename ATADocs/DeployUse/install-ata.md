@@ -1,20 +1,20 @@
 ---
-title: "Instalowanie usługi ATA — Całość | Microsoft Advanced Threat Analytics"
+title: "Instalacja usługi ATA — zakończenie | Microsoft ATA"
 description: "Zawiera opis kroków niezbędnych do wdrożenia, skonfigurowania i uruchomienia usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 3715b69e-e631-449b-9aed-144d0f9bcee7
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: 697da5ddc701c353ab1cc1b39c15939af9964497
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 9448e5cf619e30f7ebae135e45c7a2fbab58332d
 
 
 ---
@@ -41,14 +41,13 @@ Aby skonfigurować usługę ATA, wykonaj następujące kroki:
 
 ## Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/
-- home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

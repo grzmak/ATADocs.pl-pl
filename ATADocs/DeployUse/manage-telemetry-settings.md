@@ -1,20 +1,20 @@
 ---
-title: "Zarządzanie ustawieniami telemetrii | Microsoft Advanced Threat Analytics"
+title: "Zarządzanie ustawieniami telemetrii | Microsoft ATA"
 description: "Zawiera opis danych zbieranych przez usługę ATA i kroki służące do wyłączania zbierania danych."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: c6b3196f6093b909e8d97f9a9ac230e35807eb72
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 7e849e9d902873cec7140a14b6f0709d3ef9ddd1
 
 
 ---
@@ -76,6 +76,6 @@ Aby zatrzymać zbieranie i wysyłanie danych telemetrycznych do firmy Microsoft,
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

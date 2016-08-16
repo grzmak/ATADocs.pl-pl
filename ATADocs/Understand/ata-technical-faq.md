@@ -1,20 +1,20 @@
 ---
-title: "Często zadawane pytania dotyczące usługi ATA | Microsoft Advanced Threat Analytics"
+title: "Często zadawane pytania dotyczące usługi ATA | Microsoft ATA"
 description: "Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami"
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: bb6bc2bf0d0df3112ecfdb33c8e9d6e41f183145
+ms.sourcegitcommit: 09de79e1f8fee6b27c7ba403df1af4431bd099a9
+ms.openlocfilehash: 51440757c89130f8454e9c2b1abe7182f2b7eb41
 
 
 ---
@@ -24,7 +24,7 @@ Ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA o
 
 
 ## Jak jest licencjonowana usługa ATA?
-Informacje o licencji zbiorczej można znaleźć w temacie [Jak kupić usługę Advanced Threat Analytics](https://www.microsoft.com/server-cloud/products/advanced-threat-analytics/Purchasing.aspx)
+Informacje o licencji zbiorczej można znaleźć w temacie [Jak kupić usługę Advanced Threat Analytics](https://www.microsoft.com/cloud-platform/advanced-threat-analytics-pricing)
 
 
 ## Co zrobić, jeśli nie można uruchomić bramy usługi ATA?
@@ -142,6 +142,6 @@ Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i ko
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO2-->
 
 

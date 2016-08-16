@@ -1,20 +1,20 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA — certyfikat usług IIS | Microsoft Advanced Threat Analytics"
+title: "Zmienianie konfiguracji usługi ATA — certyfikat usług IIS | Microsoft ATA"
 description: "Opis sposobu zmieniania certyfikatu używanego przez usługi IIS dla centrum usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: e58a0390-57ef-4c68-a987-2e75e5f3d6b3
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: 07888a46e26a7f87dc3b6424d97aba0813b43d02
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 18d3dfdc2262765d71d82f395273e2972118cbfb
 
 
 ---
@@ -62,6 +62,6 @@ Jeśli musisz zmienić certyfikat używany przez usługi IIS dla centrum usługi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

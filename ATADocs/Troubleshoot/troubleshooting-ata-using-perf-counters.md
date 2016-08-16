@@ -1,20 +1,20 @@
 ---
-title: "Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności | Microsoft Advanced Threat Analytics"
+title: "Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności | Microsoft ATA"
 description: "W tym temacie opisano sposób rozwiązywania problemów z usługą ATA przy użyciu liczników wydajności."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: 21d87591c9c791aa431c273479921e1c11825e09
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 4b4ff22df77b904a654b57aca824c154ea935560
 
 
 ---
@@ -103,6 +103,6 @@ Oto lista głównych liczników systemu operacyjnego, na które należy zwróci�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 

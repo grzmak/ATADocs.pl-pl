@@ -1,20 +1,20 @@
 ---
-title: "Instalowanie usługi ATA — Krok 3 | Microsoft Advanced Threat Analytics"
+title: "Instalacja usługi ATA — krok 3 | Microsoft ATA"
 description: "W trzecim kroku procesu instalowania usługi ATA znajdują się informacje ułatwiające pobranie pakietu instalacyjnego bramy usługi ATA."
 keywords: 
 author: rkarlin
-manager: stevenpo
+manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
-ms.prod: identity-ata
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology: security
+ms.technology: 
 ms.assetid: 7fb024e6-297a-4ad9-b962-481bb75a0ba3
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 8d1dedaf86031e8585cca23241aead58f7f3db4e
-ms.openlocfilehash: 0209d8352704fef6caf059d152d6bde6127d3d55
+ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
+ms.openlocfilehash: 19c1f0f56264952fc8156040ce717c049ce32dc0
 
 
 ---
@@ -58,6 +58,6 @@ Plik zip zawiera następujące składniki:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO4-->
 
 
