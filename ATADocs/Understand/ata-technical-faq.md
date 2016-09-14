@@ -4,7 +4,7 @@ description: "Zawiera listę często zadawanych pytań dotyczących usługi ATA 
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,12 @@ ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 09de79e1f8fee6b27c7ba403df1af4431bd099a9
-ms.openlocfilehash: 51440757c89130f8454e9c2b1abe7182f2b7eb41
+ms.sourcegitcommit: b8ad2f343b8397184cd860803f06b0d59c492f5a
+ms.openlocfilehash: 96b3ce171ca07bf44163d49b50377fccd6472a08
 
 
 ---
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 # Usługa ATA — często zadawane pytania
 Ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA oraz wskazówki i odpowiedzi.
@@ -39,23 +40,26 @@ Można symulować podejrzane działania, aby wykonać pełny test, wykonując je
 Musi on zostać zdalnie uruchomiony na monitorowanym kontrolerze domeny, a nie z bramy usługi ATA.
 
 ## Jak sprawdzić funkcję przekazywania zdarzeń systemu Windows?
-Można uruchomić następujące polecenie z wiersza polecenia w katalogu **\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**:
+Można umieścić w pliku następujący kod, a następnie uruchomić go z wiersza polecenia w katalogu **\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** w następujący sposób:
 
-        mongo ATA --eval "printjson(db.getCollectionNames())" | find /C "NtlmEvents"`
+mongo.exe ATA nazwa_pliku
+
+        db.getCollectionNames().forEach(function(collection) {
+        if (collection.substring(0,10)=="NtlmEvent_") {
+                if (db[collection].count() > 0) {
+                                  print ("Found "+db[collection].count()+" NTLM events") 
+                                }
+                }
+        });
+
 ## Czy usługa ATA współpracuje z ruchem zaszyfrowanym?
-Ruch zaszyfrowany (na przykład: LDAPS, IPSEC ESP) nie zostanie przeanalizowany.
+Usługa ATA bazuje na analizowaniu wielu protokołów sieciowych, a także zdarzeń zebranych z rozwiązania SIEM lub za pośrednictwem przesyłania dalej zdarzeń systemu Windows, tak aby mimo braku analizy ruchu szyfrowanego (na przykład LDAPS i IPSEC ESP) usługa ATA mogła nadal działać i nie wpływało to na większość wykryć.
+
 ## Czy usługa ATA działa z ochroną protokołu Kerberos?
 Usługa ATA obsługuje włączanie ochrony protokołu Kerberos, znanej także jako protokół FAST (Flexible Authentication Secure Tunneling), z wyjątkiem wykrywania nadmiernego przekazywania skrótu, które nie będzie działać.
 ## Ile bram usługi ATA potrzebuję?
 
-Po pierwsze zaleca się zastosowanie bram ATA Lightweight Gateway we wszystkich kontrolerach domeny, które mogą je obsługiwać. Aby to ustalić, zobacz temat [Ustalanie rozmiaru bramy ATA Lightweight Gateway](/advanced-threat-analytics/plan-design/ata-capacity-planning#ata-lightweight-gateway-sizing). 
-
-Jeśli wszystkie kontrolery domeny mogą być objęte przez bramy ATA Lightweight Gateway, nie ma potrzeby stosowania bram usługi ATA.
-
-W przypadku kontrolerów domeny, które nie mogą być objęte przez bramę ATA Lightweight Gateway, należy rozważyć poniższe dane podczas podejmowania decyzji o liczbie wymaganych bram usługi ATA:
-
- - Całkowita ilość ruchu generowanego przez kontrolery domeny oraz architektura sieci (w celu skonfigurowania funkcji dublowania portów). Aby uzyskać więcej informacji na temat sposobu ustalania ilości ruchu generowanego przez kontrolery domeny, zobacz [Szacowanie ruchu kontrolera domeny](/advanced-threat-analytics/plan-design/ata-capacity-planning#Domain-controller-traffic-estimation).
- - Ograniczenia operacyjne dublowania portów również określają, ile bram usługi ATA potrzeba do obsługi kontrolerów domeny, na przykład: na przełącznik, na centrum danych, na region — każde środowisko ma swoje własne kryteria. 
+Liczba bram usługi ATA zależy od układu sieci, ilości pakietów i ilości zdarzeń przechwytywanych przez usługę ATA. Aby określić dokładną liczbę, zobacz [Ustalanie rozmiaru bramy ATA Lightweight Gateway](/advanced-threat-analytics/plan-design/ata-capacity-planning#ata-lightweight-gateway-sizing). 
 
 ## Ile miejsca do magazynowania potrzebuje usługa ATA?
 Na każdy pełny dzień przy średniej liczbie 1000 pakietów/sekundę potrzeba 0,3 GB przestrzeni dyskowej.<br /><br />Aby uzyskać więcej informacji o ustalaniu rozmiaru centrum usługi ATA, zobacz [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning).
@@ -79,11 +83,10 @@ Jeśli wirtualny kontroler domeny nie może być objęty przez bramę ATA Lightw
 Istnieją dwa elementy, których kopię zapasową należy wykonać:
 
 -   Ruch i zdarzenia zapisane przez usługę ATA, których kopię zapasową można wykonać przy użyciu dowolnej obsługiwanej procedury tworzenia kopii zapasowej. Aby uzyskać więcej informacji, zobacz [Zarządzanie bazą danych usługi ATA](/advanced-threat-analytics/deploy-use/ata-database-management). 
--   Konfiguracja usługi ATA, która jest przechowywana w bazie danych i kopiowana automatycznie do kopii zapasowej co godzinę. 
-
+-   Konfiguracja usługi ATA. Jest przechowywana w bazie danych, a jej kopia zapasowa jest tworzona automatycznie co godzinę w folderze **Backup** w lokalizacji wdrożenia centrum usługi ATA.  Zobacz artykuł [Zarządzanie bazą danych usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/ata-database-management), aby uzyskać więcej informacji.
 ## Co usługa ATA może wykrywać?
 Usługa ATA wykrywa znane złośliwe ataki oraz techniki, problemy z zabezpieczeniami i ryzyka.
-Pełną listę zagrożeń wykrywanych przez usługę ATA można znaleźć w temacie [Co to jest usługa Microsoft Advanced Threat Analytics?](what-is-ata.md)
+Pełna lista zagrożeń wykrywanych przez usługę ATA znajduje się w artykule [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md).
 
 ## Jakiego rodzaju magazynu potrzebuje usługa ATA?
 Firma Microsoft zaleca użycie szybkiego magazynu (nie zaleca się stosowania dysków o prędkości 7200 obr./min) o małych opóźnieniach dostępu do dysku (mniej niż 10 ms). Konfiguracja RAID powinna obsługiwać wysokie obciążenia podczas zapisu danych (nie zaleca się stosowania konfiguracji RAID-5/6 i ich pochodnych).
@@ -95,9 +98,9 @@ Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do ł�
 Usługa ATA ma dwukierunkową integrację z rozwiązaniem SIEM, zgodnie z poniższym opisem:
 
 1. Usługę ATA można skonfigurować do wysyłania alertu Syslog w razie podejrzanego działania do dowolnego serwera rozwiązania SIEM używającego formatu CEF.
-2. Usługę ATA można skonfigurować do odbierania alertu Syslog dla każdego zdarzenia systemu Windows o identyfikatorze 4776 z [tych rozwiązań SIEM](/advanced-threat-analytics/deploy-use/configure-event-collection#siem-support).
+2. Usługę ATA można skonfigurować do odbierania komunikatów Syslog dotyczących zdarzeń systemu Windows o identyfikatorze 4776 z [tych rozwiązań SIEM](/advanced-threat-analytics/deploy-use/configure-event-collection#siem-support).
 
-## Czy usługa ATA monitoruje kontrolery domeny wizualizowane w rozwiązaniu IaaS?
+## Czy usługa ATA monitoruje kontrolery domeny zwirtualizowane w rozwiązaniu IaaS?
 
 Tak, możesz użyć bramy ATA Lightweight Gateway do monitorowania kontrolerów domeny w dowolnym rozwiązaniu IaaS.
 
@@ -126,8 +129,7 @@ Nie. Usługa ATA monitoruje wszystkie urządzenia w sieci wysyłające żądania
 Tak. Kont komputerów (a także innych jednostek) można używać do podejmowania złośliwych działań, dlatego usługa ATA monitoruje zachowanie wszystkich kont komputerów i wszystkie inne jednostki w środowisku.
 
 ## Czy usługa ATA może obsługiwać wiele domen i wiele lasów?
-Gdy usługa Microsoft Advanced Threat Analytics stanie się ogólnie dostępna, będzie obsługiwać wiele domen w obrębie tego samego lasu. Sam las jest rzeczywistą „granicą zabezpieczeń”, dlatego zapewnienie obsługi wielu domen umożliwi naszym klientom pełne pokrycie środowisk przy użyciu usługi ATA.
-
+Usługa Microsoft Advanced Threat Analytics obsługuje środowiska wielu domen w obrębie granicy pojedynczego lasu. Większa liczba lasów wymaga wdrożenia usługi ATA w każdym lesie.
 ## Czy można przeglądać informacje dotyczące ogólnej kondycji wdrożenia?
 Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i konkretne problemy związane z konfiguracją, łącznością itp. oraz otrzymywać alerty w przypadku wystąpienia problemów tego typu.
 
@@ -142,6 +144,6 @@ Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i ko
 
 
 
-<!--HONumber=Aug16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

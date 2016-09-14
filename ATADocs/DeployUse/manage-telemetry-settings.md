@@ -4,7 +4,7 @@ description: "Zawiera opis danych zbieranych przez usługę ATA i kroki służą
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,15 @@ ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 7e849e9d902873cec7140a14b6f0709d3ef9ddd1
+ms.sourcegitcommit: 3a7e375da4acd5546347310c5965394b2addfe63
+ms.openlocfilehash: 0c6b8589fffe24298d0caf2cf2eb5e7e817e4da2
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Zarządzanie ustawieniami telemetrii
 Usługa Advanced Threat Analytics (ATA) zbiera anonimowe dane telemetryczne o usłudze ATA i przesyła jest za pośrednictwem połączenia HTTPS do serwerów firmy Microsoft.  Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA.
@@ -63,6 +67,21 @@ Zbierane są następujące anonimowe dane:
 
     -   Dostarczone dane wejściowe
 
+- Problemy dotyczące kondycji — następujące dane poddane anonimizacji są gromadzone dla każdego problemu związanego z kondycją:
+
+    (Nazwy komputerów, nazwy użytkowników i adresy IP nie są zbierane).
+
+    -   Typ problemu dotyczącego kondycji
+
+    -   Identyfikator problemu dotyczącego kondycji
+
+    -   Stan
+
+    -   Godzina rozpoczęcia i zakończenia
+
+- Adresy URL konsoli ATA — adresy URL używane w konsoli ATA tj. odwiedzone strony w konsoli ATA.
+
+
 ### Wyłączanie zbierania danych
 Aby zatrzymać zbieranie i wysyłanie danych telemetrycznych do firmy Microsoft, wykonaj poniższe kroki:
 
@@ -76,6 +95,6 @@ Aby zatrzymać zbieranie i wysyłanie danych telemetrycznych do firmy Microsoft,
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

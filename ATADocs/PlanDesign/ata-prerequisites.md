@@ -4,7 +4,7 @@ description: "Zawiera opis wymagań, które należy spełnić w celu pomyślnego
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,15 @@ ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 87891f6ad683ed9536d3d3f27449feac9bd9dee1
+ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
+ms.openlocfilehash: a3fcf3b2ba7f90f2329d86ab9e8d19619cc7e28f
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Wymagania wstępne usługi ATA
 W tym artykule opisano wymagania, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku.
@@ -27,6 +31,8 @@ W tym artykule opisano wymagania, które należy spełnić w celu pomyślnego wd
 
 
 Usługa ATA składa się z centrum usługi ATA, bramy usługi ATA i/lub bramy ATA Lightweight Gateway. Aby uzyskać więcej informacji o składnikach usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
+
+System ATA działa na granicy lasu usługi Active Directory i obsługuje poziom funkcjonalności lasu (FFL) systemu Windows 2003 lub nowszego.
 
 
 [Przed rozpoczęciem](#before-you-start): w tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
@@ -50,11 +56,10 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
     > [!NOTE]
     > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
 
--   Utwórz listę wszystkich podsieci używanych w ramach sieci dla połączeń VPN i Wi-Fi, w których przypisania adresów IP między urządzeniami ulegają zmianie w bardzo krótkim czasie (liczonym w sekundach lub minutach).  Warto również zidentyfikować te podsieci o krótkim okresie dzierżawy, aby umożliwić zmniejszenie okresu istnienia pamięci podręcznej przez usługę ATA w celu dostosowania do szybkiego ponownego przypisywania adresów IP między urządzeniami. Aby uzyskać informacje na temat konfigurowania podsieci dzierżawy krótkoterminowej, zobacz [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
--   Upewnij się, że w bramie usługi ATA lub centrum usługi ATA nie są zainstalowane programy Message Analyzer i Wire Shark.
--    Opcjonalnie: użytkownik powinien mieć uprawnienia tylko do odczytu do kontenera usuniętych obiektów. Umożliwi to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz sekcję **Zmienianie uprawnień do kontenera usuniętych obiektów** w temacie [Wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
+-   Upewnij się, że analizator komunikatów i program WireShark nie są zainstalowane w bramie usługi ATA.
+-    Zalecane: użytkownik powinien mieć uprawnienia dostępu tylko do odczytu do kontenera usuniętych obiektów. Umożliwi to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz sekcję **Zmienianie uprawnień do kontenera usuniętych obiektów** w temacie [Wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
 
--   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto zostanie skonfigurowane jako użytkownik usługi ATA wystawiony jako przynęta. Do skonfigurowania użytkownika wystawionego jako przynęta potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika.
+-   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto zostanie skonfigurowane jako użytkownik usługi ATA wystawiony jako przynęta. Do skonfigurowania użytkownika wystawionego jako przynęta potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [Praca z ustawieniami wykrywania usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings).
 
 -   Opcjonalnie: oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie ataków typu Pass-the-Hash przy użyciu zdarzenia 4776 systemu Windows. Może być ono odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
@@ -62,13 +67,16 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
 ## Wymagania centrum usługi ATA
 Ta sekcja zawiera listę wymagań centrum usługi ATA.
 ### Ogólne
-Centrum usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2. Centrum usługi ATA można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
+Centrum usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016. Centrum usługi ATA można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
 
-Przed zainstalowaniem centrum usługi ATA potwierdź, że następująca aktualizacja została zainstalowana: [KB2919355](https://support.microsoft.com/kb/2919355/).
+Przed zainstalowaniem centrum usługi ATA w systemie Windows 2012 R2 upewnij się, że została zainstalowana następująca aktualizacja: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
 Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
 
 Instalacja centrum usługi ATA jako maszyny wirtualnej jest obsługiwana. 
+
+>[!NOTE] 
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
 Jeśli centrum usługi ATA jest uruchamiane jako maszyna wirtualna, należy wyłączyć serwer przed utworzeniem nowego punktu kontrolnego w celu uniknięcia potencjalnego uszkodzenia bazy danych.
 ### Specyfikacje serwera
@@ -76,8 +84,6 @@ Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączeni
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
 Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje o wymaganych specyfikacjach serwera. Aby uzyskać więcej szczegółów, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
->[!NOTE] 
-> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
 ### Synchronizacja czasu
 Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
@@ -85,11 +91,11 @@ Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy us�
 
 ### Karty sieciowe
 Musisz mieć następujące elementy:
--   Co najmniej jedną kartę sieciową
+-   Co najmniej jedna karta sieciowa (w przypadku korzystania z serwera fizycznego w środowisku sieci VLAN zaleca się używanie dwóch kart sieciowych)
 
 -   Dwa adresy IP (zalecane, ale niewymagane)
 
-Komunikacja między centrum usługi ATA i bramą usługi ATA jest szyfrowana przy użyciu protokołu SSL na porcie 443. Dodatkowo konsola usługi ATA działa w oparciu o usługi IIS i jest zabezpieczona przy użyciu protokołu SSL na porcie 443. Zalecane są **dwa adresy IP**. Centrum usługi ATA powiąże port 443 z pierwszym adresem IP, a usługi IIS powiążą port 443 z drugim adresem IP.
+Komunikacja między centrum usługi ATA i bramą usługi ATA jest szyfrowana przy użyciu protokołu SSL na porcie 443. Ponadto konsola usługi ATA również używa protokołu SSL na porcie 443. Zalecane są **dwa adresy IP**. Centrum usługi ATA powiąże port 443 z pierwszym adresem IP, a konsola usługi ATA powiąże port 443 z drugim adresem IP.
 
 > [!NOTE]
 > Możliwe jest użycie pojedynczego adresu IP z dwoma różnymi portami, ale zaleca się użycie dwóch adresów IP.
@@ -97,7 +103,7 @@ Komunikacja między centrum usługi ATA i bramą usługi ATA jest szyfrowana prz
 ### Porty
 W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby centrum usługi ATA działało poprawnie.
 
-W tej tabeli adres IP 1 jest powiązany z centrum usługi ATA, a adres IP 2 jest powiązany z usługami IIS dla konsoli usługi ATA:
+W tej tabeli adres IP 1 jest powiązany z centrum usługi ATA, a adres IP 2 jest powiązany z konsolą usługi ATA:
 
 |Protokół|Transport|Port|Do/z|Kierunek|Adres IP|
 |------------|-------------|--------|-----------|-------------|--------------|
@@ -116,22 +122,20 @@ Aby ułatwić instalację centrum usługi ATA, podczas instalacji możesz zainst
 > Typem dostawcy certyfikatu musi być Dostawca usług kryptograficznych (CSP).
 
 
-Centrum usługi ATA wymaga certyfikatów dla następujących usług:
+> Korzystanie z automatycznego odnawiania certyfikatów nie jest obsługiwane.
 
--   Usługi Internet Information Services (IIS) — certyfikat serwera sieci Web
-
--   Centrum usługi ATA — certyfikat uwierzytelniania serwera
 
 > [!NOTE]
-> Jeśli dostęp do konsoli usługi ATA ma się odbywać z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez usługi IIS. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny sieci Web.
+> Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
 
 ## Wymagania bramy usługi ATA
 Ta sekcja zawiera listę wymagań bramy usługi ATA.
 ### Ogólne
-Brama usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2.
+Brama usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016 (w tym Server Core).
 Brama usługi ATA może zostać zainstalowana na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
+Brama usługi ATA może służyć do monitorowania kontrolerów domeny z poziomem funkcjonalności domeny systemu Windows 2003 lub nowszego.
 
-Przed zainstalowaniem bramy usługi ATA potwierdź, że następująca aktualizacja została zainstalowana: [KB2919355](https://support.microsoft.com/kb/2919355/).
+Przed zainstalowaniem bramy usługi ATA w systemie Windows 2012 R2 upewnij się, że została zainstalowana następująca aktualizacja: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
 Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
 
@@ -143,6 +147,8 @@ Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w z
 
 >[!NOTE] 
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+
+Aby uzyskać więcej informacji o wymaganiach bramy usługi ATA dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 ### Synchronizacja czasu
 Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
@@ -161,7 +167,7 @@ Brama usługi ATA wymaga co najmniej jednej karty administracyjnej i co najmniej
         ![Konfigurowanie sufiksu DNS w zaawansowanych ustawieniach protokołu TCP/IP](media/ATA-DNS-Suffix.png)
 
         > [!NOTE]
-        > Jeśli brama usługi ATA jest elementem członkowskim domeny, te ustawienia zostaną skonfigurowane automatycznie.
+        > Jeśli brama usługi ATA jest elementem członkowskim domeny, te ustawienia mogą zostać skonfigurowane automatycznie.
 
 -   **Karta przechwytywania** — będzie używana do przechwytywania ruchu do i z kontrolerów domeny.
 
@@ -184,14 +190,14 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
-|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP usług IIS|Wychodzące|
+|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
 > W ramach procesu rozpoznawania wykonywanego przez bramę usługi ATA następujące porty muszą być otwarte dla danych przychodzących z bram usługi ATA na urządzeniach w sieci.
 >
-> -   NTLM za pośrednictwem wywołania RPC
-> -   NetBIOS
+> -   NTLM przez RPC (port TCP 135)
+> -   NetBIOS (port UDP 137)
 
 ### Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj procedurę ręcznego importowania listy CRL, zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.<br>
@@ -205,11 +211,9 @@ W magazynie Komputer bramy usługi ATA w ramach magazynu Komputer lokalny musi b
 ## Wymagania dotyczące bramy ATA Lightweight Gateway
 Ta sekcja zawiera listę wymagań bramy ATA Lightweight Gateway.
 ### Ogólne
-Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z systemem Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2.
+Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z systemem Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (w tym Core, ale nie Nano).
 
 Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
-
-Kontroler domeny nie może być instalacją Server Core.
 
 Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 z dodatkiem SP1 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
 Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
@@ -223,6 +227,7 @@ Bramę ATA Lightweight Gateway można wdrożyć na kontrolerach domeny o różny
 >[!NOTE] 
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
+Aby uzyskać więcej informacji o wymaganiach bramy ATA Lightweight Gateway dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 ### Synchronizacja czasu
 Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy ATA Lightweight Gateway i kontrolerach domeny nie może być większa niż 5 minut.
@@ -238,7 +243,7 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez bramę ATA Lightw
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
-|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP usług IIS|Wychodzące|
+|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
@@ -260,6 +265,8 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 -   Internet Explorer 10 i nowsze
 
+-   Microsoft Edge
+
 -   Google Chrome 40 i nowsze
 
 -   Minimalna rozdzielczość ekranu w poziomie: 1700 pikseli
@@ -273,6 +280,7 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 
 
-<!--HONumber=Jul16_HO4-->
+
+<!--HONumber=Aug16_HO5-->
 
 
