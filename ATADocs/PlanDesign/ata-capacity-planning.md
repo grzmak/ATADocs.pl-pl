@@ -4,7 +4,7 @@ description: "Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usł
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
@@ -12,11 +12,15 @@ ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: e0174ecac39b2a8cd469ed698853c447a85e4251
+ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
+ms.openlocfilehash: 09bf48be4c651af6ca1ae66a47f940d504570c8a
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Planowanie pojemności usługi ATA
 Ten temat ułatwia określenie, ile serwerów usługi ATA będzie potrzebnych do monitorowania sieci, ile będzie potrzebnych bram usługi ATA i/lub bram ATA Lightweight Gateway oraz jaka pojemność serwera będzie wymagana dla centrum usługi ATA i bram usługi ATA.
@@ -41,8 +45,7 @@ Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika 
 
 ### Ustalanie rozmiaru centrum usługi ATA
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni. Wymagana ilość miejsca na dysku dla bazy danych usługi ATA na każdy kontroler domeny jest zdefiniowana poniżej. Jeśli istnieje wiele kontrolerów domeny, zsumuj ilość miejsca na dysku wymaganego przez każdy kontroler domeny, aby obliczyć łączną ilość miejsca wymaganego dla bazy danych usługi ATA.
-> [!NOTE] 
-> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+ 
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
@@ -59,9 +62,13 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 > [!NOTE]
 > -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 ramek na sekundę zagregowanych ze wszystkich monitorowanych kontrolerów domeny.
 > -   Podane wielkości przestrzeni dyskowej to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
-> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Ta operacja będzie powtarzana, dopóki nie pozostaną dane tylko z dwóch dni bądź jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych przestanie działać.
-> -  Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
-> -  Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
+> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Ta operacja będzie powtarzana, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych przestanie działać.
+> -   Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
+> -   Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
+> -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
+> -   Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. Technologia NUMA może być nazwana w systemie przeplataniem węzłów. W tym przypadku należy **włączyć** przeplatanie węzłów, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji, zapoznaj się z dokumentacją systemu BIOS. Należy zauważyć, że nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.
+
 
 ## Wybieranie odpowiedniego typu bramy dla danego wdrożenia
 We wdrożeniu ATA obsługiwane są dowolne kombinacje typów bramy ATA:
@@ -94,8 +101,7 @@ Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny po
 ### Ustalanie rozmiaru bramy ATA Lightweight Gateway
 
 Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
-> [!NOTE] 
-> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)&#42;&#42;&#42;|
 |---------------------------|-------------------------|---------------|
@@ -108,8 +114,11 @@ Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontroler
 &#42;&#42;Łączna liczba zainstalowanych w kontrolerze domeny rdzeni innych niż hiperwątkowe.<br>Chociaż hiperwątkowość jest dopuszczalna w przypadku użycia bram ATA Lightweight Gateway, podczas planowania pojemności należy policzyć faktyczną liczbę rdzeni, a nie rdzeni hiperwątkowych.
 
 &#42;&#42;&#42;Łączna ilość pamięci zainstalowanej w kontrolerze domeny.
+
 > [!NOTE]   
-> Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
+> -   Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
+> -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy ATA Lightweight Gateway na wartość **Wysoka wydajność**.
 
 
 ### Ustalanie rozmiaru bramy usługi ATA
@@ -126,8 +135,7 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
     Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny. 
 <br>
 
-> [!NOTE] 
-> Pamięć dynamiczna nie jest obsługiwana.
+
 
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|
 |---------------------------|-------------------------|---------------|
@@ -142,6 +150,9 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
 
 &#42;&#42;Hiperwątkowość musi być wyłączona.
 
+> [!NOTE] 
+> -   Pamięć dynamiczna nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.
 
 
 ## Szacowanie ruchu kontrolera domeny
@@ -201,6 +212,6 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
