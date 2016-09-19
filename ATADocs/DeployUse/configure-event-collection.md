@@ -13,11 +13,15 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: fd0b2539841e6938e0f82a81bce04ffb9b5202b4
+ms.sourcegitcommit: 54e5105e78b6db9f33488135601381af5503aa4a
+ms.openlocfilehash: 118eb5bf505426f1947e96a4e01d0206abdce88d
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersje 1.6 i 1.7*
+
+
 
 # Konfigurowanie zbierania zdarzeń
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje identyfikatora 4776 z dziennika zdarzeń systemu Windows. Może on zostać przekazany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez [skonfigurowanie funkcji przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
@@ -28,7 +32,7 @@ Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny us�
 ### SIEM/Syslog
 Aby usługa ATA mogła wykorzystywać dane z serwera Syslog, konieczne jest wykonanie następujących czynności:
 
--   Skonfigurowanie jednego z serwerów bramy ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
+-   Skonfigurowanie serwerów bramy usługi ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
 
 -   Skonfigurowanie serwera SIEM/Syslog do przekazywania określonych zdarzeń do bramy usługi ATA.
 
@@ -43,13 +47,11 @@ Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domen
 
 ## Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM
 
-1.  W konfiguracji bramy usługi ATA włącz **Protokół UDP odbiornika programu Syslog**.
-
-    Ustaw adres IP nasłuchiwania zgodnie z opisem na poniższym obrazie. Domyślny port to 514.
+1.  Na karcie „Zdarzenia” w konfiguracji usługi ATA włącz opcję **Syslog** i naciśnij przycisk **Zapisz**.
 
     ![Obraz włączania protokołu UDP odbiornika programu Syslog](media/ATA-enable-siem-forward-events.png)
 
-2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia 4776 systemu Windows na adres IP wybrany powyżej. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
+2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
 ### Obsługa rozwiązania SIEM
 Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
@@ -174,41 +176,107 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 > Zbieranie zdarzeń systemu Windows przy użyciu modułu WinCollect nie jest obsługiwane.
 
 ## Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
-Jeśli nie masz serwera SIEM, możesz skonfigurować kontrolery domeny do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 bezpośrednio do jednej z bram usługi ATA.
 
-1.  Zaloguj się na wszystkich kontrolerach domeny i komputerach bram usługi ATA przy użyciu konta domeny z uprawnieniami administratora.
-2. Upewnij się, że wszystkie kontrolery domeny i bramy usługi ATA, z którymi się łączysz, są przyłączone do tej samej domeny.
-3.  Na każdym kontrolerze domeny wpisz następujące polecenie w wierszu polecenia z podwyższonym poziomem uprawnień:
-```
-winrm quickconfig
-```
-4.  W bramie usługi ATA wpisz następujące polecenie w wierszu polecenia z podwyższonym poziomem uprawnień:
-```
-wecutil qc
-```
-5.  Na każdym kontrolerze domeny w **Użytkownicy i komputery usługi Active Directory** przejdź do folderu **Builtin (Wbudowane)** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**.<br>
-![wef_ad_eventlogreaders](media/wef_ad_eventlogreaders.png)<br>
-Kliknij ją prawym przyciskiem myszy i wybierz polecenie **Właściwości**. Na karcie **Członkowie** dodaj konto komputera dla każdej bramy usługi ATA.
-![Okienko wyskakujące czytnika dziennika zdarzeń wef_ad](media/wef_ad-event-log-reader-popup.png)
-6.  W bramie usługi ATA otwórz Podgląd zdarzeń, a następnie kliknij prawym przyciskiem myszy pozycję **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**.  
+### Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
-    a. W obszarze **Typ subskrypcji i komputery źródłowe** kliknij przycisk **Wybierz komputery**, dodaj kontrolery domeny i przetestuj połączenie.
-    ![Właściwość wef_subscription](media/wef_subscription-prop.png)
+Po skonfigurowaniu dublowania portów z kontrolerów domeny z bramą usługi ATA postępuj zgodnie z poniższymi instrukcjami, aby skonfigurować przekazywanie zdarzeń systemu Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
-    b. W obszarze **Zdarzenia do zbierania** kliknij przycisk **Wybierz zdarzenia**. Wybierz pozycję **Według dziennika** i przewiń w dół, aby wybrać pozycję **Zabezpieczenia**. Następnie w polu **Dołącza/wyklucza identyfikatory zdarzeń** wpisz identyfikator **4776**.<br>
-    ![wef_4776](media/wef_4776.png)
+**Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny.** 
 
-    c. W obszarze **Zmień konto użytkownika lub skonfiguruj ustawienia zaawansowane** kliknij przycisk **Zaawansowane**.
-Ustaw **Protokół** na **HTTP** i **Port** na **5985**.<br>
-    ![wef_http](media/wef_http.png)
+W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
 
-7.  [Opcjonalnie] Aby ustawić krótszy interwał sondowania, w bramie usługi ATA ustaw puls subskrypcji na 5 sekund w celu zwiększenia częstotliwości sondowania.
-    wecutil ss <CollectionName>/cm:custom wecutil ss <CollectionName> /hi:5000
+1.  Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
+2.  Wybierz **członków**.
+4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
-8. Na stronie konfiguracji bramy usługi ATA włącz **zbieranie przekazywania zdarzeń systemu Windows**.
+**Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji.** 
+> [!Note] 
+> Można tworzyć dla tych ustawień zasady grupy i stosować zasady grupy do każdego kontrolera domeny monitorowanego przez bramę usługi ATA. Poniższe kroki umożliwiają modyfikację zasad lokalnych kontrolera domeny.     
 
-> [!NOTE]
-> Po włączeniu tego ustawienia brama usługi ATA będzie przeszukiwać dziennik zdarzeń przesłanych dalej w celu znalezienia zdarzeń systemu Windows, które zostały przekazane do niej z kontrolerów domeny.
+1.  Uruchom następujące polecenie na każdym kontrolerze domeny: *winrm quickconfig*
+2.  W wierszu polecenia wpisz ciąg *gpedit.msc*.
+3.  Rozwiń węzeł **Konfiguracja komputera > Szablony administracyjne > Składniki systemu Windows > Przesyłanie dalej zdarzeń**
+
+ ![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
+
+4.  Kliknij dwukrotnie opcję **Konfiguruj docelowego Menedżera subskrypcji**.
+   
+    1.  Wybierz opcję **Włączono**.
+    2.  W obszarze **Opcje** kliknij opcję **Pokaż**.
+    3.  W obszarze **Menedżerowie subskrypcji** wprowadź poniższą wartość, a następnie kliknij przycisk **OK**:  *Server = http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10* (na przykład: Server = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10)
+ 
+   ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
+   
+    5.  Kliknij przycisk **OK**.
+    6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
+
+**Krok 3: W odniesieniu do bramy usługi ATA wykonaj następujące kroki** 
+
+1.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *wecutil qc*
+2.  Otwórz **Podgląd zdarzeń**. 
+3.  Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
+
+   1.   Wprowadź nazwę i opis subskrypcji. 
+   2.   Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
+   3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Select Computers Groups** (Wybierz grupy komputerów).
+        1.  Kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
+        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
+       
+        ![Obraz Podglądu zdarzeń](media/wef3 event viewer.png)
+   
+        
+        3.  Kliknij przycisk **OK**.
+   4.   Kliknij przycisk **Wybierz zdarzenia**.
+
+        1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
+        2. W polu **Includes/Excludes Event ID** (Obejmuje/wyklucza zdarzenie o identyfikatorze) wpisz **4776** i kliknij przycisk **OK**. 
+
+ ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
+
+   5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz pozycję **Stan czasu wykonywania**, aby zobaczyć, czy występują problemy dotyczące stanu. 
+   6.   Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach przekazywanych w bramie ATA.
+
+
+### Konfiguracja funkcji WEF dla bramy ATA Lightweight Gateway
+Po zainstalowaniu bramy ATA Lightweight Gateway na kontrolerach domeny, można skonfigurować kontrolery domeny do przesyłania dalej zdarzeń do siebie samych. Wykonaj poniższe kroki, aby skonfigurować funkcję przesyłania dalej zdarzeń systemu Windows podczas używania bramy ATA Lightweight Gateway. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows.  
+
+**Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
+
+1.  Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
+2.  Wybierz **członków**.
+3.  Jeśli **Usługa sieciowa** nie jest wymieniona na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+
+**Krok 2: Po zainstalowaniu bramy ATA Lightweight Gateway wykonaj następujące czynności na kontrolerze domeny** 
+
+1.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *winrm quickconfig* oraz *wecutil qc* 
+2.  Otwórz **Podgląd zdarzeń**. 
+3.  Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
+
+   1.   Wprowadź nazwę i opis subskrypcji. 
+   2.   Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dziennik docelowy musi dotyczyć zdarzeń przesyłanych dalej.
+
+        1.  Wybierz opcję **Zainicjowane przez kolektor** i kliknij przycisk **Wybierz komputery**. Następnie kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
+        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**.
+
+            ![Obraz właściwości subskrypcji](media/wef 5 sub properties computers.png)
+
+        3.  Kliknij przycisk **OK**.
+   3.   Kliknij przycisk **Wybierz zdarzenia**.
+
+        1.  Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
+        2.  W polu **Includes/Excludes Event ID** (Obejmuje/wyklucza zdarzenie o identyfikatorze) wpisz *4776* i kliknij przycisk **OK**. 
+
+![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
+
+
+  4.    Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz pozycję **Stan czasu wykonywania**, aby zobaczyć, czy występują problemy dotyczące stanu. 
+
+> [!Note] 
+> Może być konieczne ponowne uruchomienie kontrolera domeny, aby ustawienia zaczęły obowiązywać. 
+
+Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach przekazywanych w bramie ATA.
+
+
 
 Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
 
@@ -218,6 +286,6 @@ Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazyw
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

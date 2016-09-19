@@ -4,7 +4,7 @@ description: "Opis sposobu weryfikacji, czy funkcja dublowania portów jest praw
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,22 +13,26 @@ ms.assetid: ebd41719-c91a-4fdd-bcab-2affa2a2cace
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: d95fd582362fc650dffeb6c4fbf892ba3e367f12
+ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
+ms.openlocfilehash: 59d50b0d9c5adc78aca260412872076c84db8d57
 
 
 ---
 
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
+
 # Weryfikowanie funkcji dublowania portów
 > [!NOTE] 
-> Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz [Wybieranie odpowiednich bram dla danego wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment)
+> Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz artykuł [Wybieranie odpowiednich bram dla wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment).
  
 W poniższych krokach objaśniono proces weryfikowania, czy funkcja dublowania portów jest poprawnie skonfigurowana. Aby usługa ATA mogła działać prawidłowo, ruch do i z kontrolera domeny musi być widoczny dla bramy usługi ATA. Główne źródło danych używane przez usługę ATA to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Aby ruch sieciowy był widoczny dla usługi ATA, należy skonfigurować funkcję dublowania portów. Funkcja dublowania portów kopiuje ruch z jednego portu (portu źródłowego) do innego portu (portu docelowego).
 
 ## Weryfikowanie funkcji dublowania portów za pomocą skryptu programu Windows PowerShell
 
-1. Zapisz tekst tego skryptu w pliku o nazwie ATAdiag.ps1.
-2. Uruchom ten skrypt z bramy usługi ATA.
+1. Zapisz tekst tego skryptu w pliku o nazwie *ATAdiag.ps1*.
+2. Uruchom ten skrypt w bramie usługi ATA, którą chcesz zweryfikować.
 Skrypt generuje ruch ICMP z bramy usługi ATA do kontrolera domeny oraz szuka tego ruchu na karcie sieciowej przechwytywania na kontrolerze domeny.
 Jeśli brama usługi ATA widzi ruch ICMP z takim samym docelowym adresem IP jak adres IP kontrolera domeny wprowadzony w konsoli usługi ATA, uznaje dublowanie portów za skonfigurowane. 
 
@@ -188,7 +192,7 @@ Przykład sposobu uruchamiania skryptu:
     
     
 ## Weryfikowanie funkcji dublowania portów za pomocą monitora sieci
-1.  Zainstaluj program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865).
+1.  Zainstaluj program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) w bramie usługi ATA, którą chcesz zweryfikować.
 
     > [!IMPORTANT]
     > Nie instaluj programu Microsoft Message Analyzer ani żadnego innego oprogramowania służącego do przechwytywania ruchu sieciowego w ramach bramy usługi ATA.
@@ -224,6 +228,6 @@ Przykład sposobu uruchamiania skryptu:
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

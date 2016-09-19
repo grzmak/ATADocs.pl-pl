@@ -4,7 +4,7 @@ description: "Pierwszy krok w celu zainstalowania usługi ATA polega na pobraniu
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,21 +13,25 @@ ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d89f6c5e0ac9712ce2fde057c9ef8e4025e8a144
-ms.openlocfilehash: 41d538039a8fa0511a74dd6cd5d840a1dea516e8
+ms.sourcegitcommit: d0681cfa4ae763da9c88c8dec9b77a75494a5c9f
+ms.openlocfilehash: 7365b09e98d422a8670725b47a1c2380f00e23fb
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Instalowanie usługi ATA — Krok 1
 
 >[!div class="step-by-step"]
 [Krok 2 »](install-ata-step2.md)
 
-Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania nowej instalacji usługi ATA w wersji 1.6. Informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji znajdują się w temacie [Przewodnik po migracji usługi ATA dla wersji 1.6](/advanced-threat-analytics/understand-explore/ata-update-1.6-migration-guide).
+Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania nowej instalacji usługi ATA w wersji 1.7. Informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji znajdują się w temacie [Przewodnik po migracji usługi ATA do wersji 1.7](/advanced-threat-analytics/understand-explore/ata-update-1.7-migration-guide).
 
 > [!IMPORTANT] 
-> Zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i będzie wymagać ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
+> Jeśli korzystasz z systemu Windows 2012 R2, zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji. W przeciwnym razie ta aktualizacja zostanie zainstalowana podczas instalacji usługi ATA, wymagając ponownego uruchomienia komputera.
 
 ## Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
@@ -57,19 +61,16 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
     |---------|---------------|------------|
     |Ścieżka instalacji|Lokalizacja, w której zostanie zainstalowane centrum usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center|Pozostaw wartość domyślną.|
     |Ścieżka danych bazy danych|Lokalizacja, w której zostaną umieszczone pliki bazy danych MongoDB. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|Zmień lokalizację na taką, w której będzie wystarczająca ilość miejsca do przechowywania powiększającej się bazy danych na podstawie ustalonego rozmiaru. **Uwaga:** <ul><li>W środowiskach produkcyjnych należy użyć dysku z wystarczającą ilością miejsca, które zostało ustalone podczas planowania pojemności.</li><li>W przypadku dużych wdrożeń baza danych powinna znajdować się na oddzielnym dysku fizycznym.</li></ul>Aby uzyskać informacje dotyczące ustalania rozmiaru, zobacz [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning).|
-    |Adres IP centrum usługi ATA: port|Adres IP, na którym centrum usługi ATA będzie nasłuchiwać komunikacji z bram usługi ATA.<br /><br />**Port domyślny:** 443|Kliknij strzałkę w dół, aby wybrać adres IP, który będzie używany przez centrum usługi ATA.<br /><br />Adres IP i port centrum usługi ATA nie może być taki sam, jak adres IP i port konsoli usługi ATA. Upewnij się, że port konsoli usługi ATA został zmieniony.|
-    |Certyfikat SSL centrum usługi ATA|Jest to certyfikat, który będzie używany przez centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym.|
-    |Adres IP konsoli usługi ATA|Adres IP, który będzie używany przez usługi IIS na potrzeby konsoli usługi ATA.|Kliknij strzałkę w dół, aby wybrać adres IP używany przez konsolę usługi ATA. **Uwaga:** zapisz ten adres IP, aby ułatwić dostęp do konsoli usługi ATA z poziomu bramy usługi ATA.|
-    |Certyfikat SSL konsoli usługi ATA|Certyfikat, który będzie używany przez usługi IIS.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym.|
-
-    ![Obraz przedstawiający konfigurowanie centrum usługi ATA](media/ATA-Center-Configuration.JPG)
+    |Adres IP centrum usługi: port|Adres IP, na którym centrum usługi ATA będzie nasłuchiwać komunikacji z bram usługi ATA.<br /><br />**Port domyślny:** 443|Kliknij strzałkę w dół, aby wybrać adres IP, który będzie używany przez centrum usługi ATA.<br /><br />Adres IP i port centrum usługi ATA nie może być taki sam, jak adres IP i port konsoli usługi ATA. Upewnij się, że port konsoli usługi ATA został zmieniony.|
+    |Certyfikat SSL centrum usługi|Jest to certyfikat, który będzie używany przez konsolę usługi ATA i centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym.|
+    |Adres IP konsoli|Adres IP, który będzie używany przez konsolę usługi ATA.|Kliknij strzałkę w dół, aby wybrać adres IP używany przez konsolę usługi ATA. **Uwaga:** zapisz ten adres IP, aby ułatwić dostęp do konsoli usługi ATA z poziomu bramy usługi ATA.|
+    
+    ![Obraz przedstawiający konfigurowanie centrum usługi ATA](media/ATA-Center-Configuration.png)
 
 10.  Kliknij przycisk **Zainstaluj**, aby zainstalować centrum usługi ATA i jego składniki.
     Następujące składniki zostaną zainstalowane i skonfigurowane podczas instalacji centrum usługi ATA:
 
-    -   Internet Information Services (IIS)
-
-    -   Centrum usługi ATA i witryna usług IIS konsoli usługi ATA
+    -   Centrum usługi ATA
 
     -   Baza danych MongoDB
 
@@ -101,6 +102,6 @@ Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone o
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO5-->
 
 

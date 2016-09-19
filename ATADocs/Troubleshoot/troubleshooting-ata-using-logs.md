@@ -4,7 +4,7 @@ description: "Opis sposobu rozwiązywania problemów przy użyciu dzienników us
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,15 @@ ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 2889a5ae78de0e65515fabff80d146198142a495
+ms.sourcegitcommit: ee5f60e43f50562e7a7309eafa3b52cf946b0d3b
+ms.openlocfilehash: 493f255ae09b51d27079a186bb802f0f3f9706bc
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
 Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczególne składniki usługi ATA w dowolnym momencie.
@@ -25,7 +29,7 @@ Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczeg�
 ## Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
 
-Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA; domyślną lokalizacją jest:  . W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
 Brama usługi ATA ma następujące dzienniki:
 
@@ -36,13 +40,17 @@ Brama usługi ATA ma następujące dzienniki:
 -   **Microsoft.Tri.Gateway-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez bramę usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
 
 -   **Microsoft.Tri.Gateway-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
-    Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących bramy usługi ATA — pogrupowane błędy jest łatwiej odczytywać i sprawdzać, czy występuje nowy typ błędu lub problemu.
+    Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Jego podstawowym zastosowaniem jest dostarczenie informacji na temat wystąpienia nowych błędów lub problemów z bramą usługi ATA (błędy są grupowane, co pozwala je łatwiej odczytywać i szybciej zorientować się, czy pojawiły się nowe problemy).
+-   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku bramy ATA Lightweight Gateway proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów bramy ATA Lightweight Gateway.
+-   **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
 
 > [!NOTE]
-> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
+> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
 ## Dzienniki centrum usługi ATA
 Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
+> [!Note]
+> Dzienniki konsoli ATA, które były wcześniej dziennikami usług IIS, teraz znajdują się w obszarze dzienników centrum usługi ATA.
 
 Centrum usługi ATA ma następujące dzienniki:
 
@@ -53,27 +61,11 @@ Centrum usługi ATA ma następujące dzienniki:
 -   **Microsoft.Tri.Center-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez centrum usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
 
 -   **Microsoft.Tri.Center-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
-    Po każdym uruchomieniu centrum usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących centrum usługi ATA — pogrupowane błędy jest łatwiej odczytywać i sprawdzać, czy występuje nowy typ błędu lub problemu.
+    Po każdym uruchomieniu centrum usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do rozpoznania, czy wystąpiły nowe błędy lub problemy dotyczące centrum usługi ATA — pogrupowane błędy można łatwiej odczytać i szybciej zorientować się, czy pojawiły się nowe błędy lub problemy.
 
 > [!NOTE]
-> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
+> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
-## Dzienniki konsoli usługi ATA
-Dzienniki konsoli usługi ATA (dzienniki interfejsu API zarządzania) znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Management\Logs**.
-
-Konsola usługi ATA ma następujące dzienniki:
-
--   **w3wp.log** — ten dziennik zawiera wszystkie zdarzenia w procesie zarządzania (usługi IIS).
-
-
--   **w3wp-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez proces zarządzania (usługi IIS).
-
-
--   **8e75f9f1-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
-    Po każdym uruchomieniu usługi bramy tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących centrum usługi ATA — pogrupowane błędy jest łatwiej odczytywać i sprawdzać, czy występuje nowy typ błędu lub problemu.
-
-> [!NOTE]
-> Maksymalny rozmiar pierwszych dwóch plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy.
 
 ## Dzienniki wdrożenia usługi ATA
 Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Users\Administrator\AppData\Local\Temp** (lub w katalogu nadrzędnym folderu %temp%).
@@ -92,6 +84,7 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 
 -   **Microsoft Advanced Threat Analytics Gateway_20151214014801_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
 
+
 ## Zobacz też
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
@@ -101,6 +94,6 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

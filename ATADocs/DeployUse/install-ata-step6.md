@@ -4,7 +4,7 @@ description: "W ostatnim kroku instalowania usługi ATA można skonfigurować po
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/28/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,36 +13,47 @@ ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: c9712b0ad8d67b1e618cb75b14785f8079020864
+ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
+ms.openlocfilehash: 57fe1272e95f69ef9d614505bbef0bb6c1d8ccb6
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Instalowanie usługi ATA — Krok 6
 
 >[!div class="step-by-step"]
 [« Krok 5](install-ata-step5.md)
 
-## Krok 6. Konfigurowanie podsieci dzierżawy krótkoterminowej i użytkownika wystawionego jako przynęta
-Podsieci dzierżawy krótkoterminowej to podsieci, w których przypisanie adresów IP zmienia się bardzo szybko — w ciągu sekund lub minut. (Na przykład adresy IP używane dla sieci VPN i Wi-Fi). Aby wprowadzić listę podsieci dzierżawy krótkoterminowej używanych w organizacji, wykonaj następujące kroki:
+## Krok 6. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
+Usługa ATA umożliwia wyłączenie określonych adresów IP i podsieci IP z dwóch typów wykrywania: **rekonesans przy użyciu systemu DNS** i **atak typu Pass-the-Ticket**. 
 
-1.  W konsoli usługi ATA na komputerze bramy usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**.
+Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
+
+Usługa ATA umożliwia również skonfigurowanie konta użytkownika wystawionego jako przynęta, które jest używane jako pułapka dla uczestników złośliwych działań — dowolne uwierzytelnianie związane z tym kontem (zwykle nieaktywnym) powoduje wyzwolenie alertu.
+
+Aby skonfigurować powyższe opcje, wykonaj następujące kroki:
+
+1.  W konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**.
 
     ![Ustawienia konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-2.  W obszarze **Wykrywanie** wprowadź następujące informacje dla podsieci dzierżawy krótkoterminowej. Wprowadź podsieci dzierżawy krótkoterminowej przy użyciu formatu notacji ukośnika, na przykład:  `192.168.0.0/24` i kliknij znak plus.
+2.  W obszarze **Detection exclusions** (Wykluczenia wykrywania) wprowadź adresy IP *rekonesansu przy użyciu systemu DNS* lub *ataku typu Pass-the-Ticket*. Użyj formatu CIDR, na przykład: `192.168.1.0/24` i kliknij znak *plus*.
 
-3.  Dla identyfikatorów SID kont wystawionych jako przynęta wprowadź identyfikator SID konta użytkownika, dla którego nie będzie żadnych działań w sieci, a następnie kliknij znak plus. Na przykład: `S-1-5-21-72081277-1610778489-2625714895-10511`.
+    ![Zapisz zmiany](media/ATA-exclusions.png)
+
+3.  W obszarze **Detection settings** (Ustawienia wykrywania) wprowadź identyfikator SID konta wystawionego jako przynęta i kliknij znak plus. Na przykład: `S-1-5-21-72081277-1610778489-2625714895-10511`.
+
+    ![Ustawienia konfiguracji usługi ATA](media/ATA-honeytoken.png)
 
     > [!NOTE]
     > Aby znaleźć identyfikator SID użytkownika, wyszukaj użytkownika w konsoli ATA, a następnie kliknij kartę **Informacje o koncie**. 
 
-4.  Konfigurowanie wykluczeń: można skonfigurować adresy IP, które mają być wykluczone z określonych podejrzanych działań. Zobacz [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md), aby uzyskać więcej informacji.
+4.  Kliknij polecenie **Zapisz**.
 
-5.  Kliknij polecenie **Zapisz**.
-
-![Zapisz zmiany](media/ATA-VPN-Subnets.JPG)
 
 Gratulacje, usługa Microsoft Advanced Threat Analytics została pomyślnie wdrożona!
 
@@ -64,6 +75,6 @@ Usługa ATA natychmiast rozpocznie skanowanie w poszukiwaniu podejrzanych dział
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
