@@ -4,7 +4,7 @@ description: "Zawiera opis sposobu zmiany hasła do łączności z domeną w ram
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,16 +13,20 @@ ms.assetid: 4a25561b-a5ed-44aa-9b72-366976b3c72a
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 7b8904bcb379004b2038e6b9a14c87c3914f1e1f
+ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
+ms.openlocfilehash: 7cee457a8959526b25a68c50efea2976bafbef75
 
 
 ---
 
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
+
 # Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
 
 >[!div class="step-by-step"]
-[« Certyfikat usług IIS](modifying-ata-config-iiscert.md)
+[« Adres URL konsoli usługi ATA](modifying-ata-config-consoleurl.md)
 
 
 ## Zmienianie hasła do łączności z domeną
@@ -31,26 +35,28 @@ Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowad
 Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat:
 `The supplied credential is invalid.`
 
-Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowania hasła do łączności z domeną w bramie usługi ATA:
+Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowania hasła łączności z domeną w centrum usługi ATA:
 
-1.  Otwórz konsolę usługi ATA w bramie usługi ATA.
+1.  Otwórz konsolę usługi ATA w centrum usługi ATA.
 
 2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Ogólne**.
+3.  Wybierz pozycję **Usługi katalogowe**.
 
-    ![Obraz przedstawiający zmianę hasła bramy usługi ATA](media/ATA-GW-change-DC-password.JPG)
+    ![Obraz przedstawiający zmianę hasła bramy usługi ATA](media/ATA-GW-change-DC-password.png)
 
-4.  W obszarze **Ogólne** zmień hasło.
+4.  W obszarze **Hasło** zmień hasło.
+
+    Jeśli Centrum usługi ATA ma łączność z domeną, użyj przycisku **Testuj połączenie**, aby zweryfikować poświadczenia.
 
 5.  Kliknij polecenie **Zapisz**.
 
 6.  Po zmianie hasła ręcznie sprawdź, czy brama usługi ATA jest uruchomiona na serwerach bramy usługi ATA.
 
 >[!div class="step-by-step"]
-[« Certyfikat usług IIS](modifying-ata-config-iiscert.md)
+[« Adres URL konsoli usługi ATA](modifying-ata-config-consoleurl.md)
 
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
@@ -59,6 +65,6 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

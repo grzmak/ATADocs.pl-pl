@@ -1,6 +1,9 @@
 # [Poznawanie i eksplorowanie](what-is-ata.md)
 ## [Co to jest usługa Microsoft Advanced Threat Analytics?](what-is-ata.md)
+## [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md)
 ## [Informacje o wersji usługi ATA](ata-release-notes.md)
+### [Co nowego w wersji 1.7 usługi ATA](whats-new-version-1.7.md)
+#### [Aktualizacja usługi ATA do wersji 1.7 — przewodnik migracji](ata-update-1.7-migration-guide.md)
 ### [Co nowego w wersji 1.6 usługi ATA](whats-new-version-1.6.md)
 #### [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 ### [Co nowego w wersji 1.5 usługi ATA](whats-new-version-1.5.md)
@@ -12,6 +15,6 @@
 # [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO5-->
 
 

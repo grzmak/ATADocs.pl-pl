@@ -4,7 +4,7 @@ description: "Opis sposobu logowania się do konsoli usługi ATA oraz składnik�
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,19 +13,22 @@ ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 1eb9397b541eb64cef553f61e8517568d16b0092
+ms.sourcegitcommit: a4ba68547d6746625a44aca5d05790c3ad138f4e
+ms.openlocfilehash: ab9abce7479971c80544476c54cbf0911d1a5822
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Praca z konsolą usługi ATA
 
 Konsola usługi ATA służy do monitorowania podejrzanych działań wykrytych przez usługę ATA i reagowania na nie.
 
 ## Włączanie dostępu do konsoli usługi ATA
-Każdy użytkownik należący do lokalnej grupy Administratorzy na serwerze centrum usługi ATA ma uprawnienia do logowania się do konsoli usługi ATA i zarządzania ustawieniami usługi ATA.
-Aby zezwolić użytkownikowi na logowanie się do konsoli usługi ATA bez nadawania roli administratora lokalnego, dodaj go do grupy lokalnej **Administratorzy usługi Microsoft Advanced Threat Analytics**.
+Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta użytkownika, który został przypisany do właściwej roli usługi ATA z dostępem do konsoli ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartego na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami ról usługi ATA](ata-role-groups.md).
 
 ## Logowanie się do konsoli usługi ATA
 
@@ -38,10 +41,8 @@ Aby zezwolić użytkownikowi na logowanie się do konsoli usługi ATA bez nadawa
 
 2.  Wprowadź nazwę użytkownika i hasło, a następnie kliknij pozycję **Zaloguj**.
 
-![Obraz ekranu logowania usługi ATA](media/ATA-log-in-screen.jpg)
+![Obraz ekranu logowania usługi ATA](media/ATA-log-in-screen.png)
 
-> [!NOTE]
-> Należy zalogować się jako użytkownik, który należy do grupy administratorów lokalnych LUB grupy Administratorzy usługi Microsoft Advanced Threat Analytics.
 
 ## Konsola usługi ATA
 
@@ -54,7 +55,7 @@ Są to kluczowe elementy konsoli usługi ATA.
 
 Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Oś czasu ataków można filtrować, aby wyświetlać Wszystkie, Otwarte, Odrzucone lub Rozwiązane podejrzane działania. Można również sprawdzić ważność przypisaną do poszczególnych działań.
 
-![Obraz osi czasu ataków usługi ATA](media/attack-timeline.png)
+![Obraz osi czasu ataków usługi ATA](media/attack-timeline-1.7.png)
 
 Aby uzyskać więcej informacji, zobacz [Praca z podejrzanymi działaniami](/advanced-threat-analytics/deploy-use/working-with-suspicious-activities).
 
@@ -62,7 +63,7 @@ Aby uzyskać więcej informacji, zobacz [Praca z podejrzanymi działaniami](/adv
 
 Po wykryciu nowego podejrzanego działania pasek powiadomień zostanie otwarty automatycznie po prawej stronie. Jeśli od czasu ostatniego zalogowania miały miejsce nowe podejrzane działania, pasek powiadomień zostanie otwarty po pomyślnym zalogowaniu. W dowolnym momencie można uzyskać dostęp do paska powiadomień, klikając strzałkę po prawej stronie.
 
-![Obraz paska powiadomień usługi ATA](media/notification-bar.png)
+![Obraz paska powiadomień usługi ATA](media/notification-bar-1.7.png)
 
 ### Panel filtrowania
 
@@ -78,7 +79,7 @@ W menu u góry znajduje się pasek wyszukiwania. Umożliwia on wyszukiwanie okre
 
 Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu usługi ATA.
 
-![Obraz centrum kondycji usługi ATA](media/health-center.png)
+![Obraz centrum kondycji usługi ATA](media/ATA-Health-Issue.jpg)
 
 Za każdym razem, gdy system napotka problem, taki jak błąd łączności lub rozłączona brama usługi ATA, ikona centrum kondycji poinformuje o nim użytkownika przez wyświetlenie czerwonej kropki. ![Obraz czerwonej kropki centrum kondycji usługi ATA](media/ATA-Health-Center-Alert-red-dot.png)
 
@@ -124,6 +125,6 @@ W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

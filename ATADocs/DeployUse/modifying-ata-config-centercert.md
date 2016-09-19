@@ -4,7 +4,7 @@ description: "Opis dwuetapowego procesu odnawiania lub wymiany certyfikatu w mag
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,20 +13,24 @@ ms.assetid: c8855287-de3b-4cdd-be8f-2128f48a6f27
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 5ae9f13c417459e73d85cce3ebbb0293c3e08f83
+ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
+ms.openlocfilehash: e707d354396f8eeed58c13ee1e9e91df9888e030
 
 
 ---
+
+*Dotyczy: Advanced Threat Analytics, wersja 1.7*
+
+
 
 # Zmienianie konfiguracji usługi ATA — certyfikat centrum usługi ATA
 
 >[!div class="step-by-step"]
 [« Adres IP serwera centrum usługi ATA](modifying-ata-config-centerip.md)
-[Adres IP konsoli usługi ATA »](modifying-ata-config-consoleip.md)
+[Adres URL konsoli usługi ATA »](modifying-ata-config-consoleurl.md)
 
 ## Zmienianie certyfikatu centrum usługi ATA
-Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana po zainstalowaniu nowego certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA, zastąp certyfikat, wykonując następujący dwuetapowy proces:
+Jeśli Twój certyfikat wkrótce wygaśnie i konieczne będzie jego odnowienie lub zmiana po zainstalowaniu nowego certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA, zastąp certyfikat, wykonując następujący dwuetapowy proces:
 
 -   Pierwszy etap: zaktualizuj certyfikat, który ma być używany przez centrum usługi ATA. W tym momencie centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. Podczas synchronizacji konfiguracji bram usługi ATA będą dostępne dwa potencjalne certyfikaty, za pomocą których będzie możliwe wzajemne uwierzytelnianie. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego certyfikatu, nowy certyfikat nie będzie używany.
 
@@ -35,6 +39,7 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 > [!NOTE]
 > -   Jeśli brama usługi ATA była w trybie offline podczas pierwszego etapu i nigdy nie otrzymała zaktualizowanej konfiguracji, konieczne będzie ręczne zaktualizowanie pliku JSON konfiguracji w tej bramie.
 > -   Używany certyfikat musi być zaufany przez bramy usługi ATA.
+> -   Certyfikat jest również używany w konsoli usługi ATA, dlatego powinien pasować do adresu konsoli usługi ATA, aby uniknąć wyświetlania ostrzeżeń przeglądarki.
 > -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego certyfikatu, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
 
 1.  Otwórz konsolę usługi ATA.
@@ -43,7 +48,7 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 
     ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-3.  Wybierz pozycję **Centrum usługi ATA**.
+3.  Wybierz pozycję **Centrum**.
 
 4.  W obszarze **Certyfikat** wybierz certyfikat z listy.
 
@@ -61,15 +66,15 @@ Jeśli Twoje certyfikaty wygasną i konieczne będzie ich odnowienie lub zmiana 
 
 >[!div class="step-by-step"]
 [« Adres IP serwera centrum usługi ATA](modifying-ata-config-centerip.md)
-[Adres IP konsoli usługi ATA »](modifying-ata-config-consoleip.md)
+[Adres URL konsoli usługi ATA »](modifying-ata-config-consoleurl.md)
 
 ## Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://aka.ms/ata-forum)
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
