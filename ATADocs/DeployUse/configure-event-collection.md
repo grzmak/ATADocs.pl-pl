@@ -13,8 +13,8 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 54e5105e78b6db9f33488135601381af5503aa4a
-ms.openlocfilehash: 118eb5bf505426f1947e96a4e01d0206abdce88d
+ms.sourcegitcommit: d2c1c00ff649557c1a0a16385e025c9d597c3bbf
+ms.openlocfilehash: 91ce3a3fef27673712a708aa1e92c32298cedd84
 
 
 ---
@@ -54,7 +54,7 @@ Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domen
 2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
 ### Obsługa rozwiązania SIEM
-Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
+Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:  
 
 #### RSA Security Analytics
 &lt;Nagłówek programu Syslog&gt;RsaSA\n2015-May-19 09:07:09\n4776\nMicrosoft-Windows-Security-Auditing\nSecurity\XXXXX.subDomain.domain.org.il\nYYYYY$\nMMMMM \n0x0
@@ -282,10 +282,10 @@ Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazyw
 
 ## Zobacz też
 - [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/en-US/home?forum=mata)
+- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO4-->
 
 
