@@ -13,8 +13,8 @@ ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b8ad2f343b8397184cd860803f06b0d59c492f5a
-ms.openlocfilehash: 96b3ce171ca07bf44163d49b50377fccd6472a08
+ms.sourcegitcommit: 7d081a6e14adffc675de203001074c3435cce6b2
+ms.openlocfilehash: 8896df26157f9da903e68ac7a1d21f7f80f95026
 
 
 ---
@@ -83,7 +83,7 @@ Jeśli wirtualny kontroler domeny nie może być objęty przez bramę ATA Lightw
 Istnieją dwa elementy, których kopię zapasową należy wykonać:
 
 -   Ruch i zdarzenia zapisane przez usługę ATA, których kopię zapasową można wykonać przy użyciu dowolnej obsługiwanej procedury tworzenia kopii zapasowej. Aby uzyskać więcej informacji, zobacz [Zarządzanie bazą danych usługi ATA](/advanced-threat-analytics/deploy-use/ata-database-management). 
--   Konfiguracja usługi ATA. Jest przechowywana w bazie danych, a jej kopia zapasowa jest tworzona automatycznie co godzinę w folderze **Backup** w lokalizacji wdrożenia centrum usługi ATA.  Zobacz artykuł [Zarządzanie bazą danych usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/ata-database-management), aby uzyskać więcej informacji.
+-   Konfiguracja usługi ATA. Jest przechowywana w bazie danych, a jej kopia zapasowa jest tworzona automatycznie co godzinę w folderze **Backup** w lokalizacji wdrożenia centrum usługi ATA.  Zobacz artykuł [Zarządzanie bazą danych usługi ATA](https://docs.microsoft.com/advanced-threat-analytics/deploy-use/ata-database-management), aby uzyskać więcej informacji.
 ## Co usługa ATA może wykrywać?
 Usługa ATA wykrywa znane złośliwe ataki oraz techniki, problemy z zabezpieczeniami i ryzyka.
 Pełna lista zagrożeń wykrywanych przez usługę ATA znajduje się w artykule [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md).
@@ -144,6 +144,6 @@ Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i ko
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO4-->
 
 
