@@ -74,7 +74,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     1.  Usługa ATA w wersji 1.6 wymaga zainstalowania platformy .NET Framework 4.6.1. Jeśli ta platforma nie jest jeszcze zainstalowana, usługa ATA zainstaluje platformę .NET Framework 4.6.1 w ramach instalacji.
     
         > [!NOTE] 
-            Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Instalacja usługi ATA będzie kontynuowana dopiero po ponownym uruchomieniu serwera.
+        > Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Instalacja usługi ATA będzie kontynuowana dopiero po ponownym uruchomieniu serwera.
     
     2.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
