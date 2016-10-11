@@ -13,8 +13,8 @@ ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 87cb9534a45d3a8ca29d6a803ca399a33a3d3ea6
+ms.sourcegitcommit: d3ec5d56444d618efcfc617172e93e0e8e8a1768
+ms.openlocfilehash: 6fd96a8bf2fb1e064cc05858a020cbc2e55746f4
 
 
 ---
@@ -71,23 +71,25 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
 2.  Uruchom plik instalacyjny Microsoft ATA Center Setup.exe i postępuj zgodnie z instrukcjami na ekranie, aby zainstalować aktualizację.
 
-    1.  Usługa ATA w wersji 1.6 wymaga zainstalowania platformy .NET Framework 4.6.1. Jeśli ta platforma nie jest jeszcze zainstalowana, usługa ATA zainstaluje platformę .NET Framework 4.6.1 w ramach instalacji.<br>
-    > [!NOTE]
-    > Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Instalacja usługi ATA będzie kontynuowana dopiero po ponownym uruchomieniu serwera.
-5.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
+    1.  Usługa ATA w wersji 1.6 wymaga zainstalowania platformy .NET Framework 4.6.1. Jeśli ta platforma nie jest jeszcze zainstalowana, usługa ATA zainstaluje platformę .NET Framework 4.6.1 w ramach instalacji.
+    
+        > [!NOTE] 
+        > Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Instalacja usługi ATA będzie kontynuowana dopiero po ponownym uruchomieniu serwera.
+    
+    2.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    6.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, kliknij przycisk **Dalej**.
+    3.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, kliknij przycisk **Dalej**.
 
-    7.  Obecnie istnieje możliwość użycia usługi Microsoft Update w celu utrzymania aktualnej usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    4.  Obecnie istnieje możliwość użycia usługi Microsoft Update w celu utrzymania aktualnej usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
     ![Obraz utrzymywania aktualnej usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
-    8.  Przed rozpoczęciem instalacji usługa ATA wykona sprawdzenie gotowości. Przejrzyj wyniki procesu sprawdzania, aby upewnić się, że wymagania wstępne zostały odpowiednio skonfigurowane i masz co najmniej minimalną wymaganą ilość miejsca na dysku. 
+    5.  Przed rozpoczęciem instalacji usługa ATA wykona sprawdzenie gotowości. Przejrzyj wyniki procesu sprawdzania, aby upewnić się, że wymagania wstępne zostały odpowiednio skonfigurowane i masz co najmniej minimalną wymaganą ilość miejsca na dysku. 
     ![Obraz sprawdzania gotowości usługi ATA](media/ata_install_readinesschecks.png)
 
-    3.  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
+    6.  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
 
-4.  Po zaktualizowaniu centrum usługi ATA bramy usługi ATA będą sygnalizować, że są przestarzałe.
+3.  Po zaktualizowaniu centrum usługi ATA bramy usługi ATA będą sygnalizować, że są przestarzałe.
 
     ![Obraz przedstawiający przestarzałe bramy](media/ATA-center-outdated.png)
 
@@ -140,6 +142,6 @@ Jeśli wszystkie bramy usługi ATA zostaną pomyślnie zaktualizowane, wszystkie
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

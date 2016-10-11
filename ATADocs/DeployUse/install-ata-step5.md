@@ -13,8 +13,8 @@ ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
-ms.openlocfilehash: 168a41182128a1fc91d92a4ef11b873c04ecc6b7
+ms.sourcegitcommit: 39eadb9143740741fa592f983f03def5367ada46
+ms.openlocfilehash: 14b04a771f0c18170f0c80d388ab012574d40bee
 
 
 ---
@@ -45,9 +45,9 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
   - **Opis**: wprowadź opis bramy usługi ATA (opcjonalnie).
   - **Port Mirrored Domain Controllers (FQDN)** (Kontrolery domeny z dublowaniem portów (FQDN))(wymagane dla bramy usługi ATA, nie można zmienić dla bramy ATA Lightweight Gateway): należy wprowadzić pełną nazwę FQDN kontrolera domeny, a następnie kliknąć znak plus, aby dodać go do listy. Na przykład **dc01.contoso.com**.
 
-        The following information applies to the servers you enter in the **Domain Controllers** list:
-        - All domain controllers whose traffic is being monitored via port mirroring by the ATA Gateway must be listed in the **Domain Controllers** list. If a domain controller is not listed in the **Domain Controllers** list, detection of suspicious activities might not function as expected.
-        - At least one domain controller in the list should be a global catalog. This will enable ATA to resolve computer and user objects in other domains in the forest.
+      Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery domeny**:
+      - Wszystkie kontrolery domeny, których ruch jest monitorowany za pośrednictwem funkcji dublowania portów przez bramę usługi ATA, muszą znajdować się na liście **Kontrolery domeny**. Jeśli kontroler domeny nie znajduje się na liście **Kontrolery domeny**, wykrywanie podejrzanych działań może nie funkcjonować zgodnie z oczekiwaniami.
+      - Co najmniej jeden kontroler domeny znajdujący się na liście musi być wykazem globalnym. Umożliwi to rozpoznawanie przez usługę ATA obiektów użytkowników i komputerów znajdujących się w innych domenach w lesie.
 
 - **Karty sieciowe przechwytywania** (wymagane):
   - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. Będą one odbierać zdublowany ruch kontrolera domeny.
@@ -96,6 +96,6 @@ Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO4-->
 
 

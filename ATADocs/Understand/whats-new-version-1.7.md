@@ -4,7 +4,7 @@ description: "Lista nowości oraz znanych problemów w wersji 1.7 usługi ATA"
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 08/28/2016
+ms.date: 09/20/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.assetid:
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ae6a3295d2fffabdb8e5f713674379e4af499ac2
-ms.openlocfilehash: af9101260b1a0d5d9da32398f638f76e0c8c40a7
+ms.sourcegitcommit: d47d9e7be294c68d764710c15c4bb78539e42f62
+ms.openlocfilehash: 62f2aadc978547647a1dc3c27ed3453f7ed15828
 
 
 ---
@@ -32,6 +32,8 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 -   Obsługa systemu Windows Server 2016 i Windows Server Core
 
 -   Ulepszenia środowiska użytkownika
+
+-   Drobne zmiany
 
 
 ### Nowe i zaktualizowane funkcje wykrywania
@@ -63,54 +65,19 @@ W tej wersji występują następujące znane problemy.
 ### Automatyczna aktualizacja bramy może zakończyć się niepowodzeniem
 **Objawy:** W środowiskach z wolnymi łączami sieci WAN aktualizacja bramy ATA może osiągnąć limit czasu aktualizacji (100 sekund) i zakończyć się niepowodzeniem.
 W konsoli usługi ATA brama ATA będzie mieć stan „Aktualizowanie (pobieranie pakietu)” przez długi czas i ostatecznie zakończy się niepomyślnie.
-
 **Obejście:** Aby obejść ten problem, pobierz najnowszy pakiet bramy ATA z konsoli ATA i ręcznie zaktualizuj bramę ATA.
 
-### Błąd migracji podczas aktualizowania usługi ATA z wersji 1.6
-Podczas aktualizowania usługi ATA do wersji 1.7 proces aktualizacji może zakończyć się niepowodzeniem z powodu błędu o kodzie *0x80070643*:
+ > [!IMPORTANT]
+ Automatyczne odnawianie certyfikatów używanych przez usługę ATA nie jest obsługiwane. Użycie tych certyfikatów może spowodować, że usługa ATA przestanie działać w przypadku automatycznego odnowienia certyfikatu. 
 
-![Update ATA to 1.7 error (Błąd aktualizacji usługi ATA do wersji 1.7)](media/ata-update-error.png)
-
-Przejrzyj dziennik wdrażania, aby znaleźć przyczynę błędu. Dziennik wdrażania znajduje się w lokalizacji **%temp%\..\Microsoft Advanced Thread Analytics Center_{znacznik_daty}_MsiPackage.log**. 
-
-W tabeli poniżej wymieniono błędy do wyszukania oraz odpowiednie skrypty Mongo do usunięcia błędu. Zobacz przykład pod tabelą, aby zobaczyć, jak uruchomić skrypt Mongo:
-
-| Błąd w pliku dziennika wdrażania                                                                                                                  | Skrypt Mongo                                                                                                                                                                         |
-|---|---|
-| System.FormatException: Size {size},is larger than MaxDocumentSize 16777216 (System.FormatException: Rozmiar {size} jest większy niż wartość MaxDocumentSize 16777216) <br>W dalszej części pliku:<br>  Microsoft.Tri.Center.Deployment.Package.Actions.DatabaseActions.MigrateUniqueEntityProfiles(Boolean isPartial)                                                                                        | db.UniqueEntityProfile.find().forEach(function(obj){if(Object.bsonsize(obj) > 12582912) {print(obj._id);print(Object.bsonsize(obj));db.UniqueEntityProfile.remove({_id:obj._id});}}) |
-| System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown (System.OutOfMemoryException: Został zgłoszony wyjątek typu „System.OutOfMemoryException”)<br>W dalszej części pliku:<br>Microsoft.Tri.Center.Deployment.Package.Actions.DatabaseActions.ReduceSuspiciousActivityDetailsRecords (suspiciousActivityCollection IMongoCollection "1, Int32 deletedDetailRecordMaxCount) | db.SuspiciousActivity.find().forEach(function(obj){if(Object.bsonsize(obj) > 500000),{print(obj._id);print(Object.bsonsize(obj));db.SuspiciousActivity.remove({_id:obj._id});}})     |
-|System.Security.Cryptography.CryptographicException: Bad Length (System.Security.Cryptography.CryptographicException: Nieprawidłowa długość)<br>W dalszej części pliku:<br> Microsoft.Tri.Center.Deployment.Package.Actions.DatabaseActions.MigrateCenterSystemProfile(IMongoCollection`1 systemProfileCollection)| CenterThumbprint=db.SystemProfile.find({_t:"CenterSystemProfile"}).toArray()[0].Configuration.SecretManagerConfiguration.CertificateThumbprint;db.SystemProfile.update({_t:"CenterSystemProfile"},{$set:{"Configuration.ManagementClientConfiguration.ServerCertificateThumbprint":CenterThumbprint}})|
-
-
-Aby uruchomić odpowiedni skrypt, wykonaj następujące kroki. 
-
-1.  Z wiersza polecenia z podwyższonym poziomem uprawnień przejdź do następującej lokalizacji: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**
-2.  Wpisz polecenie – **Mongo.exe ATA**   (*Uwaga*: ATA musi być napisane wielkimi literami).
-3.  Z powyższej tabeli wklej skrypt, który odpowiada błędowi w dzienniku wdrażania.
-
-![Skrypt Mongo usługi ATA](media/ATA-mongoDB-script.png)
-
-Teraz powinno być możliwe ponowne uruchomienie uaktualniania.
-
-### Usługa ATA zgłasza dużą liczbę podejrzanych działań “*Reconnaissance using directory services enumerations*” (Rekonesans przy użyciu wyliczeń usług katalogowych):
+### Brak obsługi kodowania JIS w przeglądarce
+**Objawy:** konsola ATA może nie działać zgodnie z oczekiwaniami w przeglądarkach wykorzystujących kodowanie JIS. **Obejście:** zmień kodowanie przeglądarki na Unicode UTF-8.
  
-Dzieje się tak najczęściej wtedy, gdy narzędzie do skanowania sieci jest uruchomione na wszystkich (lub na wielu) maszynach klienckich w organizacji. Jeśli widzisz ten problem:
+## Drobne zmiany
 
-1. W przypadku zidentyfikowania przyczyny lub konkretnej aplikacji działającej na maszynach klienckich, wyślij wiadomość e-mail na adres ATAEval at Microsoft.com.
-2. Użyj następującego skryptu mongo, aby odrzucić wszystkie te zdarzenia (zobacz wyżej, jak uruchomić skrypt mongo):
-
-db.SuspiciousActivity.update({_t: "SamrReconnaissanceSuspiciousActivity"}, {$set: {Status: "Dismissed"}}, {multi: true})
-
-### Usługa ATA wysyła powiadomienia dotyczące odrzuconych podejrzanych działań:
-Jeśli powiadomienia zostały skonfigurowane, usługa ATA może nadal wysyłać powiadomienia (przez pocztę e-mail, usługę Syslog i dzienniki zdarzeń) dla odrzuconych podejrzanych działań.
-Nie ma obecnie sposobu obejścia tego problemu. 
-
-### Rejestracja bramy usługi ATA w centrum usługi ATA może się nie powieść, jeśli protokoły TLS 1.0 i TLS 1.1 są wyłączone:
-Jeśli protokoły TLS 1.0 i TLS 1.1 są wyłączone na bramie usługi ATA (lub bramie ATA Lightweight Gateway), brama może nie być w stanie zarejestrować się w centrum usługi ATA.
-
-### Automatyczne odnawianie certyfikatów używanych przez usługę ATA nie jest obsługiwane
-Korzystanie z automatycznego odnawiania certyfikatów może spowodować, że usługa ATA przestanie działać po automatycznym odnowieniu certyfikatu. 
-
+- Usługa ATA używa teraz usługi OWIN zamiast usług IIS dla konsoli ATA.
+- Jeśli usługa Centrum ATA nie działa, nie będziesz mieć możliwości uzyskania dostępu do konsoli ATA.
+- Krótkoterminowe dzierżawy podsieci nie są już konieczne z powodu zmian w aparacie rozpoznawania nazw sieciowych (NNR) usługi ATA.
 
 ## Zobacz też
 [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
@@ -120,6 +87,6 @@ Korzystanie z automatycznego odnawiania certyfikatów może spowodować, że us�
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Sep16_HO4-->
 
 
