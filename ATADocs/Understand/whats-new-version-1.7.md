@@ -13,8 +13,8 @@ ms.assetid:
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d47d9e7be294c68d764710c15c4bb78539e42f62
-ms.openlocfilehash: 62f2aadc978547647a1dc3c27ed3453f7ed15828
+ms.sourcegitcommit: a024cab5e706b32273d563095f5d7e690d6ed055
+ms.openlocfilehash: dec9fc03cdf718627dd72ac0c48f934fe507c7ac
 
 
 ---
@@ -73,6 +73,12 @@ W konsoli usługi ATA brama ATA będzie mieć stan „Aktualizowanie (pobieranie
 ### Brak obsługi kodowania JIS w przeglądarce
 **Objawy:** konsola ATA może nie działać zgodnie z oczekiwaniami w przeglądarkach wykorzystujących kodowanie JIS. **Obejście:** zmień kodowanie przeglądarki na Unicode UTF-8.
  
+### Porzucony ruch sieciowy na zdublowanym porcie podczas korzystania z programu VMware
+
+Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z lekkiej bramy w programie VMware
+
+Jeśli używasz kontrolerów domeny na maszynach wirtualnych programu VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może to dziać się z powodu niezgodności konfiguracji w programie VMware. Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.
+
 ## Drobne zmiany
 
 - Usługa ATA używa teraz usługi OWIN zamiast usług IIS dla konsoli ATA.
@@ -87,6 +93,6 @@ W konsoli usługi ATA brama ATA będzie mieć stan „Aktualizowanie (pobieranie
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 
