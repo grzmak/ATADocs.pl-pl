@@ -13,8 +13,8 @@ ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
-ms.openlocfilehash: 5c20c41c3fe587f18087d64f4f84c1df65072fde
+ms.sourcegitcommit: 3a821bf1479af529fd65e2153f8b722999c83a4f
+ms.openlocfilehash: 444bc4744834219d9db7bc8c209f33c039f90dad
 
 
 ---
@@ -28,6 +28,7 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
   
 
 ## Aktualizowanie usługi ATA do wersji 1.7
+
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w danym środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.7, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
@@ -81,8 +82,8 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 > Skonfigurowany port odbiornika Syslog na wszystkich bramach zostanie zmieniony na 514.
  
-    > [!NOTE] 
-    > To install new ATA Gateways, go the **Gateways** screen and click **Download Gateway Setup** to get the ATA 1.7 installation package and follow the instructions for new Gateway installation as described in [Step 4. Install the ATA Gateway](/advanced-threat-analytics/deploy-use/install-ata-step4) .
+> [!NOTE] 
+> W celu zainstalowania nowych bram usługi ATA przejdź do ekranu **Bramy**, kliknij pozycję **Pobierz konfigurację bramy**, aby uzyskać pakiet instalacyjny usługi ATA 1.7, i postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy zgodnie z opisem w części [Krok 4. Instalowanie bramy usługi ATA](/advanced-threat-analytics/deploy-use/install-ata-step4).
 
 
 
@@ -92,6 +93,6 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 
