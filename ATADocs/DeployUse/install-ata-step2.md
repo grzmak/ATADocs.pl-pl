@@ -23,13 +23,13 @@ ms.openlocfilehash: be58ce053a2ddb59fa1556027e432c0499f8deb4
 
 
 
-# Instalowanie usługi ATA — Krok 2
+# <a name="install-ata-step-2"></a>Instalowanie usługi ATA — Krok 2
 
 >[!div class="step-by-step"]
 [« Krok 1](install-ata-step1.md)
 [Krok 3 »](install-ata-step3.md)
 
-## Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
+## <a name="step-2-provide-a-username-and-password-to-connect-to-your-active-directory-forest"></a>Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
 
 Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 
@@ -44,7 +44,7 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
     |**Domena** (wymagana)|Wprowadź domenę użytkownika tylko do odczytu, na przykład: **contoso.com**. **Uwaga:** należy wprowadzić pełną nazwę FQDN domeny, w której znajduje się użytkownik. Na przykład jeśli konto użytkownika znajduje się w domenie corp.contoso.com, należy wprowadzić `corp.contoso.com` not contoso.com|
     
 
-    Po zapisaniu, wiadomość powitalna w konsoli zmieni się na następującą: ![ATA welcome stage 1 finished (ATA — zapraszamy, ukończono etap 1)](media/ATA_1.7-welcome-provide-username-finished.png)
+    Po zapisaniu wiadomość powitalna w konsoli zmieni się na następującą: ![ATA welcome stage 1 finished (ATA — zapraszamy, ukończono etap 1)](media/ATA_1.7-welcome-provide-username-finished.png)
 
 2. W konsoli kliknij opcję **Download Gateway setup and install the first Gateway** (Pobierz instalator bramy i zainstaluj pierwszą bramę), aby kontynuować.
 
@@ -54,14 +54,14 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 [Krok 3 »](install-ata-step3.md)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Oct16_HO4-->
 
 
