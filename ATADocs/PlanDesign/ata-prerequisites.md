@@ -13,8 +13,8 @@ ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: a3fcf3b2ba7f90f2329d86ab9e8d19619cc7e28f
+ms.sourcegitcommit: c71d5ed1c705de558f1144820703ffe84850679b
+ms.openlocfilehash: a6fe3a8f042ca7f35180e99e5bc3ffd14f0ea6d8
 
 
 ---
@@ -117,7 +117,7 @@ W tej tabeli adres IP 1 jest powiązany z centrum usługi ATA, a adres IP 2 jest
 ### Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
 
-Aby ułatwić instalację centrum usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.<br>
+Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.<br>
 > [!NOTE]
 > Typem dostawcy certyfikatu musi być Dostawca usług kryptograficznych (CSP).
 
@@ -201,7 +201,7 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 
 ### Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj procedurę ręcznego importowania listy CRL, zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.<br>
-Aby ułatwić instalację centrum usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.
+Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.
 
 > [!NOTE]
 > Typem dostawcy certyfikatu musi być Dostawca usług kryptograficznych (CSP).<br>
@@ -254,7 +254,7 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez bramę ATA Lightw
 
 ### Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy ATA Lightweight Gateway nie mają dostępu do Internetu, wykonaj procedurę ręcznego importowania listy CRL, zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
-Aby ułatwić instalację centrum usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę ATA Lightweight Gateway.
+Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę ATA Lightweight Gateway.
 > [!NOTE]
 > Typem dostawcy certyfikatu musi być Dostawca usług kryptograficznych (CSP).
 
@@ -281,6 +281,6 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO4-->
 
 
