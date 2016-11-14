@@ -4,7 +4,7 @@ description: "W tym artykule opisano, jak można rozwiązywać typowe błędy w 
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 15c1a0d7ae213876c0e3a955eaeea8887281b4e6
-ms.openlocfilehash: b073a1b969f8841c9bbe540722349a5ef70340d4
+ms.sourcegitcommit: f334f9c8440e4bb0202579de220f6530d0aabad8
+ms.openlocfilehash: aa16eeb45272ffcf28bbb28ed9a02f30f52b15d0
 
 
 ---
@@ -23,9 +23,9 @@ ms.openlocfilehash: b073a1b969f8841c9bbe540722349a5ef70340d4
 
 
 
-# Rozwiązywanie problemów z dziennika błędów usługi ATA
+# <a name="troubleshooting-the-ata-error-log"></a>Rozwiązywanie problemów z dziennika błędów usługi ATA
 W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA oraz czynności, jakie należy wykonać w celu ich usunięcia.
-## Błędy bramy usługi ATA
+## <a name="ata-gateway-errors"></a>Błędy bramy usługi ATA
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |System.DirectoryServices.Protocols.LdapException: Wystąpił błąd lokalny|Nie można uwierzytelnić bramy usługi ATA na kontrolerze domeny.|1. Upewnij się, że rekord DNS kontrolera domeny jest prawidłowo skonfigurowany na serwerze DNS. <br>2. Sprawdź, czy czas bramy usługi ATA jest zsynchronizowany z czasem kontrolera domeny.|
@@ -44,12 +44,21 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.ApplicationException: Nie można uruchomić sesji ETW o identyfikatorze MMA-ETW-Livecapture-a4f595bd-f567-49a7-b963-20fa4e370329|W pliku HOSTS znajduje się wpis hosta wskazujący skróconą nazwę komputera|Usuń wpis hosta z pliku C:\Windows\System32\drivers\etc\HOSTS lub zmień jego treść na nazwę FQDN.|
 
 
-## Błędy ATA IIS (nie dotyczy usług ATA w wersji 1.7 ani nowszych)
+
+## <a name="ata-lightweight-gateway-errors"></a>Błędy bramy ATA Lightweight Gateway
+
+**Błąd**: alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z lekkiej bramy w programie VMware
+
+**Opis**: jeśli używasz kontrolerów domeny na maszynach wirtualnych programu VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może być to spowodowane niezgodnością konfiguracji w programie VMware. 
+**Rozwiązanie**: aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.
+
+
+## <a name="ata-iis-errors-not-applicable-for-ata-v17-and-above"></a>Błędy ATA IIS (nie dotyczy usług ATA w wersji 1.7 ani nowszych)
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Błąd HTTP 500.19 — wewnętrzny błąd serwera|Nie można poprawnie zainstalować modułu Ponowne zapisywanie adresów URL IIS.|Odinstaluj i zainstaluj ponownie moduł Ponowne zapisywanie adresów URL IIS.<br>[Pobierz moduł Ponowne zapisywanie adresów URL IIS](http://go.microsoft.com/fwlink/?LinkID=615137)|
 
-## Błędy wdrażania
+## <a name="deployment-errors"></a>Błędy wdrażania
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Instalacja platformy .Net Framework 4.6.1 nie powiodła się z powodu błędu 0x800713ec|Na serwerze nie są zainstalowane wymagania wstępne platformy .Net Framework 4.6.1. |Przed zainstalowaniem usługi ATA sprawdź, czy na serwerze są zainstalowane aktualizacje systemu Windows [KB2919442](https://www.microsoft.com/download/details.aspx?id=42135) i [KB2919355](https://support.microsoft.com/kb/2919355).|
@@ -57,15 +66,15 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 ![Ilustracja błędu instalacji platformy .NET dla usługi ATA](media/netinstallerror.png)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO5-->
 
 

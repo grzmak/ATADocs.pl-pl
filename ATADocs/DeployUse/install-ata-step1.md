@@ -4,7 +4,7 @@ description: "Pierwszy krok w celu zainstalowania usługi ATA polega na pobraniu
 keywords: 
 author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 10/25/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d0681cfa4ae763da9c88c8dec9b77a75494a5c9f
-ms.openlocfilehash: 7365b09e98d422a8670725b47a1c2380f00e23fb
+ms.sourcegitcommit: c71d5ed1c705de558f1144820703ffe84850679b
+ms.openlocfilehash: cf7ae4eccdf70e4e8661ac55ec15fff00bc9c62e
 
 
 ---
@@ -43,6 +43,9 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 2.  Zaloguj się na komputerze, na którym instalujesz centrum usługi ATA, jako użytkownik, który jest członkiem lokalnej grupy administratorów.
 
 3.  Uruchom plik **Microsoft ATA Center Setup.EXE**, a następnie postępuj zgodnie z komunikatami kreatora instalacji.
+
+> [!NOTE]   
+> Pamiętaj, aby uruchomić plik instalacyjny z dysku lokalnego, a nie z zainstalowanego pliku ISO. Pozwoli to na uniknięcie problemów w przypadku, gdy w ramach instalacji jest wymagany ponowny rozruch.   
 
 4.  Jeśli nie zainstalowano platformy Microsoft .Net Framework, po rozpoczęciu instalacji otrzymasz monit o jej zainstalowanie. Po zakończeniu instalacji platformy .Net Framework może pojawić się prośba o ponowne uruchomienie.
 5.  Na stronie **Zapraszamy** wybierz język do zastosowania na ekranach instalacji usługi ATA i kliknij przycisk **Dalej**.
@@ -102,6 +105,6 @@ Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone o
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO4-->
 
 

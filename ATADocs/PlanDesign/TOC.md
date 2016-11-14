@@ -3,10 +3,11 @@
 ## [Architektura usługi ATA](ata-architecture.md)
 ## [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 ## [Wymagania wstępne usługi ATA](ata-prerequisites.md)
-# [Wdrażanie i użytkowanie](/advanced-threat-analytics/deploy-use/preinstall-ata)
-# [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
+# [Wdrażanie](/advanced-threat-analytics/deploy-use/preinstall-ata)
+# [Użycie](/advanced-threat-analytics/deploy-use/operate-ata)
+# [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-known-errors)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO5-->
 
 
