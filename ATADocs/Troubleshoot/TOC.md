@@ -1,6 +1,7 @@
 # [Poznawanie i eksplorowanie](/advanced-threat-analytics/understand-explore/what-is-ata)
-# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-capacity-planning)
-# [Wdrażanie i użytkowanie](/advanced-threat-analytics/deploy-use/preinstall-ata)
+# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-architecture)
+# [Wdrażanie](/advanced-threat-analytics/deploy-use/preinstall-ata)
+# [Użycie](/advanced-threat-analytics/deploy-use/operate-ata)
 # [Rozwiązywanie problemów](troubleshooting-ata-known-errors.md)
 ## [Rozwiązywanie problemów przy użyciu znanych błędów](troubleshooting-ata-known-errors.md)
 ## [Rozwiązywanie problemów przy użyciu dzienników](troubleshooting-ata-using-logs.md)
@@ -8,6 +9,6 @@
 ## [Rozwiązywanie problemów przy użyciu bazy danych](troubleshooting-ata-using-ata-database.md)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO5-->
 
 

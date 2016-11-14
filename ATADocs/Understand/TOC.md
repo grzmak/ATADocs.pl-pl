@@ -10,11 +10,12 @@
 #### [Aktualizacja usługi ATA do wersji 1.5 — przewodnik migracji](ata-update-1.5-migration-guide.md)
 ### [Co nowego w wersji 1.4 usługi ATA](whats-new-version-1.4.md)
 ## [Często zadawane pytania](ata-technical-faq.md)
-# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-capacity-planning)
-# [Wdrażanie i użytkowanie](/advanced-threat-analytics/deploy-use/install-ata)
-# [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs)
+# [Planowanie i projektowanie](/advanced-threat-analytics/plan-design/ata-architecture)
+# [Wdrażanie](/advanced-threat-analytics/deploy-use/preinstall-ata)
+# [Użycie](/advanced-threat-analytics/deploy-use/operate-ata)
+# [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-known-errors)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO5-->
 
 

@@ -13,8 +13,8 @@ ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ee5f60e43f50562e7a7309eafa3b52cf946b0d3b
-ms.openlocfilehash: 493f255ae09b51d27079a186bb802f0f3f9706bc
+ms.sourcegitcommit: c71d5ed1c705de558f1144820703ffe84850679b
+ms.openlocfilehash: f8024edbfad1961db7fa469cc2907c55bb5ec93f
 
 
 ---
@@ -29,7 +29,7 @@ Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczeg�
 ## Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
 
-Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA; domyślną lokalizacją jest:  . W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
 Brama usługi ATA ma następujące dzienniki:
 
@@ -40,7 +40,7 @@ Brama usługi ATA ma następujące dzienniki:
 -   **Microsoft.Tri.Gateway-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez bramę usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
 
 -   **Microsoft.Tri.Gateway-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
-    Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Jego podstawowym zastosowaniem jest dostarczenie informacji na temat wystąpienia nowych błędów lub problemów z bramą usługi ATA (błędy są grupowane, co pozwala je łatwiej odczytywać i szybciej zorientować się, czy pojawiły się nowe problemy).
+    Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących bramy usługi ATA (pogrupowane błędy jest łatwiej odczytywać i szybko sprawdzać, czy wystąpiły nowe problemy).
 -   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku bramy ATA Lightweight Gateway proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów bramy ATA Lightweight Gateway.
 -   **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
 
@@ -72,17 +72,17 @@ Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkown
 
 Dzienniki wdrożenia centrum usługi ATA:
 
--   **Microsoft Advanced Threat Analytics Center_20150601104213.log** — ten dziennik zawiera listę czynności w procesie wdrożenia centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania centrum usługi ATA.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS.log** — ten dziennik zawiera listę czynności w procesie wdrożenia centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania centrum usługi ATA.
 
--   **Microsoft Advanced Threat Analytics Center_20150601104213_0_MongoDBPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bazy danych MongoDB w centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania bazy danych MongoDB.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS_0_MongoDBPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bazy danych MongoDB w centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania bazy danych MongoDB.
 
--   **Microsoft Advanced Threat Analytics Center_20150601104213_1_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych centrum usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych centrum usługi ATA.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS_1_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych centrum usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych centrum usługi ATA.
 
 Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 
--   **Microsoft Advanced Threat Analytics Gateway_20151214014801.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bramy usługi ATA. Służy on głównie do śledzenia procesu wdrażania bramy usługi ATA.
+-   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bramy usługi ATA. Służy on głównie do śledzenia procesu wdrażania bramy usługi ATA.
 
--   **Microsoft Advanced Threat Analytics Gateway_20151214014801_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
+-   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
 
 
 ## Zobacz też
@@ -94,6 +94,6 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Oct16_HO4-->
 
 
