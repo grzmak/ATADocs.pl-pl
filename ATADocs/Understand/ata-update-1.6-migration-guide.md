@@ -1,25 +1,26 @@
 ---
-title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.6 | Microsoft ATA"
+title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.6 | Dokumentacja firmy Microsoft"
 description: "Procedury aktualizacji usługi ATA do wersji 1.6"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
+ms.assetid: 0756ef64-3aef-4a69-8981-24fa8f285c6a
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d3ec5d56444d618efcfc617172e93e0e8e8a1768
-ms.openlocfilehash: 6fd96a8bf2fb1e064cc05858a020cbc2e55746f4
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: e361c1b659210934b9fcd70c7c438a47030eeeba
 
 
 ---
 
-# Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.6
+# <a name="ata-update-to-16-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.6
 Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 
 -   Wykrywanie nowych zagrożeń
@@ -36,7 +37,7 @@ Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 
 -   Obsługa IBM QRadar
 
-## Aktualizowanie usługi ATA do wersji 1.6
+## <a name="updating-ata-to-version-16"></a>Aktualizowanie usługi ATA do wersji 1.6
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.6, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
@@ -61,7 +62,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     > [!IMPORTANT]
     > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 1. Zaktualizuj centrum usługi ATA
+### <a name="step-1-update-the-ata-center"></a>Krok 1. Zaktualizuj centrum usługi ATA
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
@@ -81,7 +82,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     3.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, kliknij przycisk **Dalej**.
 
     4.  Obecnie istnieje możliwość użycia usługi Microsoft Update w celu utrzymania aktualnej usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Obraz utrzymywania aktualnej usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
+    ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
     5.  Przed rozpoczęciem instalacji usługa ATA wykona sprawdzenie gotowości. Przejrzyj wyniki procesu sprawdzania, aby upewnić się, że wymagania wstępne zostały odpowiednio skonfigurowane i masz co najmniej minimalną wymaganą ilość miejsca na dysku. 
@@ -96,7 +97,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 > [!IMPORTANT] 
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 2. Pobieranie pakietu instalacyjnego bramy usługi ATA
+### <a name="step-2-download-the-ata-gateway-setup-package"></a>Krok 2. Pobieranie pakietu instalacyjnego bramy usługi ATA
 Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA.
 
 Aby pobrać pakiet bramy usługi ATA:
@@ -117,7 +118,7 @@ Plik zip zawiera następujące składniki:
 
 -   Plik ustawień konfiguracji z informacjami wymaganymi do nawiązywania połączeń z centrum usługi ATA
 
-### Krok 3. Zaktualizuj bramy usługi ATA
+### <a name="step-3-update-the-ata-gateways"></a>Krok 3. Zaktualizuj bramy usługi ATA
 
 1.  Dla każdej bramy usługi ATA wyodrębnij pliki z pakietu bramy ATA i uruchom plik **Microsoft ATA Gateway Setup.exe**.
 
@@ -136,12 +137,12 @@ Jeśli wszystkie bramy usługi ATA zostaną pomyślnie zaktualizowane, wszystkie
 ![Obraz przedstawiający zaktualizowane bramy](media/ATA-gw-updated.png)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
