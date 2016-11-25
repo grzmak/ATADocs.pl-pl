@@ -1,20 +1,21 @@
 ---
-title: "Co nowego w wersji 1.7 usługi ATA | Microsoft ATA"
+title: "Co nowego w wersji 1.7 usługi ATA | Dokumentacja firmy Microsoft"
 description: "Lista nowości oraz znanych problemów w wersji 1.7 usługi ATA"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 10/25/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: 
+ms.assetid: be9ee613-4eb3-40f1-8973-e7f0a707ff57
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f334f9c8440e4bb0202579de220f6530d0aabad8
-ms.openlocfilehash: 03a5e6a5398ffcc43e712bd4a3c2f872cd91c0b4
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: 8032e373567ce500c7741480d56d232f34b05446
 
 
 ---
@@ -75,9 +76,15 @@ W konsoli usługi ATA brama ATA będzie mieć stan „Aktualizowanie (pobieranie
  
 ### <a name="dropped-port-mirror-traffic-when-using-vmware"></a>Porzucony ruch sieciowy na zdublowanym porcie podczas korzystania z programu VMware
 
-Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z lekkiej bramy w programie VMware
+Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z lekkiej bramy w programie VMware.
 
-Jeśli używasz kontrolerów domeny na maszynach wirtualnych programu VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może to dziać się z powodu niezgodności konfiguracji w programie VMware. Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.
+Jeśli używasz kontrolerów domeny na maszynach wirtualnych programu VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może to dziać się z powodu niezgodności konfiguracji w programie VMware. Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia maszyny wirtualnej są ustawione na 0 lub wyłączone:  
+
+- TsoEnable (Włączanie TSO)
+- LargeSendOffload (IPv4) (Odciążanie dużego wysyłania ruchu IPv4)
+- IPv4 TSO Offload (Odciążanie TSO IPv4)
+
+Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.
 
 ### <a name="automatic-gateway-update-fail-when-updating-to-17-update-1"></a>Nie można zaktualizować bramy automatycznej podczas aktualizowania do wersji 1.7 Update 1
 
@@ -110,6 +117,6 @@ Aby rozwiązać ten problem, po zmianie certyfikatu w wierszu polecenia z podwy�
 
 
 
-<!--HONumber=Oct16_HO5-->
+<!--HONumber=Nov16_HO3-->
 
 
