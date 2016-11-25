@@ -1,20 +1,21 @@
 ---
-title: "Ustawianie powiadomień usługi ATA | Microsoft ATA"
+title: "Konfigurowanie ustawień poczty e-mail | Dokumentacja firmy Microsoft"
 description: "Opis sposobu ustawiania powiadomień usługi ATA wysyłanych do użytkownika (za pośrednictwem poczty e-mail lub funkcji przekazywania zdarzeń usługi ATA) w przypadku wykrycia podejrzanych działań"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: 14cb7513-5dc8-49cb-b3e0-94f469c443dd
+ms.assetid: bff20bf7-8b53-49da-81e5-b818a1c3b24e
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: a4ba68547d6746625a44aca5d05790c3ad138f4e
-ms.openlocfilehash: 9a8461da7ff8b0f939a11f85e5e8dc21d191cc52
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: d967cbf2674c5f561e63f66b64640ac08daad6c0
 
 
 ---
@@ -23,7 +24,7 @@ ms.openlocfilehash: 9a8461da7ff8b0f939a11f85e5e8dc21d191cc52
 
 
 
-## Udostępnianie usłudze ATA ustawień serwera poczty e-mail
+## <a name="provide-ata-with-up-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
 Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**.
 
 1.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.
@@ -44,7 +45,7 @@ Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. A
     |Wyślij z (wymagane)|Wprowadź adres e-mail, z którego wiadomości e-mail będą wysyłane.|Na przykład:<br />ATA@contoso.com|
     ![Ilustracja ustawień serwera poczty e-mail usługi ATA](media/ATA-email-server-1.7.png)
 
-## Udostępnianie usłudze ATA ustawień serwera Syslog
+## <a name="provide-ata-with-your-syslog-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera Syslog
 W przypadku wykrycia podejrzanych działań usługa ATA może generować powiadomienia i wysyłać je do serwera Syslog. Po włączeniu powiadomień Syslog możesz określić dla nich poniższe ustawienia.
 
 1.  Przed rozpoczęciem konfigurowania powiadomień Syslog skontaktuj się z administratorem rozwiązania SIEM, aby uzyskać następujące informacje:
@@ -77,11 +78,11 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
 
 
 
-## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## <a name="see-also"></a>Zobacz też
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO3-->
 
 
