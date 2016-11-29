@@ -1,20 +1,21 @@
 ---
-title: "Zarządzanie bazą danych usługi ATA | Microsoft ATA"
+title: "Zarządzanie bazą danych usługi ATA | Dokumentacja firmy Microsoft"
 description: "Procedury ułatwiające przenoszenie, tworzenie kopii zapasowej lub przywracanie bazy danych usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 10/31/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: 1d27dba8-fb30-4cce-a68a-f0b1df02b977
+ms.assetid: 05e49e23-6e0a-4ec0-9a63-a2093173c8a1
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f334f9c8440e4bb0202579de220f6530d0aabad8
-ms.openlocfilehash: e295e0a0a8b5adbd40ddeb7e389ff82c7482c6d9
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: 9d7e2a03633acc97d6f918c97f9b67b553d5202e
 
 
 ---
@@ -35,6 +36,9 @@ Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb
 ## <a name="moving-the-ata-database-to-another-drive"></a>Przenoszenie bazy danych usługi ATA na inny dysk
 
 1.  Zatrzymaj usługę **Microsoft Advanced Threat Analytics Center**.
+
+> [!Important] 
+> Przed przejściem do następnego kroku upewnij się, że centrum usługi ATA zostało zatrzymane.
 
 2.  Zatrzymaj usługę **MongoDB**.
 
@@ -60,6 +64,6 @@ Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb
 
 
 
-<!--HONumber=Oct16_HO5-->
+<!--HONumber=Nov16_HO3-->
 
 

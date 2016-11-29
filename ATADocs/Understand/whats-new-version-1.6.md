@@ -1,28 +1,29 @@
 ---
-title: "Co nowego w wersji 1.6 usługi ATA | Microsoft ATA"
+title: "Co nowego w wersji 1.6 usługi ATA | Dokumentacja firmy Microsoft"
 description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.6 usługi ATA"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: a0d64aff-ca9e-4300-b3f8-eb3c8b8ae045
+ms.assetid: 27b139e5-12b9-4953-8f53-eb58e8ce0038
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: f13750f9cdff98aadcd59346bfbbb73c2f3a26f0
-ms.openlocfilehash: 0f801b4d5f2ab9a103b2ca292c75f26040699dd0
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: 2cf155b0a54d12e78b5cac5be1ac077786e8cd07
 
 
 ---
 
-# Co nowego w wersji 1.6 usługi ATA
+# <a name="whats-new-in-ata-version-16"></a>Co nowego w wersji 1.6 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
 
-## Co nowego w aktualizacji usługi ATA do wersji 1.6?
+## <a name="whats-new-in-the-ata-16-update"></a>Co nowego w aktualizacji usługi ATA do wersji 1.6?
 Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 
 -   Wykrywanie nowych zagrożeń
@@ -39,7 +40,7 @@ Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 
 -   Obsługa IBM QRadar
 
-### Wykrywanie nowych zagrożeń
+### <a name="new-detections"></a>Wykrywanie nowych zagrożeń
 
 
 - **Złośliwe żądanie informacji prywatnych z zakresu ochrony danych** Interfejs API ochrony danych (DPAPI) to usługa ochrony danych oparta na hasłach. Ta usługa ochrony jest używana przez różne aplikacje, które przechowują Twoje tajemnice, takie jak hasła witryn sieci Web i poświadczenia udziałów plików. W celu obsługi scenariuszy utraty hasła użytkownicy mogą odszyfrowywać chronione dane za pomocą klucza odzyskiwania, który nie zawiera ich hasła. W środowisku domeny osoby atakujące mogą zdalnie wykraść klucz odzyskiwania i użyć go do odszyfrowywania chronionych danych na wszystkich komputerach przyłączonych do domeny.
@@ -57,31 +58,31 @@ Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 - **Implementacja nietypowego protokołu** Żądania uwierzytelniania (Kerberos lub NTLM) zazwyczaj są realizowane przy użyciu standardowego zestawu metod i protokołów. Jednak w celu pomyślnego uwierzytelnienia żądanie musi spełniać jedynie określony zestaw wymagań. Osoby atakujące mogą zaimplementować te protokoły z drobnymi odchyleniami od standardowego wdrożenia w danym środowisku. Tego rodzaju odchylenia mogą wskazywać na obecność osoby atakującej, która próbuje przeprowadzić ataki, takie jak Pass-The-Hash, ataki siłowe i inne.
 
 
-### Ulepszenia istniejącego wykrywania
+### <a name="improvements-to-existing-detections"></a>Ulepszenia istniejącego wykrywania
 Usługa ATA 1.6 zawiera ulepszoną logikę wykrywania, która ogranicza liczbę scenariuszy z fałszywie dodatnimi lub fałszywie ujemnymi wynikami wykrywania, takich jak sfałszowany bilet uwierzytelniania Golden Ticket, konto wystawione jako przynęta, atak siłowy i zdalne wykonywanie kodu.
 
-### Brama ATA Lightweight Gateway
+### <a name="the-ata-lightweight-gateway"></a>Brama ATA Lightweight Gateway
 W tej wersji usługi ATA wprowadzono nową opcję wdrażania bramy usługi ATA, która umożliwia instalowanie bramy ATA bezpośrednio na kontrolerze domeny. W tej opcji wdrażania usunięto niekrytyczne funkcje bramy usługi ATA i wprowadzono dynamiczne zarządzanie zasobami w oparciu o dostępne zasoby na kontrolerze domeny, co nie ma żadnego wpływu na istniejące operacje kontrolera domeny. Brama ATA Lightweight Gateway pozwala zmniejszyć koszt wdrożenia usługi ATA. Jednocześnie ułatwia wdrażanie w lokacjach oddziałów, w których ilość zasobów sprzętowych jest ograniczona lub w których nie można skonfigurować obsługi dublowania portów.
 Aby uzyskać więcej informacji na temat bramy ATA Lightweight Gateway, zobacz [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture#ata-gateway-and-ata-lightweight-gateway)
 
 Aby uzyskać więcej informacji na temat zagadnień dotyczących wdrażania i wybierania właściwego typu bram, zobacz [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment)
 
 
-### Aktualizacje automatyczne
+### <a name="automatic-updates"></a>Aktualizacje automatyczne
 Począwszy od wersji 1.6, centrum usługi ATA można aktualizować za pomocą usługi Microsoft Update. Ponadto bramy usługi ATA mogą być teraz automatycznie aktualizowane przy użyciu ich standardowego kanału komunikacyjnego z centrum usługi ATA.
-### Poprawiona wydajność centrum usługi ATA
+### <a name="improved-ata-center-performance"></a>Poprawiona wydajność centrum usługi ATA
 Mniejsze obciążenie bazy danych i wydajniejszy sposób wykrywania w tej wersji umożliwiają monitorowanie znacznie większej liczby kontrolerów domeny za pomocą pojedynczego centrum usługi ATA.
 
-### Niższe wymagania dotyczące magazynu
+### <a name="lower-storage-requirements"></a>Niższe wymagania dotyczące magazynu
 Usługa ATA 1.6 wymaga znacznie mniej miejsca w magazynie do uruchomienia bazy danych usługi ATA — teraz zaledwie 20% miejsca używanego w poprzednich wersjach.
 
-### Obsługa IBM QRadar
+### <a name="support-for-ibm-qradar"></a>Obsługa IBM QRadar
 Oprócz obsługiwanych wcześniej rozwiązań SIEM usługa ATA umożliwia obecnie odbieranie zdarzeń z rozwiązania SIEM QRadar firmy IBM.
 
-## Znane problemy
+## <a name="known-issues"></a>Znane problemy
 W tej wersji występują następujące znane problemy.
 
-### Nie można rozpoznać nowej ścieżki w ręcznie przeniesionych bazach danych
+### <a name="failure-to-recognize-new-path-in-manually-moved-databases"></a>Nie można rozpoznać nowej ścieżki w ręcznie przeniesionych bazach danych
 
 W przypadku wdrożeń, w których ścieżka bazy danych została przeniesiona ręcznie, wdrożenie usługi ATA nie używa nowej ścieżki bazy danych do aktualizacji. Może to spowodować następujące problemy:
 
@@ -92,9 +93,9 @@ W przypadku wdrożeń, w których ścieżka bazy danych została przeniesiona r�
 - Proces aktualizowania usługi ATA do wersji 1.6 może zakończyć się niepowodzeniem na etapie sprawdzania gotowości przed aktualizacją, jak pokazano na poniższej ilustracji.
     ![Sprawdzanie gotowości zakończone niepowodzeniem](media/ata_failed_readinesschecks.png)
     >[!Important]
-Przed zaktualizowaniem usługi ATA do wersji 1.6 zaktualizuj następujący klucz rejestru prawidłową ścieżką bazy danych:  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Center\DatabaseDataPath`
+Przed zaktualizowaniem usługi ATA do wersji 1.6 zaktualizuj następujący klucz rejestru prawidłową ścieżką bazy danych: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Center\DatabaseDataPath`
 
-### Błąd migracji podczas aktualizowania usługi ATA z wersji 1.5
+### <a name="migration-failure-when-updating-from-ata-15"></a>Błąd migracji podczas aktualizowania usługi ATA z wersji 1.5
 Podczas aktualizowania usługi ATA do wersji 1.6 proces aktualizacji może zakończyć się niepowodzeniem z powodu błędu o następującym kodzie:
 
 ![Błąd aktualizowania usługi ATA do wersji 1.6](http://i.imgur.com/QrLSApr.png) Jeśli zostanie wyświetlony ten błąd, przejrzyj dziennik wdrażania w folderze: **C:\Users\<Użytkownik>\AppData\Local\Temp**, szukając następującego wyjątku:
@@ -130,22 +131,22 @@ Jeśli zostanie wyświetlony jeden z tych błędów, zastosuj poniższe obejści
 Powinno to spowodować zwrócenie wartości WriteResult({ "nRemoved" : XX }), gdzie „XX” oznacza liczbę podejrzanych działań, które zostały usunięte. Jeśli liczba jest większa niż 0, zamknij wiersz polecenia i kontynuuj proces aktualizacji.
 
 
-### Platforma .Net Framework 4.6.1 wymaga ponownego uruchomienia serwera
+### <a name="net-framework-461-requires-restarting-the-server"></a>Platforma .Net Framework 4.6.1 wymaga ponownego uruchomienia serwera
 
 W pewnych sytuacjach instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Zwróć uwagę, że kliknięcie pozycji OK w oknie dialogowym **Instalacja programu Microsoft Advanced Threat Analytics Center** automatycznie spowoduje ponowne uruchomienie serwera. Jest to szczególnie ważne podczas instalowania bramy ATA Lightweight Gateway na kontrolerze domeny, ponieważ przed rozpoczęciem instalacji warto zaplanować okno obsługi.
     ![Ponowne uruchomienie platformy .Net Framework](media/ata-net-framework-restart.png)
 
-### Historyczne działania sieciowe nie są już poddawane migracji
+### <a name="historical-network-activities-no-longer-migrated"></a>Historyczne działania sieciowe nie są już poddawane migracji
 W tej wersji usługi ATA znajduje się ulepszony aparat wykrywania, który zapewnia bardziej precyzyjne wykrywanie i zmniejsza liczbę fałszywie dodatnich scenariuszy, szczególnie w przypadku ataków typu Pass-the-Hash.
 Nowy, ulepszony aparat wykrywania korzysta z wbudowanej technologii wykrywania, umożliwiając wykrywanie bez konieczności uzyskiwania dostępu do historycznych działań sieciowych, co znacznie zwiększa wydajność centrum usługi ATA. Oznacza to też, że w ramach procedury aktualizacji nie trzeba migrować historycznych działań sieciowych.
 Procedura aktualizacji usługi ATA eksportuje dane (na wypadek, gdyby były potrzebne do badań w przyszłości) do folderu `<Center Installation Path>\Migration` w formacie JSON.
 
-## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## <a name="see-also"></a>Zobacz też
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 [Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Nov16_HO3-->
 
 

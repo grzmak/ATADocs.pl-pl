@@ -1,25 +1,26 @@
 ---
-title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7 | Microsoft ATA"
+title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7 | Dokumentacja firmy Microsoft"
 description: "Procedury aktualizacji usługi ATA do wersji 1.7"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
-ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
+ms.assetid: 8eefcd45-7a4b-4074-ac5b-1ffc48e6654a
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 3a821bf1479af529fd65e2153f8b722999c83a4f
-ms.openlocfilehash: 444bc4744834219d9db7bc8c209f33c039f90dad
+ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
+ms.openlocfilehash: 4fa8b77aeffff327672396e9819215cc536af918
 
 
 ---
 
-# Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7
+# <a name="ata-update-to-17-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7
 Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 
 -   Wykrywanie nowych zagrożeń
@@ -27,7 +28,7 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 -   Ulepszenia istniejącego wykrywania
   
 
-## Aktualizowanie usługi ATA do wersji 1.7
+## <a name="updating-ata-to-version-17"></a>Aktualizowanie usługi ATA do wersji 1.7
 
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w danym środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.7, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
@@ -49,7 +50,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     > [!IMPORTANT]
     > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 1. Zaktualizuj centrum usługi ATA
+### <a name="step-1-update-the-ata-center"></a>Krok 1. Zaktualizuj centrum usługi ATA
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
@@ -62,7 +63,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
     -  Jeśli aktualizacje automatyczne nie zostały włączone w wersji 1.6, pojawi się monit, aby skonfigurować usługę ATA do używania usługi Microsoft Update w celu zachowania aktualności usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Obraz utrzymywania aktualnej usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
+    ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
     -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli wybierzesz przeprowadzenie migracji tylko części danych, wcześniej przechwycone profile ruchu sieciowego i zachowania nie zostaną poddane migracji. Oznacza to, że dopiero po trzech tygodniach zostanie pozyskany pełen profil umożliwiający wykrywanie nietypowego zachowania. Podczas tych trzech tygodni wszystkie pozostałe mechanizmy wykrywania usługi ATA będą działać poprawnie. **Częściowa** migracja danych wymaga mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Szacowana ilość czasu i wymaganego miejsca na dysku, które są wyświetlane na ekranie **Migracja danych**, zależą od ilości ruchu sieciowego przechwyconego wcześniej i zapisanego w poprzednich wersjach usługi ATA. Przed wybraniem opcji **Częściowa** lub **Pełna** koniecznie sprawdź te wymagania.  
@@ -75,7 +76,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
     ![Ekran powodzenia aktualizacji](media/migration center success.png)
 
 5.  Jeśli bramy usługi ATA zostały już skonfigurowane do automatycznego aktualizowania, zostaną zaktualizowane na tym etapie. Jeśli nie, kliknij przycisk **Aktualizuj** obok każdej bramy ATA na ekranie **Aktualizacja**.
-  ![Obraz przedstawiający zaktualizowane bramy](media/migration update gw.png)
+  ![Obraz aktualizowania bram](media/migration update gw.png)
 
   
 > [!IMPORTANT] 
@@ -87,12 +88,12 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
