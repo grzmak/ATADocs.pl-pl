@@ -1,10 +1,11 @@
 ---
-title: "Konfigurowanie dublowania portów | Microsoft ATA"
+title: "Konfigurowanie dublowania portów | Dokumentacja firmy Microsoft"
 description: "Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby usługi ATA"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/28/2016
+ms.date: 11/28/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: cdaddca3-e26e-4137-b553-8ed3f389c460
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: e3b690767e5c6f5561a97a73eccfbf50ddb04148
-ms.openlocfilehash: d7f15f08a64a9d884a560f4f3429568cf33bdd34
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: 9312287da04f393282857005b68799f82e0bdfa5
 
 
 ---
@@ -23,7 +24,7 @@ ms.openlocfilehash: d7f15f08a64a9d884a560f4f3429568cf33bdd34
 
 
 
-# Konfigurowanie funkcji dublowania portów
+# <a name="configure-port-mirroring"></a>Konfigurowanie funkcji dublowania portów
 > [!NOTE] 
 > Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast bram ATA Lightweight Gateway są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz artykuł [Wybieranie odpowiednich bram dla wdrożenia](/advanced-threat-analytics/plan-design/ata-capacity-planning#choosing-the-right-gateway-type-for-your-deployment).
  
@@ -43,7 +44,7 @@ Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Poniże
 > [!NOTE]
 > Jeśli kontroler domeny, względem którego działa funkcja dublowania portów, korzysta z połączenia WAN, upewnij się, że połączenie WAN może obsłużyć dodatkowe obciążenie wynikające z ruchu funkcji ERSPAN.
 
-## Obsługiwane opcje funkcji dublowania portów
+## <a name="supported-port-mirroring-options"></a>Obsługiwane opcje funkcji dublowania portów
 
 |Brama usługi ATA|Kontroler domeny|Uwagi|
 |---------------|---------------------|------------------|
@@ -68,13 +69,12 @@ Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Poniże
 
 Po skonfigurowaniu funkcji dublowania portów, ale przed zainstalowaniem bramy usługi ATA, zweryfikuj, czy funkcja dublowania portów działa.
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
-- [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 
