@@ -1,10 +1,11 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA | Microsoft ATA"
+title: "Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA | Dokumentacja firmy Microsoft"
 description: "Zawiera opis sposobu zmiany adresu IP, portu lub certyfikatu centrum usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: e6d42610d1c785da5b7c7b1cf035d94c2fddff4b
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: d0fed03deb5f50747383a398dfb2eca74ad0cdf0
 
 
 ---
@@ -23,14 +24,14 @@ ms.openlocfilehash: e6d42610d1c785da5b7c7b1cf035d94c2fddff4b
 
 
 
-# Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA
+# <a name="change-ata-configuration---ata-center-ip-address"></a>Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA
 
 >[!div class="step-by-step"]
 [Certyfikat centrum usługi ATA »](modifying-ata-config-centercert.md)
 
 Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Podczas aktualizowania adresu IP i portu lub certyfikatu użyj następujących procedur.
 
-## Zmienianie adresu IP używanego przez serwer centrum usługi ATA
+## <a name="change-the-ip-address-used-by-the-ata-center-server"></a>Zmienianie adresu IP używanego przez serwer centrum usługi ATA
 Jeśli zajdzie potrzeba zmiany adresu IP i portu lub certyfikatu centrum usługi ATA, należy wziąć pod uwagę następujące kwestie.
 
 Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym się łączą. Regularnie nawiązują one połączenie z centrum usługi ATA i pobierają zmiany konfiguracji. Wprowadzanie zmian w sposobie nawiązywania połączenia przez bramy usługi ATA z centrum usługi ATA jest wykonywane w dwóch etapach.
@@ -77,13 +78,12 @@ Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym 
 [Zmienianie certyfikatu centrum usługi ATA »](modifying-ata-config-centercert.md)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
-- [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://aka.ms/ata-forum)
+- [Forum usługi ATA](https://aka.ms/ata-forum)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 
