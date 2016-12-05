@@ -1,10 +1,11 @@
 ---
-title: "Konfigurowanie zbierania zdarzeń | Microsoft ATA"
+title: "Konfigurowanie zbierania zdarzeń | Dokumentacja firmy Microsoft"
 description: "Opisuje opcje konfigurowania zbierania zdarzeń w usłudze ATA"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 09/28/2016
+ms.date: 11/28/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d2c1c00ff649557c1a0a16385e025c9d597c3bbf
-ms.openlocfilehash: 91ce3a3fef27673712a708aa1e92c32298cedd84
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: 2932fd80fd3a5ff6830f8629df824591e3fc47c3
 
 
 ---
@@ -23,13 +24,13 @@ ms.openlocfilehash: 91ce3a3fef27673712a708aa1e92c32298cedd84
 
 
 
-# Konfigurowanie zbierania zdarzeń
+# <a name="configure-event-collection"></a>Konfigurowanie zbierania zdarzeń
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje identyfikatora 4776 z dziennika zdarzeń systemu Windows. Może on zostać przekazany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez [skonfigurowanie funkcji przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
 
-## Zbieranie zdarzeń
+## <a name="event-collection"></a>Zbieranie zdarzeń
 Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie ataków typu Pass-the-Hash przy użyciu zdarzenia 4776 systemu Windows. Może być ono odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
-### SIEM/Syslog
+### <a name="siemsyslog"></a>SIEM/Syslog
 Aby usługa ATA mogła wykorzystywać dane z serwera Syslog, konieczne jest wykonanie następujących czynności:
 
 -   Skonfigurowanie serwerów bramy usługi ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
@@ -42,10 +43,10 @@ Aby usługa ATA mogła wykorzystywać dane z serwera Syslog, konieczne jest wyko
 
 Zapoznaj się z dokumentacją produktu serwera SIEM/Syslog, aby uzyskać informacje o tym, jak skonfigurować przekazywanie określonych zdarzeń do innego serwera. 
 
-### Przekazywanie zdarzeń systemu Windows
+### <a name="windows-event-forwarding"></a>Przekazywanie zdarzeń systemu Windows
 Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domeny systemu Windows do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 w celu zbierania i analizowania przez usługę ATA. Zdarzenie systemu Windows o identyfikatorze 4776 udostępnia dane dotyczące uwierzytelniania NTLM.
 
-## Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM
+## <a name="configuring-the-ata-gateway-to-listen-for-siem-events"></a>Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM
 
 1.  Na karcie „Zdarzenia” w konfiguracji usługi ATA włącz opcję **Syslog** i naciśnij przycisk **Zapisz**.
 
@@ -53,10 +54,10 @@ Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domen
 
 2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
-### Obsługa rozwiązania SIEM
+### <a name="siem-support"></a>Obsługa rozwiązania SIEM
 Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:  
 
-#### RSA Security Analytics
+#### <a name="rsa-security-analytics"></a>RSA Security Analytics
 &lt;Nagłówek programu Syslog&gt;RsaSA\n2015-May-19 09:07:09\n4776\nMicrosoft-Windows-Security-Auditing\nSecurity\XXXXX.subDomain.domain.org.il\nYYYYY$\nMMMMM \n0x0
 
 -   Nagłówek programu Syslog jest opcjonalny.
@@ -85,7 +86,7 @@ Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
 
 -   Ważna jest kolejność i nic innego nie powinno być umieszczone w komunikacie.
 
-#### HP Arcsight
+#### <a name="hp-arcsight"></a>HP Arcsight
 CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kontroler domeny podjął próbę sprawdzenia poprawności poświadczeń konta.|Niski| externalId=4776 cat=Zabezpieczenia rt=1426218619000 shost=KKKKKK dhost=YYYYYY.subDomain.domain.com duser=XXXXXX cs2=Security cs3=Microsoft-Windows-Security-Auditing cs4=0x0 cs3Label=EventSource cs4Label=Przyczyna lub kod błędu
 
 -   Muszą być zgodne z definicją protokołu.
@@ -116,7 +117,7 @@ CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kont
 
     -   Przyczyna lub kod błędu = kod wyniku protokołu NTLM
 
-#### Splunk
+#### <a name="splunk"></a>Splunk
 &lt;Nagłówek programu Syslog&gt;\r\nEventCode=4776\r\nLogfile=Security\r\nSourceName=Microsoft-Windows-Security-Auditing\r\nTimeGenerated=20150310132717.784882-000\r\ComputerName=YYYYY\r\nMessage=
 
 Komputer podjął próbę zweryfikowania poświadczeń dla konta.
@@ -153,7 +154,7 @@ Kod błędu:         0x0
 
 -   Kolejność nie jest ważna dla par klucz=wartość.
 
-#### QRadar
+#### <a name="qradar"></a>QRadar
 Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługa ATA wymaga danych milisekund, platformę QRadar należy ustawić tak, aby zbieranie zdarzeń systemu Windows odbywało się bez użycia agentów. Aby uzyskać więcej informacji, zobacz [http://www-01.ibm.com/support/docview.wss?uid=swg21700170](http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń systemu Windows bez agenta przy użyciu protokołu MSRPC").
 
     <13>Feb 11 00:00:00 %IPADDRESS% AgentDevice=WindowsLog AgentLogFile=Security Source=Microsoft-Windows-Security-Auditing Computer=%FQDN% User= Domain= EventID=4776 EventIDCode=4776 EventType=8 EventCategory=14336 RecordNumber=1961417 TimeGenerated=1456144380009 TimeWritten=1456144380009 Message=The computer attempted to validate the credentials for an account. Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0 Logon Account: Administrator Source Workstation: HOSTNAME Error Code: 0x0
@@ -175,13 +176,13 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 >[!NOTE] 
 > Zbieranie zdarzeń systemu Windows przy użyciu modułu WinCollect nie jest obsługiwane.
 
-## Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
+## <a name="configuring-windows-event-forwarding"></a>Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
 
-### Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
+### <a name="wef-configuration-for-ata-gateways-with-port-mirroring"></a>Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
 Po skonfigurowaniu dublowania portów z kontrolerów domeny z bramą usługi ATA postępuj zgodnie z poniższymi instrukcjami, aby skonfigurować przekazywanie zdarzeń systemu Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
-**Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny.** 
+**Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
 
 W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
 
@@ -189,7 +190,7 @@ W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
 2.  Wybierz **członków**.
 4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
-**Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji.** 
+**Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji** 
 > [!Note] 
 > Można tworzyć dla tych ustawień zasady grupy i stosować zasady grupy do każdego kontrolera domeny monitorowanego przez bramę usługi ATA. Poniższe kroki umożliwiają modyfikację zasad lokalnych kontrolera domeny.     
 
@@ -237,7 +238,7 @@ W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
    6.   Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach przekazywanych w bramie ATA.
 
 
-### Konfiguracja funkcji WEF dla bramy ATA Lightweight Gateway
+### <a name="wef-configuration-for-the-ata-lightweight-gateway"></a>Konfiguracja funkcji WEF dla bramy ATA Lightweight Gateway
 Po zainstalowaniu bramy ATA Lightweight Gateway na kontrolerach domeny, można skonfigurować kontrolery domeny do przesyłania dalej zdarzeń do siebie samych. Wykonaj poniższe kroki, aby skonfigurować funkcję przesyłania dalej zdarzeń systemu Windows podczas używania bramy ATA Lightweight Gateway. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows.  
 
 **Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
@@ -280,12 +281,12 @@ Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach p
 
 Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
 
-## Zobacz też
-- [Instalowanie usługi ATA](install-ata.md)
+## <a name="see-also"></a>Zobacz też
+- [Instalowanie usługi ATA](install-ata-step1.md)
 - [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Nov16_HO5-->
 
 

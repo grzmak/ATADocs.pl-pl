@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/31/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -36,7 +36,6 @@ Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb
 ## <a name="moving-the-ata-database-to-another-drive"></a>Przenoszenie bazy danych usługi ATA na inny dysk
 
 1.  Zatrzymaj usługę **Microsoft Advanced Threat Analytics Center**.
-
 > [!Important] 
 > Przed przejściem do następnego kroku upewnij się, że centrum usługi ATA zostało zatrzymane.
 

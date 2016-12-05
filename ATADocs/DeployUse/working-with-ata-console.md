@@ -1,10 +1,11 @@
 ---
-title: "Praca z konsolą usługi ATA | Microsoft ATA"
+title: "Praca z konsolą usługi ATA | Dokumentacja firmy Microsoft"
 description: "Opis sposobu logowania się do konsoli usługi ATA oraz składników konsoli"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: a4ba68547d6746625a44aca5d05790c3ad138f4e
-ms.openlocfilehash: ab9abce7479971c80544476c54cbf0911d1a5822
+ms.sourcegitcommit: 7dc860fe31da1374a4466f8e56e55e6520bc10dc
+ms.openlocfilehash: c315b3b307628b31b42a6d393513b86ce88e8aa1
 
 
 ---
@@ -23,14 +24,14 @@ ms.openlocfilehash: ab9abce7479971c80544476c54cbf0911d1a5822
 
 
 
-# Praca z konsolą usługi ATA
+# <a name="working-with-the-ata-console"></a>Praca z konsolą usługi ATA
 
 Konsola usługi ATA służy do monitorowania podejrzanych działań wykrytych przez usługę ATA i reagowania na nie.
 
-## Włączanie dostępu do konsoli usługi ATA
+## <a name="enabling-access-to-the-ata-console"></a>Włączanie dostępu do konsoli usługi ATA
 Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta użytkownika, który został przypisany do właściwej roli usługi ATA z dostępem do konsoli ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartego na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami ról usługi ATA](ata-role-groups.md).
 
-## Logowanie się do konsoli usługi ATA
+## <a name="logging-into-the-ata-console"></a>Logowanie się do konsoli usługi ATA
 
 1. Na serwerze centrum usługi ATA kliknij ikonę **Konsola usługi Microsoft ATA** na pulpicie lub otwórz przeglądarkę i przejdź do konsoli usługi ATA.
 
@@ -44,14 +45,14 @@ Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta uży
 ![Obraz ekranu logowania usługi ATA](media/ATA-log-in-screen.png)
 
 
-## Konsola usługi ATA
+## <a name="the-ata-console"></a>Konsola usługi ATA
 
 Konsola usługi ATA zapewnia szybki przegląd wszystkich podejrzanych działań w kolejności chronologicznej. Umożliwia przejście do szczegółów dowolnego działania i wykonanie operacji w oparciu o te działania. W konsoli są również wyświetlane alerty i powiadomienia wyróżniające problemy dotyczące sieci usługi ATA lub nowe działania uznane za podejrzane.
 
 Są to kluczowe elementy konsoli usługi ATA.
 
 
-### Oś czasu ataków
+### <a name="attack-time-line"></a>Oś czasu ataków
 
 Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Oś czasu ataków można filtrować, aby wyświetlać Wszystkie, Otwarte, Odrzucone lub Rozwiązane podejrzane działania. Można również sprawdzić ważność przypisaną do poszczególnych działań.
 
@@ -59,23 +60,23 @@ Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli us
 
 Aby uzyskać więcej informacji, zobacz [Praca z podejrzanymi działaniami](/advanced-threat-analytics/deploy-use/working-with-suspicious-activities).
 
-### Pasek powiadomień
+### <a name="notification-bar"></a>Pasek powiadomień
 
 Po wykryciu nowego podejrzanego działania pasek powiadomień zostanie otwarty automatycznie po prawej stronie. Jeśli od czasu ostatniego zalogowania miały miejsce nowe podejrzane działania, pasek powiadomień zostanie otwarty po pomyślnym zalogowaniu. W dowolnym momencie można uzyskać dostęp do paska powiadomień, klikając strzałkę po prawej stronie.
 
 ![Obraz paska powiadomień usługi ATA](media/notification-bar-1.7.png)
 
-### Panel filtrowania
+### <a name="filtering-panel"></a>Panel filtrowania
 
 Podejrzane działania wyświetlane na osi czasu ataków lub na karcie podejrzanych działań profilu jednostki można filtrować na podstawie stanu i ważności.
 
-### Pasek wyszukiwania
+### <a name="search-bar"></a>Pasek wyszukiwania
 
 W menu u góry znajduje się pasek wyszukiwania. Umożliwia on wyszukiwanie określonych użytkowników, komputerów lub grup w usłudze ATA. Aby go wypróbować, po prostu zacznij wpisywać tekst.
 
 ![Obraz wyszukiwania w konsoli usługi ATA](media/ATA-console-search.png)
 
-### Centrum kondycji
+### <a name="health-center"></a>Centrum kondycji
 
 Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu usługi ATA.
 
@@ -85,7 +86,7 @@ Za każdym razem, gdy system napotka problem, taki jak błąd łączności lub r
 
 Alerty centrum kondycji można odrzucać lub rozwiązywać. Są również podzielone na kategorie Wysoka, Średnia lub Niska w zależności od ważności. W przypadku rozwiązania alertu, który jest nadal wykrywany przez usługę ATA jako aktywny, zostanie on automatycznie przeniesiony do listy otwartych alertów. Jeśli system wykryje, że przyczyna alertu już nie istnieje (problem został rozwiązany), alert zostanie przeniesiony do listy rozwiązanych.
 
-### Profile użytkowników i komputerów
+### <a name="user-and-computer-profiles"></a>Profile użytkowników i komputerów
 
 Usługa ATA tworzy profil dla każdego użytkownika i komputera w sieci. W profilu użytkownika usługi ATA wyświetlane są ogólne informacje, takie jak członkostwo w grupie, ostatnie logowania i ostatnio używane zasoby.
 
@@ -102,7 +103,7 @@ Profil, który nie mógł zostać całkowicie rozwiązany przez usługę ATA, zo
 
 ![Obraz nierozwiązanego profilu usługi ATA](media/ATA-Unresolved-Profile.jpg)
 
-### Mini profil
+### <a name="mini-profile"></a>Mini profil
 
 W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka jak użytkownik lub komputer, umieszczenie wskaźnika myszy na jednostce spowoduje automatyczne otwarcie mini profilu zawierającego następujące informacje, jeśli są dostępne:
 
@@ -120,11 +121,11 @@ W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka
 
 
 
-## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## <a name="see-also"></a>Zobacz też
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 

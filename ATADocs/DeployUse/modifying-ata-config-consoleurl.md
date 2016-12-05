@@ -3,8 +3,9 @@ title: "Zmienianie konfiguracji usługi ATA — adres IP konsoli usługi ATA | U
 description: "Opisuje sposób zmiany adresu IP konsoli usługi ATA, używanego do tworzenia skrótów do konsoli usługi ATA w bramach usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: stevenpo
-ms.date: 08/24/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: identity-ata
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: 50118465-df34-4e04-b0cc-48808b6a96b1
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: b3d11a87f1909c1fd964fa990e5d36a91691a844
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: 8f816c8eda0a1b11a42314a18b1c8c39ac6a7ba8
 
 
 ---
@@ -23,13 +24,13 @@ ms.openlocfilehash: b3d11a87f1909c1fd964fa990e5d36a91691a844
 
 
 
-# Zmienianie konfiguracji usługi ATA — adres URL konsoli usługi ATA
+# <a name="change-ata-configuration---ata-console-url"></a>Zmienianie konfiguracji usługi ATA — adres URL konsoli usługi ATA
 
 >[!div class="step-by-step"]
 [« Certyfikat centrum usługi ATA](modifying-ata-config-centercert.md)
 [Hasło łączności domenowej »](modifying-ata-config-dcpassword.md)
 
-## Zmienianie adresu URL konsoli usługi ATA
+## <a name="change-the-ata-console-url"></a>Zmienianie adresu URL konsoli usługi ATA
 Domyślnie adres URL konsoli usługi ATA to adres IP wybrany jako adres IP konsoli usługi ATA podczas instalacji centrum usługi ATA.
 
 Ten adres URL jest używany w następujących scenariuszach:
@@ -60,6 +61,9 @@ Jeśli musisz zmienić adres URL konsoli usługi ATA, wykonaj następujące czyn
 5.  W obszarze **Console URL** (Adres URL konsoli) zmodyfikuj adres URL:
 
     ![Adres URL konsoli usługi ATA](media/ATA-chge-center-URL.png)
+> [!NOTE]
+> Nie umieszczaj ukośnika „/” na końcu adresu URL.
+
 6.  Kliknij polecenie **Zapisz**.
 
 >[!div class="step-by-step"]
@@ -67,13 +71,12 @@ Jeśli musisz zmienić adres URL konsoli usługi ATA, wykonaj następujące czyn
 [Hasło łączności domenowej »](modifying-ata-config-dcpassword.md)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
-- [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://aka.ms/ata-forum)
+- [Forum usługi ATA](https://aka.ms/ata-forum)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 
