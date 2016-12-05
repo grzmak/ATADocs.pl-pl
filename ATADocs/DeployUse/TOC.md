@@ -5,14 +5,13 @@
 ### [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 ### [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-## [Instalowanie usługi ATA](install-ata.md)
-### [Krok 1](install-ata-step1.md)
-### [Krok 2](install-ata-step2.md)
-### [Krok 3](install-ata-step3.md)
-### [Krok 4](install-ata-step4.md)
-### [Krok 5](install-ata-step5.md)
-### [Krok 6 ](install-ata-step6.md)
-### [Instalacja dyskretna](ata-silent-installation.md)
+## [Instalowanie usługi ATA — krok 1](install-ata-step1.md)
+## [Instalowanie usługi ATA — krok 2](install-ata-step2.md)
+## [Instalowanie usługi ATA — krok 3](install-ata-step3.md)
+## [Instalowanie usługi ATA — krok 4](install-ata-step4.md)
+## [Instalowanie usługi ATA — krok 5](install-ata-step5.md)
+## [Instalowanie usługi ATA — krok 6](install-ata-step6.md)
+## [Instalacja dyskretna](ata-silent-installation.md)
 # [Użycie](modifying-ata-config-centerip.md)
 ## [Zmienianie adresu IP centrum usługi ATA](modifying-ata-config-centerip.md)
 ## [Zmienianie certyfikatu centrum usługi ATA](modifying-ata-config-centercert.md)
@@ -21,16 +20,16 @@
 ## [Praca z konsolą usługi ATA](working-with-ata-console.md)
 ## [Grupy ról usługi ATA](ata-role-groups.md)
 ## [Określanie ustawień usługi Syslog i serwera poczty e-mail](setting-syslog-email-server-settings.md)
-## [Ustawianie alertów usługi ATA](setting-ata-alerts.md)
+## [Ustawianie powiadomień usługi ATA](setting-ata-alerts.md)
 ## [Praca z ustawieniami wykrywania](working-with-detection-settings.md)
 ## [Centrum kondycji usługi ATA](ata-health-center.md)
 ## [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 ## [Zarządzanie bazą danych usługi ATA](ata-database-management.md)
-## [Plik konfiguracji usługi ATA](ata-configuration-file.md)
+## [Eksportowanie/importowanie konfiguracji usługi ATA](ata-configuration-file.md)
 ## [Zarządzanie funkcją telemetrii w usłudze ATA](manage-telemetry-settings.md)
 # [Rozwiązywanie problemów](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-known-errors)
 
 
-<!--HONumber=Oct16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 

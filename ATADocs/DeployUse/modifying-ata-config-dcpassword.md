@@ -1,10 +1,11 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną | Microsoft ATA"
+title: "Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną | Dokumentacja firmy Microsoft"
 description: "Zawiera opis sposobu zmiany hasła do łączności z domeną w ramach bramy usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: 4a25561b-a5ed-44aa-9b72-366976b3c72a
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: 7cee457a8959526b25a68c50efea2976bafbef75
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: a6dbdb0d53a0a7f6903ec858bb44054c624ae226
 
 
 ---
@@ -23,17 +24,16 @@ ms.openlocfilehash: 7cee457a8959526b25a68c50efea2976bafbef75
 
 
 
-# Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
+# <a name="change-ata-configuration---domain-connectivity-password"></a>Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
 
 >[!div class="step-by-step"]
 [« Adres URL konsoli usługi ATA](modifying-ata-config-consoleurl.md)
 
 
-## Zmienianie hasła do łączności z domeną
+## <a name="change-the-domain-connectivity-password"></a>Zmienianie hasła do łączności z domeną
 Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa bramy usługi ATA przestanie działać w bramach usługi ATA.
 
-Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat:
-`The supplied credential is invalid.`
+Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat: `The supplied credential is invalid.`
 
 Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowania hasła łączności z domeną w centrum usługi ATA:
 
@@ -58,13 +58,12 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 >[!div class="step-by-step"]
 [« Adres URL konsoli usługi ATA](modifying-ata-config-consoleurl.md)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
-- [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 

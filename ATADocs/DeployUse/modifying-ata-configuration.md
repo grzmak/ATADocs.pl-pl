@@ -1,10 +1,11 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA | Microsoft ATA"
+title: "Zmienianie konfiguracji usługi ATA | Dokumentacja firmy Microsoft"
 description: "Lista sposobów, na które można zaktualizować konfigurację usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 11/29/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +14,8 @@ ms.assetid: bcf0f7d3-8027-45c0-8002-19f71fcb30a6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: b79a5726b40130b28b0b52d42eede69a4dacc8b6
+ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
+ms.openlocfilehash: f1e0939160cfdc54d4474f43e01582893cda82ef
 
 
 ---
@@ -23,7 +24,7 @@ ms.openlocfilehash: b79a5726b40130b28b0b52d42eede69a4dacc8b6
 
 
 
-# Zmienianie konfiguracji usługi ATA
+# <a name="change-ata-configuration"></a>Zmienianie konfiguracji usługi ATA
 
 Jeśli musisz zaktualizować lub zmienić konfigurację po początkowej instalacji i wdrożeniu usługi ATA, zapoznaj się ze wskazówkami w tym temacie przed dokonaniem następujących modyfikacji:
 
@@ -35,13 +36,12 @@ Jeśli musisz zaktualizować lub zmienić konfigurację po początkowej instalac
 
 -   [Zmienianie hasła do łączności z domeną](modifying-ata-config-dcpassword.md)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
-- [Instalowanie usługi ATA](install-ata.md)
-- [Zapoznaj się z forum usługi ATA!](https://aka.ms/ata-forum)
+- [Forum usługi ATA](https://aka.ms/ata-forum)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO5-->
 
 
