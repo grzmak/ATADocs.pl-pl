@@ -1,8 +1,9 @@
 ---
-title: "Instalacja dyskretna usługi ATA | Microsoft ATA"
+title: "Instalacja dyskretna usługi ATA | Dokumentacja firmy Microsoft"
 description: "Temat opisuje sposób instalacji usługi ATA w trybie dyskretnym."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: get-started-article
@@ -13,8 +14,8 @@ ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d0681cfa4ae763da9c88c8dec9b77a75494a5c9f
-ms.openlocfilehash: 7b9ba09d3757979c0b845f796a846e7e83b505af
+ms.sourcegitcommit: b7f9dac8c00f213ee0cefc9ff93f2c9ca40cd28b
+ms.openlocfilehash: 7d7eeaf450a38a23c5c3a4d6d192a773f4cd036c
 
 
 ---
@@ -23,9 +24,9 @@ ms.openlocfilehash: 7b9ba09d3757979c0b845f796a846e7e83b505af
 
 
 
-# Instalacja usługi ATA w trybie dyskretnym
+# <a name="ata-silent-installation"></a>Instalacja usługi ATA w trybie dyskretnym
 Ten artykuł zawiera instrukcje dotyczące instalowania usługi ATA w trybie dyskretnym.
-## Wymagania wstępne
+## <a name="prerequisites"></a>Wymagania wstępne
 
 Usługa Microsoft ATA w wersji 1.7 wymaga zainstalowania programu Microsoft .NET Framework 4.6.1. 
 
@@ -36,7 +37,7 @@ W przypadku instalacji lub aktualizacji usługi ATA platforma .Net Framework 4.6
 W przypadku użycia dyskretnej metody instalacji usługi ATA instalator jest skonfigurowany tak, aby automatycznie uruchomić ponownie serwer na końcu instalacji (w razie potrzeby). Aby uniknąć ponownego uruchomienia serwera w ramach instalacji, użyj flagi `-NoRestart`. W sytuacji, w której użyto flagi `-NoRestart` i wymaga się ponownego uruchomienia serwera w ramach instalacji, instalator wstrzyma pracę aż do ponownego uruchomienia serwera. Aby śledzić postępy wdrażania, monitoruj dzienniki instalatora usługi ATA, które znajdują się w folderze **%AppData%\Local\Temp**.
 
 
-## Instalowanie centrum usługi ATA
+## <a name="install-the-ata-center"></a>Instalowanie centrum usługi ATA
 
 Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
@@ -77,7 +78,7 @@ Aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instala
     “Microsoft ATA Center Setup.exe” /quiet --LicenseAccepted NetFrameworkCommandLineArguments ="/q" CenterIpAddress=192.168.0.10 CenterPort=443 CenterCertificateThumbprint= ‎"1E2079739F624148ABDF502BF9C799FCB8C7212F”
     ConsoleIpAddress=192.168.0.11  ConsoleCertificateThumbprint=”G9530253C976BFA9342FD1A716C0EC94207BFD5A”
 
-## Zaktualizuj centrum usługi ATA
+## <a name="update-the-ata-center"></a>Zaktualizuj centrum usługi ATA
 
 Użyj poniższego polecenia, aby zaktualizować centrum usługi ATA:
 
@@ -102,7 +103,7 @@ Podczas aktualizowania usługi ATA instalator automatycznie wykrywa, czy usługa
 
         “Microsoft ATA Center Setup.exe” /quiet NetFrameworkCommandLineArguments="/q"
 
-## Odinstalowywanie centrum usługi ATA w trybie dyskretnym
+## <a name="uninstall-the-ata-center-silently"></a>Odinstalowywanie centrum usługi ATA w trybie dyskretnym
 
 Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
@@ -129,7 +130,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 
     “Microsoft ATA Center Setup.exe” /quiet /uninstall --DeleteExistingDatabaseData
 
-## Instalacja bramy usługi ATA w trybie dyskretnym
+## <a name="ata-gateway-silent-installation"></a>Instalacja bramy usługi ATA w trybie dyskretnym
 Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
 
 **Składnia**:
@@ -146,15 +147,14 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 |NoRestart|/norestart|Nie|Pomija wszelkie próby ponownego uruchomienia. Domyślnie interfejs użytkownika wyświetla monit przed ponownym uruchomieniem.|
 |Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
 |NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Tak|Określa parametry dla instalacji programu .Net Framework. Parametr musi być ustawiony w celu wymuszenia instalacji dyskretnej programu .Net Framework.|
-|LicenseAccepted|--LicenseAccepted|Tak|Wskazuje, że licencja została przeczytana i zatwierdzona. Parametr musi być ustawiony w przypadku instalacji dyskretnej.|
 
 **Parametry instalacji**:
 
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |GatewayCertificateThumbprint|GatewayCertificateThumbprint=”<CertThumbprint >”|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
-|ConsoleAccountName|ConsoleAccountName=”<AccountName>”|Tak|Określa nazwę konta użytkownika (uzytkownik@domena.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
-|ConsoleAccountPassword|ConsoleAccountPassword=”<AccountPassword>”|Tak|Określa hasło konta użytkownika (uzytkownik@domena.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
+|ConsoleAccountName|ConsoleAccountName=”<AccountName>”|Tak|Określa nazwę konta użytkownika ((user@domain.com)), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
+|ConsoleAccountPassword|ConsoleAccountPassword=”<AccountPassword>”|Tak|Określa hasło konta użytkownika ((user@domain.com)), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 
 **Przykłady**: aby dyskretnie zainstalować bramę usługi ATA i zarejestrować ją w centrum usługi ATA za pomocą określonych poświadczeń:
 
@@ -162,7 +162,7 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
     ConsoleAccountName=”user@contoso.com” ConsoleAccountPassword=“userpwd”
     
 
-## Aktualizacja bramy usługi ATA
+## <a name="update-the-ata-gateway"></a>Aktualizacja bramy usługi ATA
 
 Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dyskretnym:
 
@@ -185,7 +185,7 @@ Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dysk
 
         Microsoft ATA Gateway Setup.exe /quiet NetFrameworkCommandLineArguments="/q"
 
-## Odinstalowywanie bramy usługi ATA w trybie dyskretnym
+## <a name="uninstall-the-ata-gateway-silently"></a>Odinstalowywanie bramy usługi ATA w trybie dyskretnym
 
 Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
@@ -214,13 +214,13 @@ Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj
 
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 
