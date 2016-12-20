@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/28/2016
+ms.date: 12/08/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
-ms.openlocfilehash: 2932fd80fd3a5ff6830f8629df824591e3fc47c3
+ms.sourcegitcommit: d16364cd4113534c3101ebfa7750c0d0b837856d
+ms.openlocfilehash: 9ac9478512f2e5f6d15dd9b5cba9970a51ffa4da
 
 
 ---
@@ -28,13 +28,14 @@ ms.openlocfilehash: 2932fd80fd3a5ff6830f8629df824591e3fc47c3
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje identyfikatora 4776 z dziennika zdarzeń systemu Windows. Może on zostać przekazany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez [skonfigurowanie funkcji przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
 
 ## <a name="event-collection"></a>Zbieranie zdarzeń
-Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie ataków typu Pass-the-Hash przy użyciu zdarzenia 4776 systemu Windows. Może być ono odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
+Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie ataków typu Pass-the-Hash przy użyciu zdarzenia 4776 systemu Windows. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 ### <a name="siemsyslog"></a>SIEM/Syslog
 Aby usługa ATA mogła wykorzystywać dane z serwera Syslog, konieczne jest wykonanie następujących czynności:
 
 -   Skonfigurowanie serwerów bramy usługi ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
-
+> [!NOTE]
+> Usługa ATA nasłuchuje tylko protokołu IPv4, nie protokołu IPv6. 
 -   Skonfigurowanie serwera SIEM/Syslog do przekazywania określonych zdarzeń do bramy usługi ATA.
 
 > [!IMPORTANT]
@@ -287,6 +288,6 @@ Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazyw
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 
