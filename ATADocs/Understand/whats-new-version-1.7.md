@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/25/2016
+ms.date: 12/08/2016
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: be9ee613-4eb3-40f1-8973-e7f0a707ff57
 ms.reviewer: 
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: fca7f1b2b8260cad6e0ce32aad1c9e1b53fc0ad5
-ms.openlocfilehash: 8032e373567ce500c7741480d56d232f34b05446
+ms.sourcegitcommit: 00ddddfd927ed1ba4c52d4774085da04ce359bde
+ms.openlocfilehash: 1c8d7983c5fd86ae3ef2c906eba3f0781cffb99b
 
 
 ---
@@ -30,14 +30,14 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 
 -   Kontrola dostępu oparta na rolach
 
--   Obsługa systemu Windows Server 2016 i Windows Server Core
+-   Obsługa systemu Windows Server 2016 i Windows Server 2016 Core
 
 -   Ulepszenia środowiska użytkownika
 
 -   Drobne zmiany
 
 
-### <a name="new-updated-detections"></a>Nowe i zaktualizowane funkcje wykrywania
+### <a name="new--updated-detections"></a>Nowe i zaktualizowane funkcje wykrywania
 
 
 - **Rekonesans przy użyciu wyliczania usług katalogowych** W ramach fazy rekonesansu osoby atakujące zbierają informacje dotyczące jednostek w sieci przy użyciu różnych metod. Wyliczanie usług katalogowych przy użyciu protokołu SAM-R pozwala osobom atakującym uzyskać listę użytkowników i grup w domenie oraz zrozumieć interakcję między różnymi jednostkami. 
@@ -55,7 +55,7 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 
 - **Kontrola dostępu na podstawie roli** Obsługa kontroli dostępu opartej na rolach (RBAC). Usługa ATA 1.7 zawiera trzy role: administrator ATA, analityk ATA i wykonawca ATA.
 
-- **Obsługa systemu Windows Server 2016 i Windows Server Core** Usługa ATA 1.7 obsługuje wdrażanie bram Lightweight Gateway na kontrolerach domeny z systemem Server Core dla systemu Windows Server 2012 i Server Core dla systemu Windows Server 2012 R2. Ponadto ta wersja obsługuje system Windows Server 2016 w przypadku obu składników: centrum usługi ATA i bramy usługi ATA.
+- **Obsługa systemu Windows Server 2016 i Windows Server Core** Usługa ATA 1.7 obsługuje wdrażanie bram Lightweight Gateway na kontrolerach domeny z systemami Windows Server 2008 R2 z dodatkiem SP1 (bez instalacji Server Core), Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (z instalacją Core, ale nie Nano). Ponadto ta wersja obsługuje system Windows Server 2016 w przypadku obu składników: centrum usługi ATA i bramy usługi ATA.
 
 ### <a name="user-experience"></a>Czynności po stronie użytkownika
 - **Środowisko konfiguracji** Środowisko konfiguracji usługi ATA zostało w tej wersji przeprojektowane dla wygody użytkowników i w celu lepszej obsługi środowisk z wieloma bramami ATA. W tej wersji wprowadzono także stronę aktualizacji bramy ATA w celu prostszego, lepszego zarządzania automatycznymi aktualizacjami różnych bram.
@@ -102,6 +102,12 @@ Aby rozwiązać ten problem, po zmianie certyfikatu w wierszu polecenia z podwy�
 
 3. db.SystemProfile.update({_t:"ServiceSystemProfile"},{$set:{"Configuration.ManagementClientConfiguration.ServerCertificateThumbprint":CenterThumbprint}}, {multi: true})
 
+### <a name="export-suspicious-activity-details-to-excel-may-fail"></a>Eksportowanie szczegółów podejrzanego działania do programu Excel może zakończyć się błędem
+Jeśli próbujesz wyeksportować szczegóły podejrzanego działania do pliku programu Excel, operacja może zakończyć się następującym błędem: *Błąd [BsonClassMapSerializer`1] System.FormatException: Wystąpił błąd podczas deserializacji właściwości Activity klasy Microsoft.Tri.Common.Data.NetworkActivities.SuspiciousActivityActivity: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent. ---> System.FormatException: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent.*
+
+Aby rozwiązać ten problem, w wierszu polecenia z podwyższonym poziomem uprawnień przejdź do następującej lokalizacji: **%ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** i uruchom następujące elementy:
+1.  **Mongo.exe ATA** (ciąg „ATA” należy zapisać przy użyciu wielkich liter)
+2.  **db.SuspiciousActivityActivity.update({ "Activity._t": "NtlmEvent" },{$unset: {"Activity.ResourceIdentifier": ""}}, {multi: true});**
 
 ## <a name="minor-changes"></a>Drobne zmiany
 
@@ -117,6 +123,6 @@ Aby rozwiązać ten problem, po zmianie certyfikatu w wierszu polecenia z podwy�
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
