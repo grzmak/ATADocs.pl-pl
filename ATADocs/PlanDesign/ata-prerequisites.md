@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 12/14/2016
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
-ms.openlocfilehash: 56f397c373e0b6827aab084e21c804a135049a27
+ms.sourcegitcommit: 67b430fbed97bd08e5f538043c783e70ed2ab956
+ms.openlocfilehash: 60ec036a8c22fb34c673653a6378437ab14f9853
 
 
 ---
@@ -142,6 +142,9 @@ Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Win
 
 Aby uzyskać informacje o używaniu maszyn wirtualnych z bramą usługi ATA, zobacz [Konfigurowanie funkcji dublowania portów](/advanced-threat-analytics/deploy-use/configure-port-mirroring).
 
+> [!NOTE]
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs) i [dzienników wydajności](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-perf-counters).
+
 ### <a name="server-specifications"></a>Specyfikacje serwera
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.<br>
 Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego do i z kontrolerów domeny.
@@ -212,12 +215,15 @@ W magazynie Komputer bramy usługi ATA w ramach magazynu Komputer lokalny musi b
 ## <a name="ata-lightweight-gateway-requirements"></a>Wymagania dotyczące bramy ATA Lightweight Gateway
 Ta sekcja zawiera listę wymagań bramy ATA Lightweight Gateway.
 ### <a name="general"></a>Ogólne
-Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z systemem Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (w tym Core, ale nie Nano).
+Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z systemami Windows Server 2008 R2 z dodatkiem SP1 (bez instalacji Server Core), Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (z instalacją Core, ale nie Nano).
 
 Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
 
 Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 z dodatkiem SP1 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
 Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
+
+> [!NOTE]
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs.md) i [dzienników wydajności](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-perf-counters.md).
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 
@@ -282,6 +288,6 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
