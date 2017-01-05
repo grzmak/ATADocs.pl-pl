@@ -1,8 +1,9 @@
 ---
-title: "Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA | Microsoft ATA"
+title: "Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA | Dokumentacja firmy Microsoft"
 description: "Opis sposobu rozwiązywania problemów przy użyciu dzienników usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: article
@@ -13,8 +14,8 @@ ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: c71d5ed1c705de558f1144820703ffe84850679b
-ms.openlocfilehash: f8024edbfad1961db7fa469cc2907c55bb5ec93f
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: 3a2ae61ba1b54efd5dca5f0f71dc71b98872145d
 
 
 ---
@@ -23,10 +24,10 @@ ms.openlocfilehash: f8024edbfad1961db7fa469cc2907c55bb5ec93f
 
 
 
-# Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
+# <a name="troubleshooting-ata-using-the-ata-logs"></a>Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
 Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczególne składniki usługi ATA w dowolnym momencie.
 
-## Dzienniki bramy usługi ATA
+## <a name="ata-gateway-logs"></a>Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
 
 Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
@@ -47,7 +48,7 @@ Brama usługi ATA ma następujące dzienniki:
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
-## Dzienniki centrum usługi ATA
+## <a name="ata-center-logs"></a>Dzienniki centrum usługi ATA
 Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
 > [!Note]
 > Dzienniki konsoli ATA, które były wcześniej dziennikami usług IIS, teraz znajdują się w obszarze dzienników centrum usługi ATA.
@@ -67,7 +68,7 @@ Centrum usługi ATA ma następujące dzienniki:
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
 
-## Dzienniki wdrożenia usługi ATA
+## <a name="ata-deployment-logs"></a>Dzienniki wdrożenia usługi ATA
 Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Users\Administrator\AppData\Local\Temp** (lub w katalogu nadrzędnym folderu %temp%).
 
 Dzienniki wdrożenia centrum usługi ATA:
@@ -85,15 +86,15 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 -   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

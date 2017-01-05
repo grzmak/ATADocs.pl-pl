@@ -1,8 +1,9 @@
 ---
-title: "Centrum kondycji usługi ATA | Microsoft ATA"
+title: "Centrum kondycji usługi ATA | Dokumentacja firmy Microsoft"
 description: "Korzystając z centrum kondycji usługi ATA, można sprawdzić, czy usługa ATA działa prawidłowo, i otrzymywać alerty o potencjalnych problemach."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
@@ -13,8 +14,8 @@ ms.assetid: d6c783b2-46c5-4211-b21a-d6b17f08d03d
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: 9f408d7c2cb9c14caee175a1dd1c9ddb1baf9faa
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: bff593f07d70cd559a1ee75d3b75c61b6534432d
 
 
 ---
@@ -23,15 +24,15 @@ ms.openlocfilehash: 9f408d7c2cb9c14caee175a1dd1c9ddb1baf9faa
 
 
 
-# Centrum kondycji usługi ATA
+# <a name="ata-health-center"></a>Centrum kondycji usługi ATA
 Centrum kondycji usługi ATA umożliwia sprawdzenie, czy usługa ATA działa prawidłowo, i ostrzega o potencjalnych problemach.
 
-## Praca z centrum kondycji usługi ATA
+## <a name="working-with-the-ata-health-center"></a>Praca z centrum kondycji usługi ATA
 Centrum kondycji usługi ATA informuje o wystąpieniu problemu, wyświetlając symbol alertu (czerwoną kropkę) ponad ikoną centrum kondycji na pasku menu.
 
 ![Pasek narzędzi z centrum kondycji usługi ATA oznaczonym czerwoną kropką](media/ATA-Health-Center-Alert-red-dot.png)
 
-### Zarządzanie kondycją usługi ATA
+### <a name="managing-ata-health"></a>Zarządzanie kondycją usługi ATA
 Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pasku menu. ![Ikona centrum kondycji usługi ATA](media/ATA-red-dot.png)
 
 -   Wszystkimi otwartymi alertami można zarządzać, zmieniając ich ustawienie na **Rozwiązane** lub **Odrzucone**. W oknie Alert kliknij pozycję **Otwarte**, a następnie przewiń w dół do pozycji **Rozwiązane** lub **Odrzucone**.
@@ -42,13 +43,13 @@ Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pa
 
 ![Obraz problemów w centrum kondycji usługi ATA](media/ATA-Health-Issue.JPG)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

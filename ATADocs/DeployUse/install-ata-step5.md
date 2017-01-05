@@ -1,8 +1,9 @@
 ---
-title: "Instalacja usługi ATA — krok 5 | Microsoft ATA"
+title: "Instalacja usługi ATA — krok 5 | Dokumentacja firmy Microsoft"
 description: "W kroku 5 procesu instalowania usługi ATA znajdują się informacje ułatwiające skonfigurowanie ustawień bramy usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: get-started-article
@@ -13,8 +14,8 @@ ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 39eadb9143740741fa592f983f03def5367ada46
-ms.openlocfilehash: 14b04a771f0c18170f0c80d388ab012574d40bee
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: b30fe6bc977184fb8cc297e10724c7fe48ee6934
 
 
 ---
@@ -23,14 +24,14 @@ ms.openlocfilehash: 14b04a771f0c18170f0c80d388ab012574d40bee
 
 
 
-# Instalowanie usługi ATA — Krok 5
+# <a name="install-ata---step-5"></a>Instalowanie usługi ATA — Krok 5
 
 >[!div class="step-by-step"]
 [« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
 
-## Krok 5. Konfigurowanie ustawień bramy usługi ATA
+## <a name="step-5-configure-the-ata-gateway-settings"></a>Krok 5. Konfigurowanie ustawień bramy usługi ATA
 Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurować ustawienia bramy usługi ATA.
 
 1.  W konsoli ATA przejdź do węzła **Konfiguracja** i w obszarze **System** wybierz pozycję **Bramy**.
@@ -67,7 +68,7 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
 3. Kliknij polecenie **Zapisz**.
 
 
-## Weryfikowanie instalacji
+## <a name="validate-installations"></a>Weryfikowanie instalacji
 Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 
 1.  Sprawdź, czy jest uruchomiona usługa o nazwie **Microsoft Advanced Threat Analytics Gateway**. Po zapisaniu ustawień bramy usługi ATA może minąć kilka minut, zanim usługa zostanie uruchomiona.
@@ -87,15 +88,15 @@ Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 [« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 
