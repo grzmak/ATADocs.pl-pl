@@ -1,8 +1,9 @@
 ---
-title: "Praca z podejrzanymi działaniami | Microsoft ATA"
+title: "Praca z podejrzanymi działaniami | Dokumentacja firmy Microsoft"
 description: "Opis sposobu przeglądania podejrzanych działań zidentyfikowanych przez usługę ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: article
@@ -13,8 +14,8 @@ ms.assetid: 44d7c899-816c-4f7f-91d3-84a09d291a24
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: 30fbeb0682bd4b253d7a6eb52b8b31e487b363cb
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: 29a8b5b76b4b435157f0907f0dc98731dacbc53a
 
 
 ---
@@ -23,10 +24,10 @@ ms.openlocfilehash: 30fbeb0682bd4b253d7a6eb52b8b31e487b363cb
 
 
 
-# Praca z podejrzanymi działaniami
+# <a name="working-with-suspicious-activities"></a>Praca z podejrzanymi działaniami
 W tym temacie przedstawiono podstawowe informacje dotyczące pracy z usługą Advanced Threat Analytics.
 
-## Przeglądanie podejrzanych działań na osi czasu ataków
+## <a name="review-suspicious-activities-on-the-attack-time-line"></a>Przeglądanie podejrzanych działań na osi czasu ataków
 Po zalogowaniu się do konsoli usługi ATA jest automatycznie otwierana **Oś czasu podejrzanych działań**. Podejrzane działania są wymienione na liście w kolejności chronologicznej. Najnowsze podejrzane działania znajdują się u góry osi czasu.
 Każde podejrzane działanie zawiera następujące informacje:
 
@@ -56,7 +57,7 @@ Każde podejrzane działanie zawiera następujące informacje:
 
 ![Obraz osi czasu podejrzanych działań usługi ATA](media/ATA-Suspicious-Activity-Timeline.JPG)
 
-## Filtrowanie listy podejrzanych działań
+## <a name="filter-suspicious-activities-list"></a>Filtrowanie listy podejrzanych działań
 Aby filtrować listę podejrzanych działań:
 
 1.  W okienku **Filtruj według** po lewej stronie ekranu wybierz jedną z następujących pozycji: **Wszystkie**, **Otwarte**, **Rozwiązane** lub **Odrzucone**.
@@ -83,7 +84,7 @@ Aby filtrować listę podejrzanych działań:
 
     Na tej liście są wyświetlane wszystkie nowe podejrzane działania.
 
--   **Resolved**
+-   **Rozwiązane**
 
     Służy do śledzenia podejrzanych działań, które zostały zidentyfikowane i zbadane, a następnie naprawione lub uniemożliwione.
 
@@ -94,7 +95,7 @@ Aby filtrować listę podejrzanych działań:
 
     Działania, które zostały ręcznie odrzucone. Jeśli usługa ATA wykryje podobne podejrzane działanie, zostanie utworzone nowe wykrycie.
 
-## Podawanie danych wejściowych dotyczących podejrzanego działania
+## <a name="provide-input-on-a-suspicious-activity"></a>Podawanie danych wejściowych dotyczących podejrzanego działania
 Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku niektórych podejrzanych działań (rekonesans DNS, ataki typu Pass the Ticket, wyliczenie sesji SMB, nietypowe zachowanie i zdalne wykonywanie kodu) użytkownik jest proszony o podanie danych wejściowych umożliwiających ulepszenie wykrywania podejrzanych działań w przyszłości.
 
 1.  Prośba o podanie danych wejściowych jest automatycznie otwierana dla podejrzanych działań z możliwością podania danych wejściowych. Użytkownik zostanie poproszony o udzielenie odpowiedzi na pytania dotyczące działań w sieci oraz tego, czy powinny zostać uznane za podejrzane. W poniższym przykładzie użytkownik jest pytany, czy uruchamianie narzędzi do skanowania jest dozwolone przy użyciu określonego komputera.
@@ -107,16 +108,16 @@ Aby usługa ATA mogła uczyć się sieci z udziałem użytkownika, w przypadku n
 
 4.  Jeśli nie znasz odpowiedzi, możesz kliknąć przycisk **Anuluj**.
 
-## Zmiana stanu podejrzanego działania
+## <a name="change-the-status-of-a-suspicious-activity"></a>Zmiana stanu podejrzanego działania
 Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących pozycji: **Otwarte**, **Rozwiązane** lub **Odrzucone**.
 
-## Zobacz też
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## <a name="see-also"></a>Zobacz też
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 
