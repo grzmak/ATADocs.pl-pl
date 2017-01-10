@@ -24,7 +24,7 @@ ms.openlocfilehash: d967cbf2674c5f561e63f66b64640ac08daad6c0
 
 
 
-## <a name="provide-ata-with-up-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
+# <a name="provide-ata-with-up-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
 Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**.
 
 1.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.

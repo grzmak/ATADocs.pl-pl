@@ -22,7 +22,7 @@ ms.openlocfilehash: 2671937cf0ed9ff2865073b97ee735da99fa7d7f
 
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
-## <a name="what-threats-does-ata-look-for"></a>Jakie zagrożenia wyszukuje usługa ATA?
+# <a name="what-threats-does-ata-look-for"></a>Jakie zagrożenia wyszukuje usługa ATA?
 
 Usługa ATA wykrywa następujące fazy zaawansowanego ataku: rekonesans, przejęcie poświadczeń, penetracja sieci, podwyższenie poziomu uprawnień, zdominowanie domeny i inne. Celem jest wykrycie zaawansowanych ataków i zagrożeń wewnętrznych, zanim będą mogły spowodować szkody w organizacji.
 Wykrycie każdej fazy wywołuje kilka podejrzanych działań odpowiednich dla danej fazy, gdzie poszczególne podejrzane działania są powiązane z różnymi odmianami możliwych ataków.

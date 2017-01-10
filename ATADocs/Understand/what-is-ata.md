@@ -23,7 +23,7 @@ ms.openlocfilehash: 70d66bccfda484722afa63a7f85dc8f85013f54f
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
-## <a name="what-is-advanced-threat-analytics"></a>Co to jest usługa Advanced Threat Analytics?
+# <a name="what-is-advanced-threat-analytics"></a>Co to jest usługa Advanced Threat Analytics?
 Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych, ukierunkowanych ataków cybernetycznych oraz zagrożeniami wewnętrznymi.
 
 ## <a name="how-ata-works"></a>Działanie usługi ATA
