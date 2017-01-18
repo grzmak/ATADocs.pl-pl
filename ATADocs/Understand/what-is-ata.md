@@ -1,8 +1,9 @@
 ---
-title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft ATA"
+title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Dokumentacja firmy Microsoft"
 description: "Informacje dotyczące usługi Microsoft Advanced Threat Analytics (ATA) i wykrywanych przez nią podejrzanych działań"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 09/28/2016
 ms.topic: article
@@ -13,8 +14,8 @@ ms.assetid: 283e7b4e-996a-4491-b7f6-ff06e73790d2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 3768cd103fc2a938d2d39fe34179d74587abc118
-ms.openlocfilehash: 0bc2bcc42b2b59cf297b4af86f0c38aafebc379f
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: 70d66bccfda484722afa63a7f85dc8f85013f54f
 
 
 ---
@@ -22,10 +23,10 @@ ms.openlocfilehash: 0bc2bcc42b2b59cf297b4af86f0c38aafebc379f
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
-## Co to jest usługa Advanced Threat Analytics?
+# <a name="what-is-advanced-threat-analytics"></a>Co to jest usługa Advanced Threat Analytics?
 Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych, ukierunkowanych ataków cybernetycznych oraz zagrożeniami wewnętrznymi.
 
-## Działanie usługi ATA
+## <a name="how-ata-works"></a>Działanie usługi ATA
 Usługa ATA przyjmuje informacje z wielu źródeł danych, dzienników i zdarzeń w sieci, aby poznać zachowanie użytkowników i innych jednostek w organizacji oraz utworzyć na tej podstawie profil behawioralny.
 Usługa ATA może odbierać zdarzenia i dzienniki z następujących źródeł:
 
@@ -39,7 +40,7 @@ Ponadto usługa ATA korzysta z własnego aparatu do analizowania sieci w celu pr
 
 Aby uzyskać więcej informacji, zobacz artykuł [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture).
 
-## Jakie zadania wykonuje usługa ATA?
+## <a name="what-does-ata-do"></a>Jakie zadania wykonuje usługa ATA?
 
 Technologia ATA wykrywa wiele podejrzanych działań, skupiając się na poszczególnych fazach ataku cybernetycznego typu kill chain, takich jak:
 
@@ -90,17 +91,17 @@ Podejrzane działania tego typu można przeglądać na pulpicie nawigacyjnym us�
   ![Przykładowy ekran usługi ATA przedstawiający zerwanie relacji zaufania](media/sample screen broken trust.png)
 
 
-## Co dalej?
+## <a name="whats-next"></a>Co dalej?
 
 -   Aby uzyskać więcej informacji na temat zastosowań usługi ATA w Twojej sieci, zobacz [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture).
 
 -   Aby rozpocząć wdrażanie usługi ATA, zobacz [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
-## Zobacz też
-[Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## <a name="see-also"></a>Zobacz też
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Jan17_HO1-->
 
 

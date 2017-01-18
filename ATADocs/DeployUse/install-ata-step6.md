@@ -1,8 +1,9 @@
 ---
-title: "Instalacja usługi ATA | Microsoft ATA"
+title: "Instalowanie usługi ATA | Dokumentacja firmy Microsoft"
 description: "W ostatnim kroku instalowania usługi ATA można skonfigurować użytkownika wystawionego jako przynęta."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 09/20/2016
 ms.topic: get-started-article
@@ -13,8 +14,8 @@ ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d47d9e7be294c68d764710c15c4bb78539e42f62
-ms.openlocfilehash: 9ee2f36d8f0b7eae061873e8735139ccc4da00d1
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: 17833f000135337fce82d69efb63fc6e1f9ea307
 
 
 ---
@@ -23,13 +24,13 @@ ms.openlocfilehash: 9ee2f36d8f0b7eae061873e8735139ccc4da00d1
 
 
 
-# Instalowanie usługi ATA — Krok 6
+# <a name="install-ata---step-6"></a>Instalowanie usługi ATA — Krok 6
 
 >[!div class="step-by-step"]
 [« Krok 5](install-ata-step5.md)
 
-## Krok 6. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
-Usługa ATA umożliwia wyłączenie określonych adresów IP i podsieci IP z dwóch typów wykrywania: **rekonesans przy użyciu systemu DNS** i **atak typu Pass-the-Ticket**. 
+## <a name="step-6-configure--ip-address-exclusions-and-honeytoken-user"></a>Krok 6. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
+Usługa ATA umożliwia wyłączenie określonych adresów IP z dwóch typów wykrywania: **rekonesans przy użyciu systemu DNS** i **atak typu Pass-the-Ticket**. 
 
 Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
 
@@ -41,7 +42,7 @@ Aby skonfigurować powyższe opcje, wykonaj następujące kroki:
 
     ![Ustawienia konfiguracji usługi ATA](media/ATA-config-icon.JPG)
 
-2.  W obszarze **Detection exclusions** (Wykluczenia wykrywania) wprowadź adresy IP *rekonesansu przy użyciu systemu DNS* lub *ataku typu Pass-the-Ticket*. Użyj formatu CIDR, na przykład: `192.168.1.0/24` i kliknij znak *plus*.
+2.  W obszarze **Detection exclusions** (Wykluczenia wykrywania) wprowadź adresy IP *rekonesansu przy użyciu systemu DNS* lub *ataku typu Pass-the-Ticket* i kliknij znak *plus*.
 
     ![Zapisz zmiany](media/ATA-exclusions.png)
 
@@ -66,15 +67,15 @@ Usługa ATA natychmiast rozpocznie skanowanie w poszukiwaniu podejrzanych dział
 [« Krok 5](install-ata-step5.md)
 
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

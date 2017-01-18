@@ -1,8 +1,9 @@
 ---
-title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5 | Microsoft ATA"
+title: "Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5 | Dokumentacja firmy Microsoft"
 description: "Procedury aktualizacji usługi ATA do wersji 1.5"
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 04/28/2016
 ms.topic: article
@@ -13,13 +14,13 @@ ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: c71d5ed1c705de558f1144820703ffe84850679b
-ms.openlocfilehash: 637d847af82d15a5b88fb43274f606a9b89da445
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: c23512e159c2f01bc0a930f71373aa5315f0310c
 
 
 ---
 
-# Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5
+# <a name="ata-update-to-15-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5
 Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
 
 -   Szybsze wykrywanie
@@ -36,7 +37,7 @@ Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
 
 -   Dodatkowe liczniki wydajności na potrzeby rozszerzonego monitorowania i rozwiązywania problemów
 
-## Aktualizowanie usługi ATA do wersji 1.5
+## <a name="updating-ata-to-version-15"></a>Aktualizowanie usługi ATA do wersji 1.5
 > [!NOTE]
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.5, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](/advanced-threat-analytics/deploy-use/install-ata).
 
@@ -58,7 +59,7 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
     > [!IMPORTANT]
     > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 1. Zaktualizuj centrum usługi ATA
+### <a name="step-1-update-the-ata-center"></a>Krok 1. Zaktualizuj centrum usługi ATA
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
@@ -89,7 +90,7 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 > [!IMPORTANT]
 > - Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 2. Pobieranie pakietu instalacyjnego bramy usługi ATA
+### <a name="step-2-download-the-ata-gateway-setup-package"></a>Krok 2. Pobieranie pakietu instalacyjnego bramy usługi ATA
 Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA.
 
 Aby pobrać pakiet bramy usługi ATA:
@@ -110,7 +111,7 @@ Plik zip zawiera następujące składniki:
 
 -   Plik ustawień konfiguracji z informacjami wymaganymi do nawiązywania połączeń z centrum usługi ATA
 
-### Krok 3. Zaktualizuj bramy usługi ATA
+### <a name="step-3-update-the-ata-gateways"></a>Krok 3. Zaktualizuj bramy usługi ATA
 
 1.  Dla każdej bramy usługi ATA wyodrębnij pliki z pakietu bramy ATA i uruchom plik Microsoft ATA Gateway Setup.
 
@@ -128,12 +129,12 @@ Jeśli wszystkie bramy usługi ATA zostaną pomyślnie zaktualizowane, wszystkie
 
 ![Obraz przedstawiający zaktualizowane bramy](media/ATA-gw-updated.png)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -1,8 +1,9 @@
 ---
-title: "Instalacja usługi ATA — krok 3 | Microsoft ATA"
+title: "Instalowanie usługi ATA — Krok 3 | Dokumentacja firmy Microsoft"
 description: "W trzecim kroku procesu instalowania usługi ATA znajdują się informacje ułatwiające pobranie pakietu instalacyjnego bramy usługi ATA."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: get-started-article
@@ -13,8 +14,8 @@ ms.assetid: 7fb024e6-297a-4ad9-b962-481bb75a0ba3
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: ba090fdd4f00c001020b1fbedf527e4fd69d3992
-ms.openlocfilehash: 277d08756b456d1a61fb9fdcb5014a6a1b4782ad
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: c8f3f5453757fbc7a95aa2377a84c3a133d38181
 
 
 ---
@@ -23,13 +24,13 @@ ms.openlocfilehash: 277d08756b456d1a61fb9fdcb5014a6a1b4782ad
 
 
 
-# Instalowanie usługi ATA — Krok 3
+# <a name="install-ata---step-3"></a>Instalowanie usługi ATA — Krok 3
 
 >[!div class="step-by-step"]
 [« Krok 2](install-ata-step2.md)
 [Krok 4 »](install-ata-step4.md)
 
-## Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
+## <a name="step-3-download-the-ata-gateway-setup-package"></a>Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
 Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub w kontrolerze domeny. Jeśli brama zostanie zainstalowana w kontrolerze domeny, będzie ona zainstalowana jako brama ATA Lightweight Gateway. Więcej informacji dotyczących bramy ATA Lightweight Gateway można znaleźć w temacie [Architektura usługi ATA](/advanced-threat-analytics/plan-design/ata-architecture). 
 
 Jeśli pobierasz bramę usługi ATA po raz pierwszy, zostanie wyświetlony następujący ekran:
@@ -56,14 +57,14 @@ Plik zip zawiera następujące składniki:
 [« Krok 2](install-ata-step2.md)
 [Krok 4 »](install-ata-step4.md)
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 
