@@ -1,8 +1,9 @@
 ---
-title: "Architektura usługi ATA | Microsoft ATA"
+title: "Architektura usługi ATA | Dokumentacja firmy Microsoft"
 description: "Opis architektury usługi Microsoft Advanced Threat Analytics (ATA)."
 keywords: 
 author: rkarlin
+ms.author: rkarlin
 manager: mbaldwin
 ms.date: 08/24/2016
 ms.topic: article
@@ -13,8 +14,8 @@ ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 050f1ef0b39d69b64ede53243a7fa2d33d0e4813
-ms.openlocfilehash: c416fba5aace73cf585e7f6ca604a8c61c3c6fcc
+ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
+ms.openlocfilehash: 06cc0de7e335a120d9e4c988dcc6a74087f027c6
 
 
 ---
@@ -24,7 +25,7 @@ ms.openlocfilehash: c416fba5aace73cf585e7f6ca604a8c61c3c6fcc
 
 
 
-# Architektura usługi ATA
+# <a name="ata-architecture"></a>Architektura usługi ATA
 Architektura usługi Advanced Threat Analytics została szczegółowo opisana na poniższym diagramie:
 
 ![Diagram topologii architektury usługi ATA](media/ATA-architecture-topology.jpg)
@@ -35,7 +36,7 @@ W tej części opisano przepływ sieci i przechwytywanie zdarzeń oraz zawarto b
 
 ![Diagram przepływu ruchu usługi ATA](media/ATA-traffic-flow.jpg)
 
-## Składniki usługi ATA
+## <a name="ata-components"></a>Składniki usługi ATA
 Usługa ATA zawiera następujące składniki:
 
 -   **Centrum usługi ATA** <br>
@@ -48,7 +49,7 @@ Brama ATA Lightweight Gateway jest instalowana bezpośrednio w kontrolerach dome
 Wdrożenie usługi ATA może zawierać jedno centrum usługi ATA połączone z wszystkimi bramami usługi ATA, wszystkimi bramami ATA Lightweight Gateway lub kombinacją bram usługi ATA i bram ATA Lightweight Gateway.
 
 
-## Opcje wdrażania
+## <a name="deployment-options"></a>Opcje wdrażania
 Usługę ATA można wdrożyć przy użyciu następujących kombinacji bram:
 
 -   **Zastosowanie wyłącznie bram usługi ATA** <br>
@@ -63,7 +64,7 @@ We wszystkich trzech scenariuszach wszystkie bramy wysyłają dane do centrum us
 
 
 
-## Centrum usługi ATA
+## <a name="ata-center"></a>Centrum usługi ATA
 **Centrum usługi ATA** pełni następujące funkcje:
 
 -   Zarządza ustawieniami konfiguracji bram usługi ATA i bram ATA Lightweight Gateway
@@ -97,9 +98,9 @@ Podczas podejmowania decyzji o liczbie centrów usługi ATA, które mają zosta�
 
 -    W bardzo dużych wdrożeniach usługi Active Directory pojedyncze centrum usługi ATA może nie być w stanie obsłużyć całego ruchu wszystkich kontrolerów domeny. W takim przypadku wymaga się użycia wielu centrów usługi ATA. Liczba centrów usługi ATA powinna zostać ustalona zgodnie z informacjami znajdującymi się w sekcji [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
-## Brama usługi ATA i brama ATA Lightweight Gateway
+## <a name="ata-gateway-and-ata-lightweight-gateway"></a>Brama usługi ATA i brama ATA Lightweight Gateway
 
-### Podstawowe funkcje bramy
+### <a name="gateway-core-functionality"></a>Podstawowe funkcje bramy
 **Brama usługi ATA** oraz **brama ATA Lightweight Gateway** mają te same funkcje podstawowe:
 
 -   Przechwytują i sprawdzają ruch sieciowy kontrolera domeny (ruch po dublowaniu portów w przypadku bramy usługi ATA lub ruch lokalny kontrolera domeny w przypadku bramy ATA Lightweight Gateway) 
@@ -125,7 +126,7 @@ Brama usługi ATA odbiera ruch sieciowy i zdarzenia systemu Windows z sieci uży
 |Mechanizm rozpoznawania jednostek|Mechanizm rozpoznawania jednostek pobiera przeanalizowane dane (ruch sieciowy i zdarzenia), a następnie przetwarza je za pomocą usługi Active Directory w celu znalezienia informacji o kontach i tożsamościach. Informacje te są następnie dopasowywane do adresów IP znalezionych w przeanalizowanych danych. Mechanizm rozpoznawania jednostek w sposób wydajny sprawdza nagłówki pakietów, aby umożliwić analizę pakietów uwierzytelniania pod kątem nazw maszyn, właściwości i tożsamości. Mechanizm rozpoznawania jednostek łączy przeanalizowane pakiety uwierzytelniania z danymi znajdującymi się w rzeczywistym pakiecie.|
 |Nadawca jednostek|Nadawca jednostek jest odpowiedzialny za wysyłanie przeanalizowanych i dopasowanych danych do centrum usługi ATA.|
 
-## Funkcje bramy ATA Lightweight Gateway
+## <a name="ata-lightweight-gateway-features"></a>Funkcje bramy ATA Lightweight Gateway
 
 Następujące funkcje działają inaczej w zależności od tego, czy jest uruchomiona brama usługi ATA, czy brama ATA Lightweight Gateway.
 
@@ -158,10 +159,10 @@ Jeśli usługa Active Directory potrzebuje więcej mocy obliczeniowej, przydzia�
 
 
 
-## Składniki Twojej sieci
+## <a name="your-network-components"></a>Składniki Twojej sieci
 Aby móc pracować z usługą ATA, należy spełnić następujące wymagania:
 
-### Dublowanie portów
+### <a name="port-mirroring"></a>Dublowanie portów
 Jeśli używasz bram usługi ATA, musisz skonfigurować dublowanie portów dla kontrolerów domeny, które będą monitorowane, oraz ustawić bramę usługi ATA jako miejsce docelowe za pomocą przełączników fizycznych lub wirtualnych. Innym rozwiązaniem jest użycie funkcji podsłuchu sieci. Usługa ATA będzie działać, jeśli tylko część kontrolerów domeny jest monitorowana, ale wykrywanie będzie mniej skuteczne.
 
 Choć funkcja dublowania portów dubluje całość ruchu sieciowego kontrolera domeny do bramy usługi ATA, tylko niewielka część tego ruchu jest następnie wysyłana po kompresji do centrum usługi ATA w celu analizy.
@@ -169,23 +170,23 @@ Choć funkcja dublowania portów dubluje całość ruchu sieciowego kontrolera d
 Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](/advanced-threat-analytics/deploy-use/configure-port-mirroring).
 
 
-### Zdarzenia
+### <a name="events"></a>Zdarzenia
 Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków siłowych i ataków z wykorzystaniem przynęty, usługa ATA wymaga dziennika zdarzeń systemu Windows o identyfikatorze 4776. Może on być przekazywany do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przy użyciu funkcji przekazywania zdarzeń systemu Windows.
 
 -   Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM <br>Skonfiguruj system SIEM do przekazywania określonych zdarzeń systemu Windows do usługi ATA. Usługa ATA obsługuje wielu dostawców systemów SIEM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection).
 
 -   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń przez usługę ATA jest skonfigurowanie kontrolerów domeny do przekazywania dziennika zdarzeń 4776 systemu Windows do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding).
 
-## Zobacz też
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 
