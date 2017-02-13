@@ -20,12 +20,12 @@
 ### [2. Weryfikowanie funkcji dublowania portów](/advanced-threat-analytics/deploy-use/validate-port-mirroring)
 ### [3. Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 ## Instalowanie usługi ATA
-### [Krok 1. Pobieranie i instalowanie centrum](/advanced-threat-analytics/deploy-use/install-ata-step1.md)
-### [Krok 2. Łączenie z usługą AD](/advanced-threat-analytics/deploy-use/install-ata-step2.md)
-### [Krok 3. Pobieranie pakietu bramy](/advanced-threat-analytics/deploy-use/install-ata-step3.md)
-### [Krok 4. Instalowanie bramy](/advanced-threat-analytics/deploy-use/install-ata-step4.md)
-### [Krok 5. Konfigurowanie bramy](/advanced-threat-analytics/deploy-use/install-ata-step5.md)
-### [Krok 6. Wykluczenia i pułapki](/advanced-threat-analytics/deploy-use/install-ata-step6.md)
+### [Krok 1. Pobieranie i instalowanie centrum](/advanced-threat-analytics/deploy-use/install-ata-step1)
+### [Krok 2. Łączenie z usługą AD](/advanced-threat-analytics/deploy-use/install-ata-step2)
+### [Krok 3. Pobieranie pakietu bramy](/advanced-threat-analytics/deploy-use/install-ata-step3)
+### [Krok 4. Instalowanie bramy](/advanced-threat-analytics/deploy-use/install-ata-step4)
+### [Krok 5. Konfigurowanie bramy](/advanced-threat-analytics/deploy-use/install-ata-step5)
+### [Krok 6. Wykluczenia i pułapki](/advanced-threat-analytics/deploy-use/install-ata-step6)
 ### [Instalacja dyskretna](/advanced-threat-analytics/deploy-use/ata-silent-installation)
 # Za pomocą opcji w obszarze
 ## [Zmienianie adresu IP centrum usługi ATA](/advanced-threat-analytics/deploy-use/modifying-ata-config-centerip)
