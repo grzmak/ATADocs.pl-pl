@@ -1,201 +1,145 @@
 ---
-asset_id: c4a97980-6e19-4d10-bf69-f0b338266efa
-layout: HubPage
-title: "Dokumentacja usługi Advanced Threat Analytics"
-description: "Dokumentacja techniczna usługi Advanced Threat Analytics — usługi zabezpieczeń firmy Microsoft."
-keywords: "Dokumentacja usługi Advanced Threat Analytics, dokumentacja usługi ATA"
-author: msmbaldwin
-manager: mbaldwin
-ms.date: 04/28/2016
-ms.topic: hubpage
-ms.prod: 
-ms.service: advanced-threat-analytics
-ms.technology: 
-ms.suite: ems
-ms.assetid: c4a97980-6e19-4d10-bf69-f0b338266efa
+layout: LandingPage
+description: "Dowiedz się, jak korzystać z usługi Advanced Threat Analytics."
 translationtype: Human Translation
-ms.sourcegitcommit: dc1bfcd10b1856a7b92189f5cfd3b7492cf15bcb
-ms.openlocfilehash: 22af8d46b375e86c203da1cadd89416b42c45db7
-
+ms.sourcegitcommit: 514e92aa4cf9120b8ae642053ec5162b5dfd3347
+ms.openlocfilehash: d7429d5470b7eb70fdf2d1217232bbd241c457c9
 
 ---
-# <a name="microsoft-advanced-threat-analytics-documentation"></a>Dokumentacja usługi Microsoft Advanced Threat Analytics
-<article id="main">
-    <section id="hero-content">
-      <h1>Dokumentacja usługi Microsoft Advanced Threat Analytics</h1>
-      <h2>Dowiedz się, w jaki sposób można wdrażać i zarządzać usługą Microsoft Advanced Threat Analytics (ATA), czyli lokalnie instalowanym produktem ułatwiającym specjalistom ds. zabezpieczeń IT ochronę firm przed zaawansowanymi atakami ukierunkowanymi.</h2>
-      <h3>Jesteś nowym użytkownikiem usługi ATA? <a href="http://go.microsoft.com/fwlink/?LinkId=816859" target="_blank">Odwiedź naszą stronę produktu&rarr;</a></h3>
-    </section>
-    <aside class="alert section-border">
-      <p>Możemy zaczynać?</p>
-      <ol class="action-list">
-        <li><a href="https://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics" target="_blank" class="button-bordered button-translucent">Wypróbuj teraz</a></li>
-      </ol>
-    </aside>
-    <section id="featured" class="container">
-      <h2 class="section-heading"><span class="icon icon-warning"></span> Polecana zawartość</h2>
-      <div class="features row">
-        <ul class="column column-half">
-          <li><mark><b>NOWOŚĆ</b></mark> <a href="/advanced-threat-analytics/understand-explore/whats-new-version-1.7">Usługa ATA w wersji 1.7</a></li>
-          <li><a href="/advanced-threat-analytics/understand-explore/what-is-ata">Co to jest usługa Advanced Threat Analytics?</a></li>
-          <li><a href="/advanced-threat-analytics/understand-explore/ata-technical-faq">Często zadawane pytania</a></li>
-        </ul>
-        <ul class="column column-half">
-          <li><a href="/advanced-threat-analytics/plan-design/ata-architecture">Architektura usługi ATA</a></li>
-          <li><a href="/advanced-threat-analytics/plan-design/ata-capacity-planning">Planowanie pojemności usługi ATA</a></li>        </ul>
-      </div>
-    </section>
-    <div id="journeys">
-      <section class="container">
-        <ul class="journeys-list">
-          <li class="journey-step">
-            <header class="journey-step-header row">
-              <a href="/advanced-threat-analytics/understand-explore/what-is-ata">
-                <div class="title column-third">
-                  <span class="step-number">1</span>
-                  <p>Poznawanie i eksplorowanie</p>
+# <a name="advanced-threat-analytics-documentation"></a>Dokumentacja usługi Advanced Threat Analytics
+
+Kontroluj i zabezpieczaj pocztę e-mail, dokumenty oraz dane poufne, które są udostępniane poza firmę. Od łatwej klasyfikacji po osadzone etykiety i uprawnienia — dzięki usłudze Azure Information Protection Twoje dane będą zawsze lepiej chronione, bez względu na to, gdzie są przechowywane i komu udostępniane.
+
+<ul class="panelContent cardsFTitle">
+    <li>
+        <a href="/advanced-threat-analytics/understand-explore/ata-release-notes">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_whats-new.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Co nowego</h3>
+                    </div>
                 </div>
-                <p class="description column-two-thirds">Poznaj szczegółowo pojęcia, funkcje i możliwości usługi Microsoft Advanced Threat Analytics.
-                </p>
-              </a>
-            </header>
-            <section class="journey-step-elements content">
-              <ul class="row">
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/understand-explore/what-is-ata">
-                    <h3>Co to jest usługa ATA?</h3>
-                    <p>Dowiedz się, jak usługa ATA pomaga specjalistom z zakresu zabezpieczeń IT w ochronie ich przedsiębiorstwa przed zaawansowanymi, ukierunkowanymi atakami.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/understand-explore/ata-technical-faq">
-                    <h3>Często zadawane pytania</h3>
-                    <p>Uzyskaj odpowiedzi na wszystkie pytania techniczne dotyczące usługi ATA.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/understand-explore/whats-new-version-1.7">
-                    <h3>Informacje o wersji usługi ATA</h3>
-                    <p>Zobacz, co nowego w najnowszych wersjach, oraz znane problemy i przewodniki dotyczące migracji.</p>
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </li>
-          <li class="journey-step">
-            <header class="journey-step-header row">
-              <a href="/advanced-threat-analytics/plan-design/ata-architecture">
-                <div class="title column-third">
-                  <span class="step-number">2</span>
-                  <p>Planowanie i projektowanie</p>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/advanced-threat-analytics/understand-explore/what-is-ata">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_learn-about.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Dowiedz się więcej na temat usługi Advanced Threat Analytics</h3>
+                    </div>
                 </div>
-                <p class="description column-two-thirds">Zaplanuj i zaprojektuj usługę ATA.
-                </p>
-              </a>
-            </header>
-            <section class="journey-step-elements content">
-              <ul class="row">
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/plan-design/ata-architecture">
-                    <h3>Architektura usługi ATA</h3>
-                    <p>Dowiedz się, jak powinna wyglądać architektura umożliwiająca obsługę usługi ATA.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/plan-design/ata-capacity-planning">
-                    <h3>Planowanie pojemności</h3>
-                    <p>Określ, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/plan-design/ata-prerequisites">
-                    <h3>Wymagania wstępne usługi ATA</h3>
-                    <p>Zaplanuj wymagania, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku.</p>
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </li>
-          <li class="journey-step">
-            <header class="journey-step-header row">
-              <a href="/advanced-threat-analytics/deploy-use/configure-port-mirroring">
-                <div class="title column-third">
-                  <span class="step-number">3</span>
-                  <p>Wdrażanie i korzystanie</p>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/advanced-threat-analytics/understand-explore/ata-technical-faq"> 
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_support.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Często zadawane pytania</h3>
+                    </div>
                 </div>
-                <p class="description column-two-thirds">Wdróż usługę ATA i używaj jej.
-                </p>
-              </a>
-            </header>
-            <section class="journey-step-elements content">
-              <ul class="row">
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/deploy-use/configure-port-mirroring">
-                    <h3>Przed zainstalowaniem usługi ATA</h3>
-                    <p>Wykonaj te czynności przed zainstalowaniem usługi ATA.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/deploy-use/install-ata-step1">
-                    <h3>Instalowanie usługi ATA</h3>
-                    <p>Postępuj zgodnie ze szczegółowym przewodnikiem instalacji.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/deploy-use/modifying-ata-config-centerip">
-                    <h3>Obsługa usługi ATA</h3>
-                    <p>Zmodyfikuj konfigurację usługi ATA i przeprowadzaj codzienne monitorowanie za pomocą usługi ATA.</p>
-                  </a>
-                </li>
-            </section>
-          </li>
-          <li class="journey-step">
-            <header class="journey-step-header row">
-              <a href="/advanced-threat-analytics/troubleshoot/troubleshooting-ata-known-errors">
-                <div class="title column-third">
-                  <span class="step-number">4</span>
-                  <p>Rozwiązywanie problemów</p>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/advanced-threat-analytics/plan-design/ata-architecture"> 
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_architecture.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Architektura usługi Advanced Threat Analytics</h3>
+                    </div>
                 </div>
-                <p class="description column-two-thirds">Rozwiązuj problemy z usługą ATA.
-                </p>
-              </a>
-            </header>
-            <section class="journey-step-elements content">
-              <ul class="row">
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/troubleshoot/troubleshooting-ata-known-errors">
-                    <h3>Usuwanie znanych błędów usługi ATA</h3>
-                    <p>Zapoznaj się z czynnościami, które należy wykonać w celu usunięcia znanych błędów usługi ATA.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs">
-                    <h3>Rozwiązywanie problemów przy użyciu dzienników</h3>
-                    <p>Dowiedz się, jakie działania wykonują poszczególne składniki usługi ATA w dowolnym momencie.</p>
-                  </a>
-                </li>
-                <li class="column-third">
-                  <a href="/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-perf-counters">
-                    <h3>Rozwiązywanie problemów przy użyciu liczników wydajności</h3>
-                    <p>Dowiedz się, z jaką wydajnością działają poszczególne składniki usługi ATA.</p>
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </li>
-        </ul>
-      </section>
-    </div>
-    <aside class="alert alert-social">
-      <p>Śledzenie wiadomości o usłudze ATA</p>
-      <ol class="action-list">
-        <li><a href="http://blogs.technet.com/b/ata/" target="_blank" class="button-bordered button-translucent">Oficjalny blog firmy Microsoft dotyczący usługi ATA</a></li>
-      </ol>
-    </aside>
-</article>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/advanced-threat-analytics/plan-design/ata-capacity-planning"> 
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_tasks.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Planowanie pojemności usługi Advanced Threat Analytics</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/enterprisemobility/?product=microsoft-advanced-threat-analytics"> 
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_blog.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Blog na temat usługi Advanced Threat Analytics</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
+
+---
+
+<h3>Wypróbuj teraz</h3>
+<ul class="panelContent cardsW">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <p><a href="/evalcenter/evaluate-microsoft-advanced-threat-analytics">Oceń</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>  
+</ul>
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 
