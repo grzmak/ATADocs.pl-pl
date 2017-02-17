@@ -1,10 +1,10 @@
 ---
-title: "Wersje usługi ATA | Dokumentacja firmy Microsoft"
+title: "Wersje usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
 description: "W artykule opisano opcje pomocy technicznej w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)."
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/28/2016
+ms.date: 1/23/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.assetid: a8afbd91-c888-4dfc-94ab-72e38745163e
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 2acd894c46cdf242294f1cf8a8bdbf4b3fa69947
-ms.openlocfilehash: 8eebc5b37c7430825c20b7b0e15879e76a36e512
+ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
+ms.openlocfilehash: cae588383a7ea64a8e907e64cd2d7d15223feae3
 
 
 ---
@@ -53,6 +53,6 @@ Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Ka
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Feb17_HO1-->
 
 
