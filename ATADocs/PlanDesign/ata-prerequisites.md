@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/7/2017
+ms.date: 2/16/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 88ca89f2311bf4e73b3d0b57db3e4377e99fd8b2
-ms.openlocfilehash: eae08c573fafaa3fa8643a2e115f7fc710e4d3f9
+ms.sourcegitcommit: f61bbb895e4a2f239f91328f8d8b2b5260452cc2
+ms.openlocfilehash: 764d20fd113b8d40d359a8976c175e889f554dba
 
 
 ---
@@ -219,9 +219,13 @@ Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z sys
 
 Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
 
-Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 z dodatkiem SP1 upewnij się, że zainstalowano następujące aktualizacje: [KB2919355](https://support.microsoft.com/kb/2919355/) i [KB3000850](https://support.microsoft.com/help/3000850/november-2014-update-rollup-for-windows-rt-8.1,-windows-8.1,-and-windows-server-2012-r2) (w tej kolejności). 
+Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
-Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355] [Get-HotFix -Id KB3000850]`.
+Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`
+
+W przypadku instalacji systemu Windows Server 2012 R2 Server Core musisz również zainstalować następującą aktualizację:  [KB3000850](https://support.microsoft.com/help/3000850/november-2014-update-rollup-for-windows-rt-8.1%2c-windows-8.1%2c-and-windows-server-2012-r2).
+
+ Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb3000850]`
 
 > [!NOTE]
 > Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs.md) i [dzienników wydajności](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-perf-counters.md).
@@ -289,6 +293,6 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
