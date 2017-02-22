@@ -49,6 +49,7 @@
 ## [Rozwiązywanie problemów przy użyciu bazy danych](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-ata-database)
 ## [Odzyskiwanie po awarii](/advanced-threat-analytics/troubleshoot/disaster-recovery)
 
-<!--HONumber=Feb17_HO2-->
+
+<!--HONumber=Feb17_HO3-->
 
 
