@@ -1,11 +1,11 @@
 ---
-title: "Rozwiązywanie problemów z dziennika błędów usługi ATA | Dokumentacja firmy Microsoft"
+title: "Rozwiązywanie problemów z dziennika błędów usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
 description: "W tym artykule opisano, jak można rozwiązywać typowe błędy w usłudze ATA"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/25/2016
+ms.date: 1/23/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 3ba53b7b1c34359f00da9fc9717496cfc7d4271d
-ms.openlocfilehash: 8687263977c7bfdf12581a200bba3a60633fca4d
+ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
+ms.openlocfilehash: 47fe467a9244d6ea8925a255552aa0f5c785dce3
 
 
 ---
@@ -33,7 +33,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.IdentityModel.Tokens.SecurityTokenValidationException: Nie można zweryfikować łańcucha certyfikatów|Brama usługi ATA nie może zweryfikować certyfikatu centrum usługi ATA.|1. Sprawdź, czy w magazynie certyfikatów zaufanego urzędu certyfikacji w bramie ATA jest zainstalowany certyfikat głównego urzędu certyfikacji. <br>2. Sprawdź, czy jest dostępna lista odwołań certyfikatów (CRL) i czy można zweryfikować poprawność odwołania certyfikatu.|
 |Microsoft.Common.ExtendedException: Nie można przeanalizować godziny wygenerowania|Brama ATA nie może przeanalizować komunikatów usługi Syslog, które zostały przesłane z systemu SIEM.|Sprawdź, czy w systemie SIEM skonfigurowano przesyłanie komunikatów w jednym z formatów obsługiwanych przez usługę ATA.|
 |System.ServiceModel.FaultException: Wystąpił błąd podczas sprawdzania zabezpieczeń komunikatu.|Nie można uwierzytelnić bramy usługi ATA w centrum usługi ATA.|Sprawdź, czy czas bramy usługi ATA jest zsynchronizowany z czasem centrum usługi ATA.|
-|System.ServiceModel.EndpointNotFoundException: Nie można połączyć z net.tcp://center.ip.addr: 443/IEntityReceiver|Brama usługi ATA nie może nawiązać połączenia z centrum usługi ATA.|Upewnij się, że ustawienia sieci są poprawne i że połączenie sieciowe między bramą usługi ATA a centrum usługi ATA jest aktywne.|
+|System.ServiceModel.EndpointNotFoundException: Nie można połączyć z net.tcp://center.ip.addr:&443;/IEntityReceiver|Brama usługi ATA nie może nawiązać połączenia z centrum usługi ATA.|Upewnij się, że ustawienia sieci są poprawne i że połączenie sieciowe między bramą usługi ATA a centrum usługi ATA jest aktywne.|
 |System.DirectoryServices.Protocols.LdapException: Serwer LDAP jest niedostępny.|Brama usługi ATA nie może wysłać zapytania do kontrolera domeny przy użyciu protokołu LDAP.|1. Sprawdź, czy konto użytkownika używane przez usługę ATA do łączenia się z domeną usługi Active Directory ma dostęp z możliwością odczytu do wszystkich obiektów w drzewie usługi Active Directory. <br>2. Upewnij się, że kontroler domeny nie pracuje w trybie uniemożliwiającym wysyłanie zapytań LDAP z konta użytkownika używanego przez usługę ATA.|
 |Microsoft.Tri.Infrastructure.ContractException: Wyjątek umowy|Brama usługi ATA nie może zsynchronizować konfiguracji z centrum usługi ATA.|Dokończ konfigurację bramy usługi ATA w konsoli usługi ATA.|
 |System.Reflection.ReflectionTypeLoadException: Nie można załadować co najmniej jednego z żądanych typów. Pobierz właściwość LoaderExceptions, aby uzyskać więcej informacji.|W bramie ATA jest zainstalowany analizator komunikatów.| Odinstaluj analizatora komunikatów.|
@@ -55,7 +55,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 **Rozwiązanie**: aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.
 
 
-## <a name="ata-iis-errors-not-applicable-for-ata-v17-and-above"></a>Błędy ATA IIS (nie dotyczy usług ATA w wersji 1.7 ani nowszych)
+## <a name="ata-iis-errors-not-applicable-for-ata-v17-and-above"></a>Błędy ATA IIS (nie dotyczy usług ATA w wersji&1;.7 ani nowszych)
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Błąd HTTP 500.19 — wewnętrzny błąd serwera|Nie można poprawnie zainstalować modułu Ponowne zapisywanie adresów URL IIS.|Odinstaluj i zainstaluj ponownie moduł Ponowne zapisywanie adresów URL IIS.<br>[Pobierz moduł Ponowne zapisywanie adresów URL IIS](http://go.microsoft.com/fwlink/?LinkID=615137)|
@@ -77,6 +77,6 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 

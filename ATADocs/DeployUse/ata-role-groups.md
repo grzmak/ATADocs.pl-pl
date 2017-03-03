@@ -1,11 +1,11 @@
 ---
-title: "Kończenie pracy z grupami ról | Dokumentacja firmy Microsoft"
+title: "Grupy ról usługi Advanced Threat Analytics do zarządzania dostępem | Dokumentacja firmy Microsoft"
 description: "Szczegółowe omówienie pracy z grupami ról usługi ATA."
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/23/2016
+ms.date: 2/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: 3715b69e-e631-449b-9aed-144d0f9bcee7
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 3ba53b7b1c34359f00da9fc9717496cfc7d4271d
-ms.openlocfilehash: b49906802bf0cae86178cbdcc34e4178691d39e4
+ms.sourcegitcommit: 88ca89f2311bf4e73b3d0b57db3e4377e99fd8b2
+ms.openlocfilehash: 7919c9658f2e05b448e3a773bd5ab4c6cb96625f
 
 
 ---
@@ -28,6 +28,10 @@ ms.openlocfilehash: b49906802bf0cae86178cbdcc34e4178691d39e4
 # <a name="ata-role-groups"></a>Grupy ról usługi ATA
 
 Grupy ról umożliwiają zarządzanie dostępem do usługi ATA. Korzystając z grup ról, można segregować obowiązki w obrębie zespołu zabezpieczeń i udzielać uprawnień dostępu w minimalnym zakresie potrzebnym użytkownikom do wykonania zadań. W tym artykule przedstawiono sposób zarządzania dostępem i autoryzacji ról usługi ATA, co ułatwia rozpoczęcie korzystania z grup ról w usłudze w ATA.
+
+> [!NOTE]
+> Każdy lokalny administrator centrum usługi ATA jest automatycznie administratorem usługi Microsoft Advanced Threat Analytics.
+
 ## <a name="types-of-ata-role-groups"></a>Typy grup ról usługi ATA 
 
 Usługa ATA wprowadza 3 typy grup ról: administratorzy ATA, użytkownicy ATA oraz osoby przeglądające ATA. W poniższej tabeli opisano typy dostępu w usłudze ATA, z których mogą korzystać poszczególne role. W zależności od przypisanej roli różne ekrany i opcje menu w usłudze ATA będą niedostępne, zgodnie z poniższym zestawieniem:
@@ -48,13 +52,13 @@ Usługa ATA wprowadza 3 typy grup ról: administratorzy ATA, użytkownicy ATA or
 
 W przypadku próby uzyskania dostępu do strony, która nie jest dostępna dla danej grupy ról, użytkownicy zostaną przekierowani do nieautoryzowanej strony usługi ATA. 
 
-## <a name="add-remove-users---ata-role-groups"></a>Dodawanie\usuwanie użytkowników — grupy ról usługi ATA 
+## <a name="add--remove-users---ata-role-groups"></a>Dodawanie\usuwanie użytkowników — grupy ról usługi ATA 
 
 Usługa ATA korzysta z lokalnych grup systemu Windows jako podstawy dla grup ról. Aby dodać lub usunąć użytkowników, należy użyć konsoli MMC **Użytkownicy i grupy lokalne** (Lusrmgr.msc). Na komputerze dołączonym do domeny można dodać konta domeny, a także konta lokalne. 
 
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 
