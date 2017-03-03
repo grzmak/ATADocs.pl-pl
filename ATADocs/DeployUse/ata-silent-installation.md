@@ -1,11 +1,11 @@
 ---
-title: "Instalacja dyskretna usługi ATA | Dokumentacja firmy Microsoft"
+title: "Instalowanie usługi Advanced Threat Analytics w trybie dyskretnym | Dokumentacja firmy Microsoft"
 description: "Temat opisuje sposób instalacji usługi ATA w trybie dyskretnym."
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 04/28/2016
+ms.date: 02/19/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: b7f9dac8c00f213ee0cefc9ff93f2c9ca40cd28b
-ms.openlocfilehash: 7d7eeaf450a38a23c5c3a4d6d192a773f4cd036c
+ms.sourcegitcommit: 9d26567a0a9a00d4cb1a9421a4ef2e30a52c11a8
+ms.openlocfilehash: 9e550cf8fe795cb679fbcfe10ef40d2ede7875b4
 
 
 ---
@@ -43,8 +43,8 @@ Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
 **Składnia**:
 
-    “Microsoft ATA Center Setup.exe” [/quiet] [/NoRestart] [/Help] [--LicenseAccepted] [NetFrameworkCommandLineArguments=”/q”] [InstallationPath=“<InstallPath>”] [DatabaseDataPath= “<DBPath>”] [CenterIpAddress=<CenterIPAddress>] [CenterPort=<CenterPort>] [CenterCertificateThumbprint=“<CertThumbprint>”] 
-    [ConsoleIpAddress=<ConsoleIPAddress>] [ConsoleCertificateThumbprint=”<CertThumbprint >”]
+    "Microsoft ATA Center Setup.exe" [/quiet] [/NoRestart] [/Help] [--LicenseAccepted] [NetFrameworkCommandLineArguments="/q"] [InstallationPath="<InstallPath>"] [DatabaseDataPath= "<DBPath>"] [CenterIpAddress=<CenterIPAddress>] [CenterPort=<CenterPort>] [CenterCertificateThumbprint="<CertThumbprint>"] 
+    [ConsoleIpAddress=<ConsoleIPAddress>] [ConsoleCertificateThumbprint="<CertThumbprint >"]
     
 **Opcje instalacji**:
 
@@ -60,23 +60,23 @@ Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|InstallationPath|InstallationPath=“<InstallPath>”|Nie|Ustawia ścieżkę instalacji plików binarnych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center|
-|DatabaseDataPath|DatabaseDataPath= “<DBPath>”|Nie|Ustawia ścieżkę folderu danych bazy danych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|
+|InstallationPath|InstallationPath="<InstallPath>"|Nie|Ustawia ścieżkę instalacji plików binarnych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center|
+|DatabaseDataPath|DatabaseDataPath="<DBPath>"|Nie|Ustawia ścieżkę folderu danych bazy danych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|
 |CenterIpAddress|CenterIpAddress=<CenterIPAddress>|Tak|Ustawia adres IP centrum usługi ATA.|
 |CenterPort|CenterPort=<CenterPort>|Tak|Ustawia port sieciowy centrum usługi ATA.|
-|CenterCertificateThumbprint|CenterCertificateThumbprint=“<CertThumbprint>”|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
+|CenterCertificateThumbprint|CenterCertificateThumbprint="<CertThumbprint>"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
 |ConsoleIpAddress|ConsoleIpAddress=<ConsoleIPAddress>|Tak|Ustawia adres IP konsoli usługi ATA.|
-|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint=”<CertThumbprint >”|Nie|Określa odcisk palca certyfikatu dla konsoli usługi ATA. Ten certyfikat jest wykorzystywany do sprawdzania tożsamości witryny konsoli usługi ATA. Jeśli nie jest określony, instalacja wygeneruje certyfikat z podpisem własnym.|
+|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint="<CertThumbprint >"|Nie|Określa odcisk palca certyfikatu dla konsoli usługi ATA. Ten certyfikat jest wykorzystywany do sprawdzania tożsamości witryny konsoli usługi ATA. Jeśli nie jest określony, instalacja wygeneruje certyfikat z podpisem własnym.|
 
 **Przykłady**: aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instalacji i pojedynczego adresu IP:
 
-    “Microsoft ATA Center Setup.exe” /quiet --LicenseAccepted NetFrameworkCommandLineArguments="/q" CenterIpAddress=192.168.0.10
+    "Microsoft ATA Center Setup.exe" /quiet --LicenseAccepted NetFrameworkCommandLineArguments="/q" CenterIpAddress=192.168.0.10
     CenterPort=444 ConsoleIpAddress=192.168.0.10
 
 Aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instalacji, dwóch adresów IP i odcisków palców certyfikatów zdefiniowanych przez użytkownika:
 
-    “Microsoft ATA Center Setup.exe” /quiet --LicenseAccepted NetFrameworkCommandLineArguments ="/q" CenterIpAddress=192.168.0.10 CenterPort=443 CenterCertificateThumbprint= ‎"1E2079739F624148ABDF502BF9C799FCB8C7212F”
-    ConsoleIpAddress=192.168.0.11  ConsoleCertificateThumbprint=”G9530253C976BFA9342FD1A716C0EC94207BFD5A”
+    "Microsoft ATA Center Setup.exe" /quiet --LicenseAccepted NetFrameworkCommandLineArguments ="/q" CenterIpAddress=192.168.0.10 CenterPort=443 CenterCertificateThumbprint= ‎"1E2079739F624148ABDF502BF9C799FCB8C7212F"
+    ConsoleIpAddress=192.168.0.11  ConsoleCertificateThumbprint="G9530253C976BFA9342FD1A716C0EC94207BFD5A"
 
 ## <a name="update-the-ata-center"></a>Zaktualizuj centrum usługi ATA
 
@@ -84,7 +84,7 @@ Użyj poniższego polecenia, aby zaktualizować centrum usługi ATA:
 
 **Składnia**:
 
-    Microsoft ATA Center Setup.exe” [/quiet] [-NoRestart] /Help] [NetFrameworkCommandLineArguments=”/q”]
+    "Microsoft ATA Center Setup.exe" [/quiet] [-NoRestart] /Help] [NetFrameworkCommandLineArguments="/q"]
 
 
 **Opcje instalacji**:
@@ -101,7 +101,7 @@ Podczas aktualizowania usługi ATA instalator automatycznie wykrywa, czy usługa
 
 **Przykłady**: aby zaktualizować centrum usługi ATA w trybie dyskretnym. W dużych środowiskach aktualizacja centrum usługi ATA może wymagać trochę czasu. Monitoruj dzienniki usługi ATA, aby śledzić postępy aktualizacji.
 
-        “Microsoft ATA Center Setup.exe” /quiet NetFrameworkCommandLineArguments="/q"
+        "Microsoft ATA Center Setup.exe" /quiet NetFrameworkCommandLineArguments="/q"
 
 ## <a name="uninstall-the-ata-center-silently"></a>Odinstalowywanie centrum usługi ATA w trybie dyskretnym
 
@@ -128,7 +128,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 **Przykłady**: aby odinstalować centrum usługi ATA z serwera w trybie dyskretnym, usuwając wszystkie istniejące dane z bazy danych:
 
 
-    “Microsoft ATA Center Setup.exe” /quiet /uninstall --DeleteExistingDatabaseData
+    "Microsoft ATA Center Setup.exe" /quiet /uninstall --DeleteExistingDatabaseData
 
 ## <a name="ata-gateway-silent-installation"></a>Instalacja bramy usługi ATA w trybie dyskretnym
 Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
@@ -136,8 +136,8 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 **Składnia**:
 
     Microsoft ATA Gateway Setup.exe [/quiet] [/NoRestart] [/Help] [NetFrameworkCommandLineArguments ="/q"] 
-    [GatewayCertificateThumbprint=”<CertThumbprint >”] [ConsoleAccountName=”<AccountName>”] 
-    [ConsoleAccountPassword=”<AccountPassword>”]
+    [GatewayCertificateThumbprint="<CertThumbprint >"] [ConsoleAccountName="<AccountName>"] 
+    [ConsoleAccountPassword="<AccountPassword>"]
 
 **Opcje instalacji**:
 
@@ -152,14 +152,14 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|GatewayCertificateThumbprint|GatewayCertificateThumbprint=”<CertThumbprint >”|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
-|ConsoleAccountName|ConsoleAccountName=”<AccountName>”|Tak|Określa nazwę konta użytkownika ((user@domain.com)), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
-|ConsoleAccountPassword|ConsoleAccountPassword=”<AccountPassword>”|Tak|Określa hasło konta użytkownika ((user@domain.com)), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
+|GatewayCertificateThumbprint|GatewayCertificateThumbprint="<CertThumbprint >"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
+|ConsoleAccountName|ConsoleAccountName="<AccountName>"|Tak|Określa nazwę konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
+|ConsoleAccountPassword|ConsoleAccountPassword="<AccountPassword>"|Tak|Określa hasło konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 
 **Przykłady**: aby dyskretnie zainstalować bramę usługi ATA i zarejestrować ją w centrum usługi ATA za pomocą określonych poświadczeń:
 
-    “Microsoft ATA Gateway Setup.exe” /quiet NetFrameworkCommandLineArguments="/q" 
-    ConsoleAccountName=”user@contoso.com” ConsoleAccountPassword=“userpwd”
+    "Microsoft ATA Gateway Setup.exe" /quiet NetFrameworkCommandLineArguments="/q" 
+    ConsoleAccountName="user@contoso.com" ConsoleAccountPassword="userpwd"
     
 
 ## <a name="update-the-ata-gateway"></a>Aktualizacja bramy usługi ATA
@@ -221,6 +221,6 @@ Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

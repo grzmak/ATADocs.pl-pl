@@ -1,11 +1,11 @@
 ---
-title: "Wymagania wstępne usługi ATA | Dokumentacja firmy Microsoft"
+title: "Wymagania wstępne usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
 description: "Zawiera opis wymagań, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/14/2016
+ms.date: 2/16/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 67b430fbed97bd08e5f538043c783e70ed2ab956
-ms.openlocfilehash: 60ec036a8c22fb34c673653a6378437ab14f9853
+ms.sourcegitcommit: f61bbb895e4a2f239f91328f8d8b2b5260452cc2
+ms.openlocfilehash: 764d20fd113b8d40d359a8976c175e889f554dba
 
 
 ---
@@ -219,8 +219,13 @@ Brama ATA Lightweight Gateway obsługuje instalację na kontrolerze domeny z sys
 
 Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
 
-Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 z dodatkiem SP1 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
-Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
+Przed zainstalowaniem bramy ATA Lightweight Gateway na kontrolerze domeny z systemem Windows Server 2012 R2 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
+
+Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`
+
+W przypadku instalacji systemu Windows Server 2012 R2 Server Core musisz również zainstalować następującą aktualizację:  [KB3000850](https://support.microsoft.com/help/3000850/november-2014-update-rollup-for-windows-rt-8.1%2c-windows-8.1%2c-and-windows-server-2012-r2).
+
+ Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb3000850]`
 
 > [!NOTE]
 > Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-logs.md) i [dzienników wydajności](/advanced-threat-analytics/troubleshoot/troubleshooting-ata-using-perf-counters.md).
@@ -288,6 +293,6 @@ Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obs�
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
-title: "Często zadawane pytania dotyczące usługi ATA | Dokumentacja firmy Microsoft"
+title: "Często zadawane pytania dotyczące usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
 description: "Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/24/2016
+ms.date: 02/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 85e285c5d88e5916e0bf0eb7dd327cb4cb45b4cb
-ms.openlocfilehash: f806437df3a2c581631e924798a367e5e48be6f8
+ms.sourcegitcommit: bdb830bb7d8ecb6e04bb9c62b40904300fc1b404
+ms.openlocfilehash: 715d6987a74d2d6222acd6747f3cf425a6a901da
 
 
 ---
@@ -27,6 +27,7 @@ Ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA o
 
 ## <a name="what-should-i-do-if-the-ata-gateway-wont-start"></a>Co zrobić, jeśli nie można uruchomić bramy usługi ATA?
 Sprawdź ostatni błąd w bieżącym dzienniku błędów (gdzie usługa ATA jest zainstalowana w folderze „Dzienniki”).
+
 ## <a name="how-can-i-test-ata"></a>Jak można przetestować usługę ATA?
 Można symulować podejrzane działania, aby wykonać pełny test, wykonując jedną z następujących czynności:
 
@@ -54,6 +55,7 @@ Usługa ATA bazuje na analizowaniu wielu protokołów sieciowych, a także zdarz
 
 ## <a name="does-ata-work-with-kerberos-armoring"></a>Czy usługa ATA działa z ochroną protokołu Kerberos?
 Usługa ATA obsługuje włączanie ochrony protokołu Kerberos, znanej także jako protokół FAST (Flexible Authentication Secure Tunneling), z wyjątkiem wykrywania nadmiernego przekazywania skrótu, które nie będzie działać.
+
 ## <a name="how-many-ata-gateways-do-i-need"></a>Ile bram usługi ATA potrzebuję?
 
 Liczba bram usługi ATA zależy od układu sieci, ilości pakietów i ilości zdarzeń przechwytywanych przez usługę ATA. Aby określić dokładną liczbę, zobacz [Ustalanie rozmiaru bramy ATA Lightweight Gateway](/advanced-threat-analytics/plan-design/ata-capacity-planning#ata-lightweight-gateway-sizing). 
@@ -81,7 +83,11 @@ Istnieją dwa elementy, których kopię zapasową należy wykonać:
 
 -   Ruch i zdarzenia zapisane przez usługę ATA, których kopię zapasową można wykonać przy użyciu dowolnej obsługiwanej procedury tworzenia kopii zapasowej. Aby uzyskać więcej informacji, zobacz [Zarządzanie bazą danych usługi ATA](/advanced-threat-analytics/deploy-use/ata-database-management). 
 -   Konfiguracja usługi ATA. Jest przechowywana w bazie danych, a jej kopia zapasowa jest tworzona automatycznie co godzinę w folderze **Backup** w lokalizacji wdrożenia centrum usługi ATA.  Zobacz artykuł [Zarządzanie bazą danych usługi ATA](https://docs.microsoft.com/advanced-threat-analytics/deploy-use/ata-database-management), aby uzyskać więcej informacji.
+
+
+
 ## <a name="what-can-ata-detect"></a>Co usługa ATA może wykrywać?
+
 Usługa ATA wykrywa znane złośliwe ataki oraz techniki, problemy z zabezpieczeniami i ryzyka.
 Pełna lista zagrożeń wykrywanych przez usługę ATA znajduje się w artykule [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md).
 
@@ -98,7 +104,6 @@ Usługa ATA ma dwukierunkową integrację z rozwiązaniem SIEM, zgodnie z poniż
 2. Usługę ATA można skonfigurować do odbierania komunikatów Syslog dotyczących zdarzeń systemu Windows o identyfikatorze 4776 z [tych rozwiązań SIEM](/advanced-threat-analytics/deploy-use/configure-event-collection#siem-support).
 
 ## <a name="can-ata-monitor-domain-controllers-virtualized-on-your-iaas-solution"></a>Czy usługa ATA monitoruje kontrolery domeny zwirtualizowane w rozwiązaniu IaaS?
-
 Tak, możesz użyć bramy ATA Lightweight Gateway do monitorowania kontrolerów domeny w dowolnym rozwiązaniu IaaS.
 
 ## <a name="is-this-an-on-premises-or-in-cloud-offering"></a>Czy ta usługa jest instalowana lokalnie czy jest dostępna w chmurze?
@@ -127,6 +132,7 @@ Tak. Kont komputerów (a także innych jednostek) można używać do podejmowani
 
 ## <a name="can-ata-support-multi-domain-and-multi-forest"></a>Czy usługa ATA może obsługiwać wiele domen i wiele lasów?
 Usługa Microsoft Advanced Threat Analytics obsługuje środowiska wielu domen w obrębie granicy pojedynczego lasu. Większa liczba lasów wymaga wdrożenia usługi ATA w każdym lesie.
+
 ## <a name="can-you-see-the-overall-health-of-the-deployment"></a>Czy można przeglądać informacje dotyczące ogólnej kondycji wdrożenia?
 Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i konkretne problemy związane z konfiguracją, łącznością itp. oraz otrzymywać alerty w przypadku wystąpienia problemów tego typu.
 
@@ -141,6 +147,6 @@ Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i ko
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

@@ -1,11 +1,11 @@
 ---
-title: "Konfigurowanie zbierania zdarzeń | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie zbierania zdarzeń w usłudze Advanced Threat Analytics | Dokumentacja firmy Microsoft"
 description: "Opisuje opcje konfigurowania zbierania zdarzeń w usłudze ATA"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/08/2016
+ms.date: 1/23/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: d16364cd4113534c3101ebfa7750c0d0b837856d
-ms.openlocfilehash: 9ac9478512f2e5f6d15dd9b5cba9970a51ffa4da
+ms.sourcegitcommit: 6fddbbae0a0734834a21975c7690e06ac28dc64d
+ms.openlocfilehash: e31e3b8a94c8beef22be2f06ecaeb89545b3f62d
 
 
 ---
@@ -187,56 +187,58 @@ Po skonfigurowaniu dublowania portów z kontrolerów domeny z bramą usługi ATA
 
 W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
 
-1.  Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
-2.  Wybierz **członków**.
-4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+1.    Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
+2.    Wybierz **członków**.
+4.    Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+
+Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dzienników zdarzeń** musisz ponownie uruchomić kontrolery domeny, aby zmiana zaczęła obowiązywać.
 
 **Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji** 
 > [!Note] 
 > Można tworzyć dla tych ustawień zasady grupy i stosować zasady grupy do każdego kontrolera domeny monitorowanego przez bramę usługi ATA. Poniższe kroki umożliwiają modyfikację zasad lokalnych kontrolera domeny.     
 
-1.  Uruchom następujące polecenie na każdym kontrolerze domeny: *winrm quickconfig*
+1.    Uruchom następujące polecenie na każdym kontrolerze domeny: *winrm quickconfig*
 2.  W wierszu polecenia wpisz ciąg *gpedit.msc*.
-3.  Rozwiń węzeł **Konfiguracja komputera > Szablony administracyjne > Składniki systemu Windows > Przesyłanie dalej zdarzeń**
+3.    Rozwiń węzeł **Konfiguracja komputera > Szablony administracyjne > Składniki systemu Windows > Przesyłanie dalej zdarzeń**
 
  ![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
 
-4.  Kliknij dwukrotnie opcję **Konfiguruj docelowego Menedżera subskrypcji**.
+4.    Kliknij dwukrotnie opcję **Konfiguruj docelowego Menedżera subskrypcji**.
    
-    1.  Wybierz opcję **Włączono**.
-    2.  W obszarze **Opcje** kliknij opcję **Pokaż**.
-    3.  W obszarze **Menedżerowie subskrypcji** wprowadź poniższą wartość, a następnie kliknij przycisk **OK**:  *Server = http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10* (na przykład: Server = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10)
+    1.    Wybierz opcję **Włączono**.
+    2.    W obszarze **Opcje** kliknij opcję **Pokaż**.
+    3.    W obszarze **Menedżerowie subskrypcji** wprowadź poniższą wartość, a następnie kliknij przycisk **OK**: *Server=http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10* (na przykład: Server=http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10)
  
    ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
    
-    5.  Kliknij przycisk **OK**.
-    6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
+    5.    Kliknij przycisk **OK**.
+    6.    Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
 
 **Krok 3: W odniesieniu do bramy usługi ATA wykonaj następujące kroki** 
 
-1.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *wecutil qc*
-2.  Otwórz **Podgląd zdarzeń**. 
-3.  Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
+1.    Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *wecutil qc*
+2.    Otwórz **Podgląd zdarzeń**. 
+3.    Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
 
-   1.   Wprowadź nazwę i opis subskrypcji. 
-   2.   Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
-   3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Select Computers Groups** (Wybierz grupy komputerów).
-        1.  Kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
-        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
+   1.    Wprowadź nazwę i opis subskrypcji. 
+   2.    Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
+   3.    Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Select Computers Groups** (Wybierz grupy komputerów).
+        1.    Kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
+        2.    Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
        
         ![Obraz Podglądu zdarzeń](media/wef3 event viewer.png)
    
         
-        3.  Kliknij przycisk **OK**.
-   4.   Kliknij przycisk **Wybierz zdarzenia**.
+        3.    Kliknij przycisk **OK**.
+   4.    Kliknij przycisk **Wybierz zdarzenia**.
 
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
         2. W polu **Includes/Excludes Event ID** (Obejmuje/wyklucza zdarzenie o identyfikatorze) wpisz **4776** i kliknij przycisk **OK**. 
 
  ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
 
-   5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz pozycję **Stan czasu wykonywania**, aby zobaczyć, czy występują problemy dotyczące stanu. 
-   6.   Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach przekazywanych w bramie ATA.
+   5.    Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz pozycję **Stan czasu wykonywania**, aby zobaczyć, czy występują problemy dotyczące stanu. 
+   6.    Po kilku minutach sprawdź, czy zdarzenie 4776 jest wyświetlane w zdarzeniach przekazywanych w bramie ATA.
 
 
 ### <a name="wef-configuration-for-the-ata-lightweight-gateway"></a>Konfiguracja funkcji WEF dla bramy ATA Lightweight Gateway
@@ -244,29 +246,29 @@ Po zainstalowaniu bramy ATA Lightweight Gateway na kontrolerach domeny, można s
 
 **Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
 
-1.  Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
-2.  Wybierz **członków**.
-3.  Jeśli **Usługa sieciowa** nie jest wymieniona na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+1.    Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
+2.    Wybierz **członków**.
+3.    Jeśli **Usługa sieciowa** nie jest wymieniona na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
 **Krok 2: Po zainstalowaniu bramy ATA Lightweight Gateway wykonaj następujące czynności na kontrolerze domeny** 
 
-1.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *winrm quickconfig* oraz *wecutil qc* 
-2.  Otwórz **Podgląd zdarzeń**. 
-3.  Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
+1.    Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *winrm quickconfig* oraz *wecutil qc* 
+2.    Otwórz **Podgląd zdarzeń**. 
+3.    Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
 
-   1.   Wprowadź nazwę i opis subskrypcji. 
-   2.   Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dziennik docelowy musi dotyczyć zdarzeń przesyłanych dalej.
+   1.    Wprowadź nazwę i opis subskrypcji. 
+   2.    Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dziennik docelowy musi dotyczyć zdarzeń przesyłanych dalej.
 
-        1.  Wybierz opcję **Zainicjowane przez kolektor** i kliknij przycisk **Wybierz komputery**. Następnie kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
-        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**.
+        1.    Wybierz opcję **Zainicjowane przez kolektor** i kliknij przycisk **Wybierz komputery**. Następnie kliknij przycisk **Add Domain Computer** (Dodaj komputer w domenie).
+        2.    Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**.
 
             ![Obraz właściwości subskrypcji](media/wef 5 sub properties computers.png)
 
-        3.  Kliknij przycisk **OK**.
-   3.   Kliknij przycisk **Wybierz zdarzenia**.
+        3.    Kliknij przycisk **OK**.
+   3.    Kliknij przycisk **Wybierz zdarzenia**.
 
-        1.  Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
-        2.  W polu **Includes/Excludes Event ID** (Obejmuje/wyklucza zdarzenie o identyfikatorze) wpisz *4776* i kliknij przycisk **OK**. 
+        1.    Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
+        2.    W polu **Includes/Excludes Event ID** (Obejmuje/wyklucza zdarzenie o identyfikatorze) wpisz *4776* i kliknij przycisk **OK**. 
 
 ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
 
@@ -288,6 +290,6 @@ Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazyw
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 

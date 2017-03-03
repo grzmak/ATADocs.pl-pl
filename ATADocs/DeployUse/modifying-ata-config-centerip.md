@@ -1,11 +1,11 @@
 ---
-title: "Zmienianie konfiguracji usługi ATA — adres IP centrum usługi ATA | Dokumentacja firmy Microsoft"
+title: "Zmienianie konfiguracji usługi Advanced Threat Analytics — adres IP centrum usługi |Dokumentacja firmy Microsoft"
 description: "Zawiera opis sposobu zmiany adresu IP, portu lub certyfikatu centrum usługi ATA."
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/29/2016
+ms.date: 1/23/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -14,8 +14,8 @@ ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: bc7af91a925928183d179391f15d3a24cda2b576
-ms.openlocfilehash: d0fed03deb5f50747383a398dfb2eca74ad0cdf0
+ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
+ms.openlocfilehash: 6ad9e90fc05ce284868542df7e61585f37324fad
 
 
 ---
@@ -84,6 +84,6 @@ Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym 
 
 
 
-<!--HONumber=Nov16_HO5-->
+<!--HONumber=Feb17_HO1-->
 
 

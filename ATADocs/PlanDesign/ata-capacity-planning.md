@@ -1,11 +1,11 @@
 ---
-title: "Planowanie wdrożenia usługi ATA | Dokumentacja firmy Microsoft"
+title: "Planowanie wdrożenia usługi Advanced Threat Analytics| Dokumentacja firmy Microsoft"
 description: "Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2016
+ms.date: 1/23/2017
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
@@ -13,8 +13,8 @@ ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
 translationtype: Human Translation
-ms.sourcegitcommit: 56eff27ffdd988d5cc9e67352859ddfedebb2144
-ms.openlocfilehash: 93ec7373a166529332d7c4809c756ab3ba240868
+ms.sourcegitcommit: 0bacaaaa543d74e9575811d64b4cd41ac0fdb140
+ms.openlocfilehash: 2cdf7e00b575ee759a54fb99fb97cbfcee5a43de
 
 
 ---
@@ -53,14 +53,14 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 |1000|2|32|0,3|9|30 (100)
 |10 000|4|48|3|90|200 (300)
 |40 000|8|64|12|360|500 (1000)
-|100 000|12|96|30|900|1000 (1500)
-|400 000|40|128|120|1800|2000 (2500)
+|100&000;|12|96|30|900|1000 (1500)
+|400 000|40|128|120|3,600|4,000 (5,000)
 
 &#42;Dotyczy rdzeni fizycznych, a nie rdzeni hiperwątkowych.
 
 &#42;&#42;Wartości średnie (wartości szczytowe)
 > [!NOTE]
-> -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 ramek na sekundę zagregowanych ze wszystkich monitorowanych kontrolerów domeny.
+> -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 ramek na sekundę zagregowanych ze wszystkich monitorowanych kontrolerów domeny. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
 > -   Podane wielkości przestrzeni dyskowej to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
 > -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Ta operacja będzie powtarzana, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych przestanie działać.
 > -   Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
@@ -115,7 +115,7 @@ Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontroler
 
 &#42;&#42;&#42;Łączna ilość pamięci zainstalowanej w kontrolerze domeny.
 
-> [!NOTE]   
+> [!NOTE]    
 > -   Jeśli kontroler domeny nie ma niezbędnej ilości zasobów wymaganych przez bramę ATA Lightweight Gateway, nie będzie to miało wpływu na wydajność kontrolera domeny, ale brama ATA Lightweight Gateway może nie działać zgodnie z oczekiwaniami.
 > -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 > -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy ATA Lightweight Gateway na wartość **Wysoka wydajność**.
@@ -126,13 +126,13 @@ Brama ATA Lightweight Gateway może obsługiwać monitorowanie jednego kontroler
 
 Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące informacje.
 
--   **Lasy i domeny usługi Active Directory**<br>
+-    **Lasy i domeny usługi Active Directory**<br>
     Usługa ATA może monitorować ruch z wielu domen pochodzących z jednego lasu usługi Active Directory. Monitorowanie wielu lasów usługi Active Directory wymaga oddzielnych wdrożeń usługi ATA. Pojedyncze wdrożenie usługi ATA nie powinno być konfigurowane do monitorowania ruchu sieciowego z kontrolerów domeny znajdujących się w różnych lasach.
 
--   **Dublowanie portów**<br>
+-    **Dublowanie portów**<br>
 Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram usługi ATA dla centrum danych lub oddziału.
 
--   **Wydajność**<br>
+-    **Wydajność**<br>
     Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny. 
 <br>
 
@@ -214,6 +214,6 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące czynności n
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Feb17_HO2-->
 
 
