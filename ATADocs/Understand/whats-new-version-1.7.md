@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: be9ee613-4eb3-40f1-8973-e7f0a707ff57
 ms.reviewer: 
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 00ddddfd927ed1ba4c52d4774085da04ce359bde
-ms.openlocfilehash: 1c8d7983c5fd86ae3ef2c906eba3f0781cffb99b
-
-
+ms.openlocfilehash: b9ba013c76c785290649037c8a01af1cd2feced5
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 # <a name="whats-new-in-ata-version-17"></a>Co nowego w wersji 1.7 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
 
@@ -106,8 +103,8 @@ Aby rozwiązać ten problem, po zmianie certyfikatu w wierszu polecenia z podwy�
 Jeśli próbujesz wyeksportować szczegóły podejrzanego działania do pliku programu Excel, operacja może zakończyć się następującym błędem: *Błąd [BsonClassMapSerializer`1] System.FormatException: Wystąpił błąd podczas deserializacji właściwości Activity klasy Microsoft.Tri.Common.Data.NetworkActivities.SuspiciousActivityActivity: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent. ---> System.FormatException: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent.*
 
 Aby rozwiązać ten problem, w wierszu polecenia z podwyższonym poziomem uprawnień przejdź do następującej lokalizacji: **%ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** i uruchom następujące elementy:
-1.  **Mongo.exe ATA** (ciąg „ATA” należy zapisać przy użyciu wielkich liter)
-2.  **db.SuspiciousActivityActivity.update({ "Activity._t": "NtlmEvent" },{$unset: {"Activity.ResourceIdentifier": ""}}, {multi: true});**
+1.    **Mongo.exe ATA** (ciąg „ATA” należy zapisać przy użyciu wielkich liter)
+2.    **db.SuspiciousActivityActivity.update({ "Activity._t": "NtlmEvent" },{$unset: {"Activity.ResourceIdentifier": ""}}, {multi: true});**
 
 ## <a name="minor-changes"></a>Drobne zmiany
 
@@ -119,10 +116,4 @@ Aby rozwiązać ten problem, w wierszu polecenia z podwyższonym poziomem uprawn
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 [Aktualizacja usługi ATA do wersji 1.7 — przewodnik migracji](ata-update-1.7-migration-guide.md)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 
