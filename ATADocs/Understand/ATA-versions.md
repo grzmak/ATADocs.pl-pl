@@ -12,20 +12,17 @@ ms.technology:
 ms.assetid: a8afbd91-c888-4dfc-94ab-72e38745163e
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: cae588383a7ea64a8e907e64cd2d7d15223feae3
-
-
+ms.openlocfilehash: 21c7486061b6945d557a42d3964b70637829f4b0
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 # <a name="support-for-microsoft-advanced-threat-analytics-ata-versions"></a>Wsparcie techniczne w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)
 
 Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Każda zaktualizowana wersja będzie objęta wsparciem przez dwanaście (12) miesięcy od daty udostępnienia publicznego. Wsparcie techniczne będzie świadczone przez całe dwanaście (12) miesięcy. Nasze struktury wsparcia są jednak obecnie dynamiczne i ewoluują w kierunku dwóch oddzielnych faz świadczenia usługi, zależnych od dostępności jej najnowszej wersji.
 
--   Faza aktualizacji zabezpieczeń i aktualizacji krytycznych — użytkownicy najnowszych wersji usługi ATA będą otrzymywać zarówno aktualizacje zabezpieczeń, jak i aktualizacje krytyczne.
+-    Faza aktualizacji zabezpieczeń i aktualizacji krytycznych — użytkownicy najnowszych wersji usługi ATA będą otrzymywać zarówno aktualizacje zabezpieczeń, jak i aktualizacje krytyczne.
 
--   Faza samych aktualizacji zabezpieczeń — po opublikowaniu nowej wersji usługi ATA wsparcie dla starszych wersji zostanie ograniczone do przygotowywania wyłącznie aktualizacji zabezpieczeń przez czas pozostały do zakończenia dwunastomiesięcznego okresu wsparcia (patrz poniższy przykład wsparcia poszczególnych wersji).
+-    Faza samych aktualizacji zabezpieczeń — po opublikowaniu nowej wersji usługi ATA wsparcie dla starszych wersji zostanie ograniczone do przygotowywania wyłącznie aktualizacji zabezpieczeń przez czas pozostały do zakończenia dwunastomiesięcznego okresu wsparcia (patrz poniższy przykład wsparcia poszczególnych wersji).
  
 ![Przykład wsparcia poszczególnych wersji](media/versions.png)
 
@@ -50,9 +47,3 @@ Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Ka
 
 ## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-
