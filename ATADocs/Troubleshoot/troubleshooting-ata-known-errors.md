@@ -1,28 +1,32 @@
---
-# <a name="required-metadata"></a>wymagane metadane
-
-title: Rozwiązywanie problemów z dziennika błędów usługi Advanced Threat Analytics | Microsoft Docs description: Informacje na temat sposobów naprawiania typowych błędów usługi ATA keywords: author: rkarlin ms.author: rkarlin manager: mbaldwin ms.date: 2017-03-14 ms.topic: article ms.prod: ms.service: advanced-threat-analytics ms.technology: ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
-
-# <a name="optional-metadata"></a>opcjonalne metadane
-
-#<a name="robots"></a>ROBOTS:
-#<a name="audience"></a>audience:
-#<a name="msdevlang"></a>ms.devlang:
-ms.reviewer: arzinger
-
-ms.suite: ems
-#<a name="mstgtpltfrm"></a>ms.tgt_pltfrm:
-#<a name="mscustom"></a>ms.custom:
-
 ---
-
+title: "Rozwiązywanie problemów z dziennika błędów usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "W tym artykule opisano, jak można rozwiązywać typowe błędy w usłudze ATA"
+keywords: 
+author: rkarlin
+ms.author: rkarlin
+manager: mbaldwin
+ms.date: 3/14/2017
+ms.topic: article
+ms.prod: 
+ms.service: advanced-threat-analytics
+ms.technology: 
+ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
+ms.reviewer: arzinger
+ms.suite: ems
+ms.openlocfilehash: 0c72b14a042e473c0cd59811db63ecafc4ec02d4
+ms.sourcegitcommit: f18c0841d85e54eca940c8cbf226938b3c2bc80f
+translationtype: HT
+---
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
 
 # <a name="troubleshooting-the-ata-error-log"></a>Rozwiązywanie problemów z dziennika błędów usługi ATA
+
 W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA oraz czynności, jakie należy wykonać w celu ich usunięcia.
+
 ## <a name="ata-gateway-errors"></a>Błędy bramy usługi ATA
+
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |System.DirectoryServices.Protocols.LdapException: Wystąpił błąd lokalny|Nie można uwierzytelnić bramy usługi ATA na kontrolerze domeny.|1. Upewnij się, że rekord DNS kontrolera domeny jest prawidłowo skonfigurowany na serwerze DNS. <br>2. Sprawdź, czy czas bramy usługi ATA jest zsynchronizowany z czasem kontrolera domeny.|
