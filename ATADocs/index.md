@@ -1,8 +1,8 @@
 ---
 layout: LandingPage
 description: "Dowiedz się, jak korzystać z usługi Advanced Threat Analytics."
-ms.openlocfilehash: af0cd91660b33f2d9a38e713085576e1ed180b8f
-ms.sourcegitcommit: 998e8aed5835b228e907aab78845723a02521741
+ms.openlocfilehash: ddf06db756bd991c49200ba35b6a515832ccc3cb
+ms.sourcegitcommit: 9b128d6946e32b00f595e00902b9ff95f18141ff
 translationtype: HT
 ---
 # <a name="advanced-threat-analytics-documentation"></a>Dokumentacja usługi Advanced Threat Analytics
@@ -130,6 +130,7 @@ Usługa Advanced Threat Analytics (ATA) jest lokalną platformą pomagającą ch
                 <div class="card">
                     <div class="cardText">
                         <p><a href="https://go.microsoft.com/fwlink/?linkid=836487">Oceń</a></p>
+                        <p><a href="https://docs.microsoft.com/enterprise-mobility-security/solutions/ata-attack-simulation-playbook">Zapoznaj się z podręcznikiem symulacji ataku za pomocą usługi ATA</a></p>
                     </div>
                 </div>
             </div>
