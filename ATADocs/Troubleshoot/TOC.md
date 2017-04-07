@@ -48,7 +48,3 @@
 ## [Rozwiązywanie problemów przy użyciu liczników wydajności](troubleshooting-ata-using-perf-counters.md)
 ## [Rozwiązywanie problemów przy użyciu bazy danych](troubleshooting-ata-using-ata-database.md)
 ## [Odzyskiwanie po awarii](/advanced-threat-analytics/troubleshoot/disaster-recovery.md)
-
-<!--HONumber=Feb17_HO2-->
-
-

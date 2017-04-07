@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: 2c4ae574b3ce7346ba05abb357c23cfdab6482a4
-
-
+ms.openlocfilehash: 489d85e7e8250dffe8d40225b31ed308a9a79969
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
@@ -52,11 +49,11 @@ Wdrożenie usługi ATA może zawierać jedno centrum usługi ATA połączone z w
 ## <a name="deployment-options"></a>Opcje wdrażania
 Usługę ATA można wdrożyć przy użyciu następujących kombinacji bram:
 
--   **Zastosowanie wyłącznie bram usługi ATA** <br>
+-    **Zastosowanie wyłącznie bram usługi ATA** <br>
 Jeśli wdrożenie usługi ATA zawiera wyłącznie bramy usługi ATA (bez bram ATA Lightweight Gateway), wszystkie kontrolery domeny muszą być skonfigurowane tak, aby umożliwiać dublowanie portów do bramy usługi ATA lub należy włączyć funkcję podsłuchu sieci.
--   **Zastosowanie wyłącznie bram ATA Lightweight Gateway**<br>
+-    **Zastosowanie wyłącznie bram ATA Lightweight Gateway**<br>
 Jeśli wdrożenie usługi ATA zawiera tylko bramy ATA Lightweight Gateway, bramy ATA Lightweight Gateway zostają wdrożone w każdym kontrolerze domeny. Nie ma potrzeby zastosowania dodatkowych serwerów ani konfiguracji dublowania portów.
--   **Zastosowanie bram usługi ATA oraz bram ATA Lightweight Gateway**<br>
+-    **Zastosowanie bram usługi ATA oraz bram ATA Lightweight Gateway**<br>
 Jeśli wdrożenie usługi ATA zawiera zarówno bramy usługi ATA, jak i bramy ATA Lightweight Gateway, brama ATA Lightweight Gateway jest instalowana w niektórych kontrolerach domeny (np. wszystkich kontrolerach domeny w oddziałach), a inne kontrolery domeny są monitorowane przez bramy usługi ATA (np. większe kontrolery domeny w głównych centrach danych).
 
 We wszystkich trzech scenariuszach wszystkie bramy wysyłają dane do centrum usługi ATA.
@@ -130,7 +127,7 @@ Brama usługi ATA odbiera ruch sieciowy i zdarzenia systemu Windows z sieci uży
 
 Następujące funkcje działają inaczej w zależności od tego, czy jest uruchomiona brama usługi ATA, czy brama ATA Lightweight Gateway.
 
--   **Kandydat synchronizatora domeny**<br>
+-    **Kandydat synchronizatora domeny**<br>
 Brama synchronizatora domeny jest odpowiedzialna za aktywne synchronizowanie wszystkich jednostek z konkretnej domeny usługi Active Directory (podobnie do mechanizmu używanego przez kontrolery domeny w przypadku replikacji). Z listy kandydatów wybierana jest losowo jedna brama, która będzie służyć jako synchronizator domeny. <br><br>
 Jeśli synchronizator będzie w trybie offline przez ponad 30 minut, zamiast niego zostanie wybrany inny kandydat. Jeśli dla danej domeny nie ma dostępnego synchronizatora domeny, usługa ATA nie będzie mogła aktywnie synchronizować jednostek i ich zmian. Niemniej usługa ATA będzie reagować i odbierać nowe jednostki po ich wykryciu w monitorowanym ruchu. 
 <br>Jeśli nie ma dostępnego synchronizatora domeny, a użytkownik będzie wyszukiwać jednostkę, z którą nie jest powiązany żaden ruch sieciowy, nie zostaną wyświetlone żadne wyniki.<br><br>
@@ -138,7 +135,7 @@ Domyślnie wszystkie bramy usługi ATA są kandydatami synchronizatora.<br><br>
 Ponieważ wszystkie bramy ATA Lightweight Gateway są najprawdopodobniej wdrażane w oddziałach i małych kontrolerach domeny, nie są domyślnymi kandydatami synchronizatora.
 
 
--   **Ograniczenia zasobów**<br>
+-    **Ograniczenia zasobów**<br>
 Brama ATA Lightweight Gateway zawiera składnik monitorowania, który ocenia dostępną moc obliczeniową i pamięć kontrolera domeny, na którym jest uruchomiony. Proces monitorowania jest wykonywany co 10 sekund i dynamicznie aktualizuje przydział użycia procesora CPU i pamięci w procesie bramy ATA Lightweight Gateway, aby upewnić się, że w każdym momencie kontroler domeny ma co najmniej 15% wolnej mocy obliczeniowej i zasobów pamięci.<br><br>
 Niezależnie od tego, co się dzieje w kontrolerze domeny, proces ten zawsze zwalnia zasoby, aby upewnić się, że podstawowa funkcjonalność kontrolera domeny nie zostanie zaburzona.<br><br>
 Jeśli spowoduje to zużycie wszystkich zasobów bramy ATA Lightweight Gateway, tylko część ruchu będzie monitorowana, a na stronie kondycji pojawi się alert monitorowania „Opuszczono ruch sieciowy po dublowaniu portów”.
@@ -183,10 +180,4 @@ Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków 
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

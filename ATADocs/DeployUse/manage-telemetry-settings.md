@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: 1b6da432e81bc42b772b2146213d2f24bee6231a
-
-
+ms.openlocfilehash: 1eeb7e99d99254c8762e4dc2893e4339b69b344a
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
@@ -93,9 +90,3 @@ Aby zatrzymać zbieranie i wysyłanie danych telemetrycznych do firmy Microsoft,
 ## <a name="see-also"></a>Zobacz też
 - [Co nowego w wersji 1.6](/advanced-threat-analytics/understand-explore/whats-new-version-1.6)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-

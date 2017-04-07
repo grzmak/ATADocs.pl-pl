@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: 58df6ec3473118d0e11a5128eabd8feaa29f9fd2
-
-
+ms.openlocfilehash: 5bde3ff8abbdace3c56bb86b8889b53320470b00
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
@@ -30,7 +27,7 @@ Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczeg�
 ## <a name="ata-gateway-logs"></a>Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
 
-Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze**C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
 Brama usługi ATA ma następujące dzienniki:
 
@@ -42,8 +39,8 @@ Brama usługi ATA ma następujące dzienniki:
 
 -   **Microsoft.Tri.Gateway-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
     Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących bramy usługi ATA (pogrupowane błędy jest łatwiej odczytywać i szybko sprawdzać, czy wystąpiły nowe problemy).
--   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku bramy ATA Lightweight Gateway proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów bramy ATA Lightweight Gateway.
--   **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
+-    **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku bramy ATA Lightweight Gateway proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów bramy ATA Lightweight Gateway.
+-    **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
 
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
@@ -92,9 +89,3 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-

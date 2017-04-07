@@ -13,18 +13,15 @@ ms.technology:
 ms.assetid: bff20bf7-8b53-49da-81e5-b818a1c3b24e
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: 22d08a20291b1651a36247e9ffbeff8c881aefc5
-ms.openlocfilehash: 9b4db2f6489afc1687783d0a879f9303f3a8c775
-
-
+ms.openlocfilehash: 0723eb35f181ca1186099fd11eb23d6d4ab9e525
+ms.sourcegitcommit: 2b87cd81ac96f12c47b756493b85da8154ee7a0a
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
 
-# <a name="provide-ata-with-up-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
+# <a name="provide-ata-with-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
 Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**.
 
 1.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.
@@ -80,9 +77,3 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
 
 ## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-
