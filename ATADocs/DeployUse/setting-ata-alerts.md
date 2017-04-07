@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: 14cb7513-5dc8-49cb-b3e0-94f469c443dd
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: 782c066e6a7ef8a5da9e2b8ceb16742da6f52506
-
-
+ms.openlocfilehash: 06aa85cededdc3647aadaaca7d594ce3bbbb0723
+ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
@@ -40,7 +37,7 @@ Aby otrzymywać powiadomienia pocztowe, określ następujące ustawienia:
 
 2. W obszarze **Powiadomienia** wybierz pozycję **Ustawienia**.
 3. W obszarze **Adresaci poczty** określ adresatów, którzy będą otrzymywać powiadomienia pocztą e-mail.
->   [!NOTE]
+>    [!NOTE]
 >   Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
 
 4. W obszarze **Powiadom gdy:** użyj przełączników, aby wybrać powiadomienia, które mają być wysyłane:
@@ -77,9 +74,3 @@ Aby otrzymywać powiadomienia Syslog, określ następujące ustawienia:
 
 ## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-

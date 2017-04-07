@@ -1,14 +1,13 @@
 ---
 layout: LandingPage
 description: "Dowiedz się, jak korzystać z usługi Advanced Threat Analytics."
-translationtype: Human Translation
-ms.sourcegitcommit: c4e5418a8b5f7093792f52f1553307039f38ff5f
-ms.openlocfilehash: 1fe4d6e06150cc1425c92165445fd087544b8904
-
+ms.openlocfilehash: ddf06db756bd991c49200ba35b6a515832ccc3cb
+ms.sourcegitcommit: 9b128d6946e32b00f595e00902b9ff95f18141ff
+translationtype: HT
 ---
 # <a name="advanced-threat-analytics-documentation"></a>Dokumentacja usługi Advanced Threat Analytics
 
-Kontroluj i zabezpieczaj pocztę e-mail, dokumenty oraz dane poufne, które są udostępniane poza firmę. Od łatwej klasyfikacji po osadzone etykiety i uprawnienia — dzięki usłudze Azure Information Protection Twoje dane będą zawsze lepiej chronione, bez względu na to, gdzie są przechowywane i komu udostępniane.
+Usługa Advanced Threat Analytics (ATA) jest lokalną platformą pomagającą chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych ukierunkowanych ataków cybernetycznych i zagrożeń wewnętrznych przy użyciu informacji z wielu źródeł danych w sieci, aby poznać zachowanie użytkowników i innych podmiotów w organizacji oraz utworzyć profil ich zachowania, a także wykorzystując zastrzeżony aparat analizowania sieci usługi ATA w celu przechwytywania i analizowania ruchu sieciowego wielu protokołów.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -131,15 +130,10 @@ Kontroluj i zabezpieczaj pocztę e-mail, dokumenty oraz dane poufne, które są 
                 <div class="card">
                     <div class="cardText">
                         <p><a href="https://go.microsoft.com/fwlink/?linkid=836487">Oceń</a></p>
+                        <p><a href="https://docs.microsoft.com/enterprise-mobility-security/solutions/ata-attack-simulation-playbook">Zapoznaj się z podręcznikiem symulacji ataku za pomocą usługi ATA</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </li>  
 </ul>
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-

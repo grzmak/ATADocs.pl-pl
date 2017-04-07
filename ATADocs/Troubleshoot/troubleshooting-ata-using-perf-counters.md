@@ -13,13 +13,10 @@ ms.technology:
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
-translationtype: Human Translation
-ms.sourcegitcommit: b28cb3a0da844b7c460c03726222bc775a9e47da
-ms.openlocfilehash: a909388cfcd35af45ccd4eac35f81e55938db086
-
-
+ms.openlocfilehash: 5c4662cd2d83135227cf86e339d5e30f9713f022
+ms.sourcegitcommit: 998e8aed5835b228e907aab78845723a02521741
+translationtype: HT
 ---
-
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
 
 
@@ -35,6 +32,16 @@ Aby uzyskać informacje na temat przepływu wewnętrznych składników usługi A
 2.  Wtedy poprzedni składnik zacznie zwiększać **swój** rozmiar, aż zablokuje poprzedzający go składnik, uniemożliwiając wysyłanie kolejnych jednostek.
 
 3.  Ten proces jest kontynuowany wstecz i prowadzi do składnika NetworkListener, który będzie pomijać ruch sieciowy, gdy nie będzie już mógł przesyłać dalej jednostek.
+
+
+## <a name="retrieving-performance-monitor-files-for-troubleshooting"></a>Pobieranie plików monitora wydajności w celu rozwiązywania problemów
+
+Aby pobrać pliki monitora wydajności (BLG) z różnych składników ATA:
+1.  Otwórz monitora wydajności.
+2.  Zatrzymaj zestaw modułów zbierających dane o nazwie „Brama usługi Microsoft ATA” lub „Centrum usługi Microsoft ATA”.
+3.  Przejdź do folderu zestawu modułów zbierających dane (domyślnie jest to „C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs\DataCollectorSets” lub „C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs\DataCollectorSets”).
+4.  Skopiuj plik BLG z najnowszą datą modyfikacji.
+5.  Ponownie uruchom zestaw modułów zbierających dane o nazwie „Brama usługi Microsoft ATA” lub „Centrum usługi Microsoft ATA”.
 
 
 ## <a name="ata-gateway-performance-counters"></a>Liczniki wydajności bramy usługi ATA
@@ -126,9 +133,3 @@ Oto lista głównych liczników systemu operacyjnego, na które należy zwróci�
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](/advanced-threat-analytics/deploy-use/configure-event-collection#configuring-windows-event-forwarding)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
-
