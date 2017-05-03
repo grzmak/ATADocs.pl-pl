@@ -106,9 +106,9 @@ Jeśli zostanie wyświetlony jeden z tych błędów, zastosuj poniższe obejści
 **Obejście**: 
 
 1.    Przenieś folder „data_old” do folderu tymczasowego (zazwyczaj znajdującego się w folderze %ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin).
-2.    Odinstaluj centrum usługi ATA w wersji&1;.5 i usuń wszystkie dane z bazy danych.
+2.    Odinstaluj centrum usługi ATA w wersji 1.5 i usuń wszystkie dane z bazy danych.
 ![Odinstalowywanie usługi ATA w wersji 1.5](http://i.imgur.com/x4nJycx.png)
-3.    Zainstaluj ponownie centrum usługi ATA w wersji&1;.5. Upewnij się, że używasz takiej samej konfiguracji jak w poprzedniej instalacji usługi ATA w wersji 1.5 (certyfikaty, adresy IP, ścieżka bazy danych itp.).
+3.    Zainstaluj ponownie centrum usługi ATA w wersji 1.5. Upewnij się, że używasz takiej samej konfiguracji jak w poprzedniej instalacji usługi ATA w wersji 1.5 (certyfikaty, adresy IP, ścieżka bazy danych itp.).
 4.    Zatrzymaj poniższe usługi w następującej kolejności:
     1.    Microsoft Advanced Threat Analytics Center
     2.    Baza danych MongoDB

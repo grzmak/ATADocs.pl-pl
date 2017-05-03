@@ -42,7 +42,7 @@ Jeśli została już wdrożona usługa ATA w wersji 1.4, ta procedura przeprowad
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
-1.  Pobierz usługę ATA w wersji&1;.5 z centrum VLSC lub witryny MSDN.
+1.  Pobierz usługę ATA w wersji 1.5 z centrum VLSC lub witryny MSDN.
       > [!NOTE]
          Możesz również zaktualizować usługę ATA do wersji 1.5 przy użyciu zaktualizowanej pełnej wersji usługi ATA.
 
