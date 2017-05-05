@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 01/23/2017
+ms.date: 04/30/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.technology:
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 5bde3ff8abbdace3c56bb86b8889b53320470b00
-ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+ms.openlocfilehash: 4a5b48f490a13cfb990f49b864462b556e36c3ce
+ms.sourcegitcommit: cb2a4df6805d41bf030d3439ef87281fc6acc98f
 translationtype: HT
 ---
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
@@ -27,7 +27,7 @@ Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczeg�
 ## <a name="ata-gateway-logs"></a>Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także bramy ATA Lightweight Gateway. 
 
-Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze**C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
 Brama usługi ATA ma następujące dzienniki:
 
@@ -81,6 +81,10 @@ Dzienniki wdrażania bramy usługi ATA i bramy ATA Lightweight Gateway:
 -   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bramy usługi ATA. Służy on głównie do śledzenia procesu wdrażania bramy usługi ATA.
 
 -   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
+
+
+> [!NOTE] 
+> Oprócz dzienników wdrażania wspomnianych tutaj istnieją inne dzienniki zaczynające się od „Microsoft Advanced Threat Analytics”, które także mogą zawierać dodatkowe informacje na temat procesu wdrażania.
 
 
 ## <a name="see-also"></a>Zobacz też

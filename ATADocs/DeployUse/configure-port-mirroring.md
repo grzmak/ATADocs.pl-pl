@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 1/23/2017
+ms.date: 4/30/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.technology:
 ms.assetid: cdaddca3-e26e-4137-b553-8ed3f389c460
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f91c728614cbe03f794fd0ad45ccc19af712cf54
-ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+ms.openlocfilehash: ff27dbe4b2b5e44add5dfd93e0a71419ba818ea6
+ms.sourcegitcommit: cb2a4df6805d41bf030d3439ef87281fc6acc98f
 translationtype: HT
 ---
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
@@ -40,6 +40,7 @@ Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Poniże
 
 > [!NOTE]
 > Jeśli kontroler domeny, względem którego działa funkcja dublowania portów, korzysta z połączenia WAN, upewnij się, że połączenie WAN może obsłużyć dodatkowe obciążenie wynikające z ruchu funkcji ERSPAN.
+> Usługa ATA obsługuje monitorowanie ruchu tylko wtedy, gdy ruch trafia do karty sieciowej i kontrolera domeny w taki sam sposób. Usługa ATA nie obsługuje monitorowania ruchu, gdy jest on dzielony na różne porty.
 
 ## <a name="supported-port-mirroring-options"></a>Obsługiwane opcje funkcji dublowania portów
 

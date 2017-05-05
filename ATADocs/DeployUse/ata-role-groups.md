@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/7/2017
+ms.date: 4/30/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,8 +13,8 @@ ms.technology:
 ms.assetid: 3715b69e-e631-449b-9aed-144d0f9bcee7
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 69034316493b8783cbeaaae9aac6af237da39dc8
-ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
+ms.openlocfilehash: 6243c03af9e40b8774b2ce7089a47e54569ba45e
+ms.sourcegitcommit: cb2a4df6805d41bf030d3439ef87281fc6acc98f
 translationtype: HT
 ---
 *Dotyczy: Advanced Threat Analytics, wersja 1.7*
@@ -46,10 +46,13 @@ Usługa ATA wprowadza 3 typy grup ról: administratorzy ATA, użytkownicy ATA or
 |Brama — usuwanie |Dostępne|Niedostępne|Niedostępne|
 |Monitorowane DC — dodawanie |Dostępne|Niedostępne|Niedostępne|
 |Monitorowane DC — usuwanie|Dostępne|Niedostępne|Niedostępne|
+|Wyświetlanie alertów i podejrzanych działań|Dostępne|Dostępne|Dostępne|
+
 
 W przypadku próby uzyskania dostępu do strony, która nie jest dostępna dla danej grupy ról, użytkownicy zostaną przekierowani do nieautoryzowanej strony usługi ATA. 
 
 ## <a name="add--remove-users---ata-role-groups"></a>Dodawanie\usuwanie użytkowników — grupy ról usługi ATA 
 
-Usługa ATA korzysta z lokalnych grup systemu Windows jako podstawy dla grup ról. Aby dodać lub usunąć użytkowników, należy użyć konsoli MMC **Użytkownicy i grupy lokalne** (Lusrmgr.msc). Na komputerze dołączonym do domeny można dodać konta domeny, a także konta lokalne. 
+Usługa ATA korzysta z lokalnych grup systemu Windows jako podstawy dla grup ról. Grupy ról muszą być zarządzane na serwerze centrum usługi ATA.
+Aby dodać lub usunąć użytkowników, należy użyć konsoli MMC **Użytkownicy i grupy lokalne** (Lusrmgr.msc). Na komputerze dołączonym do domeny można dodać konta domeny, a także konta lokalne. 
 
