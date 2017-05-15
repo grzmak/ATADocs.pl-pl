@@ -42,6 +42,7 @@
 ## [Zarządzanie bazą danych usługi ATA](/advanced-threat-analytics/deploy-use/ata-database-management)
 ## [Eksportowanie/importowanie konfiguracji usługi ATA](/advanced-threat-analytics/deploy-use/ata-configuration-file)
 ## [Zarządzanie funkcją telemetrii w usłudze ATA](/advanced-threat-analytics/deploy-use/manage-telemetry-settings)
+## [Badanie ataków z użyciem sfałszowanego elementu PAC](/use-case-forged-pac)
 # Rozwiązywanie problemów
 ## [Rozwiązywanie problemów przy użyciu znanych błędów](troubleshooting-ata-known-errors.md)
 ## [Rozwiązywanie problemów przy użyciu dzienników](troubleshooting-ata-using-logs.md)
