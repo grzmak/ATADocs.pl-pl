@@ -1,108 +1,101 @@
 ---
-# required metadata
-
-title: What's new in Advanced Threat Analytics version 1.4 | Microsoft Docs
-description: Lists what was new in ATA version 1.4 along with known issues
-keywords:
+title: "Co nowego w wersji 1.4 usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.4 usługi ATA"
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: cbea47f9-34c1-42b6-ae9e-6a472b49e1a5
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 69127773d9c3130bd07dee0b65956b93848ec399
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
+# <a name="what39s-new-in-ata-version-14"></a>Co nowego w wersji 1.4 usługi ATA
+Te informacje o wersji zawierają znane problemy w wersji 1.4 usługi Advanced Threat Analytics.
 
-# What&#39;s new in ATA version 1.4
-These release notes provide information about known issues in version 1.4 of  Advanced Threat Analytics.
+## <a name="whats-new-in-this-version"></a>Co nowego w tej wersji?
 
-## What's new in this version?
+-   Obsługa funkcji przekazywania zdarzeń systemu Windows służącej do wysyłania zdarzeń bezpośrednio z kontrolerów domeny do bramy usługi ATA.
 
--   Support for Windows Event Forwarding (WEF) to send events directly from the domain controllers to the ATA gateway.
+-   Ulepszenia funkcji wykrywania ataków typu Pass-The-Hash dotyczących zasobów firmowych polegające na połączeniu głębokiej inspekcji pakietów i dzienników zdarzeń systemu Windows.
 
--   Pass-The-Hash detection enhancements on corporate resources by combining DPI (Deep Packet Inspection) and Windows event logs.
+-   Ulepszenia obsługi urządzeń niedołączonych do domeny oraz urządzeń z systemem innym niż Windows dotyczące wykrywania i widoczności.
 
--   Enhancements for the support of non-domain joined devices and non-Windows devices for detection and visibility.
+-   Ulepszenia wydajności umożliwiające obsługę większego ruchu przez pojedynczą bramę usługi ATA.
 
--   Performance improvements to support more traffic per ATA Gateway.
+-   Ulepszenia wydajności umożliwiające obsługę większej liczby bram usługi ATA przez pojedyncze centrum usługi ATA.
 
--   Performance improvements to support more ATA Gateways per ATA Center.
+-   Dodano nowy proces automatycznego rozpoznawania nazw, który dopasowuje nazwy komputerów i adresy IP — ta wyjątkowa możliwość oszczędzi cenny czas w procesie dochodzenia i zapewni silne dowody dla analityków zabezpieczeń.
 
--   A new automatic name resolution process was added which matches computer names and IP addresses – this unique capability will save precious time in the investigation process and provide strong evidence for security analysts
+-   Ulepszona możliwość gromadzenia danych wejściowych od użytkowników w celu automatycznego dostosowania procesu wykrywania.
 
--   Improved ability to collect input from users to automatically fine-tune the detection process.
+-   Automatyczne wykrywanie urządzeń NAT.
 
--   Automatic detection for NAT devices.
+-   Automatyczne przełączanie w tryb failover, gdy kontrolery domeny są niedostępne.
 
--   Automatic failover when domain controllers are not reachable.
+-   Funkcja monitorowania kondycji systemu i powiadomień zapewnia teraz informacje o ogólnej kondycji wdrożenia oraz o określonych problemach związanych z konfiguracją i łącznością.
 
--   System health monitoring and notifications now provide the overall health state of the deployment as well as specific issues related to configuration and connectivity.
+-   Wgląd w lokacje i lokalizacje, w których działają jednostki.
 
--   Visibility into sites and locations where entities operate.
+-   Obsługa wielu domen.
 
--   Multi-domain support.
+-   Obsługa domen z nazwą bez rozszerzenia.
 
--   Support for Single Label Domains (SLD).
+-   Obsługa modyfikowania adresu IP i certyfikatu bram usługi ATA oraz centrum usługi ATA.
 
--   Support for modifying the IP address and certificate of the ATA Gateways and ATA Center.
+-   Telemetria umożliwiająca poprawę środowiska użytkownika.
 
--   Telemetry to help improve customer experience.
+## <a name="known-issues"></a>Znane problemy
+W tej wersji występują następujące znane problemy.
 
-## Known issues
-The following known issues exist in this version.
+### <a name="network-capture-software"></a>Oprogramowanie do przechwytywania ruchu sieciowego
+Jedynym obsługiwanym oprogramowaniem do przechwytywania ruchu sieciowego, które można zainstalować na bramie usługi ATA, jest program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865). Nie należy instalować programu Microsoft Message Analyzer ani żadnego innego oprogramowania do przechwytywania ruchu sieciowego. Zainstalowanie innego oprogramowania spowoduje nieprawidłowe działanie bramy usługi ATA.
 
-### Network Capture Software
-On the ATA Gateway, the only supported network capture software you can install is [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865). Do not install Microsoft Message Analyzer or any other network capturing software. Installing other software will cause the ATA Gateway to stop functioning properly.
+### <a name="installation-from-zip-file"></a>Instalacja z pliku Zip
+Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio z pliku zip, ponieważ instalacja zakończy się niepowodzeniem.
 
-### Installation from Zip file
-When installing the ATA Gateway, make sure to extract the files from the zip file to a local directory and install it from there. Do not install the ATA Gateway directly from within the zip file or the installation will fail.
+### <a name="uninstalling-previous-versions-of-ata"></a>Odinstalowywanie poprzednich wersji usługi ATA
+Jeśli zainstalowano poprzednią wersję usługi ATA, publiczną wersję zapoznawczą lub prywatną wersję zapoznawczą, należy odinstalować centrum usługi ATA i bramy usługi ATA przed zainstalowaniem tej wersji usługi ATA.
 
-### Uninstalling previous versions of ATA
-If you installed a previous version of ATA, Public Preview or Private Preview versions, you must uninstall the ATA Center and ATA Gateways before installing this release of ATA.
+Należy również usunąć pliki bazy danych i pliki dziennika. Bazy danych poprzednich wersji usługi ATA nie są zgodne z wersją GA usługi ATA.
 
-You must also delete the Database files and log files. The databases from previous versions of ATA are not compatible with the GA version of ATA.
+Jeśli podczas próby odinstalowania centrum ATA lub bramy ATA zamiast procesu odinstalowania usługi ATA zostanie uruchomiony proces instalowania, należy dodać następujący klucz rejestru, a następnie ponownie odinstalować usługę ATA.
 
-When you attempt to uninstall the ATA Center or ATA Gateway, if the ATA installation opens instead of the uninstallation, you will need to add the following registry key and then uninstall ATA again.
-
-**ATA Center**
+**Centrum usługi ATA**
 
 -   HKLM\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Center
 
--   Add a new String value named `InstallationPath` with a value of `C:\Program Files\Microsoft Advanced Threat Analytics\Center` . This is the default installation folder. If you changed the installation folder enter the path where ATA is installed.
+-   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Center`. To jest domyślny folder instalacji. Jeśli folder instalacji został zmieniony, wprowadź ścieżkę, w której zainstalowano usługę ATA.
 
-    ![Registry editor for ATA Center installation path](media/ATA-uninstall-center-bug.jpg)
+    ![Wprowadzanie ścieżki instalacji centrum usługi ATA w edytorze rejestru](media/ATA-uninstall-center-bug.jpg)
 
-**ATA Gateway**
+**Brama usługi ATA**
 
 -   HKLM\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Gateway
 
--   Add a new String value named `InstallationPath` with a value of `C:\Program Files\Microsoft Advanced Threat Analytics\Gateway`. This is the default installation folder.  If you changed the installation folder enter the path where ATA is installed.
+-   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Gateway`. To jest domyślny folder instalacji.  Jeśli folder instalacji został zmieniony, wprowadź ścieżkę, w której zainstalowano usługę ATA.
 
-    ![Registry editor for ATA Gateway installation path](media/ATA-GW-uninstall-bug.jpg)
+    ![Wprowadzanie ścieżki instalacji bramy usługi ATA w edytorze rejestru](media/ATA-GW-uninstall-bug.jpg)
 
-After uninstalling, delete the installation folder on both the ATA Center and the ATA Gateway.  If you installed the Database in a separate folder, delete the Database folder on the ATA Center.
+Po odinstalowaniu usuń folder instalacji w centrum usługi ATA i bramie usługi ATA.  Jeśli baza danych została zainstalowana w oddzielnym folderze, usuń folder bazy danych w centrum usługi ATA.
 
-### Health alert - disconnected ATA Gateway
-If you have more than one ATA Gateway and have Disconnected ATA Gateway alerts, automatic resolve will work on only one of them, leaving the rest in an Open status. You must manually confirm that the ATA Gateway is up and the service is running and manually resolve the alert.
+### <a name="health-alert---disconnected-ata-gateway"></a>Alert dotyczący kondycji — rozłączona brama usługi ATA
+Jeśli istnieje więcej niż jedna brama usługi ATA i korzystasz z alertów dotyczących rozłączenia bramy ATA, funkcja automatycznego rozwiązywania będzie działać tylko dla jednej z nich, a reszta pozostanie w stanie Otwarte. Należy ręcznie potwierdzić, że brama usługi ATA jest uruchomiona oraz że usługa działa, a następnie ręcznie rozwiązać alert.
 
-### KB on virtualization host
-Do not install KB 3047154 on a virtualization host. This may cause port mirroring to stop working properly.
+### <a name="kb-on-virtualization-host"></a>Aktualizacja na hoście wirtualizacji
+Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji. Może to spowodować nieprawidłowe działanie funkcji dublowania portów.
 
-## See Also
+## <a name="see-also"></a>Zobacz też
 
-[Update ATA to version 1.6 - migration guide](ata-update-1.6-migration-guide.md)
+[Aktualizacja usługi ATA do wersji 1.6 — przewodnik migracji](ata-update-1.6-migration-guide.md)
 
-[Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
