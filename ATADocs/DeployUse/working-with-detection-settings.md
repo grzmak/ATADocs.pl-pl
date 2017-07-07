@@ -1,51 +1,8 @@
 ---
-title: "Konfigurowanie ustawień wykrywania usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Opis sposobu konfigurowania listy nietypowych adresów IP i podsieci, które powinny być obsługiwane inaczej niż pozostałe jednostki w sieci."
-keywords: 
-author: rkarlin
-ms.author: rkarlin
-manager: mbaldwin
-ms.date: 01/23/2017
-ms.topic: article
-ms.prod: 
-ms.service: advanced-threat-analytics
-ms.technology: 
-ms.assetid: f4f2ae30-4849-4a4f-8f6d-bfe99a32c746
-ms.reviewer: bennyl
-ms.suite: ems
-ms.openlocfilehash: 831bafd08e0eea821fda94bd4f519d92ffec3397
-ms.sourcegitcommit: 49e892a82275efa5146998764e850959f20d3216
-translationtype: HT
+redirect_url: /advanced-threat-analytics/working-with-detection-settings
+ms.openlocfilehash: d7541af0107849b4acf4208aec21c0b30369cfc1
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-*Dotyczy: Advanced Threat Analytics, wersja 1.7*
-
-
-
-# <a name="working-with-ata-detection-settings"></a>Praca z ustawieniami wykrywania usługi ATA
-Strona konfiguracji **Wykrywanie** umożliwia określenie listy nietypowych adresów IP i podsieci, które powinny być obsługiwane inaczej niż pozostałe jednostki w sieci.
-
-## <a name="setting-up-detection"></a>Konfigurowanie wykrywania
-W sekcji **Wykrywanie** można określić następujące elementy:
-
--   **Identyfikatory SID kont wystawionych jako przynęta** — to jest konto użytkownika, dla którego nie powinny istnieć żadne działania w sieci. To konto zostanie skonfigurowane jako użytkownik usługi ATA wystawiony jako przynęta. Jeśli ktoś spróbuje użyć tego konta użytkownika usługi ATA, spowoduje podejrzane działanie, które będzie wskazywać na złośliwe działania. Do skonfigurowania użytkownika wystawionego jako przynęta potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika.
-
->[!NOTE]
-> Identyfikator SID użytkownika można znaleźć na karcie *Informacje o koncie* profilu użytkownika w konsoli ATA.
-
-
-![Wystawianie konta jako przynęty w ustawieniach wykrywania usługi ATA](media/ata-detection-settings-honeytoken-1.7.png)
-
-
-**Detection Exclusions** (Wykluczenia wykrywania) — można wykluczyć adresy IP z zakresu wykrywania następujących zagrożeń. W przypadku wprowadzenia adresu IP na jedną z tych list usługa ATA wykluczy ten adres IP z określonego typu wykrywanych działań.
-
--   Wykluczenia adresów IP rekonesansu DNS
-
--   Wykluczenia adresów IP ataków typu Pass-the-Ticket
-
-![Wykluczenia w ustawieniach wykrywania usługi ATA](media/ata-detection-settings-exclusions-1.7.png)
-
-
-## <a name="see-also"></a>Zobacz też
-- [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Modyfikowanie konfiguracji usługi ATA](modifying-ata-configuration.md)
-- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
