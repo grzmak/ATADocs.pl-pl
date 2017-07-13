@@ -1,59 +1,56 @@
 ---
-# required metadata
-
-title: Advanced Threat Analytics versions | Microsoft Docs
-description: Explains the different support options for Microsoft Advanced Threat Analytics (ATA) versions.
+title: "Wersje usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "W artykule opisano opcje pomocy technicznej w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)."
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 1/23/2017
+ms.date: 7/3/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: a8afbd91-c888-4dfc-94ab-72e38745163e
-
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: f1092e1cf6c991785dbf8bad3b197b68a21c0833
+ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 07/03/2017
 ---
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
-# Support for Microsoft Advanced Threat Analytics (ATA) versions
+# Wsparcie techniczne w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)
+<a id="support-for-microsoft-advanced-threat-analytics-ata-versions" class="xliff"></a>
 
-Microsoft plans to release updates for ATA a few times per year with each update version supported for twelve (12) months from its general availability (GA) release date. Technical support will be provided for the entire twelve (12) months. However, our support structure is now dynamic, evolving into two distinct servicing phases that depend on the availability of the latest version.
+Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Każda zaktualizowana wersja będzie objęta pomocą techniczną przez 12 miesięcy od daty ogólnej dostępności. Pomoc techniczna będzie świadczona przez całe 12 miesięcy. Nasze struktury wsparcia są jednak obecnie dynamiczne i ewoluują w kierunku dwóch oddzielnych faz świadczenia usługi, zależnych od dostępności jej najnowszej wersji.
 
--	Security and Critical Updates servicing phase - When running the latest version of ATA, you will receive both Security and Critical updates.
+-   Faza aktualizacji zabezpieczeń i aktualizacji krytycznych — użytkownicy najnowszych wersji usługi ATA będą otrzymywać zarówno aktualizacje zabezpieczeń, jak i aktualizacje krytyczne.
 
--	Security Updates (Only) servicing phase - After a new ATA version is released, support for older versions will reduce to Security updates only for the remainder of the twelve (12) month support lifecycle (shown in the below example of verions servicing support).
+-   Faza samych aktualizacji zabezpieczeń — po opublikowaniu nowej wersji usługi ATA pomoc techniczna dla starszych wersji zostanie ograniczona do aktualizacji zabezpieczeń przez czas pozostały do zakończenia dwunastomiesięcznego okresu świadczenia pomocy technicznej (patrz poniższy przykład dla poszczególnych wersji).
  
-![Example of verions servicing support](media/versions.png)
+![Przykład świadczenia pomocy technicznej dla poszczególnych wersji](media/versions.png)
 
 > [!Note]
-> The latest ATA version is always in the Security and Critical Updates servicing phase. This means that if you encounter a code defect that warrants a critical update, you must have the latest current branch version installed to receive a fix. All other supported versions will only be eligible to receive security updates. All support ends after the twelve (12) month lifecycle for a version has expired. At that time, customers must update to a supported version.
+> Najnowsza wersja usługi ATA znajduje się zawsze w fazie aktualizacji zabezpieczeń i aktualizacji krytycznych. Oznacza to, że w razie wystąpienia defektu kodu wymagającego aktualizacji krytycznej użytkownicy najnowszej wersji otrzymają taką aktualizację. Użytkownicy wszystkich innych wersji będą otrzymywać tylko aktualizacje zabezpieczeń. Świadczenie pomocy technicznej kończy się po upływie 12 miesięcy cyklu życia wersji. Użytkownicy muszą wówczas zaktualizować posiadaną wersję do wersji objętej wsparciem.
 
-## Version History
+## Historia wersji
+<a id="version-history" class="xliff"></a>
 
-|VERSION|BUILD NUMBER|AVAILABILITY DATE| SUPPORT END DATE|
+|WERSJA|NUMER KOMPILACJI|DATA UDOSTĘPNIENIA| DATA ZAKOŃCZENIA WSPARCIA|
 |----|----|----|----|
-|1.4|1.4.2457|31-AUG-2015|30-AUG-2016|
-|1.5|1.5.2946|17-DEC-2015|16-DEC-2016|
-|1.6|1.6.4103|05-MAY-2016|04-MAY-2017|
-|1.6.1|1.6.4317|15-JUN-2016|14-JUN-2017|
-|1.7|1.7.5402|31-AUG-2016|30-AUG-2017|
-|1.7.1|1.7.5647|06-OCT-2016|05-OCT-2017|
-|1.7.2|1.7.5757|15-NOV-2016|14-NOV-2017|
+|1.4|1.4.2457|31-SIE-2015|30-SIE-2016|
+|1.5|1.5.2946|17-GRU-2015|16-GRU-2016|
+|1.6|1.6.4103|05-MAJ-2016|04-MAJ-2017|
+|1.6.1|1.6.4317|15-CZE-2016|14-CZE-2017|
+|1.7|1.7.5402|31-SIE-2016|30-SIE-2017|
+|1.7.1|1.7.5647|06-PAŹ-2016|05-PAŹ-2017|
+|1.7.2|1.7.5757|15-LIS-2016|14-LIS-2017|
 
 
 
 
 
-## See Also
-[Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+[Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

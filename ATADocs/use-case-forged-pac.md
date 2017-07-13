@@ -1,108 +1,113 @@
 ---
-# required metadata
-
-title: Investigating Forged PAC attacks | Microsoft Docs
-description: This article describes the Forged PAC attack and provides investigation instructions when this threat is detected on your network.
-keywords:
+title: "Badanie ataków typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji | Microsoft Docs"
+description: "W tym artykule opisano ataki typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji oraz instrukcje dotyczące badania w przypadku wykrycia tego typu zagrożenia w sieci."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/21/2017
+ms.date: 7/4/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: f3db435e-9553-40a2-a2ad-278fad4f0ef5
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 842e9866c5fdb447f49600501c4486da6db902f2
+ms.sourcegitcommit: 4118dd4bd98994ec8a7ea170b09aa301a4be2c8a
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 07/05/2017
 ---
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
-*Applies to: Advanced Threat Analytics version 1.7*
+# Badanie ataków typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji
+<a id="investigating-privilege-escalation-using-forged-authorization-data-attacks" class="xliff"></a>
 
-# Investigating Forged PAC attacks
+Firma Microsoft nieustannie usprawnia swoje możliwości wykrywania zagrożeń oraz zapewniania analitykom zabezpieczeń informacji, dzięki którym mogą podejmować działania, niemal w czasie rzeczywistym. Usługa Advanced Threat Analytics (ATA) firmy Microsoft ułatwia wprowadzanie tych zmian. Jeśli usługa ATA wykrywa w Twojej sieci podejrzane działanie związane z podwyższeniem poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji i ostrzega o tym, ten artykuł pomoże Ci zrozumieć i zbadać sytuację.
 
-Microsoft constantly improves its security detection capabilities and the ability to provide near-real-time, actionable intelligence to security analysts. Microsoft’s Advanced Threat Analytics (ATA) helps to lead this change. 
-If ATA detects a Forged PAC suspicious activity on your network and alerts you about it, this article will help you understand and investigate it.
+## Co to jest certyfikat atrybutu uprawnień (PAC, Privileged Attribute Certificate)?
+<a id="what-is-a-privileged-attribute-certificate-pac" class="xliff"></a>
 
-## What is a Privileged Attribute Certificate (PAC)?
+Certyfikat atrybutu uprawnień (PAC) to struktura danych w bilecie protokołu Kerberos, która przechowuje informacje dotyczące autoryzacji, takie jak członkostwa w grupach, identyfikatory zabezpieczeń i informacje o profilu użytkownika. W domenie usługi Active Directory umożliwia to przekazanie danych autoryzacji dostarczonych przez kontroler domeny do innych serwerów członkowskich i stacji roboczych w celu uwierzytelnienia i autoryzacji. Poza informacjami o członkostwie certyfikat PAC zawiera także dodatkowe informacje o poświadczeniach, informacje o profilach i zasadach oraz pomocnicze metadane zabezpieczeń. 
 
-The Privilege Attribute Certificate (PAC) is the Data Structure in the Kerberos Ticket which holds authorization information, including group memberships, security identifiers and user profile information. In an Active Directory domain, this enables authorization data provided by the Domain Controller (DC) to be passed to other member servers and workstations for authentication and authorization purposes. In addition to membership information, the PAC includes additional credential information, profile and policy information, and supporting security metadata. 
+Protokoły uwierzytelniania (protokoły weryfikujące tożsamości) używają struktury danych certyfikatu PAC do transportowania informacji o autoryzacji, które kontrolują dostęp do zasobów.
 
-The PAC Data Structure is used by authentication protocols (protocols that verify identities) to transport authorization information, which controls access to resources.
+### Walidacja certyfikatu PAC
+<a id="pac-validation" class="xliff"></a>
 
-### PAC validation
+Walidacja certyfikatu PAC to funkcja zabezpieczeń uniemożliwiająca osobie atakującej uzyskanie nieautoryzowanego dostępu do systemu lub jego zasobów przy użyciu ataku typu man-in-the-middle, zwłaszcza w aplikacjach, w których jest stosowana personifikacja użytkownika. Personifikacja wymaga zaufanej tożsamości, na przykład konta usługi o podwyższonym poziomie uprawnień na potrzeby dostępu do zasobów i wykonywania zadań. Walidacja certyfikatu PAC wspiera bezpieczniejsze środowisko w ustawieniach uwierzytelniania Kerberos, gdzie ma miejsce personifikacja. [Walidacja certyfikatu PAC](https://blogs.msdn.microsoft.com/openspecification/2009/04/24/understanding-microsoft-kerberos-pac-validation/) daje pewność, że użytkownik przedstawia dokładne dane autoryzacji udzielone w bilecie protokołu Kerberos i że uprawnienia biletu nie zostały zmodyfikowane.
 
-PAC validation is a security feature to prevent an attacker from gaining unauthorized access to a system or its resources with a man-in-the-middle attack, especially in applications where user impersonation is used. Impersonation involves a trusted identity, such as a service account that is granted elevated privileges to access resources and execute tasks. PAC validation reinforces a more secure authorization environment in Kerberos authentication settings where impersonation occurs. [PAC validation](https://blogs.msdn.microsoft.com/openspecification/2009/04/24/understanding-microsoft-kerberos-pac-validation/) ensures that a user presents exact authorization data as it was granted in the Kerberos ticket and that the ticket's privileges have not been modified.
+Podczas walidacji certyfikatu PAC serwer koduje komunikat żądania zawierający długość oraz typ podpisu certyfikatu PAC i przekazuje go do kontrolera domeny. Kontroler domeny dekoduje żądanie i wyodrębnia sumę kontrolną serwera oraz wartości sum kontrolnych centrum dystrybucji kluczy. Jeśli weryfikacja sum kontrolnych powiedzie się, kontroler domeny zwróci kod powodzenia do serwera. Kod niepowodzenia oznacza, że certyfikat PAC został zmieniony. 
 
-When the PAC validation occurs, the server encodes a request message containing the PAC signature type and length and transmits it to the DC. The DC decodes the request and extracts the server checksum and the KDC checksum values. If the checksum verification succeeds, the DC returns a success code to the server. An unsuccessful return code indicates that the PAC has been altered. 
+Zawartość certyfikatu PAC Kerberos jest podpisywana dwukrotnie: 
+- Raz przy użyciu klucza głównego centrum dystrybucji kluczy, aby uniemożliwić złośliwym usługom po stronie serwera dokonywanie zmian danych autoryzacji
+- Raz przy użyciu klucza głównego konta docelowego serwera zasobów, aby uniemożliwić użytkownikowi modyfikowanie zawartości certyfikatu PAC i dodanie własnych danych autoryzacji
 
-The Kerberos PAC content is signed twice: 
-- Once with the master key of the KDC to prevent malicious server-side services from changing authorization data
-- Once with the master key of the destination resource server account to prevent a user from modifying the PAC content and adding their own authorization data
+### Luki w zabezpieczeniach certyfikatu PAC
+<a id="pac-vulnerability" class="xliff"></a>
+Biuletyny zabezpieczeń [MS14-068](https://technet.microsoft.com/library/security/MS14-068.aspx) i [MS11-013](https://technet.microsoft.com/library/security/ms11-013.aspx) zawierają informacje o lukach w zabezpieczeniach w centrum dystrybucji kluczy Kerberos, które mogą umożliwić osobie atakującej manipulowanie polem certyfikatu PAC w prawidłowym bilecie protokołu Kerberos i przyznanie sobie dodatkowych uprawnień.
 
-### PAC vulnerability
-Security bulletins [MS14-068](https://technet.microsoft.com/library/security/MS14-068.aspx) and [MS11-013](https://technet.microsoft.com/library/security/ms11-013.aspx) address vulnerabilities in the Kerberos KDC that might allow an attacker to manipulate the PAC field in a valid Kerberos Ticket, granting themselves additional privileges.
+## Atak typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji
+<a id="privilege-escalation-using-forged-authorization-data-attack" class="xliff"></a>
 
-## Forged PAC attack
+Podczas ataku typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji osoba atakująca próbuje wykorzystać luki w zabezpieczeniach certyfikatu PAC do podniesienia swoich uprawnień w domenie lub lesie usługi Active Directory. Aby wykonać ten atak, osoba atakująca musi:
+-   mieć poświadczenia użytkownika domeny;
+-   mieć łączność sieciową z kontrolerem domeny, za pomocą którego można uwierzytelnić przejęte poświadczenia domeny;
+-   mieć odpowiednie narzędzia. Python Kerberos Exploitation Kit (PyKEK) to znane narzędzie umożliwiające fałszowanie certyfikatów PAC.
 
-A Forged PAC attack is an attempt by an attacker to take advantage of these vulnerabilities to elevate their privileges in your Active Directory Forest or Domain. To perform this attack, the attacker must:
--	Have credentials to a domain user.
--	Have network connectivity to a Domain Controller that can be used to authenticate against the compromised domain credentials.
--	Have the right tools. Python Kerberos Exploitation Kit (PyKEK) is a known tool which will forge PACs.
+Jeśli osoba atakująca ma potrzebne poświadczenia i łączność, może zmodyfikować lub sfałszować certyfikat atrybutu uprawnień (PAC) istniejącego tokenu logowania użytkownika protokołu Kerberos (TGT). Osoba atakująca zmienia oświadczenie członkostwa w grupie na grupę o wyższych uprawnieniach (na przykład „Administratorzy domeny” lub „Administratorzy przedsiębiorstwa”). Następnie osoba atakująca dodaje zmodyfikowany certyfikat PAC do biletu protokołu Kerberos. Bilet protokołu Kerberos jest potem używany do zażądania biletu usługi z kontrolera domeny bez zainstalowanej poprawki, co daje osobie atakującej podwyższony poziom uprawnień w domenie i autoryzację do wykonywania działań, do których ta osoba nie powinna mieć dostępu. Żądając tokenów dostępu do zasobów (TGS), osoba atakująca może za pomocą tokenu logowania użytkownika protokołu Kerberos (TGT) uzyskać dostęp do dowolnego zasobu w domenie. To oznacza, że osoba atakująca może pominąć wszystkie skonfigurowane listy ACL, które ograniczają dostęp do sieci, fałszując dane autoryzacji (PAC) dowolnego użytkownika w usłudze Active Directory.
 
-If the attacker has the necessary credentials and connectivity, they can then modify or forge the Privileged Attribute Certificate (PAC) of an existing Kerberos user logon token (TGT). The attacker changes the group membership claim to include a higher-privileged group (for example, “Domain Administrators” or “Enterprise Administrators”). The attacker then includes the modified PAC in the Kerberos Ticket. This Kerberos Ticket is then used to request a Service ticket from an unpatched Domain Controller (DC), giving the attacker elevated permissions in the domain and authorization to perform actions they are not meant to perform. 
-An attacker can present the modified user logon token (TGT) to gain access to any resource in the domain by requesting resource access tokens (TGS). This means that an attacker can bypass all configured resource ACLs which limit access on the network by spoofing authorization data (PAC) for any user in Active Directory.
+## Wykrywanie ataku
+<a id="discovering-the-attack" class="xliff"></a>
+Gdy osoba atakująca spróbuje podnieść poziom swoich uprawnień, usługa ATA wykryje to działanie i oznaczy jako alert o wysokiej ważności.
 
-## Discovering the attack
-When the attacker attempts to elevate their privileges, ATA will detect it and mark it as a high severity alert.
+![Podejrzane działanie związane ze sfałszowanym certyfikatem PAC](./media/forged-pac.png)
 
-![Forged PAC suspicious activity](./media/forged-pac.png)
+Usługa ATA poinformuje w alercie dotyczącym podejrzanego działania o tym, czy podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji powiodło się, czy nie. Należy zbadać oba typy alertów, ponieważ próby zakończone niepowodzeniem oznaczają, że w środowisku jest obecna osoba atakująca.
 
-ATA will indicate in the suspicious activity alert whether the Forged PAC was successful or if it failed. Both successful and failed alerts should be investigated, since failed attempts can still indicate an attacker’s presence in your environment.
+## Badanie
+<a id="investigating" class="xliff"></a>
+Po otrzymaniu w usłudze ATA alertu o podwyższeniu poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji należy określić sposób zminimalizowania skuteczności ataku. Aby to zrobić, należy najpierw sklasyfikować alert jako jeden z następujących: 
+-   Wynik prawdziwie dodatni: złośliwa akcja wykryta przez usługę ATA
+-   Wynik fałszywie dodatni: fałszywy alarm — podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji w rzeczywistości nie miało miejsca (usługa ATA pomyliła to zdarzenie z atakiem typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji)
+-   Niegroźny wynik prawdziwie dodatni: akcja wykryta przez usługę ATA miała miejsce, ale nie jest złośliwa — może to być na przykład test penetracyjny
 
-## Investigating
-After you receive the Forged PAC alert in ATA, you need to determine what needs to be done to mitigate the attack. To do this, you must first classify the alert as one of the following: 
--	True positive: A malicious action detected by ATA
--	False positive: A false alert – the Forged PAC didn’t really happen (this is an event that ATA mistook for a Forged PAC attack)
--	Benign true positive: An action detected by ATA that is real but not malicious, such as a penetration test
+Poniższy wykres ułatwi podjęcie odpowiednich kroków:
 
-The following chart helps determine which steps you should take:
+![Diagram badania alertu o sfałszowanym certyfikacie PAC](./media/forged-pac-diagram.png)
 
-![Forged PAC diagram](./media/forged-pac-diagram.png)
-
-1. First check the alert in the ATA attack timeline to see if the forged authorization attempt was successful, failed, or attempted (attempted attacks are also failed attacks). Both successful and failed attempts can result in a True Positive, but with different severities within the environment.
+1. Najpierw sprawdź alert w osi czasu ataków w usłudze ATA, aby dowiedzieć się, czy próba sfałszowania autoryzacji powiodła się, nie powiodła się, czy jedynie ją podjęto (próby ataków są także atakami zakończonymi niepowodzeniem). Zarówno ataki zakończone powodzeniem, jak i niepowodzeniem mogą mieć wynik prawdziwie dodatni, ale z różnymi poziomami ważności w środowisku.
  
- ![Forged PAC suspicious activity](./media/forged-pac-sa.png)
+ ![Podejrzane działanie związane ze sfałszowanym certyfikatem PAC](./media/forged-pac-sa.png)
 
 
-2.	If the detected Forged PAC attack was successful:
-    -	If the DC on which the alert was raised is properly patched, it is a false positive. In this case, you should dismiss the alert and send an email notifying the ATA team at ATAEval@microsoft.com so we can continuously improve our detections. 
-    -	If the DC in the alert is not properly patched:
-        -	If the service listed in the alert does not have its own authorization mechanism, this is a true positive and you should run your organization’s Incident Response (IR) process. 
-        -	If the service listed in the alert has an internal authorization mechanism that requests authorization data, it might be falsely identified as a Forged PAC. 
+2.  Jeśli wykryty atak typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji zakończył się powodzeniem:
+    -   Jeśli kontroler domeny, którego dotyczy alert, ma zainstalowane odpowiednie poprawki, jest to wynik fałszywie dodatni. W tym przypadku należy odrzucić alert i wysłać wiadomość e-mail z powiadomieniem do zespołu usługi ATA (ATAEval@microsoft.com), abyśmy mogli usprawnić nasze funkcje wykrywania. 
+    -   Jeśli kontroler domeny w alercie nie ma zainstalowanych odpowiednich poprawek:
+        -   Jeśli usługa wymieniona w alercie nie ma własnego mechanizmu autoryzacji, jest to wynik prawdziwie dodatni i należy uruchomić proces reagowania na zdarzenia organizacji. 
+        -   Jeśli usługa wymieniona w alercie ma wewnętrzny mechanizm autoryzacji żądający danych autoryzacji, może on zostać błędnie zidentyfikowany jako atak typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji. 
 
-3.	If the detected attack failed:
-    -	If the operating system or the application is known to modify the PAC, then this is likely a benign true positive and you should work with the application or operating system owner to fix this behavior.
+3.  Jeśli wykryty atak zakończył się niepowodzeniem:
+    -   Jeśli system operacyjny lub aplikacja modyfikują certyfikat PAC, prawdopodobnie jest to wynik niegroźny prawdziwie dodatni i należy rozwiązać ten problem z pomocą właściciela aplikacji lub systemu operacyjnego.
 
-    -	If the operating system or the application is not known to modify the PAC: 
+    -   Jeśli system operacyjny lub aplikacja nie modyfikuje certyfikatu PAC: 
 
-        -	If the service listed does not have its own authorization service, this is a true positive, and you should run your organization’s Incident Response (IR) process. Even though the attacker was not successful in elevating their privileges in the domain, you can assume there is an attacker in your network and you will want to find them as quickly as possible before they attempt other known advanced persistent attacks to elevate their privileges. 
-        -	If the service listed in the alert has its own authorization mechanism that requests authorization data, it might be falsely identified as a Forged PAC.
+        -   Jeśli wymieniona usługa nie ma własnej usługi autoryzacji, jest to wynik prawdziwie dodatni i należy uruchomić proces reagowania na zdarzenia organizacji. Mimo iż osobie atakującej nie udało się podnieść swoich uprawnień w domenie, można założyć, że w sieci jest obecna osoba atakująca, i należy ją jak najszybciej odnaleźć, zanim spróbuje podnieść swoje uprawnienia przy użyciu innych zaawansowanych ataków ciągłych. 
+        -   Jeśli usługa wymieniona w alercie ma własny mechanizm autoryzacji żądający danych autoryzacji, może on zostać błędnie zidentyfikowany jako atak typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji.
+
+## Po badaniu
+<a id="post-investigation" class="xliff"></a>
+Firma Microsoft zaleca skorzystanie z pomocy profesjonalnego zespołu ds. reagowania na zdarzenia i odzyskiwania (z którym można się skontaktować za pośrednictwem zespołu kont Microsoft), aby ustalić, czy osoba atakująca użyła w sieci metod ciągłych.
 
 
-Microsoft recommends using a professional Incident Response & Recovery team, that can be reached via your Microsoft Account Team, to help detect whether an attacker has deployed methods of persistence in your network. These can be via the use of malicious software as well as through identity breaches, such as stolen credentials and Golden Tickets.
+## Środki zaradcze
+<a id="mitigation" class="xliff"></a>
+
+Zastosuj biuletyny zabezpieczeń [MS14-068](https://technet.microsoft.com/library/security/MS14-068.aspx) i [MS11-013](https://technet.microsoft.com/library/security/ms11-013.aspx), które dotyczą luk w zabezpieczeniach w centrum dystrybucji kluczy Kerberos. 
 
 
-## See Also
-- [Working with suspicious activities](working-with-suspicious-activities.md)
-- [Modifying ATA configuration](modifying-ata-configuration.md)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

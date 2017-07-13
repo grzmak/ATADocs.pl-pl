@@ -1,306 +1,307 @@
 ---
-# required metadata
-
-title: Advanced Threat Analytics prerequisites | Microsoft Docs
-description: Describes the requirements for a successful deployment of ATA in your environment
-keywords:
+title: "Wymagania wstępne usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "Zawiera opis wymagań, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku"
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/30/2017
+ms.date: 7/2/2017
 ms.topic: get-started-article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: b810d066c59ea4663157027894eb7e2a39f7ff14
+ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 07/05/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# ATA Prerequisites
-This article describes the requirements for a successful deployment of ATA in your environment.
+
+# Wymagania wstępne usługi ATA
+<a id="ata-prerequisites" class="xliff"></a>
+W tym artykule opisano wymagania, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku.
 
 >[!NOTE]
-> For information on how to plan resources and capacity, see [ATA capacity planning](ata-capacity-planning.md).
+> Aby uzyskać więcej informacji o planowaniu zasobów i pojemności, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 
-ATA is comprised of the ATA Center, the ATA Gateway and/or the ATA Lightweight Gateway. For more information about the ATA components, see [ATA architecture](ata-architecture.md).
+Usługa ATA składa się z centrum usługi ATA, bramy usługi ATA i/lub uproszczonej bramy usługi ATA. Aby uzyskać więcej informacji o składnikach usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
 
-The ATA System works on active directory forest boundary and supports Forest Functional Level (FFL) of Windows 2003 and above.
-
-
-[Before you start](#before-you-start): This section lists information you should gather and accounts and network entities you should have before starting ATA installation.
-
-[ATA Center](#ata-center-requirements): This section lists ATA Center hardware, software requirements as well as settings  you need to configure on your ATA Center server.
-
-[ATA Gateway](#ata-gateway-requirements): This section lists ATA Gateway hardware, software requirements as well as settings  you need to configure on your ATA Gateway servers.
-
-[ATA Lightweight Gateway](#ata-lightweight-gateway-requirements): This section lists ATA Lightweight Gateway hardware, and software requirements.
-
-[ATA Console](#ata-console): This section lists browser requirements for running the ATA Console.
-
-![ATA architecture diagram](media/ATA-architecture-topology.jpg)
-
-## Before you start
-This section lists information you should gather and accounts and network entities you should have before starting ATA installation.
+System ATA działa na granicy lasu usługi Active Directory i obsługuje poziom funkcjonalności lasu (FFL) systemu Windows 2003 lub nowszego.
 
 
--   User account and password with read access to all objects in the domains that will be monitored.
+[Przed rozpoczęciem](#before-you-start): w tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
+
+[Centrum usługi ATA](#ata-center-requirements): ta sekcja zawiera informacje o wymaganiach centrum usługi ATA dotyczących sprzętu i oprogramowania, a także ustawieniach, które należy skonfigurować na serwerze centrum usługi ATA.
+
+[Brama usługi ATA](#ata-gateway-requirements): ta sekcja zawiera informacje o wymaganiach bramy usługi ATA dotyczących sprzętu i oprogramowania, a także ustawieniach, które należy skonfigurować na serwerach bramy usługi ATA.
+
+[Uproszczona brama usługi ATA](#ata-lightweight-gateway-requirements): w tej sekcji przedstawiono wymagania sprzętowe i programowe uproszczonej bramy usługi ATA.
+
+[Konsola usługi ATA](#ata-console): ta sekcja zawiera informacje o wymaganiach dotyczących przeglądarek związanych z uruchamianiem konsoli usługi ATA.
+
+![Diagram architektury usługi ATA](media/ATA-architecture-topology.jpg)
+
+## Przed rozpoczęciem
+<a id="before-you-start" class="xliff"></a>
+W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
+
+
+-   Konto i hasło użytkownika z dostępem do odczytu do wszystkich obiektów w domenach, które będą monitorowane.
 
     > [!NOTE]
-    > If you have set custom ACLs on various Organizational Units (OU) in your domain, make sure that the selected user has read permissions to those OUs.
+    > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
 
--   Make sure that Message Analyzer and WireShark are not installed on the ATA Gateway.
--    Recommended: User should have read only permissions on the Deleted Objects container. This will allow ATA to detect bulk deletion of objects in the domain. For information about configuring read only permissions on the Deleted Objects container, see the **Changing permissions on a deleted object container** section in the [View or Set Permissions on a Directory Object](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) topic.
+-   Nie należy instalować Analizatora komunikatów firmy Microsoft na bramie usługi ATA ani na uproszczonej bramie usługi ATA. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. W przeciwnym razie brama nie będzie dłużej przechwytywać żadnego ruchu. Należy pamiętać, że uruchomienie programu Wireshark na uproszczonej bramie usługi ATA nie zakłóca pracy uproszczonej bramy usługi ATA.
 
--   Optional: A user account of a user who has no network activities. This account will be configured as the ATA Honeytoken user. To configure the Honeytoken user you will need the SID of the user account, not the username. For more information see [Working with ATA Detection Settings](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings) topic.
+-    Zalecane: użytkownik powinien mieć uprawnienia dostępu tylko do odczytu do kontenera usuniętych obiektów. Umożliwi to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz sekcję **Zmienianie uprawnień do kontenera usuniętych obiektów** w temacie [Wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
 
--   Optional: In addition to collecting and analyzing network traffic to and from the domain controllers, ATA can use Windows event 4776 to further enhance ATA Pass-the-Hash detection. This can be received from your SIEM or by  setting Windows Event Forwarding from your domain controller. Events collected provide ATA with additional information that is not available via the domain controller network traffic.
+-   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto zostanie skonfigurowane jako użytkownik usługi ATA wystawiony jako przynęta. Do skonfigurowania użytkownika wystawionego jako przynęta potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [Praca z ustawieniami wykrywania usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings).
 
-
-## ATA Center requirements
-This section lists the requirements for the ATA Center.
-### General
-The ATA Center supports installation on a server running Windows Server 2012 R2 or Windows Server 2016. 
-The ATA Center can be installed on a server that is a member of a domain or workgroup.
-
-Before installing ATA Center running Windows 2012 R2, confirm that the following update has been installed: [KB2919355](https://support.microsoft.com/kb/2919355/).
-
-You can check by running the following Windows PowerShell cmdlet: `[Get-HotFix -Id kb2919355]`.
-
-Installation of the ATA Center as a virtual machine is supported. 
-
->[!NOTE] 
-> When running as a virtual machine dynamic memory or any other memory ballooning feature is not supported.
-
-If you run the ATA Center as a virtual machine, shut down the server before creating a new checkpoint to avoid potential database corruption.
-### Server specifications
-When working on a physical server, the ATA database necessitates that you **disable** Non-uniform memory access (NUMA) in the BIOS. Your system may refer to NUMA as Node Interleaving, in which case you will have to **enable** Node Interleaving in order to disable NUMA. See your BIOS documentation for more information. Note that this is not relevant when the ATA Center is running on a virtual server.<br>
-For optimal performance, set the **Power Option** of the ATA Center to **High Performance**.<br>
-The number of domain controllers you are monitoring and the load on each of the domain controllers dictates the server specifications needed see [ATA capacity planning](ata-capacity-planning.md) for more details.
+-   Opcjonalnie: oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo korzystać ze zdarzeń 4776, 4732, 4733, 4728, 4729, 4756 i 4757 systemu Windows, aby ulepszyć swoje możliwości wykrywania ataków typu Pass-the-Hash, ataków siłowych, modyfikacji wrażliwych grup i ataków na przynęty. Można je odbierać z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 
-### Time synchronization
-The ATA Center server, the ATA Gateway servers and the domain controllers must have time synchronized to within 5 minutes of each other.
+## Wymagania centrum usługi ATA
+<a id="ata-center-requirements" class="xliff"></a>
+Ta sekcja zawiera listę wymagań centrum usługi ATA.
+### Ogólne
+<a id="general" class="xliff"></a>
+Centrum usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016. Centrum usługi ATA można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
 
+Przed zainstalowaniem centrum usługi ATA w systemie Windows 2012 R2 upewnij się, że została zainstalowana następująca aktualizacja: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
-### Network adapters
-You should have the following:
--   At least one network adapter (if using physical server in VLAN environment, it is recommended to use two network adapters)
+Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
 
--   Two IP addresses (recommended but not required)
-
-Communication between the ATA Center and the ATA Gateway is encrypted using SSL on port 443. Additionally, the ATA Console is also using SSL on port 443. **Two IP addresses** are recommended. The ATA Center service will bind port 443 to the first IP address and ATA Console will bind port 443 to the second IP address.
-
-> [!NOTE]
-> A single IP address with two different ports can be used, but two IP addresses are recommended.
-
-### Ports
-The following table lists the minimum ports that have to be opened for the ATA Center to work properly.
-
-In this table, IP address 1 is bound to the ATA Center service and IP address 2 is bound to the ATA Console:
-
-|Protocol|Transport|Port|To/From|Direction|IP Address|
-|------------|-------------|--------|-----------|-------------|--------------|
-|**SSL** (ATA Communications)|TCP|443, or configurable|ATA Gateway|Inbound|IP address 1|
-|**HTTP**|TCP|80|Company Network|Inbound|IP address 2|
-|**HTTPS**|TCP|443|Company Network and ATA Gateway|Inbound|IP address 2|
-|**SMTP** (optional)|TCP|25|SMTP Server|Outbound|IP address 2|
-|**SMTPS** (optional)|TCP|465|SMTP Server|Outbound|IP address 2|
-|**Syslog** (optional)|TCP|514|Syslog server|Outbound|IP address 2|
-
-### Certificates
-Make sure the ATA Center has access to your CRL distribution point. If the ATA Gateways don't have Internet access, follow [the procedure to manually import a CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), taking care to install the all the CRL distribution points for the whole chain.
-
-To ease the installation of ATA, you can install self-signed certificates during installation. Post deployment you can replace the self-signed with a certificate from an internal Certification Authority to be used by the ATA Gateway.<br>
-> [!NOTE]
-> The certificate's Provider Type must be Cryptographic Service Provider (CSP).
-
-
-> Using of automatic certificate renewal is not supported.
-
-
-> [!NOTE]
-> If you are going to access the ATA Console from other computers, ensure that those computers trust the certificate being used by ATA Center otherwise you will get a warning page that there is a problem with the website's security certificate before getting to the log in page.
-
-## ATA Gateway requirements
-This section lists the requirements for the ATA Gateway.
-### General
-The ATA Gateway supports installation on a server running Windows Server 2012 R2 or Windows Server 2016 (Include server core).
-The ATA Gateway can be installed on a server that is a member of a domain or workgroup.
-The ATA Gateway can be used to monitor Domain Controllers with Domain Functional Level of Windows 2003 and above.
-
-Before installing ATA Gateway running Windows 2012 R2, confirm that the following update has been installed: [KB2919355](https://support.microsoft.com/kb/2919355/).
-
-You can check by running the following Windows PowerShell cmdlet: `[Get-HotFix -Id kb2919355]`.
-
-
-For information on using virtual machines with the ATA Gateway, see [Configure port mirroring](configure-port-mirroring.md).
-
-> [!NOTE]
-> A minimum of 5 GB of space is required and 10 GB is recommended. This includes space needed for the ATA binaries, [ATA logs](troubleshooting-ata-using-logs.md) and [performance logs](troubleshooting-ata-using-perf-counters.md).
-
-### Server specifications
-For optimal performance, set the **Power Option** of the ATA Gateway to **High Performance**.<br>
-An ATA Gateway can support monitoring multiple domain controllers, depending on the amount of network traffic to and from the domain controllers.
+Instalacja centrum usługi ATA jako maszyny wirtualnej jest obsługiwana. 
 
 >[!NOTE] 
-> When running as a virtual machine dynamic memory or any other memory ballooning feature is not supported.
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
-For more information about the ATA Gateway hardware requirements see [ATA capacity planning](ata-capacity-planning.md).
+Jeśli centrum usługi ATA jest uruchamiane jako maszyna wirtualna, należy wyłączyć serwer przed utworzeniem nowego punktu kontrolnego w celu uniknięcia potencjalnego uszkodzenia bazy danych.
+### Specyfikacje serwera
+<a id="server-specifications" class="xliff"></a>
+Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. Technologia NUMA może być nazwana w systemie przeplataniem węzłów. W tym przypadku należy **włączyć** przeplatanie węzłów, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji, zapoznaj się z dokumentacją systemu BIOS. Należy zauważyć, że nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.<br>
+Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
+Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje o wymaganych specyfikacjach serwera. Aby uzyskać więcej szczegółów, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
-### Time synchronization
-The ATA Center server, the ATA Gateway servers and the domain controllers must have time synchronized to within 5 minutes of each other.
 
-### Network adapters
-The ATA Gateway requires at least one Management adapter and at least one Capture adapter:
+### Synchronizacja czasu
+<a id="time-synchronization" class="xliff"></a>
+Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
 
--   **Management adapter** - will be used for communications on your corporate network. This adapter should be configured with the following:
 
-    -   Static IP address including default gateway
+### Karty sieciowe
+<a id="network-adapters" class="xliff"></a>
+Musisz mieć następujące elementy:
+-   Co najmniej jedna karta sieciowa (w przypadku korzystania z serwera fizycznego w środowisku sieci VLAN zaleca się używanie dwóch kart sieciowych)
 
-    -   Preferred and alternate DNS servers
+-   Dwa adresy IP (zalecane, ale niewymagane)
 
-    -   The **DNS suffix for this connection** should be the DNS name of the domain for each domain being monitored.
+Komunikacja między centrum usługi ATA i bramą usługi ATA jest szyfrowana przy użyciu protokołu SSL na porcie 443. Ponadto konsola usługi ATA również używa protokołu SSL na porcie 443. Zalecane są **dwa adresy IP**. Centrum usługi ATA powiąże port 443 z pierwszym adresem IP, a konsola usługi ATA powiąże port 443 z drugim adresem IP.
 
-        ![Configure DNS suffix in advanced TCP/IP settings](media/ATA-DNS-Suffix.png)
+> [!NOTE]
+> Możliwe jest użycie pojedynczego adresu IP z dwoma różnymi portami, ale zaleca się użycie dwóch adresów IP.
+
+### Porty
+<a id="ports" class="xliff"></a>
+W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby centrum usługi ATA działało poprawnie.
+
+|Protokół|Transport|Port|Do/z|Kierunek|
+|------------|-------------|--------|-----------|-------------|
+|**SSL** (komunikacja usługi ATA)|TCP|443 lub inny skonfigurowany|Brama usługi ATA|Przychodzące|
+|**HTTP** (opcjonalnie)|TCP|80|Sieć firmowa|Przychodzące|
+|**HTTPS**|TCP|443|Sieć firmowa i brama usługi ATA|Przychodzące|
+|**SMTP** (opcjonalnie)|TCP|25|Serwer SMTP|Wychodzące|
+|**SMTPS** (opcjonalnie)|TCP|465|Serwer SMTP|Wychodzące|
+|**Syslog** (opcjonalnie)|TCP|514|Serwer Syslog|Wychodzące|
+|**LDAP**|TCP i UDP|389|Kontrolery domeny|Wychodzące|
+|**LDAPS** (opcjonalnie)|TCP|636|Kontrolery domeny|Wychodzące|
+|**DNS**|TCP i UDP|53|Serwery DNS|Wychodzące|
+|**Kerberos** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|88|Kontrolery domeny|Wychodzące|
+|**Netlogon** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
+|**Czas systemu Windows** (opcjonalnie, jeśli przyłączono do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
+
+### Certyfikaty
+<a id="certificates" class="xliff"></a>
+Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
+
+Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.<br>
+> [!NOTE]
+> Typem dostawcy certyfikatu może być Dostawca usług kryptograficznych (CSP) lub Dostawca magazynu kluczy (KSP).
+
+
+> Korzystanie z automatycznego odnawiania certyfikatów nie jest obsługiwane.
+
+
+> [!NOTE]
+> Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
+
+## Wymagania bramy usługi ATA
+<a id="ata-gateway-requirements" class="xliff"></a>
+Ta sekcja zawiera listę wymagań bramy usługi ATA.
+### Ogólne
+<a id="general" class="xliff"></a>
+Brama usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016 (w tym Server Core).
+Brama usługi ATA może zostać zainstalowana na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
+Brama usługi ATA może służyć do monitorowania kontrolerów domeny z poziomem funkcjonalności domeny systemu Windows 2003 lub nowszego.
+
+Przed zainstalowaniem bramy usługi ATA w systemie Windows 2012 R2 upewnij się, że została zainstalowana następująca aktualizacja: [KB2919355](https://support.microsoft.com/kb/2919355/).
+
+Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`.
+
+
+Aby uzyskać informacje o używaniu maszyn wirtualnych z bramą usługi ATA, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
+
+> [!NOTE]
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](troubleshooting-ata-using-logs.md) i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
+
+### Specyfikacje serwera
+<a id="server-specifications" class="xliff"></a>
+Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.<br>
+Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego do i z kontrolerów domeny.
+
+>[!NOTE] 
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+
+Aby uzyskać więcej informacji o wymaganiach bramy usługi ATA dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
+
+### Synchronizacja czasu
+<a id="time-synchronization" class="xliff"></a>
+Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
+
+### Karty sieciowe
+<a id="network-adapters" class="xliff"></a>
+Brama usługi ATA wymaga co najmniej jednej karty administracyjnej i co najmniej jednej karty sieciowej przechwytywania:
+
+-   **Karta administracyjna** — będzie używana do komunikacji w sieci firmowej. Tę kartę należy skonfigurować w następujący sposób:
+
+    -   Statyczny adres IP obejmujący bramę domyślną
+
+    -   Preferowane i alternatywne serwery DNS
+
+    -   W polu **Sufiks DNS dla tego połączenia** należy podać nazwę DNS każdej monitorowanej domeny.
+
+        ![Konfigurowanie sufiksu DNS w zaawansowanych ustawieniach protokołu TCP/IP](media/ATA-DNS-Suffix.png)
 
         > [!NOTE]
-        > If the ATA Gateway is a member of the domain, this may be configured automatically.
+        > Jeśli brama usługi ATA jest elementem członkowskim domeny, te ustawienia mogą zostać skonfigurowane automatycznie.
 
--   **Capture adapter** - will be used to capture traffic to and from the domain controllers.
+-   **Karta przechwytywania** — będzie używana do przechwytywania ruchu do i z kontrolerów domeny.
 
     > [!IMPORTANT]
-    > -   Configure port mirroring for the capture adapter as the destination of the domain controller network traffic. See [Configure port mirroring](configure-port-mirroring.md) for additional information. Typically, you will need to work with the networking or virtualization team to configure port mirroring.
-    > -   Configure a static non-routable IP address for your environment with no default gateway and no DNS server addresses. For example, 1.1.1.1/32. This will ensure that the capture network adapter can capture the maximum amount of traffic and that the management network adapter is used to send and receive the required network traffic.
+    > -   Skonfiguruj funkcję dublowania portów dla karty przechwytywania jako miejsce docelowe ruchu sieciowego kontrolera domeny. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md). Zwykle w celu skonfigurowania funkcji dublowania portów konieczna jest współpraca z zespołem ds. sieci lub wirtualizacji.
+    > -   Skonfiguruj statyczny adres IP bez obsługi routingu dla danego środowiska bez bramy domyślnej i bez adresów serwerów DNS. Na przykład 1.1.1.1/32. Dzięki temu karta sieciowa przechwytywania może przechwytywać maksymalną ilość ruchu, a karta administracyjna będzie używana do wysyłania i odbierania wymaganego ruchu sieciowego.
 
-### Ports
-The following table lists the minimum ports that the ATA Gateway requires configured on the management adapter:
+### Porty
+<a id="ports" class="xliff"></a>
+W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na karcie administracyjnej jest wymagane przez bramę usługi ATA:
 
-|Protocol|Transport|Port|To/From|Direction|
+|Protokół|Transport|Port|Do/z|Kierunek|
 |------------|-------------|--------|-----------|-------------|
-|LDAP|TCP and UDP|389|Domain controllers|Outbound|
-|Secure LDAP (LDAPS)|TCP|636|Domain controllers|Outbound|
-|LDAP to Global Catalog|TCP|3268|Domain controllers|Outbound|
-|LDAPS to Global Catalog|TCP|3269|Domain controllers|Outbound|
-|Kerberos|TCP and UDP|88|Domain controllers|Outbound|
-|Netlogon|TCP and UDP|445|Domain controllers|Outbound|
-|Windows Time|UDP|123|Domain controllers|Outbound|
-|DNS|TCP and UDP|53|DNS Servers|Outbound|
-|NTLM over RPC|TCP|135|All devices on the network|Outbound|
-|NetBIOS|UDP|137|All devices on the network|Outbound|
-|SSL|TCP|443 or as configured for the Center Service|ATA Center:<br /><br />-   Center Service IP Address<br />-   Console IP Address|Outbound|
-|Syslog (optional)|UDP|514|SIEM Server|Inbound|
+|LDAP|TCP i UDP|389|Kontrolery domeny|Wychodzące|
+|Bezpieczny protokół LDAP (LDAPS)|TCP|636|Kontrolery domeny|Wychodzące|
+|LDAP do wykazu globalnego|TCP|3268|Kontrolery domeny|Wychodzące|
+|LDAPS do wykazu globalnego|TCP|3269|Kontrolery domeny|Wychodzące|
+|Kerberos|TCP i UDP|88|Kontrolery domeny|Wychodzące|
+|Netlogon|TCP i UDP|445|Kontrolery domeny|Wychodzące|
+|Czas systemu Windows|UDP|123|Kontrolery domeny|Wychodzące|
+|systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
+|Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
-> As part of the resolution process done by the ATA Gateway, the following ports need to be open inbound on devices on the network from the ATA Gateways.
+> W ramach procesu rozpoznawania wykonywanego przez bramę usługi ATA następujące porty muszą być otwarte dla danych przychodzących z bram usługi ATA na urządzeniach w sieci.
 >
-> -   NTLM over RPC (TCP Port 135)
-> -   NetBIOS (UDP port 137)
+> -   NTLM przez RPC (port TCP 135)
+> -   NetBIOS (port UDP 137)
 
-### Certificates
-Make sure the ATA Center has access to your CRL distribution point. If the ATA Gateways do not have Internet access, follow the procedure to manually import a CRL, taking care to install the all the CRL distribution points for the whole chain.<br>
-To ease installation of the ATA, you can install self-signed certificates during installation. Post deployment you can replace the self-signed with a certificate from an internal Certification Authority to be used by the ATA Gateway.
+## Wymagania dotyczące uproszczonej bramy usługi ATA
+<a id="ata-lightweight-gateway-requirements" class="xliff"></a>
+Ta sekcja zawiera listę wymagań uproszczonej bramy usługi ATA.
+### Ogólne
+<a id="general" class="xliff"></a>
+Uproszczona brama usługi ATA obsługuje instalację na kontrolerze domeny z systemami Windows Server 2008 R2 z dodatkiem SP1 (bez instalacji Server Core), Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (z instalacją Core, ale nie Nano).
 
-> [!NOTE]
-> The certificate's Provider Type must be Cryptographic Service Provider (CSP).<br>
+Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
 
-A certificate supporting **Server Authentication** is required to be installed in the Computer store of the ATA Gateway in the Local Computer store. This certificate must be trusted by the ATA Center.
+Przed zainstalowaniem uproszczonej bramy usługi ATA na kontrolerze domeny z systemem Windows Server 2012 R2 upewnij się, że zainstalowano następującą aktualizację: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
-## ATA Lightweight Gateway requirements
-This section lists the requirements for the ATA Lightweight Gateway.
-### General
-The ATA Lightweight Gateway supports installation on a domain controller running Windows Server 2008 R2 SP1 (not including Server Core), Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 (including Core but not Nano).
+Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb2919355]`
 
-The domain controller can be a read only domain controller (RODC).
+W przypadku instalacji systemu Windows Server 2012 R2 Server Core musisz również zainstalować następującą aktualizację: [KB3000850](https://support.microsoft.com/help/3000850/november-2014-update-rollup-for-windows-rt-8.1%2c-windows-8.1%2c-and-windows-server-2012-r2).
 
-Before installing ATA Lightweight Gateway on a domain controller running Windows Server 2012 R2,
- confirm that the following update has been installed: [KB2919355](https://support.microsoft.com/kb/2919355/).
-
-You can check by running the following Windows PowerShell cmdlet: `[Get-HotFix -Id kb2919355]`
-
-If the installation is for Windows server 2012 R2 Server Core, the following update should also be installed:
- [KB3000850](https://support.microsoft.com/help/3000850/november-2014-update-rollup-for-windows-rt-8.1%2c-windows-8.1%2c-and-windows-server-2012-r2).
-
- You can check by running the following Windows PowerShell cmdlet: `[Get-HotFix -Id kb3000850]`
+ Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Windows PowerShell: `[Get-HotFix -Id kb3000850]`
 
 
-During installation, the .Net Framework 4.6.1 is installed and might cause a reboot of the domain controller.
+Podczas instalacji instalowany jest program .Net Framework 4.6.1, który może spowodować ponowny rozruch kontrolera domeny.
 
 
 > [!NOTE]
-> A minimum of 5 GB of space is required and 10 GB is recommended. This includes space needed for the ATA binaries, [ATA logs](troubleshooting-ata-using-logs.md) and [performance logs](troubleshooting-ata-using-perf-counters.md).
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](troubleshooting-ata-using-logs.md) i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
 
-### Server specifications
+### Specyfikacje serwera
+<a id="server-specifications" class="xliff"></a>
 
-The ATA Lightweight Gateway requires a minimum of 2 cores and 6 GB of RAM installed on the domain controller.
-For optimal performance, set the **Power Option** of the ATA Lightweight Gateway to **High Performance**.
-The ATA Lightweight Gateway can be deployed on domain controllers of various loads and sizes, depending on the amount of network traffic to and from the domain controllers and the amount of resources installed on that domain controller.
+Uproszczona brama usługi ATA wymaga co najmniej 2 rdzeni i 6 GB pamięci RAM zainstalowanych na kontrolerze domeny.
+Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** uproszczonej bramy usługi ATA na wartość **Wysoka wydajność**.
+Uproszczoną bramę usługi ATA można wdrożyć na kontrolerach domeny o różnych obciążeniach i rozmiarach, w zależności od ilości ruchu sieciowego w kontrolerach domeny oraz ilości zasobów zainstalowanych w danym kontrolerze domeny.
 
 >[!NOTE] 
-> When running as a virtual machine dynamic memory or any other memory ballooning feature is not supported.
+> W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
-For more information about the ATA Lightweight Gateway hardware requirements see [ATA capacity planning](ata-capacity-planning.md).
+Aby uzyskać więcej informacji o wymaganiach uproszczonej bramy usługi ATA dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
-### Time synchronization
-The ATA Center server, the ATA Lightweight Gateway servers and the domain controllers must have time synchronized to within 5 minutes of each other.
-### Network adapters
-The ATA Lightweight Gateway monitors the local traffic on all of the domain controller's network adapters. <br>
-After deployment, you can use the ATA Console if you ever want to modify which network adapters are monitored.
+### Synchronizacja czasu
+<a id="time-synchronization" class="xliff"></a>
+Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach uproszczonej bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
+### Karty sieciowe
+<a id="network-adapters" class="xliff"></a>
+Uproszczona brama usługi ATA monitoruje lokalny ruch na wszystkich kartach sieciowych kontrolera domeny. <br>
+Po przeprowadzeniu wdrożenia możesz użyć konsoli usługi ATA, jeśli chcesz określić, które karty sieciowe są monitorowane.
 
-### Ports
-The following table lists the minimum ports that the ATA Lightweight Gateway requires:
+### Porty
+<a id="ports" class="xliff"></a>
+W poniższej tabeli wymieniono niezbędne porty wymagane przez uproszczoną bramę usługi ATA:
 
-|Protocol|Transport|Port|To/From|Direction|
+|Protokół|Transport|Port|Do/z|Kierunek|
 |------------|-------------|--------|-----------|-------------|
-|DNS|TCP and UDP|53|DNS Servers|Outbound|
-|NTLM over RPC|TCP|135|All devices on the network|Outbound|
-|NetBIOS|UDP|137|All devices on the network|Outbound|
-|SSL|TCP|443 or as configured for the Center Service|ATA Center:<br /><br />-   Center Service IP Address<br />-   Console IP Address|Outbound|
-|Syslog (optional)|UDP|514|SIEM Server|Inbound|
+|systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
+|Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
-> As part of the resolution process performed by the ATA Lightweight Gateway, the following ports need to be open inbound on devices on the network from the ATA Lightweight Gateways.
+> W ramach procesu rozpoznawania wykonywanego przez uproszczoną bramę usługi ATA następujące porty muszą być otwarte dla danych przychodzących z uproszczonych bram usługi ATA na urządzeniach w sieci.
 >
-> -   NTLM over RPC
+> -   NTLM za pośrednictwem wywołania RPC
 > -   NetBIOS
 
-### Certificates
-Make sure the ATA Center has access to your CRL distribution point. If the ATA Lightweight Gateways don't have Internet access, follow the procedure to manually import a CRL, taking care to install the all the CRL distribution points for the whole chain.
-To ease installation of ATA, you can install self-signed certificates during installation. Post deployment you can replace the self-signed with a certificate from an internal Certification Authority to be used by the ATA Lightweight Gateway.
-> [!NOTE]
-> The certificate's Provider Type must be Cryptographic Service Provider (CSP).
+## Konsola usługi ATA
+<a id="ata-console" class="xliff"></a>
+Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obsługiwane są następujące z nich:
 
-A certificate supporting Server Authentication is required to be installed in the Computer store of the ATA Lightweight Gateway in the Local Computer store. This certificate must be trusted by the ATA Center.
-
-## ATA Console
-Access to the ATA Console is via a browser, supporting the following:
-
--   Internet Explorer version 10 and above
+-   Internet Explorer 10 i nowsze
 
 -   Microsoft Edge
 
--   Google Chrome 40 and above
+-   Google Chrome 40 i nowsze
 
--   Minimum screen width resolution of 1700 pixels
+-   Minimalna rozdzielczość ekranu w poziomie: 1700 pikseli
 
-## See Also
+## Zobacz też
+<a id="see-also" class="xliff"></a>
 
-- [ATA architecture](ata-architecture.md)
-- [Install ATA](install-ata-step1.md)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Architektura usługi ATA](ata-architecture.md)
+- [Instalowanie usługi ATA](install-ata-step1.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 
