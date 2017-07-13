@@ -1,49 +1,44 @@
 ---
-# required metadata
-
-title: Validate port mirroring in Advanced Threat Analytics | Microsoft Docs
-description: Describes how to validate that port mirroring is configured correctly
-keywords:
+title: "Weryfikowanie funkcji dublowania portów w usłudze Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowana."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 01/23/2017
+ms.date: 06/26/2017
 ms.topic: get-started-article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: ebd41719-c91a-4fdd-bcab-2affa2a2cace
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 16afa7e8b7755b0f9294425aac96fe134ff03691
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Validate Port Mirroring
+
+# Weryfikowanie funkcji dublowania portów
+<a id="validate-port-mirroring" class="xliff"></a>
 > [!NOTE] 
-> This article is relevant only if you deploy ATA Gateways instead of ATA Lightweight Gateways. To determine if you need to use ATA Gateways, see [Choosing the right gateways for your deployment](ata-capacity-planning.md#choosing-the-right-gateway-type-for-your-deployment).
+> Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast uproszczonych bram usługi ATA są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz artykuł [Wybieranie odpowiednich bram dla wdrożenia](ata-capacity-planning.md#choosing-the-right-gateway-type-for-your-deployment).
  
-The following steps walk you through the process for validating that port mirroring is properly configured. For ATA to work properly, the ATA Gateway must be able to see the traffic to and from the domain controller. The main data source used by ATA is deep packet inspection of the network traffic to and from your domain controllers. For ATA to see the network traffic, port mirroring needs to be configured. Port mirroring copies the traffic from one port (the source port) to another port (the destination port).
+W poniższych krokach objaśniono proces weryfikowania, czy funkcja dublowania portów jest poprawnie skonfigurowana. Aby usługa ATA mogła działać prawidłowo, ruch do i z kontrolera domeny musi być widoczny dla bramy usługi ATA. Główne źródło danych używane przez usługę ATA to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Aby ruch sieciowy był widoczny dla usługi ATA, należy skonfigurować funkcję dublowania portów. Funkcja dublowania portów kopiuje ruch z jednego portu (portu źródłowego) do innego portu (portu docelowego).
 
-## Validate port mirroring using a Windows PowerShell script
+## Weryfikowanie funkcji dublowania portów za pomocą skryptu programu Windows PowerShell
+<a id="validate-port-mirroring-using-a-windows-powershell-script" class="xliff"></a>
 
-1. Save the text of this script into a file called *ATAdiag.ps1*.
-2. Run this script on the ATA Gateway that you want to validate.
-The script generates ICMP traffic from the ATA Gateway to the domain controller and looks for that traffic on the Capture NIC on the domain controller.
-If the ATA Gateway sees ICMP traffic with a destination IP address the same as the DC IP addressed you entered in the ATA Console, it deems port mirroring configured. 
+1. Zapisz tekst tego skryptu w pliku o nazwie *ATAdiag.ps1*.
+2. Uruchom ten skrypt w bramie usługi ATA, którą chcesz zweryfikować.
+Skrypt generuje ruch ICMP z bramy usługi ATA do kontrolera domeny oraz szuka tego ruchu na karcie sieciowej przechwytywania na kontrolerze domeny.
+Jeśli brama usługi ATA widzi ruch ICMP z takim samym docelowym adresem IP jak adres IP kontrolera domeny wprowadzony w konsoli usługi ATA, uznaje dublowanie portów za skonfigurowane. 
 
-Sample for how to run the script:
+Przykład sposobu uruchamiania skryptu:
 
     # ATAdiag.ps1 -CaptureIP n.n.n.n -DCIP n.n.n.n -TestCount n
     
@@ -65,22 +60,22 @@ Sample for how to run the script:
 
     # Convert network data to host format
         function NetworkToHostUInt16 ($value)
-    	{
-    	[Array]::Reverse($value)
-    	[BitConverter]::ToUInt16($value,0)
-    	}
+        {
+        [Array]::Reverse($value)
+        [BitConverter]::ToUInt16($value,0)
+        }
     
     function NetworkToHostUInt32 ($value)
-    	{
-    	[Array]::Reverse($value)
-    	[BitConverter]::ToUInt32($value,0)
-    	}
+        {
+        [Array]::Reverse($value)
+        [BitConverter]::ToUInt32($value,0)
+        }
     
     function ByteToString ($value)
-    	{
-    	$AsciiEncoding = new-object system.text.asciiencoding
-    	$AsciiEncoding.GetString($value)
-        	}
+        {
+        $AsciiEncoding = new-object system.text.asciiencoding
+        $AsciiEncoding.GetString($value)
+            }
     
     Write-Host "Testing Port Mirroring..." -ForegroundColor Yellow
     Write-Host ""
@@ -116,119 +111,121 @@ Sample for how to run the script:
     $OneSuccess = 0
     
     while ($tests -le $PingCount)
-    	{
-    	if (!$socket.Available)  # see if any packets are in the queue
-    		{
-    		start-sleep -milliseconds 500
-    		continue
-    		}
+        {
+        if (!$socket.Available)  # see if any packets are in the queue
+            {
+            start-sleep -milliseconds 500
+            continue
+            }
     
     # Capture traffic
-    	$rcv = $socket.receive($byteData,0,$byteData.length,[net.sockets.socketflags]::None)
+        $rcv = $socket.receive($byteData,0,$byteData.length,[net.sockets.socketflags]::None)
     
     # Decode the header so we can read ICMP
     
-    	$MemoryStream = new-object System.IO.MemoryStream($byteData,0,$rcv)
-    	$BinaryReader = new-object System.IO.BinaryReader($MemoryStream)
+        $MemoryStream = new-object System.IO.MemoryStream($byteData,0,$rcv)
+        $BinaryReader = new-object System.IO.BinaryReader($MemoryStream)
     
     # Set IP version & header length
-    	$VersionAndHeaderLength = $BinaryReader.ReadByte()
+        $VersionAndHeaderLength = $BinaryReader.ReadByte()
     
-    	# TOS
-    	$TypeOfService= $BinaryReader.ReadByte()
+        # TOS
+        $TypeOfService= $BinaryReader.ReadByte()
     
-    	# More values, and the Protocol Number for ICMP traffic
-    	# Convert network format of big-endian to host format of little-endian 
-    	$TotalLength = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
+        # More values, and the Protocol Number for ICMP traffic
+        # Convert network format of big-endian to host format of little-endian 
+        $TotalLength = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
     
-    	$Identification = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
-    	$FlagsAndOffset = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
-    	$TTL = $BinaryReader.ReadByte()
-    	$ProtocolNumber = $BinaryReader.ReadByte()
-    	$Checksum = [Net.IPAddress]::NetworkToHostOrder($BinaryReader.ReadInt16())
+        $Identification = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
+        $FlagsAndOffset = NetworkToHostUInt16 $BinaryReader.ReadBytes(2)
+        $TTL = $BinaryReader.ReadByte()
+        $ProtocolNumber = $BinaryReader.ReadByte()
+        $Checksum = [Net.IPAddress]::NetworkToHostOrder($BinaryReader.ReadInt16())
     
-    	# The source and destination IP addresses
-    	$SourceIPAddress = $BinaryReader.ReadUInt32()
-    	$DestinationIPAddress = $BinaryReader.ReadUInt32()
+        # The source and destination IP addresses
+        $SourceIPAddress = $BinaryReader.ReadUInt32()
+        $DestinationIPAddress = $BinaryReader.ReadUInt32()
     
-    	# The source and destimation ports
-    	$sourcePort = [uint16]0
-    	$destPort = [uint16]0
-    		
-    	# Close the stream reader
-    	$BinaryReader.Close()
-    	$memorystream.Close()
+        # The source and destimation ports
+        $sourcePort = [uint16]0
+        $destPort = [uint16]0
+            
+        # Close the stream reader
+        $BinaryReader.Close()
+        $memorystream.Close()
     
-    	# Cast DCIP into an IPaddress type
-    	$DCIPP = [ipaddress] $DCIP
-    	$DestinationIPAddressP = [ipaddress] $DestinationIPAddress
+        # Cast DCIP into an IPaddress type
+        $DCIPP = [ipaddress] $DCIP
+        $DestinationIPAddressP = [ipaddress] $DestinationIPAddress
     
-    	#Ping the DC at the end after starting the capture
-    	Test-Connection -Count 1 -ComputerName $DCIP -ea SilentlyContinue | Out-Null
-    		
-    	# This is the match logic - check to see if Destination IP from the Ping sent matches the DCIP entered by in the ATA Console  
-    	# The only way the ATA Gateway should see a destination of the DC is if Port Spanning is configured
-    	
-    		if ($DestinationIPAddressP -eq $DCIPP)  # is the destination IP eq to the DC IP? 
-    		{
-    		$TestResult = "Port Spanning success!"
-    		$OneSuccess = 1
-    		} else {
-    			$TestResult = "Noise"
-    		}
-    	
-    	# Put source, destination, test result in Powershell object
-    	
-    	new-object psobject | add-member -pass noteproperty CaptureSource $([system.net.ipaddress]$SourceIPAddress) | add-member -pass noteproperty CaptureDestination $([system.net.ipaddress]$DestinationIPAddress) | Add-Member -pass NoteProperty Result $TestResult | Format-List | Out-Host
-    	#Count tests
-    	$tests ++
-    	}
+        #Ping the DC at the end after starting the capture
+        Test-Connection -Count 1 -ComputerName $DCIP -ea SilentlyContinue | Out-Null
+            
+        # This is the match logic - check to see if Destination IP from the Ping sent matches the DCIP entered by in the ATA Console  
+        # The only way the ATA Gateway should see a destination of the DC is if Port Spanning is configured
+        
+            if ($DestinationIPAddressP -eq $DCIPP)  # is the destination IP eq to the DC IP? 
+            {
+            $TestResult = "Port Spanning success!"
+            $OneSuccess = 1
+            } else {
+                $TestResult = "Noise"
+            }
+        
+        # Put source, destination, test result in Powershell object
+        
+        new-object psobject | add-member -pass noteproperty CaptureSource $([system.net.ipaddress]$SourceIPAddress) | add-member -pass noteproperty CaptureDestination $([system.net.ipaddress]$DestinationIPAddress) | Add-Member -pass NoteProperty Result $TestResult | Format-List | Out-Host
+        #Count tests
+        $tests ++
+        }
     
-    	If ($OneSuccess -eq 1){
-    		Write-Host "Port Spanning Success!" -ForegroundColor Green
-    		Write-Host ""
-    		Write-Host "At least one packet which was addressed to the DC, was picked up by the Gateway." -ForegroundColor Yellow
-    		Write-Host "A little noise is OK, but if you don't see a majority of successes, you might want to re-run." -ForegroundColor Yellow
-    	} Else {
-    		Write-Host "No joy, all noise.  You may want to re-run, increase the number of Ping Counts, or check your config." -ForegroundColor Red
-    	}
+        If ($OneSuccess -eq 1){
+            Write-Host "Port Spanning Success!" -ForegroundColor Green
+            Write-Host ""
+            Write-Host "At least one packet which was addressed to the DC, was picked up by the Gateway." -ForegroundColor Yellow
+            Write-Host "A little noise is OK, but if you don't see a majority of successes, you might want to re-run." -ForegroundColor Yellow
+        } Else {
+            Write-Host "No joy, all noise.  You may want to re-run, increase the number of Ping Counts, or check your config." -ForegroundColor Red
+        }
     
     Write-Host ""
     Write-Host "Press any key to continue..." -ForegroundColor Red
     [void][System.Console]::ReadKey($true)
     
     
-## Validate port mirroring using Net Mon
-1.  Install [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) on the ATA Gateway that you want to validate..
+## Weryfikowanie funkcji dublowania portów za pomocą monitora sieci
+<a id="validate-port-mirroring-using-net-mon" class="xliff"></a>
+1.  Zainstaluj program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) w bramie usługi ATA, którą chcesz zweryfikować.
 
     > [!IMPORTANT]
-    > Do not install Microsoft Message Analyzer, or any other traffic capture software on the ATA Gateway.
+    > Nie instaluj programu Microsoft Message Analyzer ani żadnego innego oprogramowania służącego do przechwytywania ruchu sieciowego w ramach bramy usługi ATA.
 
-2.  Open Network Monitor and create a new capture tab.
+2.  Otwórz program Network Monitor i utwórz nową kartę przechwytywania.
 
-    1.  Select only the **Capture** network adapter or the network adapter that is connected to the switch port that is configured as the port mirroring destination.
+    1.  Wybierz tylko kartę sieciową **przechwytywania** lub kartę sieciową połączoną z portem przełącznika, który został skonfigurowany jako miejsce docelowe funkcji dublowania portów.
 
-    2.  Ensure that P-Mode is enabled.
+    2.  Upewnij się, że tryb P-Mode jest włączony.
 
-    3.  Click **New Capture**.
+    3.  Kliknij pozycję **Nowe przechwytywanie**.
 
-        ![Create new capture tab image](media/ATA-Port-Mirroring-Capture.jpg)
+        ![Obraz przedstawiający tworzenie nowej karty przechwytywania](media/ATA-Port-Mirroring-Capture.jpg)
 
-3.  In the Display Filter window, enter the following filter: **KerberosV5 OR LDAP** and then click **Apply**.
+3.  W oknie filtru wyświetlania wprowadź następujący filtr: **KerberosV5 LUB LDAP**, a następnie kliknij pozycję **Zastosuj**.
 
-    ![Apply KerberosV5 or LDAP filter image](media/ATA-Port-Mirroring-filter-settings.jpg)
+    ![Obraz przedstawiający stosowanie filtru KerberosV5 lub LDAP](media/ATA-Port-Mirroring-filter-settings.jpg)
 
-4.  Click **Start** to start the capture session. If you do not see traffic to and from the domain controller, review your port mirroring configuration.
+4.  Kliknij pozycję **Uruchom**, aby rozpocząć sesję przechwytywania. Jeśli ruch do i z kontrolera domeny nie jest widoczny, sprawdź konfigurację funkcji dublowania portów.
 
-    ![Start capture session image](media/ATA-Port-Mirroring-Capture-traffic.jpg)
+    ![Obraz przedstawiający uruchamianie sesji przechwytywania](media/ATA-Port-Mirroring-Capture-traffic.jpg)
 
     > [!NOTE]
-    > It is important to make sure you see traffic to and from the domain controllers.
+    > Upewnij się, że jest widoczny ruch zarówno do, jak i z kontrolerów domeny.
     
 
-5.  If you only see traffic in one direction, you should work with your networking or virtualization teams to help troubleshoot your port mirroring configuration.
+5.  Jeśli jest widoczny ruch tylko w jednym kierunku, należy skontaktować się z zespołem ds. sieci lub wirtualizacji, aby uzyskać pomoc w rozwiązywaniu problemów z konfiguracją funkcji dublowania portów.
 
-## See Also
+## Zobacz też
+<a id="see-also" class="xliff"></a>
 
-- [Configure port mirroring](configure-port-mirroring.md)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

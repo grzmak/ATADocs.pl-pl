@@ -1,70 +1,62 @@
 ---
-# required metadata
-
-title: Change Advanced Threat Analytics config - domain connectivity password | Microsoft Docs
-description: Describes how to change the Domain Connectivity Password on the ATA Gateway.
-keywords:
+title: "Zmienianie konfiguracji usługi Advanced Threat Analytics — hasło do łączności z domeną | Dokumentacja firmy Microsoft"
+description: "Zawiera opis sposobu zmiany hasła do łączności z domeną w ramach bramy usługi ATA."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 1/23/2017
+ms.date: 6/12/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: 4a25561b-a5ed-44aa-9b72-366976b3c72a
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 19eee0466269bbc2255d3a83e2f8c073057ba356
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Change ATA configuration - domain connectivity password
 
->[!div class="step-by-step"]
-[« ATA Console URL](modifying-ata-config-consoleurl.md)
+# Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
+<a id="change-ata-configuration---domain-connectivity-password" class="xliff"></a>
 
 
-## Change the domain connectivity password
-If you modify the Domain Connectivity Password, make sure that the password you enter is correct. If it is not, the ATA Gateway service will stop running on the ATA Gateways.
 
-If you suspect that this happened, on the ATA Gateway, look at the Microsoft.Tri.Gateway-Errors.log file for the following:
-`The supplied credential is invalid.`
+## Zmienianie hasła do łączności z domeną
+<a id="change-the-domain-connectivity-password" class="xliff"></a>
+Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa bramy usługi ATA przestanie działać w bramach usługi ATA.
 
-To correct this, follow this procedure to update the Domain Connectivity password on the ATA Center:
+Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat: `The supplied credential is invalid.`
 
-1.  Open the ATA Console on the ATA Center.
+Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowania hasła łączności z domeną w centrum usługi ATA:
 
-2.  Select the settings option on the toolbar and select **Configuration**.
+1.  Otwórz konsolę usługi ATA w centrum usługi ATA.
 
-    ![ATA configuration settings icon](media/ATA-config-icon.JPG)
+2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
 
-3.  Select **Directory Services**.
+    ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.png)
 
-    ![ATAA Gateway change password image](media/ATA-GW-change-DC-password.png)
+3.  Wybierz pozycję **Usługi katalogowe**.
 
-4.  Under **Password**, change the password.
+    ![Obraz przedstawiający zmianę hasła bramy usługi ATA](media/ATA-GW-change-DC-password.png)
 
-    If the ATA Center have connectivity to the domain, use the **Test Connection** button to validate the credentials
+4.  W obszarze **Hasło** zmień hasło.
 
-5.  Click **Save**.
+    Jeśli Centrum usługi ATA ma łączność z domeną, użyj przycisku **Testuj połączenie**, aby zweryfikować poświadczenia.
 
-6.  After changing the password, manually check that the ATA Gateway service is running on the ATA Gateway servers.
+5.  Kliknij polecenie **Zapisz**.
 
->[!div class="step-by-step"]
-[« ATA Console URL](modifying-ata-config-consoleurl.md)
+6.  Po zmianie hasła ręcznie sprawdź, czy brama usługi ATA jest uruchomiona na serwerach bramy usługi ATA.
 
-## See Also
-- [Working with the ATA Console](working-with-ata-console.md)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+
+
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Praca z konsolą usługi ATA](working-with-ata-console.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

@@ -1,224 +1,225 @@
 ---
-# required metadata
-
-title: Planning your Advanced Threat Analytics deployment | Microsoft Docs
-description: Helps you plan your deployment and decide how many ATA servers will be needed to support your network
-keywords:
+title: "Planowanie wdrożenia usługi Advanced Threat Analytics| Dokumentacja firmy Microsoft"
+description: "Ułatwia zaplanowanie wdrożenia i określenie, ile serwerów usługi ATA będzie potrzebnych do obsługi sieci"
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/30/2017
+ms.date: 7/5/2017
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
-ms.prod:
+ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 3a313ba032a43bff90e37908909830f7c741c39c
+ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 07/05/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# ATA Capacity Planning
-This topic helps you determine how many ATA servers will be needed to monitor your network, including understanding how many ATA Gateways and/or ATA Lightweight Gateways you need and the server capacity for your ATA Center and ATA Gateways.
+
+# Planowanie pojemności usługi ATA
+<a id="ata-capacity-planning" class="xliff"></a>
+Informacje zawarte w tym temacie ułatwiają określenie, ile serwerów usługi ATA jest potrzebnych do monitorowania sieci. Umożliwiają one także określenie, ile bram usługi ATA i/lub uproszczonych bram usługi ATA jest potrzebnych oraz jaka powinna być wydajność serwera dla centrum usługi ATA i bram usługi ATA.
 
 > [!NOTE] 
-> The ATA Center can be deployed on any IaaS vendor as long as the performance requirements described in this article are met.
+> Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
 
-##Using the sizing tool
-The recommended and simplest way to determine capacity for your ATA deployment is to use the [ATA Sizing Tool](http://aka.ms/atasizingtool). Run the ATA Sizing Tool and from the Excel file results, use the following fields to determine the ATA capacity you need:
+##Korzystanie z narzędzia do określania rozmiaru
+<a id="using-the-sizing-tool" class="xliff"></a>
+Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia usługi ATA jest użycie [narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool). Uruchom narzędzie do określania rozmiaru usługi ATA i określ wymaganą pojemność usługi ATA za pomocą następujących pól wyników w pliku programu Excel:
 
-- ATA Center CPU and Memory: Match the **Busy Packets/sec** field in the ATA Center table in the results file to the **PACKETS PER SECOND** field in the [ATA Center table](#ata-center-sizing).
+- Procesor i pamięć centrum usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w pliku wyników tabeli centrum usługi ATA do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
 
-- ATA Center Storage: Match the **Avg Packets/sec** field in the ATA Center table in the results file to the **PACKETS PER SECOND** field in the [ATA Center table](#ata-center-sizing).
-- ATA Gateway: Match the **Busy Packets/sec** field in the ATA Gateway table in the results file to the **PACKETS PER SECOND** field in the [ATA Gateway table](#ata-gateway-sizing) or the [ATA Lightweight Gateway table](#ata-lightweight-gateway-sizing), depending on the [gateway type you choose](#choosing-the-right-gateway-type-for-your-deployment).
-
-
-![Sample capacity planning tool](media/capacity tool.png)
+- Magazyn centrum usługi ATA: dopasuj wartość pola **Średnia liczba pakietów/s** w pliku wyników tabeli centrum usługi ATA do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
+- Brama usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w tabeli bramy usługi ATA w pliku wyników do wartości pola **PAKIETY/S** w [tabeli bramy usługi ATA](#ata-gateway-sizing) lub [tabeli uproszczonej bramy usługi ATA](#ata-lightweight-gateway-sizing) w zależności od [wybranego typu bramy](#choosing-the-right-gateway-type-for-your-deployment).
 
 
-
-If for some reason you cannot use the ATA Sizing Tool, you need to manually gather the packet/sec counter information from all your Domain Controllers for a period of 24 hours with a very low collection interval (approximately 5 seconds). Then, for each Domain Controller, you  must calculate the daily average and the busiest period (15 minutes) average.
-The following sections present the instruction for how to collect the packets/sec counter from one Domain Controller.
+![Przykładowe narzędzie do planowania pojemności](media/capacity tool.png)
 
 
 
-### ATA Center Sizing
-The ATA Center requires a recommended minimum of 30 days of data for user behavioral analytics.
+Jeśli z jakiegoś powodu nie możesz użyć narzędzia do określania rozmiaru usługi ATA, zbierz ręcznie informacje licznika liczby pakietów na sekundę ze wszystkich kontrolerów domeny z okresu 24 godzin i z krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
+Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
+
+
+
+### Ustalanie rozmiaru centrum usługi ATA
+<a id="ata-center-sizing" class="xliff"></a>
+W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni.
  
 
-|Packets per second from all DCs|CPU (cores&#42;)|Memory (GB)|Database storage per day (GB)|Database storage per month (GB)|IOPS&#42;&#42;|
+|Pakiety na sekundę ze wszystkich kontrolerów domeny|Procesor CPU (rdzenie&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
-|1,000|2|32|0.3|9|30 (100)
-|10,000|4|48|3|90|200 (300)
-|40,000|8|64|12|360|500 (1,000)
-|100,000|12|96|30|900|1,000 (1,500)
-|200,000|24|112|60|1,800|2,000 (3,000)
-|400,000|40|128|120|3,600|4,000 (5,000)
+|1000|2|32|0,3|9|30 (100)
+|10 000|4|48|3|90|200 (300)
+|40 000|8|64|12|360|500 (1000)
+|100 000|12|96|30|900|1000 (1500)
+|200 000|24|112|60|1800|2,000 (3,000)
+|400 000|40|128|120|3,600|4,000 (5,000)
 
-&#42;This includes physical cores, not hyper-threaded cores.
+&#42;Dotyczy rdzeni fizycznych, a nie rdzeni hiperwątkowych.
 
-&#42;&#42;Average numbers (Peak numbers)
+&#42;&#42;Wartości średnie (wartości szczytowe)
 > [!NOTE]
-> -   The ATA Center can handle an aggregated maximum of 400,000 frames per second (FPS) from all the monitored domain controllers. In some environments, the same ATA Center can handle overall traffic that is higher than 400,000. Please contact askcesec@microsoft.com for assistance with such environments.
-> -   The amounts of storage dictated here are net values, you should always account for future growth and to make sure that the disk the database resides on has at least 20% of free space.
-> -   If your free space reaches a minimum of either 20% or 100 GB, the oldest collection of data will be deleted. This will continue to occur until 5% or 50 GB of free space remains at which point data collection will stop working.
-> - It's possible to deploy the ATA Center on any IaaS vendor as long as the performance requirements that are described in this article are met.
-> -   The storage latency for read and write activities should be below 10 ms.
-> -   The ratio between read and write activities is approximately 1:3 below 100,000 packets-per-second and 1:6 above 100,000 packets-per-second.
-> -   When running as a virtual machine dynamic memory or any other memory ballooning feature is not supported.
-> -   For optimal performance, set the **Power Option** of the ATA Center to **High Performance**.<br>
-> -   When working on a physical server, the ATA database necessitates that you **disable** Non-uniform memory access (NUMA) in the BIOS. Your system may refer to NUMA as Node Interleaving, in which case you will have to **enable** Node Interleaving in order to disable NUMA. See your BIOS documentation for more information. Note that this is not relevant when the ATA Center is running on a virtual server.
+> -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
+> -   Wielkości magazynu określone w tym miejscu to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
+> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
+> - Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
+> -   Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
+> -   Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
+> -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
+> -   Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. Technologia NUMA może być nazywana w Twoim systemie przeplataniem węzłów. W tym przypadku należy **włączyć** przeplatanie węzłów, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji, zapoznaj się z dokumentacją systemu BIOS. Nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.
 
 
-## Choosing the right gateway type for your deployment
-In an ATA deployment any combination of the ATA Gateway types is supported:
+## Wybieranie odpowiedniego typu bramy dla danego wdrożenia
+<a id="choosing-the-right-gateway-type-for-your-deployment" class="xliff"></a>
+We wdrożeniu ATA obsługiwane są dowolne kombinacje typów bramy ATA:
 
-- Only ATA Gateway(s)
-- Only ATA Lightweight Gateway(s)
-- A combination of both
+- Tylko bramy usługi ATA
+- Tylko uproszczone bramy usługi ATA
+- Kombinacja obu bram
 
-When deciding the Gateway deployment type, consider the following:
+Podczas wybierania typu wdrożenia bramy należy uwzględnić następujące korzyści:
 
-|Gateway type|Benefits|Cost|Deployment topology|Domain controller use|
+|Typ bramy|Korzyści|Koszt|Topologia wdrożenia|Użycie kontrolera domeny|
 |----|----|----|----|-----|
-|ATA Gateway|The Out of band deployment makes it harder for attackers to discover ATA is present|Higher|Installed alongside the domain controller (out of band)|Supports up to 50,000 packets per second|
-|ATA Lightweight Gateway|Doesn't require a dedicated server and port-mirroring configuration|Lower|Installed on the domain controller|Supports up to 10,000 packets per second|
+|Brama usługi ATA|Wdrożenie poza pasmem utrudnia osobom atakującym odkrycie usługi ATA|Wyższe|Instalacja obok kontrolera domeny (poza pasmem)|Obsługuje maksymalnie 50 000 pakietów na sekundę|
+|Uproszczona brama usługi ATA|Nie wymaga dedykowanego serwera i konfiguracji dublowania portów|Niższe|Instalacja na kontrolerze domeny|Obsługuje maksymalnie 10 000 pakietów na sekundę|
 
-The following are examples of scenarios in which domain controllers should be covered by the ATA Lightweight Gateway:
-
-
-- Branch sites
-
-- Virtual domain controllers deployed in the cloud (IaaS)
+Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny powinny być objęte przez uproszczoną bramę usługi ATA:
 
 
-The following are examples of scenarios in which domain controllers should be covered by the ATA Gateway:
+- Oddziały
+
+- Wirtualne kontrolery domeny wdrożone w chmurze (IaaS)
 
 
-- Headquarter data centers (having domain controllers with more than 10,000 packets per seconds)
+Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny powinny być objęte przez bramę usługi ATA:
 
 
-### ATA Lightweight Gateway Sizing
-
-An ATA Lightweight Gateway can support the monitoring of one domain controller based on the amount of network traffic the domain controller generates. 
+- Główne centra danych (z kontrolerami domeny obsługującymi ponad 10 000 pakietów na sekundę)
 
 
-|Packets per second&#42;|CPU (cores&#42;&#42;)|Memory (GB)&#42;&#42;&#42;|
+### Ustalanie rozmiaru uproszczonej bramy usługi ATA
+<a id="ata-lightweight-gateway-sizing" class="xliff"></a>
+
+Uproszczona brama usługi ATA może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
+
+
+|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)&#42;&#42;&#42;|
 |---------------------------|-------------------------|---------------|
-|1,000|2|6|
-|5,000|6|16|
-	|10,000|10|24|
+|1000|2|6|
+|5000|6|16|
+    |10 000|10|24|
 
-&#42;Total number of packets-per-second on the domain controller being monitored by the specific ATA Lightweight Gateway.
+&#42;Łączna liczba pakietów na sekundę w kontrolerze domeny monitorowanym przez daną uproszczoną bramę usługi ATA.
 
-&#42;&#42;Total amount of non-hyper threaded cores that this domain controller has installed.<br>While hyper threading is acceptable for the ATA Lightweight Gateway, when planning for capacity, you should count actual cores and not hyper threaded cores.
+&#42;&#42;Łączna liczba zainstalowanych w kontrolerze domeny rdzeni innych niż hiperwątkowe.<br>Chociaż hiperwątkowość jest dopuszczalna w przypadku użycia uproszczonych bram usługi ATA, podczas planowania pojemności należy policzyć faktyczną liczbę rdzeni, a nie rdzeni hiperwątkowych.
 
-&#42;&#42;&#42;Total amount of memory that this domain controller has installed.
+&#42;&#42;&#42;Łączna ilość pamięci zainstalowanej w kontrolerze domeny.
 
-> [!NOTE]	
-> -   If the domain controller does not have the necessary amount of resources required by the ATA Lightweight Gateway, the domain controller performance will not be effected, but the ATA Lightweight Gateway might not operate as expected.
-> -   When running as a virtual machine dynamic memory or any other memory ballooning feature is not supported.
-> -   For optimal performance, set the **Power Option** of the ATA Lightweight Gateway to **High Performance**.
-> -   A minimum of 5 GB of space is required and 10 GB is recommended. This includes space needed for the ATA binaries, [ATA logs](troubleshooting-ata-using-logs.md) and [performance logs](troubleshooting-ata-using-perf-counters.md).
+> [!NOTE]   
+> -   Jeśli kontroler domeny nie ma zasobów wymaganych przez uproszczoną bramę usługi ATA, nie będzie to miało wpływu na wydajność kontrolera domeny, ale uproszczona brama usługi ATA może nie działać zgodnie z oczekiwaniami.
+> -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** uproszczonej bramy usługi ATA na wartość **Wysoka wydajność**.
+> -   Potrzebne jest minimalnie 5 GB miejsca, a zalecane 10 GB miejsca, co obejmuje miejsce wymagane przez pliki binarne usługi ATA, [dzienniki usługi ATA](troubleshooting-ata-using-logs.md) i [dzienniki wydajności](troubleshooting-ata-using-perf-counters.md).
 
 
-### ATA Gateway Sizing
+### Ustalanie rozmiaru bramy usługi ATA
+<a id="ata-gateway-sizing" class="xliff"></a>
 
-Consider the following when deciding how many ATA Gateways to deploy.
+Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące zagadnienia.
 
--	**Active Directory forests and domains**<br>
-	ATA can monitor traffic from multiple domains from a single Active Directory forest. Monitoring multiple Active Directory forests requires separate ATA deployments. A single ATA deployment should not be configured to monitor network traffic of domain controllers from different forests.
+-   **Lasy i domeny usługi Active Directory**<br>
+    Usługa ATA może monitorować ruch z wielu domen pochodzących z jednego lasu usługi Active Directory. Monitorowanie wielu lasów usługi Active Directory wymaga oddzielnych wdrożeń usługi ATA. Nie należy konfigurować pojedynczego wdrożenia usługi ATA do monitorowania ruchu sieciowego z kontrolerów domeny znajdujących się w różnych lasach.
 
--	**Port Mirroring**<br>
-Port mirroring considerations might require you to deploy multiple ATA Gateways per data center or branch site.
+-   **Dublowanie portów**<br>
+Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram usługi ATA dla centrum danych lub oddziału.
 
--	**Capacity**<br>
-	An ATA Gateway can support monitoring multiple domain controllers, depending on the amount of network traffic of the domain controllers being monitored. 
+-   **Wydajność**<br>
+    Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w zależności od natężenia ruchu sieciowego monitorowanych kontrolerów domeny. 
 <br>
 
 
 
-|Packets per second&#42;|CPU (cores&#42;&#42;)|Memory (GB)|
+|Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|
 |---------------------------|-------------------------|---------------|
-|1,000|1|6|
-|5,000|2|10|
-|10,000|3|12|
-|20,000|6|24|
-|50,000|16|48|
-&#42;Total average number of packets-per-second from all domain controllers being monitored by the specific ATA Gateway during their busiest hour of the day.
+|1000|1|6|
+|5000|2|10|
+|10 000|3|12|
+|20 000|6|24|
+|50 000|16|48|
+&#42;Średnia łączna liczba pakietów na sekundę ze wszystkich kontrolerów domeny monitorowanych przez daną bramę usługi ATA w najbardziej zajętej godzinie dnia.
 
-&#42;The total amount of domain controller port-mirrored traffic cannot exceed the capacity of the capture NIC on the ATA Gateway.
+&#42;Łączny ruch objęty funkcją dublowania portów kontrolera domeny nie może przekraczać wydajności karty sieciowej przechwytywania w bramie usługi ATA.
 
-&#42;&#42;Hyper-threading must be disabled.
+&#42;&#42;Hiperwątkowość musi być wyłączona.
 
 > [!NOTE] 
-> -   Dynamic memory is not supported.
-> -   For optimal performance, set the **Power Option** of the ATA Gateway to **High Performance**.
-> -   A minimum of 5 GB of space is required and 10 GB is recommended. This includes space needed for the ATA binaries, [ATA logs](troubleshooting-ata-using-logs.md) and [performance logs](troubleshooting-ata-using-perf-counters.md).
+> -   Pamięć dynamiczna nie jest obsługiwana.
+> -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.
+> -   Potrzebne jest minimalnie 5 GB miejsca, a zalecane 10 GB miejsca, co obejmuje miejsce wymagane przez pliki binarne usługi ATA, [dzienniki usługi ATA](troubleshooting-ata-using-logs.md) i [dzienniki wydajności](troubleshooting-ata-using-perf-counters.md).
 
 
-## Domain controller traffic estimation
-There are various tools that you can use to discover the average packets per second of your domain controllers. If you do not have any tools that track this counter, you can use Performance Monitor to gather the required information.
+## Szacowanie ruchu kontrolera domeny
+<a id="domain-controller-traffic-estimation" class="xliff"></a>
+Istnieją różne narzędzia, za pomocą których można określić średnią liczbę pakietów na sekundę kontrolerów domeny. Jeśli nie masz żadnych narzędzi do określenia tej wartości, możesz użyć Monitora wydajności do zebrania wymaganych informacji.
 
-To determine packets per second, perform the following on each domain controller:
+Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na każdym kontrolerze domeny:
 
-1.  Open Performance Monitor.
+1.  Otwórz Monitor wydajności.
 
-    ![Performance monitor image](media/ATA-traffic-estimation-1.png)
+    ![Obraz przedstawiający Monitor wydajności](media/ATA-traffic-estimation-1.png)
 
-2.  Expand **Data Collector Sets**.
+2.  Rozwiń węzeł **Zestawy modułów zbierających dane**.
 
-    ![Data collector sets image](media/ATA-traffic-estimation-2.png)
+    ![Obraz przedstawiający zestawy modułów zbierających dane](media/ATA-traffic-estimation-2.png)
 
-3.  Right click **User Defined** and select **New** &gt; **Data Collector Set**.
+3.  Kliknij prawym przyciskiem myszy pozycję **Zdefiniowany przez użytkownika**, a następnie wybierz pozycję **Nowy** &gt; **Zestaw modułów zbierających dane**.
 
-    ![New data collector set image](media/ATA-traffic-estimation-3.png)
+    ![Obraz przedstawiający nowy zestaw modułów zbierających dane](media/ATA-traffic-estimation-3.png)
 
-4.  Enter a name for the collector set and select **Create Manually (Advanced)**.
+4.  Wprowadź nazwę dla zestawu modułów zbierających dane, a następnie wybierz pozycję **Utwórz ręcznie (zaawansowane)**.
 
-5.  Under **What type of data do you want to include?**, select  **Create data logs and Performance counter**.
+5.  W obszarze **Jakiego typu dane chcesz uwzględnić?** wybierz pozycje **Utwórz dzienniki danych i Licznik wydajności**.
 
-    ![Type of data for new data collector set image](media/ATA-traffic-estimation-5.png)
+    ![Obraz przedstawiający typ danych nowego zestawu modułów zbierających dane](media/ATA-traffic-estimation-5.png)
 
-6.  Under **Which performance counters would you like to log** click **Add**.
+6.  W obszarze **Które liczniki wydajności chcesz rejestrować?** kliknij przycisk **Dodaj**.
 
-7.  Expand **Network Adapter** and select **Packets/sec** and select the proper instance. If you are not sure, you can select **&lt;All instances&gt;** and click **Add** and **OK**.
+7.  Rozwiń węzeł **Karta sieciowa**, wybierz pozycję **Pakiety/s**, a następnie wybierz odpowiednie wystąpienie. Jeśli nie masz pewności, możesz wybrać pozycję **&lt;Wszystkie wystąpienia&gt;**, kliknąć przycisk **Dodaj**, a następnie kliknąć przycisk **OK**.
 
     > [!NOTE]
-    > To do this, in a command line, run `ipconfig /all` to see the name of the adapter and configuration.
+    > Aby wykonać tę operację w wierszu polecenia, uruchom polecenie `ipconfig /all` w celu wyświetlenia nazwy karty i konfiguracji.
 
-    ![Add performance counters image](media/ATA-traffic-estimation-7.png)
+    ![Obraz przedstawiający dodawanie liczników wydajności](media/ATA-traffic-estimation-7.png)
 
-8.  Change the **Sample interval** to **1 second**.
+8.  Zmień wartość pozycji **Interwał próbkowania** na **1 sekundę**.
 
-9. Set the location where you want the data to be saved.
+9. Ustaw lokalizację, w której mają być zapisywane dane.
 
-10. Under **Create the data collector set**  select **Start this data collector set now** and click **Finish**.
+10. W obszarze **Czy utworzyć zestaw modułów zbierających dane?** wybierz polecenie **Uruchom teraz ten zestaw modułów zbierających dane**, a następnie kliknij przycisk **Zakończ**.
 
-    You should now see the data collector set you just created with a green triangle indicating that it is working.
+    Powinien zostać wyświetlony utworzony zestaw modułów zbierających dane z zielonym trójkątem wskazującym, że zestaw działa.
 
-11. After 24 hours, stop the data collector set, by right clicking the data collector set and selecting **Stop**.
+11. Po 24 godzinach zatrzymaj zestaw modułów zbierających dane, klikając go prawym przyciskiem myszy, a następnie wybierając polecenie **Zatrzymaj**.
 
-    ![Stop data collector set image](media/ATA-traffic-estimation-12.png)
+    ![Obraz przedstawiający zatrzymywanie działania zestawu modułów zbierających dane](media/ATA-traffic-estimation-12.png)
 
-12. In File Explorer, browse to the folder where the .blg file was saved and double click it to open it in Performance Monitor.
+12. W Eksploratorze plików przejdź do folderu, w którym zapisano plik blg, a następnie kliknij go dwukrotnie w celu otworzenia w Monitorze wydajności.
 
-13. Select the Packets/sec counter, and record the average and maximum values.
+13. Wybierz licznik Pakiety/s i zapisz wartość średnią oraz maksymalną.
 
-    ![Packets per second counter image](media/ATA-traffic-estimation-14.png)
+    ![Obraz przedstawiający licznik Pakiety/s](media/ATA-traffic-estimation-14.png)
 
-## See Also
-- [ATA prerequisites](ata-prerequisites.md)
-- [ATA architecture](ata-architecture.md)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+- [Architektura usługi ATA](ata-architecture.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

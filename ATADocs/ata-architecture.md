@@ -1,192 +1,198 @@
 ---
-# required metadata
-
-title: Advanced Threat Analytics architecture | Microsoft Docs
-description: Describes the architecture of Microsoft Advance Threat Analytics (ATA)
-keywords:
+title: "Architektura usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "Opis architektury usługi Microsoft Advanced Threat Analytics (ATA)."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 01/23/2017
+ms.date: 07/5/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 4d95e5b13d06ea0963b7cac129be4eb1458e5d4c
+ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 07/05/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
-
-
-
-# ATA Architecture
-The Advanced Threat Analytics architecture is detailed in this diagram:
-
-![ATA architcture topology diagram](media/ATA-architecture-topology.jpg)
-
-ATA monitors your domain controller network traffic by utilizing port mirroring to an ATA Gateway using physical or virtual switches, or by deploying the ATA Lightweight Gateway directly on your domain controllers, which removes the requirement for port mirroring. In addition, ATA can leverage Windows events (forwarded directly from your domain controllers or from a SIEM server) and analyze the data for attacks and threats.
-This section describes the flow of network and event capturing and drills down to describe the functionality of the main components of ATA: the ATA Gateway, ATA Lightweight Gateway (which has the same core functionality as the ATA Gateway) and the ATA Center.
-
-
-![ATA traffic flow diagram](media/ATA-traffic-flow.jpg)
-
-## ATA Components
-ATA consists of the following:
-
--   **ATA Center** <br>
-The ATA Center receives data from any ATA Gateways and/or ATA Lightweight Gateways you deploy.
--   **ATA Gateway**<br>
-The ATA Gateway is installed on a dedicated server that monitors the traffic from your domain controllers using either port mirroring or a network TAP.
--   **ATA Lightweight Gateway**<br>
-The ATA Lightweight Gateway is installed directly on your domain controllers and monitors their traffic directly, without the need for a dedicated server or configuration of port mirroring. It is an alternative to the ATA Gateway.
-
-An ATA deployment can consist of a single ATA Center connected to all ATA Gateways, all ATA Lightweight Gateways or a combination of ATA Gateways and ATA Lightweight Gateways.
-
-
-## Deployment options
-You can deploy ATA using the following combination of gateways:
-
--	**Using only ATA Gateways** <br>
-If your ATA deployment contains only ATA Gateways, without any ATA Lightweight Gateways, all the domain controllers must be configured to enable port mirroring to an ATA Gateway or network TAPs must be in place.
--	**Using only ATA Lightweight Gateways**<br>
-If your ATA deployment contains only ATA Lightweight Gateways, the ATA Lightweight Gateways are deployed on each domain controller and no additional servers or port mirroring configuration is necessary.
--	**Using both ATA Gateways and ATA Lightweight Gateways**<br>
-If your ATA deployment includes both ATA Gateways and ATA Lightweight Gateways, where the ATA Lightweight Gateway is installed on some of your domain controllers (for example, all domain controllers in your branch sites) while other domain controllers are monitored by ATA Gateways (for example, the larger domain controllers in your main data centers).
-
-In all 3 scenarios, all the gateways send their data to the ATA Center.
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
 
 
-## ATA Center
-The **ATA Center** performs the following functions:
+# Architektura usługi ATA
+<a id="ata-architecture" class="xliff"></a>
+Architektura usługi Advanced Threat Analytics została szczegółowo opisana na poniższym diagramie:
 
--   Manages ATA Gateway and ATA Lightweight Gateway configuration settings
+![Diagram topologii architektury usługi ATA](media/ATA-architecture-topology.jpg)
 
--   Receives data from ATA Gateways and ATA Lightweight Gateways 
+Usługa ATA monitoruje ruch sieciowy kontrolera domeny przy użyciu funkcji dublowania portów do bramy usługi ATA za pomocą przełączników fizycznych lub wirtualnych. W przypadku wdrożenia uproszczonej bramy usługi ATA bezpośrednio na kontrolerach domeny stosowanie dublowania portów nie jest konieczne. Ponadto usługa ATA może wykorzystywać zdarzenia systemu Windows (przekazywane bezpośrednio z kontrolerów domeny lub serwera SIEM) i analizować dane pod kątem ataków i zagrożeń.
+W tej sekcji opisano przepływ sieci i przechwytywanie zdarzeń oraz podano bardziej szczegółowe informacje dotyczące funkcjonalności głównych składników usługi ATA: bramy usługi ATA, uproszczonej bramy usługi ATA (której główna funkcjonalność jest taka sama jak bramy usługi ATA) oraz centrum usługi ATA.
 
--   Detects suspicious activities
 
--   Runs ATA behavioral machine learning algorithms to detect abnormal behavior
+![Diagram przepływu ruchu usługi ATA](media/ATA-traffic-flow.jpg)
 
--   Runs various deterministic algorithms to detect advanced attacks based on the attack kill chain
+## Składniki usługi ATA
+<a id="ata-components" class="xliff"></a>
+Usługa ATA składa się z następujących składników:
 
--   Runs the ATA Console
+-   **Centrum usługi ATA** <br>
+Centrum usługi ATA odbiera dane z dowolnych wdrożonych bram usługi ATA i/lub uproszczonych bram usługi ATA.
+-   **Brama usługi ATA**<br>
+Brama usługi ATA jest instalowana na dedykowanym serwerze, który monitoruje ruch kontrolerów domeny za pomocą funkcji dublowania portów lub podsłuchu sieci.
+-   **Uproszczona brama usługi ATA**<br>
+Uproszczona brama usługi ATA jest instalowana bezpośrednio w kontrolerach domeny. Brama monitoruje ruch kontrolerów bezpośrednio, bez konieczności użycia serwera dedykowanego lub funkcji dublowania portów. Jest to alternatywa dla bramy usługi ATA.
 
--   Optional: The ATA Center can be configured to send emails and events when a suspicious activity is detected.
+Wdrożenie usługi ATA może składać się z jednego centrum usługi ATA połączonego ze wszystkimi bramami usługi ATA, wszystkimi uproszczonymi bramami usługi ATA lub kombinacją bram usługi ATA i uproszczonych bram usługi ATA.
 
-The ATA Center receives parsed traffic from the ATA Gateway and ATA Lightweight Gateway, performs profiling, runs deterministic detection and runs machine learning and behavioral algorithms to learn about your network to enable detection of anomalies and warn you of suspicious activities.
 
-|||
-|-|-|
-|Entity Receiver|Receives batches of entities from all ATA Gateways and ATA Lightweight Gateways .|
-|Network Activity Processor|Processes all the network activities within each batch received. For example, matching between the various Kerberos steps performed from potentially different computers|
-|Entity Profiler|Profiles all the Unique Entities according to the traffic and events. For example, this is where ATA updates the list of logged-on computers for each user profile.|
-|Center Database|Manages the writing process of the Network Activities and events into the database. |
-|Database|ATA utilizes MongoDB for purposes of storing all the data in the system:<br /><br />-   Network activities<br />-   Event activities<br />-   Unique entities<br />-   Suspicious activities<br />-   ATA configuration|
-|Detectors|The Detectors use machine learning algorithms and deterministic rules to find suspicious activities and abnormal user behavior in your network.|
-|ATA Console|The ATA Console is for configuring ATA and monitoring suspicious activities detected by ATA on your network. The ATA Console is not dependent on the ATA Center service and will run even when the service is stopped, as long as it can communicate with the database.|
-Consider the following when deciding how many ATA Centers to deploy on your network:
+## Opcje wdrażania
+<a id="deployment-options" class="xliff"></a>
+Usługę ATA można wdrożyć przy użyciu następujących kombinacji bram:
 
--   One ATA Center can monitor a single Active Directory forest. If you have more than one Active Directory forest you will need a minimum of one ATA Center per Active Directory forest.
+-   **Zastosowanie wyłącznie bram usługi ATA** <br>
+Wdrożenie usługi ATA może składać się wyłącznie z bram usługi ATA (bez uproszczonych bram usługi ATA). Wszystkie kontrolery domeny muszą być skonfigurowane tak, aby umożliwić dublowanie portów do bramy usługi ATA, lub należy zastosować urządzenia do podsłuchu sieci.
+-   **Zastosowanie wyłącznie uproszczonych bram usługi ATA**<br>
+Wdrożenie usługi ATA może składać się tylko z uproszczonych bram usługi ATA. Uproszczone bramy usługi ATA wdraża się na każdym kontrolerze domeny. Nie ma potrzeby stosowania dodatkowych serwerów ani konfigurowania dublowania portów.
+-   **Zastosowanie bram usługi ATA oraz uproszczonych bram usługi ATA**<br>
+Wdrożenie usługi ATA obejmuje zarówno bramy usługi ATA, jak i uproszczone bramy usługi ATA. Uproszczone bramy usługi ATA są instalowane na niektórych kontrolerach domeny (na przykład na wszystkich kontrolerach domeny w oddziałach). W tym samym czasie inne kontrolery domeny są monitorowane przez bramy usługi ATA (np. większe kontrolery domeny w głównych centrach danych).
 
--    In very large Active Directory deployments, a single ATA Center might not be able to handle all of the traffic of all your domain controllers. In this case, multiple ATA Centers will be required. The number of ATA Centers should be dictated by [ATA capacity planning](ata-capacity-planning.md).
+We wszystkich tych scenariuszach wszystkie bramy wysyłają dane do centrum usługi ATA.
 
-## ATA Gateway and ATA Lightweight Gateway
 
-### Gateway core functionality
-The **ATA Gateway** and **ATA Lightweight Gateway** both have the same core functionality:
 
--   Capture and inspect domain controller network traffic (port mirrored traffic in the case of an ATA Gateway and local traffic of the domain controller in the case of an ATA Lightweight Gateway) 
 
--   Receive Windows events from SIEM or Syslog servers, or from domain controllers using Windows Event Forwarding
+## Centrum usługi ATA
+<a id="ata-center" class="xliff"></a>
+**Centrum usługi ATA** pełni następujące funkcje:
 
--   Retrieve data about users and computers from the Active Directory domain
+-   Zarządza ustawieniami konfiguracji bram usługi ATA i uproszczonych bram usługi ATA
 
--   Perform resolution of network entities (users, groups and computers)
+-   Odbiera dane z bram usługi ATA i uproszczonych bram usługi ATA 
 
--   Transfer relevant data to the ATA Center
+-   Wykrywa podejrzane działania
 
--   Monitor multiple domain controllers from a single ATA Gateway, or monitor a single domain controller for an ATA Lightweight Gateway.
+-   Uruchamia algorytmy behawioralne usługi ATA związane z funkcją uczenia maszynowego w celu wykrywania nietypowych zachowań
 
-The ATA Gateway receives network traffic and Windows Events from your network and processes it in the following main components:
+-   Uruchamia rozmaite algorytmy deterministyczne w celu wykrywania zaawansowanych ataków opartych na łańcuchu kończenia ataków
+
+-   Uruchamia konsolę usługi ATA
+
+-   Opcjonalnie: centrum usługi ATA można skonfigurować do wysyłania wiadomości e-mail i zdarzeń po wykryciu podejrzanego działania
+
+Centrum usługi ATA odbiera przeanalizowany ruch z bramy usługi ATA i uproszczonej bramy usługi ATA. Następnie wykonuje profilowanie, uruchamia wykrywanie deterministyczne oraz uruchamia uczenie maszynowe i algorytmy behawioralne, aby uzyskać więcej informacji dotyczących sieci, włącza wykrywanie anomalii i ostrzega o podejrzanych działaniach.
 
 |||
 |-|-|
-|Network Listener|The Network Listener is responsible for capturing network traffic and parsing the traffic. This is a CPU-heavy task, so  it is especially important to check [ATA Prerequisites](ata-prerequisites.md) when planning your ATA Gateway or ATA Lightweight Gateway.|
-|Event Listener|The Event Listener is responsible for capturing and parsing Windows Events forwarded from a SIEM server on your network.|
-|Windows Event Log Reader|The Windows Event Log Reader is responsible for reading and parsing Windows Events forwarded to the ATA Gateway's Windows Event Log from the domain controllers.|
-|Network Activity Translator | Translates parsed traffic into a logical representation of the traffic used by ATA (NetworkActivity).
-|Entity Resolver|The Entity Resolver takes the parsed data (network traffic and events) and resolves it data with Active Directory to find account and identity information. It is then matched with the IP addresses found in the parsed data. The Entity Resolver inspects the packet headers efficiently, to enable parsing of authentication packets for machine names, properties, and identities. The Entity Resolver combines the parsed authentication packets with the data in the actual packet.|
-|Entity Sender|The Entity Sender is responsible for sending the parsed and matched data to the ATA Center.|
+|Odbiornik jednostek|Odbiera partie jednostek ze wszystkich bram usługi ATA i uproszczonych bram usługi ATA.|
+|Procesor aktywności sieciowej|Przetwarza wszystkie działania w sieci w ramach każdej otrzymanej partii. Dotyczy to na przykład dopasowywania między różnymi krokami protokołu Kerberos wykonywanymi z potencjalnie różnych komputerów|
+|Profiler jednostek|Profiluje wszystkie unikatowe jednostki na podstawie ruchu i zdarzeń. Na przykład usługa ATA aktualizuje listę zalogowanych komputerów dla każdego profilu użytkownika.|
+|Baza danych centrum|Zarządza procesem zapisu działań w sieci i zdarzeń do bazy danych. |
+|Baza danych|Usługa ATA korzysta z bazy danych MongoDB do przechowywania wszystkich danych w systemie:<br /><br />— działania w sieci<br />— działania związane ze zdarzeniami<br />— unikatowe jednostki<br />— podejrzane działania<br />— konfiguracja usługi ATA|
+|Detektory|Detektory używają algorytmów uczenia maszynowego i reguł deterministycznych do znajdowania podejrzanych działań i nietypowego zachowania użytkowników w sieci.|
+|Konsola usługi ATA|Konsola usługi ATA służy do konfigurowania usługi ATA i monitorowania podejrzanych działań wykrytych przez usługę ATA w sieci użytkownika. Konsola usługi ATA jest niezależna od centrum usługi ATA i będzie działać nawet wtedy, gdy centrum usługi ATA zostanie zatrzymane, pod warunkiem, że będzie mogła komunikować się z bazą danych.|
+Podczas podejmowania decyzji o liczbie centrów usługi ATA, które mają zostać wdrożone w sieci, należy wziąć pod uwagę następujące kryteria:
 
-## ATA Lightweight Gateway features
+-   Jedno centrum usługi ATA może monitorować pojedynczy las usługi Active Directory. Jeśli masz wiele lasów usługi Active Directory, na każdy las usługi Active Directory potrzebujesz co najmniej jednego centrum usługi ATA.
 
-The following features work differently depending on whether you are running an ATA Gateway or an ATA Lightweight Gateway.
+-    W bardzo dużych wdrożeniach usługi Active Directory pojedyncze centrum usługi ATA może nie być w stanie obsłużyć całego ruchu wszystkich kontrolerów domeny. W takim przypadku należy użyć wielu centrów usługi ATA. Liczba centrów usługi ATA powinna zostać ustalona zgodnie z informacjami znajdującymi się w sekcji [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
--	**Domain synchronizer candidate**<br>
-The domain synchronizer gateway is responsible for synchronizing all entities from a specific Active Directory domain proactively (similar to the mechanism used by the domain controllers themselves for replication). One gateway is chosen randomly, from the list of candidates, to serve as the domain synchronizer. <br><br>
-If the synchronizer is offline for more than 30 minutes, another candidate is chosen instead. If there is no domain synchronizer available for a specific domain, ATA will not be able to proactively synchronize entities and their changes, however ATA will reactively retrieve new entities as they are detected in the monitored traffic. 
-<br>If there is no domain synchronizer available, and you search for an entity that did not have any traffic related to it, no search results will be displayed.<br><br>
-By default, all ATA Gateways are synchronizer candidates.<br><br>
-Because all ATA Lightweight Gateways are more likely to be deployed in branch sites and on small domain controllers, they are not synchronizer candidates by default.
+## Brama usługi ATA i uproszczona brama usługi ATA
+<a id="ata-gateway-and-ata-lightweight-gateway" class="xliff"></a>
+
+### Podstawowe funkcje bramy
+<a id="gateway-core-functionality" class="xliff"></a>
+**Brama usługi ATA** oraz **uproszczona brama usługi ATA** mają te same funkcje podstawowe:
+
+-   Przechwytują i analizują ruch sieciowy kontrolera domeny. Jest to ruch pochodzący ze zdublowanych portów w przypadku bram usługi ATA i ruch lokalny kontrolera domeny w przypadku uproszczonych bram usługi ATA. 
+
+-   Odbierają zdarzenia systemu Windows z serwera SIEM, serwera Syslog lub kontrolerów domeny przy użyciu funkcji przekazywania zdarzeń systemu Windows
+
+-   Pobierają dane o użytkownikach i komputerach z domeny usługi Active Directory
+
+-   Przeprowadzają rozpoznawanie jednostek sieci (użytkowników, grup i komputerów)
+
+-   Transferują odpowiednie dane do centrum usługi ATA
+
+-   Monitorują wiele kontrolerów domeny w jednej bramie usługi ATA lub monitorują pojedynczy kontroler domeny w przypadku uproszczonej bramy usługi ATA.
+
+Brama usługi ATA odbiera ruch sieciowy i zdarzenia systemu Windows z sieci użytkownika i przetwarza je za pomocą następujących głównych składników:
+
+|||
+|-|-|
+|Odbiornik sieci|Odbiornik sieci przechwytuje ruch sieciowy i analizuje go. Jest to zadanie silnie obciążające procesor CPU, więc zapoznanie się z sekcją [Wymagania wstępne usługi ATA](ata-prerequisites.md) jest szczególnie ważne podczas planowania bramy usługi ATA lub uproszczonej bramy usługi ATA.|
+|Odbiornik zdarzeń|Odbiornik zdarzeń przechwytuje i analizuje zdarzenia systemu Windows przekazywane z serwera SIEM w sieci.|
+|Czytnik dziennika zdarzeń systemu Windows|Czytnik dziennika zdarzeń systemu Windows odczytuje i analizuje zdarzenia systemu Windows przekazane do dziennika zdarzeń systemu Windows bramy usługi ATA z kontrolerów domeny.|
+|Translator aktywności sieciowej | Służy do przeprowadzania translacji przeanalizowanego ruchu na logiczną reprezentację ruchu używaną przez usługę ATA (NetworkActivity).
+|Mechanizm rozpoznawania jednostek|Mechanizm rozpoznawania jednostek pobiera przeanalizowane dane (ruch sieciowy i zdarzenia), a następnie przetwarza je za pomocą usługi Active Directory w celu znalezienia informacji o kontach i tożsamościach. Informacje te są następnie dopasowywane do adresów IP znalezionych w przeanalizowanych danych. Mechanizm rozpoznawania jednostek w sposób wydajny sprawdza nagłówki pakietów, aby umożliwić analizę pakietów uwierzytelniania pod kątem nazw maszyn, właściwości i tożsamości. Mechanizm rozpoznawania jednostek łączy przeanalizowane pakiety uwierzytelniania z danymi znajdującymi się w rzeczywistym pakiecie.|
+|Nadawca jednostek|Nadawca jednostek wysyła przeanalizowane i dopasowane dane do centrum usługi ATA.|
+
+## Funkcje uproszczonej bramy usługi ATA
+<a id="ata-lightweight-gateway-features" class="xliff"></a>
+
+Następujące funkcje działają inaczej w zależności od tego, czy jest uruchomiona brama usługi ATA, czy uproszczona brama usługi ATA.
+
+-   Uproszczona brama usługi ATA może odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
+
+-   **Kandydat synchronizatora domeny**<br>
+Brama synchronizatora domeny jest odpowiedzialna za aktywne synchronizowanie wszystkich jednostek z konkretnej domeny usługi Active Directory (podobnie do mechanizmu używanego przez kontrolery domeny w przypadku replikacji). Z listy kandydatów wybierana jest losowo jedna brama, która będzie służyć jako synchronizator domeny. <br><br>
+Jeśli synchronizator będzie w trybie offline przez ponad 30 minut, zamiast niego zostanie wybrany inny kandydat. Jeśli dla danej domeny nie ma dostępnego synchronizatora domeny, usługa ATA nie będzie mogła aktywnie synchronizować jednostek i ich zmian. Niemniej usługa ATA będzie reagować i odbierać nowe jednostki po ich wykryciu w monitorowanym ruchu. 
+<br>Jeśli nie ma dostępnego synchronizatora domeny, a użytkownik będzie wyszukiwać jednostkę, z którą nie jest powiązany żaden ruch sieciowy, nie zostaną wyświetlone żadne wyniki.<br><br>
+Domyślnie wszystkie bramy usługi ATA są kandydatami synchronizatora.<br><br>
+Ponieważ wszystkie uproszczone bramy usługi ATA są najprawdopodobniej wdrażane w oddziałach i małych kontrolerach domeny, nie są domyślnymi kandydatami synchronizatora.
 
 
--	**Resource limitations**<br>
-The ATA Lightweight Gateway includes a monitoring component which evaluates the available compute and memory capacity on the domain controller on which it is running. The monitoring process runs every 10 seconds and dynamically updates the CPU and memory utilization quota on the ATA Lightweight Gateway process to make sure that at any given point in time, the domain controller has at least 15% of free compute and memory resources.<br><br>
-No matter what happens on the domain controller, this process always frees up resources to make sure the domain controller's core functionality is not affected.<br><br>
-If this causes the ATA Lightweight Gateway to run out of resources, only partial traffic is monitored and the monitoring alert "Dropped port mirrored network traffic" will appear in the Health page.
+-   **Ograniczenia zasobów**<br>
+Uproszczona brama usługi ATA zawiera składnik monitorowania, który ocenia dostępną moc obliczeniową i pamięć kontrolera domeny, na którym jest uruchomiony. Proces monitorowania jest wykonywany co 10 sekund i dynamicznie aktualizuje przydział użycia procesora CPU i pamięci w procesie uproszczonej bramy usługi ATA, aby upewnić się, że w każdym momencie kontroler domeny ma co najmniej 15% wolnej mocy obliczeniowej i zasobów pamięci.<br><br>
+Niezależnie od tego, co się dzieje w kontrolerze domeny, proces ten zawsze zwalnia zasoby, aby upewnić się, że podstawowa funkcjonalność kontrolera domeny nie zostanie zaburzona.<br><br>
+Jeśli spowoduje to zużycie wszystkich zasobów uproszczonej bramy usługi ATA, tylko część ruchu będzie monitorowana, a na stronie kondycji pojawi się alert monitorowania „Opuszczono ruch sieciowy po dublowaniu portów”.
 
-The following table provides an example of a domain controller with enough compute resource available to allow for a larger quota then is currently needed, so that all traffic is monitored:
+W poniższej tabeli zawarto przykład kontrolera domeny z wystarczającą ilością zasobów obliczeniowych, która umożliwia zastosowanie większego limitu przydziału niż obecnie wymagany, dzięki czemu cały ruch jest monitorowany:
 
 ||||||
 |-|-|-|-|-|
-|Active Directory (Lsass.exe)|ATA Lightweight Gateway (Microsoft.Tri.Gateway.exe)|Miscellaneous (other processes) |ATA Lightweight Gateway Quota|Gateway dropping|
-|30%|20%|10%|45%|No|
+|Usługa Active Directory (Lsass.exe)|Uproszczona brama usługi ATA (Microsoft.Tri.Gateway.exe)|Różne (inne procesy) |Przydział uproszczonej bramy usługi ATA|Brama pomija|
+|30%|20%|10%|45%|Nie|
 
-If Active Directory needs more compute, the quota needed by the ATA Lightweight Gateway is reduced. In the following example, The ATA Lightweight Gateway needs more than the allocated quota and drops some of the traffic (monitoring only partial traffic):
+Jeśli usługa Active Directory potrzebuje więcej mocy obliczeniowej, przydział wymagany przez uproszczoną bramę usługi ATA zostanie zmniejszony. W poniższym przykładzie uproszczona brama usługi ATA potrzebuje więcej zasobów niż zostało jej przydzielone i pomija część ruchu (monitoruje tylko część ruchu):
 
 ||||||
 |-|-|-|-|-|
-|Active Directory (Lsass.exe)|ATA Lightweight Gateway (Microsoft.Tri.Gateway.exe)|Miscellaneous (other processes) |ATA Lightweight Gateway Quota|Is gateway dropping|
-|60%|15%|10%|15%|Yes|
+|Usługa Active Directory (Lsass.exe)|Uproszczona brama usługi ATA (Microsoft.Tri.Gateway.exe)|Różne (inne procesy) |Przydział uproszczonej bramy usługi ATA|Brama pomija|
+|60%|15%|10%|15%|Tak|
 
 
 
-## Your network components
-In order to work with ATA, make sure of the following:
+## Składniki Twojej sieci
+<a id="your-network-components" class="xliff"></a>
+Aby móc pracować z usługą ATA, należy spełnić następujące wymagania:
 
-### Port mirroring
-If you are using ATA Gateways, you have to setup port mirroring for the domain controllers that will be monitored and set the ATA Gateway as the destination using the physical or virtual switches. Another option is to use network TAPs. ATA will work if some but not all of your domain controllers are monitored, but detections will be less effective.
+### Dublowanie portów
+<a id="port-mirroring" class="xliff"></a>
+Jeśli używasz bram usługi ATA, musisz skonfigurować dublowanie portów dla kontrolerów domeny, które będą monitorowane, oraz ustawić bramę usługi ATA jako miejsce docelowe za pomocą przełączników fizycznych lub wirtualnych. Innym rozwiązaniem jest użycie funkcji podsłuchu sieci. Usługa ATA będzie działać, jeśli tylko część kontrolerów domeny jest monitorowana, ale wykrywanie będzie mniej skuteczne.
 
-While port mirroring mirrors all the domain controller network traffic to the ATA Gateway, only a very small percentage of that traffic is then sent, compressed, to the ATA Center for analysis.
+Choć funkcja dublowania portów dubluje całość ruchu sieciowego kontrolera domeny do bramy usługi ATA, tylko niewielka część tego ruchu jest następnie wysyłana po kompresji do centrum usługi ATA w celu analizy.
 
-Your domain controllers and the ATA Gateways can be physical or virtual, see [Configure port mirroring](configure-port-mirroring.md) for more information.
+Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
 
 
-### Events
-To enhance ATA detection of Pass-the-Hash, Brute Force and Honey Tokens, ATA needs Windows Event log ID 4776. This can be forwarded to the ATA Gateway in one of two ways, by configuring the ATA Gateway to listen for SIEM events or by using Windows Event Forwarding.
+### Zdarzenia
+<a id="events" class="xliff"></a>
+Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków siłowych, modyfikacji wrażliwych grup i ataków na przynęty, usługa ATA potrzebuje następujących zdarzeń systemu Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757. Uproszczona brama usługi ATA może odczytywać je automatycznie. W przypadku gdy nie jest ona wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń rozwiązania SIEM lub przez [skonfigurowanie przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
 
--   Configuring the ATA Gateway to listen for SIEM events <br>Configure your SIEM to forward specific Windows events to ATA. ATA supports a number of SIEM vendors. For more information, see [Configure event collection](configure-event-collection.md).
+-   Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM <br>Skonfiguruj system SIEM do przekazywania określonych zdarzeń systemu Windows do usługi ATA. Usługa ATA obsługuje wielu dostawców systemów SIEM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie zbierania zdarzeń](configure-event-collection.md).
 
--   Configuring Windows Event Forwarding<br>Another way ATA can get your events is by configuring your domain controllers to forward Windows event 4776 to your ATA Gateway. This is especially useful if you don't have a SIEM or if your SIEM is not currently supported by ATA. For more information about Windows Event Forwarding in ATA, see [Configuring Windows event forwarding](configure-event-collection.md#configuring-windows-event-forwarding).
+-   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń przez usługę ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń o identyfikatorach 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika zdarzeń systemu Windows do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding). Należy pamiętać, że dotyczy to tylko fizycznych bram usługi ATA, a nie uproszczonych bram usługi ATA.
 
-## See Also
-- [ATA prerequisites](ata-prerequisites.md)
-- [ATA capacity planning](ata-capacity-planning.md)
-- [Configure event collection](configure-event-collection.md)
-- [Configuring Windows event forwarding](configure-event-collection.md#configuring-windows-event-forwarding)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+- [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
+- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 

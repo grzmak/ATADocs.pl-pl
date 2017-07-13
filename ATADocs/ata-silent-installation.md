@@ -1,220 +1,213 @@
 ---
-# required metadata
-
-title: Install Advanced Threat Analytics Silently | Microsoft Docs
-description: This describes how to silently install ATA.
-keywords:
+title: "Instalowanie usługi Advanced Threat Analytics w trybie dyskretnym | Dokumentacja firmy Microsoft"
+description: "Temat opisuje sposób instalacji usługi ATA w trybie dyskretnym."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 02/19/2017
+ms.date: 06/28/2017
 ms.topic: get-started-article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 5b46d53d4e72ebe32b6e1f57960694194b71b31c
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# ATA Silent Installation
-This article provides instructions for silently installing ATA.
-## Prerequisites
 
-Microsoft ATA v1.7 requires the installation of Microsoft .NET Framework 4.6.1. 
+# Instalacja usługi ATA w trybie dyskretnym
+<a id="ata-silent-installation" class="xliff"></a>
+Ten artykuł zawiera instrukcje dotyczące instalowania usługi ATA w trybie dyskretnym.
+## Wymagania wstępne
+<a id="prerequisites" class="xliff"></a>
 
-When you install or update ATA, .Net Framework 4.6.1 will be automatically installed as part of the deployment of Microsoft ATA.
+Usługa ATA 1.8 wymaga zainstalowania programu Microsoft .NET Framework 4.6.1. 
+
+W przypadku instalacji lub aktualizacji usługi ATA platforma .Net Framework 4.6.1 zostanie automatycznie zainstalowana jako część wdrożenia usługi Microsoft ATA.
 
 > [!Note] 
-> The installation of .Net framework 4.6.1 may require rebooting the server. When installing ATA Gateway on Domain Controllers, consider scheduling a maintenance window for these Domain Controllers.
-When using ATA silent installation method, the installer is configured to automatically restart the server at the end of the installation (if necessary). To avoid restarting the server as part of the installation, use the `-NoRestart` flag. When using the `-NoRestart` flag and restart will be required as part of the installation, the installer will pause until the server is restarted. To track the progress of the deployment, monitor ATA installer logs which are located in **%AppData%\Local\Temp**.
+> Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Podczas instalowania bramy usługi ATA na kontrolerach domeny warto pomyśleć o zaplanowaniu okna obsługi dla tych kontrolerów domeny.
+W przypadku użycia dyskretnej metody instalacji usługi ATA instalator jest skonfigurowany tak, aby automatycznie uruchomić ponownie serwer na końcu instalacji (w razie potrzeby). Z powodu usterki Instalatora Windows flaga norestart nie gwarantuje, że serwer nie zostanie uruchomiony ponownie, dlatego upewnij się, że w oknie obsługi będzie uruchamiana tylko instalacja dyskretna.
+
+Aby śledzić postępy wdrażania, monitoruj dzienniki instalatora usługi ATA, które znajdują się w folderze **%AppData%\Local\Temp**.
 
 
-## Install the ATA Center
+## Instalowanie centrum usługi ATA
+<a id="install-the-ata-center" class="xliff"></a>
 
-Use the following command to install the ATA Center:
+Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
-**Syntax**:
+**Składnia**:
 
-    "Microsoft ATA Center Setup.exe" [/quiet] [/NoRestart] [/Help] [--LicenseAccepted] [NetFrameworkCommandLineArguments="/q"] [InstallationPath="<InstallPath>"] [DatabaseDataPath= "<DBPath>"] [CenterIpAddress=<CenterIPAddress>] [CenterPort=<CenterPort>] [CenterCertificateThumbprint="<CertThumbprint>"] 
+    "Microsoft ATA Center Setup.exe" [/quiet] [/Help] [--LicenseAccepted] [NetFrameworkCommandLineArguments="/q"] [InstallationPath="<InstallPath>"] [DatabaseDataPath= "<DBPath>"] [CenterIpAddress=<CenterIPAddress>] [CenterPort=<CenterPort>] [CenterCertificateThumbprint="<CertThumbprint>"] 
     [ConsoleIpAddress=<ConsoleIPAddress>] [ConsoleCertificateThumbprint="<CertThumbprint >"]
     
-**Installation options**:
+**Opcje instalacji**:
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the installer displaying no UI and no prompts.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
-|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Yes|Specifies the parameters for the .Net Framework installation. Must be set to enforce the silent installation of .Net Framework.|
-|LicenseAccepted|--LicenseAccepted|Yes|Indicates that the license was read and approved. Must be set on silent installation.|
+|Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
+|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Tak|Określa parametry dla instalacji programu .Net Framework. Parametr musi być ustawiony w celu wymuszenia instalacji dyskretnej programu .Net Framework.|
+|LicenseAccepted|--LicenseAccepted|Tak|Wskazuje, że licencja została przeczytana i zatwierdzona. Parametr musi być ustawiony w przypadku instalacji dyskretnej.|
 
-**Installation parameters**:
+**Parametry instalacji**:
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|InstallationPath|InstallationPath="<InstallPath>"|No|Sets the path for the installation of ATA binaries. Default path: C:\Program Files\Microsoft Advanced Threat Analytics\Center|
-|DatabaseDataPath|DatabaseDataPath= "<DBPath>"|No|Sets the path for the ATA Database data folder. Default path: C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|
-|CenterIpAddress|CenterIpAddress=<CenterIPAddress>|Yes|Sets the IP address of the ATA Center Service|
-|CenterPort|CenterPort=<CenterPort>|Yes|Sets the network port of the ATA Center Service|
-|CenterCertificateThumbprint|CenterCertificateThumbprint="<CertThumbprint>"|No|Sets the certificate thumbprint for the ATA Center Service. This Certificate is used to secure communication between the ATA Center and the ATA Gateway. If not set, the installation will generate a self-signed certificate.|
-|ConsoleIpAddress|ConsoleIpAddress=<ConsoleIPAddress>|Yes|Sets the IP address of the ATA Console|
-|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint="<CertThumbprint >"|No|Specifies the certificate thumbprint for the ATA Console. This Certificate is used to validate the identity of the ATA Console website.If not specified, the installation will generate a self-signed certificate|
+|InstallationPath|InstallationPath="<InstallPath>"|Nie|Ustawia ścieżkę instalacji plików binarnych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center|
+|DatabaseDataPath|DatabaseDataPath="<DBPath>"|Nie|Ustawia ścieżkę folderu danych bazy danych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|
+|CenterIpAddress|CenterIpAddress=<CenterIPAddress>|Tak|Ustawia adres IP centrum usługi ATA.|
+|CenterPort|CenterPort=<CenterPort>|Tak|Ustawia port sieciowy centrum usługi ATA.|
+|CenterCertificateThumbprint|CenterCertificateThumbprint="<CertThumbprint>"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
+|ConsoleIpAddress|ConsoleIpAddress=<ConsoleIPAddress>|Tak|Ustawia adres IP konsoli usługi ATA.|
+|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint="<CertThumbprint >"|Nie|Określa odcisk palca certyfikatu dla konsoli usługi ATA. Ten certyfikat jest wykorzystywany do sprawdzania tożsamości witryny konsoli usługi ATA. Jeśli nie jest określony, instalacja wygeneruje certyfikat z podpisem własnym.|
 
-**Examples**:
-To install the ATA Center with default installation paths and a single IP address:
+**Przykłady**: aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instalacji i pojedynczego adresu IP:
 
     "Microsoft ATA Center Setup.exe" /quiet --LicenseAccepted NetFrameworkCommandLineArguments="/q" CenterIpAddress=192.168.0.10
     CenterPort=444 ConsoleIpAddress=192.168.0.10
 
-To install the ATA Center with default installation paths, two IP addresses, and user-defined certificate thumbprints:
+Aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instalacji, dwóch adresów IP i odcisków palców certyfikatów zdefiniowanych przez użytkownika:
 
     "Microsoft ATA Center Setup.exe" /quiet --LicenseAccepted NetFrameworkCommandLineArguments ="/q" CenterIpAddress=192.168.0.10 CenterPort=443 CenterCertificateThumbprint= ‎"1E2079739F624148ABDF502BF9C799FCB8C7212F"
     ConsoleIpAddress=192.168.0.11  ConsoleCertificateThumbprint="G9530253C976BFA9342FD1A716C0EC94207BFD5A"
 
-## Update the ATA Center
+## Zaktualizuj centrum usługi ATA
+<a id="update-the-ata-center" class="xliff"></a>
 
-Use the following command to update the ATA Center:
+Użyj poniższego polecenia, aby zaktualizować centrum usługi ATA:
 
-**Syntax**:
+**Składnia**:
 
-    "Microsoft ATA Center Setup.exe" [/quiet] [-NoRestart] /Help] [NetFrameworkCommandLineArguments="/q"]
+    "Microsoft ATA Center Setup.exe" [/quiet] [/Help] [NetFrameworkCommandLineArguments="/q"]
 
 
-**Installation options**:
+**Opcje instalacji**:
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the installer displaying no UI and no prompts.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, the UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
-|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Yes|Specifies the parameters for the .Net Framework installation. Must be set to enforce the silent installation of .Net Framework.|
+|Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
+|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Tak|Określa parametry dla instalacji programu .Net Framework. Parametr musi być ustawiony w celu wymuszenia instalacji dyskretnej programu .Net Framework.|
 
 
-When updating ATA, the installer automatically detects that ATA is already installed on the server, and no update installation option is required.
+Podczas aktualizowania usługi ATA instalator automatycznie wykrywa, czy usługa ATA jest już zainstalowana na serwerze i czy nie wymaga się zastosowania aktualizacji instalacji.
 
-**Examples**:
-To update the ATA Center silently. In large environments, the ATA Center update can take a while to complete. Monitor ATA logs to track the progress of the update.
+**Przykłady**: aby zaktualizować centrum usługi ATA w trybie dyskretnym. W dużych środowiskach aktualizacja centrum usługi ATA może wymagać trochę czasu. Monitoruj dzienniki usługi ATA, aby śledzić postępy aktualizacji.
 
-    	"Microsoft ATA Center Setup.exe" /quiet NetFrameworkCommandLineArguments="/q"
+        "Microsoft ATA Center Setup.exe" /quiet NetFrameworkCommandLineArguments="/q"
 
-## Uninstall the ATA Center silently
+## Odinstalowywanie centrum usługi ATA w trybie dyskretnym
+<a id="uninstall-the-ata-center-silently" class="xliff"></a>
 
-Use the following command to perform a silent uninstall of the ATA Center:
-**Syntax**:
+Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
-    Microsoft ATA Center Setup.exe [/quiet] [/Uninstall] [/NoRestart] [/Help]
+    Microsoft ATA Center Setup.exe [/quiet] [/Uninstall] [/Help]
      [--DeleteExistingDatabaseData]
 
-**Installation options**:
+**Opcje instalacji**:
 
-|Name|Syntax|Mandatory for silent uninstallation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the uninstaller displaying no UI and no prompts.|
-|Uninstall|/uninstall|Yes|Runs the silent uninstallation of the ATA Center from the server.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, the UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
+|Quiet|/quiet|Tak|Uruchamia dezinstalator bez interfejsu użytkownika i bez monitów.|
+|Odinstaluj|/uninstall|Tak|Uruchamia odinstalowywanie centrum usługi ATA z serwera w trybie dyskretnym.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
 
-**Installation parameters**:
+**Parametry instalacji**:
 
-|Name|Syntax|Mandatory for silent uninstallation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
-|DeleteExistingDatabaseData|DeleteExistingDatabaseData|No|Deletes all the files in the existing database.|
+|DeleteExistingDatabaseData|DeleteExistingDatabaseData|Nie|Usuwa wszystkie pliki z istniejącej bazy danych.|
 
-**Examples**:
-To silently uninstall the ATA Center from the server, removing all existing database data:
+**Przykłady**: aby odinstalować centrum usługi ATA z serwera w trybie dyskretnym, usuwając wszystkie istniejące dane z bazy danych:
 
 
     "Microsoft ATA Center Setup.exe" /quiet /uninstall --DeleteExistingDatabaseData
 
-## ATA Gateway Silent Installation
-Use the following command to silently install the ATA Gateway:
+## Instalacja bramy usługi ATA w trybie dyskretnym
+<a id="ata-gateway-silent-installation" class="xliff"></a>
+Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
 
-**Syntax**:
+**Składnia**:
 
-    Microsoft ATA Gateway Setup.exe [/quiet] [/NoRestart] [/Help] [NetFrameworkCommandLineArguments ="/q"] 
+    Microsoft ATA Gateway Setup.exe [/quiet] [/Help] [NetFrameworkCommandLineArguments ="/q"] 
     [GatewayCertificateThumbprint="<CertThumbprint >"] [ConsoleAccountName="<AccountName>"] 
     [ConsoleAccountPassword="<AccountPassword>"]
 
-**Installation options**:
+> [!NOTE]
+> Jeśli pracujesz na komputerze przyłączonym do domeny i logowanie zostało wykonane za pomocą nazwy użytkownika i hasła administratora usługi ATA, nie trzeba podawać poświadczeń w tym miejscu.
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+
+**Opcje instalacji**:
+
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the installer displaying no UI and no prompts.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
-|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Yes|Specifies the parameters for the .Net Framework installation. Must be set to enforce the silent installation of .Net Framework.|
+|Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
+|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Tak|Określa parametry dla instalacji programu .Net Framework. Parametr musi być ustawiony w celu wymuszenia instalacji dyskretnej programu .Net Framework.|
 
-**Installation parameters**:
+**Parametry instalacji**:
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|GatewayCertificateThumbprint|GatewayCertificateThumbprint="<CertThumbprint >"|No|Sets the certificate thumbprint for the ATA Center service. This certificate is used to secure communication between the ATA Center and the ATA Gateway. If not set, the installation will generate a self-signed certificate.|
-|ConsoleAccountName|ConsoleAccountName="<AccountName>"|Yes|Sets the name of the user account (user@domain.com) that is used to register the ATA Gateway with the ATA Center.|
-|ConsoleAccountPassword|ConsoleAccountPassword="<AccountPassword>"|Yes|Sets the password for the user account (user@domain.com) that is used to register the ATA Gateway with the ATA Center.|
+|GatewayCertificateThumbprint|GatewayCertificateThumbprint="<CertThumbprint >"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
+|ConsoleAccountName|ConsoleAccountName="<AccountName>"|Tak|Określa nazwę konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
+|ConsoleAccountPassword|ConsoleAccountPassword="<AccountPassword>"|Tak|Określa hasło konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 
-**Examples**:
-To silently install the ATA Gateway and register it with the ATA Center using the specified credentials:
+**Przykłady**: Aby dyskretnie zainstalować bramę usługi ATA, zaloguj się na komputerze przyłączonym do domeny za pomocą poświadczeń administratora usługi ATA, a wtedy podawanie poświadczeń nie będzie konieczne. W przeciwnym razie zarejestruj ją w centrum usługi ATA za pomocą podanych poświadczeń:
 
     "Microsoft ATA Gateway Setup.exe" /quiet NetFrameworkCommandLineArguments="/q" 
     ConsoleAccountName="user@contoso.com" ConsoleAccountPassword="userpwd"
     
 
-## Update the ATA Gateway
+## Aktualizacja bramy usługi ATA
+<a id="update-the-ata-gateway" class="xliff"></a>
 
-Use the following command to silently update the ATA Gateway:
+Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dyskretnym:
 
-**Syntax**:
+**Składnia**:
 
-    Microsoft ATA Gateway Setup.exe [/quiet] [/NoRestart] /Help] [NetFrameworkCommandLineArguments="/q"]
+    Microsoft ATA Gateway Setup.exe [/quiet] [/Help] [NetFrameworkCommandLineArguments="/q"]
 
 
-**Installation options**:
+**Opcje instalacji**:
 
-|Name|Syntax|Mandatory for silent installation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the installer displaying no UI and no prompts.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, the UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
-|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Yes|Specifies the parameters for the .Net Framework installation. Must be set to enforce the silent installation of .Net Framework.|
+|Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
+|NetFrameworkCommandLineArguments="/q"|NetFrameworkCommandLineArguments="/q"|Tak|Określa parametry dla instalacji programu .Net Framework. Parametr musi być ustawiony w celu wymuszenia instalacji dyskretnej programu .Net Framework.|
 
 
-**Examples**:
-To update the ATA Gateway silently:
+**Przykłady**: aby zaktualizować bramę usługi ATA w trybie dyskretnym:
 
-    	Microsoft ATA Gateway Setup.exe /quiet NetFrameworkCommandLineArguments="/q"
+        Microsoft ATA Gateway Setup.exe /quiet NetFrameworkCommandLineArguments="/q"
 
-## Uninstall the ATA Gateway silently
+## Odinstalowywanie bramy usługi ATA w trybie dyskretnym
+<a id="uninstall-the-ata-gateway-silently" class="xliff"></a>
 
-Use the following command to perform a silent uninstall of the ATA Gateway:
-**Syntax**:
+Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
-    Microsoft ATA Gateway Setup.exe [/quiet] [/Uninstall] [/NoRestart] [/Help]
+    Microsoft ATA Gateway Setup.exe [/quiet] [/Uninstall] [/Help]
     
-**Installation options**:
+**Opcje instalacji**:
 
-|Name|Syntax|Mandatory for silent uninstallation?|Description|
+|Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
-|Quiet|/quiet|Yes|Runs the uninstaller displaying no UI and no prompts.|
-|Uninstall|/uninstall|Yes|Runs the silent uninstallation of the ATA Gateway from the server.|
-|NoRestart|/norestart|No|Suppresses any attempts to restart. By default, the UI will prompt before restart.|
-|Help|/help|No|Provides help and quick reference. Displays the correct use of the setup command including a list of all options and behaviors.|
+|Quiet|/quiet|Tak|Uruchamia dezinstalator bez interfejsu użytkownika i bez monitów.|
+|Odinstaluj|/uninstall|Tak|Uruchamia odinstalowywanie bramy usługi ATA z serwera w trybie dyskretnym.|
+|Pomoc|/help|Nie|Zapewnia pomoc i szybki dostęp do informacji. Wyświetla prawidłowe użycie poleceń instalatora, łącznie z listą wszystkich opcji i zachowań.|
 
-**Examples**:
-To silently uninstall the ATA Gateway from the server:
+**Przykłady**: aby odinstalować bramę usługi ATA z serwera w trybie dyskretnym:
 
 
     Microsoft ATA Gateway Setup.exe /quiet /uninstall
@@ -228,8 +221,9 @@ To silently uninstall the ATA Gateway from the server:
 
 
 
-## See Also
+## Zobacz też
+<a id="see-also" class="xliff"></a>
 
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-- [Configure event collection](configure-event-collection.md)
-- [ATA prerequisites](ata-prerequisites.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
