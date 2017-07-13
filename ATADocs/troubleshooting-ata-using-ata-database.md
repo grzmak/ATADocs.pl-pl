@@ -1,64 +1,60 @@
 ---
-# required metadata
-
-title: Troubleshooting Advanced Threat Analytics using the database | Microsoft Docs
-description: Describes how you can use the ATA database to help troubleshoot issues 
-keywords:
+title: "Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu bazy danych | Dokumentacja firmy Microsoft"
+description: "Opis sposobu rozwiązywania problemów przy użyciu bazy danych usługi ATA"
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 1/23/2017
+ms.date: 6/23/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: 377a3c81-5c1d-486f-8942-85249aacf560
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 112ee57f79b20b4e42b15c6fdc4566bbdcebe29f
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Troubleshooting ATA using the ATA database
-ATA uses MongoDB as its database.
-You can interact with the database using the default command line or using a user interface tool to perform advanced tasks and troubleshooting.
 
-## Interacting with the database
-The default and most basic way to query the database is using the Mongo shell:
+# Rozwiązywanie problemów z usługą ATA przy użyciu bazy danych usługi ATA
+<a id="troubleshooting-ata-using-the-ata-database" class="xliff"></a>
+Usługa ATA używa produktu MongoDB jako swojej bazy danych.
+W celu wykonywania zaawansowanych zadań i rozwiązywania problemów możesz użyć domyślnego wiersza polecenia lub narzędzia interfejsu użytkownika bazy danych.
 
-1.  Open a command line window and change the path to the MongoDB bin folder. The default path is: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**.
+## Interakcja z bazą danych
+<a id="interacting-with-the-database" class="xliff"></a>
+Domyślną i najbardziej podstawową metodą wysyłania zapytań do bazy danych jest użycie powłoki Mongo:
 
-2.  Run: `mongo.exe ATA`. Make sure to type ATA with all capital letters.
+1.  Otwórz okno wiersza polecenia i zmień ścieżkę na folder bin bazy danych MongoDB. Domyślna ścieżka to: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**.
 
-|How to...|Syntax|Notes|
+2.  Uruchom polecenie `mongo.exe ATA`. Upewnij się, że ciąg „ATA” jest wpisany tylko wielkimi literami.
+
+|Zadanie|Składnia|Uwagi|
 |-------------|----------|---------|
-|Check for collections in the database.|`show collections`|Useful as an end-to-end test to see that traffic is being written to the database and that event 4776 is being received by ATA.|
-|Get the details of a user/computer/group (UniqueEntity), such as user ID.|`db.UniqueEntity.find({SearchNames: "<name of entity in lower case>"})`||
-|Find Kerberos authentication traffic originating from a specific computer on a specific day.|`db.KerberosAs_<datetime>.find({SourceComputerId: "<Id of the source computer>"})`|To get the &lt;ID of the source computer&gt; you can query the UniqueEntity collections, as shown in the example.<br /><br />Each network activity type, for example Kerberos authentications, has its own collection per UTC date.|
-|Find NTLM traffic originating from a specific computer related to a specific account on a specific day.|`db.Ntlm_<datetime>.find({SourceComputerId: "<Id of the source computer>", SourceAccountId: "<Id of the account>"})`|To get the &lt;ID of the source computer&gt; and &lt;ID of the account&gt; you can query the UniqueEntity collections, as shown in the example.<br /><br />Each network activity type, for example NTLM authentications, has its own collection per UTC date.|
-|Search for advanced properties such as the active dates of an account. |`db.UniqueEntityProfile.find({UniqueEntityId: "<Id of the account>")`|To get the &lt;ID of the account&gt; you can query the UniqueEntity collections, as shown in the example.<br>The property name that shows the dates in which the account has been active is called: "ActiveDates". For example you may want to know if an account has at least 21 days of activity for the abnormal behavior machine learning algorithm to be able to run on it.|
-|Make advanced configuration changes. In this example we change the send queue size for all ATA Gateways to 10,000.|`db.SystemProfile.update( {_t: "GatewaySystemProfile"} ,`<br>`{$set:{"Configuration.EntitySenderConfiguration.EntityBatchBlockMaxSize" : "10000"}})`|`|
+|Sprawdzanie kolekcji w bazie danych.|`show collections`|Użyteczne jako kompletny test umożliwiający sprawdzenie, czy ruch sieciowy jest zapisywany w bazie danych oraz czy zdarzenie 4776 jest odbierane przez usługę ATA.|
+|Pobieranie szczegółów użytkownika/komputera/grupy (UniqueEntity), takich jak identyfikator użytkownika.|`db.UniqueEntity.find({SearchNames: "<name of entity in lower case>"})`||
+|Znajdowanie ruchu sieciowego uwierzytelniania Kerberos pochodzącego z określonego komputera w określonym dniu.|`db.KerberosAs_<datetime>.find({SourceComputerId: "<Id of the source computer>"})`|Aby uzyskać wartość &lt;ID of the source computer&gt; (identyfikator komputera źródłowego), można wykonać zapytanie względem kolekcji UniqueEntity, jak pokazano w przykładzie.<br /><br />Każdy typ działania w sieci, na przykład uwierzytelnienia Kerberos, ma swoją własną kolekcję dla daty UTC.|
+|Znajdowanie ruchu NTLM pochodzącego z określonego komputera i związanego z określonym kontem w określonym dniu.|`db.Ntlm_<datetime>.find({SourceComputerId: "<Id of the source computer>", SourceAccountId: "<Id of the account>"})`|Aby uzyskać wartość &lt;ID of the source computer&gt; (identyfikator komputera źródłowego) i &lt;ID of the account&gt; (identyfikator konta), można wykonać zapytanie względem kolekcji UniqueEntity, jak pokazano w przykładzie.<br /><br />Każdy typ działania w sieci, na przykład uwierzytelnienia NTLM, ma swoją własną kolekcję dla daty UTC.|
+|Wyszukiwanie zaawansowanych właściwości, takich jak daty aktywności konta. |`db.UniqueEntityProfile.find({UniqueEntityId: "<Id of the account>")`|Aby uzyskać wartość &lt;ID of the account&gt; (identyfikator konta), można wykonać zapytanie względem kolekcji UniqueEntity, jak pokazano w przykładzie.<br>Nazwa właściwości zawierającej daty aktywności konta to „ActiveDates”. Na przykład konieczne może być ustalenie, czy konto było aktywne przez co najmniej 21 dni, aby można było uruchomić dla tego konta algorytm uczenia maszynowego umożliwiający rozpoznawanie nietypowego zachowania.|
+|Wprowadzanie zaawansowanych zmian konfiguracji. W tym przykładzie rozmiar kolejki wysyłania dla wszystkich bram usługi ATA jest zmieniany na 10 000.|`db.SystemProfile.update( {_t: "GatewaySystemProfile"} ,`<br>`{$set:{"Configuration.EntitySenderConfiguration.EntityBatchBlockMaxSize" : "10000"}})`|`|
 
-The following example provides sample code using the syntax provided above. If you are investigating a suspicious activity that occurred on 20/10/2015 and want to learn more about the NTLM activities that "John Doe" performed on that day:<br /><br />First, find the ID of "John Doe"
+W poniższym przykładzie przedstawiono przykładowy kod, w którym użyto powyższej składni. Jeśli badane są podejrzane działania z dnia 2015-10-20 i chcesz dowiedzieć się więcej o działaniach związanych z protokołem NTLM podejmowanych przez użytkownika „John Doe” w tym dniu:<br /><br />Po pierwsze znajdź identyfikator użytkownika „John Doe”.
 
-`db.UniqueEntity.find({Name: "John Doe"})`<br>Take a note of his ID as indicated by the value of `_id` For our example, let's assume the ID is `123bdd24-b269-h6e1-9c72-7737as875351`<br>Then, search for the collection with the closest date that is before the date you are looking for, in our example 20/10/2015.<br>Then, search for John Doe's account NTLM activities: 
+`db.UniqueEntity.find({Name: "John Doe"})`<br>Zanotuj jego identyfikator określony przez wartość `_id`. W naszym przykładzie załóżmy, że identyfikator to `123bdd24-b269-h6e1-9c72-7737as875351`.<br>Następnie wyszukaj kolekcję z najbliższą datą poprzedzającą poszukiwaną datę (2015-10-20 w naszym przykładzie).<br>Następnie wyszukaj działania związane z protokołem NTLM konta użytkownika John Doe: 
 
 `db.Ntlms_<closest date>.find({SourceAccountId: "123bdd24-b269-h6e1-9c72-7737as875351"})`
 
-## See Also
-- [ATA prerequisites](ata-prerequisites.md)
-- [ATA capacity planning](ata-capacity-planning.md)
-- [Configure event collection](configure-event-collection.md)
-- [Configuring Windows event forwarding](configure-event-collection.md#configuring-windows-event-forwarding)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+- [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
+- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

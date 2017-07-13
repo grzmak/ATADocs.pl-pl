@@ -1,105 +1,102 @@
 ---
-# required metadata
-
-title: Troubleshooting Advanced Threat Analytics using the logs | Microsoft Docs
-description: Describes how you can use the ATA logs to troubleshoot issues
-keywords:
+title: "Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu dzienników | Dokumentacja firmy Microsoft"
+description: "Opis sposobu rozwiązywania problemów przy użyciu dzienników usługi ATA."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 04/30/2017
+ms.date: 06/30/2017
 ms.topic: article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: d5a3587de2aa628eb61ace199b2282e7d7fe773a
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Troubleshooting ATA using the ATA logs
-The ATA logs provide insight into what each component of ATA is doing at any given point in time.
 
-## ATA Gateway logs
-In this section, every reference to the ATA Gateway is relevant also for the ATA Lightweight Gateway. 
+# Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
+<a id="troubleshooting-ata-using-the-ata-logs" class="xliff"></a>
+Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczególne składniki usługi ATA w dowolnym momencie.
 
-The ATA Gateway logs are located in a subfolder called **Logs** where ATA is installed; the default location is: **C:\Program Files\Microsoft Advanced Threat Analytics\**. In the default installation location, it can be found at: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
+## Dzienniki bramy usługi ATA
+<a id="ata-gateway-logs" class="xliff"></a>
+W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także uproszczonej bramy usługi ATA. 
 
-The ATA Gateway has the following logs:
+Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
 
--   **Microsoft.Tri.Gateway.log** – This log contains everything that happens in the ATA Gateway (including resolution and errors). Its main use is getting the overall status of all operations in the chronological order in which they occurred.
+Brama usługi ATA ma następujące dzienniki:
 
--   **Microsoft.Tri.Gateway-Resolution.log** – This log contains the resolution details of the entities seen in traffic by the ATA Gateway. Its main use is investigating resolution issues of entities.
+-   **Microsoft.Tri.Gateway.log** — ten dziennik zawiera informacje o wszystkich zdarzeniach w bramie usługi ATA (w tym o rozwiązaniach i błędach). Służy on głównie do uzyskiwania informacji o ogólnym stanie wszystkich operacji w kolejności chronologicznej, w której miały miejsce.
 
--   **Microsoft.Tri.Gateway-Errors.log** – This log contains just the errors that are caught by the ATA Gateway. Its main use is performing health checks and investigating issues that need to be correlated to specific times.
+-   **Microsoft.Tri.Gateway-Resolution.log** — ten dziennik zawiera szczegóły rozwiązań jednostek widocznych w ruchu dla bramy usługi ATA. Służy on głównie do badania problemów dotyczących rozwiązań jednostek.
 
--   **Microsoft.Tri.Gateway-ExceptionStatistics.log** – This log groups all similar errors and exceptions, and measures their count.
-    This file starts out  empty each time the ATA Gateway service starts and is updated every minute. Its main use is understanding if there are any new errors or issues with the ATA Gateway (because the errors are grouped it is easier to read and quickly understand if there are any new issues).
--	**Microsoft.Tri.Gateway.Updater.log** - This log is used for the gateway updater process, which is responsible for updating the gateway if configured to do so automatically. 
-For the ATA Lightweight Gateway, the gateway updater process is also responsible  for the resource limitations of the ATA Lightweight Gateway.
--	**Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** - This log groups all similar errors and exceptions together, and measures their count. This file starts out empty each time the ATA Updater service starts and is updated every minute. It enables you to understand if there are any new errors or issues with the ATA Updater. The errors are grouped to make it easier to quickly understand if any new errors or issues are detected.
+-   **Microsoft.Tri.Gateway-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez bramę usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
+
+-   **Microsoft.Tri.Gateway-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
+    Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących bramy usługi ATA (pogrupowane błędy jest łatwiej odczytywać i szybko sprawdzać, czy wystąpiły nowe problemy).
+-   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku uproszczonej bramy usługi ATA proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów uproszczonej bramy usługi ATA.
+-   **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
 
 > [!NOTE]
-> The first three log files have a maximum size of up to 50 MB. When that size is reached, a new log file is opened and the previous one is renamed to "&lt;original file name&gt;-Archived-00000" where the number increments each time it is renamed. By default, if more than 10 files from the same type already exist, the oldest are deleted.
+> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
-## ATA Center logs
-The ATA Center logs are located in a subfolder called **Logs**. In the default installation location, it can be found at: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**".
+## Dzienniki centrum usługi ATA
+<a id="ata-center-logs" class="xliff"></a>
+Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
 > [!Note]
-> The ATA console logs that were formerly under IIS logs are now located under ATA Center logs.
+> Dzienniki konsoli ATA, które były wcześniej dziennikami usług IIS, teraz znajdują się w obszarze dzienników centrum usługi ATA.
 
-The ATA Center has the following logs:
+Centrum usługi ATA ma następujące dzienniki:
 
--   **Microsoft.Tri.Center.log** – This log contains everything that happens in the ATA Center, including detections and errors. Its main use is getting the overall status of all operations in the chronological order in which they occurred.
+-   **Microsoft.Tri.Center.log** — ten dziennik zawiera informacje o wszystkich zdarzeniach w centrum usługi ATA, w tym o wykrytych zdarzeniach i błędach. Służy on głównie do uzyskiwania informacji o ogólnym stanie wszystkich operacji w kolejności chronologicznej, w której miały miejsce.
 
--   **Microsoft.Tri.Center-Detection.log** – This log contains just the detection details of the ATA Center. Its main use is investigating detection issues.
+-   **Microsoft.Tri.Center-Detection.log** — ten dziennik zawiera tylko szczegóły wykrytych zdarzeń centrum usługi ATA. Służy on głównie do badania problemów dotyczących wykrywania.
 
--   **Microsoft.Tri.Center-Errors.log** – This log contains just the errors that are caught by the ATA Center. Its main use is performing health checks and investigating issues that need to be correlated to specific times.
+-   **Microsoft.Tri.Center-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez centrum usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
 
--   **Microsoft.Tri.Center-ExceptionStatistics.log** – This log groups all similar errors and exceptions, and measures their count.
-    This file starts out empty each time the ATA Center service starts and is updated every minute. Its main use is understanding if there are any new errors or issues with the ATA Center - because the errors are grouped it is easier to quickly understand if there is a new errors or issues.
+-   **Microsoft.Tri.Center-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
+    Po każdym uruchomieniu centrum usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do rozpoznania, czy wystąpiły nowe błędy lub problemy dotyczące centrum usługi ATA — pogrupowane błędy można łatwiej odczytać i szybciej zorientować się, czy pojawiły się nowe błędy lub problemy.
 
 > [!NOTE]
-> The first three log files have a maximum size of up to 50 MB. When that size is reached, a new log file is opened and the previous one is renamed to "&lt;original file name&gt;-Archived-00000" where the number increments each time it is renamed. By default, if more than 10 files from the same type already exist, the oldest are deleted.
+> Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
 
-## ATA Deployment logs
-The ATA deployment logs are located in the temp directory for the user who installed the product. In the default installation location, it can be found at: **C:\Users\Administrator\AppData\Local\Temp** (or one directory above %temp%).
+## Dzienniki wdrożenia usługi ATA
+<a id="ata-deployment-logs" class="xliff"></a>
+Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Users\Administrator\AppData\Local\Temp** (lub w katalogu nadrzędnym folderu %temp%).
 
-ATA Center deployment logs:
+Dzienniki wdrożenia centrum usługi ATA:
 
--   **Microsoft Advanced Threat Analytics Center_YYYYMMDDHHMMSS.log** - This log lists the steps in the process of the deployment of the ATA Center. Its main use is tracking the ATA Center deployment process.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS.log** — ten dziennik zawiera listę czynności w procesie wdrożenia centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania centrum usługi ATA.
 
--   **Microsoft Advanced Threat Analytics Center_YYYYMMDDHHMMSS_0_MongoDBPackage.log** - This log lists the steps in the process of MongoDB deployment on the ATA Center. Its main use is tracking the MongoDB deployment process.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS_0_MongoDBPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bazy danych MongoDB w centrum usługi ATA. Służy on głównie do śledzenia procesu wdrażania bazy danych MongoDB.
 
--   **Microsoft Advanced Threat Analytics Center_YYYYMMDDHHMMSS_1_MsiPackage.log** - This log file lists the steps in the process of the deployment of the ATA Center binaries. Its main use is tracking the deployment of the ATA Center binaries.
+-   **Microsoft Advanced Threat Analytics Center_RRRRMMDDGGMMSS_1_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych centrum usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych centrum usługi ATA.
 
-ATA Gateway and ATA Lightweight Gateway deployment logs:
+Dzienniki wdrażania bramy usługi ATA i uproszczonej bramy usługi ATA:
 
--   **Microsoft Advanced Threat Analytics Gateway_YYYYMMDDHHMMSS.log** - This log lists the steps in the process of the deployment of the ATA Gateway. Its main use is tracking the ATA Gateway deployment process.
+-   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS.log** — ten dziennik zawiera listę czynności w procesie wdrożenia bramy usługi ATA. Służy on głównie do śledzenia procesu wdrażania bramy usługi ATA.
 
--   **Microsoft Advanced Threat Analytics Gateway_YYYYMMDDHHMMSS_001_MsiPackage.log** - This log file lists the steps in the process of the deployment of the ATA Gateway binaries. Its main use is tracking the deployment of the ATA Gateway binaries.
+-   **Microsoft Advanced Threat Analytics Gateway_RRRRMMDDGGMMSS_001_MsiPackage.log** — ten dziennik zawiera listę czynności w procesie wdrożenia plików binarnych bramy usługi ATA. Służy on głównie do śledzenia wdrożenia plików binarnych bramy usługi ATA.
 
 
 > [!NOTE] 
-> In addition to the deployment logs mentioned here, there are other logs that begin with "Microsoft Advanced Threat Analytics" that can also provide additional information on the deployment process.
+> Oprócz dzienników wdrażania wspomnianych tutaj istnieją inne dzienniki zaczynające się od „Microsoft Advanced Threat Analytics”, które także mogą zawierać dodatkowe informacje na temat procesu wdrażania.
 
 
-## See Also
-- [ATA prerequisites](ata-prerequisites.md)
-- [ATA capacity planning](ata-capacity-planning.md)
-- [Configure event collection](configure-event-collection.md)
-- [Configuring Windows event forwarding](configure-event-collection.md#configuring-windows-event-forwarding)
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+## Zobacz też
+<a id="see-also" class="xliff"></a>
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+- [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
+- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

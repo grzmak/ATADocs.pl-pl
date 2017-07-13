@@ -1,70 +1,65 @@
 ---
-# required metadata
-
-title: Install Advanced Threat Analytics - Step 3 | Microsoft Docs
-description: Step three of installing ATA helps you download the ATA Gateway setup package.
-keywords:
+title: "Instalowanie usługi Advanced Threat Analytics — Krok 3 | Dokumentacja firmy Microsoft"
+description: "W trzecim kroku procesu instalowania usługi ATA znajdują się informacje ułatwiające pobranie pakietu instalacyjnego bramy usługi ATA."
+keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 01/23/2017
+ms.date: 06/12/2017
 ms.topic: get-started-article
-ms.prod:
+ms.prod: 
 ms.service: advanced-threat-analytics
-ms.technology:
+ms.technology: 
 ms.assetid: 7fb024e6-297a-4ad9-b962-481bb75a0ba3
-
-# optional metadata
-
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer: bennyl
 ms.suite: ems
-#ms.tgt_pltfrm:
-#ms.custom:
-
+ms.openlocfilehash: 68c169ffd0f42bd8b030dc12f4711cbde2718a99
+ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/30/2017
 ---
-
-*Applies to: Advanced Threat Analytics version 1.7*
-
+*Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Install ATA - Step 3
+
+# Instalowanie usługi ATA — Krok 3
+<a id="install-ata---step-3" class="xliff"></a>
 
 >[!div class="step-by-step"]
-[« Step 2](install-ata-step2.md)
-[Step 4 »](install-ata-step4.md)
+[« Krok 2](install-ata-step2.md)
+[Krok 4 »](install-ata-step4.md)
 
-## Step 3. Download the ATA Gateway setup package
-After configuring the domain connectivity settings you can download the ATA Gateway setup package. The ATA Gateway can be installed on a dedicated server or on a domain controller. If you install it on a domain controller, it will be installed as an ATA Lightweight Gateway. For more information on the ATA Lightweight Gateway, see [ATA Architecture](ata-architecture.md). 
+## Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
+<a id="step-3-download-the-ata-gateway-setup-package" class="xliff"></a>
+Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub w kontrolerze domeny. Jeśli brama zostanie zainstalowana w kontrolerze domeny, będzie ona zainstalowana jako uproszczone brama usługi ATA. Więcej informacji dotyczących uproszczonej bramy usługi ATA można znaleźć w temacie [Architektura usługi ATA](ata-architecture.md). 
 
-If this is the first time you are downloading an ATA Gateway, you will get the following screen:
+Kliknij pozycję Pobierz instalatora bramy na liście kroków w górnej części strony, aby przejść do strony Bramy.
 
-![ATA gateway configuration settings](media/ATA_1.7-welcome-download-gateway.PNG)
-
-If this is not your first time downloading an ATA Gateway, this welcome message will not appear.
+![Ustawienia konfiguracji bramy usługi ATA](media/ATA_1.7-welcome-download-gateway.PNG)
 
 > [!NOTE] 
-> To reach the configuration screen later, click the **settings icon** (upper right corner) and select **Configuration**, then, under **System**, click **Gateways**.  
+> Aby później uzyskać dostęp do ekranu konfiguracji bramy, kliknij **ikonę ustawień** (w prawym górnym rogu) i wybierz pozycję **Konfiguracja**, a następnie w obszarze **System** kliknij pozycję **Bramy**.  
 
-1.  Click **"Download Gateway Setup"**.
-2.  Save the package locally.
-3.  Copy the package to the dedicated server or domain controller onto which you are installing the ATA Gateway. Alternatively, you can open the ATA Console from the dedicated server or domain controller and skip this step.
+1.  Kliknij pozycję **Instalacja bramy**.
+  ![Pobieranie instalatora bramy usługi ATA](media/download-gateway-setup.png)
+2.  Zapisz pakiet lokalnie.
+3.  Skopiuj pakiet na dedykowany serwer lub do kontrolera domeny, w którym instalujesz bramę usługi ATA. Alternatywnie możesz otworzyć konsolę usługi ATA na dedykowanym serwerze lub kontrolerze domeny i pominąć ten krok.
 
-The zip file includes the following:
+Plik zip zawiera następujące składniki:
 
--   ATA Gateway installer
+-   Instalator bramy usługi ATA
 
--   Configuration setting file with the required information to connect to the ATA Center
+-   Plik ustawień konfiguracji z informacjami wymaganymi do nawiązywania połączeń z centrum usługi ATA
 
 
 >[!div class="step-by-step"]
-[« Step 2](install-ata-step2.md)
-[Step 4 »](install-ata-step4.md)
+[« Krok 2](install-ata-step2.md)
+[Krok 4 »](install-ata-step4.md)
 
-## See Also
+## Zobacz też
+<a id="see-also" class="xliff"></a>
 
-- [Check out the ATA forum!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-- [Configure event collection](configure-event-collection.md)
-- [ATA prerequisites](ata-prerequisites.md)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
+- [Wymagania wstępne usługi ATA](ata-prerequisites.md)
