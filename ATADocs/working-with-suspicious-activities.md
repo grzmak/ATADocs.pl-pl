@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 44d7c899-816c-4f7f-91d3-84a09d291a24
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 1ff15a323f461cf8436e1ff7e15738a49bf3973c
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.openlocfilehash: d943dc9aae7192f46f079175c2216b5b27e459e2
+ms.sourcegitcommit: 3177d5894413fbd363b9aca8130f3f7a369223b8
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/10/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -111,5 +111,4 @@ Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określon
 ## Zobacz też
 <a id="see-also" class="xliff"></a>
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
-- [Praca z ustawieniami wykrywania usługi ATA](working-with-detection-settings.md)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-center-configuration.md)
