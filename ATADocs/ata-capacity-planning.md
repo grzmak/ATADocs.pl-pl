@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/5/2017
+ms.date: 7/9/2017
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3a313ba032a43bff90e37908909830f7c741c39c
-ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
-ms.translationtype: HT
+ms.openlocfilehash: af88c02c6e2e5f679aca75b17a288c72ab300069
+ms.sourcegitcommit: be6bdfa24a9b25a3375a4768d513b93900b3a498
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/11/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -56,17 +56,17 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 |Pakiety na sekundę ze wszystkich kontrolerów domeny|Procesor CPU (rdzenie&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
 |1000|2|32|0,3|9|30 (100)
-|10 000|4|48|3|90|200 (300)
-|40 000|8|64|12|360|500 (1000)
-|100 000|12|96|30|900|1000 (1500)
-|200 000|24|112|60|1800|2,000 (3,000)
-|400 000|40|128|120|3,600|4,000 (5,000)
+|40 000|4|48|12|360|500 (750)
+|200 000|8|64|60|1800|1000 (1500)
+|400 000|12|96|120|3,600|2000 (2500)
+|750 000|24|112|225|6750|2500 (3000)
+|1 000 000|40|128|300|9000|4,000 (5,000)
 
 &#42;Dotyczy rdzeni fizycznych, a nie rdzeni hiperwątkowych.
 
 &#42;&#42;Wartości średnie (wartości szczytowe)
 > [!NOTE]
-> -   Centrum usługi ATA może obsługiwać maksymalnie 400 000 pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
+> -   Centrum usługi ATA może obsługiwać maksymalnie 1 mln pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
 > -   Wielkości magazynu określone w tym miejscu to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
 > -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
 > - Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
