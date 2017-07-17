@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1d186a96-ef70-4787-aa64-c03d1db94ce0
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 436b96f679836060cfaf40f6be3b92cf96dc0e04
-ms.sourcegitcommit: 4118dd4bd98994ec8a7ea170b09aa301a4be2c8a
-ms.translationtype: HT
+ms.openlocfilehash: f85d52420c55e2f1119ad14eb1a6c957fbc50be6
+ms.sourcegitcommit: be6bdfa24a9b25a3375a4768d513b93900b3a498
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/11/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -55,7 +55,7 @@ Usługa ATA wyświetla nazwę maszyny źródłowej oraz dodatkowe szczegóły do
 Aby zbadać rekonesans przy użyciu systemu DNS, najpierw należy ustalić przyczynę zapytań. Można je przydzielić do jednej z następujących kategorii: 
 -   Prawdziwie dodatnie — do sieci dostała się osoba atakująca lub znajduje się w niej złośliwe oprogramowanie. Może to być osoba atakująca, która złamała obwód sieci, lub zagrożenie wewnętrzne.
 -   Niegroźne prawdziwie dodatnie — mogą to być alerty wyzwalane przez testowanie penetracyjne, działania zespołu ekspertów, skanery zabezpieczeń, zaporę nowej generacji lub administratorów IT wykonujących oficjalnie zaakceptowane działania.
--   Fałszywie dodatnie — możesz otrzymywać alerty spowodowane błędami konfiguracji, na przykład jeśli port 53 zostanie zablokowany między bramą usługi ATA i serwerem DNS (może to być także każdy inny problem sieciowy).
+-   Fałszywie dodatnie — możesz otrzymywać alerty spowodowane błędami konfiguracji, na przykład jeśli port 53 protokołu UDP zostanie zablokowany między bramą usługi ATA i serwerem DNS (może to być także każdy inny problem sieciowy).
 
 Poniższy wykres ułatwi ustalenie odpowiednich kroków badania:
 
@@ -63,10 +63,10 @@ Poniższy wykres ułatwi ustalenie odpowiednich kroków badania:
  
 1.  Pierwszym krokiem jest zidentyfikowanie maszyny, z której pochodzi alert, jak przedstawiono poniżej:
  
-    ![Wyświetlanie podejrzanych działań rekonesansu DNS w usłudze ATA](./media/dns-recon-2.png)
+    ![Wyświetlanie podejrzanych działań rekonesansu DNS w usłudze ATA](./media/dns-recon.png)
 2.  Zidentyfikuj przeznaczenie danej maszyny. Czy jest to stacja robocza, serwer, administracyjna stacja robocza, stacja do testowania penetracyjnego itp.?
 3.  Jeśli dany komputer jest serwerem DNS i ma uzasadnione prawa do żądania dodatkowej kopii strefy, to wynik jest fałszywie dodatni. Po znalezieniu wyniku fałszywie dodatniego użyj opcji **Wyklucz**, aby nie otrzymywać więcej tego określonego alertu dla tej maszyny.
-4. Upewnij się, że port 53 między bramą usługi ATA i serwerem DNS jest otwarty.
+4. Upewnij się, że port 53 protokołu UDP między bramą usługi ATA i serwerem DNS jest otwarty.
 4.  Jeśli komputer jest używany do pracy administracyjnej lub do testowania penetracyjnego, to wynik jest niegroźnie prawdziwie dodatni, a daną maszynę także można skonfigurować jako wyjątek.
 5.  Jeśli nie jest on używany do testowania penetracyjnego, sprawdź, czy na maszynie działa skaner zabezpieczeń lub zapora nowej generacji, co także może powodować wysyłanie żądań DNS typu AXFR.
 6.  Jeśli żadne z tych kryteriów nie jest spełnione, istnieje możliwość, że maszyna została naruszona, i musi zostać w pełni zbadana. 

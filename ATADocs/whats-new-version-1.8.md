@@ -13,14 +13,17 @@ ms.technology:
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: f2a4ed151db38497a6cec977f1090faf2eb4133e
-ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
-ms.translationtype: HT
+ms.openlocfilehash: 6850c5e8e264a9610e377a9ab4aadca338971ee1
+ms.sourcegitcommit: be6bdfa24a9b25a3375a4768d513b93900b3a498
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/11/2017
 ---
 # Co nowego w wersji 1.8 usługi ATA
 <a id="whats-new-in-ata-version-18" class="xliff"></a>
+
+Najnowszą wersję aktualizacji usługi ATA można [pobrać z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=55536), a pełną wersję można pobrać z centrum [Eval Center](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).
+
 Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane problemy w tej wersji usługi Advanced Threat Analytics.
 
 
@@ -65,7 +68,6 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
 
 -   Wydajność centrum usługi ATA została ulepszona. W usłudze ATA 1.8 centrum usługi ATA może obsługiwać więcej niż 1 mln pakietów na sekundę.
 -   Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
--   Ulepszenie ułatwień dostępu — usługa ATA wraz z firmą Microsoft zapewniają produkt, który jest dostępny dla wszystkich użytkowników. 
 -   Możesz teraz oddzielnie skonfigurować pocztę e-mail do monitorowania alertów i podejrzanych działań.
 
 ## Ulepszenia zabezpieczeń
