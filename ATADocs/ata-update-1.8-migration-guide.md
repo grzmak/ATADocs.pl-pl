@@ -19,8 +19,7 @@ ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/10/2017
 ---
-# Aktualizowanie usługi ATA do wersji 1.8
-<a id="updating-ata-to-version-18" class="xliff"></a>
+# <a name="updating-ata-to-version-18"></a>Aktualizowanie usługi ATA do wersji 1.8
 
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.8, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](install-ata-step1.md).
@@ -42,8 +41,7 @@ W przypadku wersji do migracji pliku można użyć tylko do aktualizowania z us�
     > [!IMPORTANT]
     > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
 
-### Krok 1. Zaktualizuj centrum usługi ATA
-<a id="step-1-update-the-ata-center" class="xliff"></a>
+### <a name="step-1-update-the-ata-center"></a>Krok 1. Zaktualizuj centrum usługi ATA
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
@@ -84,7 +82,6 @@ W przypadku wersji do migracji pliku można użyć tylko do aktualizowania z us�
 > W celu zainstalowania nowych bram usługi ATA przejdź do ekranu **Bramy**, kliknij pozycję **Pobierz instalatora bramy**, aby uzyskać pakiet instalacyjny bramy usługi ATA 1.8, i postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy w części [Krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

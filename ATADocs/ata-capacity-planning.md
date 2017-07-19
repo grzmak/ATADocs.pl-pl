@@ -22,15 +22,13 @@ ms.lasthandoff: 07/11/2017
 
 
 
-# Planowanie pojemności usługi ATA
-<a id="ata-capacity-planning" class="xliff"></a>
+# <a name="ata-capacity-planning"></a>Planowanie pojemności usługi ATA
 Informacje zawarte w tym temacie ułatwiają określenie, ile serwerów usługi ATA jest potrzebnych do monitorowania sieci. Umożliwiają one także określenie, ile bram usługi ATA i/lub uproszczonych bram usługi ATA jest potrzebnych oraz jaka powinna być wydajność serwera dla centrum usługi ATA i bram usługi ATA.
 
 > [!NOTE] 
 > Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
 
-##Korzystanie z narzędzia do określania rozmiaru
-<a id="using-the-sizing-tool" class="xliff"></a>
+##<a name="using-the-sizing-tool"></a>Korzystanie z narzędzia do określania rozmiaru
 Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia usługi ATA jest użycie [narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool). Uruchom narzędzie do określania rozmiaru usługi ATA i określ wymaganą pojemność usługi ATA za pomocą następujących pól wyników w pliku programu Excel:
 
 - Procesor i pamięć centrum usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w pliku wyników tabeli centrum usługi ATA do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
@@ -48,8 +46,7 @@ Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika 
 
 
 
-### Ustalanie rozmiaru centrum usługi ATA
-<a id="ata-center-sizing" class="xliff"></a>
+### <a name="ata-center-sizing"></a>Ustalanie rozmiaru centrum usługi ATA
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni.
  
 
@@ -77,8 +74,7 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 > -   Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. Technologia NUMA może być nazywana w Twoim systemie przeplataniem węzłów. W tym przypadku należy **włączyć** przeplatanie węzłów, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji, zapoznaj się z dokumentacją systemu BIOS. Nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.
 
 
-## Wybieranie odpowiedniego typu bramy dla danego wdrożenia
-<a id="choosing-the-right-gateway-type-for-your-deployment" class="xliff"></a>
+## <a name="choosing-the-right-gateway-type-for-your-deployment"></a>Wybieranie odpowiedniego typu bramy dla danego wdrożenia
 We wdrożeniu ATA obsługiwane są dowolne kombinacje typów bramy ATA:
 
 - Tylko bramy usługi ATA
@@ -106,8 +102,7 @@ Poniżej przedstawiono przykładowe scenariusze, w których kontrolery domeny po
 - Główne centra danych (z kontrolerami domeny obsługującymi ponad 10 000 pakietów na sekundę)
 
 
-### Ustalanie rozmiaru uproszczonej bramy usługi ATA
-<a id="ata-lightweight-gateway-sizing" class="xliff"></a>
+### <a name="ata-lightweight-gateway-sizing"></a>Ustalanie rozmiaru uproszczonej bramy usługi ATA
 
 Uproszczona brama usługi ATA może obsługiwać monitorowanie jednego kontrolera domeny w oparciu o ilość ruchu sieciowego generowanego przez kontroler domeny. 
 
@@ -131,8 +126,7 @@ Uproszczona brama usługi ATA może obsługiwać monitorowanie jednego kontroler
 > -   Potrzebne jest minimalnie 5 GB miejsca, a zalecane 10 GB miejsca, co obejmuje miejsce wymagane przez pliki binarne usługi ATA, [dzienniki usługi ATA](troubleshooting-ata-using-logs.md) i [dzienniki wydajności](troubleshooting-ata-using-perf-counters.md).
 
 
-### Ustalanie rozmiaru bramy usługi ATA
-<a id="ata-gateway-sizing" class="xliff"></a>
+### <a name="ata-gateway-sizing"></a>Ustalanie rozmiaru bramy usługi ATA
 
 Podczas podejmowania decyzji o liczbie bram usługi ATA, które mają zostać wdrożone, należy wziąć pod uwagę następujące zagadnienia.
 
@@ -167,8 +161,7 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
 > -   Potrzebne jest minimalnie 5 GB miejsca, a zalecane 10 GB miejsca, co obejmuje miejsce wymagane przez pliki binarne usługi ATA, [dzienniki usługi ATA](troubleshooting-ata-using-logs.md) i [dzienniki wydajności](troubleshooting-ata-using-perf-counters.md).
 
 
-## Szacowanie ruchu kontrolera domeny
-<a id="domain-controller-traffic-estimation" class="xliff"></a>
+## <a name="domain-controller-traffic-estimation"></a>Szacowanie ruchu kontrolera domeny
 Istnieją różne narzędzia, za pomocą których można określić średnią liczbę pakietów na sekundę kontrolerów domeny. Jeśli nie masz żadnych narzędzi do określenia tej wartości, możesz użyć Monitora wydajności do zebrania wymaganych informacji.
 
 Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na każdym kontrolerze domeny:
@@ -218,8 +211,7 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na ka�
 
     ![Obraz przedstawiający licznik Pakiety/s](media/ATA-traffic-estimation-14.png)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Architektura usługi ATA](ata-architecture.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

@@ -23,14 +23,12 @@ ms.lasthandoff: 07/10/2017
 
 
 
-# Instalowanie usługi ATA — Krok 7
-<a id="install-ata---step-7" class="xliff"></a>
+# <a name="install-ata---step-7"></a>Instalowanie usługi ATA — Krok 7
 
 >[!div class="step-by-step"]
 [« Krok 6](install-ata-step6.md)
 
-## Krok 7. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
-<a id="step-7-configure-ip-address-exclusions-and-honeytoken-user" class="xliff"></a>
+## <a name="step-7-configure-ip-address-exclusions-and-honeytoken-user"></a>Krok 7. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
 Usługa ATA umożliwia wykluczenie konkretnych adresów IP lub użytkowników z wykrywania według pewnych kryteriów. 
 
 Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
@@ -73,8 +71,7 @@ Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sie
 [« Krok 6](install-ata-step6.md)
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

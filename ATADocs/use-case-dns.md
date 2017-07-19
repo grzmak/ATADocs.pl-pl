@@ -21,13 +21,11 @@ ms.lasthandoff: 07/11/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
-# Badanie rekonesansu przy użyciu systemu DNS
-<a id="investigating-reconnaissance-using-dns" class="xliff"></a>
+# <a name="investigating-reconnaissance-using-dns"></a>Badanie rekonesansu przy użyciu systemu DNS
 
 Jeśli usługa ATA wykrywa w Twojej sieci **rekonesans przy użyciu systemu DNS** i ostrzega o tym, ten artykuł pomoże Ci zbadać ten alert i zrozumieć, jak można rozwiązać ten problem.
 
-## Co to jest rekonesans przy użyciu systemu DNS?
-<a id="what-is-reconnaissance-using-dns" class="xliff"></a>
+## <a name="what-is-reconnaissance-using-dns"></a>Co to jest rekonesans przy użyciu systemu DNS?
 
 Alert **Rekonesans przy użyciu systemu DNS** wskazuje, że nietypowy host wysyła podejrzane zapytania systemu nazw domen (DNS, Domain Name System) w celu przeprowadzenia rekonesansu w Twojej sieci wewnętrznej.
 
@@ -35,13 +33,11 @@ System nazw domen (DNS) to usługa zaimplementowana jako hierarchiczna, rozprosz
 Dla osoby atakującej system DNS zawiera cenne informacje umożliwiające mapowanie sieci wewnętrznej, w tym listę wszystkich serwerów, a często także wszystkich klientów zamapowanych na adresy IP. Ponadto te informacje są wartościowe, ponieważ zawierają listę nazw hostów, które często są opisowe w danym środowisku sieciowym. Uzyskanie tych informacji umożliwia osobie atakującej efektywniejsze priorytetyzowanie wysiłków dotyczących jednostek odpowiednich dla kampanii. Narzędzia takie jak [Nmap](https://nmap.org/) i [Fierce](https://github.com/mschwager/fierce) oraz wbudowane narzędzia takie jak [Nslookup](https://technet.microsoft.com/library/cc725991(v=ws.11).aspx) pozwalają na odnajdywanie hostów za pomocą rekonesansu DNS.
 Wykrycie rekonesansu przy użyciu zapytań DNS z hosta wewnętrznego daje powód do niepokoju i wskazuje na możliwość istniejącego naruszenia hosta, szerszego naruszenia sieci lub na możliwość zagrożenia wewnętrznego.
 
-## Typy zapytań DNS
-<a id="dns-query-types" class="xliff"></a>
+## <a name="dns-query-types"></a>Typy zapytań DNS
 
 W protokole DNS istnieje kilka typów zapytań. Usługa ATA wykrywa żądania AXFR (transferu) i tworzy alert, gdy są one widoczne. Zapytania tego typu powinny pochodzić tylko z serwerów DNS.
 
-## Wykrywanie ataku
-<a id="discovering-the-attack" class="xliff"></a>
+## <a name="discovering-the-attack"></a>Wykrywanie ataku
 
 Gdy osoba atakująca próbuje wykonać rekonesans przy użyciu systemu DNS, usługa ATA wykrywa to działanie i oznacza je ze średnią ważnością.
 
@@ -49,8 +45,7 @@ Gdy osoba atakująca próbuje wykonać rekonesans przy użyciu systemu DNS, usł
  
 Usługa ATA wyświetla nazwę maszyny źródłowej oraz dodatkowe szczegóły dotyczące rzeczywiście wykonanego zapytania DNS. Przykładowo z tego samego hosta może zostać podjętych wiele prób.
 
-## Badanie
-<a id="investigating" class="xliff"></a>
+## <a name="investigating"></a>Badanie
 
 Aby zbadać rekonesans przy użyciu systemu DNS, najpierw należy ustalić przyczynę zapytań. Można je przydzielić do jednej z następujących kategorii: 
 -   Prawdziwie dodatnie — do sieci dostała się osoba atakująca lub znajduje się w niej złośliwe oprogramowanie. Może to być osoba atakująca, która złamała obwód sieci, lub zagrożenie wewnętrzne.
@@ -75,8 +70,7 @@ Poniższy wykres ułatwi ustalenie odpowiednich kroków badania:
     2.  Przeprowadź analizę opartą na hoście. 
     3.  Jeśli działanie nie pochodzi od podejrzanego użytkownika, na danej maszynie należy przeprowadzić analizę śledczą, aby określić, czy została ona naruszona za pomocą złośliwego oprogramowania.
 
-## Po badaniu
-<a id="post-investigation" class="xliff"></a>
+## <a name="post-investigation"></a>Po badaniu
 
 Złośliwe oprogramowanie użyte do naruszenia bezpieczeństwa hosta może zawierać konie trojańskie z funkcją tylnego wejścia. W przypadku wykrycia pomyślnej penetracji sieci z naruszonego hosta działania zaradcze powinny uwzględniać zmianę wszelkich haseł i poświadczeń używanych na danym hoście i na każdym hoście objętym penetracją sieci. 
 
@@ -84,14 +78,12 @@ Jeśli po wykonaniu działań zaradczych nie można potwierdzić, że zaatakowan
 
 Firma Microsoft zaleca skorzystanie z pomocy profesjonalnego zespołu ds. reagowania na zdarzenia i odzyskiwania (z którym można się skontaktować za pośrednictwem zespołu kont Microsoft), aby ustalić, czy osoba atakująca użyła w sieci metod ciągłych.
 
-## Środki zaradcze
-<a id="mitigation" class="xliff"></a>
+## <a name="mitigation"></a>Środki zaradcze
 
 Aby zabezpieczyć wewnętrzny serwer DNS w celu uniemożliwienia przeprowadzenia rekonesansu przy użyciu systemu DNS, można wyłączyć transfery stref lub ograniczyć je tylko do określonych adresów IP. Aby uzyskać dodatkowe informacje o ograniczaniu transferów stref, zobacz artykuł w witrynie TechNet systemu Windows Server [Ograniczanie transferów stref](https://technet.microsoft.com/library/ee649273(v=ws.10).aspx). Ograniczone transfery stref można dalej zablokować przez [zabezpieczenie transferów stref przy użyciu protokołu IPsec](https://technet.microsoft.com/library/ee649192(v=ws.10).aspx). Modyfikacja transferów stref jest jednym z zadań na liście czynności, które należy wykonać w celu [zabezpieczenia serwerów DNS przed atakami wewnętrznymi i zewnętrznymi](https://technet.microsoft.com/library/cc770432(v=ws.11).aspx).
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

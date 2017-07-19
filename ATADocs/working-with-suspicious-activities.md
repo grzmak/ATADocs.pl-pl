@@ -23,12 +23,10 @@ ms.lasthandoff: 07/10/2017
 
 
 
-# Praca z podejrzanymi działaniami
-<a id="working-with-suspicious-activities" class="xliff"></a>
+# <a name="working-with-suspicious-activities"></a>Praca z podejrzanymi działaniami
 W tym temacie przedstawiono podstawowe informacje dotyczące pracy z usługą Advanced Threat Analytics.
 
-## Przeglądanie podejrzanych działań na osi czasu ataków
-<a id="review-suspicious-activities-on-the-attack-time-line" class="xliff"></a>
+## <a name="review-suspicious-activities-on-the-attack-time-line"></a>Przeglądanie podejrzanych działań na osi czasu ataków
 Po zalogowaniu się do konsoli usługi ATA jest automatycznie otwierana **Oś czasu podejrzanych działań**. Podejrzane działania są wymienione na liście w kolejności chronologicznej. Najnowsze podejrzane działania znajdują się u góry osi czasu.
 Każde podejrzane działanie zawiera następujące informacje:
 
@@ -58,8 +56,7 @@ Każde podejrzane działanie zawiera następujące informacje:
 
 ![Obraz osi czasu podejrzanych działań usługi ATA](media/ATA-Suspicious-Activity-Timeline.JPG)
 
-## Filtrowanie listy podejrzanych działań
-<a id="filter-suspicious-activities-list" class="xliff"></a>
+## <a name="filter-suspicious-activities-list"></a>Filtrowanie listy podejrzanych działań
 Aby filtrować listę podejrzanych działań:
 
 1.  W okienku **Filtruj według** po lewej stronie ekranu wybierz jedną z następujących pozycji: **Wszystkie**, **Otwarte**, **Rozwiązane** lub **Odrzucone**.
@@ -83,8 +80,7 @@ Aby filtrować listę podejrzanych działań:
 
 
 
-## Korygowanie podejrzanych działań
-<a id="remediating-suspicious-activities" class="xliff"></a>
+## <a name="remediating-suspicious-activities"></a>Korygowanie podejrzanych działań
 Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących pozycji: **Otwarte**, **Pominięte**, **Zamknięte** lub **Usunięte**.
 Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określonego podejrzanego działania, aby wyświetlić listę dostępnych akcji.
 
@@ -108,7 +104,6 @@ Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określon
 > Strony konfiguracji mogą być modyfikowane tylko przez administratorów usługi ATA.
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-center-configuration.md)
