@@ -22,21 +22,17 @@ ms.lasthandoff: 07/10/2017
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Praca z kondycją i zdarzeniami systemu ATA
-<a id="working-with-ata-system-health-and-events" class="xliff"></a>
+# <a name="working-with-ata-system-health-and-events"></a>Praca z kondycją i zdarzeniami systemu ATA
 
-## Centrum kondycji usługi ATA
-<a id="ata-health-center" class="xliff"></a>
+## <a name="ata-health-center"></a>Centrum kondycji usługi ATA
 Centrum kondycji usługi ATA umożliwia sprawdzenie, czy usługa ATA działa prawidłowo, i ostrzega o potencjalnych problemach.
 
-## Praca z centrum kondycji usługi ATA
-<a id="working-with-the-ata-health-center" class="xliff"></a>
+## <a name="working-with-the-ata-health-center"></a>Praca z centrum kondycji usługi ATA
 Centrum kondycji usługi ATA informuje o wystąpieniu problemu, wyświetlając symbol alertu (czerwoną kropkę) ponad ikoną centrum kondycji na pasku menu.
 
 ![Pasek narzędzi z centrum kondycji usługi ATA oznaczonym czerwoną kropką](media/ATA-Health-Center-Alert-red-dot.png)
 
-### Zarządzanie kondycją usługi ATA
-<a id="managing-ata-health" class="xliff"></a>
+### <a name="managing-ata-health"></a>Zarządzanie kondycją usługi ATA
 Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pasku menu. ![Ikona centrum kondycji usługi ATA](media/ATA-red-dot.png)
 
 -   Wszystkimi otwartymi alertami można zarządzać, zmieniając ich ustawienie na **Rozwiązane** lub **Odrzucone**. W oknie Alert kliknij pozycję **Otwarte**, a następnie przewiń w dół do pozycji **Rozwiązane** lub **Odrzucone**.
@@ -52,8 +48,7 @@ Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pa
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

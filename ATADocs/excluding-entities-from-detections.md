@@ -23,8 +23,7 @@ ms.lasthandoff: 07/11/2017
 
 
 
-# Wykluczanie jednostek z wykryć
-<a id="excluding-entities-from-detections" class="xliff"></a>
+# <a name="excluding-entities-from-detections"></a>Wykluczanie jednostek z wykryć
 W tym temacie wyjaśniono, jak wykluczać jednostki z procesu wyzwalania alertów w celu zminimalizowania zapytań niegroźnych prawdziwie dodatnich, zapewniając równocześnie wychwycenie zapytań prawdziwie dodatnich. Aby usługa ATA nie generowała niepotrzebnych alertów dotyczących działań, które w przypadku niektórych użytkowników mogą być częścią zwykłej działalności biznesowej, możesz wyciszyć — lub wykluczyć — pewne jednostki z procesu zgłaszania alertów.
 
 Na przykład masz skaner zabezpieczeń, który przeprowadza rekonesans systemu DNS, lub administratora, który zdalnie uruchamia skrypty na kontrolerze domeny — i są to oficjalnie zaakceptowane działania przeprowadzane w ramach normalnych operacji IT w Twojej organizacji.
@@ -58,7 +57,6 @@ Jeśli masz możliwość wykluczenia adresu IP lub komputera, możesz wykluczyć
 > Strony konfiguracji mogą być modyfikowane tylko przez administratorów usługi ATA.
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-center-configuration.md)
