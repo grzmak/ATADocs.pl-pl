@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 4fe667574ea011c032bacd8f5bce4b07c2c46602
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,20 +23,16 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Zarządzanie bazą danych usługi ATA
-<a id="ata-database-management" class="xliff"></a>
+# <a name="ata-database-management"></a>Zarządzanie bazą danych usługi ATA
 Jeśli musisz przenieść bazę danych ATA, utworzyć jej kopię zapasową lub przywrócić ją, należy użyć poniższych procedur do pracy z MongoDB.
 
-## Tworzenie kopii zapasowej bazy danych usługi ATA
-<a id="backing-up-the-ata-database" class="xliff"></a>
+## <a name="backing-up-the-ata-database"></a>Tworzenie kopii zapasowej bazy danych usługi ATA
 Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
 
-## Przywracanie bazy danych usługi ATA
-<a id="restoring-the-ata-database" class="xliff"></a>
+## <a name="restoring-the-ata-database"></a>Przywracanie bazy danych usługi ATA
 Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb.org/manual/administration/backup/).
 
-## Przenoszenie bazy danych usługi ATA na inny dysk
-<a id="moving-the-ata-database-to-another-drive" class="xliff"></a>
+## <a name="moving-the-ata-database-to-another-drive"></a>Przenoszenie bazy danych usługi ATA na inny dysk
 
 1.  Zatrzymaj usługę **Microsoft Advanced Threat Analytics Center**.
 > [!Important] 
@@ -58,8 +54,7 @@ Zapoznaj się z [odpowiednią dokumentacją usługi MongoDB](http://docs.mongodb
 
 7. Uruchom usługę **Microsoft Advanced Threat Analytics Center**.
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Architektura usługi ATA](ata-architecture.md)
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 2713f6939c8756d0ecb438e866e6649f13d3c490
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,15 +23,13 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Instalowanie usługi ATA — Krok 4
-<a id="install-ata---step-4" class="xliff"></a>
+# <a name="install-ata---step-4"></a>Instalowanie usługi ATA — Krok 4
 
 >[!div class="step-by-step"]
 [« Krok 3](install-ata-step3.md)
 [Krok 5 »](install-ata-step5.md)
 
-## Krok 4. Instalowanie bramy usługi ATA
-<a id="step-4-install-the-ata-gateway" class="xliff"></a>
+## <a name="step-4-install-the-ata-gateway"></a>Krok 4. Instalowanie bramy usługi ATA
 
 Przed zainstalowaniem bramy usługi ATA na dedykowanym serwerze zweryfikuj, czy funkcja dublowania portów jest poprawnie skonfigurowana oraz czy ruch do i z kontrolerów domeny jest widoczny dla bramy usługi ATA. Aby uzyskać więcej informacji, zobacz [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md).
 
@@ -90,8 +88,7 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 [« Krok 3](install-ata-step3.md)
 [Krok 5 »](install-ata-step5.md)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

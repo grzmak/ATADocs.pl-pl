@@ -15,7 +15,7 @@ ms.reviewer: arzinger
 ms.suite: ems
 ms.openlocfilehash: ce06038a3c3f2e5a6f2a5d57ad814ab8393c0b0c
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,15 +23,13 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Odzyskiwanie usługi ATA po awarii
-<a id="ata-disaster-recovery" class="xliff"></a>
+# <a name="ata-disaster-recovery"></a>Odzyskiwanie usługi ATA po awarii
 W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przywracania funkcjonalności usługi ATA, w przypadku gdy funkcje centrum usługi ATA zostały utracone, ale nadal działają bramy usługi ATA. 
 
 >[!NOTE]
 > Przedstawiony proces nie prowadzi do odzyskania wcześniej wykrytych podejrzanych działań, ale przywraca pełną funkcjonalność centrum usługi ATA. Ponadto okres nauki wymagany dla niektórych wykryć behawioralnych będzie liczony od początku, ale większość wykryć oferowanych w usłudze ATA będzie działać po przywróceniu centrum usługi ATA. 
 
-## Tworzenie kopii zapasowej konfiguracji centrum usługi ATA
-<a id="back-up-your-ata-center-configuration" class="xliff"></a>
+## <a name="back-up-your-ata-center-configuration"></a>Tworzenie kopii zapasowej konfiguracji centrum usługi ATA
 
 1. Konfiguracja centrum usługi ATA jest zapisywana do pliku co godzinę. Znajdź najnowszą kopię zapasową konfiguracji centrum usługi ATA i zapisz ją na innym komputerze. Pełne wyjaśnienie sposobu lokalizowania tych plików można znaleźć w artykule [Eksportowanie i importowanie konfiguracji usługi ATA](/advanced-threat-analytics/deploy-use/ata-configuration-file). 
 2. Wyeksportuj certyfikat centrum usługi ATA.
@@ -44,8 +42,7 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
   > [!NOTE] 
   > Jeśli nie można wyeksportować klucza prywatnego, należy utworzyć nowy certyfikat i wdrożyć go w usłudze ATA, zgodnie z opisem w artykule [Zmienianie certyfikatu centrum usługi ATA](/advanced-threat-analytics/deploy-use/modifying-ata-config-centercert), a następnie wyeksportować go. 
 
-## Odzyskiwanie centrum usługi ATA
-<a id="recover-your-ata-center" class="xliff"></a>
+## <a name="recover-your-ata-center"></a>Odzyskiwanie centrum usługi ATA
 
 1. Utwórz nową maszynę systemu Windows Server przy użyciu tej samej nazwy komputera i adresu IP, które były użyte dla poprzedniej maszyny centrum usługi ATA.
 4. Zaimportuj certyfikat, którego kopię zapasową wykonano w kroku powyżej, do nowego serwera.
@@ -66,8 +63,7 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](/advanced-threat-analytics/plan-design/ata-prerequisites)
 - [Planowanie pojemności usługi ATA](/advanced-threat-analytics/plan-design/ata-capacity-planning)
 - [Konfigurowanie zbierania zdarzeń](/advanced-threat-analytics/deploy-use/configure-event-collection)

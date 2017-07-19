@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 6952a239eb5f11cdfefc9ce201f9a765e61de8e8
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,16 +23,14 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Instalowanie usługi ATA — Krok 5
-<a id="install-ata---step-5" class="xliff"></a>
+# <a name="install-ata---step-5"></a>Instalowanie usługi ATA — Krok 5
 
 >[!div class="step-by-step"]
 [« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
 
-## Krok 5. Konfigurowanie ustawień bramy usługi ATA
-<a id="step-5-configure-the-ata-gateway-settings" class="xliff"></a>
+## <a name="step-5-configure-the-ata-gateway-settings"></a>Krok 5. Konfigurowanie ustawień bramy usługi ATA
 Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurować ustawienia bramy usługi ATA.
 
 1.  W konsoli ATA przejdź do węzła **Konfiguracja** i w obszarze **System** wybierz pozycję **Bramy**.
@@ -70,8 +68,7 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
 5. Kliknij polecenie **Zapisz**.
 
 
-## Weryfikowanie instalacji
-<a id="validate-installations" class="xliff"></a>
+## <a name="validate-installations"></a>Weryfikowanie instalacji
 Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 
 1.  Sprawdź, czy jest uruchomiona usługa o nazwie **Microsoft Advanced Threat Analytics Gateway**. Po zapisaniu ustawień bramy usługi ATA może minąć kilka minut, zanim usługa zostanie uruchomiona.
@@ -91,8 +88,7 @@ Aby zweryfikować, czy brama usługi ATA została pomyślnie wdrożona:
 [« Krok 4](install-ata-step4.md)
 [Krok 6 »](install-ata-step6.md)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

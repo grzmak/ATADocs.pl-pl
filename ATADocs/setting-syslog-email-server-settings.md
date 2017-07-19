@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 47d1125856631ecedcbc7779bf0529741c3da61f
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,8 +23,7 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Udostępnianie usłudze ATA ustawień serwera poczty e-mail
-<a id="provide-ata-with-your-email-server-settings" class="xliff"></a>
+# <a name="provide-ata-with-your-email-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera poczty e-mail
 Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. Aby umożliwić usłudze ATA wysyłanie powiadomień e-mail, najpierw musisz skonfigurować **ustawienia serwera poczty e-mail**.
 
 1.  Na serwerze centrum usługi ATA kliknij ikonę **Zarządzanie usługą Microsoft Advanced Threat Analytics** na pulpicie.
@@ -45,8 +44,7 @@ Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. A
     |Wyślij z (wymagane)|Wprowadź adres e-mail, z którego wiadomości e-mail będą wysyłane.|Na przykład:<br />ATA@contoso.com|
     ![Ilustracja ustawień serwera poczty e-mail usługi ATA](media/ata-email-server.png)
 
-## Udostępnianie usłudze ATA ustawień serwera Syslog
-<a id="provide-ata-with-your-syslog-server-settings" class="xliff"></a>
+## <a name="provide-ata-with-your-syslog-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera Syslog
 W przypadku wykrycia podejrzanych działań usługa ATA może generować powiadomienia i wysyłać je do serwera Syslog. Po włączeniu powiadomień Syslog możesz określić dla nich poniższe ustawienia.
 
 1.  Przed rozpoczęciem konfigurowania powiadomień Syslog skontaktuj się z administratorem rozwiązania SIEM, aby uzyskać następujące informacje:
@@ -79,6 +77,5 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 16afa7e8b7755b0f9294425aac96fe134ff03691
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,15 +23,13 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Weryfikowanie funkcji dublowania portów
-<a id="validate-port-mirroring" class="xliff"></a>
+# <a name="validate-port-mirroring"></a>Weryfikowanie funkcji dublowania portów
 > [!NOTE] 
 > Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast uproszczonych bram usługi ATA są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz artykuł [Wybieranie odpowiednich bram dla wdrożenia](ata-capacity-planning.md#choosing-the-right-gateway-type-for-your-deployment).
  
 W poniższych krokach objaśniono proces weryfikowania, czy funkcja dublowania portów jest poprawnie skonfigurowana. Aby usługa ATA mogła działać prawidłowo, ruch do i z kontrolera domeny musi być widoczny dla bramy usługi ATA. Główne źródło danych używane przez usługę ATA to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Aby ruch sieciowy był widoczny dla usługi ATA, należy skonfigurować funkcję dublowania portów. Funkcja dublowania portów kopiuje ruch z jednego portu (portu źródłowego) do innego portu (portu docelowego).
 
-## Weryfikowanie funkcji dublowania portów za pomocą skryptu programu Windows PowerShell
-<a id="validate-port-mirroring-using-a-windows-powershell-script" class="xliff"></a>
+## <a name="validate-port-mirroring-using-a-windows-powershell-script"></a>Weryfikowanie funkcji dublowania portów za pomocą skryptu programu Windows PowerShell
 
 1. Zapisz tekst tego skryptu w pliku o nazwie *ATAdiag.ps1*.
 2. Uruchom ten skrypt w bramie usługi ATA, którą chcesz zweryfikować.
@@ -193,8 +191,7 @@ Przykład sposobu uruchamiania skryptu:
     [void][System.Console]::ReadKey($true)
     
     
-## Weryfikowanie funkcji dublowania portów za pomocą monitora sieci
-<a id="validate-port-mirroring-using-net-mon" class="xliff"></a>
+## <a name="validate-port-mirroring-using-net-mon"></a>Weryfikowanie funkcji dublowania portów za pomocą monitora sieci
 1.  Zainstaluj program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) w bramie usługi ATA, którą chcesz zweryfikować.
 
     > [!IMPORTANT]
@@ -224,8 +221,7 @@ Przykład sposobu uruchamiania skryptu:
 
 5.  Jeśli jest widoczny ruch tylko w jednym kierunku, należy skontaktować się z zespołem ds. sieci lub wirtualizacji, aby uzyskać pomoc w rozwiązywaniu problemów z konfiguracją funkcji dublowania portów.
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

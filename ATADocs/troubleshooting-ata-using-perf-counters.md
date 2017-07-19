@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: ae72f7a25f0c57dadd02049fe3a570a0da7b84fd
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,8 +23,7 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności
-<a id="troubleshooting-ata-using-the-performance-counters" class="xliff"></a>
+# <a name="troubleshooting-ata-using-the-performance-counters"></a>Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności
 Liczniki wydajności usługi ATA zapewniają wgląd w funkcjonowanie poszczególnych składników usługi ATA. Składniki usługi ATA przetwarzają dane sekwencyjnie, dlatego wystąpienie problemu może powodować reakcję łańcuchową prowadzącą do pominięcia części ruchu sieciowego. Aby rozwiązać problem, należy ustalić, który składnik go powoduje i usunąć jego przyczynę na początku sekwencji. Korzystając z danych liczników wydajności, można zrozumieć funkcjonowanie poszczególnych składników.
 Aby uzyskać informacje na temat przepływu wewnętrznych składników usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
 
@@ -37,8 +36,7 @@ Aby uzyskać informacje na temat przepływu wewnętrznych składników usługi A
 3.  Ten proces jest kontynuowany wstecz i prowadzi do składnika NetworkListener, który będzie pomijać ruch sieciowy, gdy nie będzie już mógł przesyłać dalej jednostek.
 
 
-## Pobieranie plików monitora wydajności w celu rozwiązywania problemów
-<a id="retrieving-performance-monitor-files-for-troubleshooting" class="xliff"></a>
+## <a name="retrieving-performance-monitor-files-for-troubleshooting"></a>Pobieranie plików monitora wydajności w celu rozwiązywania problemów
 
 Aby pobrać pliki monitora wydajności (BLG) z różnych składników ATA:
 1.  Otwórz monitora wydajności.
@@ -48,8 +46,7 @@ Aby pobrać pliki monitora wydajności (BLG) z różnych składników ATA:
 5.  Ponownie uruchom zestaw modułów zbierających dane o nazwie „Brama usługi Microsoft ATA” lub „Centrum usługi Microsoft ATA”.
 
 
-## Liczniki wydajności bramy usługi ATA
-<a id="ata-gateway-performance-counters" class="xliff"></a>
+## <a name="ata-gateway-performance-counters"></a>Liczniki wydajności bramy usługi ATA
 
 W tej sekcji każde odwołanie do bramy usługi ATA odnosi się także do bramy uproszczonej bramy usługi ATA.
 
@@ -72,8 +69,7 @@ Oto lista głównych liczników bramy usługi ATA, na które należy zwrócić u
 > -   Wartości liczników czasu są podawane w milisekundach.
 > -   Czasami wygodniej jest monitorować pełną listę liczników przy użyciu wykresu „Raport” (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym).
 
-## Liczniki wydajności uproszczonej bramy usługi ATA
-<a id="ata-lightweight-gateway-performance-counters" class="xliff"></a>
+## <a name="ata-lightweight-gateway-performance-counters"></a>Liczniki wydajności uproszczonej bramy usługi ATA
 Liczniki wydajności mogą służyć do zarządzania przydziałem w uproszczonej bramie w celu zapewnienia, że usługa ATA nie wyczerpuje zbyt wielu zasobów z kontrolerów domeny, na których jest zainstalowana.
 W celu mierzenia ograniczeń zasobów, które usługa ATA wymusza w uproszczonej bramie, dodaj następujące liczniki:
 
@@ -98,8 +94,7 @@ Aby zobaczyć rzeczywiste zużycie, sprawdź następujące liczniki:
 |Proces(Microsoft.Tri.Gateway)\Bajty prywatne|Maksymalna ilość przydzielonej pamięci (w bajtach), którą może wykorzystać proces uproszczonej bramy.|Brak wartości progowej. | Należy porównać wyniki tego licznika z limitem odczytanym z licznika GatewayUpdaterResourceManager Commit Memory Max Size (maksymalny rozmiar przydziału pamięci składnika GatewayUpdaterResourceManager). Jeśli widzisz, że proces często osiąga maksymalny limit w przedziale czasu (proces osiąga limit, a następnie zaczyna pomijać ruch), oznacza to, należy dodać więcej zasobów do serwera z działającym kontrolerem domeny.| 
 |Proces(Microsoft.Tri.Gateway)\Zestaw roboczy|Maksymalna ilość pamięci fizycznej (w bajtach), którą faktycznie zużywa proces uproszczonej bramy.|Brak wartości progowej. |Należy porównać wyniki tego licznika z limitem odczytanym z licznika GatewayUpdaterResourceManager Working Set Limit Size (limit rozmiaru zestawu roboczego składnika GatewayUpdaterResourceManager). Jeśli widzisz, że proces często osiąga maksymalny limit w przedziale czasu (proces osiąga limit, a następnie zaczyna pomijać ruch), oznacza to, należy dodać więcej zasobów do serwera z działającym kontrolerem domeny.|
 
-## Liczniki wydajności centrum usługi ATA
-<a id="ata-center-performance-counters" class="xliff"></a>
+## <a name="ata-center-performance-counters"></a>Liczniki wydajności centrum usługi ATA
 Możesz obserwować stan wydajności centrum usługi ATA w czasie rzeczywistym, dodając liczniki wydajności centrum usługi ATA.
 
 Aby to zrobić, należy otworzyć „Monitor wydajności” i dodać wszystkie liczniki dla centrum usługi ATA. Nazwa obiektu liczników wydajności to „Centrum usługi Microsoft ATA”.
@@ -118,8 +113,7 @@ Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić
 > -   Wartości liczników czasu są podawane w milisekundach.
 > -   Czasami wygodniej jest monitorować pełną listę liczników przy użyciu wykresu Raport (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym).
 
-## Liczniki systemu operacyjnego
-<a id="operating-system-counters" class="xliff"></a>
+## <a name="operating-system-counters"></a>Liczniki systemu operacyjnego
 Oto lista głównych liczników systemu operacyjnego, na które należy zwrócić uwagę:
 
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
@@ -135,8 +129,7 @@ Oto lista głównych liczników systemu operacyjnego, na które należy zwróci�
 |\Dysk logiczny&#42;\Zapisy dysku/s|Szybkość wykonywania operacji zapisu na dysku.|Brak wartości progowej.|Liczniki wykorzystania dysku zapewniają szczegółowe informacje podczas rozwiązywania problemów z opóźnieniem magazynu.|
 |\Dysk logiczny(&#42;)\Bajty zapisu dysku/s|Liczba bajtów zapisywanych na dysku w ciągu sekundy.|Brak wartości progowej.|Liczniki wykorzystania dysku zapewniają szczegółowe informacje podczas rozwiązywania problemów z opóźnieniem magazynu.|
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

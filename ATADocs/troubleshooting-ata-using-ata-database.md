@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 112ee57f79b20b4e42b15c6fdc4566bbdcebe29f
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,13 +23,11 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Rozwiązywanie problemów z usługą ATA przy użyciu bazy danych usługi ATA
-<a id="troubleshooting-ata-using-the-ata-database" class="xliff"></a>
+# <a name="troubleshooting-ata-using-the-ata-database"></a>Rozwiązywanie problemów z usługą ATA przy użyciu bazy danych usługi ATA
 Usługa ATA używa produktu MongoDB jako swojej bazy danych.
 W celu wykonywania zaawansowanych zadań i rozwiązywania problemów możesz użyć domyślnego wiersza polecenia lub narzędzia interfejsu użytkownika bazy danych.
 
-## Interakcja z bazą danych
-<a id="interacting-with-the-database" class="xliff"></a>
+## <a name="interacting-with-the-database"></a>Interakcja z bazą danych
 Domyślną i najbardziej podstawową metodą wysyłania zapytań do bazy danych jest użycie powłoki Mongo:
 
 1.  Otwórz okno wiersza polecenia i zmień ścieżkę na folder bin bazy danych MongoDB. Domyślna ścieżka to: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**.
@@ -51,8 +49,7 @@ W poniższym przykładzie przedstawiono przykładowy kod, w którym użyto powy�
 
 `db.Ntlms_<closest date>.find({SourceAccountId: "123bdd24-b269-h6e1-9c72-7737as875351"})`
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

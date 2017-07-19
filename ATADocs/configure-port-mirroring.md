@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 234c759db2b766b2a4ad9b26ae31a8f6825d957f
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,8 +23,7 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Konfigurowanie funkcji dublowania portów
-<a id="configure-port-mirroring" class="xliff"></a>
+# <a name="configure-port-mirroring"></a>Konfigurowanie funkcji dublowania portów
 > [!NOTE] 
 > Ten artykuł dotyczy wyłącznie sytuacji, gdy zamiast uproszczonych bram usługi ATA są wdrażane bramy usługi ATA. Aby ustalić, czy konieczne jest użycie bram usługi ATA, zobacz artykuł [Wybieranie odpowiednich bram dla wdrożenia](ata-capacity-planning.md#choosing-the-right-gateway-type-for-your-deployment).
  
@@ -45,8 +44,7 @@ Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Poniże
 > Jeśli kontroler domeny, względem którego działa funkcja dublowania portów, korzysta z połączenia WAN, upewnij się, że połączenie WAN może obsłużyć dodatkowe obciążenie wynikające z ruchu funkcji ERSPAN.
 > Usługa ATA obsługuje monitorowanie ruchu tylko wtedy, gdy ruch trafia do karty sieciowej i kontrolera domeny w taki sam sposób. Usługa ATA nie obsługuje monitorowania ruchu, gdy jest on dzielony na różne porty.
 
-## Obsługiwane opcje funkcji dublowania portów
-<a id="supported-port-mirroring-options" class="xliff"></a>
+## <a name="supported-port-mirroring-options"></a>Obsługiwane opcje funkcji dublowania portów
 
 |Brama usługi ATA|Kontroler domeny|Uwagi|
 |---------------|---------------------|------------------|
@@ -71,7 +69,6 @@ Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Poniże
 
 Po skonfigurowaniu funkcji dublowania portów, ale przed zainstalowaniem bramy usługi ATA, zweryfikuj, czy funkcja dublowania portów działa.
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

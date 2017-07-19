@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 68c169ffd0f42bd8b030dc12f4711cbde2718a99
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,15 +23,13 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Instalowanie usługi ATA — Krok 3
-<a id="install-ata---step-3" class="xliff"></a>
+# <a name="install-ata---step-3"></a>Instalowanie usługi ATA — Krok 3
 
 >[!div class="step-by-step"]
 [« Krok 2](install-ata-step2.md)
 [Krok 4 »](install-ata-step4.md)
 
-## Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
-<a id="step-3-download-the-ata-gateway-setup-package" class="xliff"></a>
+## <a name="step-3-download-the-ata-gateway-setup-package"></a>Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
 Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub w kontrolerze domeny. Jeśli brama zostanie zainstalowana w kontrolerze domeny, będzie ona zainstalowana jako uproszczone brama usługi ATA. Więcej informacji dotyczących uproszczonej bramy usługi ATA można znaleźć w temacie [Architektura usługi ATA](ata-architecture.md). 
 
 Kliknij pozycję Pobierz instalatora bramy na liście kroków w górnej części strony, aby przejść do strony Bramy.
@@ -57,8 +55,7 @@ Plik zip zawiera następujące składniki:
 [« Krok 2](install-ata-step2.md)
 [Krok 4 »](install-ata-step4.md)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

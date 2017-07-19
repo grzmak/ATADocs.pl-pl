@@ -15,14 +15,13 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 630bb2b74dafcf9ab9b3469c2afbf8abc59c2dbf
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
-# Jakie zagrożenia wyszukuje usługa ATA?
-<a id="what-threats-does-ata-look-for" class="xliff"></a>
+# <a name="what-threats-does-ata-look-for"></a>Jakie zagrożenia wyszukuje usługa ATA?
 
 Usługa ATA wykrywa następujące fazy zaawansowanego ataku: rekonesans, przejęcie poświadczeń, penetracja sieci, podwyższenie poziomu uprawnień, zdominowanie domeny i inne. Celem jest wykrycie zaawansowanych ataków i zagrożeń wewnętrznych, zanim będą mogły spowodować szkody w organizacji.
 Wykrycie każdej fazy wywołuje kilka podejrzanych działań odpowiednich dla danej fazy, gdzie poszczególne podejrzane działania są powiązane z różnymi odmianami możliwych ataków.
@@ -31,8 +30,7 @@ Fazy ataku typu kill chain, w których usługa ATA aktualnie obsługuje wykrywan
 ![Usługa ATA skupia się na penetracji sieci w ataku typu kill chain](media/attack-kill-chain-small.jpg)
 
 
-### Rekonesans
-<a id="reconnaissance" class="xliff"></a>
+### <a name="reconnaissance"></a>Rekonesans
 
 Usługa ATA wykrywa wiele odmian rekonesansu. Wykrywane odmiany to między innymi:
 
@@ -45,8 +43,7 @@ Usługa ATA wykrywa wiele odmian rekonesansu. Wykrywane odmiany to między innym
 -   **Rekonesans przy użyciu funkcji wyliczania usług katalogowych**<br></br>Rekonesans wykrywający jednostki (użytkowników, grupy itp.) i wykonywany przy użyciu zdalnego protokołu SAM w celu uruchamiania zapytań względem kontrolerów domeny. Ta metoda rozpoznawcza przeważa w wielu typach złośliwego oprogramowania w rzeczywistych scenariuszach ataków. 
 
 
-### Przejęcie poświadczeń
-<a id="compromised-credentials" class="xliff"></a>
+### <a name="compromised-credentials"></a>Przejęcie poświadczeń
 
 Aby umożliwiać wykrywanie przejęcia poświadczeń, usługa ATA używa zarówno analizy behawioralnej opartej na uczeniu maszynowym, jak i wykrywania znanych złośliwych ataków i technik.
 Korzystając z analizy behawioralnej i uczenia maszynowego, usługa ATA jest w stanie wykrywać podejrzane działania, takie jak nietypowe logowania, nietypowy dostęp do zasobów i nietypowe godziny pracy, które mogą wskazywać na przejęcie poświadczeń. Aby zapewnić ochronę przed przejęciem poświadczeń, usługa ATA wykrywa następujące znane złośliwe ataki i techniki:
@@ -67,8 +64,7 @@ Korzystając z analizy behawioralnej i uczenia maszynowego, usługa ATA jest w s
 
 -   **Nietypowe zachowanie**<br></br>Często w przypadku zagrożeń wewnętrznych, a także ataków zaawansowanych poświadczenia konta mogą zostać przejęte przy użyciu metod inżynierii społecznej lub nowych, jeszcze nieznanych metod i technik. Usługa ATA jest w stanie wykryć tego rodzaju przejęcia, analizując zachowanie jednostki oraz wykrywając nieprawidłowości operacji wykonywanych przez jednostki i alarmując o nich.
 
-### Penetracja sieci
-<a id="lateral-movement" class="xliff"></a>
+### <a name="lateral-movement"></a>Penetracja sieci
 
 Aby zapewnić wykrywanie penetracji sieci, gdy użytkownicy korzystają z poświadczeń umożliwiających dostęp do niektórych zasobów, do których nie powinni mieć dostępu, usługa ATA stosuje zarówno uczenie maszynowe oparte na analizie behawioralnej, jak również wykrywanie znanych złośliwych ataków i technik.
 Korzystając z analizy behawioralnej i uczenia maszynowego, usługa ATA wykrywa nietypowy dostęp do zasobów, użycie nietypowych urządzeń i występowanie innych okoliczności świadczących o penetracji sieci.
@@ -82,8 +78,7 @@ Ponadto usługa ATA może wykrywać penetrację sieci, rozpoznając między inny
 
 -   **Nietypowe zachowanie**<br></br>Penetracja sieci to technika, którą osoby atakujące często stosują, aby poruszać się między urządzeniami i obszarami w sieci ofiary w celu uzyskania dostępu do poświadczeń uprzywilejowanych lub informacji poufnych dla osoby atakującej. Usługa ATA jest w stanie wykryć penetrację sieci, analizując zachowania użytkowników i urządzeń oraz ich relacje w sieci firmowej, a także wykryć wszelkie nietypowe wzorce dostępu, które mogą wskazywać na penetrację sieci przez osobę atakującą.
 
-### Podwyższenie poziomu uprawnień
-<a id="privilege-escalation" class="xliff"></a>
+### <a name="privilege-escalation"></a>Podwyższenie poziomu uprawnień
 
 Usługa ATA wykrywa udane ataki polegające na podwyższeniu poziomu uprawnień oraz próby takich ataków, podczas których osoby atakujące usiłują podwyższyć poziom uprawnień i wykorzystać je wielokrotnie do przejęcia pełnej kontroli nad atakowanym środowiskiem.
 Usługa ATA włącza wykrywanie podwyższenia poziomu uprawnień, łącząc analizę behawioralną umożliwiającą wykrywanie nietypowego zachowania kont uprzywilejowanych, a także wykrywanie znanych i złośliwych ataków i technik, które są często używane do podwyższania poziomu uprawnień, takich jak:
@@ -94,8 +89,7 @@ Usługa ATA włącza wykrywanie podwyższenia poziomu uprawnień, łącząc anal
 
 -   **Nietypowa modyfikacja wrażliwych grup**  <br></br>W fazie podwyższenia poziomu uprawnień atakujący modyfikują grupy z wysokim poziomem uprawnień w celu uzyskania dostępu do poufnych zasobów. Usługa ATA wykrywa teraz odbiegające od normy zmiany w grupach z podwyższonym poziomem uprawnień.
 
-### Zdominowanie domeny
-<a id="domain-dominance" class="xliff"></a>
+### <a name="domain-dominance"></a>Zdominowanie domeny
 
 Usługa ATA wykrywa osoby atakujące, które próbują uzyskać lub uzyskują całkowitą kontrolę i dominację nad środowiskiem ofiary, sprawdzając znane techniki stosowane przez osoby atakujące, między innymi:
 
@@ -110,13 +104,11 @@ Usługa ATA wykrywa osoby atakujące, które próbują uzyskać lub uzyskują ca
 -   **Złośliwe żądania replikacji** <br></br>W środowiskach usługi Active Directory (AD) replikacja między kontrolerami domeny odbywa się regularnie. Osoba atakująca może spreparować żądanie replikacji usługi AD (czasami podszywając się pod kontroler domeny), co umożliwi jej uzyskanie danych przechowywanych w usłudze AD, między innymi skrótów haseł, bez konieczności zastosowania bardziej natrętnych technik, takich jak kopiowanie woluminów w tle.
 
 
-## Co dalej?
-<a id="whats-next" class="xliff"></a>
+## <a name="whats-next"></a>Co dalej?
 
 -   Aby uzyskać więcej informacji na temat zastosowań usługi ATA w Twojej sieci, zobacz [Architektura usługi ATA](ata-architecture.md).
 
 -   Aby rozpocząć wdrażanie usługi ATA, zobacz [Instalowanie usługi ATA](install-ata-step1.md).
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

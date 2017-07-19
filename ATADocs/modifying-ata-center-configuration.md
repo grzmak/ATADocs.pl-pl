@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 1e9fa2d104c52087746e7c03fea27e3cb596adf0
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,14 +23,12 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Modyfikowanie konfiguracji centrum usługi ATA
-<a id="modifying-the-ata-center-configuration" class="xliff"></a>
+# <a name="modifying-the-ata-center-configuration"></a>Modyfikowanie konfiguracji centrum usługi ATA
 
 
 Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Użyj następujących procedur podczas aktualizowania adresu IP i portu, adresu URL konsoli oraz certyfikatu.
 
-## Adres IP centrum usługi ATA
-<a id="the-ata-center-ip-address" class="xliff"></a>
+## <a name="the-ata-center-ip-address"></a>Adres IP centrum usługi ATA
 
 Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym się łączą. Regularnie nawiązują one połączenie z centrum usługi ATA i pobierają zmiany konfiguracji. Wprowadzanie zmian w sposobie nawiązywania połączenia przez bramy usługi ATA z centrum usługi ATA jest wykonywane w dwóch etapach.
 
@@ -43,8 +41,7 @@ Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym 
 > -   Jeśli nowy adres IP został zainstalowany na serwerze centrum usługi ATA, możesz wybrać ten adres z listy adresów IP podczas wprowadzania zmian. Jeśli jednak z jakiegoś powodu nie można zainstalować adresu IP na serwerze centrum usługi ATA, możesz wybrać niestandardowy adres IP i dodać go ręcznie. Nowego adresu IP nie będzie można aktywować, dopóki nie zostanie on zainstalowany na serwerze.
 > -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego adresu IP, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
 
-## Adres URL konsoli
-<a id="the-console-url" class="xliff"></a>
+## <a name="the-console-url"></a>Adres URL konsoli
 
 Ten adres URL jest używany w następujących scenariuszach:
 
@@ -59,8 +56,7 @@ Ten adres URL jest używany w następujących scenariuszach:
 > [!NOTE]
 > Po zmodyfikowaniu adresu URL konsoli usługi ATA należy pobrać pakiet instalacyjny bramy usługi ATA umożliwiający instalowanie nowych bram usługi ATA.
 
-## Certyfikat centrum usługi ATA
-<a id="the-ata-center-certificate" class="xliff"></a>
+## <a name="the-ata-center-certificate"></a>Certyfikat centrum usługi ATA
 Jeśli Twój certyfikat wkrótce wygaśnie i konieczne będzie jego odnowienie lub zmiana po zainstalowaniu nowego certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA, zastąp certyfikat, wykonując następujący dwuetapowy proces:
 
 -   Pierwszy etap: zaktualizuj certyfikat, który ma być używany przez centrum usługi ATA. W tym momencie centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. Podczas synchronizacji konfiguracji bram usługi ATA będą dostępne dwa potencjalne certyfikaty, za pomocą których będzie możliwe wzajemne uwierzytelnianie. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego certyfikatu, nowy certyfikat nie będzie używany.
@@ -73,8 +69,7 @@ Jeśli Twój certyfikat wkrótce wygaśnie i konieczne będzie jego odnowienie l
 > -   Certyfikat jest również używany w konsoli usługi ATA, dlatego powinien pasować do adresu konsoli usługi ATA, aby uniknąć wyświetlania ostrzeżeń przeglądarki.
 > -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego certyfikatu, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
 
-## Zmienianie konfiguracji centrum usługi ATA
-<a id="changing-the-ata-center-configuration" class="xliff"></a>
+## <a name="changing-the-ata-center-configuration"></a>Zmienianie konfiguracji centrum usługi ATA
 
 1.  Otwórz konsolę usługi ATA.
 
@@ -106,7 +101,6 @@ Jeśli Twój certyfikat wkrótce wygaśnie i konieczne będzie jego odnowienie l
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Forum usługi ATA](https://aka.ms/ata-forum)

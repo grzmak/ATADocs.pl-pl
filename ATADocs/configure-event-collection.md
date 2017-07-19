@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 6469f602d2da833e96bba72003aad3fe2b67eb48
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
@@ -23,16 +23,14 @@ ms.lasthandoff: 07/03/2017
 
 
 
-# Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
-<a id="configuring-windows-event-forwarding" class="xliff"></a>
+# <a name="configuring-windows-event-forwarding"></a>Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
 
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje zdarzeń systemu Windows z identyfikatorami 4776, 4732, 4733, 4728, 4729, 4756, 4757. Uproszczona brama usługi ATA może odczytywać je automatycznie. W przypadku gdy nie jest ona wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń rozwiązania SIEM lub przez [skonfigurowanie przekazywania zdarzeń systemu Windows](#configuring-windows-event-forwarding).
 
 > [!NOTE]
 > W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 
-### Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
-<a id="wef-configuration-for-ata-gateways-with-port-mirroring" class="xliff"></a>
+### <a name="wef-configuration-for-ata-gateways-with-port-mirroring"></a>Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
 Po skonfigurowaniu dublowania portów z kontrolerów domeny z bramą usługi ATA postępuj zgodnie z poniższymi instrukcjami, aby skonfigurować przekazywanie zdarzeń systemu Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
@@ -96,7 +94,6 @@ Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dz
 
 Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Instalowanie usługi ATA](install-ata-step1.md)
 - [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

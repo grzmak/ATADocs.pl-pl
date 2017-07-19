@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 5b46d53d4e72ebe32b6e1f57960694194b71b31c
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,11 +23,9 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Instalacja usługi ATA w trybie dyskretnym
-<a id="ata-silent-installation" class="xliff"></a>
+# <a name="ata-silent-installation"></a>Instalacja usługi ATA w trybie dyskretnym
 Ten artykuł zawiera instrukcje dotyczące instalowania usługi ATA w trybie dyskretnym.
-## Wymagania wstępne
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Wymagania wstępne
 
 Usługa ATA 1.8 wymaga zainstalowania programu Microsoft .NET Framework 4.6.1. 
 
@@ -40,8 +38,7 @@ W przypadku użycia dyskretnej metody instalacji usługi ATA instalator jest sko
 Aby śledzić postępy wdrażania, monitoruj dzienniki instalatora usługi ATA, które znajdują się w folderze **%AppData%\Local\Temp**.
 
 
-## Instalowanie centrum usługi ATA
-<a id="install-the-ata-center" class="xliff"></a>
+## <a name="install-the-ata-center"></a>Instalowanie centrum usługi ATA
 
 Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
@@ -81,8 +78,7 @@ Aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instala
     "Microsoft ATA Center Setup.exe" /quiet --LicenseAccepted NetFrameworkCommandLineArguments ="/q" CenterIpAddress=192.168.0.10 CenterPort=443 CenterCertificateThumbprint= ‎"1E2079739F624148ABDF502BF9C799FCB8C7212F"
     ConsoleIpAddress=192.168.0.11  ConsoleCertificateThumbprint="G9530253C976BFA9342FD1A716C0EC94207BFD5A"
 
-## Zaktualizuj centrum usługi ATA
-<a id="update-the-ata-center" class="xliff"></a>
+## <a name="update-the-ata-center"></a>Zaktualizuj centrum usługi ATA
 
 Użyj poniższego polecenia, aby zaktualizować centrum usługi ATA:
 
@@ -106,8 +102,7 @@ Podczas aktualizowania usługi ATA instalator automatycznie wykrywa, czy usługa
 
         "Microsoft ATA Center Setup.exe" /quiet NetFrameworkCommandLineArguments="/q"
 
-## Odinstalowywanie centrum usługi ATA w trybie dyskretnym
-<a id="uninstall-the-ata-center-silently" class="xliff"></a>
+## <a name="uninstall-the-ata-center-silently"></a>Odinstalowywanie centrum usługi ATA w trybie dyskretnym
 
 Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
@@ -133,8 +128,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 
     "Microsoft ATA Center Setup.exe" /quiet /uninstall --DeleteExistingDatabaseData
 
-## Instalacja bramy usługi ATA w trybie dyskretnym
-<a id="ata-gateway-silent-installation" class="xliff"></a>
+## <a name="ata-gateway-silent-installation"></a>Instalacja bramy usługi ATA w trybie dyskretnym
 Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
 
 **Składnia**:
@@ -169,8 +163,7 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
     ConsoleAccountName="user@contoso.com" ConsoleAccountPassword="userpwd"
     
 
-## Aktualizacja bramy usługi ATA
-<a id="update-the-ata-gateway" class="xliff"></a>
+## <a name="update-the-ata-gateway"></a>Aktualizacja bramy usługi ATA
 
 Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dyskretnym:
 
@@ -192,8 +185,7 @@ Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dysk
 
         Microsoft ATA Gateway Setup.exe /quiet NetFrameworkCommandLineArguments="/q"
 
-## Odinstalowywanie bramy usługi ATA w trybie dyskretnym
-<a id="uninstall-the-ata-gateway-silently" class="xliff"></a>
+## <a name="uninstall-the-ata-gateway-silently"></a>Odinstalowywanie bramy usługi ATA w trybie dyskretnym
 
 Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj następującego polecenia: **Składnia**:
 
@@ -221,8 +213,7 @@ Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

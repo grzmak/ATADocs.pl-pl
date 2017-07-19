@@ -15,19 +15,17 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: c338441b37c41b810023ecf5c5ae348651f5ad64
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Co to jest usługa Advanced Threat Analytics?
-<a id="what-is-advanced-threat-analytics" class="xliff"></a>
+# <a name="what-is-advanced-threat-analytics"></a>Co to jest usługa Advanced Threat Analytics?
 Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych, ukierunkowanych ataków cybernetycznych oraz zagrożeniami wewnętrznymi.
 
-## Działanie usługi ATA
-<a id="how-ata-works" class="xliff"></a>
+## <a name="how-ata-works"></a>Działanie usługi ATA
 
 Usługa ATA korzysta z własnego aparatu do analizowania sieci w celu przechwytywania i analizowania ruchu sieciowego wielu protokołów (takich jak Kerberos, DNS, RPC, NTLM i inne) służących do uwierzytelniania, autoryzacji i zbierania informacji. Te informacje są zbierane przez usługę ATA przez:
 
@@ -44,8 +42,7 @@ Usługa ATA może odbierać zdarzenia i dzienniki z następujących źródeł:
 
 Aby uzyskać więcej informacji, zobacz artykuł [Architektura usługi ATA](ata-architecture.md).
 
-## Jakie zadania wykonuje usługa ATA?
-<a id="what-does-ata-do" class="xliff"></a>
+## <a name="what-does-ata-do"></a>Jakie zadania wykonuje usługa ATA?
 
 Technologia ATA wykrywa wiele podejrzanych działań, skupiając się na poszczególnych fazach ataku cybernetycznego typu kill chain, takich jak:
 
@@ -97,21 +94,18 @@ Podejrzane działania tego typu można przeglądać na pulpicie nawigacyjnym us�
   ![Przykładowy ekran usługi ATA przedstawiający zerwanie relacji zaufania](media/broken-trust-sa.png)
 
 
-## Znane problemy
-<a id="known-issues" class="xliff"></a>
+## <a name="known-issues"></a>Znane problemy
 
 - W przypadku aktualizacji do usługi ATA 1.7 i następującej natychmiast po niej aktualizacji do usługi ATA 1.8, bez wcześniejszego zaktualizowania bram usługi ATA, nie będzie można przeprowadzić migracji do usługi ATA 1.8. Należy najpierw zaktualizować wszystkie bramy do wersji 1.7.1 lub 1.7.2 przed aktualizowaniem centrum usługi ATA do wersji 1.8.
 
 - Jeśli wybierzesz opcję pełnej migracji, może ona potrwać bardzo długo w zależności od rozmiaru bazy danych. Podczas wybierania opcji migracji jest wyświetlany szacowany czas — należy zwrócić na niego uwagę przed podjęciem decyzji. 
 
 
-## Co dalej?
-<a id="whats-next" class="xliff"></a>
+## <a name="whats-next"></a>Co dalej?
 
 -   Aby uzyskać więcej informacji na temat zastosowań usługi ATA w Twojej sieci, zobacz [Architektura usługi ATA](ata-architecture.md).
 
 -   Aby rozpocząć wdrażanie usługi ATA, zobacz [Instalowanie usługi ATA](install-ata-step1.md).
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
