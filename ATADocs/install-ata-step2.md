@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: aa5e752fa10644165cb70d2cd8c08a1145261edb
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
@@ -23,15 +23,13 @@ ms.lasthandoff: 07/03/2017
 
 
 
-# Instalowanie usługi ATA — Krok 2
-<a id="install-ata---step-2" class="xliff"></a>
+# <a name="install-ata---step-2"></a>Instalowanie usługi ATA — Krok 2
 
 >[!div class="step-by-step"]
 [« Krok 1](install-ata-step1.md)
 [Krok 3 »](install-ata-step3.md)
 
-## Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
-<a id="step-2-provide-a-username-and-password-to-connect-to-your-active-directory-forest" class="xliff"></a>
+## <a name="step-2-provide-a-username-and-password-to-connect-to-your-active-directory-forest"></a>Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
 
 Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 
@@ -57,8 +55,7 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 [Krok 3 »](install-ata-step3.md)
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: cc7f5d2e75076b1f684ad76daca9ceb35e0d30e3
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,8 +23,7 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Ustawianie powiadomień usługi ATA
-<a id="set-ata-notifications" class="xliff"></a>
+# <a name="set-ata-notifications"></a>Ustawianie powiadomień usługi ATA
 Usługa ATA może wysyłać powiadomienia w przypadku wykrycia podejrzanych działań za pośrednictwem poczty e-mail lub przy użyciu funkcji przekazywania zdarzeń usługi ATA, przekazując zdarzenia do serwera SIEM/Syslog. Zanim określisz, które powiadomienia chcesz otrzymywać, musisz [skonfigurować serwer poczty e-mail i serwer Syslog](setting-syslog-email-server-settings.md).
 
 > [!NOTE]
@@ -51,6 +50,5 @@ Aby otrzymywać powiadomienia, określ następujące ustawienia:
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

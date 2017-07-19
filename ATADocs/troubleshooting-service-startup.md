@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 1291281273188a21b61b29f06a5220eee589767c
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,8 +23,7 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
-<a id="troubleshooting-ata-center-service-startup" class="xliff"></a>
+# <a name="troubleshooting-ata-center-service-startup"></a>Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
 
 Jeśli nie możesz uruchomić centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
 
@@ -37,8 +36,7 @@ Jeśli można go uruchomić, z platformą jest prawdopodobnie wszystko w porząd
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

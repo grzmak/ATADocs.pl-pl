@@ -15,7 +15,7 @@ ms.reviewer: arzinger
 ms.suite: ems
 ms.openlocfilehash: 0ded0dd064f0327f6e52f15081e2b9dce14f982b
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
@@ -23,13 +23,11 @@ ms.lasthandoff: 07/03/2017
 
 
 
-# Rozwiązywanie znanych problemów z usługą ATA
-<a id="troubleshooting-ata-known-issues" class="xliff"></a>
+# <a name="troubleshooting-ata-known-issues"></a>Rozwiązywanie znanych problemów z usługą ATA
 
 W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA oraz czynności, jakie należy wykonać w celu ich usunięcia.
 
-## Błędy bramy i uproszczonej bramy usługi ATA
-<a id="ata-gateway-and-lightweight-gateway-errors" class="xliff"></a>
+## <a name="ata-gateway-and-lightweight-gateway-errors"></a>Błędy bramy i uproszczonej bramy usługi ATA
 
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
@@ -52,8 +50,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z uproszczonej bramy w programie VMware|Jeśli używasz kontrolerów domeny na maszynach wirtualnych z programem VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może być to spowodowane niezgodnością konfiguracji w programie VMware. |Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.|
 
 
-## Błędy wdrażania
-<a id="deployment-errors" class="xliff"></a>
+## <a name="deployment-errors"></a>Błędy wdrażania
 |Błąd|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Instalacja platformy .Net Framework 4.6.1 nie powiodła się z powodu błędu 0x800713ec|Na serwerze nie są zainstalowane wymagania wstępne platformy .Net Framework 4.6.1. |Przed zainstalowaniem usługi ATA sprawdź, czy na serwerze są zainstalowane aktualizacje systemu Windows [KB2919442](https://www.microsoft.com/download/details.aspx?id=42135) i [KB2919355](https://support.microsoft.com/kb/2919355).|
@@ -65,8 +62,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 19eee0466269bbc2255d3a83e2f8c073057ba356
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
@@ -23,13 +23,11 @@ ms.lasthandoff: 06/30/2017
 
 
 
-# Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
-<a id="change-ata-configuration---domain-connectivity-password" class="xliff"></a>
+# <a name="change-ata-configuration---domain-connectivity-password"></a>Zmienianie konfiguracji usługi ATA — hasło do łączności z domeną
 
 
 
-## Zmienianie hasła do łączności z domeną
-<a id="change-the-domain-connectivity-password" class="xliff"></a>
+## <a name="change-the-domain-connectivity-password"></a>Zmienianie hasła do łączności z domeną
 Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa bramy usługi ATA przestanie działać w bramach usługi ATA.
 
 Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat: `The supplied credential is invalid.`
@@ -56,7 +54,6 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

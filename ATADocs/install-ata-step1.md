@@ -15,15 +15,14 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 97fa1522ca43cf92416ac845b8886f2905e9981b
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Instalowanie usługi ATA — Krok 1
-<a id="install-ata---step-1" class="xliff"></a>
+# <a name="install-ata---step-1"></a>Instalowanie usługi ATA — Krok 1
 
 >[!div class="step-by-step"]
 [Krok 2 »](install-ata-step2.md)
@@ -33,8 +32,7 @@ Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej 
 > [!IMPORTANT] 
 > Jeśli korzystasz z systemu Windows 2012 R2, zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji. W przeciwnym razie ta aktualizacja zostanie zainstalowana podczas instalacji usługi ATA, wymagając ponownego uruchomienia komputera.
 
-## Krok 1. Pobieranie i instalowanie centrum usługi ATA
-<a id="step-1-download-and-install-the-ata-center" class="xliff"></a>
+## <a name="step-1-download-and-install-the-ata-center"></a>Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
     
 > [!NOTE]
@@ -88,8 +86,7 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 W tym momencie zostanie automatycznie wyświetlona strona ustawień **Ogólne** umożliwiająca kontynuowanie konfiguracji i wdrażania bram usługi ATA.
 Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem. Jest to normalne zachowanie. Możesz kliknąć przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
 
-### Weryfikowanie instalacji
-<a id="validate-installation" class="xliff"></a>
+### <a name="validate-installation"></a>Weryfikowanie instalacji
 
 1.  Sprawdź, czy usługa o nazwie **Microsoft Advanced Threat Analytics Center** jest uruchomiona.
 2.  Na pulpicie kliknij skrót do usługi **Microsoft Advanced Threat Analytics**, aby nawiązać połączenie z konsolą usługi ATA. Zaloguj się przy użyciu tych samych poświadczeń użytkownika, które zostały użyte do zainstalowania centrum usługi ATA.
@@ -100,8 +97,7 @@ Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone o
 [« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
 [Krok 2 »](install-ata-step2.md)
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

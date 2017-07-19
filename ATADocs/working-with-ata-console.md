@@ -15,7 +15,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 3d687087dd9e1ae7f7642f9fdd7d89420f3bec27
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
@@ -23,19 +23,16 @@ ms.lasthandoff: 07/03/2017
 
 
 
-# Praca z konsolą usługi ATA
-<a id="working-with-the-ata-console" class="xliff"></a>
+# <a name="working-with-the-ata-console"></a>Praca z konsolą usługi ATA
 
 Konsola usługi ATA służy do monitorowania podejrzanych działań wykrytych przez usługę ATA i reagowania na nie.
 
 Wpisanie znaku ? spowoduje wyświetlenie skrótów klawiaturowych dla ułatwień dostępu w portalu usługi ATA. 
 
-## Włączanie dostępu do konsoli usługi ATA
-<a id="enabling-access-to-the-ata-console" class="xliff"></a>
+## <a name="enabling-access-to-the-ata-console"></a>Włączanie dostępu do konsoli usługi ATA
 Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta użytkownika, który został przypisany do właściwej roli usługi ATA z dostępem do konsoli ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartego na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami ról usługi ATA](ata-role-groups.md).
 
-## Logowanie się do konsoli usługi ATA
-<a id="logging-into-the-ata-console" class="xliff"></a>
+## <a name="logging-into-the-ata-console"></a>Logowanie się do konsoli usługi ATA
 
 1. Na serwerze centrum usługi ATA kliknij ikonę **Konsola usługi Microsoft ATA** na pulpicie lub otwórz przeglądarkę i przejdź do konsoli usługi ATA.
 
@@ -56,16 +53,14 @@ Aby zalogować się przy użyciu logowania jednokrotnego, upewnij się, że witr
 
 
 
-## Konsola usługi ATA
-<a id="the-ata-console" class="xliff"></a>
+## <a name="the-ata-console"></a>Konsola usługi ATA
 
 Konsola usługi ATA zapewnia szybki przegląd wszystkich podejrzanych działań w kolejności chronologicznej. Umożliwia przejście do szczegółów dowolnego działania i wykonanie operacji w oparciu o te działania. W konsoli są również wyświetlane alerty i powiadomienia wyróżniające problemy dotyczące sieci usługi ATA lub nowe działania uznane za podejrzane.
 
 Są to kluczowe elementy konsoli usługi ATA.
 
 
-### Oś czasu ataków
-<a id="attack-time-line" class="xliff"></a>
+### <a name="attack-time-line"></a>Oś czasu ataków
 
 Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Oś czasu ataków można filtrować, aby wyświetlać Wszystkie, Otwarte, Odrzucone lub Rozwiązane podejrzane działania. Można również sprawdzić ważność przypisaną do poszczególnych działań.
 
@@ -73,27 +68,23 @@ Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli us
 
 Aby uzyskać więcej informacji, zobacz [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md).
 
-### Pasek powiadomień
-<a id="notification-bar" class="xliff"></a>
+### <a name="notification-bar"></a>Pasek powiadomień
 
 Po wykryciu nowego podejrzanego działania pasek powiadomień zostanie otwarty automatycznie po prawej stronie. Jeśli od czasu ostatniego zalogowania miały miejsce nowe podejrzane działania, pasek powiadomień zostanie otwarty po pomyślnym zalogowaniu. W dowolnym momencie można uzyskać dostęp do paska powiadomień, klikając strzałkę po prawej stronie.
 
 ![Obraz paska powiadomień usługi ATA](media/notification-bar-1.7.png)
 
-### Panel filtrowania
-<a id="filtering-panel" class="xliff"></a>
+### <a name="filtering-panel"></a>Panel filtrowania
 
 Podejrzane działania wyświetlane na osi czasu ataków lub na karcie podejrzanych działań profilu jednostki można filtrować na podstawie stanu i ważności.
 
-### Pasek wyszukiwania
-<a id="search-bar" class="xliff"></a>
+### <a name="search-bar"></a>Pasek wyszukiwania
 
 W menu u góry znajduje się pasek wyszukiwania. Umożliwia on wyszukiwanie określonych użytkowników, komputerów lub grup w usłudze ATA. Aby go wypróbować, po prostu zacznij wpisywać tekst.
 
 ![Obraz wyszukiwania w konsoli usługi ATA](media/ATA-console-search.png)
 
-### Centrum kondycji
-<a id="health-center" class="xliff"></a>
+### <a name="health-center"></a>Centrum kondycji
 
 Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu usługi ATA.
 
@@ -103,8 +94,7 @@ Za każdym razem, gdy system napotka problem, taki jak błąd łączności lub r
 
 Alerty centrum kondycji można odrzucać lub rozwiązywać. Są również podzielone na kategorie Wysoka, Średnia lub Niska w zależności od ważności. W przypadku rozwiązania alertu, który jest nadal wykrywany przez usługę ATA jako aktywny, zostanie on automatycznie przeniesiony do listy otwartych alertów. Jeśli system wykryje, że przyczyna alertu już nie istnieje (problem został rozwiązany), alert zostanie przeniesiony do listy rozwiązanych.
 
-### Profile użytkowników i komputerów
-<a id="user-and-computer-profiles" class="xliff"></a>
+### <a name="user-and-computer-profiles"></a>Profile użytkowników i komputerów
 
 Usługa ATA tworzy profil dla każdego użytkownika i komputera w sieci. W profilu użytkownika usługi ATA wyświetlane są ogólne informacje, takie jak członkostwo w grupie, ostatnie logowania i ostatnio używane zasoby. Zawiera także listę lokalizacji, z którymi użytkownik jest połączony za pośrednictwem sieci VPN. Aby uzyskać listę członkostwa w grupach, które usługa ATA uważa za wrażliwe, zobacz poniżej.
 
@@ -121,8 +111,7 @@ Profil, który nie mógł zostać całkowicie rozwiązany przez usługę ATA, zo
 
 ![Obraz nierozwiązanego profilu usługi ATA](media/ATA-Unresolved-Profile.jpg)
 
-### Wrażliwe grupy
-<a id="sensitive-groups" class="xliff"></a>
+### <a name="sensitive-groups"></a>Wrażliwe grupy
 
 Grupy na poniższej liście są uważane za **wrażliwe** przez usługę ATA. Są to grupy, które zostaną oflagowane jako mające uprawnienia administracyjne i zgłaszające alerty, które odpowiadają wrażliwym kontom:
 
@@ -146,8 +135,7 @@ Grupy na poniższej liście są uważane za **wrażliwe** przez usługę ATA. S�
 - Administratorzy usługi DNS 
 
 
-### Mini profil
-<a id="mini-profile" class="xliff"></a>
+### <a name="mini-profile"></a>Mini profil
 
 W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka jak użytkownik lub komputer, umieszczenie wskaźnika myszy na jednostce spowoduje automatyczne otwarcie mini profilu zawierającego następujące informacje, jeśli są dostępne:
 
@@ -165,6 +153,5 @@ W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

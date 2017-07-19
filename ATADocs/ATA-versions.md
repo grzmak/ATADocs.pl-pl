@@ -14,14 +14,13 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: f1092e1cf6c991785dbf8bad3b197b68a21c0833
 ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/03/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
-# Wsparcie techniczne w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)
-<a id="support-for-microsoft-advanced-threat-analytics-ata-versions" class="xliff"></a>
+# <a name="support-for-microsoft-advanced-threat-analytics-ata-versions"></a>Wsparcie techniczne w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)
 
 Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Każda zaktualizowana wersja będzie objęta pomocą techniczną przez 12 miesięcy od daty ogólnej dostępności. Pomoc techniczna będzie świadczona przez całe 12 miesięcy. Nasze struktury wsparcia są jednak obecnie dynamiczne i ewoluują w kierunku dwóch oddzielnych faz świadczenia usługi, zależnych od dostępności jej najnowszej wersji.
 
@@ -34,8 +33,7 @@ Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Ka
 > [!Note]
 > Najnowsza wersja usługi ATA znajduje się zawsze w fazie aktualizacji zabezpieczeń i aktualizacji krytycznych. Oznacza to, że w razie wystąpienia defektu kodu wymagającego aktualizacji krytycznej użytkownicy najnowszej wersji otrzymają taką aktualizację. Użytkownicy wszystkich innych wersji będą otrzymywać tylko aktualizacje zabezpieczeń. Świadczenie pomocy technicznej kończy się po upływie 12 miesięcy cyklu życia wersji. Użytkownicy muszą wówczas zaktualizować posiadaną wersję do wersji objętej wsparciem.
 
-## Historia wersji
-<a id="version-history" class="xliff"></a>
+## <a name="version-history"></a>Historia wersji
 
 |WERSJA|NUMER KOMPILACJI|DATA UDOSTĘPNIENIA| DATA ZAKOŃCZENIA WSPARCIA|
 |----|----|----|----|
@@ -51,6 +49,5 @@ Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Ka
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

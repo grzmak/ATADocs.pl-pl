@@ -15,15 +15,14 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 4f29dfcc8b18ff755f6c0dcdaa08eaa807b08072
 ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/30/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# Raporty usługi ATA
-<a id="ata-reports" class="xliff"></a>
+# <a name="ata-reports"></a>Raporty usługi ATA
 
 Sekcja raportów usługi ATA w konsoli umożliwia generowanie raportów, które udostępniają informacje o stanie systemu: zarówno o kondycji systemu, jak i raport o podejrzanych działaniach wykrytych w środowisku.
 
@@ -55,8 +54,7 @@ Aby ustawić zaplanowany raport:
 > Zaplanowane raporty są dostarczane za pośrednictwem poczty e-mail i mogą być wysyłane tylko wtedy, gdy serwer poczty e-mail został już skonfigurowany w obszarze **Konfiguracja** , a następnie w obszarze powiadomień i raportów wybierz **Serwer poczty**.
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
