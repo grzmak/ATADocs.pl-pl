@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/2/2017
+ms.date: 7/16/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,14 +13,13 @@ ms.technology:
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 6850c5e8e264a9610e377a9ab4aadca338971ee1
-ms.sourcegitcommit: be6bdfa24a9b25a3375a4768d513b93900b3a498
+ms.openlocfilehash: 63dd37548dbf4e150f32880543c3bf421bf3fe71
+ms.sourcegitcommit: 3cd268cf353ff8bc3d0b8f9a8c10a34353d1fcf1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2017
+ms.lasthandoff: 07/16/2017
 ---
-# Co nowego w wersji 1.8 usługi ATA
-<a id="whats-new-in-ata-version-18" class="xliff"></a>
+# <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 
 Najnowszą wersję aktualizacji usługi ATA można [pobrać z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=55536), a pełną wersję można pobrać z centrum [Eval Center](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).
 
@@ -28,8 +27,7 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
 
 
 
-## Nowe i zaktualizowane funkcje wykrywania
-<a id="new--updated-detections" class="xliff"></a>
+## <a name="new--updated-detections"></a>Nowe i zaktualizowane funkcje wykrywania
 
 - Implementacja nietypowego protokołu została ulepszona, aby umożliwić wykrycie złośliwego oprogramowania WannaCry.
 
@@ -48,8 +46,7 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
     - Implementacja nietypowego protokołu
     - Zerwanie relacji zaufania
 
-## Ulepszona klasyfikacja podejrzanych działań
-<a id="improved-triage-of-suspicious-activities" class="xliff"></a>
+## <a name="improved-triage-of-suspicious-activities"></a>Ulepszona klasyfikacja podejrzanych działań
 
 -   NOWOŚĆ! Usługa ATA 1.8 umożliwia uruchamianie następujących akcji podejrzanych działań w trakcie procesu klasyfikacji: 
     - **Wykluczanie jednostek** ze zgłaszania przyszłych podejrzanych działań, aby zapobiec alertom, gdy usługa ATA wykryje niegroźne fałszywe alarmy (na przykład uruchamianie zdalnego kodu przez administratora lub wykrywanie skanerów zabezpieczeń).
@@ -57,32 +54,32 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
     - **Usuwanie podejrzanych działań** z osi czasu ataków.
 -   Proces wykonywania kolejnych czynności dla alertów podejrzanych działań jest teraz efektywniejszy. Oś czasu podejrzanych działań została przeprojektowana. W usłudze ATA 1.8 będzie można wyświetlić o wiele więcej podejrzanych działań na jednym ekranie zawierającym lepsze informacje dla celów klasyfikacji i badania. 
 
-## Nowe raporty pomagają w badaniach
-<a id="new-reports-to-help-you-investigate" class="xliff"></a> 
+## <a name="new-reports-to-help-you-investigate"></a>Nowe raporty pomagają w badaniach 
 -   NOWOŚĆ! Dodano **raport z podsumowaniem** w celu umożliwienia wyświetlenia wszystkich danych podsumowania z usługi ATA, w tym podejrzanych działań, problemów z kondycją itd. Możesz nawet określić dostosowany raport, który jest automatycznie generowany cyklicznie.
 -   NOWOŚĆ! Dodano **raport wrażliwych grup** w celu umożliwienia wyświetlenia wszystkich zmian wprowadzonych we wrażliwych grupach w danym okresie.
 
 
-## Ulepszenia infrastruktury
-<a id="infrastructure-improvements" class="xliff"></a>
+## <a name="infrastructure-improvements"></a>Ulepszenia infrastruktury
 
 -   Wydajność centrum usługi ATA została ulepszona. W usłudze ATA 1.8 centrum usługi ATA może obsługiwać więcej niż 1 mln pakietów na sekundę.
 -   Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 -   Możesz teraz oddzielnie skonfigurować pocztę e-mail do monitorowania alertów i podejrzanych działań.
 
-## Ulepszenia zabezpieczeń
-<a id="security-improvements" class="xliff"></a>
+## <a name="security-improvements"></a>Ulepszenia zabezpieczeń
 
 -   NOWOŚĆ! **Logowanie jednokrotne do zarządzania usługą ATA**. Usługa ATA obsługuje logowanie jednokrotne zintegrowane z uwierzytelnianiem systemu Windows — jeśli użytkownik jest już zalogowany na komputerze, usługa ATA użyje tego tokenu do zalogowania na konsoli usługi ATA. Możesz również się zalogować przy użyciu karty inteligentnej. Skrypty instalacji dyskretnej dla bramy usługi ATA i uproszczonej bramy usługi ATA używają teraz kontekstu zalogowanego użytkownika bez konieczności podawania poświadczeń.
 -   Lokalne uprawnienia systemu zostały usunięte z procesu bramy usługi ATA, dzięki czemu można teraz używać kont wirtualnych (dostępnych tylko dla autonomicznych bram usługi ATA), zarządzanych kont usług i kont usług zarządzanych przez grupę do uruchamiania procesu bramy usługi ATA.   
 -   Zostały dodane dzienniki inspekcji dla centrum usługi ATA i bram. Wszystkie akcje są obecnie rejestrowane w dzienniku zdarzeń systemu Windows.
 -   Dodano obsługę certyfikatów dostawcy magazynu kluczy dla centrum usługi ATA.
 
+## <a name="additional-changes"></a>Dodatkowe zmiany
+
+- Usunięto opcję dodawania notatek z podejrzanych działań
+- Zalecenia dotyczące eliminacji podejrzanych działań zostały usunięte z ich osi czasu.
 
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 
 [Aktualizacja usługi ATA do wersji 1.8 — przewodnik migracji](ata-update-1.8-migration-guide.md)
