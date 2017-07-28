@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: ae72f7a25f0c57dadd02049fe3a570a0da7b84fd
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: bc3ad332e1a8af6259eadaecc4638f27fded67c6
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -55,6 +55,7 @@ Aby to zrobić, należy otworzyć „Monitor wydajności” i dodać wszystkie l
 
 Oto lista głównych liczników bramy usługi ATA, na które należy zwrócić uwagę:
 
+> [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
 |-----------|---------------|-------------|-------------------|
 |Microsoft ATA Gateway\NetworkListener PEF Parsed Messages/Sec (Brama usługi Microsoft ATA\Liczba komunikatów PEF analizowanych przez składnik NetworkListener na sekundę)|Ilość ruchu sieciowego przetwarzanego przez bramę usługi ATA w ciągu sekundy.|Brak wartości progowej.|Ułatwia ustalenie ilości ruchu sieciowego analizowanego przez bramę usługi ATA.|
@@ -75,7 +76,7 @@ W celu mierzenia ograniczeń zasobów, które usługa ATA wymusza w uproszczonej
 
 Aby to zrobić, należy otworzyć „Monitor wydajności” i dodać wszystkie liczniki dla uproszczonej bramy usługi ATA. Nazwy obiektów liczników wydajności to: „Microsoft ATA Gateway” i „Microsoft ATA Gateway Updater”.
 
-
+> [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
 |-----------|---------------|-------------|-------------------|
 |Microsoft ATA Gateway Updater\GatewayUpdaterResourceManager CPU Time Max % (Aktualizator bramy usługi Microsoft ATA\maksymalny czas procesora CPU składnika GatewayUpdaterResourceManager w %)|Maksymalna ilość czasu procesora (w procentach) do wykorzystania przez proces uproszczonej bramy. |Brak wartości progowej. | Jest to ograniczenie, które chroni zasoby kontrolera domeny przed zużyciem przez uproszczoną bramę usługi ATA. Jeśli widzisz, że proces często osiąga maksymalny limit w przedziale czasu (proces osiąga limit, a następnie zaczyna pomijać ruch), oznacza to, należy dodać więcej zasobów do serwera z działającym kontrolerem domeny.|
@@ -87,7 +88,7 @@ Aby to zrobić, należy otworzyć „Monitor wydajności” i dodać wszystkie l
 Aby zobaczyć rzeczywiste zużycie, sprawdź następujące liczniki:
 
 
-
+> [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
 |-----------|---------------|-------------|-------------------|
 |Proces(Microsoft.TRI.Gateway)\%Czas procesora|Maksymalna ilość czasu procesora (w procentach), którą faktycznie zużywa proces uproszczonej bramy. |Brak wartości progowej. | Należy porównać wyniki tego licznika do limitu odczytanego z licznika GatewayUpdaterResourceManager CPU Time Max % (maksymalny czas procesora CPU składnika GatewayUpdaterResourceManager w %). Jeśli widzisz, że proces często osiąga maksymalny limit w przedziale czasu (proces osiąga limit, a następnie zaczyna pomijać ruch), oznacza to, należy dodać więcej zasobów do serwera z działającym kontrolerem domeny.|
@@ -101,6 +102,7 @@ Aby to zrobić, należy otworzyć „Monitor wydajności” i dodać wszystkie l
 
 Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić uwagę:
 
+> [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
 |-----------|---------------|-------------|-------------------|
 |Microsoft ATA Center\EntityReceiver Entity Batch Block Size (Centrum usługi Microsoft ATA\rozmiar bloku partii jednostek składnika EntityReceiver)|Liczba partii jednostek umieszczonych w kolejce przez centrum usługi ATA.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 10 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener.  Zobacz **Proces składnika usługi ATA** powyżej.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
@@ -116,6 +118,7 @@ Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić
 ## <a name="operating-system-counters"></a>Liczniki systemu operacyjnego
 Oto lista głównych liczników systemu operacyjnego, na które należy zwrócić uwagę:
 
+> [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
 |-----------|---------------|-------------|-------------------|
 |Procesor(_Total)\% Czas procesora|Procent czasu, który upłynął, przeznaczony przez procesor na wykonywanie wątku czynnego.|Przeciętnie mniej niż 80%.|Sprawdź, czy istnieje proces zużywający znacznie większą ilość czasu procesora niż powinien.<br /><br />Dodaj więcej procesorów.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.<br /><br />Licznik „Procesor(_Total)\% Czas procesora” może być mniej dokładny w przypadku serwerów wirtualnych, na których bardziej dokładne pomiary braku mocy procesora umożliwia licznik „System\Długość kolejki procesora”.|

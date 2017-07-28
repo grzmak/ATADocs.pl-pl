@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 377a3c81-5c1d-486f-8942-85249aacf560
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 112ee57f79b20b4e42b15c6fdc4566bbdcebe29f
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 174918812562b9bfe892fcde90d92e208b26ffc3
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -34,6 +34,7 @@ Domyślną i najbardziej podstawową metodą wysyłania zapytań do bazy danych 
 
 2.  Uruchom polecenie `mongo.exe ATA`. Upewnij się, że ciąg „ATA” jest wpisany tylko wielkimi literami.
 
+> [!div class="mx-tableFixed"]
 |Zadanie|Składnia|Uwagi|
 |-------------|----------|---------|
 |Sprawdzanie kolekcji w bazie danych.|`show collections`|Użyteczne jako kompletny test umożliwiający sprawdzenie, czy ruch sieciowy jest zapisywany w bazie danych oraz czy zdarzenie 4776 jest odbierane przez usługę ATA.|

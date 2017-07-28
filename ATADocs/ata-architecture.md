@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 4d95e5b13d06ea0963b7cac129be4eb1458e5d4c
-ms.sourcegitcommit: 53b56220fa761671442da273364bdb3d21269c9e
+ms.openlocfilehash: 5410f706e84517eb964e991deeb21001a09d0cef
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2017
+ms.lasthandoff: 07/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -146,6 +146,7 @@ Jeśli spowoduje to zużycie wszystkich zasobów uproszczonej bramy usługi ATA,
 
 W poniższej tabeli zawarto przykład kontrolera domeny z wystarczającą ilością zasobów obliczeniowych, która umożliwia zastosowanie większego limitu przydziału niż obecnie wymagany, dzięki czemu cały ruch jest monitorowany:
 
+> [!div class="mx-tableFixed"]
 ||||||
 |-|-|-|-|-|
 |Usługa Active Directory (Lsass.exe)|Uproszczona brama usługi ATA (Microsoft.Tri.Gateway.exe)|Różne (inne procesy) |Przydział uproszczonej bramy usługi ATA|Brama pomija|
@@ -153,6 +154,7 @@ W poniższej tabeli zawarto przykład kontrolera domeny z wystarczającą ilośc
 
 Jeśli usługa Active Directory potrzebuje więcej mocy obliczeniowej, przydział wymagany przez uproszczoną bramę usługi ATA zostanie zmniejszony. W poniższym przykładzie uproszczona brama usługi ATA potrzebuje więcej zasobów niż zostało jej przydzielone i pomija część ruchu (monitoruje tylko część ruchu):
 
+> [!div class="mx-tableFixed"]
 ||||||
 |-|-|-|-|-|
 |Usługa Active Directory (Lsass.exe)|Uproszczona brama usługi ATA (Microsoft.Tri.Gateway.exe)|Różne (inne procesy) |Przydział uproszczonej bramy usługi ATA|Brama pomija|
