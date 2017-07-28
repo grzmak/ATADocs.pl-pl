@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 06/28/2017
+ms.date: 07/20/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 5b46d53d4e72ebe32b6e1f57960694194b71b31c
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 7e130da2b5a177658e176a428101c11d02bc2a3f
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 07/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -49,6 +49,7 @@ Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
     
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
@@ -58,6 +59,7 @@ Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 
 **Parametry instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |InstallationPath|InstallationPath="<InstallPath>"|Nie|Ustawia ścieżkę instalacji plików binarnych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center|
@@ -89,6 +91,7 @@ Użyj poniższego polecenia, aby zaktualizować centrum usługi ATA:
 
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
@@ -111,6 +114,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia dezinstalator bez interfejsu użytkownika i bez monitów.|
@@ -119,6 +123,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 
 **Parametry instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
 |DeleteExistingDatabaseData|DeleteExistingDatabaseData|Nie|Usuwa wszystkie pliki z istniejącej bazy danych.|
@@ -134,7 +139,7 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 **Składnia**:
 
     Microsoft ATA Gateway Setup.exe [/quiet] [/Help] [NetFrameworkCommandLineArguments ="/q"] 
-    [GatewayCertificateThumbprint="<CertThumbprint >"] [ConsoleAccountName="<AccountName>"] 
+    [ConsoleAccountName="<AccountName>"] 
     [ConsoleAccountPassword="<AccountPassword>"]
 
 > [!NOTE]
@@ -143,6 +148,7 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
@@ -151,9 +157,9 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 
 **Parametry instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
-|GatewayCertificateThumbprint|GatewayCertificateThumbprint="<CertThumbprint >"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli parametr jest nieustawiony, instalacja wygeneruje certyfikat z podpisem własnym.|
 |ConsoleAccountName|ConsoleAccountName="<AccountName>"|Tak|Określa nazwę konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 |ConsoleAccountPassword|ConsoleAccountPassword="<AccountPassword>"|Tak|Określa hasło konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 
@@ -174,6 +180,7 @@ Użyj poniższego polecenia, aby zaktualizować bramę usługi ATA w trybie dysk
 
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku instalacji dyskretnej?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia instalator bez interfejsu użytkownika i bez monitów.|
@@ -193,6 +200,7 @@ Aby przeprowadzić odinstalowywanie bramy usługi ATA w trybie dyskretnym, użyj
     
 **Opcje instalacji**:
 
+> [!div class="mx-tableFixed"]
 |Nazwa|Składnia|Obowiązkowy element w przypadku odinstalowywania w trybie dyskretnym?|Opis|
 |-------------|----------|---------|---------|
 |Quiet|/quiet|Tak|Uruchamia dezinstalator bez interfejsu użytkownika i bez monitów.|
