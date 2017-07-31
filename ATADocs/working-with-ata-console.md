@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3d687087dd9e1ae7f7642f9fdd7d89420f3bec27
-ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
+ms.openlocfilehash: 7067477066a2341fa15b2b0d283b2d7721239d5e
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -34,19 +34,22 @@ Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta uży
 
 ## <a name="logging-into-the-ata-console"></a>Logowanie się do konsoli usługi ATA
 
+>[!NOTE]
+ > Począwszy od usługi ATA 1.8, proces logowania do konsoli usługi ATA odbywa się przy użyciu logowania jednokrotnego.
+
 1. Na serwerze centrum usługi ATA kliknij ikonę **Konsola usługi Microsoft ATA** na pulpicie lub otwórz przeglądarkę i przejdź do konsoli usługi ATA.
 
     ![Ikona serwera usługi ATA](media/ata-server-icon.png)
 
->[!NOTE]
-> Możesz również otworzyć przeglądarkę z poziomu centrum usługi ATA lub bramy usługi ATA i przejść na adres IP skonfigurowany dla konsoli usługi ATA w instalacji centrum usługi ATA.    
+ >[!NOTE]
+ > Możesz również otworzyć przeglądarkę z poziomu centrum usługi ATA lub bramy usługi ATA i przejść na adres IP skonfigurowany dla konsoli usługi ATA w instalacji centrum usługi ATA.    
 
 2.  Jeśli komputer, na którym zainstalowano centrum usługi ATA, i komputer, z którego próbujesz uzyskać dostęp do konsoli usługi ATA, są przyłączone do domeny, usługa ATA obsługuje logowanie jednokrotne zintegrowane z uwierzytelnianiem systemu Windows — jeśli użytkownik został już zalogowany na komputerze, usługa ATA użyje tego tokenu do zalogowania do konsoli usługi ATA. Możesz również się zalogować przy użyciu karty inteligentnej. Uprawnienia w usłudze ATA będą odpowiadać Twojej [roli administratora](ata-role-groups.md).
 
-> [!NOTE]
-> Pamiętaj, żeby zalogować się na komputerze, z którego chcesz uzyskać dostęp do konsoli usługi ATA, przy użyciu nazwy użytkownika i hasła administratora usługi ATA. Zamiast tego możesz też uruchomić przeglądarkę jako inny użytkownik lub wylogować się z systemu Windows i zalogować jako administrator usługi ATA. Aby spowodować, żeby konsola usługi ATA zapytała o poświadczenia, uzyskaj dostęp do konsoli przy użyciu adresu IP, a wtedy pojawi się monit o podanie poświadczeń.
+ > [!NOTE]
+ > Pamiętaj, żeby zalogować się na komputerze, z którego chcesz uzyskać dostęp do konsoli usługi ATA, przy użyciu nazwy użytkownika i hasła administratora usługi ATA. Zamiast tego możesz też uruchomić przeglądarkę jako inny użytkownik lub wylogować się z systemu Windows i zalogować jako administrator usługi ATA. Aby spowodować, żeby konsola usługi ATA zapytała o poświadczenia, uzyskaj dostęp do konsoli przy użyciu adresu IP, a wtedy pojawi się monit o podanie poświadczeń.
 
-Aby zalogować się przy użyciu logowania jednokrotnego, upewnij się, że witryna konsoli usługi ATA jest zdefiniowana jako lokalna witryna intranetowa w przeglądarce i że uzyskujesz do niej dostęp za pomocą nazwy skróconej lub hosta lokalnego.
+3. Aby zalogować się przy użyciu logowania jednokrotnego, upewnij się, że witryna konsoli usługi ATA jest zdefiniowana jako lokalna witryna intranetowa w przeglądarce i że uzyskujesz do niej dostęp za pomocą nazwy skróconej lub hosta lokalnego.
 
 > [!NOTE]
 > Oprócz rejestrowania każdego podejrzanego działania i alertu kondycji, każda zmiana konfiguracji wprowadzona w konsoli usługi ATA podlega inspekcji w dzienniku zdarzeń systemu Windows na komputerze z centrum usługi ATA, w obszarze **Dziennik aplikacji i usług**, a następnie **Microsoft ATA**. Każde logowanie do konsoli usługi ATA również podlega inspekcji.<br></br>  Konfiguracja wpływająca na bramę usługi ATA jest również rejestrowana w dzienniku zdarzeń systemu Windows na komputerze bramy usługi ATA. 
@@ -113,7 +116,7 @@ Profil, który nie mógł zostać całkowicie rozwiązany przez usługę ATA, zo
 
 ### <a name="sensitive-groups"></a>Wrażliwe grupy
 
-Grupy na poniższej liście są uważane za **wrażliwe** przez usługę ATA. Są to grupy, które zostaną oflagowane jako mające uprawnienia administracyjne i zgłaszające alerty, które odpowiadają wrażliwym kontom:
+Grupy na poniższej liście są uważane za **wrażliwe** przez usługę ATA. Każda jednostka, która należy do poniższych grup, jest traktowana jako wrażliwa:
 
 - Kontrolery domeny tylko do odczytu na poziomie organizacji 
 - Administratorzy domeny 
