@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/16/2017
+ms.date: 7/23/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 63dd37548dbf4e150f32880543c3bf421bf3fe71
-ms.sourcegitcommit: 3cd268cf353ff8bc3d0b8f9a8c10a34353d1fcf1
+ms.openlocfilehash: b4754c749cad25a6aa4da94563df29f9f99e2a20
+ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2017
+ms.lasthandoff: 07/25/2017
 ---
 # <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 
@@ -77,6 +77,51 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
 - Usunięto opcję dodawania notatek z podejrzanych działań
 - Zalecenia dotyczące eliminacji podejrzanych działań zostały usunięte z ich osi czasu.
 
+## <a name="known-issues"></a>Znane problemy
+
+### <a name="ata-gateway-on-windows-server-core"></a>Brama usługi ATA w systemie Windows Server Core
+
+**Objawy**: Uaktualnienie bramy usługi ATA do wersji 1.8 w systemie Windows Server 2012 R2 Core z programem .NET Framework 4.7 może zakończyć się niepowodzeniem z powodu błędu: *Brama usługi Microsoft Advanced Threat Analytics przestała działać*. 
+
+![Błąd bramy w systemie Core](./media/gateway-core-error.png)
+
+W systemie Windows Server 2016 Core błąd może nie zostać wyświetlony, ale proces zakończy się niepowodzeniem podczas próby zainstalowania, a w dzienniku zdarzeń aplikacji na serwerze zostaną zarejestrowane zdarzenia 1000 i 1001 (awaria procesu).
+
+**Opis**: Istnieje problem z programem .NET Framework 4.7, który powoduje, że ładowanie aplikacji korzystających z technologii WPF (na przykład usługi ATA) kończy się niepowodzeniem. Aby uzyskać więcej informacji, zobacz [artykuł w bazie wiedzy o identyfikatorze 4034015](https://support.microsoft.com/help/4034015/wpf-window-can-t-be-loaded-after-you-install-the-net-framework-4-7-on). 
+
+**Obejście**: Odinstaluj program .NET 4.7 ([zobacz artykuł w bazie wiedzy o identyfikatorze 3186497](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows)) i przywróć wersję 4.6.2 programu .NET, a następnie zaktualizuj bramę usługi ATA do wersji 1.8. Po uaktualnieniu usługi ATA możesz ponownie zainstalować program .NET 4.7.  W przyszłej wersji zostanie wprowadzona aktualizacja rozwiązująca ten problem.
+
+### <a name="lightweight-gateway-event-log-permissions"></a>Uprawnienia dziennika zdarzeń uproszczonej bramy
+
+**Objawy**: Podczas uaktualniania usługi ATA do wersji 1.8 aplikacje lub usługi, którym wcześniej udzielono uprawnień dostępu do dziennika zdarzeń zabezpieczeń, mogą utracić te uprawnienia. 
+
+**Opis**: Aby ułatwić wdrożenie usługi ATA, wersja 1.8 tej usługi uzyskuje dostęp do dziennika zdarzeń zabezpieczeń bezpośrednio, bez konieczności konfigurowania przekazywania zdarzeń systemu Windows. Jednocześnie usługa ATA działa jako usługa lokalna o niskich uprawnieniach w celu zachowania większego bezpieczeństwa. Aby zapewnić sobie dostęp do odczytu zdarzeń, usługa ATA udziela sobie uprawnień do dziennika zdarzeń zabezpieczeń. W takim przypadku mogą zostać wyłączone uprawnienia ustawione wcześniej dla innych usług.
+
+**Obejście**: Uruchom następujący skrypt programu Windows PowerShell. Spowoduje on usunięcie uprawnień w rejestrze nieprawidłowo dodanych z poziomu usługi ATA oraz dodanie ich za pomocą innego interfejsu API. Może to przywrócić uprawnienia innych aplikacji. Jeśli tak się nie stanie, trzeba je przywrócić ręcznie. W przyszłej wersji zostanie wprowadzona aktualizacja rozwiązująca ten problem. 
+
+       $ATADaclEntry = "(A;;0x1;;;S-1-5-80-1717699148-1527177629-2874996750-2971184233-2178472682)"
+        try {
+        $SecurityDescriptor = Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Eventlog\Security -Name CustomSD
+        $ATASddl = "O:BAG:SYD:" + $ATADaclEntry 
+        if($SecurityDescriptor.CustomSD -eq $ATASddl) {
+        Remove-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Eventlog\Security -Name CustomSD
+        }
+    }
+    catch
+    {
+    # registry key does not exist
+    }
+
+    $EventLogConfiguration = New-Object -TypeName System.Diagnostics.Eventing.Reader.EventLogConfiguration("Security")
+    $EventLogConfiguration.SecurityDescriptor = $EventLogConfiguration.SecurityDescriptor + $ATADaclEntry
+
+### <a name="proxy-interference"></a>Zakłócenia spowodowane przez serwer proxy
+
+**Objawy**: Po uaktualnieniu usługi ATA do wersji 1.8 uruchomienie bramy usługi ATA może się nie powieść. W dzienniku błędów usługi ATA może znajdować się następujący wyjątek: *System.Net.Http.HttpRequestException: Wystąpił błąd podczas wysyłania żądania. ---> System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane uwierzytelnianie serwera proxy.*
+
+**Opis**: Począwszy od wersji 1.8 usługi ATA, brama usługi ATA komunikuje się z Centrum usługi ATA przy użyciu protokołu HTTP. Jeśli maszyna, na której zainstalowano bramę usługi ATA, korzysta z serwera proxy do nawiązywania połączeń z Centrum usługi ATA, może to spowodować przerwanie tej komunikacji. 
+
+**Obejście**: Nie używaj serwera proxy na koncie bramy usługi ATA. W przyszłej wersji zostanie wprowadzona aktualizacja rozwiązująca ten problem.
 
 
 ## <a name="see-also"></a>Zobacz też
