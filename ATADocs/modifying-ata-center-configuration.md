@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 6/23/2017
+ms.date: 8/2/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 1e9fa2d104c52087746e7c03fea27e3cb596adf0
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: e9fa0b9162aabdaa9a42c532cf69af37decf3e05
+ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 08/02/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -26,81 +26,67 @@ ms.lasthandoff: 06/30/2017
 # <a name="modifying-the-ata-center-configuration"></a>Modyfikowanie konfiguracji centrum usługi ATA
 
 
-Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Użyj następujących procedur podczas aktualizowania adresu IP i portu, adresu URL konsoli oraz certyfikatu.
+Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Użyj następujących procedur, podczas aktualizowania adresu URL konsoli i certyfikat.
 
-## <a name="the-ata-center-ip-address"></a>Adres IP centrum usługi ATA
-
-Bramy usługi ATA lokalnie przechowują adres IP centrum usługi ATA, z którym się łączą. Regularnie nawiązują one połączenie z centrum usługi ATA i pobierają zmiany konfiguracji. Wprowadzanie zmian w sposobie nawiązywania połączenia przez bramy usługi ATA z centrum usługi ATA jest wykonywane w dwóch etapach.
-
--   Pierwszy etap: zaktualizuj adres IP i port, które mają być używane przez bramę usługi ATA. W tym momencie centrum usługi ATA nadal nasłuchuje na oryginalnym adresie IP, a po następnej synchronizacji konfiguracji brama usługi ATA będzie mieć dwa adresy IP dla centrum usługi ATA. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego (pierwszego) adresu IP, nowy adres IP i port nie będą używane.
-
--   Drugi etap: po zsynchronizowaniu wszystkich bram usługi ATA z zaktualizowaną konfiguracją aktywuj nowy adres IP oraz port, na którym nasłuchuje centrum usługi ATA. Po aktywowaniu nowego adresu IP centrum usługi ATA zostanie z nim powiązane. Bramy usługi ATA nie będą mogły nawiązywać połączenia z oryginalnym adresem IP i będą teraz podejmowały próbę nawiązania połączenia z drugim (nowym) adresem IP centrum usługi ATA. Po nawiązaniu połączenia z centrum usługi ATA za pomocą nowego adresu IP brama usługi ATA pobierze najnowszą konfigurację i będzie mieć jeden adres IP dla centrum usługi ATA. Taka sytuacja będzie miała miejsce pod warunkiem, że proces nie zostanie ponownie rozpoczęty.
-
-> [!NOTE]
-> -   Jeśli brama usługi ATA była w trybie offline podczas pierwszego etapu i nigdy nie otrzymała zaktualizowanej konfiguracji, konieczne będzie ręczne zaktualizowanie pliku JSON konfiguracji w tej bramie.
-> -   Jeśli nowy adres IP został zainstalowany na serwerze centrum usługi ATA, możesz wybrać ten adres z listy adresów IP podczas wprowadzania zmian. Jeśli jednak z jakiegoś powodu nie można zainstalować adresu IP na serwerze centrum usługi ATA, możesz wybrać niestandardowy adres IP i dodać go ręcznie. Nowego adresu IP nie będzie można aktywować, dopóki nie zostanie on zainstalowany na serwerze.
-> -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego adresu IP, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
-
-## <a name="the-console-url"></a>Adres URL konsoli
+## <a name="the-ata-console-url"></a>Adres URL konsoli usługi ATA
 
 Ten adres URL jest używany w następujących scenariuszach:
 
--   Instalacja bram usługi ATA — podczas instalacji bramy usługi ATA rejestruje się ona w centrum usługi ATA. Ten proces rejestracji odbywa się przez nawiązanie połączenia z konsolą usługi ATA. Po wprowadzeniu nazwy FQDN dla adresu URL konsoli usługi ATA należy upewnić się, że brama usługi ATA może rozpoznać nazwę FQDN jako adres IP, z którym jest powiązana konsola usługi ATA.
+-   Jest to adres URL używany przez bramy usługi ATA do komunikowania się z Centrum usługi ATA.
+
+- Instalacja bram usługi ATA — podczas instalacji bramy usługi ATA rejestruje się ona w centrum usługi ATA. Ten proces rejestracji odbywa się przez nawiązanie połączenia z konsolą usługi ATA. Po wprowadzeniu nazwy FQDN dla adresu URL konsoli usługi ATA, upewnij się, czy bramy usługi ATA może rozpoznać nazwę FQDN na adres IP powiązane z konsolą usługi ATA.
 
 -   Alerty — Gdy usługa ATA wysyła alert rozwiązania SIEM lub e-mail, dołącza łącze do podejrzanego działania. Częścią hosta tego łącza jest ustawienie adresu URL konsoli usługi ATA.
 
--   Jeśli zainstalowano certyfikat z wewnętrznego urzędu certyfikacji, możesz dopasować adres URL do nazwy podmiotu w certyfikacie, aby użytkownicy nie otrzymywali komunikatu ostrzegawczego podczas nawiązywania połączenia z konsolą usług ATA.
+-   Jeśli certyfikat został zainstalowany z z wewnętrznego urzędu certyfikacji (CA), odpowiadał adresowi URL, do nazwy podmiotu w certyfikacie. Uniemożliwia to użytkownikom uzyskiwanie komunikatu ostrzegawczego podczas nawiązywania połączenia z konsolą usługi ATA.
 
--   Użycie nazwy FQDN dla adresu URL konsoli usługi ATA pozwala zmodyfikować adres IP używany przez konsolę usługi ATA bez krytycznych alertów, które były wysyłane w przeszłości, lub potrzeby ponownego pobierania pakietu bramy usługi ATA. Wystarczy tylko zaktualizować DNS przy użyciu nowego adresu IP.
+-   Użycie nazwy FQDN dla adresu URL konsoli usługi ATA pozwala zmodyfikować adres IP, który jest używany przez konsolę usługi ATA bez krytycznych alertów, poprzednie lub ponownie załadować pakietu bramy usługi ATA. Wystarczy tylko zaktualizować DNS przy użyciu nowego adresu IP.
+
+1. Upewnij się, że nowy adres URL, którego chcesz użyć jest rozpoznawana jako adres IP konsoli usługi ATA.
+
+2. W ustawieniach usługi ATA w obszarze **Center**, wprowadź nowy adres URL. W tym momencie Centrum usługi ATA nadal używać oryginalnego adresu URL. 
+
+ ![Zmienianie konfiguracji usługi ATA](media/change-center-config.png)
+
+  > [!NOTE]
+  > Jeśli wprowadzono niestandardowy adres IP, nie można kliknąć **Aktywuj** do chwili zainstalowania adres IP Centrum usługi ATA.
+    
+3. Poczekaj, aż bram usługi ATA do synchronizowania. Teraz mają dwa potencjalne adresy URL za pośrednictwem której można uzyskać dostępu do konsoli usługi ATA. Tak długo, jak bramy usługi ATA mogą łączyć przy użyciu oryginalnego adresu URL, nie jest jego nowego.
+
+4. Po wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją aktywować nowy adres URL. Po aktywowaniu nowego adresu URL bram usługi ATA teraz używać nowego adresu URL do Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy adres URL konsoli usługi ATA. 
 
 > [!NOTE]
-> Po zmodyfikowaniu adresu URL konsoli usługi ATA należy pobrać pakiet instalacyjny bramy usługi ATA umożliwiający instalowanie nowych bram usługi ATA.
+> -   Jeśli bramy usługi ATA była w trybie offline, gdy aktywować nowy adres URL i nigdy nie otrzymała zaktualizowanej konfiguracji, należy ręcznie zaktualizować pliku JSON konfiguracji na bramie usługi ATA.
+> -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego adresu URL, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
+
 
 ## <a name="the-ata-center-certificate"></a>Certyfikat centrum usługi ATA
-Jeśli Twój certyfikat wkrótce wygaśnie i konieczne będzie jego odnowienie lub zmiana po zainstalowaniu nowego certyfikatu w magazynie komputera lokalnego na serwerze centrum usługi ATA, zastąp certyfikat, wykonując następujący dwuetapowy proces:
 
--   Pierwszy etap: zaktualizuj certyfikat, który ma być używany przez centrum usługi ATA. W tym momencie centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. Podczas synchronizacji konfiguracji bram usługi ATA będą dostępne dwa potencjalne certyfikaty, za pomocą których będzie możliwe wzajemne uwierzytelnianie. Dopóki brama usługi ATA będzie mogła nawiązywać połączenie przy użyciu oryginalnego certyfikatu, nowy certyfikat nie będzie używany.
+> [!WARNING]
+> - Proces odnowienie istniejącego certyfikatu nie jest obsługiwane. Jedynym sposobem, aby odnowić certyfikat jest tworzony nowy certyfikat i konfigurowania usługi ATA przy użyciu nowego certyfikatu.
 
--   Drugi etap: po zsynchronizowaniu wszystkich bram usługi ATA z zaktualizowaną konfiguracją można aktywować nowy certyfikat, z którym powiązane jest centrum usługi ATA. Po aktywowaniu nowego certyfikatu centrum usługi ATA zostanie z nim powiązane. Bramy usługi ATA nie będą mogły poprawnie wzajemnie uwierzytelniać centrum usługi ATA i podejmą próbę uwierzytelnienia przy użyciu drugiego certyfikatu. Po nawiązaniu połączenia z centrum usługi ATA brama usługi ATA pobierze najnowszą konfigurację i będzie mieć jeden certyfikat dla centrum usługi ATA. Taka sytuacja będzie miała miejsce pod warunkiem, że proces nie zostanie ponownie rozpoczęty.
+
+Zastąp certyfikat, wykonując ten proces:
+
+1. Przed wygaśnięciem bieżącego certyfikatu, Utwórz nowy certyfikat i upewnij się, że jest zainstalowany na serwerze Centrum usługi ATA. 
+
+2. W ustawieniach usługi ATA w obszarze **Center**, wybierz nowo utworzonego certyfikatu. W tym momencie Centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. 
+
+ ![Zmienianie konfiguracji usługi ATA](media/change-center-config.png)
+
+3. Poczekaj, aż bram usługi ATA do synchronizowania. Teraz mają dwa potencjalne certyfikaty, które są prawidłowe dla uwierzytelniania wzajemnego. Tak długo, jak bramy usługi ATA mogą łączyć przy użyciu oryginalnego certyfikatu, nie jest jego nowego.
+
+4. Po wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją aktywować nowy certyfikat powiązany z Centrum usługi ATA. Po aktywowaniu nowego certyfikatu Centrum usługi ATA jest powiązany z nowego certyfikatu. Bramy usługi ATA będzie teraz używać nowego certyfikatu uwierzytelniania za pomocą Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy certyfikat dla Centrum usługi ATA. 
 
 > [!NOTE]
-> -   Jeśli brama usługi ATA była w trybie offline podczas pierwszego etapu i nigdy nie otrzymała zaktualizowanej konfiguracji, konieczne będzie ręczne zaktualizowanie pliku JSON konfiguracji w tej bramie.
+> -   Jeśli bramy usługi ATA była w trybie offline, gdy aktywować nowy certyfikat i nigdy nie otrzymała zaktualizowanej konfiguracji, należy ręcznie zaktualizować pliku JSON konfiguracji na bramie usługi ATA.
 > -   Używany certyfikat musi być zaufany przez bramy usługi ATA.
-> -   Certyfikat jest również używany w konsoli usługi ATA, dlatego powinien pasować do adresu konsoli usługi ATA, aby uniknąć wyświetlania ostrzeżeń przeglądarki.
+> -   Certyfikat jest również używane w konsoli usługi ATA, więc powinna być zgodna adres konsoli usługi ATA, aby uniknąć ostrzeżeń w przeglądarce.
 > -   Jeśli zajdzie potrzeba wdrożenia nowej bramy usługi ATA po aktywowaniu nowego certyfikatu, należy ponownie pobrać pakiet instalacyjny bramy usługi ATA.
 
-## <a name="changing-the-ata-center-configuration"></a>Zmienianie konfiguracji centrum usługi ATA
-
-1.  Otwórz konsolę usługi ATA.
-
-2.  Na pasku narzędzi wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
-
-    ![Ikona ustawień konfiguracji usługi ATA](media/ATA-config-icon.png)
-
-3.  Wybierz pozycję **Centrum**.
-
-  ![Zmienianie konfiguracji usługi ATA](media/change-center-config.png)
-
-4.  W obszarze **Adres URL** wybierz pozycję **Dodaj niestandardową nazwę DNS/adres IP** i nowy adres DNS lub adres IP albo w obszarze **Certyfikat** wybierz nowy certyfikat.
-
-5.  Kliknij polecenie **Zapisz**.
-
-6.  Zostanie wyświetlone powiadomienie z informacją o liczbie bram usługi ATA zsynchronizowanych z najnowszą konfiguracją.
-
-    >[!IMPORTANT]
-    >Zanim aktywujesz nową konfigurację, sprawdź, czy wszystkie bramy usługi ATA są zsynchronizowane z najnowszą konfiguracją. Aktywowanie nowej konfiguracji przed zsynchronizowaniem bram usługi ATA może spowodować, że bramy usługi ATA przestaną działać zgodnie z oczekiwaniami. Jeśli jakakolwiek z bram usługi ATA nie jest zsynchronizowana, po kliknięciu pozycji Aktywuj zostanie wyświetlony następujący komunikat o błędzie:
 
 
-7.  Po zsynchronizowaniu wszystkich bram usługi ATA kliknij polecenie **Aktywuj**, aby aktywować nowy adres IP lub certyfikat.
-
-    > [!NOTE]
-    > Jeśli wprowadzono niestandardowy adres IP, nie będzie możliwości kliknięcia polecenia **Aktywuj**, dopóki adres IP nie zostanie zainstalowany w centrum usługi ATA.
-
-8.  Po aktywowaniu zmiany upewnij się, że bramy usługi ATA mogą synchronizować swoje konfiguracje. Na pasku powiadomień będzie znajdować się informacja o liczbie bram usługi ATA, które pomyślnie zsynchronizowały swoją konfigurację.
-
-
-
-
+ 
 ## <a name="see-also"></a>Zobacz też
 - [Praca z konsolą usługi ATA](working-with-ata-console.md)
 - [Forum usługi ATA](https://aka.ms/ata-forum)
