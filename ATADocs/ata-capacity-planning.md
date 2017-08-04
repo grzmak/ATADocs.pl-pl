@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/9/2017
+ms.date: 7/25/2017
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: af88c02c6e2e5f679aca75b17a288c72ab300069
-ms.sourcegitcommit: be6bdfa24a9b25a3375a4768d513b93900b3a498
+ms.openlocfilehash: 54dd8bab3381fc221c75c53191ef052fc83b61ec
+ms.sourcegitcommit: e7f83eb636db00333fe3965324a10a2ef5e2beba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2017
+ms.lasthandoff: 07/30/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -65,7 +65,7 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 > [!NOTE]
 > -   Centrum usługi ATA może obsługiwać maksymalnie 1 mln pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
 > -   Wielkości magazynu określone w tym miejscu to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
-> -   Jeśli wolne miejsce osiągnie wartość minimalną (20% lub 100 GB), zostaną usunięte dane z najstarszej kolekcji. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
+> -   Jeśli wolne miejsce osiągnie wartość co najmniej 20% lub 200 GB, dane z najstarszej kolekcji jest usunięte. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
 > - Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
 > -   Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
 > -   Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.

@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/2/2017
+ms.date: 8/2/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 14b0d68ce797eeaa99c9e067f7f8caacee1a7b74
-ms.sourcegitcommit: 3cd268cf353ff8bc3d0b8f9a8c10a34353d1fcf1
+ms.openlocfilehash: 0a9d92e5851f1cf64c5e4b4e1ee57d7ee4562d96
+ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2017
+ms.lasthandoff: 08/02/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -30,7 +30,7 @@ W tym artykule opisano wymagania, które należy spełnić w celu pomyślnego wd
 > Aby uzyskać więcej informacji o planowaniu zasobów i pojemności, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 
-Usługa ATA składa się z centrum usługi ATA, bramy usługi ATA i/lub uproszczonej bramy usługi ATA. Aby uzyskać więcej informacji o składnikach usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
+Usługa ATA składa się z Centrum usługi ATA, bramy usługi ATA i/lub bramy ATA Lightweight Gateway. Aby uzyskać więcej informacji o składnikach usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
 
 System ATA działa na granicy lasu usługi Active Directory i obsługuje poziom funkcjonalności lasu (FFL) systemu Windows 2003 lub nowszego.
 
@@ -51,12 +51,12 @@ System ATA działa na granicy lasu usługi Active Directory i obsługuje poziom 
 W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
 
 
--   Konto i hasło użytkownika z dostępem do odczytu do wszystkich obiektów w domenach, które będą monitorowane.
+-   Konto użytkownika i hasło z dostępem do odczytu do wszystkich obiektów w monitorowanej domeny.
 
     > [!NOTE]
     > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
 
--   Nie należy instalować Analizatora komunikatów firmy Microsoft na bramie usługi ATA ani na uproszczonej bramie usługi ATA. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. W przeciwnym razie brama nie będzie dłużej przechwytywać żadnego ruchu. Należy pamiętać, że uruchomienie programu Wireshark na uproszczonej bramie usługi ATA nie zakłóca pracy uproszczonej bramy usługi ATA.
+-   Nie należy instalować programu Microsoft Message Analyzer na bramie usługi ATA lub bramy Lightweight. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. Jeśli nie, brama zatrzymuje przechwytywanie ruchu. Należy pamiętać, że uruchomienie programu Wireshark na uproszczonej bramie usługi ATA nie zakłóca pracy uproszczonej bramy usługi ATA.
 
 -    Zalecane: użytkownik powinien mieć uprawnienia dostępu tylko do odczytu do kontenera usuniętych obiektów. Umożliwi to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz sekcję **Zmienianie uprawnień do kontenera usuniętych obiektów** w temacie [Wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
 
@@ -94,7 +94,7 @@ Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy us�
 Musisz mieć następujące elementy:
 -   Co najmniej jedna karta sieciowa (w przypadku korzystania z serwera fizycznego w środowisku sieci VLAN zaleca się używanie dwóch kart sieciowych)
 
--   Adres IP na potrzeby komunikacji między centrum usługi ATA a bramą usługi ATA szyfrowanej przy użyciu protokołu SSL na porcie 443. 
+-   Adres IP na potrzeby komunikacji między centrum usługi ATA a bramą usługi ATA szyfrowanej przy użyciu protokołu SSL na porcie 443. (Usługa ATA jest powiązany z wszystkie adresy IP Centrum usługi ATA ma się na porcie 443).
 
 ### <a name="ports"></a>Porty
 W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby centrum usługi ATA działało poprawnie.
@@ -114,19 +114,23 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**Netlogon** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
 |**Czas systemu Windows** (opcjonalnie, jeśli przyłączono do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
 
+> [!NOTE]
+> LDAP jest wymagane do przetestowania poświadczeń między bram usługi ATA i kontrolerach domeny. Badaniu wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część Normalna komunikacja.
+
+
 ### <a name="certificates"></a>Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
 
 Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.<br>
-> [!NOTE]
-> Typem dostawcy certyfikatu może być Dostawca usług kryptograficznych (CSP) lub Dostawca magazynu kluczy (KSP).
 
-
-> Korzystanie z automatycznego odnawiania certyfikatów nie jest obsługiwane.
+> [!WARNING]
+> - Proces odnowienie istniejącego certyfikatu nie jest obsługiwane. Jedynym sposobem, aby odnowić certyfikat jest tworzony nowy certyfikat i konfigurowania usługi ATA przy użyciu nowego certyfikatu.
 
 
 > [!NOTE]
-> Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
+> - Typem dostawcy certyfikatu może być Dostawca usług kryptograficznych (CSP) lub Dostawca magazynu kluczy (KSP).
+> - Certyfikat Centrum usługi ATA nie może być renewe. Przed jego wygaśnięciem, prawidłowy sposób, aby ją odnowić jest utworzyć nowy certyfikat i wybierz nowy certyfikat. 
+> - Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
 
 ## <a name="ata-gateway-requirements"></a>Wymagania bramy usługi ATA
 Ta sekcja zawiera listę wymagań bramy usługi ATA.

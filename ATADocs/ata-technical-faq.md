@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 07/3/2017
+ms.date: 08/2/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 5beabd2617f55ecbcc717338dc40d9f597cc25d4
-ms.sourcegitcommit: fa50f37b134d7579d7c310852dff60e5f1996eaa
+ms.openlocfilehash: 05853aecf8f8aa075d66c5a755cf89ffd7727739
+ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 08/02/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -73,7 +73,7 @@ mongo.exe ATA nazwa_pliku
         });
 
 ## <a name="does-ata-work-with-encrypted-traffic"></a>Czy usługa ATA współpracuje z ruchem zaszyfrowanym?
-Usługa ATA opiera się na analizowaniu wielu protokołów sieciowych, a także zdarzeń zebranych z rozwiązania SIEM lub za pośrednictwem funkcji przekazywania zdarzeń systemu Windows, tak aby mimo braku analizy ruchu szyfrowanego (na przykład LDAPS i IPSEC ESP) mogła nadal działać i szyfrowanie nie miało wpływu na wykrywanie w większości przypadków.
+Usługi ATA polega na analizowanie wielu protokołów sieciowych, a także zdarzenia zebrane z systemu SIEM lub przy użyciu funkcji przekazywania zdarzeń systemu Windows, dzięki czemu nawet jeśli nie będzie ruchu zaszyfrowanego ATA przeanalizowane (na przykład LDAPS i IPSEC) będą nadal działać i większość wykryć pozostanie bez zmian.
 
 ## <a name="does-ata-work-with-kerberos-armoring"></a>Czy usługa ATA działa z ochroną protokołu Kerberos?
 Usługa ATA obsługuje włączanie ochrony protokołu Kerberos, znanej także jako protokół FAST (Flexible Authentication Secure Tunneling), z wyjątkiem wykrywania nadmiernego przekazywania skrótu, które nie będzie działać.
