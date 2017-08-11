@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/30/2017
+ms.date: 8/6/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 734455b06514cadb232916b8db76e47b8bf3e67a
-ms.sourcegitcommit: e7f83eb636db00333fe3965324a10a2ef5e2beba
+ms.openlocfilehash: 675543c11e07bcc243131e2350cfb33bfe8e7e39
+ms.sourcegitcommit: 28f5d0f39149955c0d1059e13db289d13be9b642
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2017
+ms.lasthandoff: 08/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -46,7 +46,8 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.InvalidOperationException: Wystąpienie „Microsoft.Tri.Gateway” nie istnieje w określonej kategorii.|Identyfikatory PID zostały włączone dla nazw procesów w bramie usługi ATA|Użyj aktualizacji [KB281884](https://support.microsoft.com/kb/281884), aby wyłączyć identyfikatory PID w nazwach procesów|
 |System.InvalidOperationException: Kategoria nie istnieje.|Liczniki mogą być wyłączone w rejestrze|Użyj aktualizacji [KB2554336](https://support.microsoft.com/kb/2554336) , aby odbudować liczniki wydajności|
 |System.ApplicationException: Nie można uruchomić sesji ETW o identyfikatorze MMA-ETW-Livecapture-a4f595bd-f567-49a7-b963-20fa4e370329|W pliku HOSTS znajduje się wpis hosta wskazujący skróconą nazwę komputera|Usuń wpis hosta z pliku C:\Windows\System32\drivers\etc\HOSTS lub zmień jego treść na nazwę FQDN.|
-|System.IO.IOException: Uwierzytelnianie nie powiodło się, ponieważ strona zdalna zamknęła strumień transportowy.|Szyfrowanie TLS 1.0 jest wyłączone na bramie ATA Gateway, ale platforma .Net jest skonfigurowane do korzystania z szyfrowania TLS 1.2|Skorzystaj z jednej z następujących opcji: </br> Włącz szyfrowanie TLS 1.0 na bramie ATA </br>Włącz szyfrowanie TLS 1.2 na platformie .Net, konfigurując klucze rejestru w taki sposób, aby były używane domyślne ustawienia systemu operacyjnego dotyczące szyfrowania LLS i TLS: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001` </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`|
+|System.IO.IOException: Uwierzytelnianie nie powiodło się, ponieważ strona zdalna zamknęła strumień transportowy.|Protokołu TLS 1.0 na bramie usługi ATA jest wyłączona, ale .net jest skonfigurowany do używania protokołu TLS 1.2|Skorzystaj z jednej z następujących opcji: </br> Włącz szyfrowanie TLS 1.0 na bramie ATA </br>Włącz protokół TLS 1.2 na platformie .net, ustawiając klucze rejestru, aby użyć wartości domyślnych systemu operacyjnego dla protokołu SSL i TLS, w następujący sposób: </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001` </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001 `</br>
+`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] " SchUseStrongCrypto"=dword:00000001`|
 |System.TypeLoadException: Nie można załadować typu „Microsoft.Opn.Runtime.Values.BinaryValueBufferManager” z zestawu „Microsoft.Opn.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”|Brama usługi ATA nie mogła załadować wymaganych plików analizowania.|Sprawdź, czy program Microsoft Message Analyzer jest aktualnie zainstalowany. Instalacja programu Message Analyzer z bramą/uproszczoną bramą usługi ATA nie jest obsługiwana. Odinstaluj program Message Analyzer i uruchom ponownie usługę bramy.|
 |Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z uproszczonej bramy w programie VMware|Jeśli używasz kontrolerów domeny na maszynach wirtualnych z programem VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może być to spowodowane niezgodnością konfiguracji w programie VMware. |Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.|
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane uwierzytelnianie serwera proxy|Komunikacja bramy usługi ATA z Centrum usługi ATA jest zakłócana przez serwer proxy.|Wyłącz serwer proxy na maszynie bramy usługi ATA. <br></br>Pamiętaj, że ustawienia serwera proxy mogą być określane oddzielnie dla każdego konta.|
@@ -60,6 +61,8 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |Instalacja platformy .Net Framework 4.6.1 nie powiodła się z powodu błędu 0x800713ec|Na serwerze nie są zainstalowane wymagania wstępne platformy .Net Framework 4.6.1. |Przed zainstalowaniem usługi ATA sprawdź, czy na serwerze są zainstalowane aktualizacje systemu Windows [KB2919442](https://www.microsoft.com/download/details.aspx?id=42135) i [KB2919355](https://support.microsoft.com/kb/2919355).|
 |System.Threading.Tasks.TaskCanceledException: Zadanie zostało anulowane|Upłynął limit czasu procesu wdrażania, ponieważ nie może on uzyskać dostępu do centrum usługi ATA.|1.    Sprawdź łączność sieciową z centrum usługi ATA, przechodząc do niego przy użyciu jego adresu IP. <br></br>2.    Sprawdź konfigurację serwera proxy lub zapory.|
 |System.Net.Http.HttpRequestException: Wystąpił błąd podczas wysyłania żądania. ---> System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane jest uwierzytelnianie serwera proxy.|Upłynął limit czasu procesu wdrażania, ponieważ nie mógł on uzyskać dostępu do centrum usługi ATA ze względu na błędną konfigurację serwera proxy.|Wyłącz konfigurację serwera proxy przed przystąpieniem do wdrożenia, a następnie ponownie włącz konfigurację serwera proxy. Możesz też skonfigurować wyjątek na serwerze proxy.|
+|System.Net.Sockets.SocketException: Istniejące połączenie zostało zamknięte przez hosta zdalnego|Skorzystaj z jednej z następujących opcji: </br>Włącz szyfrowanie TLS 1.0 na bramie ATA </br>Włącz protokół TLS 1.2 na platformie .net, ustawiając klucze rejestru, aby użyć wartości domyślnych systemu operacyjnego dla protokołu SSL i TLS, w następujący sposób:</br> `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br> `[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001` </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] " SchUseStrongCrypto"=dword:00000001`
+
 
 ## <a name="ata-gateway-and-lightweight-gateway-issues"></a>Problemy z bramą i uproszczoną bramą usługi ATA
 
@@ -67,7 +70,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |Problem|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Brak odebranego ruchu z kontrolera domeny, ale pojawiają się alerty monitorowania|    Brak odebranego ruchu z kontrolera domeny za pomocą funkcji dublowania portów przez bramę usługi ATA|Na karcie sieciowej przechwytywania bramy usługi ATA wyłącz następujące funkcje w obszarze **Ustawienia zaawansowane**:<br></br>Łączenie segmentów odbieranych pakietów (IPv4)<br></br>Łączenie segmentów odbieranych pakietów (IPv6)|
-
+|Ten alert monitorowania jest wyświetlany: **ruch w sieci nie jest analizowana**|Jeśli bramy usługi ATA lub bramy Lightweight na maszynach wirtualnych VMware, zostanie zgłoszony alert monitorowania. Dzieje się z powodu niezgodności konfiguracji w środowisku programu VMware.|Ustaw następujące ustawienia **0** lub **wyłączone** w konfiguracji maszyny wirtualnej karty Sieciowej: TsoEnable, LargeSendOffload, odciążania TSO, bardzo duże odciążania TSO|Protokołu TLS 1.0 na bramie usługi ATA jest wyłączona, ale .net jest skonfigurowany do używania protokołu TLS 1.2|
 
 
 

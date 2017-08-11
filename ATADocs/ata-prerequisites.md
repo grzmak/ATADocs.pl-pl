@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/2/2017
+ms.date: 8/6/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 0a9d92e5851f1cf64c5e4b4e1ee57d7ee4562d96
-ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
+ms.openlocfilehash: bd3ddca6f233499441bf82a0cdb5a79078df0bf5
+ms.sourcegitcommit: 28f5d0f39149955c0d1059e13db289d13be9b642
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 08/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -115,8 +115,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**Czas systemu Windows** (opcjonalnie, jeśli przyłączono do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
 
 > [!NOTE]
-> LDAP jest wymagane do przetestowania poświadczeń między bram usługi ATA i kontrolerach domeny. Badaniu wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część Normalna komunikacja.
-
+> LDAP jest wymagane do przetestowania poświadczenia do użycia między bram usługi ATA i kontrolerach domeny. Uruchomienie testu jest wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część procesu zwykłej rozdzielczości.
 
 ### <a name="certificates"></a>Certyfikaty
 Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
