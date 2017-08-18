@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: bd3ddca6f233499441bf82a0cdb5a79078df0bf5
-ms.sourcegitcommit: 28f5d0f39149955c0d1059e13db289d13be9b642
+ms.openlocfilehash: dfcdffb3458124cade644cc06a4c359458eb26fe
+ms.sourcegitcommit: 8b622fa5457cf1a540504899c8c98e860b946e01
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/14/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -118,9 +118,12 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 > LDAP jest wymagane do przetestowania poświadczenia do użycia między bram usługi ATA i kontrolerach domeny. Uruchomienie testu jest wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część procesu zwykłej rozdzielczości.
 
 ### <a name="certificates"></a>Certyfikaty
-Upewnij się, że centrum usługi ATA ma dostęp do punktu dystrybucji listy CRL. Jeśli bramy usługi ATA nie mają dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na zainstalowanie wszystkich punktów dystrybucji listy CRL dla całego łańcucha.
 
-Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu możesz zastąpić certyfikat z podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który będzie używany przez bramę usługi ATA.<br>
+Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu własnym certyfikatem z wewnętrznego urzędu certyfikacji, który ma być używany przez Centrum usługi ATA należy zastąpić podpisem.
+
+
+Upewnij się, że Centrum usługi ATA i bramy usługi ATA mają dostęp do punktu dystrybucji z listy CRL. Jeśli nie ma dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę, aby zainstalować wszystkie dystrybucji listy CRL punktów dla całego łańcucha.
+
 
 > [!WARNING]
 > - Proces odnowienie istniejącego certyfikatu nie jest obsługiwane. Jedynym sposobem, aby odnowić certyfikat jest tworzony nowy certyfikat i konfigurowania usługi ATA przy użyciu nowego certyfikatu.
@@ -128,8 +131,8 @@ Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować 
 
 > [!NOTE]
 > - Typem dostawcy certyfikatu może być Dostawca usług kryptograficznych (CSP) lub Dostawca magazynu kluczy (KSP).
-> - Certyfikat Centrum usługi ATA nie może być renewe. Przed jego wygaśnięciem, prawidłowy sposób, aby ją odnowić jest utworzyć nowy certyfikat i wybierz nowy certyfikat. 
 > - Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
+> - Począwszy od wersji 1.8 usługi ATA bramy usługi ATA i bram Lightweight zarządzanym własne certyfikaty i wymagają interakcji ze strony administratora do zarządzania nimi.
 
 ## <a name="ata-gateway-requirements"></a>Wymagania bramy usługi ATA
 Ta sekcja zawiera listę wymagań bramy usługi ATA.
