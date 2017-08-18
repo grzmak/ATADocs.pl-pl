@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/2/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: e9fa0b9162aabdaa9a42c532cf69af37decf3e05
-ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
+ms.openlocfilehash: bfd86dadbc773b349f28a6327ec2e177da74be8d
+ms.sourcegitcommit: 8b622fa5457cf1a540504899c8c98e860b946e01
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 08/14/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -68,7 +68,7 @@ Ten adres URL jest używany w następujących scenariuszach:
 
 Zastąp certyfikat, wykonując ten proces:
 
-1. Przed wygaśnięciem bieżącego certyfikatu, Utwórz nowy certyfikat i upewnij się, że jest zainstalowany na serwerze Centrum usługi ATA. 
+1. Przed wygaśnięciem bieżącego certyfikatu, Utwórz nowy certyfikat i upewnij się, że jest zainstalowany na serwerze Centrum usługi ATA. <br></br>Zalecane jest wybranie certyfikatu od urzędu certyfikacji wewnętrznych, ale istnieje również możliwość utworzenia nowego certyfikatu z podpisem własnym. Aby uzyskać więcej informacji, zobacz [SelfSignedCertificate nowy](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
 2. W ustawieniach usługi ATA w obszarze **Center**, wybierz nowo utworzonego certyfikatu. W tym momencie Centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. 
 
