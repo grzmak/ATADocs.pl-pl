@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 07/5/2017
+ms.date: 08/20/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 5410f706e84517eb964e991deeb21001a09d0cef
-ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
+ms.openlocfilehash: 250c68f0efc7064f7ec4a4578342c935d04e815b
+ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -180,8 +180,13 @@ Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków 
 
 -   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń przez usługę ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń o identyfikatorach 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika zdarzeń systemu Windows do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding). Należy pamiętać, że dotyczy to tylko fizycznych bram usługi ATA, a nie uproszczonych bram usługi ATA.
 
+## <a name="related-videos"></a>Powiązane pliki wideo
+- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+
+
 ## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+- [Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding)

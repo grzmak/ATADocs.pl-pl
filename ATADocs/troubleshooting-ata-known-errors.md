@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/6/2017
+ms.date: 8/20/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 675543c11e07bcc243131e2350cfb33bfe8e7e39
-ms.sourcegitcommit: 28f5d0f39149955c0d1059e13db289d13be9b642
+ms.openlocfilehash: 89d1472b18f20d9702fcd7dfd47fa4b22858ab83
+ms.sourcegitcommit: 37fdfb6a21d1b81f5a4b4c1351112bdf727a633f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -53,7 +53,9 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane uwierzytelnianie serwera proxy|Komunikacja bramy usługi ATA z Centrum usługi ATA jest zakłócana przez serwer proxy.|Wyłącz serwer proxy na maszynie bramy usługi ATA. <br></br>Pamiętaj, że ustawienia serwera proxy mogą być określane oddzielnie dla każdego konta.|
 |System.IO.DirectoryNotFoundException: System nie może odnaleźć określonej ścieżki. (Wyjątek od HRESULT: 0x80070003)|Co najmniej jedna usługa potrzebna do działania usługi ATA nie została uruchomiona.|Uruchom następujące usługi: <br></br>Dzienniki wydajności i alerty (PLA), Harmonogram zadań (Schedule).|
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (403) zabroniony|Brama usługi ATA lub bramy Lightweight może zostało zabronione od ustanawiania połączenia HTTP, ponieważ Centrum usługi ATA nie jest zaufany.|Dodaj nazwę NetBIOS i FQDN Centrum usługi ATA do listy zaufanych witryn sieci Web i wyczyść pamięć podręczną w Eksploratorze Interne (lub nazwę Centrum usługi ATA, jak określono w konfiguracji, jeśli skonfigurowanego jest inna niż nazwa NetBIOS/FQDN).|
+|System.Net.Http.HttpRequestException: PostAsync nie powiodło się [requestTypeName = StopNetEventSessionRequest]|Brama usługi ATA lub bramy ATA Lightweight Gateway nie może zatrzymać i uruchomić sesję funkcji ETW, która gromadzi ruchu sieciowego z powodu problemu z usługi WMI|Postępuj zgodnie z instrukcjami [WMI: ponowne tworzenie repozytorium WMI](https://blogs.technet.microsoft.com/askperf/2009/04/13/wmi-rebuilding-the-wmi-repository/) Aby rozwiązać problem WMI|
 
+ 
 ## <a name="deployment-errors"></a>Błędy wdrażania
 > [!div class="mx-tableFixed"]
 |Błąd|Opis|Rozwiązanie|

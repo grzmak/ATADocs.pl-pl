@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 8c93f4485998bbb1b2b440f01fed8d96ad4e2842
-ms.sourcegitcommit: 7bc04eb4d004608764b3ded1febf32bc4ed020be
+ms.openlocfilehash: f9f9fee8ad8d75d3510c86890201dd719e074b8c
+ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 08/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -204,7 +204,13 @@ Rekonesans usług irectory to technika, używane przez osoby atakujące mapy str
 |------|----|------|----------|
 | Usługa ATA zgłasza ten alert w przypadku usunięcia więcej niż 5% wszystkich kont. Wymaga to dostępu do odczytu do kontenera usuniętego elementu. | Dowiedz się, dlaczego nagle usunięto 5% wszystkich kont. | Usuń uprawnienia użytkowników, którzy mogą usuwać konta w usłudze Active Directory. Aby uzyskać więcej informacji, zobacz [View or Set Permissions on a Directory Object (Wyświetlanie i ustawianie uprawnień obiektu katalogu)](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx). | Niski |
 
+## <a name="related-videos"></a>Powiązane pliki wideo
+- [Dołączenie do społeczności zabezpieczeń](https://channel9.msdn.com/Shows/Microsoft-Security/Join-the-Security-Community)
+
+
 ## <a name="see-also"></a>Zobacz też
+- [Podręcznika dotyczącego podejrzanych działań usługi ATA](http://aka.ms/ataplaybook)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 - [Badanie ataków z użyciem sfałszowanego certyfikatu PAC](use-case-forged-pac.md)
 - [Rozwiązywanie znanych błędów usługi ATA](troubleshooting-ata-known-errors.md)
