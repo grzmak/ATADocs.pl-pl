@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 06/18/2017
+ms.date: 08/20/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 6bbc50c3-bfa8-41db-a2f9-56eed68ef5d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 2713f6939c8756d0ecb438e866e6649f13d3c490
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 7a900229942235a175a463a6f581873ce0dab70b
+ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 08/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -88,8 +88,13 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 [« Krok 3](install-ata-step3.md)
 [Krok 5 »](install-ata-step5.md)
 
-## <a name="see-also"></a>Zobacz też
 
+## <a name="related-videos"></a>Powiązane pliki wideo
+- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+
+## <a name="see-also"></a>Zobacz też
+- [Przewodnik wdrażania usługi ATA fazy weryfikacji Koncepcji](http://aka.ms/atapoc)
+- [Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
