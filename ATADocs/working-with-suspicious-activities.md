@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/20/2017
+ms.date: 08/28/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 44d7c899-816c-4f7f-91d3-84a09d291a24
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: fcee6f1887e6842d1ccdfd2863620af8a5a8279f
-ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
+ms.openlocfilehash: 62ce117423a189a1c2ce00b862f323db6ed328cb
+ms.sourcegitcommit: 46dd0e695f16a0dd23bbfa140eba15ea6a34d7af
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2017
+ms.lasthandoff: 08/28/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -59,7 +59,7 @@ Każde podejrzane działanie zawiera następujące informacje:
 ## <a name="filter-suspicious-activities-list"></a>Filtrowanie listy podejrzanych działań
 Aby filtrować listę podejrzanych działań:
 
-1.  W okienku **Filtruj według** po lewej stronie ekranu wybierz jedną z następujących pozycji: **Wszystkie**, **Otwarte**, **Rozwiązane** lub **Odrzucone**.
+1.  W **Filtruj według** w okienku po lewej stronie ekranu wybierz jedną z następujących: **wszystkie**, **Otwórz**, **zamknięte**, lub  **Pominięte**.
 
 2.  Aby dokładniej przefiltrować listę, wybierz pozycję **Wysoki**, **Średni** lub **Niski**.
 
@@ -93,7 +93,7 @@ Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określon
 -   **Zamknij**: Służy do śledzenia podejrzanych działań, które zostały zidentyfikowane i zbadane, a następnie naprawione lub uniemożliwione.
 
     > [!NOTE]
-    > Usługa ATA może ponownie otworzyć rozwiązane działanie w przypadku ponownego wykrycia tego samego działania w krótkim czasie.
+    > Usługa ATA może ponownie otworzyć zamkniętego działania, jeśli jest to samo działanie ponownie w krótkim czasie.
 
 -   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Oznacza to, że jeśli istnieje podobny alert, usługa ATA nie otworzy go ponownie. Jeśli jednak alertu nie będzie przez 7 dni, a następnie pojawi się on ponownie, znów go zobaczysz.
 

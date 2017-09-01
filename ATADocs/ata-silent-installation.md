@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 07/20/2017
+ms.date: 08/29/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,18 +13,18 @@ ms.technology:
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7e130da2b5a177658e176a428101c11d02bc2a3f
-ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
+ms.openlocfilehash: c38db312ea877b63580d745153aa58ea34a160a6
+ms.sourcegitcommit: 9ce330726e5de8c05eae6a20d3e6c1d8bef3cd0e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/29/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-
 # <a name="ata-silent-installation"></a>Instalacja usługi ATA w trybie dyskretnym
 Ten artykuł zawiera instrukcje dotyczące instalowania usługi ATA w trybie dyskretnym.
+
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 Usługa ATA 1.8 wymaga zainstalowania programu Microsoft .NET Framework 4.6.1. 
@@ -134,6 +134,11 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
     "Microsoft ATA Center Setup.exe" /quiet /uninstall --DeleteExistingDatabaseData
 
 ## <a name="ata-gateway-silent-installation"></a>Instalacja bramy usługi ATA w trybie dyskretnym
+
+> [!NOTE]
+> Wdrażając dyskretnie bramy ATA Lightweight Gateway, za pomocą programu System Center Configuration Manager lub inny system wdrożenia oprogramowania, zalecane jest tworzenie dwa pakiety wdrożeniowe:</br>-Net Framework 4.6.1 w tym ponowny rozruch kontrolera domeny</br>— Brama usługi ATA. </br>Skonfiguruj pakiet bramy usługi ATA zależał od wdrożenia programu .net Framework wdrożenia pakietu. </br>Pobierz [.Net Framework 4.6.1 pakietu wdrożeniowego w trybie offline](https://www.microsoft.com/download/details.aspx?id=49982). 
+
+
 Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
 
 **Składnia**:
