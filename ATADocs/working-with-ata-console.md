@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/2/2017
+ms.date: 8/28/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7067477066a2341fa15b2b0d283b2d7721239d5e
-ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
+ms.openlocfilehash: 793273aeea3c78b54d4dc189acaff9bdf8ae58f9
+ms.sourcegitcommit: 46dd0e695f16a0dd23bbfa140eba15ea6a34d7af
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/28/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -65,7 +65,7 @@ Są to kluczowe elementy konsoli usługi ATA.
 
 ### <a name="attack-time-line"></a>Oś czasu ataków
 
-Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Oś czasu ataków można filtrować, aby wyświetlać Wszystkie, Otwarte, Odrzucone lub Rozwiązane podejrzane działania. Można również sprawdzić ważność przypisaną do poszczególnych działań.
+Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można filtrować wiersz czasu ataku, aby wyświetlać wszystkie, otwarte, odrzucone lub Suppressed podejrzane działania. Można również sprawdzić ważność przypisaną do poszczególnych działań.
 
 ![Obraz osi czasu ataków usługi ATA](media/ATA-Suspicious-Activity-Timeline.jpg)
 
@@ -94,8 +94,6 @@ Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu
 ![Obraz centrum kondycji usługi ATA](media/ATA-Health-Issue.jpg)
 
 Za każdym razem, gdy system napotka problem, taki jak błąd łączności lub rozłączona brama usługi ATA, ikona centrum kondycji poinformuje o nim użytkownika przez wyświetlenie czerwonej kropki. ![Obraz czerwonej kropki centrum kondycji usługi ATA](media/ATA-Health-Center-Alert-red-dot.png)
-
-Alerty centrum kondycji można odrzucać lub rozwiązywać. Są również podzielone na kategorie Wysoka, Średnia lub Niska w zależności od ważności. W przypadku rozwiązania alertu, który jest nadal wykrywany przez usługę ATA jako aktywny, zostanie on automatycznie przeniesiony do listy otwartych alertów. Jeśli system wykryje, że przyczyna alertu już nie istnieje (problem został rozwiązany), alert zostanie przeniesiony do listy rozwiązanych.
 
 ### <a name="user-and-computer-profiles"></a>Profile użytkowników i komputerów
 
