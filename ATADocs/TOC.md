@@ -16,6 +16,7 @@
 ## [Architektura usługi ATA](ata-architecture.md)
 ## [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 ## [Wymagania wstępne usługi ATA](ata-prerequisites.md)
+## [Zalecane ścieżka uaktualnienia](upgrade-path.md)
 # Wdróż program
 ## [1. Pobieranie i instalowanie centrum](install-ata-step1.md)
 ## [2. Łączenie z usługą AD](install-ata-step2.md)
