@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/20/2017
+ms.date: 9/3/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f9c2df3c454e2098277f4c475dc1d69378a90987
-ms.sourcegitcommit: 46dd0e695f16a0dd23bbfa140eba15ea6a34d7af
+ms.openlocfilehash: d7f5423104b3e42777b6ce8013832b3bac6353be
+ms.sourcegitcommit: 654500928025e3cb127e095c17cc1d6444defd3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/03/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -124,13 +124,19 @@ Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować 
 
 Upewnij się, że Centrum usługi ATA i bramy usługi ATA mają dostęp do punktu dystrybucji z listy CRL. Jeśli nie ma dostępu do Internetu, wykonaj [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę, aby zainstalować wszystkie dystrybucji listy CRL punktów dla całego łańcucha.
 
+Certyfikat musi mieć:
+-   Klucz prywatny
+-   Typ dostawcy, dostawca usług kryptograficznych (CSP) lub dostawcy magazynu kluczy (KSP)
+-   Publiczny klucz o długości 2048 bitów
+-   Wartość dla KeyEncipherment i ServerAuthentication flagi użycia
+
+Na przykład można użyć standardowego **serwera sieci Web** lub **komputera** szablonów.
 
 > [!WARNING]
 > - Proces odnowienie istniejącego certyfikatu nie jest obsługiwane. Jedynym sposobem, aby odnowić certyfikat jest tworzony nowy certyfikat i konfigurowania usługi ATA przy użyciu nowego certyfikatu.
 
 
 > [!NOTE]
-> - Typem dostawcy certyfikatu może być Dostawca usług kryptograficznych (CSP) lub Dostawca magazynu kluczy (KSP).
 > - Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
 > - Począwszy od wersji 1.8 usługi ATA bramy usługi ATA i bram Lightweight zarządzanym własne certyfikaty i wymagają interakcji ze strony administratora do zarządzania nimi.
 

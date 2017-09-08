@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/14/2017
+ms.date: 9/03/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 1ec9308e046a228ac1276eb1aace58eec47e95d0
-ms.sourcegitcommit: 8b622fa5457cf1a540504899c8c98e860b946e01
+ms.openlocfilehash: 2793a602a0cd0fb9902197acd45dd5bdd4612ea4
+ms.sourcegitcommit: 654500928025e3cb127e095c17cc1d6444defd3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 09/03/2017
 ---
 # <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 
@@ -126,6 +126,14 @@ W systemie Windows Server 2016 Core błąd może nie zostać wyświetlony, ale p
 **Opis**: Począwszy od wersji 1.8 usługi ATA, brama usługi ATA komunikuje się z Centrum usługi ATA przy użyciu protokołu HTTP. Jeśli maszyna, na której zainstalowano bramę usługi ATA, korzysta z serwera proxy do nawiązywania połączeń z Centrum usługi ATA, może to spowodować przerwanie tej komunikacji. 
 
 **Obejście**: Nie używaj serwera proxy na koncie bramy usługi ATA. W przyszłej wersji zostanie wprowadzona aktualizacja rozwiązująca ten problem.
+
+### <a name="report-settings-reset"></a>Resetowanie ustawień raportu
+
+**Objawy**: wszystkie ustawienia, które zostały wprowadzone Zaplanowane raporty są czyszczone po zaktualizowaniu do 1,8 update 1.
+
+**Opis elementu**: aktualizowanie 1,8 aktualizacji 1 z resetowaniem 1,8 raporty ustawienia harmonogramu.
+
+**Obejście**: przed zaktualizowaniem 1,8 aktualizacji 1, Utwórz kopię ustawień raportu i wprowadź je ponownie, również być można to zrobić za pomocą skryptu, aby uzyskać więcej informacji, zobacz [eksportowania i importowania konfiguracji usługi ATA](ata-configuration-file.md).
 
 
 ## <a name="see-also"></a>Zobacz też
