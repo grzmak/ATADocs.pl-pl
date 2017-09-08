@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/2/2017
+ms.date: 09/6/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,196 +13,475 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f9f9fee8ad8d75d3510c86890201dd719e074b8c
-ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
+ms.openlocfilehash: 05550e56479de0390d7f2d990ffae4b319dec9f9
+ms.sourcegitcommit: 74cce0c1d52086fdf10ea70f590b306c1c7e8b14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2017
+ms.lasthandoff: 09/08/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
-# <a name="introduction"></a>Wprowadzenie
+# <a name="advanced-threat-analytics-suspicious-activity-guide"></a>Advanced Threat Analytics podejrzanych działań przewodnik
 
-Usługa ATA wykrywa następujące fazy zaawansowanego ataku: rekonesans, przejęcie poświadczeń, penetracja sieci, podwyższenie poziomu uprawnień, zdominowanie domeny i inne.
+Po właściwego dochodzenia wszelkich podejrzanych działań mogą być klasyfikowane jako:
 
-Fazy w łańcuchu kończenia gdzie usługa ATA zapewnia obecnie wykryć zostały wyróżnione na tym diagramie.
+-   **Dodatnia wartość TRUE**: złośliwą akcję wykrytych przez usługę ATA.
 
-![Usługa ATA skupia się na penetracji sieci w ataku typu kill chain](media/attack-kill-chain-small.jpg)
+-   **Dodatnia wartość true niegroźne**: działań wykrytych przez usługę ATA, do rzeczywistych, ale nie złośliwe, takich jak testu penetracji.
 
-W tym artykule przedstawiono szczegóły każdego podejrzanego działania w poszczególnych fazach.
+-   **Wynik fałszywie dodatni**: false alarm, co oznacza działania nie stanie.
 
+Aby uzyskać więcej informacji na temat pracy z alertami usługi ATA, zobacz [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md).
 
-## <a name="reconnaissance-using-account-enumeration"></a>Rekonesans przy użyciu wyliczania kont
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Atak polegający na wyliczaniu kont to technika używana przez osoby atakujące w celu odgadnięcia różnych nazw kont. Wykorzystuje ona próby uwierzytelnienia Kerberos w celu określenia, czy dany użytkownik występuje w sieci. Pomyślnie odgadnięte konta mogą być stosowane na kolejnych etapach ataku. | Zbadaj dany komputer i spróbuj określić, czy istnieje uzasadniona przyczyna uruchomienia tak wielu procesów uwierzytelniania Kerberos. Są to procesy, które próbowały poznać wiele kont i nie udało im się to, ponieważ dany użytkownik nie istnieje (błąd Client_Principal_Unknown), ale co najmniej jedna próba dostępu zakończyła się sukcesem. <br></br>**Wyjątki:** ta metoda wykrywania opiera się na znalezieniu wielu nieistniejących kont oraz prób uwierzytelnienia z jednego komputera. Jeśli użytkownik popełni błąd podczas ręcznego wpisywania nazwy użytkownika lub domeny, próba uwierzytelnienia jest postrzegana jako próba zalogowania się na nieistniejące konto. Serwery terminali wymagające logowania się przez wielu użytkowników mogą rzeczywiście napotykać dużą liczbę omyłkowych prób zalogowania. |Zbadaj proces odpowiedzialny za generowanie tych żądań.  Aby uzyskać pomoc w identyfikacji procesów na podstawie portu źródłowego, zobacz artykuł [Have you ever wanted to see which Windows process sends a certain packet out to network? (Czy chcesz zobaczyć, który proces systemu Windows wysyła określony pakiet do sieci?)](https://blogs.technet.microsoft.com/nettracer/2010/08/02/have-you-ever-wanted-to-see-which-windows-process-sends-a-certain-packet-out-to-network/)|Średni|
-
-## <a name="reconnaissance-using-directory-services-enumeration-sam-r"></a>Rekonesans przy użyciu wyliczania usług katalogowych (SAM-R)
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-Rekonesans usług irectory to technika, używane przez osoby atakujące mapy strukturę katalogów i stosowanie uprzywilejowanych kont do wykonania kolejnych kroków ataku. Protokół Security Account Manager Remote (SAM-R) to jedna z metod używanych do wysyłania zapytań o katalog. | Dowiedz się, dlaczego dany komputer korzysta z protokołu Security Accounts Manager — Remote (MS-SAMR). Jest to proces wykonywany w nietypowy sposób i prawdopodobnie wiąże się z zapytaniami o jednostki poufne. <br></br>**Wyjątki:** ta metoda wykrywania polega na profilowaniu normalnego zachowania użytkowników wysyłających zapytania SAM-R oraz ostrzeganiu w przypadku zaobserwowania zapytania nietypowego. Użytkownicy uprzywilejowani logujący się do komputerów, które do nich nie należą, mogą spowodować wywołanie zapytania SAM-R wykrywanego jako nietypowe nawet wtedy, gdy jest to element normalnego procesu pracy. Sytuacje takie mogą spotykać często członków zespołu IT. Jeśli dany przypadek został oznaczony jako podejrzany, ale wynika z normalnego użytkowania, jest to spowodowane faktem, że dane zachowanie nie zostało wcześniej zaobserwowane przez usługę ATA. | W takiej sytuacji zaleca się zastosowanie dłuższego okresu uczenia oraz lepszego pokrycia usługi ATA w domenie, zgodnie z lasem usługi Active Directory.<br></br>[Pobierz i uruchom narzędzie „SAMRi10”](https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b). Narzędzie SAMRi10 zostało opublikowane przez zespół usługi ATA i zwiększa odporność środowiska na zapytania SAM-R. | Średni|
-
-## <a name="reconnaissance-using-dns"></a>Rekonesans przy użyciu systemu DNS
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Serwer DNS zawiera mapę wszystkich komputerów, adresów IP i usług w sieci. Te informacje są używane przez osoby atakujące do mapowania struktury sieci i interesujących komputerów docelowych do wykonania kolejnych kroków ataku. | Dowiedz się, dlaczego dany komputer wykonuje zapytanie o pełny transfer strefy (AXFR) w celu pobrania wszystkich rekordów z domeny DNS. <br></br>**Wyjątki:** ta metoda wykrywania identyfikuje serwery inne niż DNS, które wysyłają żądania transferu strefy DNS. Istnieje kilka skanerów zabezpieczeń, które są znane z przesyłania tego rodzaju żądań do serwerów DNS. <br></br>Sprawdź także, czy usługa ATA może komunikować się za pośrednictwem portu 53 z bram usługi ATA do serwerów DNS w celu uniknięcia wyników fałszywie dodatnich.| Ogranicz transfer strefy, starannie wybierając hosty, które mogą go żądać. Aby uzyskać więcej informacji, zobacz artykuły [Zabezpieczanie serwera DNS](https://technet.microsoft.com/library/cc770474(v=ws.11).aspx) i [Lista kontrolna: Zabezpieczanie serwera DNS](https://technet.microsoft.com/library/cc770432(v=ws.11).aspx). |Średni|
-
-## <a name="reconnaissance-using-smb-session-enumeration"></a>Rekonesans przy użyciu wyliczania sesji SMB
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Wyliczanie bloku komunikatów serwera (SMB, Server Message Block) umożliwia osobie atakującej uzyskiwanie informacji na temat adresów IP, z których niedawno logowali się użytkownicy sieci. Po uzyskaniu tych informacji osoba atakująca może użyć ich do atakowania określonych kont i poruszania się po danym poziomie sieci. | Dowiedz się, dlaczego dany komputer wykonuje wyliczenia sesji SMB.<br></br>**Wyjątki:** ta metoda wykrywania opiera się na założeniu, że wyliczanie sesji SMB nie ma uzasadnionego użytku w sieci przedsiębiorstwa, jednakże niektóre skanery zabezpieczeń (takie jak Websense) wysyłają takie żądania. | [Use the net cease tool to harden your environment (Używanie narzędzia Net Cease do wzmacniania zabezpieczeń środowiska)](https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b) | Średni   |
-
-## <a name="brute-force-ldap-kerberos-ntlm"></a>Atak siłowy (LDAP, Kerberos, NTLM)
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| W przypadku ataków siłowych osoba atakująca próbuje użyć wielu różnych haseł, licząc na to, że w końcu uda jej się je odgadnąć. Osoba atakująca systematycznie sprawdza wszystkie możliwe hasła (lub duży zestaw możliwych haseł) do momentu odnalezienia prawidłowego. Po odgadnięciu poprawnego hasła osoba atakująca może zalogować się do sieci tak, jakby była normalnym użytkownikiem. Obecnie usługa ATA obsługuje poziome (wiele kont) ataki siłowe przy użyciu protokołu Kerberos lub NTLM oraz ataki poziome i pionowe (jedno konto, wiele prób podania hasła) przy użyciu prostego powiązania LDAP. | Dowiedz się, dlaczego dany komputer nie jest w stanie uwierzytelnić wielu kont użytkowników (przy mniej więcej podobnej liczbie prób uwierzytelnienia wielu użytkowników) lub dlaczego wykryto dużą liczbę zakończonych niepowodzeniem prób uwierzytelnienia jednego użytkownika. <br></br>**Wyjątki:** ta metoda wykrywania opiera się na profilowaniu normalnego zachowania kont uwierzytelnianych w wielu zasobach. W przypadku wykrycia nietypowego wzorca wywoływany jest alert. Ten wzorzec nie jest nietypowy w przypadku skryptów uwierzytelniających automatycznie, które korzystają z nieaktualnych poświadczeń (nieprawidłowe hasło lub nazwa użytkownika). | Złożone, długie hasła stanowią wymagany pierwszy poziom zabezpieczeń przed atakami siłowymi. | Średni   |
-
-## <a name="sensitive-account-exposed-in-plain-text-authentication-and-service-exposing-accounts-in-plain-text-authentication"></a>Poufne konto uwidocznione podczas uwierzytelnienia zwykłym tekstem i usługa uwidaczniająca konta podczas uwierzytelniania zwykłym tekstem
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Niektóre usługi na komputerze wysyłają poświadczenia kont w postaci zwykłego tekstu, nawet w przypadku kont poufnych. Osoby atakujące monitorujące ruch mogą przechwycić te poświadczenia do złośliwych celów. Alert wywołują wszystkie przypadki przesłania zwykłym tekstem haseł do kont poufnych. | Odszukaj odpowiedni komputer i dowiedz się, dlaczego korzysta z prostych powiązań LDAP. | Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzystają z prostych powiązań LDAP. Zamiast prostych powiązań LDAP użyj warstwy LDAP SALS lub protokołu LDAPS. Postępuj zgodnie z zasadami warstwowej struktury zabezpieczeń i ogranicz dostęp we wszystkich warstwach, aby zapobiec podwyższeniu poziomu uprawnień. | Niska dla uwidaczniania usług, średnia dla kont poufnych |
-
-## <a name="honey-token-account-suspicious-activities"></a>Podejrzane działania związane z kontem wystawionym jako przynęta
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Konta wystawione jako przynęta są fikcyjnymi kontami konfigurowanymi w celu przechwytywania, identyfikowania i śledzenia złośliwych działań w sieci obejmujących te konta. Są to konta nieużywane i nieaktywne w sieci, a nieoczekiwane działania z konta wystawionego jako przynęta mogą wskazywać próbę wykorzystania tego konta przez złośliwego użytkownika. | Dowiedz się, dlaczego konto wystawione jako przynęta podejmuje próbę uwierzytelnienia z danego komputera. | Przejrzyj strony profilów usługi ATA dla innych kont poufnych (uprzywilejowanych) w środowisku, aby sprawdzić, czy występują potencjalnie podejrzane działania. | Średni   |
-
-## <a name="unusual-protocol-implementation"></a>Implementacja nietypowego protokołu
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-|Osoby atakujące mogą wykorzystywać narzędzia stosujące protokoły SMB/Kerberos na określone sposoby umożliwiające im uzyskanie określonych możliwości w sieci. Wskazuje to zastosowanie złośliwych technik stosowanych w atakach typu Over-Pass-the-Hash i atakach siłowych. | Dowiedz się, dlaczego dany komputer korzysta z protokołu uwierzytelniania lub SMB w nietypowy sposób. <br></br>Aby określić, czy jest to atak WannaCry, wykonaj następujące działania:<br></br> 1.    Pobierz eksport podejrzanego działania w formacie programu Excel.<br></br>2.    Otwórz kartę działań sieci i przejdź do pola „Json”, aby skopiować powiązane obiekty JSON Smb1SessionSetup i Ntlm<br></br>3.   Jeśli wartość Smb1SessionSetup.OperatingSystem to „Windows 2000 2195”, wartość Smb1SessionSetup.IsEmbeddedNtlm to „true”, a wartość Ntlm.SourceAccountId to „null”, jest to atak WannaCry.<br></br><br></br>**Wyjątki:** wykrycie może nastąpić w rzadkich przypadkach, w których uprawnione narzędzia implementują protokoły w sposób niestandardowy. Tak działają na przykład niektóre aplikacja do testów penetracyjnych. | Zarejestruj ruch sieciowy i sprawdź, który proces generuje ruch z nietypową implementacją protokołu.| Średni|
-
-## <a name="malicious-data-protection-private-information-request"></a>Złośliwe żądanie informacji prywatnych z zakresu ochrony danych
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-|Interfejs API ochrony danych (DPAPI, Data Protection API) jest używany przez różne składniki systemu Windows w celu bezpiecznego przechowywania haseł, kluczy szyfrowania i innych danych poufnych. Kontrolery domeny przechowują zapasowy klucz główny, który umożliwia odszyfrowanie wszystkich wpisów tajnych zaszyfrowanych przy użyciu interfejsu DPAPI przez maszyny z systemem Windows przyłączone do domeny. Osoby atakujące mogą użyć zapasowego klucza głównego domeny DPAPI w celu odszyfrowania wszystkich wpisów tajnych na wszystkich maszynach przyłączonych do domeny (hasła przeglądarek, zaszyfrowane pliki itp.).| Dowiedz się, dlaczego komputer wysłał żądanie przy użyciu tego nieudokumentowanego wywołania interfejsu API dla klucza głównego interfejsu DPAPI.|Dodatkowe informacje na temat interfejsu DPAPI zamieszczono w artykule [Windows Data Protection (Ochrona danych w systemie Windows)](https://msdn.microsoft.com/library/ms995355.aspx).|Wysoki|
-
-## <a name="suspicion-of-identity-theft-based-on-abnormal-behavior"></a>Podejrzenie kradzieży tożsamości na podstawie nietypowego zachowania
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Po utworzeniu modelu zachowań (utworzenie modelu zachowań wymaga co najmniej 50 aktywnych kont na przestrzeni 3 tygodni) każde nietypowe zachowanie wywołuje alert. Zachowanie, które nie pasuje do modelu utworzonego dla określonego konta użytkownika, może wskazywać na kradzież tożsamości. | Dowiedz się, dlaczego dany użytkownik może zachowywać się inaczej. <br></br>**Wyjątki:** jeśli usługa ATA zapewnia tylko częściowe pokrycie (nie wszystkie kontrolery domen są przekierowywane do bramy usługi ATA), poznawane są tylko niektóre działania danego użytkownika. Jeśli nagle po ponad 3 tygodniach usługa ATA zaczyna obejmować cały ruch sieciowy, pełnia działań użytkownika może wywołać alert. | Upewnij się, że usługa ATA została wdrożona we wszystkich kontrolerach domen. <br></br>1.  Sprawdź, czy użytkownik zmienił stanowisko w organizacji.<br></br>2.  Sprawdź, czy użytkownik jest pracownikiem sezonowym.<br></br>3.  Sprawdź, czy użytkownik właśnie wrócił po długiej nieobecności.| Średnia dla wszystkich użytkowników i wysoka dla użytkowników uprzywilejowanych |
-
-
-## <a name="pass-the-ticket"></a>Ataki typu Pass-the-Ticket
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Atak typu Pass-the-Ticket to technika ruchu po danym poziomie sieci, w której osoba atakująca dokonuje kradzieży biletu Kerberos z jednego z komputerów i przy jego użyciu uzyskuje dostęp do innego komputera, podszywając się pod jednostkę w sieci. | Ta metoda wykrywania polega na identyfikacji zastosowania tych samych biletów Kerberos na co najmniej dwóch różnych komputerach. W niektórych przypadkach, jeśli adresy IP zmieniają się z dużą częstotliwością, usługa ATA może nie być w stanie określić, czy różne adresy IP są używane przez ten sam komputer, czy przez różne komputery. Jest to typowy problem w przypadku zbyt małych puli DHCP (VPN, Wi-Fi itp.) oraz współdzielonych adresów IP (urządzenia NAT). | Postępuj zgodnie z zasadami warstwowej struktury zabezpieczeń i ogranicz dostęp we wszystkich warstwach, aby zapobiec podwyższeniu poziomu uprawnień. | Wysoki     |
-
-## <a name="pass-the-hash"></a>Ataki typu Pass-the-Hash
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| W przypadku ataku Pass-the-Hash osoba atakująca uwierzytelnia się na serwerze zdalnym lub w usłudze zdalnej przy użyciu podstawowego skrótu NTLM hasła użytkownika zamiast skojarzonego hasła w postaci zwykłego tekstu, jak to się dzieje zazwyczaj. | Sprawdź, czy konto przeprowadzało jakieś nietypowe działania w czasie zbliżonym do momentu wystąpienia alertu. | Wdróż zalecenia opisane w artykule [Pass-the-Hash](http://aka.ms/PtH). Postępuj zgodnie z zasadami warstwowej struktury zabezpieczeń i ogranicz dostęp we wszystkich warstwach, aby zapobiec podwyższeniu poziomu uprawnień. | Wysoki|
-
-## <a name="over-pass-the-hash"></a>Ataki typu Over-Pass-the-Hash
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Atak typu Over-Pass-the-Hash wykorzystuje słabość implementacji protokołu uwierzytelniania Kerberos polegającą na tym, że skrót NTLM umożliwia utworzenie biletu Kerberos, pozwalając osobie atakującej na uwierzytelnienie w usługach w sieci bez hasła użytkownika. | Obniżenie poziomu szyfrowania: dowiedz się, dlaczego dane konto korzysta z szyfrowania RC4 protokołu Kerberos po poznaniu szyfrowania AES. <br></br>**Wyjątki:** ta metoda wykrywania opiera się na profilowaniu metod szyfrowania używanych w domenie oraz wysyłaniu alertów w przypadku wykrycia nietypowej, słabszej metody. W niektórych przypadkach stosowana jest słabsza metoda szyfrowania, a usługa ATA wykrywa ją jako nietypową, mimo że jest częścią normalnego (choć rzadkiego) procesu roboczego. Taka sytuacja może wystąpić, jeśli dane zachowanie nie zostało wcześniej zaobserwowane przez usługę ATA. Pomocne jest zapewnienie lepszego pokrycia usługi ATA w domenie. | Wdróż zalecenia opisane w artykule [Pass-the-Hash](http://aka.ms/PtH). Postępuj zgodnie z zasadami warstwowej struktury zabezpieczeń i ogranicz dostęp we wszystkich warstwach, aby zapobiec podwyższeniu poziomu uprawnień. | Wysoki     |
-
-## <a name="privilege-escalation-using-forged-authorization-data-ms14-068-exploit-forged-pac--ms11-013-exploit-silver-pac"></a>Podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji — luka MS14-068 (sfałszowany element PAC) / luka MS11-013 (Silver PAC)
-
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Znane luki w zabezpieczeniach w starszych wersjach systemu Windows Server umożliwiają osobom atakującym manipulację certyfikatem atrybutu uprawnień (PAC, Privilege Attribute Certificate), polem w bilecie Kerberos, które zawiera dane autoryzacji użytkownika (w usłudze Active Directory jest to członkostwo w grupie), i przyznanie osobie atakującej dodatkowych uprawnień. | Sprawdź, czy na danym komputerze uruchomiono usługę specjalną, która może korzystać z metody autoryzacji innej niż certyfikat PAC. <br></br>**Wyjątki:** w niektórych określonych scenariuszach zasoby implementują własny mechanizm autoryzacji i mogą wyzwalać alert w usłudze ATA. | Upewnij się, że na wszystkich kontrolerach domen z systemami operacyjnymi starszymi niż system Windows Server 2012 R2 zainstalowano poprawkę [KB3011780](https://support.microsoft.com/help/2496930/ms11-013-vulnerabilities-in-kerberos-could-allow-elevation-of-privilege), a wszystkie serwery członkowskie i kontrolery domen do wersji 2012 R2 mają zainstalowaną poprawkę KB2496930. Aby uzyskać więcej informacji, zobacz [Silver PAC](https://technet.microsoft.com/library/security/ms11-013.aspx) i [Forged PAC (Sfałszowany element PAC)](https://technet.microsoft.com/library/security/ms14-068.aspx). | Wysoki     |
+Aby przekazać pytania lub opinie, skontaktuj się z nami pod adresem [ ATAEval@microsoft.com ](mailto:ATAEval@microsoft.com).
 
 ## <a name="abnormal-sensitive-group-modification"></a>Nietypowa modyfikacja grupy poufnej
 
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-|W fazie podwyższenia poziomu uprawnień atakujący modyfikują grupy z wysokim poziomem uprawnień w celu uzyskania dostępu do poufnych zasobów.| Sprawdź, czy zmiana grupy jest uzasadniona. <br></br>**Wyjątki:** ta metoda wykrywania polega na profilowaniu normalnego zachowania użytkowników modyfikujących grupy poufne oraz ostrzeganiu w przypadku zaobserwowania nietypowej zmiany. Uzasadnione zmiany mogą wywołać alert, jeśli dane zachowanie nie zostało wcześniej zaobserwowane przez usługę ATA. Pomocne jest zastosowanie dłuższego okresu uczenia i lepszego pokrycia usługi ATA w domenie. | Upewnij się, że zminimalizowano grupę osób uprawnionych do modyfikowania grup poufnych. Jeśli to możliwe, zastosuj uprawnienia typu „just in time”. | Średni   |
+**Opis**
 
-## <a name="encryption-downgrade---skeleton-key-malware"></a>Obniżenie poziomu szyfrowania — złośliwe oprogramowanie Skeleton Key
+Osoby atakujące Dodawanie użytkowników do grup wysoko uprzywilejowane. W tym celu uzyskania dostępu do większej ilości zasobów i uzyskanie utrwalenie. Wykrywanie zależy od profilowania działania modyfikacji grupy użytkowników i alerty, gdy występuje nietypowe dodanie do grupy poufnych. Profilowanie stale jest wykonywane przez usługę ATA. Minimalny okres wywoła alertu jest jednego miesiąca na każdym kontrolerze domeny.
 
-
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Skeleton Key to złośliwe oprogramowanie, które działa na kontrolerach domen i umożliwia uwierzytelnianie w domenie przy użyciu dowolnego konta bez znajomości hasła. To złośliwe oprogramowanie często używa słabszych algorytmów szyfrowania w celu szyfrowania haseł użytkowników na kontrolerze domeny. | Obniżenie poziomu szyfrowania: dowiedz się, dlaczego dane konto korzysta z szyfrowania RC4 protokołu Kerberos po poznaniu szyfrowania AES. <br></br>**Wyjątki:** ta metoda wykrywania opiera się na profilowaniu metod szyfrowania stosowanych w domenie. W niektórych przypadkach stosowana jest słabsza metoda szyfrowania, a usługa ATA wykrywa ją jako nietypową, mimo że jest częścią normalnego (choć rzadkiego) procesu roboczego. | Aby sprawdzić, czy oprogramowanie Skeleton Key istnieje na kontrolerach domen, możesz skorzystać ze [skanera przygotowanego przez zespół usługi ATA](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73). | Wysoki |
-
-## <a name="golden-ticket"></a>Sfałszowany bilet uwierzytelniania Golden Ticket
+Dla definicji poufnych grup w usłudze ATA, zobacz [Praca z konsolą usługi ATA](working-with-ata-console.md#sensitive-groups).
 
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Jeśli osoba atakująca ma uprawnienia administratora domeny, może utworzyć bilet uprawniający do przyznania biletu (TGT, ticket granting ticket) protokołu Kerberos zapewniający autoryzację do wszystkich zasobów w sieci oraz ustawiający dowolny czas ważności biletu. Pozwala to osobom atakującym na uzyskanie stałego dostępu do sieci. | Obniżenie poziomu szyfrowania: dowiedz się, dlaczego dane konto korzysta z szyfrowania RC4 protokołu Kerberos po poznaniu szyfrowania AES. <br></br>**Wyjątki:** ta metoda wykrywania opiera się na profilowaniu metod szyfrowania używanych w domenie oraz wysyłaniu alertów w przypadku wykrycia nietypowej, słabszej metody. W niektórych przypadkach stosowana jest słabsza metoda szyfrowania, a usługa ATA wykrywa ją jako nietypową, mimo że jest częścią normalnego (choć rzadkiego) procesu roboczego. Taka sytuacja może wystąpić, jeśli dane zachowanie nie zostało wcześniej zaobserwowane przez usługę ATA. Upewnij się, że usługa ATA obejmuje całą domenę. | Zapewnij jak najwyższy poziom bezpieczeństwa biletu uprawniającego do przyznania biletu protokołu Kerberos (KRBTGT, Kerberos Ticket Granting Ticket), stosując następujące metody:<br></br>1.  Zabezpieczenia fizyczne<br></br>2.  Zabezpieczenia fizyczne maszyn wirtualnych<br></br>3. Wzmocnij zabezpieczenia kontrolera domeny<br></br>4.  Izolacja/ochrona poświadczeń urzędu zabezpieczeń lokalnych (LSA, Local Security Authority)<br></br>W przypadku wykrycia sfałszowanych biletów uwierzytelniania Golden Ticket należy przeprowadzić dokładniejsze badania w celu określenia, czy wymagane jest odzyskiwanie taktyczne.<br></br>Regularnie zmieniaj bilet uprawniający do przyznania biletu protokołu Kerberos zgodnie z zaleceniami we wpisie w blogu firmy Microsoft [KRBTGT Account Password Reset Scripts now available for customers (Skrypty resetowania haseł kont KRBTGT dostępne dla klientów)](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/) przy użyciu narzędzia [Reset the krbtgt account password/keys (Resetowanie kluczy/haseł kont KRBTGT)](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). <br></br>Zaimplementuj następujące [zalecenia dotyczące ataków typu Pass-the-Hash](http://aka.ms/PtH). | Średni   |
+Wykrywanie polega na [zdarzeń inspekcji na kontrolerach domeny](https://docs.microsoft.com/advanced-threat-analytics/configure-event-collection).
+Za pomocą narzędzia, do którego odwołuje się [ATA inspekcji (AuditPol, zaawansowane wymuszania ustawienia inspekcji, odnajdowanie usługi bramy Lightweight)](https://aka.ms/ataauditingblog) się upewnić się, że domenie kontrolery wymagane zdarzeń inspekcji.
+
+**Badanie**
+
+1. Modyfikacja grupy jest uzasadnione? </br>Zmiany uzasadnionych grupy, które rzadko występuje i nie zostały rozpoznane jako "normal", może spowodować alertu, które mogą być uważane za niegroźne pozytywną wartość true.
+
+2. Jeśli dodany obiekt znajduje się konto użytkownika, sprawdź akcje, które konto użytkownika miało po dodaniu do grupy administratorów. Przejdź do strony użytkownika w usłudze ATA, aby uzyskać więcej kontekstu. Były inne podejrzane działania związane z kontem przed lub po dodaniu miały miejsce? Pobierz **modyfikacji grupy poufnej** raportu, aby zobaczyć, jakie były inne zmiany dokonane i przez kogo w tym samym czasie.
+
+**Korygowania**
+
+Zminimalizowanie liczby użytkowników, którzy autoryzację do modyfikowania grup poufnych.
+
+Konfigurowanie [Privileged Access Management dla usługi Active Directory](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) jeśli ma to zastosowanie.
+
+## <a name="broken-trust-between-computers-and-domain"></a>Zerwaniem relacji zaufania między komputerami i domeny
+
+**Opis**
+
+Zerwane relacje zaufania oznacza, że wymagania dotyczące zabezpieczeń usługi Active Directory może nie być obowiązywać dla komputerów w. Taka sytuacja jest często uznawana za podstawowy błąd zabezpieczeń i zgodności oraz atrakcyjny cel dla osób atakujących. W tym wykrywania alert jest wyzwalany, jeśli więcej niż 5 niepowodzenia uwierzytelniania Kerberos są widoczne z konta komputera w ciągu 24 godzin.
+
+**Badanie**
+
+Czy danego komputera zezwala logowania użytkowników domeny? 
+- Jeśli tak, możesz zignorować ten komputer w czynności korygujące.
+
+**Korygowania**
+
+Przyłącz komputer do domeny, w razie potrzeby lub zresetowania hasła na komputerze.
+
+## <a name="brute-force-attack-using-ldap-simple-bind"></a>Ataków siłowych przy użyciu prostego powiązania LDAP
+
+**Opis**
+
+>[!NOTE]
+> Główną różnicą między **niepowodzenia uwierzytelniania podejrzane** i wykryciem jest, że w tym wykrywania usługi ATA można określić, czy różne hasła były używane.
+
+W ataków siłowych atakujący podejmie próbę uwierzytelniania za pomocą wielu różnych haseł dla różnych kont aż do znalezienia prawidłowego hasła dla co najmniej jedno konto. Znaleziono jeden raz, osoba atakująca może zalogować za pomocą tego konta.
+
+W tym wykrywania alert zostanie wywołany, gdy usługa ATA wykrywa wiele różnych używanych haseł. Może to być albo *poziomie* z niewielki zestaw hasła przez wielu użytkowników; lub *pionowo "* z dużym zestawem hasła w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
+
+**Badanie**
+
+1. Obejmuje wiele kont, kliknij przycisk **Pobierz szczegóły** Aby wyświetlić listę w arkuszu programu Excel.
+
+2. Kliknij alert, aby przejść do strony dedykowanych. Sprawdź, czy próby logowania wszystkie zakończone z pomyślnym uwierzytelnieniu. Prób zostanie wyświetlony jako **odgadnąć kont** po prawej stronie infographic. Jeśli tak, czy jakakolwiek **odgadnąć kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
+
+3. Jeśli istnieją nie **odgadnąć kont**, są **ataku kont** zwykle używane z komputera źródłowego? Jeśli tak,**Pomiń** podejrzanych działań.
+
+**Korygowania**
+
+[Złożone i długich haseł](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) podaj niezbędne pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
+## <a name="encryption-downgrade-activity"></a>Działanie obniżenia poziomu szyfrowania
+
+**Opis**
+
+Korzystanie z różnych metod ataku słabe cyfry szyfrowania protokołu Kerberos. W wykrywanie, uzyskuje informacje o typy szyfrowania protokołu Kerberos, które są używane przez komputery i użytkowników usługi ATA i alerty, gdy słabszego szyfrowania jest używany: (1) jest typowe dla komputera źródłowego i/lub użytkownika. i (2) dopasowań znane techniki ataku.
+
+Istnieją trzy typy wykrywania:
+
+1.  Skeleton Key — to złośliwe oprogramowanie, która działa na kontrolerach domeny i umożliwia użycie uwierzytelniania z dowolnego konta do domeny bez uprzedniego uzyskania informacji o jego hasło. Złośliwe oprogramowanie często używa słabszych algorytmów szyfrowania w celu encipher hasła użytkownika na kontrolerze domeny. W tym wykrywania metody szyfrowania wiadomości KRB_ERR z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie.
+
+2.  Bilet Golden — [bilet uwierzytelniania Golden Ticket](#golden-ticket) alertu, metody szyfrowania biletu TGT pola wiadomości TGS_REQ (żądanie obsługi) z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie. Należy pamiętać, że nie jest to oparty na czasie anomalii (tak jak inne wykrywania bilet uwierzytelniania Golden Ticket). Ponadto nie było żadnych żądanie uwierzytelnienia Kerberos skojarzony z żądaniem usługi powyżej, wykrytych przez usługę ATA.
+
+3.  Overpass--Hash — typ szyfrowania wiadomości AS_REQ z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie (oznacza to, że komputer został przy użyciu AES).
+
+**Badanie**
+
+Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących.
+
+1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu [skanera napisane przez zespół usługi ATA](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73).
+    Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
+
+2.  Bilet uwierzytelniania Golden Ticket — istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie niegroźne pozytywną wartość true i można pominąć.
+
+3.  Overpass--Hash — istnieją przypadki, w których tego alertu mogą być wyzwalane, gdy użytkownicy skonfigurowani przy użyciu kart inteligentnych są wymagane do logowania interakcyjnego, a to ustawienie jest wyłączone i włączone. Sprawdź, czy wystąpiły zmiany podobny do tego konta związane. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true, można pominąć.
+
+**Korygowania**
+
+1.  Szkielet klucza — Usuń złośliwe oprogramowanie. Aby uzyskać więcej informacji, zobacz [analizy złośliwe oprogramowanie Skeleton Key](https://www.secureworks.com/research/skeleton-key-malware-analysis) przez SecureWorks.
+
+2.  Golden Ticket — postępuj zgodnie z instrukcjami [bilet uwierzytelniania Golden Ticket](#golden-ticket) podejrzanych działań.   
+    Ponadto tworzenie bilet uwierzytelniania Golden Ticket wymaga uprawnień administratora domeny, dlatego wdrożenie [przekazać zalecenia skrótu](http://aka.ms/PtH).
+
+3.  Overpass--Hash — Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Patrz wskazówki w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/). Zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
+
+## Bilet uwierzytelniania Golden Ticket<a name="golden-ticket"></a>
+
+**Opis**
+
+Osoby atakujące mającego uprawnienia administratora domeny może naruszyć [konto KRBTGT](https://technet.microsoft.com/library/dn745899(v=ws.11).aspx#Sec_KRBTGT). Używane konto KRBTGT, można utworzyć biletu Kerberos przyznania biletu (TGT), udostępnia autoryzacji do dowolnego zasobu i wartość żadnych dowolną wartością czasu wygaśnięcia biletu. Tego BILETU fałszywych nazywa się "Bilet uwierzytelniania Golden" i pozwala osobie atakującej uzyskanie utrwalenie w sieci.
+
+W tym wykrywania alert będzie wyzwalane, gdy bilet Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx) zasady zabezpieczeń.
+
+**Badanie**
+
+1. Były ostatnio (w ciągu ostatnich kilku godzin) zmiany wprowadzone do **maksymalny okres istnienia biletu użytkownika** ustawienie w zasadach grupy? Jeśli tak, następnie **Zamknij** alert (był wynik fałszywie dodatni).
+
+2. Uczestniczy w tym alercie maszyny wirtualnej bramy usługi ATA? Jeśli tak, on niedawno wznowić z zapisanym stanie? Jeśli tak, następnie **Zamknij** ten alert.
+
+3. Jeśli odpowiedzi na te pytania są nie, założono jest złośliwe.
+
+**Korygowania**
+
+Zmień hasło biletu przyznania biletu protokołu Kerberos (KRBTGT) dwukrotnie zgodnie z instrukcjami podanymi w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)za pomocą [zresetować hasło konta KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem.  
+Ponadto tworzenie bilet uwierzytelniania Golden Ticket wymaga uprawnień administratora domeny, dlatego wdrożenie [przekazać zalecenia skrótu](http://aka.ms/PtH).
+
+## <a name="honeytoken-activity"></a>Działanie wystawionego jako przynęta
 
 
+**Opis**
 
-## <a name="remote-execution"></a>Zdalne wykonywanie kodu
+Kont wystawionych jako przynęta są konta decoy skonfigurowane do identyfikacji i śledzenia złośliwych działań, która obejmuje tych kont. Kont wystawionych jako przynęta powinny pozostać nieużywane podczas o nazwie atrakcyjne do nakłonienia osoby atakujące (na przykład administrator SQL). Wszystkie działania z nich może wskazywać na złośliwe działanie.
 
+Aby uzyskać więcej informacji dotyczących kont wystawionych jako przynęta, zobacz [Instalowanie usługi ATA — krok 7](install-ata-step7.md).
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Osoby atakujące, które przejęły poświadczenia administratora, mogą wykonywać polecenia zdalne na kontrolerze domeny. Umożliwia to stały dostęp do sieci, zbieranie informacji, przeprowadzanie ataków typu „odmowa usługi” (DoS, denial of service) oraz wykonywanie innych działań. | Dowiedz się, czy dane konto ma uprawnienia do wykonywania działań zdalnych w kontrolerze domeny. <br></br>**Wyjątki:** autoryzowani użytkownicy, którzy czasami uruchamiają polecenia na kontrolerze domeny, mogą wywołać ten alert, chociaż jest to część normalnego procesu administracyjnego. Najczęściej sytuacja taka występuje w przypadku członków zespołu IT oraz kont usług, które wykonują zadania administracyjne na kontrolerach domeny. | Ogranicz zdalny dostęp do kontrolerów domen z maszyn nienależących do warstwy 0. Usuń wszystkie podejrzane, nieaktualne i niewymagane pliki oraz foldery. Zaimplementuj silne zasady kontroli konta użytkownika. Zaimplementuj [stacje robocze z dostępem uprzywilejowanym](https://technet.microsoft.com/en-us/windows-server-docs/security/securing-privileged-access/securing-privileged-access), umożliwiając łączenie się z kontrolerami domeny na potrzeby administrowania jedynie maszynom o wzmocnionych zabezpieczeniach. | Niski      |
+**Badanie**
+
+1.  Sprawdź, czy z właścicielem komputera źródłowego używane kont wystawionych jako przynęta w celu uwierzytelnienia przy użyciu metody opisanej na stronie podejrzanych działań (na przykład protokołu Kerberos, LDAP, NTLM).
+
+2.  Przejdź do strony profilu komputery źródła i Sprawdź inne konta uwierzytelnione z nich. Użycie kont wystawionych jako przynęta, należy skontaktować się z właścicieli tych kont.
+
+3.  Może to być logowania nieinterakcyjnego, więc upewnij się sprawdzić aplikacje lub skrypty, które są uruchomione na komputerze źródłowym.
+
+Jeśli po wykonaniu kroki od 1 do 3, jeśli istnieją dowody niegroźne użytkowania, przyjęto założenie, że jest to złośliwe.
+
+**Korygowania**
+
+Upewnij się, że wystawionego jako przynęta kont są używane tylko w przypadku ich przeznaczenie, w przeciwnym razie może wygenerować wiele alertów.
+
+## <a name="identity-theft-using-pass-the-hash-attack"></a>Kradzieży tożsamości za pomocą ataku Pass--Hash
+
+**Opis**
+
+Pass--Hash to technika penetracja sieci, w którym osoby atakujące kradzieży skrótu NTLM użytkownika z jednego komputera i przy jego użyciu uzyskują dostęp do innego komputera. 
+
+**Badanie**
+
+Skrót użyto z komputera, że wybrany użytkownik jest właścicielem lub regularnie korzysta? Jeśli tak, to wynik fałszywie dodatni. Jeśli nie, prawdopodobnie jest dodatnia wartość true.
+
+**Korygowania**
+
+1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. 
+
+2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
+
+## <a name="identity-theft-using-pass-the-ticket-attack"></a>Kradzieży tożsamości za pomocą ataku Pass--Ticket
+
+**Opis**
+
+Pass--Ticket to technika penetracja sieci, w którym osoby atakujące kradzieży biletu Kerberos z jednego komputera i przy jego użyciu uzyskują dostęp do innego komputera, na podstawie kradzieży biletu. W tym wykrywania biletu protokołu Kerberos występuje używanych na różnych komputerach (co najmniej dwa).
+
+**Badanie**
+
+1. Kliknij przycisk **Pobierz szczegóły** przycisk, aby wyświetlić pełną listę adresów IP związanych. Czy adres IP jednego lub obu komputerów należy do podsieci, która jest przydzielony na przykład z puli niewymiarowe DHCP w sieci VPN lub Wi-Fi? Adres IP jest udostępniane? Na przykład przez urządzenie NAT? Jeśli odpowiedź na dowolne z tych pytań jest tak, to wynik fałszywie dodatni.
+
+2. Istnieje już niestandardową aplikację, która przekazuje biletów w imieniu użytkowników? Jeśli tak, czy niegroźne pozytywną wartość true.
+
+**Korygowania**
+
+1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną.  
+
+2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania w [przekazać zalecenia skrótu](http://aka.ms/PtH).
+
+## <a name="malicious-data-protection-private-information-request"></a>Złośliwe żądanie informacji prywatnych z zakresu ochrony danych
+
+**Opis**
+
+Interfejsu API ochrony danych (DPAPI) jest używany przez system Windows do ochrony bezpiecznego hasła zapisane przez przeglądarki, pliki zaszyfrowane i innych poufnych danych. Kontrolery domeny przechowywania kopii zapasowej klucza głównego, który może służyć do odszyfrowywania wszystkich kluczy tajnych zaszyfrowanych za pomocą DPAPI na komputerach przyłączonych do domeny systemu Windows. Atakujący może użyć klucza głównego do odszyfrowania żadnych kluczy tajnych chroniony funkcją DPAPI na wszystkich komputerach przyłączonych do domeny.
+W tym wykrywania zostanie wyzwolony alert w przypadku DPAPI służy do pobierania kopii zapasowej klucza głównego.
+
+**Badanie**
+
+1. Komputer źródłowy systemem zatwierdzone organizacji jest zaawansowane skanera zabezpieczeń w usłudze Active Directory?
+
+2. Jeśli tak i jego powinna zawsze być tych czynności **Zamknij i Wyklucz** podejrzanych działań.
+
+3. Jeśli tak i nie należy przeprowadzać tego, **Zamknij** podejrzanych działań.
+
+**Korygowania**
+
+Aby użyć DPAPI, osoba atakująca wymaga uprawnień administratora domeny. Implementowanie [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
 ## <a name="malicious-replication-requests"></a>Złośliwe żądania replikacji
 
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Replikacja usługi Active Directory to proces, w którym zmiany wprowadzone na jednym kontrolerze domeny są synchronizowane z wszystkimi innymi kontrolerami w domenie lub lesie, które przechowują kopie tych samych danych. W przypadku posiadania odpowiednich uprawnień osoba atakująca może zainicjować żądanie replikacji, tak jakby była kontrolerem domeny. Umożliwia to pobranie danych przechowywanych w usłudze Active Directory, w tym skrótów haseł. | Dowiedz się, dlaczego komputer korzysta z interfejsu API replikacji kontrolera domeny. Ta metoda wykrywania opiera się na korzystaniu przez usługę ATA z partycji konfiguracji lasu katalogu w celu rozpoznania, czy dany komputer jest kontrolerem domeny. <br></br>**Wyjątki:** narzędzie Azure AD DirSync może spowodować wywołanie tego alertu. | Zweryfikuj następujące uprawnienia: — Replikacja zmian katalogów <br></br>— Replikacja wszystkich zmian katalogów<br></br>Aby uzyskać więcej informacji, zobacz [Grant Active Directory Domain Services permissions for profile synchronization in SharePoint Server 2013 (Przydzielanie uprawnień do usług Active Directory Domain Services dla synchronizacji profili w programie SharePoint Server 2013)](https://technet.microsoft.com/library/hh296982.aspx)<br></br>Aby określić, które osoby w domenie mają te uprawnienia, można wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu PowerShell. | Średni   |
+**Opis**
 
+Replikacja usługi Active Directory to proces, za pomocą którego zmian wprowadzonych na jeden kontroler domeny są synchronizowane z innymi kontrolerami domeny. Wymagane uprawnienia, osoby atakujące mogą inicjować żądanie replikacji, dzięki czemu można pobrać danych przechowywanych w usłudze Active Directory, w tym skrótów haseł.
 
+W tym wykrywania alert zostanie wywołany po zainicjowaniu żądania replikacji z komputera, który nie jest kontrolerem domeny.
 
-## <a name="broken-trust-between-domain-and-computers"></a>Zerwanie relacji zaufania między domeną i komputerami
+**Badanie**
 
+1. Jest to komputer danego kontrolera domeny? Na przykład nowo utworzonego kontroler domeny, który ma problemów z replikacją. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.  
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Zerwanie relacji zaufania oznacza, że wymagania dotyczące zabezpieczeń usługi Active Directory mogą nie być aktywne. Taka sytuacja jest często uznawana za podstawowy błąd zabezpieczeń i zgodności oraz atrakcyjny cel dla osób atakujących. Więcej niż 5 kolejnych niepowodzeń uwierzytelniania Kerberos dla konta komputera w przeciągu 24 godzin wywołuje alert w usłudze ATA. Komputer nie komunikuje się z kontrolerem domeny, w związku z czym (1) nie ma dostępu do zaktualizowanych zasad grupy oraz (2) logowanie jest ograniczone do poświadczeń w pamięci podręcznej. | Upewnij się, że relacja zaufania między komputerem i domeną jest poprawna, sprawdzając dzienniki zdarzeń. | Jeśli to konieczne, przyłącz ponownie maszynę do domeny lub zresetuj hasło maszyny. | Niski      |
+2. Danego komputera powinien być replikowanie danych z usługi Active Directory? Na przykład Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+
+**Korygowania**
+
+Sprawdź następujące uprawnienia: 
+
+- Replikować zmiany katalogu   
+
+- Replikuj wszystkie zmiany katalogu  
+
+Aby uzyskać więcej informacji, zobacz [uprawnienia Grant usług domenowych Active Directory synchronizacji profilów w programie SharePoint Server 2013](https://technet.microsoft.com/library/hh296982.aspx).
+Można wykorzystać [AD ACL skanera](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub Utwórz skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
 
 ## <a name="massive-object-deletion"></a>Usunięcie dużej liczby obiektów
 
+**Opis**
 
-> [!div class="mx-tableFixed"]
-|Opis|Badanie|Zalecenie|Ważność|
-|------|----|------|----------|
-| Usługa ATA zgłasza ten alert w przypadku usunięcia więcej niż 5% wszystkich kont. Wymaga to dostępu do odczytu do kontenera usuniętego elementu. | Dowiedz się, dlaczego nagle usunięto 5% wszystkich kont. | Usuń uprawnienia użytkowników, którzy mogą usuwać konta w usłudze Active Directory. Aby uzyskać więcej informacji, zobacz [View or Set Permissions on a Directory Object (Wyświetlanie i ustawianie uprawnień obiektu katalogu)](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx). | Niski |
+W niektórych scenariuszach osoby atakujące, należy przeprowadzić odmowa usługi (DoS) zamiast tylko kradzież informacji. Usuwanie dużej liczby kont jest jeden technika DoS.
+
+W tym wykrywania zostanie wyzwolony alert po usunięciu więcej niż 5% wszystkich kont. Wykrywanie wymaga dostępu do odczytu do kontenera usuniętych obiektów.  
+Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** w [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
+
+**Badanie**
+
+Przejrzyj listę usuniętych kont i zrozumieć, jeśli istnieje wzorca lub z powodu biznesowych, która może uzasadnić tego ogromną usunięcia.
+
+**Korygowania**
+
+Usuń uprawnienia użytkowników, którzy mogą usuwać konta w usłudze Active Directory. Aby uzyskać więcej informacji, zobacz [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
+
+## <a name="privilege-escalation-using-forged-authorization-data"></a>Przy użyciu eskalacji uprawnień sfałszowane danych autoryzacji
+
+**Opis**
+
+Znane luki w zabezpieczeniach w starszych wersjach systemu Windows Server osobom atakującym do manipulowania uprzywilejowanych atrybutu certyfikatu (PAC), pole w bilecie protokołu Kerberos, który zawiera dane autoryzacji użytkownika (w usłudze Active Directory jest członkostwo w grupie), udzielanie osoby atakujące dodatkowych uprawnień.
+
+**Badanie**
+
+1. Kliknij alert, aby uzyskać dostęp do jego stronę szczegółów.
+
+2. Jest komputerem docelowym (w obszarze **ACCESSED** kolumny) poprawiono MS14-068 (kontroler domeny) lub MS11-013 (serwer)? Jeśli tak, **Zamknij** podejrzanych działań (jest wynik fałszywie dodatni).
+
+3. Jeśli nie, nie komputera źródłowego (w obszarze **FROM** kolumny) systemu operacyjnego/aplikacji znane, aby zmodyfikować plik PAC? Jeśli tak, **Pomiń** podejrzanych działań (jest niegroźne pozytywną wartość true).
+
+4. Jeśli odpowiedź była nie powyżej dwóch pytania, założono jest złośliwe.
+
+**Korygowania**
+
+Upewnij się, że na wszystkich kontrolerach domen z systemami operacyjnymi starszymi niż system Windows Server 2012 R2 zainstalowano poprawkę [KB3011780](https://support.microsoft.com/help/2496930/ms11-013-vulnerabilities-in-kerberos-could-allow-elevation-of-privilege), a wszystkie serwery członkowskie i kontrolery domen do wersji 2012 R2 mają zainstalowaną poprawkę KB2496930. Aby uzyskać więcej informacji, zobacz [Silver PAC](https://technet.microsoft.com/library/security/ms11-013.aspx) i [Forged PAC (Sfałszowany element PAC)](https://technet.microsoft.com/library/security/ms14-068.aspx).
+
+## <a name="reconnaissance-using-directory-services-queries"></a>Rekonesans przy użyciu zapytań usług katalogowych
+
+**Opis**
+
+Rekonesans usług katalogu jest używany przez osoby atakujące do mapowania strukturę katalogów i stosowanie uprzywilejowanych kont do wykonania kolejnych kroków atak. Protokół zdalnego Menedżera kont zabezpieczeń (SAM-R) to jedna z metod wykorzystywane do badania katalogu, aby wykonać takie mapowanie.
+
+W tym wykrywania alerty nie będą wyzwalane w pierwszym miesiącu po wdrożeniu usługi ATA. Podczas nauki okresu, profile usługi ATA których kwerendy SAM-R są wykonywane z komputerów, które zarówno wyliczenie i poszczególnych kwerend kont poufnych.
+
+**Badanie**
+
+1. Kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. Sprawdź, które zapytania zostały wykonane (na przykład, Administratorzy przedsiębiorstwa lub administratora) i czy mu się to udało.
+
+2. Przetwarzanie takich zapytań powinni ma zostać wykonane z komputera źródłowego zagrożona?
+
+3. Jeśli tak i alertu zostanie zaktualizowany, **Pomiń** podejrzanych działań.
+
+4. Jeśli tak i go nie należy tego robić, **Zamknij** podejrzanych działań.
+
+5. Jeśli informacje o koncie zaangażowany: przetwarzanie takich zapytań powinni przez tego konta lub jest to konto zwykle Zaloguj się do komputera źródłowego?
+
+ - Jeśli tak i alertu zostanie zaktualizowany, **Pomiń** podejrzanych działań.
+
+ - Jeśli tak i go nie należy tego robić, **Zamknij** podejrzanych działań.
+
+ - Jeśli nie nie do wszystkich odpowiedzi z powyższych, założono jest złośliwe.
+
+**Korygowania**
+
+Użyj [narzędzie SAMRi10](https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b) zabezpieczyć środowiska przed tej metody.
+
+## <a name="reconnaissance-using-dns"></a>Rekonesans przy użyciu systemu DNS
+
+**Opis**
+
+Serwer DNS zawiera mapę wszystkich komputerów, adresów IP i usług w sieci. Te informacje są używane przez osoby atakujące do mapowania struktury sieci i interesujących komputerów docelowych do wykonania kolejnych kroków ataku.
+
+W protokole DNS istnieje kilka typów zapytań. Usługa ATA wykrywa pochodzące z serwerów DNS z systemem innym niż żądania AXFR (Transfer).
+
+**Badanie**
+
+1. Jest maszyną źródłową (**pochodzące z...** ) serwera DNS? Jeśli tak, to wówczas prawdopodobnie wynik fałszywie dodatni. Aby sprawdzić, kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. W tabeli w obszarze **zapytania**, sprawdź skierowano domen. Czy te istniejących domen? Jeśli tak, następnie **Zamknij** podejrzanych działań (jest wynik fałszywie dodatni). Ponadto upewnij się, że UDP port 53 został otwarty między bram usługi ATA i komputera źródłowego, aby uniknąć przyszłych fałszywych alarmów.
+
+2. Maszyna źródłowa jest uruchomiona skanera zabezpieczeń? Jeśli tak, **wykluczanie jednostek** w usłudze ATA bezpośrednio za pomocą **Zamknij i Wyklucz** lub za pośrednictwem **wykluczeń** strony (w obszarze **konfiguracji** — dostępne dla administratorów usługi ATA).
+
+3. Jeśli odpowiedź na wszystkie powyższe nie, założono, że jest to złośliwe.
+
+**Korygowania**
+
+Aby zabezpieczyć wewnętrzny serwer DNS w celu uniemożliwienia przeprowadzenia rekonesansu przy użyciu systemu DNS, można wyłączyć transfery stref lub ograniczyć je tylko do określonych adresów IP. Aby uzyskać więcej informacji o ograniczaniu transferów stref, zobacz [ograniczyć transferów stref](https://technet.microsoft.com/library/ee649273(v=ws.10).aspx).
+Modyfikowanie transferów stref jest jedno zadanie między listę kontrolną, która powinna być kierowane do [zabezpieczanie serwerów DNS z atakami wewnętrznymi i zewnętrznymi](https://technet.microsoft.com/library/cc770432(v=ws.11).aspx).
+
+## <a name="reconnaissance-using-smb-session-enumeration"></a>Rekonesans przy użyciu wyliczania sesji SMB
+
+
+**Opis**
+
+Wyliczenie komunikatów Block (SMB) serwera umożliwia osoby atakujące uzyskać informacje którym ostatnio zalogowani użytkownicy. Po te informacje, osoby atakujące mogą przenosić bok w sieci na uzyskanie dostępu do określonego konta poufnych.
+
+W tym wykrywania zostanie wyzwolony alert, gdy wyliczenie sesji SMB odbywa się na kontrolerze domeny, ponieważ to nie powinno się zdarzyć.
+
+**Badanie**
+
+1. Kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. Sprawdź, które konta/s wykonać operację i kont, które zostały udostępnione, ile.
+
+ - Czy jest jakaś skanera zabezpieczeń na komputerze źródłowym? Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+
+2. Sprawdź, które zaangażowany użytkownika/s wykonać operację. Są one zazwyczaj Zaloguj się do komputera źródłowego lub są one administratorów, którzy powinien wykonywać takie zadania?  
+
+3. Jeśli tak i alertu zostanie zaktualizowany, **Pomiń** podejrzanych działań.  
+
+4. Jeśli tak i go nie należy tego robić, **Zamknij** podejrzanych działań.
+
+5. Jeśli odpowiedź na wszystkie powyższe nie, założono, że jest to złośliwe.
+
+**Korygowania**
+
+Użyj [Net zaprzestanie narzędzia](https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b) zabezpieczyć środowiska przed takiego ataku.
+
+## <a name="remote-execution-attempt-detected"></a>Wykryto próbę zdalne wykonywanie kodu
+
+**Opis**
+
+Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj wykorzystać dzień zero zdalnego polecenia można wykonywać na kontrolerze domeny. Umożliwia to stały dostęp do sieci, zbieranie informacji, przeprowadzanie ataków typu „odmowa usługi” (DoS, denial of service) oraz wykonywanie innych działań. Usługa ATA wykrywa połączeń PSexec i zdalną usługę WMI.
+
+**Badanie**
+
+1. To jest typowe dla administracyjnych stacji roboczych i członków zespołu IT oraz kont usług, które wykonują zadania administracyjne na kontrolerze domeny. Jeśli to jest wielkość liter, a alert pobiera zaktualizowane od tego samego administratora i/lub komputer jest następnie wykonania zadania, **Pomiń** alertu.
+
+2. Jest **komputera** zagrożona może wykonać wykonania zdalnego na kontrolerze domeny?
+
+ - Jest **konta** zagrożona może wykonać wykonania zdalnego na kontrolerze domeny?
+
+ - Jeśli odpowiedzi na oba pytania *tak*, następnie **Zamknij** alertu.
+
+3. Jeśli odpowiedzi na pytania albo jest *nie*, a następnie to należy traktować jako dodatnią wartość true.
+
+**Korygowania**
+
+1. Ogranicz zdalny dostęp do kontrolerów domen z maszyn nienależących do warstwy 0.
+
+2. Implementowanie [uprzywilejowany dostęp](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access) aby komputery tylko ze wzmocnionymi zabezpieczeniami mogły łączyć się z kontrolerami domeny dla administratorów.
+
+## <a name="sensitive-account-credentials-exposed--services-exposing-account-credentials"></a>Poufne konto poświadczeniami ujawnionymi & udostępnianie poświadczeń konta usługi
+
+**Opis**
+
+Niektóre usługi wysłać poświadczenia konta w postaci zwykłego tekstu. Możliwe, nawet w przypadku kont poufnych. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. Wszystkie hasła nieszyfrowanego poufnych konta będą wyzwalać alert, gdy dla kont niepoufnych alert zostanie wywołany, jeśli pięć lub więcej różnych kont wysyła haseł w postaci zwykłego tekstu z tym samym komputerem źródłowym. 
+
+**Badanie**
+
+Kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. Zobacz konta, które zostały udostępnione. Jeśli istnieje wiele takich kont, kliknij przycisk **Pobierz szczegóły** Aby wyświetlić listę w arkuszu programu Excel.
+
+Zazwyczaj jest skrypt lub starszych aplikacji na komputerach źródłowych, która używa proste powiązanie LDAP.
+
+**Korygowania**
+
+Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzystają z prostych powiązań LDAP. Zamiast przy użyciu prostego powiązania LDAP można użyć sal LDAP lub LDAPS.
+
+## <a name="suspicious-authentication-failures"></a>Niepowodzenia uwierzytelniania podejrzanych
+
+**Opis**
+
+W ataków siłowych atakujący podejmie próbę uwierzytelniania za pomocą wielu różnych haseł dla różnych kont aż do znalezienia prawidłowego hasła dla co najmniej jedno konto. Znaleziono jeden raz, osoba atakująca może zalogować za pomocą tego konta.
+
+W tym wykrywania alert zostanie wyzwolony w przypadku wystąpienia wielu błędów uwierzytelniania, może to być albo poziomie za pomocą niewielki zestaw hasła przez wielu użytkowników. lub pionie o dużej zestawu haseł na tylko w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
+
+**Badanie**
+
+1. Obejmuje wiele kont, kliknij przycisk **Pobierz szczegóły** Aby wyświetlić listę w arkuszu programu Excel.
+
+2. Kliknij alert, aby przejść do strony szczegółów. Sprawdź czy próby logowania dowolnego została zakończona z pomyślnym uwierzytelnieniu, czy są one wyświetlane jako **odgadnąć kont** po prawej stronie infographic. Jeśli tak, czy jakakolwiek **odgadnąć kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
+
+3. Jeśli istnieją nie **odgadnąć kont**, są **ataku kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
+
+**Korygowania**
+
+[Złożone i długich haseł](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) podaj niezbędne pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
+## <a name="suspicion-of-identity-theft-based-on-abnormal-behavior"></a>Podejrzenie kradzieży tożsamości na podstawie nietypowego zachowania
+
+**Opis**
+
+ATA uzyskuje informacje o zachowania jednostek dla użytkowników, komputerów i zasobów w okresie przesuwanego trzech tygodni. Model zachowanie jest oparty na następujących działań: maszyn jednostek zalogowany, jednostka żądane zasoby dostęp do i czas te operacje miało miejsce. Usługa ATA wysyła alert po odchylenia od zachowanie jednostki oparte na algorytmów uczenia maszynowego. 
+
+**Badanie**
+
+1. Użytkownik powinien wykonywać te operacje?
+
+2. Należy rozważyć w następujących przypadkach jako potencjalnych fałszywych alarmów: użytkownika, który zwrócił z urlopu, personel działu, które wykonują nadmiarowe dostępu w ramach obowiązku (na przykład kolekcji w pomocy technicznej w przypadku danego dnia lub tygodnia) zdalnego pulpitu aplikacji. + Jeśli możesz **Zamknij i Wyklucz** alertu, użytkownik nie będzie należeć do wykrywania
+
+
+**Korygowania**
+
+W zależności od tego, co spowodowało to nietypowe zachowanie występuje należy wykonać różne akcje. Na przykład jeśli jest to spowodowane skanowanie sieci, komputer, z którego ten błąd wystąpił powinien zostać zablokowany sieci (o ile nie zostało zatwierdzone).
+
+## <a name="unusual-protocol-implementation"></a>Implementacja nietypowego protokołu
+
+
+**Opis**
+
+Osoby atakujące użyj narzędzi, które implementują różnych protokołów (protokół SMB, protokołu Kerberos, NTLM) w niestandardowy sposób. Podczas tego typu ruchu sieciowego. ogólnie jest traktowany przez system Windows bez ostrzeżenia, usługi ATA jest w stanie rozpoznać potencjalnych złośliwymi działaniami. Zachowanie jest wskaźnikiem technik, takich jak życie nadmiernego-Pass--Hash i atakami, jak również używane przez ransomware zaawansowane, na przykład WannaCry luki w zabezpieczeniach.
+
+**Badanie**
+
+Określenie protokołu, z którą jest rzadko używana — od osi czasu podejrzanych działań, kliknij na podejrzane działanie, aby uzyskać dostęp do jego stronę szczegółów; Protokół pojawia się powyżej strzałkę: Kerberos lub NTLM.
+
+- **Kerberos**: to będzie często wyzwalany Jeśli przejęcie narzędzia, takie jak używane Mimikatz, potencjalnie wykonywania ataku Overpass--Hash. Sprawdź, czy komputer źródłowy działa aplikacja, która implementuje własną stosu protokołu Kerberos, nie zgodnie z RFC protokołu Kerberos. Jeśli tak jest, jest niegroźne pozytywną wartość true i możesz **Zamknij** alertu. Jeśli alert śledzi jest uruchomiony i nadal jest wielkość liter, możesz **Pomiń** alertu.
+
+- **NTLM**: może być WannaCry lub narzędzi, takich jak Metasploit Medusa i Hydra.  
+
+Aby określić, czy to jest atak WannaCry, wykonaj następujące czynności:
+
+1. Sprawdź, czy komputer źródłowy działa narzędzie ataku, takie jak Metasploit, Medusa lub Hydra.
+
+2. Jeśli nie zostaną znalezione żadne narzędzia ataku, należy sprawdzić, jeśli komputer źródłowy jest uruchomiona aplikacja, która implementuje własną stosu protokołu NTLM lub SMB.
+
+3. Jeśli nie, sprawdź, czy jest to spowodowane WannaCry przez uruchomienie skryptu skanera WannaCry, na przykład [ten skaner](https://github.com/apkjet/TrustlookWannaCryToolkit/tree/master/scanner) przed objętego podejrzanych działań komputera źródłowego. Jeśli skaner stwierdzi, że komputer jako zainfekowane lub narażony, pracy na stosowanie poprawek do komputera i usuwania złośliwego oprogramowania i blokuje ją z sieci.
+
+4. Nie znaleziono skryptu, że komputer jest zainfekowany lub narażony, następnie nadal mogą być zainfekowane, ale usługi SMBv1 mogły zostać wyłączone lub maszynie została zastosowana poprawka, która wpłynie narzędzie skanowania.
+
+**Korygowania**
+
+Poprawka programu maszyny, szczególnie stosowania aktualizacji zabezpieczeń.
+
+1. [Wyłącz usługi SMBv1](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)
+
+2. [Usuń WannaCry](https://support.microsoft.com/help/890830/remove-specific-prevalent-malware-with-windows-malicious-software-remo)
+
+3. WanaKiwi może odszyfrować danych w ręce niektóre programy ransom, ale tylko wtedy, jeśli użytkownik nie ma ponownie uruchomiona lub ją wyłączyć komputer. Aby uzyskać więcej informacji, zobacz [chcesz Ransomware krzykiem](https://answers.microsoft.com/en-us/windows/forum/windows_10-security/wanna-cry-ransomware/5afdb045-8f36-4f55-a992-53398d21ed07?auth=1)
 
 ## <a name="related-videos"></a>Powiązane pliki wideo
 - [Dołączenie do społeczności zabezpieczeń](https://channel9.msdn.com/Shows/Microsoft-Security/Join-the-Security-Community)
@@ -212,6 +491,3 @@ Rekonesans usług irectory to technika, używane przez osoby atakujące mapy str
 - [Podręcznika dotyczącego podejrzanych działań usługi ATA](http://aka.ms/ataplaybook)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Badanie ataków z użyciem sfałszowanego certyfikatu PAC](use-case-forged-pac.md)
-- [Rozwiązywanie znanych błędów usługi ATA](troubleshooting-ata-known-errors.md)
-- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
