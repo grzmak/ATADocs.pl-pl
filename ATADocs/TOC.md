@@ -45,8 +45,7 @@
 ## [Eksportowanie/importowanie konfiguracji usługi ATA](ata-configuration-file.md)
 ## [Zarządzanie funkcją telemetrii w usłudze ATA](manage-telemetry-settings.md)
 # Badanie
-## [Ataki typu podwyższenie poziomu uprawnień przy użyciu sfałszowanych danych autoryzacji](use-case-forged-pac.md)
-## [Rekonesans przy użyciu systemu DNS](use-case-dns.md)
+## [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md)
 # Rozwiązywanie problemów
 ## [Praca z dziennikami inspekcji](troubleshoot-audit.md)
 ## [Rozwiązywanie typowych problemów](troubleshooting-ata-known-errors.md)
