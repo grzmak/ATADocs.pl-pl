@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 08/29/2017
+ms.date: 09/19/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: ac591d960028268f6c1ebd74706839a3b91597da
-ms.sourcegitcommit: 9ce330726e5de8c05eae6a20d3e6c1d8bef3cd0e
+ms.openlocfilehash: 068c3ca2858934f68beea9d092fbeb113b77ba2a
+ms.sourcegitcommit: 34c3d6f56f175994b672842c7576040956ceea69
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/19/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -27,8 +27,9 @@ ms.lasthandoff: 08/29/2017
 
 >[!div class="step-by-step"]
 [« Krok 5](install-ata-step5.md)
+[Krok 7 »](vpn-integration-install-step.md)
 
-## <a name="step-6-configure-event-collection-and-vpn"></a>Krok 6. Konfigurowanie zbierania zdarzeń i sieci VPN
+## <a name="step-6-configure-event-collection"></a>Krok 6. Konfigurowanie zbierania zdarzeń
 ### <a name="configure-event-collection"></a>Konfigurowanie zbierania zdarzeń
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje zdarzeń systemu Windows z identyfikatorami 4776, 4732, 4733, 4728, 4729, 4756, 4757. Uproszczona brama usługi ATA może odczytywać je automatycznie. W przypadku gdy nie jest ona wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń rozwiązania SIEM lub przez [skonfigurowanie przekazywania zdarzeń systemu Windows](configure-event-collection.md).
 
@@ -184,26 +185,10 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 > Zbieranie zdarzeń systemu Windows przy użyciu modułu WinCollect nie jest obsługiwane.
 
 
-### <a name="configuring-vpn"></a>Konfigurowanie sieci VPN
-
-Usługa ATA zbiera dane sieci VPN ułatwiające profilowanie lokalizacji, z których komputery łączą się z siecią.
-
-Aby skonfigurować dane sieci VPN, przejdź do pozycji **Konfiguracja** > **Sieć VPN** i określ wartość **Wspólny klucz tajny konta usługi Radius** dla sieci VPN.
-
-![Konfigurowanie sieci VPN](./media/vpn.png)
-
-Aby uzyskać wspólny wpis tajny, zapoznaj się z dokumentacją sieci VPN. Obsługiwani dostawcy sieci VPN:
-
-- Microsoft
-- F5
-- Check Point
-- Cisco ASA
-
-
 
 >[!div class="step-by-step"]
 [« Krok 5](install-ata-step5.md)
-[Krok 7 »](install-ata-step7.md)
+[Krok 7 »](vpn-integration-install-step.md)
 
 
 

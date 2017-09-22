@@ -1,11 +1,11 @@
 ---
-title: "Instalowanie usługi Advanced Threat Analytics — Krok 7 | Microsoft Docs"
+title: "Zainstaluj Advanced Threat Analytics — krok 8 | Dokumentacja firmy Microsoft"
 description: "W ostatnim kroku instalowania usługi ATA można skonfigurować użytkownika wystawionego jako przynęta."
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 09/03/2017
+ms.date: 09/19/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,22 +13,22 @@ ms.technology:
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f5cb87148741c92dc7832da16cc37a749fa72fae
-ms.sourcegitcommit: 654500928025e3cb127e095c17cc1d6444defd3a
+ms.openlocfilehash: 3a8ccb1412bbd8e2013c84d36f4142301159c46c
+ms.sourcegitcommit: 34c3d6f56f175994b672842c7576040956ceea69
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2017
+ms.lasthandoff: 09/19/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
 
-# <a name="install-ata---step-7"></a>Instalowanie usługi ATA — Krok 7
+# <a name="install-ata---step-8"></a>Instalowanie usługi ATA — krok 8
 
 >[!div class="step-by-step"]
-[« Krok 6](install-ata-step6.md)
+[«Krok 7](vpn-integration-install-step.md)
 
-## <a name="step-7-configure-ip-address-exclusions-and-honeytoken-user"></a>Krok 7. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
+## <a name="step-8-configure-ip-address-exclusions-and-honeytoken-user"></a>Krok 8. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
 Usługa ATA umożliwia wykluczenie konkretnych adresów IP lub użytkowników z wykrywania według pewnych kryteriów. 
 
 Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
@@ -64,7 +64,7 @@ Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sie
 
 
 >[!div class="step-by-step"]
-[« Krok 6](install-ata-step6.md)
+[«Krok 7](vpn-integration-install-step.md)
 
 
 

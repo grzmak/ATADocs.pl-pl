@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/25/2017
+ms.date: 9/19/2017
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: cdc3767fd9fdc00dbb92457c980f6f7e8b99907b
-ms.sourcegitcommit: 129bee06ff89b72d21b64f9aa0d1a29f66bf9153
+ms.openlocfilehash: 713d0070f6cc8949ceab80b2940469c1abc8adab
+ms.sourcegitcommit: 34c3d6f56f175994b672842c7576040956ceea69
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2017
+ms.lasthandoff: 09/19/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -63,7 +63,7 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 
 &#42;&#42;Wartości średnie (wartości szczytowe)
 > [!NOTE]
-> -   Centrum usługi ATA może obsługiwać maksymalnie 1 mln pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach to samo Centrum usługi ATA może obsługiwać całkowity ruch przekraczający 400 000 ramek na sekundę. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
+> -   Centrum usługi ATA może obsługiwać maksymalnie 1 mln pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach tego samego Centrum usługi ATA może obsługiwać ruch ogólnej, jest większa niż 1M. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
 > -   Wielkości magazynu określone w tym miejscu to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
 > -   Jeśli wolne miejsce osiągnie wartość co najmniej 20% lub 200 GB, dane z najstarszej kolekcji jest usunięte. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
 > - Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
