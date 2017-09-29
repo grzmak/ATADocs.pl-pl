@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 9/3/2017
+ms.date: 9/24/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d7f5423104b3e42777b6ce8013832b3bac6353be
-ms.sourcegitcommit: 654500928025e3cb127e095c17cc1d6444defd3a
+ms.openlocfilehash: b681a6a27189d2e1aec3f7f9913b97f9e7717911
+ms.sourcegitcommit: 47b2b9ebaadff79c087d14f86462d3d8102cc551
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2017
+ms.lasthandoff: 09/24/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -60,9 +60,9 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
 
 -    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Umożliwia to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) tematu.
 
--   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowana jako użytkownika wystawionego jako przynęta usługi ATA. Do skonfigurowania użytkownika wystawionego jako przynęta potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [Praca z ustawieniami wykrywania usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings) tematu.
+-   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowana jako użytkownika wystawionego jako przynęta usługi ATA. Do skonfigurowania użytkownika wystawionego jako przynęta, potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [Praca z ustawieniami wykrywania usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings) tematu.
 
--   Opcjonalnie: oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo korzystać ze zdarzeń 4776, 4732, 4733, 4728, 4729, 4756 i 4757 systemu Windows, aby ulepszyć swoje możliwości wykrywania ataków typu Pass-the-Hash, ataków siłowych, modyfikacji wrażliwych grup i ataków na przynęty. Można je odbierać z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
+-   Opcjonalnie: Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, ATA umożliwia zdarzeń systemu Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 zwiększyć ataków typu Pass--Hash, ataki Siłowe, modyfikację poufnych grup i Związane wystawionym jako przynęta wykryć tokenów. Można je odbierać z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 
 ## <a name="ata-center-requirements"></a>Wymagania centrum usługi ATA
@@ -81,20 +81,20 @@ Instalacja centrum usługi ATA jako maszyny wirtualnej jest obsługiwana.
 
 Jeśli centrum usługi ATA jest uruchamiane jako maszyna wirtualna, należy wyłączyć serwer przed utworzeniem nowego punktu kontrolnego w celu uniknięcia potencjalnego uszkodzenia bazy danych.
 ### <a name="server-specifications"></a>Specyfikacje serwera
-Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. Technologia NUMA może być nazwana w systemie przeplataniem węzłów. W tym przypadku należy **włączyć** przeplatanie węzłów, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji, zapoznaj się z dokumentacją systemu BIOS. Należy zauważyć, że nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.<br>
+Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. System może odwoływać się do architektury NUMA przeplataniem węzłów, w którym to przypadku należy **włączyć** Przeplatanie, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji zobacz dokumentację systemu BIOS. Nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.<br>
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
-Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje o wymaganych specyfikacjach serwera. Aby uzyskać więcej szczegółów, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
+Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje specyfikacje serwera. Aby uzyskać więcej informacji, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 
 ### <a name="time-synchronization"></a>Synchronizacja czasu
-Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
+Serwerze Centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny musi mieć czasu synchronizowane w ciągu pięciu minut od siebie.
 
 
 ### <a name="network-adapters"></a>Karty sieciowe
-Musisz mieć następujące elementy:
+Musisz mieć następujące:
 -   Co najmniej jedna karta sieciowa (w przypadku korzystania z serwera fizycznego w środowisku sieci VLAN zaleca się używanie dwóch kart sieciowych)
 
--   Adres IP na potrzeby komunikacji między centrum usługi ATA a bramą usługi ATA szyfrowanej przy użyciu protokołu SSL na porcie 443. (Usługa ATA jest powiązany z wszystkie adresy IP Centrum usługi ATA ma się na porcie 443).
+-   Adres IP do komunikacji między centrum usługi ATA i bramy usługi ATA, która jest szyfrowana przy użyciu protokołu SSL na porcie 443. (Usługa ATA jest powiązany z wszystkie adresy IP Centrum usługi ATA ma się na porcie 443).
 
 ### <a name="ports"></a>Porty
 W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby centrum usługi ATA działało poprawnie.
@@ -112,7 +112,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**DNS**|TCP i UDP|53|Serwery DNS|Wychodzące|
 |**Kerberos** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|88|Kontrolery domeny|Wychodzące|
 |**Netlogon** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
-|**Czas systemu Windows** (opcjonalnie, jeśli przyłączono do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
+|**Czas systemu Windows** (opcjonalne, jeśli przyłączonych do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
 
 > [!NOTE]
 > LDAP jest wymagane do przetestowania poświadczenia do użycia między bram usługi ATA i kontrolerach domeny. Uruchomienie testu jest wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część procesu zwykłej rozdzielczości.
@@ -137,7 +137,7 @@ Na przykład można użyć standardowego **serwera sieci Web** lub **komputera**
 
 
 > [!NOTE]
-> - Jeśli dostęp do konsoli usługi ATA ma być uzyskiwany z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez centrum usługi ATA. W przeciwnym razie przed przejściem do strony logowania zostanie wyświetlona strona ostrzeżenia z informacją, że wystąpił problem z certyfikatem zabezpieczeń witryny internetowej.
+> - Jeśli ma dostęp do konsoli usługi ATA z innych komputerów, upewnij się, że te komputery ufają certyfikatowi używanemu przez Centrum usługi ATA w przeciwnym razie otrzymasz strona z ostrzeżeniem że występuje problem z certyfikatem zabezpieczeń witryny sieci Web przed przejściem do strony logowania.
 > - Począwszy od wersji 1.8 usługi ATA bramy usługi ATA i bram Lightweight zarządzanym własne certyfikaty i wymagają interakcji ze strony administratora do zarządzania nimi.
 
 ## <a name="ata-gateway-requirements"></a>Wymagania bramy usługi ATA
@@ -155,7 +155,7 @@ Możesz to sprawdzić, uruchamiając następujące polecenie cmdlet programu Win
 Aby uzyskać informacje o używaniu maszyn wirtualnych z bramą usługi ATA, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
 
 > [!NOTE]
-> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](troubleshooting-ata-using-logs.md) i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Dotyczy to również miejsce wymagane do plików binarnych usługi ATA, [dzienniki usługi ATA i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.<br>
@@ -164,15 +164,15 @@ Brama usługi ATA może obsługiwać monitorowanie wielu kontrolerów domeny w z
 >[!NOTE] 
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
-Aby uzyskać więcej informacji o wymaganiach bramy usługi ATA dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
+Aby uzyskać więcej informacji o wymaganiach sprzętowych bramy usługi ATA, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 ### <a name="time-synchronization"></a>Synchronizacja czasu
-Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
+Serwerze Centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny musi mieć czasu synchronizowane w ciągu pięciu minut od siebie.
 
 ### <a name="network-adapters"></a>Karty sieciowe
 Brama usługi ATA wymaga co najmniej jednej karty administracyjnej i co najmniej jednej karty sieciowej przechwytywania:
 
--   **Karta administracyjna** — będzie używana do komunikacji w sieci firmowej. Tę kartę należy skonfigurować w następujący sposób:
+-   **Karta sieciowa zarządzania** — używane do komunikacji w sieci firmowej. Ta karta powinna skonfigurowana z następującymi ustawieniami:
 
     -   Statyczny adres IP obejmujący bramę domyślną
 
@@ -188,8 +188,8 @@ Brama usługi ATA wymaga co najmniej jednej karty administracyjnej i co najmniej
 -   **Karta przechwytywania** — będzie używana do przechwytywania ruchu do i z kontrolerów domeny.
 
     > [!IMPORTANT]
-    > -   Skonfiguruj funkcję dublowania portów dla karty przechwytywania jako miejsce docelowe ruchu sieciowego kontrolera domeny. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md). Zwykle w celu skonfigurowania funkcji dublowania portów konieczna jest współpraca z zespołem ds. sieci lub wirtualizacji.
-    > -   Skonfiguruj statyczny adres IP bez obsługi routingu dla danego środowiska bez bramy domyślnej i bez adresów serwerów DNS. Na przykład 1.1.1.1/32. Dzięki temu karta sieciowa przechwytywania może przechwytywać maksymalną ilość ruchu, a karta administracyjna będzie używana do wysyłania i odbierania wymaganego ruchu sieciowego.
+    > -   Skonfiguruj funkcję dublowania portów dla karty przechwytywania jako miejsce docelowe ruchu sieciowego kontrolera domeny. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md). Zazwyczaj należy współpracować z zespołem sieci lub wirtualizacji w celu skonfigurowania funkcji dublowania portów.
+    > -   Skonfiguruj statyczny adres IP bez obsługi routingu dla danego środowiska bez bramy domyślnej i bez adresów serwerów DNS. Na przykład 1.1.1.1/32. Dzięki temu, że karta sieciowa przechwytywania może przechwytywać maksymalną ilość ruchu sieciowego i że administracyjnej karty sieciowej jest używany do wysyłania i odbierania wymaganego ruchu sieciowego.
 
 ### <a name="ports"></a>Porty
 W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na karcie administracyjnej jest wymagane przez bramę usługi ATA:
@@ -235,21 +235,21 @@ Podczas instalacji instalowany jest program .Net Framework 4.6.1, który może s
 
 
 > [!NOTE]
-> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Obejmuje to miejsce wymagane dla plików binarnych ATA, [dzienników ATA](troubleshooting-ata-using-logs.md) i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
+> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Dotyczy to również miejsce wymagane do plików binarnych usługi ATA, [dzienniki usługi ATA i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 
-Uproszczona brama usługi ATA wymaga co najmniej 2 rdzeni i 6 GB pamięci RAM zainstalowanych na kontrolerze domeny.
+Brama ATA Lightweight Gateway wymaga co najmniej dwa rdzenie i 6 GB pamięci RAM zainstalowanych na kontrolerze domeny.
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** uproszczonej bramy usługi ATA na wartość **Wysoka wydajność**.
 Uproszczoną bramę usługi ATA można wdrożyć na kontrolerach domeny o różnych obciążeniach i rozmiarach, w zależności od ilości ruchu sieciowego w kontrolerach domeny oraz ilości zasobów zainstalowanych w danym kontrolerze domeny.
 
 >[!NOTE] 
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
-Aby uzyskać więcej informacji o wymaganiach uproszczonej bramy usługi ATA dotyczących sprzętu, zobacz artykuł [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
+Aby uzyskać więcej informacji o wymaganiach sprzętowych bramy ATA Lightweight Gateway, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 ### <a name="time-synchronization"></a>Synchronizacja czasu
-Różnica czasu ustawionego na serwerze centrum usługi ATA, serwerach uproszczonej bramy usługi ATA i kontrolerach domeny nie może być większa niż 5 minut.
+Serwerze Centrum usługi ATA, serwerów bramy ATA Lightweight Gateway i kontrolerach domeny musi mieć czasu synchronizowane w ciągu pięciu minut od siebie.
 ### <a name="network-adapters"></a>Karty sieciowe
 Uproszczona brama usługi ATA monitoruje lokalny ruch na wszystkich kartach sieciowych kontrolera domeny. <br>
 Po przeprowadzeniu wdrożenia możesz użyć konsoli usługi ATA, jeśli chcesz określić, które karty sieciowe są monitorowane.
@@ -272,7 +272,7 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez uproszczoną bram
 > -   NetBIOS
 
 ## <a name="ata-console"></a>Konsola usługi ATA
-Dostęp do konsoli usługi ATA odbywa się za pośrednictwem przeglądarki. Obsługiwane są następujące z nich:
+Dostęp do konsoli usługi ATA jest za pośrednictwem przeglądarki, pomocniczych przeglądarki oraz ustawienia:
 
 -   Internet Explorer 10 i nowsze
 
