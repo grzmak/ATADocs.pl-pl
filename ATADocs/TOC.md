@@ -38,14 +38,16 @@
 ## [Grupy ról usługi ATA](ata-role-groups.md)
 ## [Zmienianie konfiguracji centrum usługi ATA](modifying-ata-center-configuration.md)
 ## [Zmienianie hasła do łączności z domeną](modifying-ata-config-dcpassword.md)
-###[Wykluczanie jednostek z wykryć](excluding-entities-from-detections.md)
+## [Wykluczanie jednostek z wykryć](excluding-entities-from-detections.md)
 ## [Eksportowanie/importowanie konfiguracji usługi ATA](ata-configuration-file.md)
 ## [Zarządzanie funkcją telemetrii w usłudze ATA](manage-telemetry-settings.md)
 ## [Ustawianie powiadomień usługi ATA](setting-ata-alerts.md)
 ## [Określanie ustawień usługi Syslog i serwera poczty e-mail](setting-syslog-email-server-settings.md)
-## [Dokumentacja dziennika rozwiązania SIEM usługi ATA](cef-format-sa.md)
 ## [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 ## [Praca z konsolą usługi ATA](working-with-ata-console.md)
+## [Informacje referencyjne o ATA]
+### [Dokumentacja dziennika rozwiązania SIEM usługi ATA](cef-format-sa.md)
+### [Odniesienie identyfikator zdarzenia](event-id-reference.md)
 # Badanie
 ## [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md)
 # Rozwiązywanie problemów
