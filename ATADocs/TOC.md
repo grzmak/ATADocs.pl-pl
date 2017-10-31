@@ -45,7 +45,7 @@
 ## [Określanie ustawień usługi Syslog i serwera poczty e-mail](setting-syslog-email-server-settings.md)
 ## [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 ## [Praca z konsolą usługi ATA](working-with-ata-console.md)
-## [Informacje referencyjne o ATA]
+## Informacje referencyjne o ATA
 ### [Dokumentacja dziennika rozwiązania SIEM usługi ATA](cef-format-sa.md)
 ### [Odniesienie identyfikator zdarzenia](event-id-reference.md)
 # Badanie
