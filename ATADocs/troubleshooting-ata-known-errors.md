@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 8/20/2017
+ms.date: 10/23/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 2362f6bf64147b972e9c45e3b97bab4280c6eeac
-ms.sourcegitcommit: 46dd0e695f16a0dd23bbfa140eba15ea6a34d7af
+ms.openlocfilehash: 09936cf9f86711ea6d48d0571178d2387694d412
+ms.sourcegitcommit: 835ea2b8190eb753aaf8d400531040ce1845d75a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 10/23/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -48,12 +48,11 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.ApplicationException: Nie można uruchomić sesji ETW o identyfikatorze MMA-ETW-Livecapture-a4f595bd-f567-49a7-b963-20fa4e370329|W pliku HOSTS znajduje się wpis hosta wskazujący skróconą nazwę komputera|Usuń wpis hosta z pliku C:\Windows\System32\drivers\etc\HOSTS lub zmień jego treść na nazwę FQDN.|
 |System.IO.IOException: Uwierzytelnianie nie powiodło się, ponieważ strona zdalna zamknęła strumień transportowy.|Protokołu TLS 1.0 na bramie usługi ATA jest wyłączona, ale .net jest skonfigurowany do używania protokołu TLS 1.2|Skorzystaj z jednej z następujących opcji: </br> Włącz szyfrowanie TLS 1.0 na bramie ATA </br>Włącz protokół TLS 1.2 na platformie .net, ustawiając klucze rejestru, aby użyć wartości domyślnych systemu operacyjnego dla protokołu SSL i TLS, w następujący sposób: </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001` </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001 `</br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] " SchUseStrongCrypto"=dword:00000001`|
 |System.TypeLoadException: Nie można załadować typu „Microsoft.Opn.Runtime.Values.BinaryValueBufferManager” z zestawu „Microsoft.Opn.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”|Brama usługi ATA nie mogła załadować wymaganych plików analizowania.|Sprawdź, czy program Microsoft Message Analyzer jest aktualnie zainstalowany. Instalacja programu Message Analyzer z bramą/uproszczoną bramą usługi ATA nie jest obsługiwana. Odinstaluj program Message Analyzer i uruchom ponownie usługę bramy.|
-|Alerty dotyczące porzuconego ruchu sieciowego na zdublowanym porcie podczas korzystania z uproszczonej bramy w programie VMware|Jeśli używasz kontrolerów domeny na maszynach wirtualnych z programem VMware, możesz odbierać alerty dotyczące **porzuconego ruchu sieciowego na zdublowanym porcie**. Może być to spowodowane niezgodnością konfiguracji w programie VMware. |Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia są ustawione na 0 lub wyłączone: TsoEnable (Włączanie TSO), LargeSendOffload (Odciążanie dużego wysyłania), IPv4, TSO Offload (Odciążanie TSO). Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.|
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane uwierzytelnianie serwera proxy|Komunikacja bramy usługi ATA z Centrum usługi ATA jest zakłócana przez serwer proxy.|Wyłącz serwer proxy na maszynie bramy usługi ATA. <br></br>Pamiętaj, że ustawienia serwera proxy mogą być określane oddzielnie dla każdego konta.|
 |System.IO.DirectoryNotFoundException: System nie może odnaleźć określonej ścieżki. (Wyjątek od HRESULT: 0x80070003)|Co najmniej jedna usługa potrzebna do działania usługi ATA nie została uruchomiona.|Uruchom następujące usługi: <br></br>Dzienniki wydajności i alerty (PLA), Harmonogram zadań (Schedule).|
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (403) zabroniony|Brama usługi ATA lub bramy Lightweight może zostało zabronione od ustanawiania połączenia HTTP, ponieważ Centrum usługi ATA nie jest zaufany.|Dodaj nazwę NetBIOS i FQDN Centrum usługi ATA do listy zaufanych witryn sieci Web i wyczyść pamięć podręczną w Eksploratorze Interne (lub nazwę Centrum usługi ATA, jak określono w konfiguracji, jeśli skonfigurowanego jest inna niż nazwa NetBIOS/FQDN).|
 |System.Net.Http.HttpRequestException: PostAsync nie powiodło się [requestTypeName = StopNetEventSessionRequest]|Brama usługi ATA lub bramy ATA Lightweight Gateway nie może zatrzymać i uruchomić sesję funkcji ETW, która gromadzi ruchu sieciowego z powodu problemu z usługi WMI|Postępuj zgodnie z instrukcjami [WMI: ponowne tworzenie repozytorium WMI](https://blogs.technet.microsoft.com/askperf/2009/04/13/wmi-rebuilding-the-wmi-repository/) Aby rozwiązać problem WMI|
-
+|System.Net.Sockets.SocketException: Podjęto próbę dostępu do gniazda w sposób zabroniony przez jego uprawnień dostępu|Inna aplikacja używa portu 514 w bramie usługi ATA|Użyj `netstat -o` do ustalenia, które procesy wykorzystują tego portu.|
  
 ## <a name="deployment-errors"></a>Błędy wdrażania
 > [!div class="mx-tableFixed"]

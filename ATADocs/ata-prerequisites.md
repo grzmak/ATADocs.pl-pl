@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 9/24/2017
+ms.date: 10/25/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: b681a6a27189d2e1aec3f7f9913b97f9e7717911
-ms.sourcegitcommit: 47b2b9ebaadff79c087d14f86462d3d8102cc551
+ms.openlocfilehash: 2f720118b1d9ac08f26b7057e5c7b6706ff4b0b1
+ms.sourcegitcommit: 0cc999b20e919abe4d6edaedee78185788a3e3b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 10/25/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -60,7 +60,7 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
 
 -    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Umożliwia to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) tematu.
 
--   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowana jako użytkownika wystawionego jako przynęta usługi ATA. Do skonfigurowania użytkownika wystawionego jako przynęta, potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [Praca z ustawieniami wykrywania usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/deploy-use/working-with-detection-settings) tematu.
+-   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowana jako użytkownika wystawionego jako przynęta usługi ATA. Do skonfigurowania użytkownika wystawionego jako przynęta, potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [wykluczenia adresów IP, konfigurowanie i użytkownika wystawionego jako przynęta](install-ata-step7.md).
 
 -   Opcjonalnie: Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, ATA umożliwia zdarzeń systemu Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 zwiększyć ataków typu Pass--Hash, ataki Siłowe, modyfikację poufnych grup i Związane wystawionym jako przynęta wykryć tokenów. Można je odbierać z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
