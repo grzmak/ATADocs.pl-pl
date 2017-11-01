@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/9/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 7620e171-76d5-4e3f-8b03-871678217a3a
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 21661568ccb75811fa860137fe053714b28a7260
-ms.sourcegitcommit: 699d238ef9022cfd59663bd8e4e7636daa218f4b
+ms.openlocfilehash: 819f006ae89960ed8f9494ce36ba4fd7f120357a
+ms.sourcegitcommit: 5563c6861bb5db5cb73e058e5a51b4938b9a7d46
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/30/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -66,6 +66,6 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 ## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
-- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection#configuring-windows-event-forwarding)
+- [Konfigurowanie zbierania zdarzeń](install-ata-step6.md)
+- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
