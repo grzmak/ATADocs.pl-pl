@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/25/2017
+ms.date: 11/6/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 5d639e84-2e37-43a9-9667-49be6c4fa8b7
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 7bd0f90acbb6a2d8eb84fd09bc4d859fff082273
-ms.sourcegitcommit: 5563c6861bb5db5cb73e058e5a51b4938b9a7d46
+ms.openlocfilehash: 3ef6322a4c63c15bbdae0669a7d116dfd80756db
+ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/06/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -74,7 +74,7 @@ Zdarzenia można znaleźć tutaj:
 
 1022 — Centrum usługi ATA zewnętrznego adresu IP adres rozpoznawania kondycji alert o niepowodzeniu 
  
-## <a name="ata-suspicious-ctivity-events"></a>Usługa ATA ctivity podejrzane zdarzenia
+## <a name="ata-suspicious-activity-events"></a>Zdarzenia podejrzanych działań usługi ATA
 
 2001 – podejrzane działania nietypowe zachowanie 
 
@@ -98,7 +98,7 @@ Zdarzenia można znaleźć tutaj:
 
 2014 — wystawionego jako przynęta działania podejrzanego działania 
 
-2015 — podejrzane działania hasło jako zwykły tekst LDAP 
+2015 — LDAP, wyczyść tekst hasła podejrzanego działania 
 
 2016 — dużego obiektu usunięcia podejrzanego działania 
 
@@ -114,9 +114,9 @@ Zdarzenia można znaleźć tutaj:
 
 2022 — golden ticket podejrzanego działania 
 
-2023 — nietypowe grupy poufnej członkostwa zmiany podejrzanego działania 
-
 2023 — siłowych podejrzanego działania 
+
+2024 - podejrzane działania zmiany członkostwa grupy poufnej nietypowe  
 
 ## <a name="ata-auditing-events"></a>Zdarzenia inspekcji usługi ATA
 
