@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 06/30/2017
+ms.date: 11/6/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,22 +13,20 @@ ms.technology:
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d5a3587de2aa628eb61ace199b2282e7d7fe773a
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
-ms.translationtype: HT
+ms.openlocfilehash: 45c4016ca67e08909e2709d3c60fdc484be1e5ee
+ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/06/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
 
-# Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
-<a id="troubleshooting-ata-using-the-ata-logs" class="xliff"></a>
+# <a name="troubleshooting-ata-using-the-ata-logs"></a>Rozwiązywanie problemów z usługą ATA przy użyciu dzienników usługi ATA
 Dzienniki usługi ATA zapewniają wgląd w działania wykonywane przez poszczególne składniki usługi ATA w dowolnym momencie.
 
-## Dzienniki bramy usługi ATA
-<a id="ata-gateway-logs" class="xliff"></a>
+## <a name="ata-gateway-logs"></a>Dzienniki bramy usługi ATA
 W tej sekcji każde odwołanie do bramy usługi ATA dotyczy także uproszczonej bramy usługi ATA. 
 
 Dzienniki bramy usługi ATA znajdują się w podfolderze o nazwie **Logs** w folderze instalacji usługi ATA. Domyślna lokalizacja to: **C:\Program Files\Microsoft Advanced Threat Analytics\**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs**.
@@ -49,8 +47,7 @@ Brama usługi ATA ma następujące dzienniki:
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
-## Dzienniki centrum usługi ATA
-<a id="ata-center-logs" class="xliff"></a>
+## <a name="ata-center-logs"></a>Dzienniki centrum usługi ATA
 Dzienniki centrum usługi ATA znajdują się w podfolderze o nazwie **Logs**. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs**.
 > [!Note]
 > Dzienniki konsoli ATA, które były wcześniej dziennikami usług IIS, teraz znajdują się w obszarze dzienników centrum usługi ATA.
@@ -70,8 +67,7 @@ Centrum usługi ATA ma następujące dzienniki:
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.
 
 
-## Dzienniki wdrożenia usługi ATA
-<a id="ata-deployment-logs" class="xliff"></a>
+## <a name="ata-deployment-logs"></a>Dzienniki wdrożenia usługi ATA
 Dzienniki wdrożenia usługi ATA znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można je znaleźć w folderze: **C:\Users\Administrator\AppData\Local\Temp** (lub w katalogu nadrzędnym folderu %temp%).
 
 Dzienniki wdrożenia centrum usługi ATA:
@@ -93,8 +89,7 @@ Dzienniki wdrażania bramy usługi ATA i uproszczonej bramy usługi ATA:
 > Oprócz dzienników wdrażania wspomnianych tutaj istnieją inne dzienniki zaczynające się od „Microsoft Advanced Threat Analytics”, które także mogą zawierać dodatkowe informacje na temat procesu wdrażania.
 
 
-## Zobacz też
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 - [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
