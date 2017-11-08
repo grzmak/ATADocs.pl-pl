@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/26/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 7620e171-76d5-4e3f-8b03-871678217a3a
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 819f006ae89960ed8f9494ce36ba4fd7f120357a
-ms.sourcegitcommit: 5563c6861bb5db5cb73e058e5a51b4938b9a7d46
+ms.openlocfilehash: 005f698c19c99c31dfa0e660e489f8c402eb1bc6
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -34,7 +34,7 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 1. Konfiguracja centrum usługi ATA jest zapisywana do pliku co godzinę. Znajdź najnowszą kopię zapasową konfiguracji centrum usługi ATA i zapisz ją na innym komputerze. Pełne wyjaśnienie sposobu lokalizowania tych plików można znaleźć w artykule [Eksportowanie i importowanie konfiguracji usługi ATA](ata-configuration-file.md). 
 2. Wyeksportuj certyfikat centrum usługi ATA.
     1. W Menedżerze certyfikatów przejdź do opcji **Certyfikaty (komputer lokalny)** -> **Osobiste** ->**Certyfikaty** i wybierz pozycję **Centrum usługi ATA**.
-    2. Kliknij prawym przyciskiem myszy pozycję **Centrum usługi ATA** i wybierz opcję **Wszystkie zadania**, a następuje **Eksportuj**. 
+    2. Kliknij prawym przyciskiem myszy **Centrum usługi ATA** i wybierz **wszystkie zadania** następuje **wyeksportować**. 
      ![Certyfikat centrum usługi ATA](media/ata-center-cert.png)
     3. Postępuj zgodnie z instrukcjami, aby wyeksportować certyfikat wraz z kluczem prywatnym.
     4. Utwórz kopię zapasową pliku wyeksportowanego pliku certyfikatu na innym komputerze.
@@ -45,10 +45,10 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 ## <a name="recover-your-ata-center"></a>Odzyskiwanie centrum usługi ATA
 
 1. Utwórz nową maszynę systemu Windows Server przy użyciu tej samej nazwy komputera i adresu IP, które były użyte dla poprzedniej maszyny centrum usługi ATA.
-4. Zaimportuj certyfikat, którego kopię zapasową wykonano w kroku powyżej, do nowego serwera.
+4. Importuj certyfikat, którego kopia zapasowa została utworzona wcześniej, do nowego serwera.
 5. Postępuj zgodnie z instrukcjami, aby [wdrożyć centrum usługi ATA](install-ata-step1.md) na nowo utworzonej maszynie systemu Windows Server. Nie ma potrzeby ponownego wdrażania bram usługi ATA. Po wyświetleniu monitu o certyfikat przedstaw certyfikat wyeksportowany podczas tworzenia kopii zapasowej konfiguracji centrum usługi ATA. 
 ![Przywracanie centrum usługi ATA](media/disaster-recovery-deploymentss.png)
-6. Zaimportuj kopię konfiguracji centrum usługi ATA:
+6. Importowanie konfiguracji kopii zapasowej Centrum usługi ATA:
     1. Usuń dokument domyślnego profilu systemu centrum usługi ATA z bazy danych MongoDB: 
         1. Przejdź do lokalizacji **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**. 
         2. Uruchom polecenie `mongo.exe ATA` 

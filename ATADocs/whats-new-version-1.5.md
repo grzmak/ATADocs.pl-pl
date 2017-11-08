@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a0d64aff-ca9e-4300-b3f8-eb3c8b8ae045
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 08da33114bc3f0c9aafb9914b9d77a88fac009f4
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: a00a555c0dc4590043f93abcd650f6e38d719e6c
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="whats-new-in-ata-version-15"></a>Co nowego w wersji 1.5 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
@@ -50,10 +50,10 @@ Po zaktualizowaniu wdrożenia usługi ATA do wersji 1.5 podczas instalowania now
 <b>Obejście:</b> wyślij wiadomość e-mail na adres <ataeval@microsoft.com>, aby uzyskać instrukcje dotyczące obejścia.
 ### <a name="deployment"></a>wdrażania
 Folder określony w ustawieniach „Ścieżka danych bazy danych” i „Ścieżka dziennika bazy danych” musi być pusty (nie może zawierać plików ani podfolderów).
-Jeśli folder nie jest pusty, wdrażanie nie będzie kontynuowane.
+Jeśli nie jest pusta, nie postępu wdrożenia.
 
 ### <a name="installation-from-zip-file"></a>Instalacja z pliku Zip
-Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio z pliku zip, ponieważ instalacja zakończy się niepowodzeniem.
+Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio w pliku zip lub niepowodzenie instalacji.
 
 ### <a name="configuration"></a>Konfiguracja
 Po ustawieniu konfiguracji bramy usługi ATA podczas pierwszego uruchomienia bramy usługi ATA jest wyświetlana etykieta „Nie zsynchronizowano” do momentu pełnego uruchomienia usługi, co może potrwać do 10 minut, gdy usługa jest uruchamiana po raz pierwszy.

@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,18 +13,18 @@ ms.technology:
 ms.assetid: 344c0f33-45e1-42e2-a051-f722a4504531
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: c185060a4fb889121c6a02b353fb0d176f0c9274
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: f9fce36074b5c31e35f95f028b856b18fa3bae0b
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
 
 # <a name="excluding-entities-from-detections"></a>Wykluczanie jednostek z wykryć
-W tym temacie wyjaśniono, jak wykluczać jednostki z procesu wyzwalania alertów w celu zminimalizowania zapytań niegroźnych prawdziwie dodatnich, zapewniając równocześnie wychwycenie zapytań prawdziwie dodatnich. Aby usługa ATA nie generowała niepotrzebnych alertów dotyczących działań, które w przypadku niektórych użytkowników mogą być częścią zwykłej działalności biznesowej, możesz wyciszyć — lub wykluczyć — pewne jednostki z procesu zgłaszania alertów.
+W tym artykule opisano sposób wykluczanie jednostek z wyzwalania alertów, aby zminimalizować alarmów niegroźne wartość true, ale w tym samym czasie, upewnij się, że catch alarmów wartość true. Aby zapewnić usługi ATA przed generujące dużo alertów dotyczących działań, które z określonych użytkowników, może być częścią Twojego normalne tempie firm, można quiet — lub wykluczyć - konkretnych obiektów zbierania alertów.
 
 Na przykład masz skaner zabezpieczeń, który przeprowadza rekonesans systemu DNS, lub administratora, który zdalnie uruchamia skrypty na kontrolerze domeny — i są to oficjalnie zaakceptowane działania przeprowadzane w ramach normalnych operacji IT w Twojej organizacji.
 
@@ -32,11 +32,11 @@ Aby wykluczyć jednostki z procesu zgłaszania alertów w usłudze ATA:
 
 Istnieją dwa sposoby wykluczania jednostek: na poziomie podejrzanego działania lub na karcie **Wykluczenia** na stronie **Konfiguracja**.
 
-- **Na poziomie podejrzanego działania**: gdy otrzymasz alert dotyczący działania dla użytkownika, komputera lub adresu IP, które mogą wykonywać dane działanie i mogą wykonywać je często, na osi czasu podejrzanych działań kliknij prawym przyciskiem myszy trzy kropki na końcu wiersza podejrzanego działania danej jednostki, a następnie wybierz pozycję **Zamknij i wyklucz**. <br></br>Spowoduje to dodanie użytkownika, komputera lub adresu IP do listy wykluczeń dla danego podejrzanego działania. Ponadto podejrzane działanie zostanie zamknięte i nie będzie już wyświetlane na liście zdarzeń **Otwarte** na **osi czasu podejrzanych działań**.
+- **Podejrzane działania**: W podejrzane działania osi czasu, gdy zostanie wyświetlony alert w działaniu dla użytkownika lub komputera lub adres IP, który może wykonać określone działanie i mogą to zrobić, kliknij prawym przyciskiem myszy trzy kropki znajdujące się na koniec wiersza dla podejrzanych działań w jednostki, a następnie wybierz **Zamknij i Wyklucz**. <br></br>Spowoduje to dodanie użytkownika, komputera lub adres IP do listy wykluczeń dla danego podejrzane działania. Zamyka podejrzanego działania i nie jest już wyświetlany w **Otwórz** listę zdarzeń w **osi czasu podejrzanych działań**.
 
     ![Wykluczanie jednostki](./media/exclude-in-sa.png)
 
-- **Na stronie Konfiguracja**: aby przejrzeć lub zmodyfikować ustawione wykluczenia, w obszarze **Konfiguracja** kliknij pozycję **Wykluczenia**, a następnie wybierz podejrzane działanie, takie jak **Ujawnione poufne poświadczenia konta**.
+- **Na stronie konfiguracji**: można przeglądać lub modyfikować wszelkie wyjątki: w obszarze **konfiguracji**, kliknij przycisk **wykluczenia** , a następnie wybierz podejrzanych działań, takich jak  **Poufne konto poświadczeniami ujawnionymi**.
 
     ![Konfiguracja wykluczeń](./media/exclusions-config-page.png)
 
@@ -49,9 +49,9 @@ Dodawanie wykluczeń do wykryć jest zalecane tylko wtedy, gdy otrzymujesz alert
 
 Niektóre wykrycia udostępniają porady, które pomogą Ci w wyborze jednostek do wykluczenia. 
 
-Każde wykluczenie zależy od kontekstu. W niektórych można ustawić użytkowników, a w innych — komputery lub adresy IP. 
+Każdy wykluczeń zależy od kontekstu, w niektórych można ustawić użytkowników, gdy inne można ustawić komputerów lub adresy IP. 
 
-Jeśli masz możliwość wykluczenia adresu IP lub komputera, możesz wykluczyć jeden lub drugi element — nie musisz wybierać obydwu.
+Jeśli masz możliwości wyłączenia adresu IP lub na komputerze, można wykluczyć jednego lub drugiego — nie musisz podać obie.
 
 > [!NOTE]
 > Strony konfiguracji mogą być modyfikowane tylko przez administratorów usługi ATA.

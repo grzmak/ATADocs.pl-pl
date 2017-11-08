@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: be9ee613-4eb3-40f1-8973-e7f0a707ff57
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 036871da05f59e380b045139e735762c1cc8a363
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 7bbca4eeb6ad8c5b9cf161f60144bbd27ca3c8d2
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="whats-new-in-ata-version-17"></a>Co nowego w wersji 1.7 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
@@ -104,14 +104,14 @@ Aby rozwiązać ten problem, po zmianie certyfikatu w wierszu polecenia z podwy�
 ### <a name="export-suspicious-activity-details-to-excel-may-fail"></a>Eksportowanie szczegółów podejrzanego działania do programu Excel może zakończyć się błędem
 Jeśli próbujesz wyeksportować szczegóły podejrzanego działania do pliku programu Excel, operacja może zakończyć się następującym błędem: *Błąd [BsonClassMapSerializer`1] System.FormatException: Wystąpił błąd podczas deserializacji właściwości Activity klasy Microsoft.Tri.Common.Data.NetworkActivities.SuspiciousActivityActivity: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent. ---> System.FormatException: Element „ResourceIdentifier” nie pasuje do żadnego pola ani właściwości klasy Microsoft.Tri.Common.Data.EventActivities.NtlmEvent.*
 
-Aby rozwiązać ten problem, w wierszu polecenia z podwyższonym poziomem uprawnień przejdź do następującej lokalizacji: **%ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** i uruchom następujące elementy:
-1.  **Mongo.exe ATA** (ciąg „ATA” należy zapisać przy użyciu wielkich liter)
-2.  **db.SuspiciousActivityActivity.update({ "Activity._t": "NtlmEvent" },{$unset: {"Activity.ResourceIdentifier": ""}}, {multi: true});**
+Aby rozwiązać ten problem, z wiersza polecenia z podwyższonym poziomem uprawnień, przejdź do następującej lokalizacji: **%ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** i uruchom następujące polecenia:
+1.  `Mongo.exe ATA`(Musi być Wielka ATA)
+2.  `db.SuspiciousActivityActivity.update({ "Activity._t": "NtlmEvent" },{$unset: {"Activity.ResourceIdentifier": ""}}, {multi: true});`
 
 ## <a name="minor-changes"></a>Drobne zmiany
 
 - Usługa ATA używa teraz usługi OWIN zamiast usług IIS dla konsoli ATA.
-- Jeśli usługa Centrum ATA nie działa, nie będziesz mieć możliwości uzyskania dostępu do konsoli ATA.
+- Centrum usługi ATA jest wyłączony, nie można uzyskać dostępu do konsoli usługi ATA.
 - Krótkoterminowe dzierżawy podsieci nie są już konieczne z powodu zmian w aparacie rozpoznawania nazw sieciowych (NNR) usługi ATA.
 
 ## <a name="see-also"></a>Zobacz też

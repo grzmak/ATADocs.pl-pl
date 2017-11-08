@@ -4,7 +4,7 @@ description: "W artykule opisano opcje pomocy technicznej w różnych wersjach u
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -12,26 +12,26 @@ ms.technology:
 ms.assetid: a8afbd91-c888-4dfc-94ab-72e38745163e
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a7b7d95289cc997a647c2d6703315c283e8a9328
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: f77f8ef71765dc71d690876d4043e1b3702b9971
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 # <a name="support-for-microsoft-advanced-threat-analytics-ata-versions"></a>Wsparcie techniczne w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)
 
-Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Każda zaktualizowana wersja będzie objęta pomocą techniczną przez 12 miesięcy od daty ogólnej dostępności. Pomoc techniczna będzie świadczona przez całe 12 miesięcy. Nasze struktury wsparcia są jednak obecnie dynamiczne i ewoluują w kierunku dwóch oddzielnych faz świadczenia usługi, zależnych od dostępności jej najnowszej wersji.
+Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Każda zaktualizowana wersja będzie objęta pomocą techniczną przez 12 miesięcy od daty ogólnej dostępności. Pomoc techniczna jest dostępna dla całego 12 miesięcy. Nasze struktury wsparcia są jednak obecnie dynamiczne i ewoluują w kierunku dwóch oddzielnych faz świadczenia usługi, zależnych od dostępności jej najnowszej wersji.
 
--   Faza aktualizacji zabezpieczeń i aktualizacji krytycznych — użytkownicy najnowszych wersji usługi ATA będą otrzymywać zarówno aktualizacje zabezpieczeń, jak i aktualizacje krytyczne.
+-   Zabezpieczenia i aktualizacje krytyczne fazy obsługi - podczas korzystania z najnowszej wersji usługi ATA, pojawi się zarówno zabezpieczeń i aktualizacje krytyczne.
 
 -   Faza samych aktualizacji zabezpieczeń — po opublikowaniu nowej wersji usługi ATA pomoc techniczna dla starszych wersji zostanie ograniczona do aktualizacji zabezpieczeń przez czas pozostały do zakończenia dwunastomiesięcznego okresu świadczenia pomocy technicznej (patrz poniższy przykład dla poszczególnych wersji).
  
 ![Przykład świadczenia pomocy technicznej dla poszczególnych wersji](media/versions.png)
 
 > [!Note]
-> Najnowsza wersja usługi ATA znajduje się zawsze w fazie aktualizacji zabezpieczeń i aktualizacji krytycznych. Oznacza to, że w razie wystąpienia defektu kodu wymagającego aktualizacji krytycznej użytkownicy najnowszej wersji otrzymają taką aktualizację. Użytkownicy wszystkich innych wersji będą otrzymywać tylko aktualizacje zabezpieczeń. Świadczenie pomocy technicznej kończy się po upływie 12 miesięcy cyklu życia wersji. Użytkownicy muszą wówczas zaktualizować posiadaną wersję do wersji objętej wsparciem.
+> Najnowsza wersja usługi ATA znajduje się zawsze w fazie aktualizacji zabezpieczeń i aktualizacji krytycznych. Oznacza to, że w razie wystąpienia defektu kodu wymagającego aktualizacji krytycznej użytkownicy najnowszej wersji otrzymają taką aktualizację. Wszystkie obsługiwane wersje mogą tylko otrzymywać aktualizacje zabezpieczeń. Świadczenie pomocy technicznej kończy się po upływie 12 miesięcy cyklu życia wersji. Użytkownicy muszą wówczas zaktualizować posiadaną wersję do wersji objętej wsparciem.
 
 ## <a name="version-history"></a>Historia wersji
 

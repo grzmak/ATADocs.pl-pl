@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: daaa2b3d495900d84fe7b61afb8e3bb22b3d7f72
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 654312c841c38c86c9efa826227d7cc93eb772cf
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="ata-update-to-15-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5
 Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
@@ -38,9 +38,9 @@ Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
 
 ## <a name="updating-ata-to-version-15"></a>Aktualizowanie usługi ATA do wersji 1.5
 > [!NOTE]
-> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.5, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](install-ata-step1.md).
+> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.5 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli została już wdrożona usługa ATA w wersji 1.4, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji instalacji.
+Jeśli masz już usługi ATA w wersji 1.4 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji instalacji.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
@@ -62,7 +62,7 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
-    -   Jeśli centrum usługi ATA jest uruchomione jako maszyna wirtualna i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
+    -   Jeśli Centrum usługi ATA jest uruchomione jako maszyny wirtualnej i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
 
     -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, postępuj zgodnie z zalecaną procedurą, aby [utworzyć kopię zapasową bazy danych MongoDB](https://docs.mongodb.org/manual/core/backups/).
 
@@ -70,15 +70,15 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
     1.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    2.  Przeczytaj umowę licencyjną użytkownika oprogramowania. Jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij przycisk **Dalej**.
+    2.  Przeczytaj umowę licencyjną użytkownika końcowego i jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij przycisk **dalej**.
 
     3.  Określ, czy chcesz przeprowadzić migrację pełną (domyślnie), czy częściową.
 
         ![Wybieranie migracji pełnej lub częściowej](media/ATA-center-fullpartial.png)
 
-        -   Jeśli wybierzesz migrację **Częściowa**, wszelkie zebrane i przekazane zdarzenia systemu Windows, związane z ruchem sieciowym, które są analizowane przez usługę ATA, zostaną usunięte i konieczne będzie ponowne rozpoznanie profilów behawioralnych użytkowników. Trwa to co najmniej trzy tygodnie. Jeśli masz mało miejsca na dysku, warto przeprowadzić migrację **Częściowa**.
+        -   W przypadku wybrania **częściowe** migracji, wszelkie zebrane ruch sieciowy i zdarzenia systemu Windows przekazywane przez usługę ATA są usuwane i profile behawioralne użytkowników musi być relearned; trwa to co najmniej trzy tygodnie. Jeśli masz mało miejsca na dysku, a następnie warto Uruchom **częściowe** migracji.
 
-        -   Jeśli wybierzesz migrację **Pełna**, będzie wymagane dodatkowe miejsce na dysku, obliczone na stronie uaktualnienia, a migracja może trwać dłużej, w zależności od ruchu sieciowego. Podczas pełnej migracji zachowywane są wszystkie uprzednio zebrane dane i profile behawioralne użytkowników, co oznacza, że usługa ATA nie wymaga dodatkowego czasu na rozpoznanie profilów behawioralnych, a nietypowe zachowania mogą być wykrywane bezpośrednio po aktualizacji.
+        -   Po uruchomieniu **pełne** migracji, potrzebne dodatkowe miejsce na dysku, obliczone na stronie uaktualnienia, a migracja może trwać dłużej, w zależności od ruchu sieciowego. Podczas pełnej migracji zachowywane są wszystkie uprzednio zebrane dane i profile behawioralne użytkowników, co oznacza, że usługa ATA nie wymaga dodatkowego czasu na rozpoznanie profilów behawioralnych, a nietypowe zachowania mogą być wykrywane bezpośrednio po aktualizacji.
 
 3.  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
 
@@ -104,7 +104,7 @@ Aby pobrać pakiet bramy usługi ATA:
 
 4.  Zapisz pakiet lokalnie.
 
-Plik zip zawiera następujące składniki:
+Plik zip zawiera następujące pliki:
 
 -   Instalator bramy usługi ATA
 
@@ -117,7 +117,7 @@ Plik zip zawiera następujące składniki:
     > [!NOTE]
     > Tego pakietu bramy usługi ATA możesz również używać do instalowania nowych bram usługi ATA.
 
-2.  Twoje poprzednie ustawienia zostaną zachowane, ale ponowne uruchomienie usługi może potrwać kilka minut.
+2.  Twoje poprzednie ustawienia zostaną zachowane, ale może potrwać kilka minut, aż na ponowne uruchomienie usługi.
 
 3.  Powtórz ten krok dla wszystkich innych wdrożonych bram usługi ATA.
 

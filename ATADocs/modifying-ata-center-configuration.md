@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 68dda1254757d9633119cbb8b486c3042c612d5b
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 4fe4569cd6477775e8a888d2acd05511f16fb5f6
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/06/2017
 # <a name="modifying-the-ata-center-configuration"></a>Modyfikowanie konfiguracji centrum usługi ATA
 
 
-Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Użyj następujących procedur, podczas aktualizowania adresu URL konsoli i certyfikat.
+Po początkowym wdrożeniu należy uważnie wprowadzać modyfikacje w centrum usługi ATA. Użyj poniższych procedur, podczas aktualizowania adresu URL konsoli i certyfikat.
 
 ## <a name="the-ata-console-url"></a>Adres URL konsoli usługi ATA
 
@@ -44,7 +44,7 @@ Ten adres URL jest używany w następujących scenariuszach:
 
 1. Upewnij się, że nowy adres URL, którego chcesz użyć jest rozpoznawana jako adres IP konsoli usługi ATA.
 
-2. W ustawieniach usługi ATA w obszarze **Center**, wprowadź nowy adres URL. W tym momencie Centrum usługi ATA nadal używać oryginalnego adresu URL. 
+2. W ustawieniach usługi ATA w obszarze **Center**, wprowadź nowy adres URL. W tym momencie Centrum usługi ATA nadal korzysta z oryginalnego adresu URL. 
 
  ![Zmienianie konfiguracji usługi ATA](media/change-center-config.png)
 
@@ -68,7 +68,7 @@ Ten adres URL jest używany w następujących scenariuszach:
 
 Zastąp certyfikat, wykonując ten proces:
 
-1. Przed wygaśnięciem bieżącego certyfikatu, Utwórz nowy certyfikat i upewnij się, że jest zainstalowany na serwerze Centrum usługi ATA. <br></br>Zalecane jest wybranie certyfikatu od urzędu certyfikacji wewnętrznych, ale istnieje również możliwość utworzenia nowego certyfikatu z podpisem własnym. Aby uzyskać więcej informacji, zobacz [SelfSignedCertificate nowy](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
+1. Przed wygaśnięciem bieżącego certyfikatu, Utwórz nowy certyfikat i upewnij się, że jest zainstalowany na serwerze Centrum usługi ATA. <br></br>Zalecane jest wybranie certyfikatu od urzędu certyfikacji wewnętrznego, że istnieje również możliwość utworzenia nowego certyfikatu z podpisem własnym. Aby uzyskać więcej informacji, zobacz [SelfSignedCertificate nowy](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
 2. W ustawieniach usługi ATA w obszarze **Center**, wybierz nowo utworzonego certyfikatu. W tym momencie Centrum usługi ATA jest nadal powiązane z oryginalnym certyfikatem. 
 
@@ -76,7 +76,7 @@ Zastąp certyfikat, wykonując ten proces:
 
 3. Poczekaj, aż bram usługi ATA do synchronizowania. Teraz mają dwa potencjalne certyfikaty, które są prawidłowe dla uwierzytelniania wzajemnego. Tak długo, jak bramy usługi ATA mogą łączyć przy użyciu oryginalnego certyfikatu, nie jest jego nowego.
 
-4. Po wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją aktywować nowy certyfikat powiązany z Centrum usługi ATA. Po aktywowaniu nowego certyfikatu Centrum usługi ATA jest powiązany z nowego certyfikatu. Bramy usługi ATA będzie teraz używać nowego certyfikatu uwierzytelniania za pomocą Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy certyfikat dla Centrum usługi ATA. 
+4. Po wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją aktywować nowy certyfikat powiązany z Centrum usługi ATA. Po aktywowaniu nowego certyfikatu Centrum usługi ATA jest powiązany z nowego certyfikatu. Bramy usługi ATA teraz używać nowego certyfikatu do uwierzytelnienia przy użyciu Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy certyfikat dla Centrum usługi ATA. 
 
 > [!NOTE]
 > -   Jeśli bramy usługi ATA była w trybie offline, gdy aktywować nowy certyfikat i nigdy nie otrzymała zaktualizowanej konfiguracji, należy ręcznie zaktualizować pliku JSON konfiguracji na bramie usługi ATA.

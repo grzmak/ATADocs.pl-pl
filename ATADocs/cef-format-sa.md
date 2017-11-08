@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 601b48ba-a327-4aff-a1f9-2377a2bb7a42
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: f8eb271ec3ebcdff9dd4845a0269423560a445b5
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: d9e226f06c407cb16a3486f81658e05433b00fb1
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -34,7 +34,7 @@ Następujące pola i ich wartości są przekazywane do rozwiązania SIEM:
 -   shost — maszyna źródłowa dla tego alertu
 -   outcome — wynik (powodzenie/niepowodzenie) wykonywanego działania, którego dotyczy alert  
 -   msg — opis alertu
--   cnt — dotyczy alertów mających liczbę wystąpień alertu (na przykład ataków siłowych zawierających liczbę odgadniętych haseł)
+-   CNT — dla alertów, które mają liczbę razy, które generują alerty wystąpił (na przykład siłowych z odpowiednią ilością odgadnięcia hasła)
 -   app — protokół używany w tym alercie
 -   externalId — identyfikator zdarzenia zapisywany przez usługę ATA w dzienniku zdarzeń, który odpowiada temu alertowi
 -   cs#label i cs# — są to ciągi klienta dozwolone w formacie CEF; cs#label to nazwa nowego pola, a cs# to wartość, na przykład: cs1Label=url cs1=https://192.168.0.220/suspiciousActivity/5909ae198ca1ec04d05e65fa

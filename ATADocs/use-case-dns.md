@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1d186a96-ef70-4787-aa64-c03d1db94ce0
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 4455be4f300b698b2ba8b53529e894700a282147
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 5ec554b303a19a6e7b12cd788755604f1aaf43db
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -30,7 +30,7 @@ Jeśli usługa ATA wykrywa w Twojej sieci **rekonesans przy użyciu systemu DNS*
 Alert **Rekonesans przy użyciu systemu DNS** wskazuje, że nietypowy host wysyła podejrzane zapytania systemu nazw domen (DNS, Domain Name System) w celu przeprowadzenia rekonesansu w Twojej sieci wewnętrznej.
 
 System nazw domen (DNS) to usługa zaimplementowana jako hierarchiczna, rozproszona baza danych, która umożliwia rozpoznawanie nazw hostów i nazw domen. Nazwy w bazie danych DNS tworzą hierarchiczną strukturę drzewa nazywaną obszarem nazw domeny.
-Dla osoby atakującej system DNS zawiera cenne informacje umożliwiające mapowanie sieci wewnętrznej, w tym listę wszystkich serwerów, a często także wszystkich klientów zamapowanych na adresy IP. Ponadto te informacje są wartościowe, ponieważ zawierają listę nazw hostów, które często są opisowe w danym środowisku sieciowym. Uzyskanie tych informacji umożliwia osobie atakującej efektywniejsze priorytetyzowanie wysiłków dotyczących jednostek odpowiednich dla kampanii. Narzędzia takie jak [Nmap](https://nmap.org/) i [Fierce](https://github.com/mschwager/fierce) oraz wbudowane narzędzia takie jak [Nslookup](https://technet.microsoft.com/library/cc725991(v=ws.11).aspx) pozwalają na odnajdywanie hostów za pomocą rekonesansu DNS.
+Dla osoby atakującej system DNS zawiera cenne informacje umożliwiające mapowanie sieci wewnętrznej, w tym listę wszystkich serwerów, a często także wszystkich klientów zamapowanych na adresy IP. Ponadto te informacje jest wartości, ponieważ zawiera nazwy hosta, które są często opisowe w środowisku danej sieci. Uzyskanie tych informacji umożliwia osobie atakującej efektywniejsze priorytetyzowanie wysiłków dotyczących jednostek odpowiednich dla kampanii. Narzędzia takie jak [Nmap](https://nmap.org/) i [Fierce](https://github.com/mschwager/fierce) oraz wbudowane narzędzia takie jak [Nslookup](https://technet.microsoft.com/library/cc725991(v=ws.11).aspx) pozwalają na odnajdywanie hostów za pomocą rekonesansu DNS.
 Wykrycie rekonesansu przy użyciu zapytań DNS z hosta wewnętrznego daje powód do niepokoju i wskazuje na możliwość istniejącego naruszenia hosta, szerszego naruszenia sieci lub na możliwość zagrożenia wewnętrznego.
 
 ## <a name="dns-query-types"></a>Typy zapytań DNS
@@ -56,7 +56,7 @@ Poniższy wykres ułatwi ustalenie odpowiednich kroków badania:
 
 ![Rozpoznawanie rekonesansu DNS za pomocą usługi ATA](./media/dns-recon-diagram.png)
  
-1.  Pierwszym krokiem jest zidentyfikowanie maszyny, z której pochodzi alert, jak przedstawiono poniżej:
+1.  Pierwszym krokiem jest aby zidentyfikować komputer, do którego pochodzi ten alert, jak pokazano na poniższym ekranie:
  
     ![Wyświetlanie podejrzanych działań rekonesansu DNS w usłudze ATA](./media/dns-recon.png)
 2.  Zidentyfikuj przeznaczenie danej maszyny. Czy jest to stacja robocza, serwer, administracyjna stacja robocza, stacja do testowania penetracyjnego itp.?
@@ -80,7 +80,7 @@ Firma Microsoft zaleca skorzystanie z pomocy profesjonalnego zespołu ds. reagow
 
 ## <a name="mitigation"></a>Środki zaradcze
 
-Aby zabezpieczyć wewnętrzny serwer DNS w celu uniemożliwienia przeprowadzenia rekonesansu przy użyciu systemu DNS, można wyłączyć transfery stref lub ograniczyć je tylko do określonych adresów IP. Aby uzyskać dodatkowe informacje o ograniczaniu transferów stref, zobacz artykuł w witrynie TechNet systemu Windows Server [Ograniczanie transferów stref](https://technet.microsoft.com/library/ee649273(v=ws.10).aspx). Ograniczone transfery stref można dalej zablokować przez [zabezpieczenie transferów stref przy użyciu protokołu IPsec](https://technet.microsoft.com/library/ee649192(v=ws.10).aspx). Modyfikacja transferów stref jest jednym z zadań na liście czynności, które należy wykonać w celu [zabezpieczenia serwerów DNS przed atakami wewnętrznymi i zewnętrznymi](https://technet.microsoft.com/library/cc770432(v=ws.11).aspx).
+Aby zabezpieczyć wewnętrzny serwer DNS w celu uniemożliwienia przeprowadzenia rekonesansu przy użyciu systemu DNS, można wyłączyć transfery stref lub ograniczyć je tylko do określonych adresów IP. Aby uzyskać więcej informacji o ograniczaniu transferów stref, zobacz [ograniczyć transferów stref](https://technet.microsoft.com/library/ee649273(v=ws.10).aspx). Ograniczone transfery stref można dalej zablokować przez [zabezpieczenie transferów stref przy użyciu protokołu IPsec](https://technet.microsoft.com/library/ee649192(v=ws.10).aspx). Modyfikacja transferów stref jest jednym z zadań na liście czynności, które należy wykonać w celu [zabezpieczenia serwerów DNS przed atakami wewnętrznymi i zewnętrznymi](https://technet.microsoft.com/library/cc770432(v=ws.11).aspx).
 
 
 

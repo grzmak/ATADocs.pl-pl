@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/31/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: e0aed853-ba52-46e1-9c55-b336271a68e7
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 748121a709ac05756edf34e04e13b996190e9711
-ms.sourcegitcommit: b951c64228d4f165ee1fcc5acc0ad6bb8482d6a2
+ms.openlocfilehash: 2eab8649f225071ad548a8134b385d46f02b3222
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 10/31/2017
 
 ## <a name="step-7-integrate-vpn"></a>Krok 7. Integracja sieci VPN
 
-Microsoft Advanced Threat Analytics (ATA) w wersji 1.8 może zbierać informacji o kontach z rozwiązań VPN. Po skonfigurowaniu strony profilu użytkownika będzie zawierać informacje z połączenia sieci VPN, takie jak adresy IP i lokalizacje, w którym zainicjowano połączenia. Uzupełnią procesie dochodzenia podając dodatkowe informacje o aktywności użytkownika. Wywołanie rozpoznania zewnętrzny adres IP w lokalizacji jest anonimowy. Nie identyfikatora osobistego są wysyłane w tym wywołaniu.
+Microsoft Advanced Threat Analytics (ATA) w wersji 1.8 może zbierać informacji o kontach z rozwiązań VPN. Po skonfigurowaniu strony profilu użytkownika zawiera informacje z połączenia sieci VPN, takie jak adresy IP i lokalizacje, w którym zainicjowano połączenia. W procesie dochodzenia stanowi uzupełnienie podając dodatkowe informacje o aktywności użytkownika. Wywołanie rozpoznania zewnętrzny adres IP w lokalizacji jest anonimowy. Nie identyfikatora osobistego są wysyłane w tym wywołaniu.
 
 Usługa ATA integruje się z rozwiązanie sieci VPN, ponieważ nasłuchuje zdarzeń ewidencjonowania aktywności usługi RADIUS przekazywane do bramy usługi ATA. Ten mechanizm opiera się na standardowych ewidencjonowanie aktywności usługi RADIUS ([RFC 2866](https://tools.ietf.org/html/rfc2866)), i są obsługiwane w następujących dostawców:
 
@@ -42,15 +42,15 @@ Usługa ATA integruje się z rozwiązanie sieci VPN, ponieważ nasłuchuje zdarz
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Aby włączyć sieć VPN integracji upewnij się, że można ustawić następujące czynności:
+Aby włączyć integrację sieci VPN, upewnij się, że można ustawić następujące parametry:
 
 -   Otwórz port UDP 1813 bram usługi ATA i bram ATA Lightweight Gateway.
 
 -   Centrum usługi ATA należy połączyć się z Internetem, aby wykonać zapytanie lokalizacji przychodzących adresów IP.
 
-W poniższym przykładzie używamy routingu i firmy Microsoft serwera dostępu zdalnego (RRAS) do opisywania proces konfiguracji sieci VPN.
+W poniższym przykładzie użyto routingu i firmy Microsoft serwera dostępu zdalnego (RRAS) do opisywania proces konfiguracji sieci VPN.
 
-Jeśli używasz 3 rozwiązania sieci VPN firmy, w dokumentacji ich instrukcje dotyczące włączania ewidencjonowanie aktywności usługi RADIUS.
+Jeśli używasz rozwiązanie sieci VPN innych firm, w dokumentacji ich instrukcje dotyczące włączania ewidencjonowanie aktywności usługi RADIUS.
 
 ## <a name="configure-radius-accounting-on-the-vpn-system"></a>Skonfiguruj ewidencjonowanie aktywności usługi RADIUS sieci VPN
 
@@ -76,7 +76,7 @@ Aby skonfigurować danych sieci VPN w usłudze ATA:
  
   ![Menu konfiguracji usługi ATA](./media/config-menu.png)
 
-2.  Włącz **ewidencjonowanie aktywności usługi Radius** , a następnie wpisz **wspólny klucz tajny** został wcześniej skonfigurowany na serwerze sieci VPN usługi RRAS. Następnie kliknij przycisk **Zapisz**.
+2.  Włącz **ewidencjonowanie aktywności usługi Radius**, a następnie wpisz **wspólny klucz tajny** został wcześniej skonfigurowany na serwerze sieci VPN usługi RRAS. Następnie kliknij przycisk **Zapisz**.
  
 
   ![Konfigurowanie sieci VPN usługi ATA](./media/vpn.png)
@@ -84,7 +84,7 @@ Aby skonfigurować danych sieci VPN w usłudze ATA:
 
 Po ta opcja jest włączona, wszystkie bramy usługi ATA i bram Lightweight nasłuchiwanie na porcie 1813 zdarzenia ewidencjonowania aktywności usługi RADIUS. 
 
-Instalacja została zakończona i znajduje się teraz działania sieci VPN w strony profilu użytkownika:
+Instalacja została zakończona i możesz teraz przeglądać aktywność sieci VPN w strony profilu użytkownika:
  
    ![Konfiguracja sieci VPN](./media/vpn-user.png)
 

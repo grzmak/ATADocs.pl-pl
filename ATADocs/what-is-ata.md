@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/9/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 283e7b4e-996a-4491-b7f6-ff06e73790d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 1afaf258198c1b18aca5cc2e4be6774600f72a73
-ms.sourcegitcommit: e9f2bfd610b7354ea3fef749275f16819d60c186
+ms.openlocfilehash: 44f50b2daefb5a54c56b90289faf08b897494093
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -27,7 +27,7 @@ Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga 
 
 ## <a name="how-ata-works"></a>Działanie usługi ATA
 
-Usługa ATA korzysta z własnego aparatu do analizowania sieci w celu przechwytywania i analizowania ruchu sieciowego wielu protokołów (takich jak Kerberos, DNS, RPC, NTLM i inne) służących do uwierzytelniania, autoryzacji i zbierania informacji. Te informacje są zbierane przez usługę ATA przez:
+Usługa ATA używa sieci własnościowych analizowania aparatu do przechwytywania i analizowania ruchu sieciowego na wiele protokołów (na przykład protokołu Kerberos, DNS, RPC, NTLM i inne) do uwierzytelniania, autoryzacji i zbierania informacji. Te informacje są zbierane przez usługę ATA przez:
 
 -   Dublowanie portów z kontrolerów domeny i serwerów DNS do bramy usługi ATA i/lub
 -   Wdrażanie uproszczonej bramy usługi ATA (LGW) bezpośrednio na kontrolerach domeny
@@ -40,18 +40,18 @@ Usługa ATA może odbierać zdarzenia i dzienniki z następujących źródeł:
 -   Bezpośrednio z kolektora zdarzeń systemu Windows (w przypadku bramy uproszczonej)
 
 
-Aby uzyskać więcej informacji, zobacz artykuł [Architektura usługi ATA](ata-architecture.md).
+Aby uzyskać więcej informacji na Architektura usługi ATA, zobacz [Architektura usługi ATA](ata-architecture.md).
 
 ## <a name="what-does-ata-do"></a>Jakie zadania wykonuje usługa ATA?
 
 Technologia ATA wykrywa wiele podejrzanych działań, skupiając się na poszczególnych fazach ataku cybernetycznego typu kill chain, takich jak:
 
--   Rekonesans, w którym osoby atakujące zbierają informacje dotyczące konstrukcji środowiska oraz istniejących zasobów i jednostek, tworząc ogólny plan następnych faz ataku.
+-   Rekonesans, podczas których osoby atakujące Zbierz informacje dotyczące sposobu środowiska są wbudowane i jakie różne zasoby są i którymi obiektami istnieje. Tworzenie one zazwyczaj ich planu dla następnej fazy ataku.
 -   Cykl penetracji sieci, podczas którego osoby atakujące inwestują czas i wysiłek w rozszerzanie obszaru ataku wewnątrz sieci.
--   Zdominowanie domeny (trwałość), kiedy osoba atakująca przechwytuje informacje pozwalające na wznowienie kampanii przy użyciu różnorodnego zestawu punktów wejścia, poświadczeń i technik. 
+-   Podczas którego osoba atakująca przechwytuje informacje, dzięki czemu można wznowić ich kampanii przy użyciu różnych zestawów punktów wejścia, poświadczeń i technik zdominowanie domeny (trwałości). 
 
 Te fazy ataku cybernetycznego są podobne i przewidywalne, niezależnie od tego, jakiego rodzaju firma jest atakowana ani jakiego typu informacje są celem ataku.
-Usługa ATA wyszukuje trzy główne typy ataków: złośliwe ataki, nietypowe zachowanie oraz problemy i czynniki ryzyka związane z zabezpieczeniami.
+Usługa ATA wyszukuje trzy rodzaje ataków: złośliwych ataków, nietypowe zachowanie i problemy z zabezpieczeniami i zagrożeń.
 
 **Złośliwe ataki** są wykrywane w sposób deterministyczny, przez wyszukiwanie pełnej listy znanych typów ataków, która obejmuje:
 
@@ -65,7 +65,8 @@ Usługa ATA wyszukuje trzy główne typy ataków: złośliwe ataki, nietypowe za
 -   Atak siłowy
 -   Zdalne wykonywanie kodu
 
-Aby uzyskać pełną listę wykrywanych zagrożeń wraz z opisami, zobacz artykuł [Jakie podejrzane działania może wykryć usługa ATA?](ata-threats.md)
+Aby uzyskać pełną listę zagrożeń wykrywanych przez usługę i ich opisy, zobacz [co podejrzanych działań może ATA wykrywa?](ata-threats.md). 
+
 Usługa ATA wykrywa te podejrzane działania i udostępnia informacje w konsoli ATA, w jasny sposób przedstawiając sprawcę, przedmiot, czas i sposób działania. Jak widać, monitorując ten prosty, przyjazny dla użytkownika pulpit nawigacyjny, otrzymujemy alert dotyczący podejrzenia próby ataku typu Pass-the-Ticket na komputerach Client 1 i Client 2 w sieci.
 
  ![Przykładowy ekran usługi ATA z alertem dotyczącym ataku typu Pass-the-Ticket](media/pass_the_ticket_sa.png)
@@ -79,7 +80,7 @@ Usługa ATA wykrywa te podejrzane działania i udostępnia informacje w konsoli 
 -   Modyfikacja wrażliwych grup
 
 
-Podejrzane działania tego typu można przeglądać na pulpicie nawigacyjnym usługi ATA. W poniższym przykładzie usługa ATA zgłasza alert dotyczący dostępu użytkownika do 4 komputerów, z których ten użytkownik zwykle nie korzysta, co może być przyczyną alarmu.
+Podejrzane działania tego typu można przeglądać na pulpicie nawigacyjnym usługi ATA. W poniższym przykładzie, usługa ATA ostrzega użytkownika, gdy użytkownik uzyskuje dostęp do czterech komputerów, które nie są zwykle dostępne przez tego użytkownika, który może być przyczyną alarm.
 
  ![Przykładowy ekran usługi ATA z informacją o nietypowym zachowaniu](media/abnormal-behavior-sa.png) 
 
@@ -96,9 +97,9 @@ Podejrzane działania tego typu można przeglądać na pulpicie nawigacyjnym us�
 
 ## <a name="known-issues"></a>Znane problemy
 
-- W przypadku aktualizacji do usługi ATA 1.7 i następującej natychmiast po niej aktualizacji do usługi ATA 1.8, bez wcześniejszego zaktualizowania bram usługi ATA, nie będzie można przeprowadzić migracji do usługi ATA 1.8. Należy najpierw zaktualizować wszystkie bramy do wersji 1.7.1 lub 1.7.2 przed aktualizowaniem centrum usługi ATA do wersji 1.8.
+- Po zaktualizowaniu 1.7 usługi ATA i natychmiast 1.8 usługi ATA bez aktualizowania pierwszy bram usługi ATA nie może przeprowadzić migracji usługi ATA 1.8. Należy najpierw zaktualizować wszystkie bramy do wersji 1.7.1 lub 1.7.2 przed aktualizowaniem centrum usługi ATA do wersji 1.8.
 
-- Jeśli wybierzesz opcję pełnej migracji, może ona potrwać bardzo długo w zależności od rozmiaru bazy danych. Podczas wybierania opcji migracji jest wyświetlany szacowany czas — należy zwrócić na niego uwagę przed podjęciem decyzji. 
+- Jeśli wybierzesz opcję pełnej migracji, może ona potrwać bardzo długo w zależności od rozmiaru bazy danych. Podczas wybierania opcji migracji, wyświetlany jest szacowany czas - Zwróć uwagę na to, przed podjęciem decyzji rozwiązania. 
 
 
 ## <a name="whats-next"></a>Co dalej?

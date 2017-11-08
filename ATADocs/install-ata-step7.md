@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/9/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 49d0df5f3d835a879990d590b447ed3b4de88685
-ms.sourcegitcommit: e9f2bfd610b7354ea3fef749275f16819d60c186
+ms.openlocfilehash: 0feb12a2e86adae124016c90431209ec33cdbcb5
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -33,9 +33,9 @@ Usługa ATA umożliwia wykluczenie konkretnych adresów IP lub użytkowników z 
 
 Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
 
-Usługa ATA umożliwia również skonfigurowanie konta użytkownika wystawionego jako przynęta, które jest używane jako pułapka dla uczestników złośliwych działań — dowolne uwierzytelnianie związane z tym kontem (zwykle nieaktywnym) powoduje wyzwolenie alertu.
+Usługa ATA umożliwia również konfigurację użytkownika wystawionego jako przynęta, który jest używany jako pułapki złośliwych osób — uwierzytelniania skojarzone z tym kontem (zwykle nieaktywni) wyzwala alert.
 
-Aby skonfigurować powyższe opcje, wykonaj następujące kroki:
+Aby to skonfigurować, wykonaj następujące kroki:
 
 1.  W konsoli usługi ATA kliknij ikonę ustawień i wybierz pozycję **Konfiguracja**.
 
@@ -43,7 +43,7 @@ Aby skonfigurować powyższe opcje, wykonaj następujące kroki:
 
 2.  W obszarze **Wykrywanie** kliknij pozycję **Ogólne**.
 
-2. W polu **Konta wystawione jako przynęta** podaj nazwę konta wystawionego jako przynęta. Pole Konta wystawione jako przynęta umożliwia wyszukiwanie i automatycznie wyświetla jednostki dostępne w sieci.
+2. W polu **Konta wystawione jako przynęta** podaj nazwę konta wystawionego jako przynęta. W polu kont wystawionych jako przynęta jest wyszukiwalna i automatycznie wyświetla jednostek w sieci.
 
    ![Przynęta](media/honeytoken.png)
 
@@ -58,7 +58,7 @@ Gratulacje, usługa Microsoft Advanced Threat Analytics została pomyślnie wdro
 
 Sprawdź wiersz czasu ataku, aby wyświetlić wykryte podejrzane działania i wyszukać użytkowników lub komputery i wyświetlić ich profile.
 
-Usługa ATA natychmiast rozpocznie skanowanie w poszukiwaniu podejrzanych działań. Niektóre działania, np. niektóre działania związane z podejrzanym zachowaniem, nie będą dostępne, dopóki usługa ATA nie utworzy profilów zachowania (trwa to co najmniej trzy tygodnie).
+Usługa ATA zaczyna od razu skanowanie w poszukiwaniu podejrzanych działań. Niektóre działania, takie jak niektóre podejrzane działania, jest niedostępny, dopóki usługa ATA miał czas na utworzenie profilów zachowania (co najmniej trzy tygodnie).
 
 Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sieci, możesz zapoznać się z [podręcznikiem symulacji ataku za pomocą usługi ATA](https://docs.microsoft.com/enterprise-mobility-security/solutions/ata-attack-simulation-playbook).
 

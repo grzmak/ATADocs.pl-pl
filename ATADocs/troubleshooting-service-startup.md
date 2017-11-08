@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 5a65285c-d1de-4025-9bb4-ef9c20b13cfa
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 760e03e764ddb502a2b11cdd3a2570b548837dc4
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 125376b1e3530481a3b9f62c4661dd10dce13f22
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -25,14 +25,22 @@ ms.lasthandoff: 11/06/2017
 
 # <a name="troubleshooting-ata-center-service-startup"></a>Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
 
-Jeśli nie możesz uruchomić centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
+Jeśli nie można uruchomić Centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
 
-1.  Uruchom następujące polecenie programu Windows PowerShell: Get-Service Pla | Select Status w celu upewnienia się, że usługa licznika wydajności działa. Jeśli nie, wówczas jest to problem z platformą i musisz się upewnić, że ta usługa zostanie uruchomiona ponownie.
-2.  Jeśli usługa działa, spróbuj uruchomić ją ponownie, a następnie sprawdź, czy rozwiązało to problem: Restart-Service Pla
+1.  Uruchom następujące polecenie programu Windows PowerShell: `Get-Service Pla | Select Status` się upewnić, że działa usługa licznika wydajności. Jeśli nie, wówczas jest to problem z platformą i musisz się upewnić, że ta usługa zostanie uruchomiona ponownie.
+2.  Jeśli była uruchomiona, spróbuj uruchomić go ponownie i zobacz, czy spowodowało to rozwiązanie problemu:`Restart-Service Pla`
 3.  Spróbuj ręcznie utworzyć nowy moduł zbierający dane (nada się dowolny moduł, nawet tylko zbierający dane procesorów CPU komputera).
-Jeśli można go uruchomić, z platformą jest prawdopodobnie wszystko w porządku, a jeśli nie, nadal jest to problem z platformą.
+Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Jeśli nie, nadal jest to problem platformy.
 
-4.  Spróbuj ręcznie ponownie utworzyć moduł zbierający dane usługi ATA przy użyciu wiersza polecenia z podwyższonym poziomem uprawnień, uruchamiając następujące polecenia: sc stop ATACenter logman stop "Microsoft ATA Center" logman export "Microsoft ATA Center" -xml c:\center.xml logman delete "Microsoft ATA Center" logman import "Microsoft ATA Center" -xml c:\center.xml logman start "Microsoft ATA Center" sc start ATACenter
+4.  Spróbuj ponownie ręcznie utworzyć ATA modułów zbierających dane, przy użyciu wierszu polecenia z podwyższonym poziomem uprawnień, uruchomienie tych poleceń:
+
+        sc stop ATACenter
+        logman stop "Microsoft ATA Center"
+        logman export "Microsoft ATA Center" -xml c:\center.xml
+        logman delete "Microsoft ATA Center"
+        logman import "Microsoft ATA Center" -xml c:\center.xml
+        logman start "Microsoft ATA Center"
+        sc start ATACenter
 
 
 

@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/9/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 6bbc50c3-bfa8-41db-a2f9-56eed68ef5d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 66e910c1d6d11781fa66f8386b4b3939fd49ebf7
-ms.sourcegitcommit: e9f2bfd610b7354ea3fef749275f16819d60c186
+ms.openlocfilehash: 4abeda5a54de771c6e6d3c73d9217113dfe88b8e
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 10/09/2017
 
 ## <a name="step-4-install-the-ata-gateway"></a>Krok 4. Instalowanie bramy usługi ATA
 
-Przed zainstalowaniem bramy usługi ATA na dedykowanym serwerze zweryfikuj, czy funkcja dublowania portów jest poprawnie skonfigurowana oraz czy ruch do i z kontrolerów domeny jest widoczny dla bramy usługi ATA. Aby uzyskać więcej informacji, zobacz [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md).
+Przed zainstalowaniem bramy usługi ATA na dedykowanym serwerze zweryfikuj, czy funkcja dublowania portów jest poprawnie skonfigurowana oraz czy ruch do i z kontrolerów domeny jest widoczny dla bramy usługi ATA. Aby uzyskać więcej informacji, zobacz [weryfikowanie funkcji dublowania portów](validate-port-mirroring.md).
 
 
 > [!IMPORTANT]
@@ -43,31 +43,31 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 
 1.  Wyodrębnij pliki z archiwum zip. 
 > [!NOTE] 
-> Instalowanie bezpośrednio z pliku zip zakończy się niepowodzeniem.
+> Instalowanie bezpośrednio z pliku zip kończy się niepowodzeniem.
 
 2.  Uruchom plik **Microsoft ATA Gateway Setup.exe**, a następnie postępuj zgodnie z instrukcjami kreatora instalacji.
 
 3.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-4.  Kreator instalacji automatycznie sprawdzi, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest to kontroler domeny, zostanie zainstalowana uproszczona brama usługi ATA. Jeśli jest to dedykowany serwer, zostanie zainstalowana brama usługi ATA. 
+4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny dedykowanego serwera. Jeśli jest kontrolerem domeny, jest zainstalowana brama ATA Lightweight Gateway, jeśli jest dedykowany serwer bramy usługi ATA jest zainstalowany. 
     
-    Na przykład w przypadku bramy usługi ATA zostanie wyświetlony następujący ekran z informacją, że brama usługi ATA zostanie zainstalowana na dedykowanym serwerze:
+    Na przykład dla bramy usługi ATA następujące ekran jest wyświetlany z informacją, że bramy usługi ATA zostanie zainstalowana na dedykowanym serwerze:
     
     ![Instalacja bramy usługi ATA](media/ata-gw-install.png) Kliknij przycisk **Dalej**.
 
     > [!NOTE] 
-    > Jeśli kontroler domeny lub dedykowany serwer nie spełnia minimalnych wymagań sprzętowych dotyczących instalacji, zostanie wyświetlone ostrzeżenie. To nie uniemożliwia kliknięcia przycisku **Dalej** ani kontynuowania instalacji. Ta opcja może być właściwa w przypadku instalacji usługi ATA w małym, laboratoryjnym środowisku testowym, w którym nie potrzeba tak dużo miejsca do przechowywania danych. W środowiskach produkcyjnych zdecydowanie zaleca się korzystanie z przewodnika [planowania pojemności](ata-capacity-planning.md) usługi ATA w celu upewnienia się, że kontrolery domeny lub dedykowane serwery spełniają niezbędne wymagania.
+    > Jeśli kontroler domeny lub dedykowany serwer nie spełnia minimalne wymagania sprzętowe dotyczące instalacji, zostanie wyświetlone ostrzeżenie. To nie uniemożliwia kliknięcia przycisku **Dalej** ani kontynuowania instalacji. Może to być odpowiedniej opcji instalacji usługi ATA w środowisku testowym małych laboratorium, w którym nie ma potrzeby tyle samo miejsca do przechowywania danych. W środowiskach produkcyjnych zdecydowanie zaleca się korzystanie z przewodnika [planowania pojemności](ata-capacity-planning.md) usługi ATA w celu upewnienia się, że kontrolery domeny lub dedykowane serwery spełniają niezbędne wymagania.
 
 4.  W obszarze **Konfiguracja bramy** podaj następujące informacje w zależności od używanego środowiska:
 
     ![Obraz przedstawiający konfigurację bramy usługi ATA](media/ata-gw-configure.png)
 
     > [!NOTE]
-    > Podczas wdrażania bramy usługi ATA nie musisz podawać poświadczeń. Jeśli podczas instalacji bramy usługi ATA pobranie poświadczeń za pomocą funkcji logowania jednokrotnego nie powiedzie się (na przykład centrum usługi ATA lub brama usługi ATA nie należy do domeny albo nie masz poświadczeń administratora usługi ATA), zostanie wyświetlony monit o podanie poświadczeń przedstawiony na następującym ekranie. 
+    > Podczas wdrażania bramy usługi ATA, nie trzeba podać poświadczenia. W przypadku niepowodzenia instalacji bramy usługi ATA można pobrać poświadczeń przy użyciu logowania jednokrotnego (na przykład może to mieć miejsce, jeśli Centrum usługi ATA nie znajduje się w domenie, jeśli bramy usługi ATA nie jest w domenie, nie masz poświadczenia administratora usługi ATA), zostanie wyświetlony monit o Podaj poświadczenia, tak jak następujący ekran: 
 
-  ![Podanie poświadczeń bramy usługi ATA](media/ata-install-credentials.png)
+  ![Podaj poświadczenia bramy usługi ATA](media/ata-install-credentials.png)
 
-   - Ścieżka instalacji: lokalizacja, w której zostanie zainstalowana brama usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Gateway. Pozostaw wartość domyślną.
+   - Ścieżka instalacji: Jest to lokalizacja, w którym zainstalowano bramę usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Gateway. Pozostaw wartość domyślną.
     
 5. Kliknij przycisk **Zainstaluj**. Następujące składniki zostaną zainstalowane i skonfigurowane podczas instalacji bramy usługi ATA:
 

@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 4a25561b-a5ed-44aa-9b72-366976b3c72a
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: b05b7a6d01c99595b0877d633872716b115b4f51
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 652d3a9e20737d26e8776035690a180f6bd84593
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -28,9 +28,9 @@ ms.lasthandoff: 11/06/2017
 
 
 ## <a name="change-the-domain-connectivity-password"></a>Zmienianie hasła do łączności z domeną
-Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie jest, usługa bramy usługi ATA przestanie działać w bramach usługi ATA.
+Podczas modyfikowania hasła do łączności z domeną upewnij się, czy wprowadzone hasło jest prawidłowe. Jeśli nie, bramy usługi ATA przestanie działać w bramach usługi ATA.
 
-Jeśli podejrzewasz, że taka sytuacja ma miejsce, w bramie usługi ATA sprawdź, czy w pliku Microsoft.Tri.Gateway-Errors.log znajduje się następujący komunikat: `The supplied credential is invalid.`
+Jeśli podejrzewasz, że to miejsce, w bramie usługi ATA przyjrzeć się pliku Microsoft.Tri.Gateway-Errors.log wystąpiły następujące błędy:`The supplied credential is invalid.`
 
 Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowania hasła łączności z domeną w centrum usługi ATA:
 
@@ -46,7 +46,7 @@ Aby rozwiązać ten problem, wykonaj poniższą procedurę w celu zaktualizowani
 
 4.  W obszarze **Hasło** zmień hasło.
 
-    Jeśli Centrum usługi ATA ma łączność z domeną, użyj przycisku **Testuj połączenie**, aby zweryfikować poświadczenia.
+    Jeśli Centrum usługi ATA ma łączności z domeną, użyj **Testuj połączenie** przycisk, aby zweryfikować poświadczenia
 
 5.  Kliknij polecenie **Zapisz**.
 

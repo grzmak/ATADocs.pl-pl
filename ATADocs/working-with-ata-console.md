@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7e6570ee1e35631a3dba90466b31542e9fd0cd66
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 26c093c4163593611b175f4f0002f443e593f952
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -27,10 +27,10 @@ ms.lasthandoff: 11/06/2017
 
 Konsola usługi ATA służy do monitorowania podejrzanych działań wykrytych przez usługę ATA i reagowania na nie.
 
-Wpisanie znaku ? spowoduje wyświetlenie skrótów klawiaturowych dla ułatwień dostępu w portalu usługi ATA. 
+Wpisywanie `?` klucz znajdują się skróty klawiaturowe dla ułatwień dostępu w portalu usługi ATA. 
 
 ## <a name="enabling-access-to-the-ata-console"></a>Włączanie dostępu do konsoli usługi ATA
-Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta użytkownika, który został przypisany do właściwej roli usługi ATA z dostępem do konsoli ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartego na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami ról usługi ATA](ata-role-groups.md).
+Pomyślnie zalogować się do konsoli usługi ATA, należy zalogować się użytkownik, który został przypisany do roli usługi ATA właściwy dostęp do konsoli usługi ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartej na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami roli usługi ATA](ata-role-groups.md).
 
 ## <a name="logging-into-the-ata-console"></a>Logowanie się do konsoli usługi ATA
 
@@ -44,12 +44,12 @@ Aby pomyślnie zalogować się do konsoli usługi ATA, należy użyć konta uży
  >[!NOTE]
  > Możesz również otworzyć przeglądarkę z poziomu centrum usługi ATA lub bramy usługi ATA i przejść na adres IP skonfigurowany dla konsoli usługi ATA w instalacji centrum usługi ATA.    
 
-2.  Jeśli komputer, na którym zainstalowano centrum usługi ATA, i komputer, z którego próbujesz uzyskać dostęp do konsoli usługi ATA, są przyłączone do domeny, usługa ATA obsługuje logowanie jednokrotne zintegrowane z uwierzytelnianiem systemu Windows — jeśli użytkownik został już zalogowany na komputerze, usługa ATA użyje tego tokenu do zalogowania do konsoli usługi ATA. Możesz również się zalogować przy użyciu karty inteligentnej. Uprawnienia w usłudze ATA będą odpowiadać Twojej [roli administratora](ata-role-groups.md).
+2.  Jeśli przyłączony komputer, na którym zainstalowano Centrum usługi ATA i komputera, z którego próbujesz uzyskać dostęp do konsoli usługi ATA są zarówno domeny, usługa ATA obsługuje rejestracji jednokrotnej zintegrowane z uwierzytelnianiem systemu Windows — Jeśli już po zalogowaniu do komputera, usługa ATA używa token do zalogowania do konsoli usługi ATA. Możesz również się zalogować przy użyciu karty inteligentnej. Uprawnienia w usłudze ATA odpowiadają Twojej [roli administrator](ata-role-groups.md).
 
  > [!NOTE]
- > Pamiętaj, żeby zalogować się na komputerze, z którego chcesz uzyskać dostęp do konsoli usługi ATA, przy użyciu nazwy użytkownika i hasła administratora usługi ATA. Zamiast tego możesz też uruchomić przeglądarkę jako inny użytkownik lub wylogować się z systemu Windows i zalogować jako administrator usługi ATA. Aby spowodować, żeby konsola usługi ATA zapytała o poświadczenia, uzyskaj dostęp do konsoli przy użyciu adresu IP, a wtedy pojawi się monit o podanie poświadczeń.
+ > Upewnij się, że do logowania się do komputera, z którego ma dostęp do konsoli usługi ATA przy użyciu usługi ATA admin nazwę użytkownika i hasło. Zamiast tego możesz też uruchomić przeglądarkę jako inny użytkownik lub wylogować się z systemu Windows i zalogować jako administrator usługi ATA. Monitowanie konsoli usługi ATA, aby poprosić o poświadczenia, dostęp do konsoli przy użyciu adresu IP i adres monit o wprowadzenie poświadczeń.
 
-3. Aby zalogować się przy użyciu logowania jednokrotnego, upewnij się, że witryna konsoli usługi ATA jest zdefiniowana jako lokalna witryna intranetowa w przeglądarce i że uzyskujesz do niej dostęp za pomocą nazwy skróconej lub hosta lokalnego.
+3. Aby zalogować się przy użyciu logowania jednokrotnego, upewnij się, witrynę konsoli usługi ATA jest zdefiniowany jako lokację lokalny intranet w przeglądarce i dostęp za pomocą nazwa_skrócona lub localhost.
 
 > [!NOTE]
 > Oprócz rejestrowania każdego podejrzanego działania i alertu kondycji, każda zmiana konfiguracji wprowadzona w konsoli usługi ATA podlega inspekcji w dzienniku zdarzeń systemu Windows na komputerze z centrum usługi ATA, w obszarze **Dziennik aplikacji i usług**, a następnie **Microsoft ATA**. Każde logowanie do konsoli usługi ATA również podlega inspekcji.<br></br>  Konfiguracja wpływająca na bramę usługi ATA jest również rejestrowana w dzienniku zdarzeń systemu Windows na komputerze bramy usługi ATA. 
@@ -83,7 +83,7 @@ Podejrzane działania wyświetlane na osi czasu ataków lub na karcie podejrzany
 
 ### <a name="search-bar"></a>Pasek wyszukiwania
 
-W menu u góry znajduje się pasek wyszukiwania. Umożliwia on wyszukiwanie określonych użytkowników, komputerów lub grup w usłudze ATA. Aby go wypróbować, po prostu zacznij wpisywać tekst.
+W menu górnym znajduje się pasek wyszukiwania. Możesz wyszukać określonego użytkownika, komputera lub grupy w usłudze ATA. Aby go wypróbować, po prostu zacznij wpisywać tekst.
 
 ![Obraz wyszukiwania w konsoli usługi ATA](media/ATA-console-search.png)
 
@@ -93,11 +93,11 @@ Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu
 
 ![Obraz centrum kondycji usługi ATA](media/ATA-Health-Issue.jpg)
 
-Za każdym razem, gdy system napotka problem, taki jak błąd łączności lub rozłączona brama usługi ATA, ikona centrum kondycji poinformuje o nim użytkownika przez wyświetlenie czerwonej kropki. ![Obraz czerwonej kropki centrum kondycji usługi ATA](media/ATA-Health-Center-Alert-red-dot.png)
+Dowolnej chwili, gdy system napotka problem, takie jak błąd łączności lub rozłączona brama usługi ATA, ikona Centrum kondycji informuje przez wyświetlenie czerwonej kropki. ![Obraz czerwonej kropki centrum kondycji usługi ATA](media/ATA-Health-Center-Alert-red-dot.png)
 
 ### <a name="user-and-computer-profiles"></a>Profile użytkowników i komputerów
 
-Usługa ATA tworzy profil dla każdego użytkownika i komputera w sieci. W profilu użytkownika usługi ATA wyświetlane są ogólne informacje, takie jak członkostwo w grupie, ostatnie logowania i ostatnio używane zasoby. Zawiera także listę lokalizacji, z którymi użytkownik jest połączony za pośrednictwem sieci VPN. Aby uzyskać listę członkostwa w grupach, które usługa ATA uważa za wrażliwe, zobacz poniżej.
+Usługa ATA tworzy profil dla każdego użytkownika i komputera w sieci. W profilu użytkownika usługi ATA wyświetlane są ogólne informacje, takie jak członkostwo w grupie, ostatnie logowania i ostatnio używane zasoby. Umożliwia także listy lokalizacje, w którym użytkownik jest połączony za pośrednictwem sieci VPN. Lista członkostwa w grupach, które ATA uwzględnia wielkość liter Zobacz Następująca lista.
 
 ![Profil użytkownika](media/user-profile.png)
 
@@ -107,7 +107,7 @@ W profilu komputera usługa ATA wyświetla ogólne informacje, takie jak ostatni
 
 Usługa ATA zapewnia dodatkowe informacje na temat jednostek (komputerów, urządzeń i użytkowników) na następujących stronach: Podsumowanie, Działania i Podejrzane działania.
 
-Profil, który nie mógł zostać całkowicie rozwiązany przez usługę ATA, zostanie oznaczony ikoną koła wypełnionego do połowy umieszczoną obok niego.
+Profil usługi ATA nie mogło zostać całkowicie rozwiązany jest identyfikowany ikoną koła wypełnionego do połowy obok niej.
 
 
 ![Obraz nierozwiązanego profilu usługi ATA](media/ATA-Unresolved-Profile.jpg)
@@ -138,7 +138,7 @@ Grupy na poniższej liście są uważane za **wrażliwe** przez usługę ATA. Ka
 
 ### <a name="mini-profile"></a>Mini profil
 
-W dowolnym miejscu w konsoli, gdzie wyświetlana jest pojedyncza jednostka, taka jak użytkownik lub komputer, umieszczenie wskaźnika myszy na jednostce spowoduje automatyczne otwarcie mini profilu zawierającego następujące informacje, jeśli są dostępne:
+Jeśli umieść kursor nad jednostki, w dowolnym miejscu konsoli w przypadku, gdy jest pojedynczą jednostką przedstawiony przykład użytkownika lub komputera, mini profilu zawierającego automatycznie otwiera wyświetlanie następujące informacje, jeśli są dostępne:
 
 ![Obraz mini profilu usługi ATA](media/ATA-mini-profile.jpg)
 

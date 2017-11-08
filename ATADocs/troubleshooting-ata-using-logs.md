@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: b8ad5511-8893-4d1d-81ee-b9a86e378347
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 45c4016ca67e08909e2709d3c60fdc484be1e5ee
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 02cf0ce0f80dbb61c2326088b20c83ef403b2246
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -41,7 +41,7 @@ Brama usługi ATA ma następujące dzienniki:
 
 -   **Microsoft.Tri.Gateway-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
     Po każdym uruchomieniu bramy usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do uzyskiwania informacji o nowych błędach lub problemach dotyczących bramy usługi ATA (pogrupowane błędy jest łatwiej odczytywać i szybko sprawdzać, czy wystąpiły nowe problemy).
--   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany w procesie aktualizatora bramy, który jest odpowiedzialny za aktualizowanie bramy, jeśli został skonfigurowany do automatycznego działania. W przypadku uproszczonej bramy usługi ATA proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów uproszczonej bramy usługi ATA.
+-   **Microsoft.Tri.Gateway.Updater.log** — ten dziennik jest używany przez proces aktualizacji bramy jest odpowiedzialny za aktualizację bramy usługi ATA, jeśli jest odpowiednio skonfigurowany automatycznie. W przypadku uproszczonej bramy usługi ATA proces aktualizatora bramy jest również odpowiedzialny za ograniczenia zasobów uproszczonej bramy usługi ATA.
 -   **Microsoft.Tri.Gateway.Updater-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie podobne błędy i wyjątki. Po każdym uruchomieniu aktualizatora usługi ATA tworzony jest pusty plik, który jest następnie co minutę aktualizowany. Umożliwia zorientowanie się, czy wystąpiły nowe błędy lub problemy związane z aktualizatorem usługi ATA. Błędy są grupowane w celu ułatwienia szybkiego rozpoznania wykrycia nowych błędów lub problemów.
 
 > [!NOTE]
@@ -61,7 +61,7 @@ Centrum usługi ATA ma następujące dzienniki:
 -   **Microsoft.Tri.Center-Errors.log** — ten dziennik zawiera tylko błędy wykryte przez centrum usługi ATA. Służy on głównie do przeprowadzania kontroli kondycji i badania problemów, które muszą zostać skorelowane z określonymi godzinami.
 
 -   **Microsoft.Tri.Center-ExceptionStatistics.log** — w tym dzienniku grupowane i zliczane są wszystkie błędy i wyjątki.
-    Po każdym uruchomieniu centrum usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Służy on głównie do rozpoznania, czy wystąpiły nowe błędy lub problemy dotyczące centrum usługi ATA — pogrupowane błędy można łatwiej odczytać i szybciej zorientować się, czy pojawiły się nowe błędy lub problemy.
+    Po każdym uruchomieniu centrum usługi ATA tworzony jest pusty plik, który jest następnie aktualizowany co minutę. Głównie jest zrozumienie, jeśli istnieją nowych błędach lub problemach dotyczących Centrum usługi ATA — pogrupowane błędy jest łatwiej szybko zrozumieć, jeśli istnieje nowy błędu lub problemu.
 
 > [!NOTE]
 > Maksymalny rozmiar pierwszych trzech plików dziennika wynosi 50 MB. Po osiągnięciu tego rozmiaru tworzony jest nowy plik, a nazwa poprzedniego jest zmieniana zgodnie ze wzorcem „&lt;oryginalna nazwa pliku&gt;-Archived-00000”, gdzie numer jest zwiększany po każdej zmianie nazwy. Domyślnie, jeśli istnieje więcej niż 10 plików tego samego typu, najstarsze są usuwane.

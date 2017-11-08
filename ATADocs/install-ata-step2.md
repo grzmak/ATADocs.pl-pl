@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/9/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: e1c5ff41-d989-46cb-aa38-5a3938f03c0f
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 6a2e559f5aef382230476dde44e8118f2f26b3cf
-ms.sourcegitcommit: e9f2bfd610b7354ea3fef749275f16819d60c186
+ms.openlocfilehash: c4cd30446193ff2d9ab4069b1312593a2102282a
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -43,9 +43,9 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
     |**Hasło** (wymagane)|Wprowadź hasło użytkownika tylko do odczytu, na przykład: **Rysik1**.|
     |**Domena** (wymagana)|Wprowadź domenę użytkownika tylko do odczytu, na przykład: **contoso.com**. **Uwaga:** należy wprowadzić pełną nazwę FQDN domeny, w której znajduje się użytkownik. Na przykład jeśli konto użytkownika znajduje się w domenie corp.contoso.com, należy wprowadzić `corp.contoso.com` not contoso.com|
 
-2. Możesz kliknąć pozycję **Testuj połączenie**, aby przetestować łączność z domeną i sprawdzić, czy podane poświadczenia umożliwiają uzyskiwanie dostępu. Ta opcja zadziała tylko, jeśli centrum usługi ATA ma łączność z domeną.   
+2. Możesz kliknąć pozycję **Testuj połączenie**, aby przetestować łączność z domeną i sprawdzić, czy podane poświadczenia umożliwiają uzyskiwanie dostępu. To działanie, jeśli Centrum usługi ATA ma łączności z domeną.    
 
-    Po zapisaniu wiadomość powitalna w konsoli zmieni się na następującą: ![ATA welcome stage 1 finished (ATA — zapraszamy, ukończono etap 1)](media/ATA_1.7-welcome-provide-username-finished.png)
+    Po zapisaniu, komunikat powitalny, w konsoli zmieni się na następujący komunikat: ![ATA Witamy etap 1 Zakończono](media/ATA_1.7-welcome-provide-username-finished.png)
 
 3. W konsoli kliknij opcję **Download Gateway setup and install the first Gateway** (Pobierz instalator bramy i zainstaluj pierwszą bramę), aby kontynuować.
 

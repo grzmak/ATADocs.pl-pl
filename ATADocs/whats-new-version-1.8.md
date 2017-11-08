@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 2793a602a0cd0fb9902197acd45dd5bdd4612ea4
-ms.sourcegitcommit: 654500928025e3cb127e095c17cc1d6444defd3a
+ms.openlocfilehash: 71e7f723d02b4e86f1799e5a92998363766de7a2
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/03/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 
@@ -133,7 +133,7 @@ W systemie Windows Server 2016 Core błąd może nie zostać wyświetlony, ale p
 
 **Opis elementu**: aktualizowanie 1,8 aktualizacji 1 z resetowaniem 1,8 raporty ustawienia harmonogramu.
 
-**Obejście**: przed zaktualizowaniem 1,8 aktualizacji 1, Utwórz kopię ustawień raportu i wprowadź je ponownie, również być można to zrobić za pomocą skryptu, aby uzyskać więcej informacji, zobacz [eksportowania i importowania konfiguracji usługi ATA](ata-configuration-file.md).
+**Obejście**: przed zaktualizowaniem 1,8 aktualizacji 1, Utwórz kopię ustawień raportu i wprowadź je ponownie, może to być również za pomocą skryptu, aby uzyskać więcej informacji, zobacz [eksportowania i importowania konfiguracji usługi ATA](ata-configuration-file.md).
 
 
 ## <a name="see-also"></a>Zobacz też

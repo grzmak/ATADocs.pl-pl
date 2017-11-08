@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 27b139e5-12b9-4953-8f53-eb58e8ce0038
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: c5beb4868fb8ced42457a8cadd1123956dd69ad7
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 47a8b5c52bf978d5e07007a3402a567be39e2157
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="whats-new-in-ata-version-16"></a>Co nowego w wersji 1.6 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
@@ -103,14 +103,14 @@ Podczas aktualizowania usługi ATA do wersji 1.6 proces aktualizacji może zako�
 
 Może również zostać wyświetlony ten błąd: System.ArgumentNullException: Wartość nie może być pusta.
     
-Jeśli zostanie wyświetlony jeden z tych błędów, zastosuj poniższe obejście.
+Jeśli zostanie wyświetlony jeden z tych błędów, zastosuj poniższe obejście:
 
 **Obejście**: 
 
 1.  Przenieś folder „data_old” do folderu tymczasowego (zazwyczaj znajdującego się w folderze %ProgramFiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin).
 2.  Odinstaluj centrum usługi ATA w wersji 1.5 i usuń wszystkie dane z bazy danych.
 ![Odinstalowywanie usługi ATA w wersji 1.5](http://i.imgur.com/x4nJycx.png)
-3.  Zainstaluj ponownie centrum usługi ATA w wersji 1.5. Upewnij się, że używasz takiej samej konfiguracji jak w poprzedniej instalacji usługi ATA w wersji 1.5 (certyfikaty, adresy IP, ścieżka bazy danych itp.).
+3.  Zainstaluj ponownie Centrum usługi ATA w wersji 1.5. Upewnij się, że używasz takiej samej konfiguracji jak w poprzedniej instalacji usługi ATA w wersji 1.5 (certyfikaty, adresy IP, ścieżka bazy danych itp.).
 4.  Zatrzymaj poniższe usługi w następującej kolejności:
     1.  Microsoft Advanced Threat Analytics Center
     2.  Baza danych MongoDB
@@ -120,19 +120,19 @@ Jeśli zostanie wyświetlony jeden z tych błędów, zastosuj poniższe obejści
     2.  Microsoft Advanced Threat Analytics Center
 7.  Przejrzyj dzienniki, aby sprawdzić, czy produkt działa bez błędów.
 8.  [Pobierz](http://aka.ms/ataremoveduplicateprofiles "Pobierz") narzędzie „RemoveDuplicateProfiles.exe” i skopiuj je do głównej ścieżki instalacji (%ProgramFiles%\Microsoft Advanced Threat Analytics\Center).
-9.  W wierszu polecenia z podwyższonym poziomem uprawnień uruchom narzędzie „RemoveDuplicateProfiles.exe” i zaczekaj, aż pomyślnie zakończy działanie.
+9.  W wierszu polecenia z podwyższonym poziomem uprawnień, uruchom `RemoveDuplicateProfiles.exe` i poczekaj, aż zostanie ukończone pomyślnie.
 10. W tym miejscu: …\Microsoft Advanced Threat Analytics\Center\MongoDB\bin katalog: **Mongo ATA** wpisz następujące polecenie:
 
-    db.SuspiciousActivities.remove({ "_t" : "RemoteExecutionSuspiciousActivity", "DetailsRecords" : { "$elemMatch" : { "ReturnCode" : null } } }, { "_id" : 1 });
+          db.SuspiciousActivities.remove({ "_t" : "RemoteExecutionSuspiciousActivity", "DetailsRecords" : { "$elemMatch" : { "ReturnCode" : null } } }, { "_id" : 1 });
 
 ![Obejście aktualizacji](http://i.imgur.com/Nj99X2f.png)
 
-Powinno to spowodować zwrócenie wartości WriteResult({ "nRemoved" : XX }), gdzie „XX” oznacza liczbę podejrzanych działań, które zostały usunięte. Jeśli liczba jest większa niż 0, zamknij wiersz polecenia i kontynuuj proces aktualizacji.
+Powinny zostać zwrócone `WriteResult({ "nRemoved" : XX })` gdzie "XX" oznacza liczbę podejrzanych działań, które zostały usunięte. Jeśli liczba jest większa niż 0, zamknij wiersz polecenia i kontynuuj proces aktualizacji.
 
 
 ### <a name="net-framework-461-requires-restarting-the-server"></a>Platforma .Net Framework 4.6.1 wymaga ponownego uruchomienia serwera
 
-W pewnych sytuacjach instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Zwróć uwagę, że kliknięcie pozycji OK w oknie dialogowym **Instalacja programu Microsoft Advanced Threat Analytics Center** automatycznie spowoduje ponowne uruchomienie serwera. Jest to szczególnie ważne podczas instalowania bramy ATA Lightweight Gateway na kontrolerze domeny, ponieważ przed rozpoczęciem instalacji warto zaplanować okno obsługi.
+W pewnych sytuacjach instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Zwróć uwagę, że kliknięcie pozycji OK w **Instalator programu Microsoft Advanced Threat Analytics Center** okna dialogowego spowoduje automatyczne ponowne uruchomienie serwera. Jest to szczególnie ważne podczas instalowania bramy ATA Lightweight Gateway na kontrolerze domeny, ponieważ przed rozpoczęciem instalacji warto zaplanować okno obsługi.
     ![Ponowne uruchomienie platformy .Net Framework](media/ata-net-framework-restart.png)
 
 ### <a name="historical-network-activities-no-longer-migrated"></a>Historyczne działania sieciowe nie są już poddawane migracji
