@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 248866ae38040493fd9da9197f2a22496383f884
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: f35c495193806f1c1ccc00800402d9b0aca36982
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/06/2017
 Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji znajdują się w [przewodniku migracji dla usługi ATA 1.8](ata-update-1.8-migration-guide.md).
 
 > [!IMPORTANT] 
-> Jeśli korzystasz z systemu Windows 2012 R2, zainstaluj aktualizację KB2934520 na serwerze centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji. W przeciwnym razie ta aktualizacja zostanie zainstalowana podczas instalacji usługi ATA, wymagając ponownego uruchomienia komputera.
+> Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
 
 ## <a name="step-1-download-and-install-the-ata-center"></a>Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
@@ -42,22 +42,22 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 
 1.  Pobierz usługę ATA z [Centrum usługi licencjonowania zbiorowego firmy Microsoft](https://www.microsoft.com/Licensing/servicecenter/default.aspx), [Centrum ewaluacji TechNet](http://www.microsoft.com/evalcenter/) lub z [MSDN](https://msdn.microsoft.com/subscriptions/downloads).
 
-2.  Zaloguj się na komputerze, na którym instalujesz centrum usługi ATA, jako użytkownik, który jest członkiem lokalnej grupy administratorów.
+2.  Zaloguj się do komputera, na którym instalujesz Centrum usługi ATA jako użytkownik, który jest członkiem lokalnej grupy administratorów.
 
 3.  Uruchom plik **Microsoft ATA Center Setup.EXE**, a następnie postępuj zgodnie z komunikatami kreatora instalacji.
 
 > [!NOTE]   
 > Pamiętaj, aby uruchomić plik instalacyjny z dysku lokalnego, a nie z zainstalowanego pliku ISO. Pozwoli to na uniknięcie problemów w przypadku, gdy w ramach instalacji jest wymagany ponowny rozruch.   
 
-4.  Jeśli nie zainstalowano platformy Microsoft .Net Framework, po rozpoczęciu instalacji otrzymasz monit o jej zainstalowanie. Po zakończeniu instalacji platformy .Net Framework może pojawić się prośba o ponowne uruchomienie.
+4.  Jeśli nie zainstalowano programu Microsoft .net Framework, są monit o jej zainstalowanie po rozpoczęciu instalacji. Po zakończeniu instalacji platformy .Net Framework może pojawić się prośba o ponowne uruchomienie.
 5.  Na stronie **Zapraszamy** wybierz język do zastosowania na ekranach instalacji usługi ATA i kliknij przycisk **Dalej**.
 
-6.  Przeczytaj Postanowienia licencyjne dotyczące oprogramowania firmy Microsoft. Jeśli je akceptujesz, kliknij pole wyboru, a następnie kliknij przycisk **Dalej**.
+6.  Przeczytaj postanowienia licencyjne dotyczące oprogramowania firmy Microsoft i, jeśli akceptujesz jej warunki, zaznacz pole wyboru, a następnie kliknij przycisk **dalej**.
 
-7.  Zaleca się ustawienie automatycznej aktualizacji usługi ATA. Jeśli system Windows nie został skonfigurowany do takiego działania na tym komputerze, zobaczysz ekran **Skorzystaj z usługi Microsoft Update do zapewnienia bezpieczeństwa i aktualizowania komputera**. 
+7.  Zaleca się ustawienie automatycznej aktualizacji usługi ATA. Jeśli system Windows nie jest skonfigurowany w tym celu na komputerze, możesz uzyskać **Użyj usługi Microsoft Update, aby chronić komputer i aktualne** ekranu. 
     ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png)
 
-8. Wybierz opcję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**. W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak wspomniano w tym miejscu. 
+8. Wybierz opcję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**. To można dostosować ustawienia systemu Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano poniżej. 
 
     ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
@@ -65,9 +65,9 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 
     |Pole|Opis|Komentarze|
     |---------|---------------|------------|
-    |Ścieżka instalacji|Lokalizacja, w której zostanie zainstalowane centrum usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center|Pozostaw wartość domyślną.|
-    |Ścieżka danych bazy danych|Lokalizacja, w której zostaną umieszczone pliki bazy danych MongoDB. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|Zmień lokalizację na taką, w której będzie wystarczająca ilość miejsca do przechowywania powiększającej się bazy danych na podstawie ustalonego rozmiaru. **Uwaga:** <ul><li>W środowiskach produkcyjnych należy użyć dysku z wystarczającą ilością miejsca, które zostało ustalone podczas planowania pojemności.</li><li>W przypadku dużych wdrożeń baza danych powinna znajdować się na oddzielnym dysku fizycznym.</li></ul>Aby uzyskać informacje dotyczące ustalania rozmiaru, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).|
-    |Certyfikat SSL centrum usługi|Jest to certyfikat, który będzie używany przez konsolę usługi ATA i centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym. Zwróć uwagę na to, że jest dostępna opcja utworzenia certyfikatu z podpisem własnym.|
+    |Ścieżka instalacji|Jest to lokalizacja, w którym zainstalowano Centrum usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center|Pozostaw wartość domyślną.|
+    |Ścieżka danych bazy danych|Jest to lokalizacja, w którym znajdują się pliki bazy danych MongoDB. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|Zmień lokalizację na taką, w której będzie wystarczająca ilość miejsca do przechowywania powiększającej się bazy danych na podstawie ustalonego rozmiaru. **Uwaga:** <ul><li>W środowisku produkcyjnym należy używać dysku, który ma za mało miejsca na podstawie podczas planowania pojemności.</li><li>W przypadku dużych wdrożeń baza danych powinna znajdować się na oddzielnym dysku fizycznym.</li></ul>Aby uzyskać informacje dotyczące ustalania rozmiaru, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).|
+    |Certyfikat SSL centrum usługi|Jest to certyfikat, który jest używany przez usługę konsoli usługi ATA i Centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym. Istnieje możliwość utworzenia certyfikatu z podpisem własnym.|
         
     ![Obraz przedstawiający konfigurowanie centrum usługi ATA](media/ATA-Center-Configuration.png)
 
@@ -83,8 +83,8 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
     -   Certyfikaty z podpisem własnym (jeśli zostały wybrane podczas instalacji)
 
 11.  Po zakończeniu instalacji kliknij przycisk **Uruchom**, aby otworzyć konsolę usługi ATA i zakończyć instalację na stronie **Konfiguracja**.
-W tym momencie zostanie automatycznie wyświetlona strona ustawień **Ogólne** umożliwiająca kontynuowanie konfiguracji i wdrażania bram usługi ATA.
-Ponieważ logujesz się do witryny za pomocą adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem. Jest to normalne zachowanie. Możesz kliknąć przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
+W tym momencie zostanie wyświetlona automatycznie **ogólne** strony ustawień umożliwiająca kontynuowanie konfiguracji i wdrażania bram usługi ATA.
+Ponieważ logujesz się do witryny przy użyciu adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem. jest to normalne, i kliknij przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
 
 ### <a name="validate-installation"></a>Weryfikowanie instalacji
 

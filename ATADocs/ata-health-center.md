@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: d6c783b2-46c5-4211-b21a-d6b17f08d03d
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 00576915776e495c1c0229e3632ef4390919d017
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: e5009d126f3c1b9d73f064787049068b071c5319
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -39,14 +39,14 @@ Aby sprawdzić ogólną kondycję systemu, kliknij ikonę centrum kondycji na pa
 
 -   **Otwórz**: Na tej liście są wyświetlane wszystkie nowe podejrzane działania.
 
--   **Zamknij**: Służy do śledzenia podejrzanych działań, które zostały zidentyfikowane i zbadane, a następnie naprawione lub uniemożliwione.
+-   **Zamknij**: służy do śledzenia podejrzanych działań, które zidentyfikowane, zbadane i naprawione lub uniemożliwione.
 
     > [!NOTE]
-    > Usługa ATA może ponownie otworzyć zamkniętego działania, jeśli jest to samo działanie ponownie w krótkim czasie.
+    > Usługa ATA może ponownie otworzyć zamknięte działanie w przypadku wykrycia tego samego działania ponownie w krótkim czasie.
 
--   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Oznacza to, że jeśli istnieje podobny alert, usługa ATA nie otworzy go ponownie. Jeśli jednak alertu nie będzie przez 7 dni, a następnie pojawi się on ponownie, znów go zobaczysz.
+-   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. W przypadku podobnych alertów usługi ATA nie otwórz go ponownie. Jednak jeśli alert zatrzymuje na siedem dni, a następnie pojawia się ponownie, zostanie wyświetlony alert ponownie.
 
-- **Usuń**: Jeśli usuniesz alert, zostanie on usunięty z systemu, z bazy danych i NIE BĘDZIE można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
+- **Usuń**: Jeśli usuniesz alertu, zostaje usunięte z systemu z bazy danych i nie można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
 
 
 

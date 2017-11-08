@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/25/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 2f720118b1d9ac08f26b7057e5c7b6706ff4b0b1
-ms.sourcegitcommit: 0cc999b20e919abe4d6edaedee78185788a3e3b9
+ms.openlocfilehash: d0d7ce6aae1bb59d266ddc0f7162ecfbc477b78a
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -56,13 +56,13 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
     > [!NOTE]
     > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
 
--   Nie należy instalować programu Microsoft Message Analyzer na bramie usługi ATA lub bramy Lightweight. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. Jeśli nie, brama zatrzymuje przechwytywanie ruchu. Należy pamiętać, że uruchomienie programu Wireshark na uproszczonej bramie usługi ATA nie zakłóca pracy uproszczonej bramy usługi ATA.
+-   Nie należy instalować programu Microsoft Message Analyzer na bramie usługi ATA lub bramy Lightweight. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. Jeśli nie, brama zatrzymuje przechwytywanie ruchu. Uruchamianie programu Wireshark na bramy ATA Lightweight Gateway nie zakłóca bramy ATA Lightweight Gateway.
 
--    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Umożliwia to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) tematu.
+-    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Umożliwia to wykrywanie zbiorczego usuwania obiektów w domenie przez usługę ATA. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
 
 -   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowana jako użytkownika wystawionego jako przynęta usługi ATA. Do skonfigurowania użytkownika wystawionego jako przynęta, potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [wykluczenia adresów IP, konfigurowanie i użytkownika wystawionego jako przynęta](install-ata-step7.md).
 
--   Opcjonalnie: Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, ATA umożliwia zdarzeń systemu Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 zwiększyć ataków typu Pass--Hash, ataki Siłowe, modyfikację poufnych grup i Związane wystawionym jako przynęta wykryć tokenów. Można je odbierać z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
+-   Opcjonalnie: Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, ATA umożliwia zdarzeń systemu Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 zwiększyć ataków typu Pass--Hash, ataki Siłowe, modyfikację poufnych grup i Związane wystawionym jako przynęta wykryć tokenów. Zdarzenia te mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 
 ## <a name="ata-center-requirements"></a>Wymagania centrum usługi ATA
@@ -185,7 +185,7 @@ Brama usługi ATA wymaga co najmniej jednej karty administracyjnej i co najmniej
         > [!NOTE]
         > Jeśli brama usługi ATA jest elementem członkowskim domeny, te ustawienia mogą zostać skonfigurowane automatycznie.
 
--   **Karta przechwytywania** — będzie używana do przechwytywania ruchu do i z kontrolerów domeny.
+-   **Karta przechwytywania** — używana do przechwytywania ruchu do i z kontrolerów domeny.
 
     > [!IMPORTANT]
     > -   Skonfiguruj funkcję dublowania portów dla karty przechwytywania jako miejsce docelowe ruchu sieciowego kontrolera domeny. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md). Zazwyczaj należy współpracować z zespołem sieci lub wirtualizacji w celu skonfigurowania funkcji dublowania portów.
@@ -239,7 +239,7 @@ Podczas instalacji instalowany jest program .Net Framework 4.6.1, który może s
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 
-Brama ATA Lightweight Gateway wymaga co najmniej dwa rdzenie i 6 GB pamięci RAM zainstalowanych na kontrolerze domeny.
+Uproszczona brama usługi ATA wymaga co najmniej 2 rdzeni i 6 GB pamięci RAM zainstalowanych na kontrolerze domeny.
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** uproszczonej bramy usługi ATA na wartość **Wysoka wydajność**.
 Uproszczoną bramę usługi ATA można wdrożyć na kontrolerach domeny o różnych obciążeniach i rozmiarach, w zależności od ilości ruchu sieciowego w kontrolerach domeny oraz ilości zasobów zainstalowanych w danym kontrolerze domeny.
 

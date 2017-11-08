@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/23/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 09936cf9f86711ea6d48d0571178d2387694d412
-ms.sourcegitcommit: 835ea2b8190eb753aaf8d400531040ce1845d75a
+ms.openlocfilehash: f13416c4179d65ee8096d246ea92969b1cf9af43
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -62,7 +62,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.Threading.Tasks.TaskCanceledException: Zadanie zostało anulowane|Upłynął limit czasu procesu wdrażania, ponieważ nie może on uzyskać dostępu do centrum usługi ATA.|1.    Sprawdź łączność sieciową z centrum usługi ATA, przechodząc do niego przy użyciu jego adresu IP. <br></br>2.    Sprawdź konfigurację serwera proxy lub zapory.|
 |System.Net.Http.HttpRequestException: Wystąpił błąd podczas wysyłania żądania. ---> System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane jest uwierzytelnianie serwera proxy.|Upłynął limit czasu procesu wdrażania, ponieważ nie mógł on uzyskać dostępu do centrum usługi ATA ze względu na błędną konfigurację serwera proxy.|Wyłącz konfigurację serwera proxy przed przystąpieniem do wdrożenia, a następnie ponownie włącz konfigurację serwera proxy. Możesz też skonfigurować wyjątek na serwerze proxy.|
 |System.Net.Sockets.SocketException: Istniejące połączenie zostało zamknięte przez hosta zdalnego||Skorzystaj z jednej z następujących opcji: </br>Włącz szyfrowanie TLS 1.0 na bramie ATA </br>Włącz protokół TLS 1.2 na platformie .net, ustawiając klucze rejestru, aby użyć wartości domyślnych systemu operacyjnego dla protokołu SSL i TLS, w następujący sposób:</br> `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br> `[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001`</br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001` </br>`[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319] " SchUseStrongCrypto"=dword:00000001`|
-|Błąd [\[] DeploymentModel [\]] uwierzytelniania zarządzania nie powiodło się [\[] CurrentlyLoggedOnUser =<domain>\<nazwa użytkownika > Stan = wyjątek FailedAuthentication = [\]]|Proces wdrażania bramy usługi ATA lub bramy ATA Lightweight Gateway nie można pomyślnie uwierzytelnić Centrum usługi ATA|Otwórz przeglądarkę z komputera, na którym nie powiodło się proces wdrażania i zobacz, jeśli można nawiązać połączenia z konsolą usługi ATA. </br>Jeśli nie, Uruchom Rozwiązywanie problemów, aby zobaczyć, dlaczego przeglądarka nie może uwierzytelnić Centrum usługi ATA. </br>Czynności do wykonania:</br>Konfiguracja serwera proxy</br>Problemy z sieci</br>Ustawienia zasad grupy dla uwierzytelniania na tej maszynie, która różni się od centrum usługi ATA.|
+|Błąd [\[] DeploymentModel [\]] uwierzytelniania zarządzania nie powiodło się [\[] CurrentlyLoggedOnUser =<domain>\<nazwa użytkownika > Stan = wyjątek FailedAuthentication = [\]]|Proces wdrażania bramy usługi ATA lub bramy ATA Lightweight Gateway nie można pomyślnie uwierzytelnić Centrum usługi ATA|Otwórz przeglądarkę z komputera, na którym nie powiodło się proces wdrażania i zobacz, jeśli można nawiązać połączenia z konsolą usługi ATA. </br>Jeśli nie, Uruchom Rozwiązywanie problemów, aby zobaczyć, dlaczego przeglądarka nie może uwierzytelnić Centrum usługi ATA. </br>Czynności do wykonania: </br>Konfiguracja serwera proxy</br>Problemy z sieci</br>Ustawienia zasad grupy dla uwierzytelniania na tej maszynie, która różni się od centrum usługi ATA.|
 
 
 

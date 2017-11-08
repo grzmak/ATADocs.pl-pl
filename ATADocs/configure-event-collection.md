@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 10/23/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3ebf3165973c14c45d33c95769f0e6ae47e3e795
-ms.sourcegitcommit: 835ea2b8190eb753aaf8d400531040ce1845d75a
+ms.openlocfilehash: 482b16462d115c7bcc2854d30c2ef19fce37f2c0
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -35,17 +35,17 @@ W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje zdarzeń syst
 
 ### <a name="wef-configuration-for-ata-gateways-with-port-mirroring"></a>Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
-Po skonfigurowaniu dublowania portów z kontrolerów domeny z bramą usługi ATA postępuj zgodnie z poniższymi instrukcjami, aby skonfigurować przekazywanie zdarzeń systemu Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
+Po skonfigurowaniu funkcji dublowania portów z kontrolerów domeny do bramy usługi ATA wykonaj następujące instrukcje dotyczące konfigurowania funkcji przekazywania zdarzeń systemu Windows za pomocą konfiguracji źródła zainicjowane. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
 **Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
 
-W tym scenariuszu zakładamy, że brama usługi ATA należy do domeny.
+W tym scenariuszu założono, że bramy usługi ATA jest elementem członkowskim domeny.
 
-1.  Otwórz narzędzie Użytkownicy i komputery usługi Active Directory, przejdź do folderu **BuiltIn** i dwukrotnie kliknij grupę **Czytelnicy dzienników zdarzeń**. 
+1.  Otwórz przystawkę Użytkownicy usługi Active Directory i komputery, przejdź do **wbudowane** folder i kliknij dwukrotnie **Czytelnicy dzienników zdarzeń**. 
 2.  Wybierz **członków**.
 4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
-Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dzienników zdarzeń** musisz ponownie uruchomić kontrolery domeny, aby zmiana zaczęła obowiązywać.
+Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, ponownego uruchamiania kontrolerów domeny, aby zmiany zaczęły obowiązywać.
 
 **Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji** 
 > [!Note] 
@@ -57,11 +57,11 @@ Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dz
 
  ![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
 
-4.  Kliknij dwukrotnie opcję **Konfiguruj docelowego Menedżera subskrypcji**.
+4.  Kliknij dwukrotnie **konfigurowanie docelowej subskrypcji Menedżera**.
    
     1.  Wybierz opcję **Włączono**.
-    2.  W obszarze **Opcje** kliknij opcję **Pokaż**.
-    3.  W obszarze **Menedżerowie subskrypcji** wprowadź poniższą wartość, a następnie kliknij przycisk **OK**:  *Server = http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10* (na przykład: Server = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10)
+    2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
+    3.  W obszarze **SubscriptionManagers**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server = http: / /<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC, Odśwież = 10* () For example: serwer = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)
  
    ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
    
@@ -72,10 +72,10 @@ Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dz
 
 1.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *wecutil qc*
 2.  Otwórz **Podgląd zdarzeń**. 
-3.  Kliknij prawym przyciskiem myszy węzeł **Subskrypcje** i wybierz polecenie **Utwórz subskrypcję**. 
+3.  Kliknij prawym przyciskiem myszy **subskrypcje** i wybierz **Utwórz subskrypcję**. 
 
    1.   Wprowadź nazwę i opis subskrypcji. 
-   2.   Upewnij się, że w obszarze **Dziennik docelowy** jest zaznaczona opcja **Zdarzenia przesyłane dalej**. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
+   2.   Dla **Dziennik docelowy**, upewnij się, że **zdarzenia przekazane** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
    3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
         2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
@@ -91,12 +91,12 @@ Pamiętaj, że po dodaniu elementu **Usługa sieciowa** do grupy **Czytelnicy dz
 
  ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
 
-   5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz pozycję **Stan czasu wykonywania**, aby zobaczyć, czy występują problemy dotyczące stanu. 
+   5.   Kliknij prawym przyciskiem myszy utworzona subskrypcja i wybierz **stanu w czasie wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
    6.   Po kilku minutach sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w bramie usługi ATA.
 
 
-Aby uzyskać więcej informacji, zobacz [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
+Aby uzyskać więcej informacji, zobacz: [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)
 
 ## <a name="see-also"></a>Zobacz też
 - [Instalowanie usługi ATA](install-ata-step1.md)
-- [Zapoznaj się z forum usługi ATA!](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
+- [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)

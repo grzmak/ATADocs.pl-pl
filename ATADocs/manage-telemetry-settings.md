@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a164179261dd5a50df973fab89be7ddce99f8c47
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 2f5db3fad62b0fe2243b5bbd82677426ee6fe90c
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/06/2017
 Usługa Advanced Threat Analytics (ATA) zbiera anonimowe dane telemetryczne o usłudze ATA i przesyła jest za pośrednictwem połączenia HTTPS do serwerów firmy Microsoft.  Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA.
 
 ## <a name="data-collected"></a>Zbierane dane
-Zbierane są następujące anonimowe dane:
+Zebrane dane anonimowe zawiera następujące parametry:
 
 -   Liczniki wydajności centrum usługi ATA i bramy usługi ATA
 
@@ -79,7 +79,7 @@ Zbierane są następujące anonimowe dane:
 
     -   Godzina rozpoczęcia i zakończenia
 
-- Adresy URL konsoli ATA — adresy URL używane w konsoli ATA tj. odwiedzone strony w konsoli ATA.
+- Adresy URL konsoli usługi ATA — adresów URL przy użyciu konsoli usługi ATA, są odwiedzane strony w konsoli usługi ATA.
 
 
 ### <a name="disable-data-collection"></a>Wyłączanie zbierania danych

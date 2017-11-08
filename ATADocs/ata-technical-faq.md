@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 8369b6d90268e2886eb6e3e8dbe2c2795195839d
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 25c2defd02e260248d30eb76f6ae297c1b36325f
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -87,7 +87,7 @@ Aby dowiedzieć się, dlaczego konto jest poufne, można przejrzeć jego przynal
 ## <a name="how-do-i-monitor-a-virtual-domain-controller-using-ata"></a>Jak monitorować kontroler domeny za pomocą usługi ATA?
 Większość wirtualnych kontrolerów domeny może być objętych przez uproszczoną bramę usługi ATA. Aby określić, czy uproszczona brama usługi ATA jest odpowiednia dla danego środowiska, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
-Jeśli wirtualny kontroler domeny nie może być objęty przez uproszczoną bramę usługi ATA, możesz zastosować wirtualne lub fizyczne bramy usługi ATA, zgodnie z opisem w sekcji [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).  <br />Najprostszym sposobem jest zainstalowanie wirtualnej bramy usługi ATA na każdym hoście, na którym znajduje się wirtualny kontroler domeny.<br />Jeśli wirtualne kontrolery domeny są przenoszone między hostami, należy wykonać jedną z następujących czynności:
+Jeśli wirtualny kontroler domeny nie może być objęte przez bramy ATA Lightweight Gateway, może mieć albo wirtualne lub fizyczne bramy usługi ATA, zgodnie z opisem w [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).  <br />Najprostszym sposobem jest zainstalowanie wirtualnej bramy usługi ATA na każdym hoście, na którym znajduje się wirtualny kontroler domeny.<br />Jeśli wirtualne kontrolery domeny są przenoszone między hostami, należy wykonać jedną z następujących czynności:
 
 -   Jeśli wirtualny kontroler domeny jest przenoszony na innego hosta, należy wstępnie skonfigurować bramę usługi ATA na tym hoście, aby odbierać ruch z ostatnio przeniesionego wirtualnego kontrolera domeny.
 -   Upewnić się, że wirtualna brama usługi ATA jest powiązana z wirtualnym kontrolerem domeny, tak aby w przypadku jego przeniesienia wirtualna brama usługi ATA była przenoszona razem z nim.
@@ -105,15 +105,15 @@ Usługa ATA wykrywa znane złośliwe ataki oraz techniki, problemy z zabezpiecze
 Pełna lista zagrożeń wykrywanych przez usługę ATA znajduje się w artykule [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md).
 
 ## <a name="what-kind-of-storage-do-i-need-for-ata"></a>Jakiego rodzaju magazynu potrzebuje usługa ATA?
-Firma Microsoft zaleca użycie szybkiego magazynu (nie zaleca się stosowania dysków o prędkości 7200 obr./min) o małych opóźnieniach dostępu do dysku (mniej niż 10 ms). Konfiguracja RAID powinna obsługiwać wysokie obciążenia podczas zapisu danych (nie zaleca się stosowania konfiguracji RAID-5/6 i ich pochodnych).
+Firma Microsoft zaleca szybki magazyn (dyski 7200 OBR nie są zalecane) o małych opóźnieniach dostępu do dysku (mniej niż 10 ms). Konfiguracja RAID powinna obsługiwać wysokie obciążenia podczas zapisu danych (nie zaleca się stosowania konfiguracji RAID-5/6 i ich pochodnych).
 
 ## <a name="how-many-nics-does-the-ata-gateway-require"></a>Jak wiele kart sieciowych wymaga brama usługi ATA?
-Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do łączenia się z siecią wewnętrzną i centrum usługi ATA<br>2. Karta sieciowa, która będzie używana do przechwytywania ruchu sieciowego kontrolera domeny za pomocą funkcji dublowania portów.<br>* Nie dotyczy to uproszczonej bramy usługi ATA, która natywnie wykorzystuje wszystkie karty sieciowe używane przez kontroler domeny.
+Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do łączenia się z siecią wewnętrzną i centrum usługi ATA<br>2. Karta sieciowa, która jest używana do przechwytywania ruchu sieciowego kontrolera domeny za pomocą funkcji dublowania portów.<br>* Nie dotyczy to uproszczonej bramy usługi ATA, która natywnie wykorzystuje wszystkie karty sieciowe używane przez kontroler domeny.
 
 ## <a name="what-kind-of-integration-does-ata-have-with-siems"></a>Jakiego rodzaju integracji używa usługa ATA z rozwiązaniem SIEM?
 Usługa ATA ma dwukierunkową integrację z rozwiązaniem SIEM, zgodnie z poniższym opisem:
 
-1. Usługę ATA można skonfigurować do wysyłania alertu Syslog w razie podejrzanego działania do dowolnego serwera rozwiązania SIEM używającego formatu CEF.
+1. Usługę ATA można skonfigurować do wysyłania alertu Syslog do dowolnego serwera rozwiązania SIEM używającego formatu CEF, po wykryciu podejrzanych działań.
 2. Usługę ATA można skonfigurować do odbierania komunikatów usługi Syslog dotyczących zdarzeń systemu Windows z [tych rozwiązań SIEM](install-ata-step6.md).
 
 ## <a name="can-ata-monitor-domain-controllers-virtualized-on-your-iaas-solution"></a>Czy usługa ATA monitoruje kontrolery domeny zwirtualizowane w rozwiązaniu IaaS?
@@ -128,7 +128,7 @@ To rozwiązanie jest obecnie produktem autonomicznym — nie jest częścią us�
 ## <a name="do-you-have-to-write-your-own-rules-and-create-a-thresholdbaseline"></a>Czy trzeba napisać własne reguły i utworzyć wartość progową/linię bazową?
 W przypadku usługi Microsoft Advanced Threat Analytics nie trzeba tworzyć, a następnie dostosowywać reguł, wartości progowych ani linii bazowych. Usługa ATA analizuje zachowania użytkowników, urządzeń i zasobów oraz ich wzajemne relacje i może szybko wykrywać podejrzane działania i znane ataki. Trzy tygodnie po wdrożeniu usługa ATA zaczyna wykrywać podejrzane zachowania. Natomiast wykrywanie znanych złośliwych ataków i problemów z zabezpieczeniami jest rozpoczynane natychmiast po wdrożeniu usługi ATA.
 
-## <a name="if-you-are-already-breached-will-microsoft-advanced-threat-analytics-be-able-to-identify-abnormal-behavior"></a>Czy usługa Microsoft Advanced Threat Analytics może identyfikować nietypowe zachowanie, jeśli nastąpiło już naruszenie zabezpieczeń?
+## <a name="if-you-are-already-breached-can-microsoft-advanced-threat-analytics-identify-abnormal-behavior"></a>Jeśli nastąpiło już naruszenie zabezpieczeń, można Microsoft Advanced Threat Analytics identyfikować nietypowe zachowanie?
 Tak. Usługa ATA może wykryć podejrzane działania hakera nawet wtedy, gdy zostanie zainstalowana po naruszeniu zabezpieczeń. Usługa ATA obserwuje nie tylko zachowanie użytkowników, ale także działania dotyczące innych użytkowników w systemie zabezpieczeń organizacji. Podczas początkowej analizy nietypowe zachowanie atakującego jest identyfikowane jako „odstające” i zgłaszane przez usługę ATA. Ponadto usługa ATA może wykryć podejrzane działanie, jeśli haker usiłuje ukraść poświadczenia innego użytkownika (np. wykorzystując atak typu Pass-the-Ticket) lub zdalnie wykonać kod na jednym z kontrolerów domeny.
 
 ## <a name="does-this-only-leverage-traffic-from-active-directory"></a>Czy usługa korzysta jedynie z ruchu pochodzącego z usługi Active Directory?
@@ -141,13 +141,13 @@ Dublowanie portów, zwane również funkcją SPAN (Switched Port Analyzer), jest
 Nie. Usługa ATA monitoruje wszystkie urządzenia w sieci wysyłające żądania uwierzytelniania i autoryzacji do usługi Active Directory, w tym urządzenia z systemem innym niż Windows i urządzenia przenośne.
 
 ## <a name="does-ata-monitor-computer-accounts-as-well-as-user-accounts"></a>Czy usługa ATA monitoruje zarówno konta komputerów, jak i konta użytkowników?
-Tak. Kont komputerów (a także innych jednostek) można używać do podejmowania złośliwych działań, dlatego usługa ATA monitoruje zachowanie wszystkich kont komputerów i wszystkie inne jednostki w środowisku.
+Tak. Ponieważ komputera konta (a także innych jednostek) może służyć do wykonywania złośliwych działań, usługa ATA monitoruje zachowanie wszystkich kont komputerów i wszystkie inne jednostki w środowisku.
 
 ## <a name="can-ata-support-multi-domain-and-multi-forest"></a>Czy usługa ATA może obsługiwać wiele domen i wiele lasów?
 Usługa Microsoft Advanced Threat Analytics obsługuje środowiska wielu domen w obrębie granicy pojedynczego lasu. Większa liczba lasów wymaga wdrożenia usługi ATA w każdym lesie.
 
 ## <a name="can-you-see-the-overall-health-of-the-deployment"></a>Czy można przeglądać informacje dotyczące ogólnej kondycji wdrożenia?
-Tak. Można przeglądać informacje dotyczące ogólnej kondycji wdrożenia i konkretne problemy związane z konfiguracją, łącznością itp. oraz otrzymywać alerty w przypadku wystąpienia problemów tego typu.
+Tak, można wyświetlić ogólnej kondycji wdrożenia oraz jak określone problemy związane z konfiguracją, łącznością itp. i są alerty w przypadku występowania.
 
 
 ## <a name="see-also"></a>Zobacz też

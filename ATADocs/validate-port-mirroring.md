@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: ebd41719-c91a-4fdd-bcab-2affa2a2cace
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: b4621aa4deb8ba06bdc5ff3b038fbb26398fce45
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: c0105b940e97a5854d45e147b724f1169c73ad65
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -192,7 +192,7 @@ Przykład sposobu uruchamiania skryptu:
     
     
 ## <a name="validate-port-mirroring-using-net-mon"></a>Weryfikowanie funkcji dublowania portów za pomocą monitora sieci
-1.  Zainstaluj program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) w bramie usługi ATA, którą chcesz zweryfikować.
+1.  Zainstaluj [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865) w bramie usługi ATA, który chcesz zweryfikować.
 
     > [!IMPORTANT]
     > Nie instaluj programu Microsoft Message Analyzer ani żadnego innego oprogramowania służącego do przechwytywania ruchu sieciowego w ramach bramy usługi ATA.

@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 8eefcd45-7a4b-4074-ac5b-1ffc48e6654a
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a1494f0428593ee58c7e1da64192b45c6d006c15
-ms.sourcegitcommit: 470675730967e0c36ebc90fc399baa64e7901f6b
+ms.openlocfilehash: 891ba71bcb8c1ee362b92be2404c65c7b5158055
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="ata-update-to-17-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7
 Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
@@ -30,9 +30,9 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 ## <a name="updating-ata-to-version-17"></a>Aktualizowanie usługi ATA do wersji 1.7
 
 > [!NOTE] 
-> Jeśli usługa ATA nie jest zainstalowana w danym środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.7, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](install-ata-step1.md).
+> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.7 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli została już wdrożona usługa ATA w wersji 1.6, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
+Jeśli masz już usługi ATA w wersji 1.6 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
 > Nie można zainstalować usługi ATA w wersji 1.7 bezpośrednio na usłudze ATA w wersji 1.4 lub 1.5. Należy najpierw zainstalować usługę ATA w wersji 1.6. 
@@ -53,7 +53,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
-    -   Jeśli centrum usługi ATA jest uruchomione jako maszyna wirtualna i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
+    -   Jeśli Centrum usługi ATA jest uruchomione jako maszyny wirtualnej i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
 
     -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, postępuj zgodnie z zalecaną procedurą, aby [utworzyć kopię zapasową bazy danych MongoDB](https://docs.mongodb.org/manual/core/backups/).
 
@@ -61,11 +61,11 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    -  Jeśli aktualizacje automatyczne nie zostały włączone w wersji 1.6, pojawi się monit, aby skonfigurować usługę ATA do używania usługi Microsoft Update w celu zachowania aktualności usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png) W ten sposób dostosujesz ustawienia systemu Windows, zezwalając na aktualizowanie innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano w tym miejscu. 
+    -  Jeśli nie włączysz aktualizacji automatycznych w wersji 1.6, zostanie wyświetlony monit ustawić ATA Użyj usługi Microsoft Update, aby usługa ATA pozostaje aktualne.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    ![Zachowaj ATA aktualny obraz](media/ata_ms_update.png) to można dostosować ustawienia systemu Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano poniżej. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
-    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli wybierzesz przeprowadzenie migracji tylko części danych, wcześniej przechwycone profile ruchu sieciowego i zachowania nie zostaną poddane migracji. Oznacza to, że dopiero po trzech tygodniach zostanie pozyskany pełen profil umożliwiający wykrywanie nietypowego zachowania. Podczas tych trzech tygodni wszystkie pozostałe mechanizmy wykrywania usługi ATA będą działać poprawnie. **Częściowa** migracja danych wymaga mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Szacowana ilość czasu i wymaganego miejsca na dysku, które są wyświetlane na ekranie **Migracja danych**, zależą od ilości ruchu sieciowego przechwyconego wcześniej i zapisanego w poprzednich wersjach usługi ATA. Przed wybraniem opcji **Częściowa** lub **Pełna** koniecznie sprawdź te wymagania.  
+    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli wybierzesz przeprowadzenie migracji tylko części danych, wcześniej przechwycone profile ruchu sieciowego i zachowania nie zostaną poddane migracji. Oznacza to, że ma trzy tygodnie przed wykrywania nietypowe zachowanie ma pełne profilu, aby włączyć wykrywanie nietypowych działań. W tych trzech tygodniach wszystkie wykrycia ATA działać prawidłowo. **Częściowa** migracja danych wymaga mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Szacowana ilość czasu i wymaganego miejsca na dysku, które są wyświetlane na ekranie **Migracja danych**, zależą od ilości ruchu sieciowego przechwyconego wcześniej i zapisanego w poprzednich wersjach usługi ATA. Przed wybraniem opcji **Częściowa** lub **Pełna** koniecznie sprawdź te wymagania.  
     
     ![Migracja danych usługi ATA](media/migration-data-migration17.png)
 
@@ -74,7 +74,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 4.  Po pomyślnym ukończeniu aktualizacji centrum usługi ATA kliknij przycisk **Uruchom**, aby otworzyć ekran **Aktualizacja** w konsoli bram usługi ATA.
     ![Ekran powodzenia aktualizacji](media/migration-center-success17.png)
 
-5.  Jeśli bramy usługi ATA zostały już skonfigurowane do automatycznego aktualizowania, zostaną zaktualizowane na tym etapie. Jeśli nie, kliknij przycisk **Aktualizuj** obok każdej bramy ATA na ekranie **Aktualizacja**.
+5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania one aktualizacji w tym momencie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
   ![Obraz aktualizowania bram](media/migration-update-gw-17.png)
 
   

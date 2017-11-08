@@ -13,18 +13,18 @@ ms.technology:
 ms.assetid: e5a9718c-b22e-41f7-a614-f00fc4997682
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 89d3d80e647e61cded6e2428ed1d1f8905552867
-ms.sourcegitcommit: 42ce07e3207da10e8dd7585af0e34b51983c4998
+ms.openlocfilehash: 540d1cb0754dc9191a985625a8f988cb44c9f000
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="updating-ata-to-version-18"></a>Aktualizowanie usługi ATA do wersji 1.8
 
 > [!NOTE] 
-> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, pobierz pełną wersję usługi ATA, która zawiera wersję 1.8, i postępuj zgodnie ze standardową procedurą instalacji opisaną w artykule [Instalowanie usługi ATA](install-ata-step1.md).
+> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.8 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już wdrożoną usługę ATA w wersji 1.7, ta procedura przeprowadzi Cię przez kroki wymagane do aktualizacji wdrożenia.
+Jeśli masz już usługi ATA w wersji 1,7 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
 >  Do usługi ATA w wersji 1.8 można zaktualizować tylko usługę ATA w wersji 1.7 Update 1 i 1.7 Update 2. Żadnej wcześniejszej wersji usługi ATA nie można bezpośrednio zaktualizować do usługi ATA w wersji 1.8.
@@ -45,7 +45,7 @@ W przypadku wersji do migracji pliku można użyć tylko do aktualizowania z us�
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
-    -   Jeśli centrum usługi ATA jest uruchomione jako maszyna wirtualna i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
+    -   Jeśli Centrum usługi ATA jest uruchomione jako maszyny wirtualnej i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
 
     -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, zobacz artykuł [Odzyskiwanie po awarii](disaster-recovery.md), aby uzyskać informacje o tworzeniu kopii zapasowej bazy danych.
 
@@ -53,14 +53,14 @@ W przypadku wersji do migracji pliku można użyć tylko do aktualizowania z us�
 
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    -  Jeśli aktualizacje automatyczne nie zostały włączone w wersji 1.7, pojawi się monit o skonfigurowanie usługi ATA pod kątem używania usługi Microsoft Update do zachowania aktualności usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png)
+    -  Jeśli aktualizacje automatyczne w wersji 1,7 nie jest włączone, zostanie wyświetlony monit ustawić ATA Użyj usługi Microsoft Update, aby usługa ATA pozostaje aktualne.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    ![Zachowaj aktualny obraz usługi ATA](media/ata_ms_update.png)
      
-     Spowoduje to dostosowanie ustawień systemu Windows w celu włączenia aktualizacji usługi ATA. 
+     To można dostosować ustawienia systemu Windows w celu włączenia aktualizacji usługi ATA. 
     
-    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli zmigrujesz tylko część danych, wszystkie funkcje wykrywania będą działać natychmiast — z wyjątkiem wykrywania nietypowych zachowań, w przypadku którego utworzenie pełnego profilu trwa 3 tygodnie.  
+    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli użytkownik chce migrować tylko częściowe dane, wszystkie wykrycia pracy natychmiast z wyjątkiem wykrywania nietypowe zachowanie, który przyjmuje trzy tygodnie do skonstruowania profilu ukończone.  
     
-    **Częściowa** migracja danych wymaga o wiele mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Zwróć uwagę na szacowaną ilość czasu i wymagane miejsce na dysku wyświetlone na ekranie **Migracja danych**. Te wartości zależą od ilości ruchu sieciowego przechwyconego wcześniej, który został zapisany przez poprzednie wersje usługi ATA. Na przykład na ekranie poniżej przedstawiono migrację danych z bardzo dużej bazy danych:
+    **Częściowa** migracja danych wymaga o wiele mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Zwróć uwagę na szacowaną ilość czasu i wymagane miejsce na dysku wyświetlone na ekranie **Migracja danych**. Te wartości zależą od ilości ruchu sieciowego przechwyconego wcześniej, który został zapisany przez poprzednie wersje usługi ATA. Na przykład na ekranie poniżej możesz sprawdzić migracji danych z dużych bazy danych:
          
     ![Migracja danych usługi ATA](media/migration-data-migration.png)
 
@@ -70,7 +70,7 @@ W przypadku wersji do migracji pliku można użyć tylko do aktualizowania z us�
 
     ![Ekran powodzenia aktualizacji](media/migration-center-success.png)
 
-5.  Jeśli bramy usługi ATA zostały już skonfigurowane do automatycznego aktualizowania, zostaną zaktualizowane na tym etapie. Jeśli nie, kliknij przycisk **Aktualizuj** obok każdej bramy ATA na ekranie **Aktualizacja**.
+5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania one aktualizacji w tym momencie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
   
 ![Obraz przedstawiający zaktualizowane bramy](media/migration-update-gw.png)
 

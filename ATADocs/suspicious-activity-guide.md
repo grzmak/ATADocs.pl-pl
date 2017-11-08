@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 32fe3fa2f5464b0b771491186d0775e9474e5483
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: bff477a66b837d82bb10a43a0dad7d36c6542d9f
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -34,7 +34,7 @@ Po właściwego dochodzenia wszelkich podejrzanych działań mogą być klasyfik
 
 Aby uzyskać więcej informacji na temat pracy z alertami usługi ATA, zobacz [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md).
 
-Aby przekazać pytania lub opinie, skontaktuj się z nami pod adresem [ ATAEval@microsoft.com ](mailto:ATAEval@microsoft.com).
+Pytania lub opinie, skontaktuj się z zespołu usługi ATA na [ ATAEval@microsoft.com ](mailto:ATAEval@microsoft.com).
 
 ## <a name="abnormal-sensitive-group-modification"></a>Nietypowa modyfikacja grupy poufnej
 
@@ -47,7 +47,7 @@ Dla definicji poufnych grup w usłudze ATA, zobacz [Praca z konsolą usługi ATA
 
 
 Wykrywanie polega na [zdarzeń inspekcji na kontrolerach domeny](https://docs.microsoft.com/advanced-threat-analytics/configure-event-collection).
-Za pomocą narzędzia, do którego odwołuje się [ATA inspekcji (AuditPol, zaawansowane wymuszania ustawienia inspekcji, odnajdowanie usługi bramy Lightweight)](https://aka.ms/ataauditingblog) się upewnić się, że domenie kontrolery wymagane zdarzeń inspekcji.
+Aby upewnić się, wymagane zdarzenia inspekcji z kontrolerów domeny, należy użyć narzędzia, do którego odwołuje się [ATA inspekcji (AuditPol, zaawansowane wymuszania ustawienia inspekcji, odnajdowanie usługi bramy Lightweight)](https://aka.ms/ataauditingblog).
 
 **Badanie**
 
@@ -109,7 +109,7 @@ Istnieją trzy typy wykrywania:
 
 1.  Skeleton Key — to złośliwe oprogramowanie, która działa na kontrolerach domeny i umożliwia użycie uwierzytelniania z dowolnego konta do domeny bez uprzedniego uzyskania informacji o jego hasło. Złośliwe oprogramowanie często używa słabszych algorytmów szyfrowania w celu encipher hasła użytkownika na kontrolerze domeny. W tym wykrywania metody szyfrowania wiadomości KRB_ERR z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie.
 
-2.  Bilet Golden — [bilet uwierzytelniania Golden Ticket](#golden-ticket) alertu, metody szyfrowania biletu TGT pola wiadomości TGS_REQ (żądanie obsługi) z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie. Należy pamiętać, że nie jest to oparty na czasie anomalii (tak jak inne wykrywania bilet uwierzytelniania Golden Ticket). Ponadto nie było żadnych żądanie uwierzytelnienia Kerberos skojarzony z żądaniem usługi powyżej, wykrytych przez usługę ATA.
+2.  Bilet Golden — [bilet uwierzytelniania Golden Ticket](#golden-ticket) alertu, metody szyfrowania biletu TGT pola wiadomości TGS_REQ (żądanie obsługi) z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie. To nie jest oparty na czasie anomalii (tak jak inne wykrywania bilet uwierzytelniania Golden Ticket). Ponadto nie było żadnych żądanie uwierzytelniania Kerberos skojarzone z poprzedniego żądania obsługi, wykrytych przez usługę ATA.
 
 3.  Overpass--Hash — typ szyfrowania wiadomości AS_REQ z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie (oznacza to, że komputer został przy użyciu AES).
 
@@ -131,7 +131,7 @@ Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywa
 2.  Golden Ticket — postępuj zgodnie z instrukcjami [bilet uwierzytelniania Golden Ticket](#golden-ticket) podejrzanych działań.   
     Ponadto tworzenie bilet uwierzytelniania Golden Ticket wymaga uprawnień administratora domeny, dlatego wdrożenie [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
-3.  Overpass--Hash — Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Patrz wskazówki w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/). Zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
+3.  Overpass--Hash — Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Zapobiega to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie unieważnia wszystkie Kerberos biletów w tej domenie dlatego należy planować przedtem. Patrz wskazówki w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/). Zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
 ## Bilet uwierzytelniania Golden Ticket<a name="golden-ticket"></a>
 
@@ -139,7 +139,7 @@ Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywa
 
 Osoby atakujące mającego uprawnienia administratora domeny może naruszyć [konto KRBTGT](https://technet.microsoft.com/library/dn745899(v=ws.11).aspx#Sec_KRBTGT). Używane konto KRBTGT, można utworzyć biletu Kerberos przyznania biletu (TGT), udostępnia autoryzacji do dowolnego zasobu i wartość żadnych dowolną wartością czasu wygaśnięcia biletu. Tego BILETU fałszywych nazywa się "Bilet uwierzytelniania Golden" i pozwala osobie atakującej uzyskanie utrwalenie w sieci.
 
-W tym wykrywania alert będzie wyzwalane, gdy bilet Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx) zasady zabezpieczeń.
+W tym wykrywania alertu jest wyzwalane, gdy bilet Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx) zasady zabezpieczeń.
 
 **Badanie**
 
@@ -151,7 +151,7 @@ W tym wykrywania alert będzie wyzwalane, gdy bilet Kerberos przyznania biletu j
 
 **Korygowania**
 
-Zmień hasło biletu przyznania biletu protokołu Kerberos (KRBTGT) dwukrotnie zgodnie z instrukcjami podanymi w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)za pomocą [zresetować hasło konta KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem.  
+Zmień hasło biletu przyznania biletu protokołu Kerberos (KRBTGT) dwukrotnie zgodnie z instrukcjami podanymi w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)za pomocą [zresetować hasło konta KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie KRBTGT dwukrotnie unieważnia wszystkie Kerberos biletów w tej domenie dlatego należy planować przedtem.  
 Ponadto tworzenie bilet uwierzytelniania Golden Ticket wymaga uprawnień administratora domeny, dlatego wdrożenie [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
 ## <a name="honeytoken-activity"></a>Działanie wystawionego jako przynęta
@@ -189,9 +189,9 @@ Skrót użyto z komputera, że wybrany użytkownik jest właścicielem lub regul
 
 **Korygowania**
 
-1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. 
+1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Zapobiega to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. 
 
-2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
+2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie unieważnia wszystkie Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania z [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
 ## <a name="identity-theft-using-pass-the-ticket-attack"></a>Kradzieży tożsamości za pomocą ataku Pass--Ticket
 
@@ -207,16 +207,16 @@ Pass--Ticket to technika penetracja sieci, w którym osoby atakujące kradzieży
 
 **Korygowania**
 
-1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Uniemożliwi to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną.  
+1. Jeśli zaangażowany konta nie jest wielkość liter, następnie zresetować hasło tego konta. Zapobiega to osobie atakującej tworzenie nowych biletów Kerberos z skrót hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną.  
 
-2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie spowoduje unieważnienie wszystkich Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania w [przekazać zalecenia skrótu](http://aka.ms/PtH).
+2. Jeśli jest poufne konto, należy rozważyć zresetowanie konto KRBTGT dwukrotnie jak bilet uwierzytelniania Golden Ticket podejrzanych działań. Resetowanie KRBTGT dwukrotnie unieważnia wszystkie Kerberos biletów w tej domenie dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasło zresetować skrypty teraz dostępne dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowania haseł/kluczy narzędzie konto KRBTGT](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to metoda penetracja sieci, stosuj najlepsze rozwiązania w [przekazać zalecenia skrótu](http://aka.ms/PtH).
 
 ## <a name="malicious-data-protection-private-information-request"></a>Złośliwe żądanie informacji prywatnych z zakresu ochrony danych
 
 **Opis**
 
 Interfejsu API ochrony danych (DPAPI) jest używany przez system Windows do ochrony bezpiecznego hasła zapisane przez przeglądarki, pliki zaszyfrowane i innych poufnych danych. Kontrolery domeny przechowywania kopii zapasowej klucza głównego, który może służyć do odszyfrowywania wszystkich kluczy tajnych zaszyfrowanych za pomocą DPAPI na komputerach przyłączonych do domeny systemu Windows. Atakujący może użyć klucza głównego do odszyfrowania żadnych kluczy tajnych chroniony funkcją DPAPI na wszystkich komputerach przyłączonych do domeny.
-W tym wykrywania zostanie wyzwolony alert w przypadku DPAPI służy do pobierania kopii zapasowej klucza głównego.
+W tym wykrywania alert zostanie wywołany, gdy DPAPI służy do pobierania kopii zapasowej klucza głównego.
 
 **Badanie**
 
@@ -262,7 +262,7 @@ Można wykorzystać [AD ACL skanera](https://blogs.technet.microsoft.com/pfeswep
 
 W niektórych scenariuszach osoby atakujące, należy przeprowadzić odmowa usługi (DoS) zamiast tylko kradzież informacji. Usuwanie dużej liczby kont jest jeden technika DoS.
 
-W tym wykrywania zostanie wyzwolony alert po usunięciu więcej niż 5% wszystkich kont. Wykrywanie wymaga dostępu do odczytu do kontenera usuniętych obiektów.  
+W tym wykrywania alertu jest wyzwalane, gdy więcej niż 5% wszystkie konta zostaną usunięte. Wykrywanie wymaga dostępu do odczytu do kontenera usuniętych obiektów.  
 Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** w [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx).
 
 **Badanie**
@@ -351,7 +351,7 @@ Modyfikowanie transferów stref jest jedno zadanie między listę kontrolną, kt
 
 Wyliczenie komunikatów Block (SMB) serwera umożliwia osoby atakujące uzyskać informacje którym ostatnio zalogowani użytkownicy. Po te informacje, osoby atakujące mogą przenosić bok w sieci na uzyskanie dostępu do określonego konta poufnych.
 
-W tym wykrywania zostanie wyzwolony alert, gdy wyliczenie sesji SMB odbywa się na kontrolerze domeny, ponieważ to nie powinno się zdarzyć.
+Wykrywanie alert zostanie wywołany po wykonaniu wyliczenie sesji SMB na kontrolerze domeny, ponieważ to nie powinno się zdarzyć.
 
 **Badanie**
 
@@ -399,7 +399,7 @@ Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj w
 
 **Opis**
 
-Niektóre usługi wysłać poświadczenia konta w postaci zwykłego tekstu. Możliwe, nawet w przypadku kont poufnych. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. Wszystkie hasła nieszyfrowanego poufnych konta będą wyzwalać alert, gdy dla kont niepoufnych alert zostanie wywołany, jeśli pięć lub więcej różnych kont wysyła haseł w postaci zwykłego tekstu z tym samym komputerem źródłowym. 
+Niektóre usługi wysłać poświadczenia konta w postaci zwykłego tekstu. Możliwe, nawet w przypadku kont poufnych. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. Wszystkie hasła nieszyfrowanego poufne konto wyzwalać alert, gdy dla kont niepoufnych alert zostanie wywołany, jeśli pięć lub więcej różnych kont wysyła haseł w postaci zwykłego tekstu z tym samym komputerem źródłowym. 
 
 **Badanie**
 
@@ -417,7 +417,7 @@ Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzyst
 
 W ataków siłowych atakujący podejmie próbę uwierzytelniania za pomocą wielu różnych haseł dla różnych kont aż do znalezienia prawidłowego hasła dla co najmniej jedno konto. Znaleziono jeden raz, osoba atakująca może zalogować za pomocą tego konta.
 
-W tym wykrywania alert zostanie wyzwolony w przypadku wystąpienia wielu błędów uwierzytelniania, może to być albo poziomie za pomocą niewielki zestaw hasła przez wielu użytkowników. lub pionie o dużej zestawu haseł na tylko w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
+W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwierzytelniania, może to być albo poziomie za pomocą niewielki zestaw hasła przez wielu użytkowników. lub pionie o dużej zestawu haseł na tylko w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
 
 **Badanie**
 
@@ -435,7 +435,7 @@ W tym wykrywania alert zostanie wyzwolony w przypadku wystąpienia wielu błęd�
 
 **Opis**
 
-ATA uzyskuje informacje o zachowania jednostek dla użytkowników, komputerów i zasobów w okresie przesuwanego trzech tygodni. Model zachowanie jest oparty na następujących działań: maszyn jednostek zalogowany, jednostka żądane zasoby dostęp do i czas te operacje miało miejsce. Usługa ATA wysyła alert po odchylenia od zachowanie jednostki oparte na algorytmów uczenia maszynowego. 
+Usługa ATA uzyskuje informacje o zachowania jednostek dla użytkowników, komputerów i zasobów w metodzie przesuwanego okresie trzech tygodni. Model zachowanie jest oparty na następujących działań: maszyn jednostek zalogowany, jednostka żądane zasoby dostęp do i czas te operacje miało miejsce. Usługa ATA wysyła alert po odchylenia od zachowanie jednostki oparte na algorytmów uczenia maszynowego. 
 
 **Badanie**
 
@@ -453,7 +453,7 @@ W zależności od tego, co spowodowało to nietypowe zachowanie występuje nale�
 
 **Opis**
 
-Osoby atakujące użyj narzędzi, które implementują różnych protokołów (protokół SMB, protokołu Kerberos, NTLM) w niestandardowy sposób. Podczas tego typu ruchu sieciowego. ogólnie jest traktowany przez system Windows bez ostrzeżenia, usługi ATA jest w stanie rozpoznać potencjalnych złośliwymi działaniami. Zachowanie jest wskaźnikiem technik, takich jak życie nadmiernego-Pass--Hash i atakami, jak również używane przez ransomware zaawansowane, na przykład WannaCry luki w zabezpieczeniach.
+Osoby atakujące użyj narzędzi, które implementują różnych protokołów (protokół SMB, protokołu Kerberos, NTLM) w niestandardowy sposób. Podczas tego typu ruchu sieciowego jest akceptowana przez system Windows bez ostrzeżenia, usługi ATA jest w stanie rozpoznać potencjalnych złośliwymi działaniami. Zachowanie jest wskaźnikiem technik, takich jak życie nadmiernego-Pass--Hash i atakami, jak również używane przez ransomware zaawansowane, na przykład WannaCry luki w zabezpieczeniach.
 
 **Badanie**
 

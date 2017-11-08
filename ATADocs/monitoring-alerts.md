@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 11/7/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: b04fb8a4-b366-4b55-9d4c-6f054fa58a90
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3b39014499d77c2671f946a693b47be5b8db0f38
-ms.sourcegitcommit: e2cb3af9c1dbb0b75946dc70cc439b19d654541c
+ms.openlocfilehash: 0d3b57e852a18bf9602d3a75ab627c23496f7285
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -29,16 +29,16 @@ W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych skład
 ### <a name="center-running-out-of-disk-space"></a>Centrum kończy się wolne miejsce na dysku
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Kończy się wolne miejsce na dysku maszyny centrum usługi ATA używanej do przechowywania bazy danych usługi ATA.|Oznacza to, że na dysku twardym jest dostępnych mniej niż 200 GB wolnego miejsca lub jest dostępne mniej niż 20% wolnego miejsca, w zależności od tego, która wartość jest niższa. Gdy usługa ATA rozpozna, że kończy się miejsce na dysku, zacznie usuwać stare dane z bazy danych. Jeśli usunięcie starych danych jest niemożliwe, ponieważ dane są nadal niezbędne dla aparatu wykrywania, zostanie wyświetlony ten alert. W przypadku otrzymania tego alertu usługa ATA przestaje rejestrować nowe działania.|Zwiększ rozmiar dysku lub zwolnij miejsce na tym dysku.|Wysoki|
+|Kończy się wolne miejsce na dysku maszyny centrum usługi ATA używanej do przechowywania bazy danych usługi ATA.|Oznacza to, że na dysku twardym jest dostępnych mniej niż 200 GB wolnego miejsca lub jest dostępne mniej niż 20% wolnego miejsca, w zależności od tego, która wartość jest niższa. Gdy usługa ATA rozpozna, że kończy się miejsce na dysku, zacznie usuwać stare dane z bazy danych. Jeśli go nie można usunąć stare dane, ponieważ nadal wymaga danych aparat wykrywania, pojawi się ten alert. W przypadku otrzymania tego alertu usługa ATA przestaje rejestrować nowe działania.|Zwiększ rozmiar dysku lub zwolnij miejsce na tym dysku.|Wysoki|
 ### <a name="failure-sending-mail"></a>Błąd wysyłania poczty
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Usługa ATA nie może wysłać powiadomienia e-mail do określonego serwera poczty.|Wiadomości e-mail nie będą wysyłane z usługi ATA.|Zweryfikuj konfigurację serwera SMTP.|Niski|
+|Usługa ATA nie może wysłać powiadomienia e-mail do określonego serwera poczty.|Nie wiadomości e-mail są wysyłane z usługi ATA.|Zweryfikuj konfigurację serwera SMTP.|Niski|
 
 ### <a name="center-overloaded"></a>Centrum przeciążony
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Centrum usługi ATA nie jest w stanie obsłużyć danych w ilościach przesyłanych z bram usługi ATA. |Centrum usługi ATA przestanie analizować nowy ruch sieciowy i nowe zdarzenia. Oznacza to, że dokładność wykrywania i profili jest mniejsza, gdy ten alert monitorowania jest aktywny.|Upewnij się, że zapewniono wystarczającą ilość zasobów dla centrum usługi ATA. Zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md), aby uzyskać więcej informacji na temat prawidłowego planowania pojemności centrum usługi ATA. Zbadaj wydajność centrum usługi ATA, korzystając z informacji przedstawionych w temacie [Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności](troubleshooting-ata-using-perf-counters.md).|Wysoki|
+|Centrum usługi ATA nie jest w stanie obsłużyć danych w ilościach przesyłanych z bram usługi ATA. |Centrum usługi ATA zatrzymuje analizowanie nowy ruch sieciowy i zdarzenia. Oznacza to, że dokładność wykrywania i profili jest mniejsza, gdy ten alert monitorowania jest aktywny.|Upewnij się, że zapewniono wystarczającą ilość zasobów dla centrum usługi ATA. Aby uzyskać więcej informacji na temat prawidłowo planowania pojemności centrum usługi ATA, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md). Zbadaj wydajność centrum usługi ATA, korzystając z informacji przedstawionych w temacie [Rozwiązywanie problemów z usługą ATA przy użyciu liczników wydajności](troubleshooting-ata-using-perf-counters.md).|Wysoki|
 
 ### <a name="failure-connecting-to-the-siem-server-using-syslog"></a>Nie można nawiązać połączenia z serwerem SIEM przy użyciu protokołu Syslog
 |Alert|Opis|Rozwiązanie|Ważność|
@@ -47,37 +47,37 @@ W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych skład
 ### <a name="center-certificate-is-about-to-expire"></a>Się wygaśnięciu certyfikatu Centrum
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Certyfikat centrum usługi ATA wygaśnie za mniej niż 3 tygodnie.|Po wygaśnięciu certyfikatu połączenia między bramami usługi ATA i centrum usługi ATA będą kończyć się niepowodzeniem. Proces centrum usługi ATA ulegnie awarii i wszystkie funkcje usługi ATA przestaną działać.|[Replace the ATA Center certificate (Zastępowanie certyfikatu centrum usługi ATA)](modifying-ata-center-configuration.md)|Średni|
+|Certyfikat centrum usługi ATA wygaśnie za mniej niż 3 tygodnie.|Po wygaśnięciu certyfikatu połączenia między bramami usługi ATA i centrum usługi ATA będą kończyć się niepowodzeniem. Centrum usługi ATA, który proces ulegnie awarii i wszystkie funkcje usługi ATA będzie zatrzymuje.|[Replace the ATA Center certificate (Zastępowanie certyfikatu centrum usługi ATA)](modifying-ata-center-configuration.md)|Średni|
 ### <a name="ata-center-certificate-expired"></a>Certyfikat centrum usługi ATA wygasł
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Certyfikat centrum usługi ATA wygasł.|Po wygaśnięciu certyfikatu połączenia między bramami usługi ATA i centrum usługi ATA będą kończyć się niepowodzeniem. Proces centrum usługi ATA ulegnie awarii i wszystkie funkcje usługi ATA przestaną działać.|[Replace the ATA Center certificate (Zastępowanie certyfikatu centrum usługi ATA)](modifying-ata-center-configuration.md)|Wysoki|
+|Certyfikat centrum usługi ATA wygasł.|Po wygaśnięciu certyfikatu: łączność z bram usługi ATA z Centrum usługi ATA kończy się niepowodzeniem. Awaria procesu Centrum usługi ATA i zatrzymuje wszystkie funkcje usługi ATA.|[Replace the ATA Center certificate (Zastępowanie certyfikatu centrum usługi ATA)](modifying-ata-center-configuration.md)|Wysoki|
 ## <a name="ata-gateway-issues"></a>Problemy z bramą usługi ATA
 ### <a name="read-only-user-password-to-expire-shortly"></a>Hasło użytkownika tylko do odczytu, które wkrótce wygasną
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Hasło użytkownika tylko do odczytu używane do rozpoznawania jednostek w usłudze Active Directory wygaśnie za mniej niż 30 dni.|Jeśli hasło dla tego użytkownika wygaśnie, wszystkie bramy usługi ATA przestaną działać i nowe dane nie będą zbierane.|[Zmień hasło do łączności z domeną](modifying-ata-config-dcpassword.md), a następnie zaktualizuj hasło w konsoli usługi ATA.|Średni|
+|Hasło użytkownika tylko do odczytu używane do rozpoznawania jednostek w usłudze Active Directory wygaśnie za mniej niż 30 dni.|Jeśli hasło dla tego użytkownika, wszystkie bramy usługi ATA przestanie działać i żadne nowe dane są zbierane.|[Zmień hasło do łączności z domeną](modifying-ata-config-dcpassword.md), a następnie zaktualizuj hasło w konsoli usługi ATA.|Średni|
 ### <a name="read-only-user-password-expired"></a>Hasło użytkownika tylko do odczytu wygasło
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Hasło użytkownika tylko do odczytu używane do pobierania danych z katalogu wygasło.|Wszystkie bramy usługi ATA przestaną działać (lub wkrótce przestaną działać) i nowe dane nie będą zbierane.|[Zmień hasło do łączności z domeną](modifying-ata-config-dcpassword.md), a następnie zaktualizuj hasło w konsoli usługi ATA.|Wysoki|
+|Hasło użytkownika tylko do odczytu używane do pobierania danych z katalogu wygasło.|Wszystkie bramy usługi ATA przestanie działać (lub przestanie działać szybko) i są zbierane żadne nowe dane.|[Zmień hasło do łączności z domeną](modifying-ata-config-dcpassword.md), a następnie zaktualizuj hasło w konsoli usługi ATA.|Wysoki|
 ### <a name="gateway-certificate-about-to-expire"></a>Certyfikat bramy zbliża się data wygaśnięcia
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Certyfikat bramy usługi ATA wygaśnie za mniej niż 3 tygodnie.|Połączenia między określoną bramą usługi ATA i centrum usługi ATA będą kończyć się niepowodzeniem. Z tej bramy usługi ATA nie będą wysyłane żadne dane.|Certyfikat bramy usługi ATA powinien zostać odnowiony automatycznie. Zapoznaj się z dziennikami bramy usługi ATA i centrum usługi ATA, aby dowiedzieć się, dlaczego certyfikat nie został odnowiony automatycznie.|Średni|
+|Certyfikat bramy usługi ATA wygaśnie za mniej niż 3 tygodnie.|Łączność z bramy usługi ATA z Centrum usługi ATA kończy się niepowodzeniem. Żadne dane nie z tej bramy usługi ATA jest wysyłane.|Certyfikat bramy usługi ATA powinien zostać odnowiony automatycznie. Zapoznaj się z dziennikami bramy usługi ATA i centrum usługi ATA, aby dowiedzieć się, dlaczego certyfikat nie został odnowiony automatycznie.|Średni|
 
 ### <a name="gateway-certificate-expired"></a>Wygasł certyfikat bramy
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Certyfikat bramy usługi ATA wygasł.|Brak połączenia między bramą usługi ATA i centrum usługi ATA. Z tej bramy usługi ATA nie będą wysyłane żadne dane.|[Odinstaluj bramę usługi ATA i zainstaluj ją ponownie](install-ata-step3.md).|Wysoki|
+|Certyfikat bramy usługi ATA wygasł.|Brak połączenia między bramą usługi ATA i centrum usługi ATA. Żadne dane nie z tej bramy usługi ATA jest wysyłane.|[Odinstaluj bramę usługi ATA i zainstaluj ją ponownie](install-ata-step3.md).|Wysoki|
 ### <a name="domain-synchronizer-not-assigned"></a>Brak przypisanego synchronizatora domeny
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Nie przypisano żadnego synchronizatora domeny do żadnej bramy usługi ATA. Może się tak zdarzyć, jeśli żadnej bramy usługi ATA nie skonfigurowano jako kandydata synchronizatora domeny.|Jeśli domena nie jest zsynchronizowana, zmiany dotyczące jednostek mogą spowodować brak lub występowanie nieaktualnych informacji o jednostkach w usłudze ATA, ale nie wpłynie to na wykrywanie.|Upewnij się, że co najmniej jedna brama usługi ATA jest ustawiona jako [synchronizator domeny](install-ata-step5.md).|Niski|
+|Nie przypisano żadnego synchronizatora domeny do żadnej bramy usługi ATA. Może się tak zdarzyć, jeśli żadnej bramy usługi ATA nie skonfigurowano jako kandydata synchronizatora domeny.|Po domeny nie jest zsynchronizowana, może spowodować informacje o jednostce usługa ATA może stać się nieaktualne lub brak zmiany do jednostki, ale nie ma wpływu na dowolnym wykrywania.|Upewnij się, że co najmniej jedna brama usługi ATA jest ustawiona jako [synchronizator domeny](install-ata-step5.md).|Niski|
 ### <a name="allsome-of-the-capture-network-adapters-on-a-gateway-are-not-available"></a>Wszystkie/niektóre karty sieciowe przechwytywania w bramie nie są dostępne
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Wszystkie/niektóre z wybranych kart sieciowych przechwytywania w bramie usługi ATA są wyłączone lub rozłączone.|Ruch sieciowy dla niektórych/wszystkich kontrolerów domeny nie jest już przechwytywany przez bramę usługi ATA. Wpłynie to na możliwość wykrywania podejrzanych działań związanych z tymi kontrolerami domeny.|Upewnij się, że te wybrane karty sieciowe przechwytywania w bramie usługi ATA są włączone i połączone.|Średni|
+|Wszystkie/niektóre z wybranych kart sieciowych przechwytywania w bramie usługi ATA są wyłączone lub rozłączone.|Ruch sieciowy dla niektórych/wszystkich kontrolerów domeny nie jest już przechwytywany przez bramę usługi ATA. Ma to wpływ na możliwość wykrywać podejrzane działania związane z tych kontrolerów domeny.|Upewnij się, że te wybrane karty sieciowe przechwytywania w bramie usługi ATA są włączone i połączone.|Średni|
 ### <a name="some-domain-controllers-are-unreachable-by-a-gateway"></a>Niektóre kontrolery domeny są niedostępne przez bramę
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
@@ -85,11 +85,11 @@ W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych skład
 ### <a name="all-domain-controllers-are-unreachable-by-a-gateway"></a>Wszystkie kontrolery domeny są niedostępne przez bramę
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Brama usługi ATA jest obecnie w trybie offline ze względu na problemy z łącznością ze wszystkimi kontrolerami domeny.|Wpłynie to na możliwość wykrywania przez usługę ATA podejrzanych działań związanych z kontrolerami domeny monitorowanymi przez tę bramę usługi ATA.| Upewnij się, że kontrolery domeny są uruchomione i działają prawidłowo oraz że ta brama usługi ATA może otwierać połączenia z tymi kontrolerami za pomocą protokołu LDAP.|Średni|
+|Brama usługi ATA jest obecnie w trybie offline ze względu na problemy z łącznością ze wszystkimi kontrolerami domeny.|Ma to wpływ na usługi ATA może wykrywać podejrzane działania związane z kontrolerów domeny monitorowanych przez tę bramę usługi ATA.| Upewnij się, że kontrolery domeny są uruchomione i działają prawidłowo oraz że ta brama usługi ATA może otwierać połączenia z tymi kontrolerami za pomocą protokołu LDAP.|Średni|
 ### <a name="gateway-stopped-communicating"></a>Zatrzymano komunikacji bramy
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Brak komunikacji z bramą usługi ATA. Domyślny przedział czasu dla tego alertu wynosi 5 minut.|Ruch sieciowy nie jest już przechwytywany przez kartę sieciową w bramie usługi ATA. Wpłynie to na możliwość wykrywania podejrzanych działań przez usługę ATA, ponieważ ruch sieciowy nie będzie docierać do centrum usługi ATA.|Sprawdź, czy port używany do komunikacji między bramą usługi ATA i centrum usługi ATA nie jest blokowany przez routery lub zapory.|Średni|
+|Brak komunikacji z bramą usługi ATA. Domyślny przedział czasu dla tego alertu wynosi 5 minut.|Ruch sieciowy nie jest już przechwytywany przez kartę sieciową w bramie usługi ATA. Ma to wpływ na usługi ATA może wykrywać podejrzane działania, ponieważ ruch sieciowy nie będzie mogła nawiązać połączenia z Centrum usługi ATA.|Sprawdź, czy port używany do komunikacji między bramą usługi ATA i centrum usługi ATA nie jest blokowany przez routery lub zapory.|Średni|
 ### <a name="no-traffic-received-from-domain-controller"></a>Żaden ruch nie jest odbierany z kontrolera domeny
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
@@ -101,7 +101,7 @@ W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych skład
 ### <a name="some-network-traffic-is-not-being-analyzed"></a>Część ruchu sieciowego nie jest analizowana
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Brama usługi ATA odbiera więcej ruchu sieciowego niż może przetworzyć.|Część ruchu sieciowego nie jest analizowana, co może mieć wpływ na możliwość wykrywania podejrzanych działań pochodzących z kontrolerów domeny monitorowanych przez tę bramę usługi ATA.|Rozważ [dodanie dodatkowych procesorów i pamięci](ata-capacity-planning.md) zgodnie z wymaganiami. Jeśli jest to autonomiczna brama usługi ATA, zmniejsz liczbę monitorowanych kontrolerów domeny.<br></br>Przyczyną może być także korzystania z kontrolerów domeny na maszynach wirtualnych VMware. Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia maszyny wirtualnej są ustawione na 0 lub wyłączone:<br></br>-TsoEnable<br></br>-LargeSendOffload(IPv4)<br></br>-Odciążanie TSO IPv4<br></br>Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji, zapoznaj się z dokumentacją programu VMware.|Średni|
+|Brama usługi ATA odbiera więcej ruchu sieciowego niż może przetworzyć.|Część ruchu sieciowego nie jest analizowana, co może mieć wpływ na możliwość wykrywania podejrzanych działań pochodzących z kontrolerów domeny monitorowanych przez tę bramę usługi ATA.|Rozważ [dodanie dodatkowych procesorów i pamięci](ata-capacity-planning.md) zgodnie z wymaganiami. Jeśli jest to autonomiczna brama usługi ATA, zmniejsz liczbę monitorowanych kontrolerów domeny.<br></br>Przyczyną może być także korzystania z kontrolerów domeny na maszynach wirtualnych VMware. Aby zapobiegać tym alertom, można sprawdzić, czy następujące ustawienia maszyny wirtualnej są ustawione na 0 lub wyłączone:<br></br>-TsoEnable<br></br>-LargeSendOffload(IPv4)<br></br>-Odciążanie TSO IPv4<br></br>Należy również rozważyć wyłączenie ustawienia IPv4 Giant TSO Offload (Bardzo duże odciążanie TSO IPv4). Aby uzyskać więcej informacji zapoznaj się z dokumentacją programu VMware.|Średni|
 
 ### <a name="gateway-version-outdated"></a>Wersja bramy przestarzałe
 |Alert|Opis|Rozwiązanie|Ważność|

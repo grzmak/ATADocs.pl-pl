@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3798f7faeb62e44d3877880c2d594332502e76c5
-ms.sourcegitcommit: e9f2bfd610b7354ea3fef749275f16819d60c186
+ms.openlocfilehash: 2f38ee3b8a50a4776709f1a5aa1f37af869a916b
+ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 11/07/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -36,10 +36,10 @@ W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje zdarzeń syst
 > [!NOTE]
 > W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 
-Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie przy użyciu zdarzeń systemu Windows. Zdarzenie 4776 protokołu NTLM jest stosowane w celu udoskonalenia różnych typów wykrywania, a zdarzenia 4732, 4733 4728, 4729, 4756 i 4757 w celu udoskonalenia wykrywania modyfikacji wrażliwych grup. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
+Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie przy użyciu zdarzeń systemu Windows. Zdarzenia 4776 używa uwierzytelniania NTLM, co zwiększa różnych wykryć i zdarzenia 4732, 4733 4728, 4729, 4756 i 4757 zwiększenie wykrywania poufnych grupy zmian. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 #### <a name="siemsyslog"></a>SIEM/Syslog
-Aby usługa ATA mogła wykorzystywać dane z serwera Syslog, konieczne jest wykonanie następujących czynności:
+Aby usługa ATA mogła wykorzystywać dane z serwera Syslog należy wykonać następujące czynności:
 
 -   Skonfigurowanie serwerów bramy usługi ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
 > [!NOTE]
@@ -61,7 +61,7 @@ Zapoznaj się z dokumentacją produktu serwera SIEM/Syslog, aby uzyskać informa
 
     ![Obraz włączania protokołu UDP odbiornika programu Syslog](media/ATA-enable-siem-forward-events.png)
 
-2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Dodatkowe informacje na temat konfigurowania rozwiązania SIEM można znaleźć w pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
+2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Aby uzyskać dodatkowe informacje na temat konfigurowania rozwiązania SIEM Zobacz z pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
 Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:  
 
@@ -76,7 +76,7 @@ Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
 
     1.  Stała RsaSA (musi się pojawiać).
 
-    2.  Sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Najlepiej z milisekundową dokładnością (jest to bardzo ważne).
+    2.  Sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Najlepiej z milisekundową dokładnością jest to ważne.
 
     3.  Identyfikator zdarzenia systemu Windows
 
@@ -107,7 +107,7 @@ CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kont
 
     -   externalId = identyfikator zdarzenia systemu Windows
 
-    -   rt = sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do firmy Microsoft). Najlepiej z milisekundową dokładnością (jest to bardzo ważne).
+    -   RT = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu Siem lub wysłania do usługi ATA). Najlepiej z milisekundową dokładnością jest to ważne.
 
     -   cat = nazwa dziennika zdarzeń systemu Windows
 
@@ -152,7 +152,7 @@ Kod błędu:         0x0
 
     -   SourceName = nazwa dostawcy zdarzeń systemu Windows
 
-    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrMMddGGmmss.UUUUUU, najlepiej z dokładnością do milisekund (jest to bardzo ważne).
+    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
 
     -   ComputerName = nazwa hosta źródłowego
 
@@ -175,7 +175,7 @@ Wymagane pola to:
 - W pełni kwalifikowana nazwa domeny DC
 - Identyfikator zdarzenia systemu Windows
 
-TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrMMddGGmmss.UUUUUU, najlepiej z dokładnością do milisekund (jest to bardzo ważne).
+TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
 
 Message to oryginalny tekst zdarzenia ze zdarzenia systemu Windows
 
