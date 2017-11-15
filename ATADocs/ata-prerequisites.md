@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 11/14/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d0d7ce6aae1bb59d266ddc0f7162ecfbc477b78a
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 29aef3eeddf6045d200f9b27809567f18a2fa2d0
+ms.sourcegitcommit: 4d9d1e089bbb50baceb87f273ddf2d3aaa9a78e8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/14/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -101,7 +101,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 
 |Protokół|Transport|Port|Do/z|Kierunek|
 |------------|-------------|--------|-----------|-------------|
-|**SSL** (komunikacja usługi ATA)|TCP|443 lub inny skonfigurowany|Brama usługi ATA|Przychodzące|
+|**SSL** (komunikacja usługi ATA)|TCP|443|Brama usługi ATA|Przychodzące|
 |**HTTP** (opcjonalnie)|TCP|80|Sieć firmowa|Przychodzące|
 |**HTTPS**|TCP|443|Sieć firmowa i brama usługi ATA|Przychodzące|
 |**SMTP** (opcjonalnie)|TCP|25|Serwer SMTP|Wychodzące|
@@ -206,7 +206,7 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
-|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
+|Protokół SSL|TCP|443|Centrum usługi ATA|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
@@ -262,7 +262,7 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez uproszczoną bram
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
-|Protokół SSL|TCP|443 lub skonfigurowany dla usługi centrum|Centrum usługi ATA:<br /><br />— adres IP usługi centrum<br />— adres IP konsoli|Wychodzące|
+|Protokół SSL|TCP|443|Centrum usługi ATA|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
 > [!NOTE]
