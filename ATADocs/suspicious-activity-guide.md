@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 12/17/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: bff477a66b837d82bb10a43a0dad7d36c6542d9f
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
-ms.translationtype: MT
+ms.openlocfilehash: 261b0bf277de97520e4d5473d8a16280f8e4534b
+ms.sourcegitcommit: 1c4ccb320e712a180433a7625312862235be66f0
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 12/17/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -292,6 +292,34 @@ Znane luki w zabezpieczeniach w starszych wersjach systemu Windows Server osobom
 **Korygowania**
 
 Upewnij się, że na wszystkich kontrolerach domen z systemami operacyjnymi starszymi niż system Windows Server 2012 R2 zainstalowano poprawkę [KB3011780](https://support.microsoft.com/help/2496930/ms11-013-vulnerabilities-in-kerberos-could-allow-elevation-of-privilege), a wszystkie serwery członkowskie i kontrolery domen do wersji 2012 R2 mają zainstalowaną poprawkę KB2496930. Aby uzyskać więcej informacji, zobacz [Silver PAC](https://technet.microsoft.com/library/security/ms11-013.aspx) i [Forged PAC (Sfałszowany element PAC)](https://technet.microsoft.com/library/security/ms14-068.aspx).
+
+## <a name="reconnaissance-using-account-enumeration"></a>Rekonesans przy użyciu wyliczania kont
+
+**Opis**
+
+W Rekonesans wyliczenie konta osoba atakująca używa słownika z tysiącami nazwy użytkowników lub narzędzi, takich jak KrbGuess próbuje odgadnąć nazwy użytkownika w domenie. Osoba atakująca sprawia, że żądania protokołu Kerberos, przy użyciu tych nazw umożliwi podjęcie próby można znaleźć prawidłowej nazwy użytkownika w domenie. Jeśli wynik pomyślnie Określa nazwę użytkownika, osoba atakująca otrzyma błąd protokołu Kerberos **wymagane wstępne uwierzytelnianie** zamiast **podmiotu zabezpieczeń jest nieznany**. 
+
+W tym wykrywania usługi ATA może wykryć, skąd pochodzą ataku, łączna liczba prób wynik oraz ile były zgodne. W przypadku zbyt wielu użytkownikom nieznany ATA wykryje go jako podejrzane działania. 
+
+**Badanie**
+
+1. Kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. 
+
+2. Ten komputer hosta powinien zapytania kontrolera domeny określające, czy istnieją konta (np. serwerów Exchange)? <br></br>
+Czy istnieje skryptu lub aplikacja była uruchomiona na hoście, który można wygenerować takie zachowanie? <br></br>
+Jeśli tak, to odpowiedź na jedną z tych pytań **Zamknij** podejrzanych działań (jest niegroźne pozytywną wartość true) i Wyklucz, który obsługiwał z podejrzanych działań.
+
+3. Pobierz szczegóły alertu w arkuszu programu Excel wygodnie lista prób konta, podzielone na istniejące i nieistniejącego kont. Jeśli przyjrzymy się z systemem innym niż istniejących kont arkusza w arkuszu kalkulacyjnym i kont wyglądać znajomo, mogą być wyłączone konta lub pracowników, którzy pozostanie w firmie. W tym przypadku jest mało prawdopodobne, że próba pochodzi ze słownika. Prawdopodobnie to aplikacja lub skrypt, który jest sprawdzanie, które konta nadal istnieje w usłudze Active Directory, co oznacza jest niegroźne pozytywną wartość true.
+
+3. Jeśli nazwy jest w przeważającej mierze nieznane, wszelkie próby wynik odpowiadało istniejących nazw konta w usłudze Active Directory? Jeśli nie ma zgodnych wyników, próba została przełączona, ale należy zwrócić uwagę na alert, aby zobaczyć, czy jest aktualizowana w czasie.
+
+4. Jeśli dowolne wynik prób odpowiada istniejącej nazwy konta, osoba atakująca zna istnienia kont w środowisku i mogą próbować siłowych umożliwia dostęp do domeny za pomocą nazwy odnalezionych użytkowników. Sprawdź nazwy kont próbny dodatkowe podejrzanych działań. Sprawdź, czy dowolna z dopasowanych konta jest kont poufnych.
+
+
+**Korygowania**
+
+[Złożone i długich haseł](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) podaj niezbędne pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
 
 ## <a name="reconnaissance-using-directory-services-queries"></a>Rekonesans przy użyciu zapytań usług katalogowych
 
