@@ -1,11 +1,11 @@
 ---
-title: "Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu dzienników | Dokumentacja firmy Microsoft"
-description: "Opis sposobu rozwiązywania problemów przy użyciu dzienników usługi ATA."
+title: "Rozwiązywanie problemów z uruchomienia usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
+description: "W tym artykule opisano, jak można rozwiązywać problemy z uruchamianiem usługi ATA"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 12/20/2017
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,17 +13,19 @@ ms.technology:
 ms.assetid: 5a65285c-d1de-4025-9bb4-ef9c20b13cfa
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 125376b1e3530481a3b9f62c4661dd10dce13f22
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 33ff11f592984b754521c562414ffeabd2d1f255
+ms.sourcegitcommit: 91158e5e63ce2021a1f5f85d47de03d963b7cb70
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 12/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
 
 
-# <a name="troubleshooting-ata-center-service-startup"></a>Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
+# <a name="troubleshooting-service-startup"></a>Rozwiązywanie problemów z uruchomienia usługi
+
+## <a name="troubleshooting-ata-center-service-startup"></a>Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
 
 Jeśli nie można uruchomić Centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
 
@@ -42,6 +44,22 @@ Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Je
         logman start "Microsoft ATA Center"
         sc start ATACenter
 
+## <a name="troubleshooting-ata-lightweight-gateway-startup"></a>Rozwiązywanie problemów z uruchomienia bramy ATA Lightweight Gateway
+
+**Objaw**
+
+Nie można uruchomić bramy usługi ATA, a ten błąd:<br></br>
+*System.Net.Http.HttpRequestException: Kod stanu odpowiedzi nie wskazuje powodzenia: 500 (wewnętrzny błąd serwera)*
+
+**Opis**
+
+Dzieje się tak, ponieważ w ramach procesu instalacji Lightweight Gateway, usługa ATA przydziela próg procesora CPU, umożliwiającą bramy Lightweight mogą korzystać z buforu, 15% procesora CPU. Jeśli niezależnie wybrano progu za pomocą klucza rejestru: ten konflikt uniemożliwi uruchamianie bramy Lightweight. 
+
+**Rozdzielczość**
+
+1. W rejestrze kluczy, jeśli istnieje wartość DWORD o nazwie **Wyłącz liczniki wydajności** upewnij się, że jest ustawiona na **0**: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\``HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfProc\Performance`
+ 
+2. Następnie uruchom ponownie usługę Pla. Brama ATA Lightweight Gateway automatycznie wykryje zmianę i ponownie uruchom usługę.
 
 
 ## <a name="see-also"></a>Zobacz też
