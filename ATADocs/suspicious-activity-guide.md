@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 261b0bf277de97520e4d5473d8a16280f8e4534b
-ms.sourcegitcommit: 1c4ccb320e712a180433a7625312862235be66f0
-ms.translationtype: HT
+ms.openlocfilehash: 0d951edf1037422c1ee52c8b1e35308665aad256
+ms.sourcegitcommit: 91158e5e63ce2021a1f5f85d47de03d963b7cb70
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 12/20/2017
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -350,6 +350,9 @@ W tym wykrywania alerty nie będą wyzwalane w pierwszym miesiącu po wdrożeniu
 **Korygowania**
 
 Użyj [narzędzie SAMRi10](https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b) zabezpieczyć środowiska przed tej metody.
+Jeśli narzędzie nie ma zastosowania do użytkownika kontrolera domeny:
+1. Komputer działa luka w zabezpieczeniach narzędzia skanowania?  
+2. Sprawdź, czy określonych, którego dotyczy kwerenda użytkowników i grup w ataku są kont uprzywilejowanych lub wysokiej wartości (tj. dyrektora generalnego, dyrektora finansowego, zarządzanie IT itp.).  Jeśli tak, sprawdź innych działań w punkcie końcowym, a także i monitorować komputery, które konta, którego dotyczy kwerenda jest się zalogowanym, prawdopodobnie są elementy docelowe penetracji sieci.
 
 ## <a name="reconnaissance-using-dns"></a>Rekonesans przy użyciu systemu DNS
 
