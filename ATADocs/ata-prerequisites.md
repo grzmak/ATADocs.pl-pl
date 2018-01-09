@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d3f112c455fbf2bbab2137d158cbd31fe6e02f7e
-ms.sourcegitcommit: 5a02c6d497265e65633f96f5f8264a29a18a1114
+ms.openlocfilehash: 54c738a63f47280c91f72812476b559b773e9b97
+ms.sourcegitcommit: 56c7d749b17745430e372e514accf537b3f215d0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/08/2018
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -80,17 +80,21 @@ Instalacja centrum usługi ATA jako maszyny wirtualnej jest obsługiwana.
 > W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 
 Jeśli centrum usługi ATA jest uruchamiane jako maszyna wirtualna, należy wyłączyć serwer przed utworzeniem nowego punktu kontrolnego w celu uniknięcia potencjalnego uszkodzenia bazy danych.
+
 ### <a name="server-specifications"></a>Specyfikacje serwera
+
 Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. System może odwoływać się do architektury NUMA przeplataniem węzłów, w którym to przypadku należy **włączyć** Przeplatanie, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji zobacz dokumentację systemu BIOS. Nie jest to istotne w przypadku uruchomienia centrum usługi ATA na serwerze wirtualnym.<br>
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
 Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje specyfikacje serwera. Aby uzyskać więcej informacji, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
 
 ### <a name="time-synchronization"></a>Synchronizacja czasu
+
 Serwerze Centrum usługi ATA, serwerach bramy usługi ATA i kontrolerach domeny musi mieć czasu synchronizowane w ciągu pięciu minut od siebie.
 
 
 ### <a name="network-adapters"></a>Karty sieciowe
+
 Musisz mieć następujące:
 -   Co najmniej jedna karta sieciowa (w przypadku korzystania z serwera fizycznego w środowisku sieci VLAN zaleca się używanie dwóch kart sieciowych)
 
