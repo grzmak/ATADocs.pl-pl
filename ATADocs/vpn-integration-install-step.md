@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 1/15/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: e0aed853-ba52-46e1-9c55-b336271a68e7
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 2eab8649f225071ad548a8134b385d46f02b3222
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 8d7468103e14e31116c4b6cb9846ecdcd2bf0ef0
+ms.sourcegitcommit: 55f7ac32bcd4ac8edb8b8b3b47993bf96b9acce2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 01/15/2018
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -37,7 +37,6 @@ Usługa ATA integruje się z rozwiązanie sieci VPN, ponieważ nasłuchuje zdarz
 
 -   Microsoft
 -   F5
--   Check Point
 -   Cisco ASA
 
 ## <a name="prerequisites"></a>Wymagania wstępne
@@ -46,7 +45,7 @@ Aby włączyć integrację sieci VPN, upewnij się, że można ustawić następu
 
 -   Otwórz port UDP 1813 bram usługi ATA i bram ATA Lightweight Gateway.
 
--   Centrum usługi ATA należy połączyć się z Internetem, aby wykonać zapytanie lokalizacji przychodzących adresów IP.
+-   Centrum usługi ATA, muszą mieć dostęp do *ti.ata.azure.com* przy użyciu protokołu HTTPS (port 443), dzięki czemu można zbadać lokalizacji przychodzących adresów IP.
 
 W poniższym przykładzie użyto routingu i firmy Microsoft serwera dostępu zdalnego (RRAS) do opisywania proces konfiguracji sieci VPN.
 
@@ -68,7 +67,7 @@ Wykonaj następujące czynności na serwerze RRAS.
      
 ### <a name="configure-vpn-in-ata"></a>Konfigurowanie sieci VPN w usłudze ATA
 
-Usługa ATA zbiera dane sieci VPN, które pomaga profilu lokalizacji, z których komputerach połączenia z siecią oraz wykryć nietypowe połączeń sieci VPN.
+Usługi ATA służy do zbierania danych sieci VPN i określa, kiedy i gdzie są używane poświadczenia za pośrednictwem sieci VPN i integruje dane w badaniu. Zapewnia to dodatkowe informacje, aby badać alerty zgłoszone przez usługę ATA.
 
 Aby skonfigurować danych sieci VPN w usłudze ATA:
 
@@ -88,8 +87,7 @@ Instalacja została zakończona i możesz teraz przeglądać aktywność sieci V
  
    ![Konfiguracja sieci VPN](./media/vpn-user.png)
 
-Po bramy usługi ATA odbiera zdarzenia sieci VPN i wysyła je do Centrum usługi ATA do przetwarzania, Centrum usługi ATA wymaga łączności z Internetem dla protokołu HTTPS portu 443, aby mogły rozpoznawać zewnętrzne adresy IP w zdarzeniach sieci VPN do ich używanie funkcji geolokalizacji.
-
+Po bramy usługi ATA odbiera zdarzenia sieci VPN i wysyła je do Centrum usługi ATA do przetwarzania, Centrum usługi ATA wymaga dostępu do *ti.ata.azure.com* mogły rozpoznawać zewnętrzne adresy IP w sieci VPN zdarzenia, które przy użyciu protokołu HTTPS (port 443) ich lokalizacji geograficznej.
 
 
 
