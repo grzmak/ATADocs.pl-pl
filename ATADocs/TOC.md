@@ -17,7 +17,7 @@
 ## [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 ## [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 ## [Zalecane ścieżka uaktualnienia](upgrade-path.md)
-# Wdróż program
+# Wdróż
 ## [1. Pobieranie i instalowanie centrum](install-ata-step1.md)
 ## [2. Łączenie z usługą AD](install-ata-step2.md)
 ## [3. Pobieranie pakietu bramy usługi ATA](install-ata-step3.md)
@@ -31,7 +31,7 @@
 ### [1. Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 ### [2. Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [3. Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-collection.md)
-# Użycie
+# Używanie
 ## [Zarządzanie bazą danych usługi ATA](ata-database-management.md)
 ## [Centrum kondycji usługi ATA](ata-health-center.md)
 ## [Raporty usługi ATA](reports.md)
@@ -58,4 +58,4 @@
 ## [Rozwiązywanie problemów przy użyciu bazy danych](troubleshooting-ata-using-ata-database.md)
 ## [Rozwiązywanie problemów z uruchamianiem usługi](troubleshooting-service-startup.md)
 ## [Odzyskiwanie po awarii](disaster-recovery.md)
-# [Zasoby](ata-resources.md)
+# [Plan gotowości usługi ATA](ata-resources.md)
