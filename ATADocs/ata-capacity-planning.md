@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 2/1/2018
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a0cc958cd7c802d02c96b6d7d3bc7e7180bd3d95
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 76173dfa0b41195e641235f8792723fa7b038a68
+ms.sourcegitcommit: 7684a9942719a90444ab567ffe9b2ff86438c04b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 02/01/2018
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.8*
 
@@ -40,6 +40,9 @@ Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia us
 ![Przykładowe narzędzie do planowania pojemności](media/capacity tool.png)
 
 
+> [!NOTE]
+> Ponieważ różnych środowiskach zależą i ma wiele cech ruchu sieci specjalnych i nieoczekiwany po początkowym wdrożeniu usługi ATA i uruchom narzędzie ustalania rozmiaru, może być konieczne dostosowanie i dostrojenia wdrożenia pojemności.
+
 
 Jeśli z jakiegoś powodu nie możesz użyć narzędzia do określania rozmiaru usługi ATA, zbierz ręcznie informacje licznika liczby pakietów na sekundę ze wszystkich kontrolerów domeny z okresu 24 godzin i z krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
 Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
@@ -53,7 +56,7 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 |Pakiety na sekundę ze wszystkich kontrolerów domeny|Procesor CPU (rdzenie&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
 |1000|2|32|0,3|9|30 (100)
-|40 000|4|48|12|360|500 (750)
+|40,000|4|48|12|360|500 (750)
 |200 000|8|64|60|1800|1000 (1500)
 |400 000|12|96|120|3,600|2000 (2500)
 |750 000|24|112|225|6750|2500 (3000)
@@ -145,9 +148,9 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
 |Pakiety na sekundę&#42;|Procesor CPU (rdzenie&#42;&#42;)|Pamięć (GB)|
 |---------------------------|-------------------------|---------------|
 |1000|1|6|
-|5000|2|10|
+|5,000|2|10|
 |10 000|3|12|
-|20 000|6|24|
+|20,000|6|24|
 |50 000|16|48|
 &#42;Średnia łączna liczba pakietów na sekundę ze wszystkich kontrolerów domeny monitorowanych przez daną bramę usługi ATA w najbardziej zajętej godzinie dnia.
 
