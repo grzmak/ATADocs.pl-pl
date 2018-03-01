@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/20/2018
+ms.date: 2/27/2018
 ms.topic: article
 ms.prod: 
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 6a9b5273-eb26-414e-9cdd-f64406e24ed8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: c37b46f66715a34145b6123a9278fbc53d4f0d15
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 6a6a34b9a2aae0e507fe18872a31368cf3f3e9d0
+ms.sourcegitcommit: 21d8f9abf909fc5f0e0da03cd100fa8fb950baa4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 02/27/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -27,7 +27,7 @@ Ten artykuł zawiera listę często zadawanych pytań dotyczących Azure ATP ora
 
 ## <a name="where-can-i-get-a-license-for-azure-advanced-threat-protection-atp"></a>Gdzie można uzyskać licencji dla Azure Advanced Threat ochrony (ATP)?
 
-Jeśli nie masz dostępu do usługi Azure ATP przez Microsoft wolumin licencjonowania Center (VLSC) nabytych licencji dla pakietu Enterprise Mobility + Security 5 (EMS 5) bezpośrednio w portalu usługi Office 365 lub za pośrednictwem modelu licencjonowania partnera rozwiązanie chmury (CSP), skontaktuj się z Obsługi klienta firmy Microsoft można uzyskać proces aktywacji Azure Advanced Threat ochrony (ATP).
+Jeśli nie masz dostępu do usługi Azure ATP przez Microsoft wolumin licencjonowania Center (VLSC) nabytych licencji dla pakietu Enterprise Mobility + Security 5 (EMS E5) bezpośrednio w portalu usługi Office 365 lub za pośrednictwem modelu licencjonowania partnera rozwiązanie chmury (CSP), skontaktuj się z Obsługi klienta firmy Microsoft można uzyskać proces aktywacji Azure Advanced Threat ochrony (ATP).
 
 ## <a name="what-should-i-do-if-the-azure-atp-sensor-or-standalone-sensor-doesnt-start"></a>Co należy zrobić, jeśli nie można uruchomić Azure ATP czujnika lub czujnik autonomiczny?
 Sprawdź ostatni błąd w bieżącym dzienniku błędów (gdzie ATP Azure jest instalowana w folderze "Dzienniki").
@@ -144,7 +144,7 @@ Deweloperzy firmy Microsoft i administratorów zgodnie z projektem, mieć wystar
 Ponadto firma Microsoft przeprowadza kontrole weryfikacji na niektórych personel i ogranicza dostęp do aplikacji, systemów i infrastruktury sieci proporcjonalnie do poziomu weryfikacji tła. Personel wykonaj formalnego procesu, gdy są one wymagane uzyskać dostęp do konta klienta lub powiązane informacje w trakcie wykonywania obowiązków. 
 
 ## <a name="see-also"></a>Zobacz też
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 - [Planowanie pojemności Azure w ATP](atp-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)

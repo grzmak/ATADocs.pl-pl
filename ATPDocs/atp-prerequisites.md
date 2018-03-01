@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 2/25/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 819eeb73c57e7b1de5e7e5e837aa2d6db2e0848d
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 3cb4eb8a914f1fd4be0c1ddb26f9be3964c529f7
+ms.sourcegitcommit: 26d833f7d9502db73876ced9879789db395224f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 02/27/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -51,7 +51,7 @@ Każdy obszar roboczy Azure ATP obsługuje granica lasu usługi Active Directory
 W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji Azure ATP.
 
 
--   **Lokalnymi** usługi Azure AD konto i hasło użytkownika z dostępem do odczytu do wszystkich obiektów w monitorowanej domeny.
+-   **Lokalnymi** AD konto i hasło użytkownika z dostępem do odczytu do wszystkich obiektów w monitorowanej domeny.
 
     > [!NOTE]
     > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
@@ -216,7 +216,7 @@ W poniższej tabeli wymieniono niezbędne porty, których wymaga czujnik Azure A
 
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
-- [Architektura ATP Azure](atp-architecture.md)
+- [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
 - [Zainstaluj ATP](install-atp-step1.md)
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
 
