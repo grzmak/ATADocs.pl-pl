@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 2/27/2018
 ms.topic: get-started-article
 ms.service: azure-advanced-threat-protection
 ms.prod: 
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 3939cba25f262991b000dbdd09bdfbf78f5102e7
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 4219199ad9f426f61ac52826ab85bf3e60e67396
+ms.sourcegitcommit: 21d8f9abf909fc5f0e0da03cd100fa8fb950baa4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 02/27/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -82,7 +82,7 @@ Czujnik Azure ATP może obsługiwać monitorowanie jednego kontrolera domeny na 
 |75k-100k|3.50 |9.50|
 
 > [!NOTE]
-> - Całkowita liczba innych niż — rdzeni hiperwątkowych zainstalowane w tym kontrolerze domeny.<br>Chociaż Hiperwątkowość jest możliwa do czujnik Azure ATP podczas planowania pojemności, powinien liczba rzeczywista liczba rdzeni, a nie rdzeni hiperwątkowych.
+> - Całkowita liczba rdzeni zainstalowane w tym kontrolerze domeny.<br>Zaleca się, że nie działają z rdzeni hiperwątkowych.
 > - Całkowita ilość pamięci zainstalowanej w tym kontrolerze domeny.
 > -   Jeśli kontroler domeny nie ma zasobów wymaganych przez czujnik Azure ATP, wydajność kontrolera domeny nie jest wykonywane, ale czujnik Azure ATP może nie działać zgodnie z oczekiwaniami.
 > -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
@@ -145,6 +145,6 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na ka�
 
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
-- [Architektura ATP Azure](atp-architecture.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
+- [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
