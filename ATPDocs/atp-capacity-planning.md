@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/27/2018
+ms.date: 3/3/2018
 ms.topic: get-started-article
 ms.service: azure-advanced-threat-protection
 ms.prod: 
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4219199ad9f426f61ac52826ab85bf3e60e67396
-ms.sourcegitcommit: 21d8f9abf909fc5f0e0da03cd100fa8fb950baa4
+ms.openlocfilehash: 0191ca50a5ea6328cc50ada6d9231ccb73da5c21
+ms.sourcegitcommit: 84556e94a3efdf20ca1ebf89a481550d7f8f0f69
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -40,7 +40,7 @@ Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia Az
 Jeśli z jakiegoś powodu nie można użyć narzędzia do określania rozmiaru ATP Azure, ręcznie zebrać informacje licznika pakietów na sekundę ze wszystkich kontrolerów domeny przez 24 godziny z krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
 Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
 
-## <a name="choosing-the-right-sensor-type-for-your-deployment"></a>Wybieranie typu czujnika prawo do wdrożenia
+## Wybieranie typu czujnika prawo do wdrożenia<a name="choosing-the right-sensor-type-for-your-deployment"></a>
 We wdrożeniu Azure ATP dowolną kombinację typów czujnik autonomiczny Azure ATP jest obsługiwana:
 
 - Tylko czujników autonomiczny Azure ATP
