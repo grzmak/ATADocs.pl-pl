@@ -13,12 +13,13 @@
 ## [5. Konfigurowanie czujnika Zaawansowanej ochrony przed zagrożeniami na platformie Azure](install-atp-step5.md)
 ## [6. Integracja połączenia VPN](install-atp-step6-vpn.md)
 ## [7. Wykluczenia i konta wystawione jako przynęta](install-atp-step7.md)
-### [8. Konfigurowanie wymaganych uprawnień SAM-R](install-atp-step8-samr.md)
+## [8. Konfigurowanie wymaganych uprawnień SAM-R](install-atp-step8-samr.md)
 ## [Instalacja dyskretna](ATP-silent-installation.md)
 ## Dodatkowe kroki dotyczące czujnika Zaawansowanej ochrony przed zagrożeniami na platformie Azure
 ### [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
+### [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-### [Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-forwarding.md)
+### [Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-forwarding.md))
 ### [Konfigurowanie serwera proxy w celu umożliwienia komunikacji](configure-proxy.md)
 # Użycie
 ## [Centrum kondycji Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-health-center.md)
@@ -39,3 +40,5 @@
 ## [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md)
 ## [Badanie ścieżek penetracji sieci za pomocą Zaawansowanej ochrony przed zagrożeniami na platformie Azure](use-case-lateral-movement-path.md)
 ## [Badanie jednostek](entity-profiles.md)
+# Rozwiązywanie problemów
+## [Rozwiązywanie typowych problemów](troubleshooting-atp-known-issues.md)
