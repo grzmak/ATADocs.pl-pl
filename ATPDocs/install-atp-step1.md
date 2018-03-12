@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 3/11/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: aa5f1af43a77d37ba8635fba10628d1720174393
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 5eabf4fc3965e8745b7e2c0fbae4973deb358814
+ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/12/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -29,7 +29,10 @@ ms.lasthandoff: 02/21/2018
 
 Ta procedura instalacji zawiera instrukcje dotyczące tworzenia i zarządzania obszaru roboczego w portalu zarządzania Azure ATP obszaru roboczego. Aby uzyskać informacje dotyczące architektury Azure ATP, zobacz [architektura Azure ATP](atp-architecture.md).
 
-ATP Azure masz możliwość zarządzania i monitorowania wiele obszarów roboczych. Jest to szczególnie przydatne, jeśli chcesz utworzyć pokaz obszar roboczy oraz obszaru roboczego testu, który umożliwia ATP Azure fazy weryfikacji Koncepcji przed udostępnieniem jej do całej organizacji. Jest to również wymagane do obsługi wdrożeń z wieloma lasami. Jednego obszaru roboczego można monitorować tylko wielu domen pochodzących z jednego lasu.
+ATP Azure masz możliwość zarządzania i monitorowania wiele obszarów roboczych. Jest to szczególnie przydatne, jeśli chcesz utworzyć pokaz obszar roboczy oraz obszaru roboczego testu, który umożliwia ATP Azure fazy weryfikacji Koncepcji przed udostępnieniem jej do całej organizacji. Jest to również wymagane do obsługi wdrożeń z wieloma lasami. Jednego obszaru roboczego można monitorować tylko wielu domen pochodzących z jednego lasu. 
+
+> [!NOTE]
+> Może mieć co najwyżej dwa active obszarów roboczych. Po usunięciu obszaru roboczego można się z pomocą techniczną, aby uaktywnić go ponownie. Możesz mieć mazimum trzy usunięto obszarów roboczych. Aby zwiększyć liczbę zapisanych, usunięto obszary robocze, skontaktuj się z obsługą Azure ATP.
 
 ## <a name="step-1-enter-the-workspace-management-portal"></a>Krok 1. Przejście do portalu zarządzania obszaru roboczego
 
@@ -75,5 +78,5 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, można przystąpić d
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)

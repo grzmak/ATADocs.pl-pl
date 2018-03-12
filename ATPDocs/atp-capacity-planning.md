@@ -5,18 +5,18 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/3/2018
+ms.date: 3/11/2018
 ms.topic: get-started-article
 ms.service: azure-advanced-threat-protection
 ms.prod: 
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0191ca50a5ea6328cc50ada6d9231ccb73da5c21
-ms.sourcegitcommit: 84556e94a3efdf20ca1ebf89a481550d7f8f0f69
+ms.openlocfilehash: 577b7a5105e8de773f57b1e00bc1c9cb51096799
+ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/12/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -68,8 +68,9 @@ Specyfika funkcji dublowania portów mogą wymagać wdrożenia wielu czujników 
 
 ## Czujnik ATP Azure i zmianę rozmiaru czujnik autonomiczny <a name="sizing"></a>
 
-Czujnik Azure ATP może obsługiwać monitorowanie jednego kontrolera domeny na podstawie ilości ruchu sieciowego, generowanych przez kontroler domeny. Poniższa tabela jest szacowana, ostateczna kwota, która analizuje czujnika jest zależna od ilość ruchu sieciowego, do których masz. 
-
+Czujnik Azure ATP może obsługiwać monitorowanie jednego kontrolera domeny na podstawie ilości ruchu sieciowego, generowanych przez kontroler domeny. Poniższa tabela jest szacowana, ostateczna kwota, która analizuje czujnika jest zależna od ilości ruchu sieciowego i dystrybucja ruchu. 
+> [!NOTE]
+> Następujące możliwości procesora CPU i pamięci odwołuje się do zużycia własnych czujnik — nie pojemności kontrolera domeny.
 
 |Pakiety na sekundę *|Procesor CPU (rdzenie)|Pamięć (GB)|
 |----|----|-----|
@@ -82,12 +83,12 @@ Czujnik Azure ATP może obsługiwać monitorowanie jednego kontrolera domeny na 
 |75k-100k|3.50 |9.50|
 
 > [!NOTE]
-> - Całkowita liczba rdzeni zainstalowane w tym kontrolerze domeny.<br>Zaleca się, że nie działają z rdzeni hiperwątkowych.
-> - Całkowita ilość pamięci zainstalowanej w tym kontrolerze domeny.
-> -   Jeśli kontroler domeny nie ma zasobów wymaganych przez czujnik Azure ATP, wydajność kontrolera domeny nie jest wykonywane, ale czujnik Azure ATP może nie działać zgodnie z oczekiwaniami.
+> - Całkowita liczba rdzeni, które będzie używane przez usługę czujnik.<br>Zaleca się, że nie działają z rdzeni hiperwątkowych.
+> - Całkowita ilość pamięci, która będzie używać usługa czujnik.
+> -   Jeśli kontroler domeny nie ma zasobów wymaganych przez czujnik Azure ATP, nie wpływa na wydajność kontrolera domeny, ale czujnik Azure ATP może nie działać zgodnie z oczekiwaniami.
 > -   W przypadku uruchamiania jako pamięci dynamicznej maszyny wirtualnej lub innej pamięci funkcja przydziału balonowego nie jest obsługiwana.
 > -   Aby uzyskać optymalną wydajność, ustaw **opcja zasilania** czujnika Azure ATP do **wysokiej wydajności**.
-> -   Wymagane jest co najmniej 2 rdzeni i 6 GB miejsca i 10 GB jest zalecane, w tym miejsce wymagane dla danych binarnych Azure ATP.
+> -   Wymagane jest co najmniej 2 rdzeni i 6 GB miejsca i 10 GB jest zalecane, w tym miejsce wymagane do plików binarnych Azure ATP i dzienniki.
 
 
 ## <a name="domain-controller-traffic-estimation"></a>Szacowanie ruchu kontrolera domeny
