@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2017
+ms.date: 3/11/2017
 ms.topic: get-started-article
 ms.prod: 
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology:
 ms.assetid: 24eca4c6-c949-42ea-97b9-41ef0fb611f1
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 862420fb6914dbf9ee57c36bc21103cc7dddf7af
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: f27020f1b4a5fa7aa8fefbda28eac0c2ad6c64d0
+ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/12/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -31,7 +31,10 @@ Azure ATP wymaga zainstalowania programu Microsoft .NET Framework 4.7.
 
 Po zainstalowaniu Azure ATP .net Framework 4.7 jest automatycznie instalowany jako część wdrożenia Azure ATP.
 
-> [!Note] 
+> [!IMPORTANT] 
+> Upewnij się, że masz najnowszą wersję platformy .net Framework zainstalowana. Jeśli jest zainstalowana poprzednia wersja programu .net, instalacji dyskretnej Azure ATP będą zatrzymywane w pętli i uniemożliwić instalację. 
+
+> [!NOTE] 
 > Instalacja programu .net framework 4.7 może wymagać ponownego uruchomienia serwera. Instalując czujnik Azure ATP na kontrolerach domeny warto pomyśleć o zaplanowaniu okna obsługi dla tych kontrolerów domeny.
 Korzystając z metody instalacji dyskretnej Azure ATP, Instalator jest skonfigurowany do automatycznego ponownego uruchamiania serwera po zakończeniu instalacji (Jeśli to konieczne). Z powodu błędu Instalatora Windows *norestart* flagi nie można niezawodnie do upewnij się, że serwer zostanie ponownie uruchomiony, dlatego upewnij się, że tylko uruchamiania instalacji dyskretnej w oknie obsługi.
 
@@ -127,5 +130,5 @@ Użyj następującego polecenia, aby przeprowadzić odinstalowywanie dyskretnej 
 ## <a name="see-also"></a>Zobacz też
 
 - [Konfigurowanie funkcji przekazywania zdarzeń](configure-event-forwarding.md)
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
