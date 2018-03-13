@@ -1,6 +1,7 @@
-# Poznawanie i eksplorowanie — wersja zapoznawcza!
+# Poznawanie i eksplorowanie
 ## [Co to jest Zaawansowana ochrona przed zagrożeniami na platformie Azure?](what-is-atp.md)
 ## [Często zadawane pytania](atp-technical-faq.md)
+## [Co nowego w Zaawansowanej ochronie przed zagrożeniami na platformie Azure](atp-whats-new.md)
 # Planowanie i projektowanie
 ## [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 ## [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
@@ -19,7 +20,7 @@
 ### [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 ### [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-### [Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-forwarding.md))
+### [Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-forwarding.md)
 ### [Konfigurowanie serwera proxy w celu umożliwienia komunikacji](configure-proxy.md)
 # Użycie
 ## [Centrum kondycji Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-health-center.md)
