@@ -43,3 +43,4 @@
 ## [Badanie jednostek](entity-profiles.md)
 # Rozwiązywanie problemów
 ## [Rozwiązywanie typowych problemów](troubleshooting-atp-known-issues.md)
+## [Pomoc techniczna i informacje](atp-support.md)
