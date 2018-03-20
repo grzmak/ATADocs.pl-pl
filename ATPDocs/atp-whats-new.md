@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/11/2018
+ms.date: 3/18/2018
 ms.topic: article
 ms.prod: 
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,24 @@ ms.technology:
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4a81d84a46b9710c2376bbc50f699966a24138db
-ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
+ms.openlocfilehash: 6b3c9ddd1873b3139009a44e9c1f7a85ea3b6901
+ms.sourcegitcommit: adfa7a3a3918518b6b14b94d3c0a9f899142196a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/19/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-225"></a>Azure wersji ATP 2,25
+
+Wydane 18 marca 2018
+
+- Uwierzytelnianie wieloskładnikowe (MFA) jest teraz obsługiwana w Azure ATP. Dzierżawcy przy użyciu usługi MFA można wprowadzić teraz w portalu Azure ATP.
+- Azure ATP ma teraz [ **stan systemu** ](https://health.atp.azure.com/) stronę, aby uzyskać informacje na portalu zarządzania obszaru roboczego jest w górę, jak i aktywnych, jeśli występują problemy z wykryć i czujnika jest możliwość wysyłania ruch w chmurze. Dostęp można uzyskać **stan systemu** na pasku menu Azure ATP.
+
 
 ## <a name="azure-atp-release-224"></a>Azure ATP wersji 2,24
 
