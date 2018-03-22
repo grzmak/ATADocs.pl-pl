@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 5d639e84-2e37-43a9-9667-49be6c4fa8b7
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 07be2dad511158a9234c99287f7eefd7cc12ba83
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: e9147f4333f481eaec4967dd32846bd123866941
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 # <a name="ata-event-id-reference"></a>Odwołanie do Identyfikatora zdarzeń usługi ATA
@@ -84,8 +84,6 @@ Zdarzenia można znaleźć tutaj:
 
 2004 — LDAP ukierunkowany wymusić podejrzanego działania 
 
-2005 — wstępnego uwierzytelniania komputera podejrzane działanie nie powiodło się 
-
 2006 — directory usługi replikacji podejrzanego działania 
 
 2007 — podejrzane działania Rekonesans DNS 
@@ -97,8 +95,6 @@ Zdarzenia można znaleźć tutaj:
 2013 — forged PAC podejrzanych działań. 
 
 2014 — wystawionego jako przynęta działania podejrzanego działania 
-
-2015 — LDAP, wyczyść tekst hasła podejrzanego działania 
 
 2016 — dużego obiektu usunięcia podejrzanego działania 
 

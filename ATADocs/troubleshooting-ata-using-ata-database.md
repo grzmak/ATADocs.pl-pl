@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/31/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 377a3c81-5c1d-486f-8942-85249aacf560
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a08c3175c5b7d7d6006189f858b38026344decac
-ms.sourcegitcommit: 56c7d749b17745430e372e514accf537b3f215d0
+ms.openlocfilehash: 7bd17d6ac340f1acf0166aadbfcbb7f3ef164fc3
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -45,7 +45,7 @@ Domyślną i najbardziej podstawową metodą wysyłania zapytań do bazy danych 
 
 W poniższym przykładzie przedstawiono przykładowy kod przy użyciu składni wydanego wcześniej. Jeśli badane są podejrzane działania z dnia 2015-10-20 i chcesz dowiedzieć się więcej o działaniach związanych z protokołem NTLM podejmowanych przez użytkownika „John Doe” w tym dniu:<br /><br />Po pierwsze znajdź identyfikator użytkownika „John Doe”.
 
-`db.UniqueEntity.find({Name: "John Doe"})`<br>Zanotuj identyfikator określony przez wartość `_id` na przykład, że identyfikator to`123bdd24-b269-h6e1-9c72-7737as875351`<br>Następnie wyszukaj kolekcję z najbliższą datę, która jest wcześniejsza od daty, którego szukasz, w tym przykładzie 2015-20-10.<br>Następnie wyszukaj działania związane z protokołem NTLM konta użytkownika John Doe: 
+`db.UniqueEntity.find({Name: "John Doe"})`<br>Zanotuj identyfikator określony przez wartość `_id` na przykład, że identyfikator to `123bdd24-b269-h6e1-9c72-7737as875351`<br>Następnie wyszukaj kolekcję z najbliższą datę, która jest wcześniejsza od daty, którego szukasz, w tym przykładzie 2015-20-10.<br>Następnie wyszukaj działania związane z protokołem NTLM konta użytkownika John Doe: 
 
 `db.Ntlms_<closest date>.find({SourceAccountId: "123bdd24-b269-h6e1-9c72-7737as875351"})`
 

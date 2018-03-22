@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/1/2018
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7a5dd2c722244ec94ebf49555483ddd201b5ba54
-ms.sourcegitcommit: 7684a9942719a90444ab567ffe9b2ff86438c04b
+ms.openlocfilehash: 27a016fe71d08dd8e8852fc44d5dea142f914d9e
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 # <a name="install-ata---step-1"></a>Instalowanie usługi ATA — Krok 1
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/01/2018
 >[!div class="step-by-step"]
 [Krok 2 »](install-ata-step2.md)
 
-Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji znajdują się w [przewodniku migracji dla usługi ATA 1.8](ata-update-1.8-migration-guide.md).
+Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA dla wersji 1.9](ata-update-1.9-migration-guide.md).
 
 > [!IMPORTANT] 
 > Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
@@ -76,7 +76,7 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 
     -   Centrum usługi ATA
 
-    -   Baza danych MongoDB
+    -   MongoDB
 
     -   Niestandardowy zestaw kolekcji danych monitora wydajności
 

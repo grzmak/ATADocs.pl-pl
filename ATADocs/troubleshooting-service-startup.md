@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/20/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 5a65285c-d1de-4025-9bb4-ef9c20b13cfa
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 33ff11f592984b754521c562414ffeabd2d1f255
-ms.sourcegitcommit: 91158e5e63ce2021a1f5f85d47de03d963b7cb70
+ms.openlocfilehash: 87d3f1de8167c1198e6b334826f90df83cc96780
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/20/2017
 Jeśli nie można uruchomić Centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
 
 1.  Uruchom następujące polecenie programu Windows PowerShell: `Get-Service Pla | Select Status` się upewnić, że działa usługa licznika wydajności. Jeśli nie, wówczas jest to problem z platformą i musisz się upewnić, że ta usługa zostanie uruchomiona ponownie.
-2.  Jeśli była uruchomiona, spróbuj uruchomić go ponownie i zobacz, czy spowodowało to rozwiązanie problemu:`Restart-Service Pla`
+2.  Jeśli była uruchomiona, spróbuj uruchomić go ponownie i zobacz, czy spowodowało to rozwiązanie problemu: `Restart-Service Pla`
 3.  Spróbuj ręcznie utworzyć nowy moduł zbierający dane (nada się dowolny moduł, nawet tylko zbierający dane procesorów CPU komputera).
 Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Jeśli nie, nadal jest to problem platformy.
 
@@ -46,7 +46,7 @@ Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Je
 
 ## <a name="troubleshooting-ata-lightweight-gateway-startup"></a>Rozwiązywanie problemów z uruchomienia bramy ATA Lightweight Gateway
 
-**Objaw**
+**Symptom**
 
 Nie można uruchomić bramy usługi ATA, a ten błąd:<br></br>
 *System.Net.Http.HttpRequestException: Kod stanu odpowiedzi nie wskazuje powodzenia: 500 (wewnętrzny błąd serwera)*
@@ -57,7 +57,7 @@ Dzieje się tak, ponieważ w ramach procesu instalacji Lightweight Gateway, usł
 
 **Rozdzielczość**
 
-1. W rejestrze kluczy, jeśli istnieje wartość DWORD o nazwie **Wyłącz liczniki wydajności** upewnij się, że jest ustawiona na **0**: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\``HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfProc\Performance`
+1. W rejestrze kluczy, jeśli istnieje wartość DWORD o nazwie **Wyłącz liczniki wydajności** upewnij się, że jest ustawiona na **0**:  `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\` `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfProc\Performance`
  
 2. Następnie uruchom ponownie usługę Pla. Brama ATA Lightweight Gateway automatycznie wykryje zmianę i ponownie uruchom usługę.
 

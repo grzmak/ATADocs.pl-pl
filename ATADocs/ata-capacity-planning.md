@@ -5,20 +5,20 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/1/2018
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.service: advanced-threat-analytics
 ms.prod: 
 ms.assetid: 279d79f2-962c-4c6f-9702-29744a5d50e2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 76173dfa0b41195e641235f8792723fa7b038a68
-ms.sourcegitcommit: 7684a9942719a90444ab567ffe9b2ff86438c04b
+ms.openlocfilehash: e58fe62fc655fed8f17ae800dda20e022e198a26
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -28,7 +28,7 @@ Ten artykuł ułatwia określenie, ile serwerów usługi ATA są niezbędne do m
 > [!NOTE] 
 > Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
 
-##<a name="using-the-sizing-tool"></a>Korzystanie z narzędzia do określania rozmiaru
+## <a name="using-the-sizing-tool"></a>Korzystanie z narzędzia do określania rozmiaru
 Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia usługi ATA jest użycie [narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool). Uruchom narzędzie do określania rozmiaru usługi ATA i określ wymaganą pojemność usługi ATA za pomocą następujących pól wyników w pliku programu Excel:
 
 - Procesor i pamięć centrum usługi ATA: dopasuj wartość pola **Zajęte pakiety/s** w pliku wyników tabeli centrum usługi ATA do wartości pola **PAKIETY/S** w [tabeli centrum usługi ATA](#ata-center-sizing).
@@ -47,6 +47,9 @@ Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia us
 Jeśli z jakiegoś powodu nie możesz użyć narzędzia do określania rozmiaru usługi ATA, zbierz ręcznie informacje licznika liczby pakietów na sekundę ze wszystkich kontrolerów domeny z okresu 24 godzin i z krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
 Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
 
+
+> [!NOTE]
+> Ponieważ różnych środowiskach zależą i ma wiele cech ruchu sieci specjalnych i nieoczekiwany po początkowym wdrożeniu usługi ATA i uruchom narzędzie ustalania rozmiaru, może być konieczne dostosowanie i dostrojenia wdrożenia pojemności.
 
 
 ### <a name="ata-center-sizing"></a>Ustalanie rozmiaru centrum usługi ATA
@@ -67,8 +70,7 @@ W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum u
 &#42;&#42;Wartości średnie (wartości szczytowe)
 > [!NOTE]
 > -   Centrum usługi ATA może obsługiwać maksymalnie 1 mln pakietów na sekundę ze wszystkich monitorowanych kontrolerów domeny łącznie. W niektórych środowiskach tego samego Centrum usługi ATA może obsługiwać ruch ogólnej, jest większa niż 1M. Skontaktuj się z nami pod adresem askcesec@microsoft.com, aby uzyskać pomoc w przypadku pracy w takich środowiskach.
-> -   Wielkości magazynu określone w tym miejscu to wartości netto. Zawsze należy uwzględnić przyszły wzrost oraz zapewnić co najmniej 20% wolnego miejsca na dysku, na którym znajduje się baza danych.
-> -   Jeśli wolne miejsce osiągnie wartość co najmniej 20% lub 200 GB, dane z najstarszej kolekcji jest usunięte. Usuwanie będzie kontynuowane, dopóki nie pozostanie jedynie 5% lub 50 GB wolnego miejsca. W takim przypadku zbieranie danych zostanie zatrzymane.
+> -   Jeśli wolne miejsce osiągnie wartość co najmniej 20% lub 200 GB, dane z najstarszej kolekcji jest usunięte. Alert zostanie zarejestrowany, jeśli nie jest możliwe zmniejszenie pomyślnie zbierania danych na tym poziomie.  Usługi ATA będą nadal działać dopóki próg 5% lub 50 GB wolnego miejsca.  W tym momencie usługi ATA zostanie zatrzymane, wypełnianie bazy danych, a dodatkowe alertu zostaną wystawione.
 > - Centrum usługi ATA można wdrożyć na dowolnym dostawcy IaaS, jeśli są spełnione wymagania dotyczące wydajności opisane w tym artykule.
 > -   Opóźnienie magazynu dla działań odczytu i zapisu powinno być niższe niż 10 ms.
 > -   Stosunek między działaniami odczytu i zapisu to około 1:3 poniżej 100 000 pakietów na sekundę i 1:6 powyżej 100 000 pakietów na sekundę.
@@ -163,56 +165,6 @@ Zagadnienia związane z dublowaniem portów mogą wymagać wdrożenia wielu bram
 > -   Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** bramy usługi ATA na wartość **Wysoka wydajność**.
 > -   Wymagane jest co najmniej 5 GB miejsca i 10 GB jest zalecane miejsce wymagane do plików binarnych usługi ATA, w tym [dzienniki usługi ATA](troubleshooting-ata-using-logs.md), i [dzienników wydajności](troubleshooting-ata-using-perf-counters.md).
 
-
-## <a name="domain-controller-traffic-estimation"></a>Szacowanie ruchu kontrolera domeny
-Istnieją różne narzędzia, za pomocą których można określić średnią liczbę pakietów na sekundę kontrolerów domeny. Jeśli nie masz żadnych narzędzi do określenia tej wartości, możesz użyć Monitora wydajności do zebrania wymaganych informacji.
-
-Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na każdym kontrolerze domeny:
-
-1.  Otwórz Monitor wydajności.
-
-    ![Obraz przedstawiający Monitor wydajności](media/ATA-traffic-estimation-1.png)
-
-2.  Rozwiń węzeł **Zestawy modułów zbierających dane**.
-
-    ![Obraz przedstawiający zestawy modułów zbierających dane](media/ATA-traffic-estimation-2.png)
-
-3.  Kliknij prawym przyciskiem myszy pozycję **Zdefiniowany przez użytkownika**, a następnie wybierz pozycję **Nowy** &gt; **Zestaw modułów zbierających dane**.
-
-    ![Obraz przedstawiający nowy zestaw modułów zbierających dane](media/ATA-traffic-estimation-3.png)
-
-4.  Wprowadź nazwę dla zestawu modułów zbierających dane, a następnie wybierz pozycję **Utwórz ręcznie (zaawansowane)**.
-
-5.  W obszarze **Jakiego typu dane chcesz uwzględnić?** wybierz pozycje **Utwórz dzienniki danych i Licznik wydajności**.
-
-    ![Obraz przedstawiający typ danych nowego zestawu modułów zbierających dane](media/ATA-traffic-estimation-5.png)
-
-6.  W obszarze **Które liczniki wydajności chcesz rejestrować?** kliknij przycisk **Dodaj**.
-
-7.  Rozwiń węzeł **Karta sieciowa**, wybierz pozycję **Pakiety/s**, a następnie wybierz odpowiednie wystąpienie. Jeśli nie masz pewności, możesz wybrać pozycję **&lt;Wszystkie wystąpienia&gt;**, kliknąć przycisk **Dodaj**, a następnie kliknąć przycisk **OK**.
-
-    > [!NOTE]
-    > Aby wykonać tę operację w wierszu polecenia, uruchom polecenie `ipconfig /all` w celu wyświetlenia nazwy karty i konfiguracji.
-
-    ![Obraz przedstawiający dodawanie liczników wydajności](media/ATA-traffic-estimation-7.png)
-
-8.  Zmień wartość pozycji **Interwał próbkowania** na **1 sekundę**.
-
-9. Ustaw lokalizację, w której mają być zapisywane dane.
-
-10. W obszarze **utworzyć zestaw modułów zbierających dane**, wybierz pozycję **uruchomić ten zestaw modułów zbierających dane teraz**i kliknij przycisk **Zakończ**.
-
-    Powinien zostać wyświetlony utworzony zestaw modułów zbierających dane z zielonym trójkątem wskazującym, że zestaw działa.
-
-11. Po 24 godzinach zatrzymaj zestaw modułów zbierających dane, klikając go prawym przyciskiem myszy, a następnie wybierając polecenie **Zatrzymaj**.
-
-    ![Obraz przedstawiający zatrzymywanie działania zestawu modułów zbierających dane](media/ATA-traffic-estimation-12.png)
-
-12. W Eksploratorze plików przejdź do folderu, w którym zapisano plik blg, a następnie kliknij go dwukrotnie w celu otworzenia w Monitorze wydajności.
-
-13. Wybierz licznik Pakiety/s i zapisz wartość średnią oraz maksymalną.
-
-    ![Obraz przedstawiający licznik Pakiety/s](media/ATA-traffic-estimation-14.png)
 
 
 ## <a name="related-videos"></a>Powiązane pliki wideo

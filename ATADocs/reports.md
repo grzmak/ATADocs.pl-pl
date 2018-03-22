@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 38ea49b5-cd5e-43e5-bc39-5071f759633b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f97033ee685c10e9ee647e52c19cbd4ee1640b6f
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: b7f921bb2eb655a929eb19c849788c1bf9f64527
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 # <a name="ata-reports"></a>Raporty usługi ATA
@@ -28,16 +28,23 @@ Sekcja raportów usługi ATA w konsoli umożliwia generowanie raportów, które 
 
 Aby uzyskać dostęp do strony raportów, kliknij ikonę raportu na pasku menu: ![ikona raportu](./media/ata-report-icon.png).
 Do raportów, które są dostępne, należą: 
-- Raport z podsumowaniem: raport z podsumowaniem przedstawia pulpit nawigacyjny stanu systemu. Możesz wyświetlić trzy karty — jedną dla **podsumowania** tego, co zostało wykryte w sieci, jedną dla **otwierania podejrzanych działań** z podejrzanymi działaniami, którymi należy się zająć, i jedną dla **otwierania problemów z kondycją** z problemami z kondycją systemu usługi ATA, którymi należy się zająć. Wyświetlane podejrzane działania są podzielone według typu, tak jak problemy z kondycją. 
-- Modyfikacja wrażliwych grup: ten raport jest wyświetlany za każdym razem, gdy nastąpi modyfikacja wrażliwych grup (takich jak administratorzy).
+
+- **Raport z podsumowaniem**: raport z podsumowaniem przedstawia pulpit nawigacyjny stanu w systemie. Możesz wyświetlić trzy karty — jedną dla **podsumowania** tego, co zostało wykryte w sieci, jedną dla **otwierania podejrzanych działań** z podejrzanymi działaniami, którymi należy się zająć, i jedną dla **otwierania problemów z kondycją** z problemami z kondycją systemu usługi ATA, którymi należy się zająć. Wyświetlane podejrzane działania są podzielone według typu, tak jak problemy z kondycją. 
+
+- **Modyfikowanie grupy wrażliwe**: Ten raport zawiera listę za każdym razem, gdy zmiany dotyczące grupy poufne (na przykład Administratorzy).
+
+- **Haseł w zwykłym tekstem**: niektóre usługi protokół LDAP niezabezpieczonego wysłać poświadczenia konta w postaci zwykłego tekstu. Możliwe, nawet w przypadku kont poufnych. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. Ten raport zawiera listę wszystkich źródła komputerze i koncie haseł, których ATA wykryte jako wysyłane w postaci zwykłego tekstu. 
+
+- **Penetracji ścieżki ruchu do kont poufnych**: Ten raport zawiera listę kont poufnych, które są dostępne za pośrednictwem ścieżki penetracji sieci. Aby uzyskać więcej informacji, zobacz [penetracji ścieżki ruchu](use-case-lateral-movement-path.md)
 
 Istnieją dwa sposoby generowania raportu: na żądanie albo zaplanowanie okresowego wysyłania raportu na adres e-mail.
 
 Aby wygenerować raport na żądanie:
 
 1. Na pasku menu konsoli usługi ATA kliknij ikonę raportu: ![ikona raportu](./media/ata-report-icon.png).
-2. W obszarze **Podsumowanie** albo **Modyfikacje wrażliwych grup** ustaw daty **Od** i **Do**, a następnie kliknij przycisk **Pobierz**. 
-![raporty](./media/reports.png)
+
+2. W obszarze albo Ustaw typ wybranego raportu, **z** i **do** dat i kliknij przycisk **Pobierz**. 
+ ![raporty](./media/reports.png)
 
 Aby ustawić zaplanowany raport:
  
@@ -45,13 +52,13 @@ Aby ustawić zaplanowany raport:
 
    ![Planowanie raportów](./media/ata-sched-reports.png)
 
-2. Kliknij przycisk **Harmonogram** obok pozycji **Podsumowanie** lub **Modyfikacje wrażliwych grup**, aby ustawić częstotliwość i adres e-mail dostarczania raportów, a następnie kliknij znak plus obok adresów e-mail, aby je dodać, po czym kliknij przycisk **Zapisz**.
+2. Kliknij przycisk **harmonogram** typ wybranego raportu, aby ustawić częstotliwość i adres e-mail w celu dostarczania raportów i kliknij znak plus obok adresów e-mail, aby dodać je, a następnie kliknij przycisk Dalej, aby **zapisać**.
 
    ![Planowanie częstotliwości raportów i wysyłania poczty e-mail](./media/sched-report1.png)
 
 
 > [!NOTE]
-> Zaplanowane raporty są dostarczane za pośrednictwem poczty e-mail i mogą być wysyłane tylko wtedy, gdy serwer poczty e-mail został już skonfigurowany w obszarze **Konfiguracja** , a następnie w obszarze powiadomień i raportów wybierz **Serwer poczty**.
+> Zaplanowane raporty są dostarczane za pośrednictwem poczty e-mail i mogą być wysyłane tylko jeśli został już skonfigurowany serwer poczty e-mail w obszarze **konfiguracji** , a następnie w obszarze **powiadomienia i raporty**, wybierz pozycję **poczty Serwer**.
 
 
 ## <a name="see-also"></a>Zobacz też

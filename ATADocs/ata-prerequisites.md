@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/1/2018
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: dd422a7feffcddc0f56b54b11d5dadb029457a8e
-ms.sourcegitcommit: 7684a9942719a90444ab567ffe9b2ff86438c04b
+ms.openlocfilehash: 419df4c4404bf26a85c1a955139d0dee6f50828e
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -68,7 +68,12 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
 ## <a name="ata-center-requirements"></a>Wymagania centrum usługi ATA
 Ta sekcja zawiera listę wymagań centrum usługi ATA.
 ### <a name="general"></a>Ogólne
-Centrum usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016. Centrum usługi ATA można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
+Centrum usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016. 
+
+ > [!NOTE]
+ > Centrum usługi ATA nie obsługuje systemu Windows Server core.
+
+Centrum usługi ATA można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
 
 Przed zainstalowaniem centrum usługi ATA w systemie Windows 2012 R2 upewnij się, że została zainstalowana następująca aktualizacja: [KB2919355](https://support.microsoft.com/kb/2919355/).
 
@@ -83,7 +88,8 @@ Jeśli centrum usługi ATA jest uruchamiane jako maszyna wirtualna, należy wył
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 
-Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. System może odwoływać się do architektury NUMA przeplataniem węzłów, w którym to przypadku należy **włączyć** Przeplatanie, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji zobacz dokumentację systemu BIOS. <br>
+Podczas pracy na serwerze fizycznym baza danych usługi ATA wymaga **wyłączenia** obsługi niejednolitego dostępu do pamięci (NUMA) w systemie BIOS. System może odwoływać się do architektury NUMA przeplataniem węzłów, w którym to przypadku należy **włączyć** Przeplatanie, aby wyłączyć technologię NUMA. Aby uzyskać więcej informacji zobacz dokumentację systemu BIOS.<br>
+
 Aby uzyskać optymalną wydajność, ustaw pozycję **Opcja zasilania** centrum usługi ATA na wartość **Wysoka wydajność**.<br>
 Liczba monitorowanych kontrolerów domeny i obciążenie poszczególnych kontrolerów domeny decyduje specyfikacje serwera. Aby uzyskać więcej informacji, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
@@ -117,6 +123,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**Kerberos** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|88|Kontrolery domeny|Wychodzące|
 |**Netlogon** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
 |**Czas systemu Windows** (opcjonalne, jeśli przyłączonych do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
+|**Netlogon (SMB, CIFS, SAM-R)**|TCP i UDP|445|Bramy i urządzeń|Przychodzące i wychodzące|
 
 > [!NOTE]
 > LDAP jest wymagane do przetestowania poświadczenia do użycia między bram usługi ATA i kontrolerach domeny. Uruchomienie testu jest wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część procesu zwykłej rozdzielczości.
@@ -147,7 +154,7 @@ Na przykład można użyć standardowego **serwera sieci Web** lub **komputera**
 ## <a name="ata-gateway-requirements"></a>Wymagania bramy usługi ATA
 Ta sekcja zawiera listę wymagań bramy usługi ATA.
 ### <a name="general"></a>Ogólne
-Brama usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016 (w tym Server Core).
+Brama usługi ATA obsługuje instalację na serwerze z systemem Windows Server 2012 R2 lub Windows Server 2016 (w tym instalacja server core).
 Brama usługi ATA może zostać zainstalowana na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
 Brama usługi ATA może służyć do monitorowania kontrolerów domeny z poziomem funkcjonalności domeny systemu Windows 2003 lub nowszego.
 

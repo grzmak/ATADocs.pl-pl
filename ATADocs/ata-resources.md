@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 1/15/2018
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 42a1a34f-ed6b-4538-befb-452168a30e8c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 33aec9dd89fc189144387e59c3b48b9d440936d2
-ms.sourcegitcommit: 55f7ac32bcd4ac8edb8b8b3b47993bf96b9acce2
+ms.openlocfilehash: a56a24a2012239ed05f0a2f214dba345a817df39
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 # <a name="ata-readiness-roadmap"></a>Plan gotowości usługi ATA 
 Ten dokument zawiera plan gotowości, która pomoże rozpocząć pracę z Advanced Threat Analytics.
@@ -42,7 +42,7 @@ Usługa ATA składa się z Centrum usługi ATA, które można zainstalować na s
 |KONFIGURACJA|DECYZJI|
 |----|----|
 |Typ sprzętu|Fizycznych, wirtualnych, maszyny Wirtualnej Azure|
-|Grupy roboczej lub domeny|Grupy roboczej, domeny|
+|Grupy roboczej lub domeny|Workgroup, domain|
 |Ustalanie rozmiaru bramy|Pełne, lekkie bramy|
 |Certyfikaty|Infrastruktura kluczy publicznych, z podpisem własnym|
 

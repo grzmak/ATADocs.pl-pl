@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/6/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 1bf264d9-9697-44b5-9533-e1c498da4f07
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 26c093c4163593611b175f4f0002f443e593f952
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 2ecffce7d692a9f1ecea8d8c5220ce3b2dbf848e
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -77,6 +77,10 @@ Po wykryciu nowego podejrzanego działania pasek powiadomień zostanie otwarty a
 
 ![Obraz paska powiadomień usługi ATA](media/notification-bar-1.7.png)
 
+### <a name="whats-new"></a>Co nowego
+
+Po wydaniu nowej wersji usługi ATA, **nowości** okno jest wyświetlane w górnej prawo do informacją o tym, co zostało dodane w najnowszej wersji. Umożliwia także możesz Link do pobierania wersji.
+
 ### <a name="filtering-panel"></a>Panel filtrowania
 
 Podejrzane działania wyświetlane na osi czasu ataków lub na karcie podejrzanych działań profilu jednostki można filtrować na podstawie stanu i ważności.
@@ -94,23 +98,6 @@ Centrum kondycji zapewnia alerty, gdy coś nie działa prawidłowo we wdrożeniu
 ![Obraz centrum kondycji usługi ATA](media/ATA-Health-Issue.jpg)
 
 Dowolnej chwili, gdy system napotka problem, takie jak błąd łączności lub rozłączona brama usługi ATA, ikona Centrum kondycji informuje przez wyświetlenie czerwonej kropki. ![Obraz czerwonej kropki centrum kondycji usługi ATA](media/ATA-Health-Center-Alert-red-dot.png)
-
-### <a name="user-and-computer-profiles"></a>Profile użytkowników i komputerów
-
-Usługa ATA tworzy profil dla każdego użytkownika i komputera w sieci. W profilu użytkownika usługi ATA wyświetlane są ogólne informacje, takie jak członkostwo w grupie, ostatnie logowania i ostatnio używane zasoby. Umożliwia także listy lokalizacje, w którym użytkownik jest połączony za pośrednictwem sieci VPN. Lista członkostwa w grupach, które ATA uwzględnia wielkość liter Zobacz Następująca lista.
-
-![Profil użytkownika](media/user-profile.png)
-
-W profilu komputera usługa ATA wyświetla ogólne informacje, takie jak ostatnie logowania i ostatnio używane zasoby.
-
-![Profil komputera](media/computer-profile.png)
-
-Usługa ATA zapewnia dodatkowe informacje na temat jednostek (komputerów, urządzeń i użytkowników) na następujących stronach: Podsumowanie, Działania i Podejrzane działania.
-
-Profil usługi ATA nie mogło zostać całkowicie rozwiązany jest identyfikowany ikoną koła wypełnionego do połowy obok niej.
-
-
-![Obraz nierozwiązanego profilu usługi ATA](media/ATA-Unresolved-Profile.jpg)
 
 ### <a name="sensitive-groups"></a>Wrażliwe grupy
 
