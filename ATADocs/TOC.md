@@ -2,6 +2,8 @@
 ## [Co to jest usługa Microsoft Advanced Threat Analytics?](what-is-ata.md)
 ## [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md)
 ## Co nowego w usłudze ATA?
+### [Co nowego w usłudze ATA w wersji 1.9](whats-new-version-1.9.md)
+#### [Aktualizacja usługi ATA do wersji 1.9 — przewodnik migracji](ata-update-1.9-migration-guide.md)
 ### [Co nowego w wersji 1.8 usługi ATA](whats-new-version-1.8.md)
 #### [Aktualizacja usługi ATA do wersji 1.8 — przewodnik migracji](ata-update-1.8-migration-guide.md)
 ### [Co nowego w wersji 1.7 usługi ATA](whats-new-version-1.7.md)
@@ -17,7 +19,7 @@
 ## [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 ## [Wymagania wstępne usługi ATA](ata-prerequisites.md)
 ## [Zalecane ścieżka uaktualnienia](upgrade-path.md)
-# Wdróż
+# Wdróż program
 ## [1. Pobieranie i instalowanie centrum](install-ata-step1.md)
 ## [2. Łączenie z usługą AD](install-ata-step2.md)
 ## [3. Pobieranie pakietu bramy usługi ATA](install-ata-step3.md)
@@ -26,12 +28,13 @@
 ## [6. Zbieranie zdarzeń](install-ata-step6.md)
 ## [7. Integracja zestawów VPN](vpn-integration-install-step.md)
 ## [8. Wykluczenia i pułapki](install-ata-step7.md)
+## [9. Konfigurowanie rozwiązania SAM-R](install-ata-step9-samr.md)
 ## [Instalacja dyskretna](ata-silent-installation.md)
 ## Brama usługi ATA — dodatkowe kroki
 ### [1. Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 ### [2. Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [3. Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-collection.md)
-# Używanie
+# Użycie
 ## [Zarządzanie bazą danych usługi ATA](ata-database-management.md)
 ## [Centrum kondycji usługi ATA](ata-health-center.md)
 ## [Raporty usługi ATA](reports.md)
@@ -42,9 +45,12 @@
 ## [Eksportowanie/importowanie konfiguracji usługi ATA](ata-configuration-file.md)
 ## [Zarządzanie funkcją telemetrii w usłudze ATA](manage-telemetry-settings.md)
 ## [Ustawianie powiadomień usługi ATA](setting-ata-alerts.md)
-## [Określanie ustawień usługi Syslog i serwera poczty e-mail](setting-syslog-email-server-settings.md)
+## [Określanie ustawień dziennika systemowego i serwera poczty e-mail](setting-syslog-email-server-settings.md)
+## [Tagowanie poufnych kont](tag-sensitive-accounts.md)
 ## [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 ## [Praca z konsolą usługi ATA](working-with-ata-console.md)
+### [Profile jednostek](entity-profiles.md)
+##[Zapobieganie ścieżkom penetracji sieci](use-case-lateral-movement-path.md)
 ## Informacje referencyjne o ATA
 ### [Dokumentacja dziennika rozwiązania SIEM usługi ATA](cef-format-sa.md)
 ### [Odniesienie identyfikator zdarzenia](event-id-reference.md)
