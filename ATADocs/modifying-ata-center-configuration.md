@@ -5,21 +5,20 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
-ms.topic: article
+ms.date: 3/21/2018
 ms.prod: 
 ms.service: advanced-threat-analytics
 ms.technology: 
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 4fe4569cd6477775e8a888d2acd05511f16fb5f6
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 294b9204f9ca6a40a835e5360a7011947e3255b4
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -53,7 +52,9 @@ Ten adres URL jest używany w następujących scenariuszach:
     
 3. Poczekaj, aż bram usługi ATA do synchronizowania. Teraz mają dwa potencjalne adresy URL za pośrednictwem której można uzyskać dostępu do konsoli usługi ATA. Tak długo, jak bramy usługi ATA mogą łączyć przy użyciu oryginalnego adresu URL, nie jest jego nowego.
 
-4. Po wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją aktywować nowy adres URL. Po aktywowaniu nowego adresu URL bram usługi ATA teraz używać nowego adresu URL do Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy adres URL konsoli usługi ATA. 
+4. Po kliknięciu przycisku wszystkich bram usługi ATA zsynchronizowanych z zaktualizowaną konfiguracją, na stronie Konfiguracja centrum **Aktywuj** przycisk, aby aktywować nowy adres URL. Po aktywowaniu nowego adresu URL bram usługi ATA teraz używać nowego adresu URL do Centrum usługi ATA. Po połączeniu z Centrum usługi ATA, bramy usługi ATA pobierze najnowszą konfigurację i będzie mieć tylko nowy adres URL konsoli usługi ATA. 
+5. 
+ ![Aktywuj certyfikatu](media/center-activation.png)
 
 > [!NOTE]
 > -   Jeśli bramy usługi ATA była w trybie offline, gdy aktywować nowy adres URL i nigdy nie otrzymała zaktualizowanej konfiguracji, należy ręcznie zaktualizować pliku JSON konfiguracji na bramie usługi ATA.

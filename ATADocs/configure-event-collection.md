@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 482b16462d115c7bcc2854d30c2ef19fce37f2c0
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 2c8f67d0c8d9020eb0e7ae16e8410db473ace044
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/07/2017
 > W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 
 
-W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje zdarzeń systemu Windows z identyfikatorami 4776, 4732, 4733, 4728, 4729, 4756, 4757. Można albo je odczytać automatycznie przez bramę ATA Lightweight Gateway lub w przypadku bramy ATA Lightweight Gateway nie została wdrożona, jego może być przekazywany do bramy usługi ATA na jeden z dwóch sposobów przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez skonfigurowanie zdarzeń systemu Windows Przekazywanie.
+W celu zwiększenia możliwości wykrywania usługa ATA wymaga następujących zdarzeń systemu Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757, 7045. Można albo je odczytać automatycznie przez bramę ATA Lightweight Gateway lub w przypadku bramy ATA Lightweight Gateway nie została wdrożona, jego może być przekazywany do bramy usługi ATA na jeden z dwóch sposobów przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez skonfigurowanie zdarzeń systemu Windows Przekazywanie.
 
 
 
@@ -61,7 +61,7 @@ Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, p
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
-    3.  W obszarze **SubscriptionManagers**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server = http: / /<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC, Odśwież = 10* () For example: serwer = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)
+    3.  W obszarze **SubscriptionManagers**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server = http: / /<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC, Odśwież = 10* () For example: serwer =http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)
  
    ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
    

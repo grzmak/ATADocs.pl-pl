@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: d89e7aff-a6ef-48a3-ae87-6ac2e39f3bdb
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: f13416c4179d65ee8096d246ea92969b1cf9af43
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: a7172447de5b4d4088da2d8d687a7bec47a01551
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -30,7 +30,7 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 ## <a name="ata-gateway-and-lightweight-gateway-errors"></a>Błędy bramy i uproszczonej bramy usługi ATA
 
 > [!div class="mx-tableFixed"]
-|Błąd|Opis|Rozwiązanie|
+|Error|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |System.DirectoryServices.Protocols.LdapException: Wystąpił błąd lokalny|Nie można uwierzytelnić bramy usługi ATA na kontrolerze domeny.|1. Upewnij się, że rekord DNS kontrolera domeny jest prawidłowo skonfigurowany na serwerze DNS. <br>2. Sprawdź, czy czas bramy usługi ATA jest zsynchronizowany z czasem kontrolera domeny.|
 |System.IdentityModel.Tokens.SecurityTokenValidationException: Nie można zweryfikować łańcucha certyfikatów|Brama usługi ATA nie może zweryfikować certyfikatu centrum usługi ATA.|1. Sprawdź, czy w magazynie certyfikatów zaufanego urzędu certyfikacji w bramie ATA jest zainstalowany certyfikat głównego urzędu certyfikacji. <br>2. Sprawdź, czy jest dostępna lista odwołań certyfikatów (CRL) i czy można zweryfikować poprawność odwołania certyfikatu.|
@@ -51,12 +51,12 @@ W tej sekcji szczegółowo opisano możliwe błędy we wdrożeniach usługi ATA 
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (407) Wymagane uwierzytelnianie serwera proxy|Komunikacja bramy usługi ATA z Centrum usługi ATA jest zakłócana przez serwer proxy.|Wyłącz serwer proxy na maszynie bramy usługi ATA. <br></br>Pamiętaj, że ustawienia serwera proxy mogą być określane oddzielnie dla każdego konta.|
 |System.IO.DirectoryNotFoundException: System nie może odnaleźć określonej ścieżki. (Wyjątek od HRESULT: 0x80070003)|Co najmniej jedna usługa potrzebna do działania usługi ATA nie została uruchomiona.|Uruchom następujące usługi: <br></br>Dzienniki wydajności i alerty (PLA), Harmonogram zadań (Schedule).|
 |System.Net.WebException: Serwer zdalny zwrócił błąd: (403) zabroniony|Brama usługi ATA lub bramy Lightweight może zostało zabronione od ustanawiania połączenia HTTP, ponieważ Centrum usługi ATA nie jest zaufany.|Dodaj nazwę NetBIOS i FQDN Centrum usługi ATA do listy zaufanych witryn sieci Web i wyczyść pamięć podręczną w Eksploratorze Interne (lub nazwę Centrum usługi ATA, jak określono w konfiguracji, jeśli skonfigurowanego jest inna niż nazwa NetBIOS/FQDN).|
-|System.Net.Http.HttpRequestException: PostAsync nie powiodło się [requestTypeName = StopNetEventSessionRequest]|Brama usługi ATA lub bramy ATA Lightweight Gateway nie może zatrzymać i uruchomić sesję funkcji ETW, która gromadzi ruchu sieciowego z powodu problemu z usługi WMI|Postępuj zgodnie z instrukcjami [WMI: ponowne tworzenie repozytorium WMI](https://blogs.technet.microsoft.com/askperf/2009/04/13/wmi-rebuilding-the-wmi-repository/) Aby rozwiązać problem WMI|
+|System.Net.Http.HttpRequestException: PostAsync failed [requestTypeName=StopNetEventSessionRequest]|Brama usługi ATA lub bramy ATA Lightweight Gateway nie może zatrzymać i uruchomić sesję funkcji ETW, która gromadzi ruchu sieciowego z powodu problemu z usługi WMI|Postępuj zgodnie z instrukcjami [WMI: ponowne tworzenie repozytorium WMI](https://blogs.technet.microsoft.com/askperf/2009/04/13/wmi-rebuilding-the-wmi-repository/) Aby rozwiązać problem WMI|
 |System.Net.Sockets.SocketException: Podjęto próbę dostępu do gniazda w sposób zabroniony przez jego uprawnień dostępu|Inna aplikacja używa portu 514 w bramie usługi ATA|Użyj `netstat -o` do ustalenia, które procesy wykorzystują tego portu.|
  
 ## <a name="deployment-errors"></a>Błędy wdrażania
 > [!div class="mx-tableFixed"]
-|Błąd|Opis|Rozwiązanie|
+|Error|Opis|Rozwiązanie|
 |-------------|----------|---------|
 |Instalacja platformy .Net Framework 4.6.1 nie powiodła się z powodu błędu 0x800713ec|Na serwerze nie są zainstalowane wymagania wstępne platformy .Net Framework 4.6.1. |Przed zainstalowaniem usługi ATA sprawdź, czy na serwerze są zainstalowane aktualizacje systemu Windows [KB2919442](https://www.microsoft.com/download/details.aspx?id=42135) i [KB2919355](https://support.microsoft.com/kb/2919355).|
 |System.Threading.Tasks.TaskCanceledException: Zadanie zostało anulowane|Upłynął limit czasu procesu wdrażania, ponieważ nie może on uzyskać dostępu do centrum usługi ATA.|1.    Sprawdź łączność sieciową z centrum usługi ATA, przechodząc do niego przy użyciu jego adresu IP. <br></br>2.    Sprawdź konfigurację serwera proxy lub zapory.|

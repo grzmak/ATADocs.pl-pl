@@ -1,11 +1,11 @@
 ---
-title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Dokumentacja firmy Microsoft"
+title: "Co to jest usługa Microsoft Advanced Threat Analytics (ATA)? | Microsoft Docs"
 description: "Informacje dotyczące usługi Microsoft Advanced Threat Analytics (ATA) i wykrywanych przez nią podejrzanych działań"
 keywords: 
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 11/7/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 283e7b4e-996a-4491-b7f6-ff06e73790d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 44f50b2daefb5a54c56b90289faf08b897494093
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 2f83f3ff564596c37716d79b955ac4fca7d94aa2
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 # <a name="what-is-advanced-threat-analytics"></a>Co to jest usługa Advanced Threat Analytics?

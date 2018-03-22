@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/11/2017
+ms.date: 3/21/2018
 ms.topic: article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 7620e171-76d5-4e3f-8b03-871678217a3a
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: fca262cde38ea35c431b12173b6395eed32abc54
-ms.sourcegitcommit: 261a8ed1a28089c3e40ba4aff43f287db5d9dd4a
+ms.openlocfilehash: 72598380f574e0475e4796887f44131009911be2
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
@@ -52,7 +52,7 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 5. Importowanie konfiguracji kopii zapasowej Centrum usługi ATA:
     1. Usuń dokument domyślnego profilu systemu centrum usługi ATA z bazy danych MongoDB: 
         1. Przejdź do lokalizacji **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**. 
-        2. Uruchom polecenie `mongo.exe ATA` 
+        2. Uruchom `mongo.exe ATA` 
         3. Uruchom usługę Centrum usługi ATA.
         4. Uruchom następujące polecenie, aby usunąć domyślny profil systemu: `db.SystemProfile.remove({})`
     2. Uruchom polecenie: `mongoimport.exe --db ATA --collection SystemProfile --file "<SystemProfile.json backup file>" --upsert`, używając pliku kopii zapasowej z kroku 1.</br>

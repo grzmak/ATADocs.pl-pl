@@ -5,7 +5,7 @@ keywords:
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 12/17/2017
+ms.date: 3/21/2018
 ms.topic: get-started-article
 ms.prod: 
 ms.service: advanced-threat-analytics
@@ -13,13 +13,13 @@ ms.technology:
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 0d951edf1037422c1ee52c8b1e35308665aad256
-ms.sourcegitcommit: 91158e5e63ce2021a1f5f85d47de03d963b7cb70
+ms.openlocfilehash: d76c34b115bd38bdb1eb82fbff1c0857b0ad8dfa
+ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 03/22/2018
 ---
-*Dotyczy: Advanced Threat Analytics w wersji 1.8*
+*Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 # <a name="advanced-threat-analytics-suspicious-activity-guide"></a>Advanced Threat Analytics podejrzanych działań przewodnik
@@ -63,6 +63,8 @@ Konfigurowanie [Privileged Access Management dla usługi Active Directory](https
 
 ## <a name="broken-trust-between-computers-and-domain"></a>Zerwaniem relacji zaufania między komputerami i domeny
 
+> ! [UWAGA] To podejrzane działanie została uznana za przestarzałą i jest wyświetlany tylko w wersji usługi ATA przed 1.9.
+
 **Opis**
 
 Zerwane relacje zaufania oznacza, że wymagania dotyczące zabezpieczeń usługi Active Directory może nie być obowiązywać dla komputerów w. Taka sytuacja jest często uznawana za podstawowy błąd zabezpieczeń i zgodności oraz atrakcyjny cel dla osób atakujących. W tym wykrywania alert jest wyzwalany, jeśli więcej niż 5 niepowodzenia uwierzytelniania Kerberos są widoczne z konta komputera w ciągu 24 godzin.
@@ -76,6 +78,7 @@ Czy danego komputera zezwala logowania użytkowników domeny?
 
 Przyłącz komputer do domeny, w razie potrzeby lub zresetowania hasła na komputerze.
 
+
 ## <a name="brute-force-attack-using-ldap-simple-bind"></a>Ataków siłowych przy użyciu prostego powiązania LDAP
 
 **Opis**
@@ -85,7 +88,7 @@ Przyłącz komputer do domeny, w razie potrzeby lub zresetowania hasła na kompu
 
 W ataków siłowych atakujący podejmie próbę uwierzytelniania za pomocą wielu różnych haseł dla różnych kont aż do znalezienia prawidłowego hasła dla co najmniej jedno konto. Znaleziono jeden raz, osoba atakująca może zalogować za pomocą tego konta.
 
-W tym wykrywania alert zostanie wywołany, gdy usługa ATA wykrywa wiele różnych używanych haseł. Może to być albo *poziomie* z niewielki zestaw hasła przez wielu użytkowników; lub *pionowo "* z dużym zestawem hasła w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
+W tym wykrywania alert zostanie wywołany, gdy usługa ATA wykrywa dużą liczbę uwierzytelnień proste powiązanie. Może to być albo *poziomie* z niewielki zestaw hasła przez wielu użytkowników; lub *pionowo "* z dużym zestawem hasła w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
 
 **Badanie**
 
@@ -103,15 +106,15 @@ W tym wykrywania alert zostanie wywołany, gdy usługa ATA wykrywa wiele różny
 
 **Opis**
 
-Korzystanie z różnych metod ataku słabe cyfry szyfrowania protokołu Kerberos. W wykrywanie, uzyskuje informacje o typy szyfrowania protokołu Kerberos, które są używane przez komputery i użytkowników usługi ATA i alerty, gdy słabszego szyfrowania jest używany: (1) jest typowe dla komputera źródłowego i/lub użytkownika. i (2) dopasowań znane techniki ataku.
+Obniżenia poziomu szyfrowania jest metoda osłabienia protokołu Kerberos przez obniżenie poziomu szyfrowania protokołu różnych pól, które zwykle są szyfrowane za pomocą najwyższego poziomu szyfrowania. Obniżonym poziomie pole zaszyfrowanych może być łatwiejsze docelowy próby siłowych w trybie offline. Korzystanie z różnych metod ataku słabe cyfry szyfrowania protokołu Kerberos. W wykrywanie, uzyskuje informacje o typy szyfrowania protokołu Kerberos, które są używane przez komputery i użytkowników usługi ATA i alerty, gdy słabszego szyfrowania jest używany: (1) jest typowe dla komputera źródłowego i/lub użytkownika. i (2) dopasowań znane techniki ataku.
 
 Istnieją trzy typy wykrywania:
 
-1.  Skeleton Key — to złośliwe oprogramowanie, która działa na kontrolerach domeny i umożliwia użycie uwierzytelniania z dowolnego konta do domeny bez uprzedniego uzyskania informacji o jego hasło. Złośliwe oprogramowanie często używa słabszych algorytmów szyfrowania w celu encipher hasła użytkownika na kontrolerze domeny. W tym wykrywania metody szyfrowania wiadomości KRB_ERR z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie.
+1.  Skeleton Key — to złośliwe oprogramowanie, która działa na kontrolerach domeny i umożliwia użycie uwierzytelniania z dowolnego konta do domeny bez uprzedniego uzyskania informacji o jego hasło. Złośliwe oprogramowanie często używa słabszych algorytmów szyfrowania skrótu hasła użytkownika na kontrolerze domeny. W tym wykrywania metody szyfrowania wiadomości KRB_ERR z kontrolera domeny do konta, prosząc biletu został obniżony w porównaniu do uprzednio zapamiętane zachowanie.
 
 2.  Bilet Golden — [bilet uwierzytelniania Golden Ticket](#golden-ticket) alertu, metody szyfrowania biletu TGT pola wiadomości TGS_REQ (żądanie obsługi) z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie. To nie jest oparty na czasie anomalii (tak jak inne wykrywania bilet uwierzytelniania Golden Ticket). Ponadto nie było żadnych żądanie uwierzytelniania Kerberos skojarzone z poprzedniego żądania obsługi, wykrytych przez usługę ATA.
 
-3.  Overpass--Hash — typ szyfrowania wiadomości AS_REQ z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie (oznacza to, że komputer został przy użyciu AES).
+3.  Overpass--Hash — osobie atakującej wykorzystanie słabe skradzionego skrótu w celu utworzenia biletu silne z żądaniem protokołu Kerberos AS. W tym wykrywania AS_REQ typ szyfrowania wiadomości z komputera źródłowego został obniżony w porównaniu do uprzednio zapamiętane zachowanie (oznacza to, że komputer został przy użyciu AES).
 
 **Badanie**
 
@@ -347,6 +350,8 @@ W tym wykrywania alerty nie będą wyzwalane w pierwszym miesiącu po wdrożeniu
 
  - Jeśli nie nie do wszystkich odpowiedzi z powyższych, założono jest złośliwe.
 
+6. Jeśli nie ma żadnych informacji o koncie, który był używany, można przejść do punktu końcowego i sprawdź konto, które zostało zarejestrowane w chwili alertu.
+
 **Korygowania**
 
 Użyj [narzędzie SAMRi10](https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b) zabezpieczyć środowiska przed tej metody.
@@ -428,6 +433,9 @@ Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj w
 
 ## <a name="sensitive-account-credentials-exposed--services-exposing-account-credentials"></a>Poufne konto poświadczeniami ujawnionymi & udostępnianie poświadczeń konta usługi
 
+> [!NOTE]
+> To podejrzane działanie została uznana za przestarzałą i jest wyświetlany tylko w wersji usługi ATA przed 1.9. Dla usługi ATA 1.9 i nowszych, zobacz [raporty](reports.md).
+
 **Opis**
 
 Niektóre usługi wysłać poświadczenia konta w postaci zwykłego tekstu. Możliwe, nawet w przypadku kont poufnych. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. Wszystkie hasła nieszyfrowanego poufne konto wyzwalać alert, gdy dla kont niepoufnych alert zostanie wywołany, jeśli pięć lub więcej różnych kont wysyła haseł w postaci zwykłego tekstu z tym samym komputerem źródłowym. 
@@ -448,7 +456,7 @@ Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzyst
 
 W ataków siłowych atakujący podejmie próbę uwierzytelniania za pomocą wielu różnych haseł dla różnych kont aż do znalezienia prawidłowego hasła dla co najmniej jedno konto. Znaleziono jeden raz, osoba atakująca może zalogować za pomocą tego konta.
 
-W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwierzytelniania, może to być albo poziomie za pomocą niewielki zestaw hasła przez wielu użytkowników. lub pionie o dużej zestawu haseł na tylko w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji.
+W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwierzytelniania przy użyciu protokołu Kerberos lub NTLM, może to być albo poziomie za pomocą niewielki zestaw hasła przez wielu użytkowników. lub pionie o dużej zestawu haseł na tylko w przypadku kilku użytkowników; lub dowolnej kombinacji tych dwóch opcji. Minimalny okres wywoła alertu jest jeden tydzień.
 
 **Badanie**
 
@@ -461,6 +469,30 @@ W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwie
 **Korygowania**
 
 [Złożone i długich haseł](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) podaj niezbędne pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
+## Tworzenie usługi podejrzanych <a name="suspicious-service-creation"></a>
+
+**Opis**
+
+Osoby atakujące usiłują do uruchamiania usług podejrzane w sieci. Usługa ATA zgłasza alert, gdy utworzono nową usługę, która wydaje się podejrzane na kontrolerze domeny. Ten alert zależy od zdarzenia 7045 i została wykryta przez każdy z kontrolerów domeny, objętych bramy usługi ATA lub bramy Lightweight.
+
+**Badanie**
+
+1. W przypadku danego komputera administracyjnej stacji roboczej lub komputera, na którym członkowie zespołu IT i usługi konta wykonywania zadań administracyjnych, może to być wynik fałszywie dodatni i może być konieczne **Pomiń** alert i dodaj go do Listy wykluczeń w razie potrzeby.
+
+2. Element, który rozpoznaje na tym komputerze jest usługa?
+
+ - Jest **konta** zagrożona mogą zainstalować tę usługę?
+
+ - Jeśli odpowiedzi na oba pytania *tak*, następnie **Zamknij** alertu lub dodanie go do listy wykluczeń.
+
+3. Jeśli odpowiedzi na pytania albo jest *nie*, a następnie to należy traktować jako dodatnią wartość true.
+
+**Korygowania**
+
+- Implementuje mniej uprzywilejowanego dostępu na komputerach domeny, aby zezwolić tylko określonym użytkownikom uprawnienia do tworzenia nowych usług.
+
+
 
 ## <a name="suspicion-of-identity-theft-based-on-abnormal-behavior"></a>Podejrzenie kradzieży tożsamości na podstawie nietypowego zachowania
 
@@ -484,7 +516,7 @@ W zależności od tego, co spowodowało to nietypowe zachowanie występuje nale�
 
 **Opis**
 
-Osoby atakujące użyj narzędzi, które implementują różnych protokołów (protokół SMB, protokołu Kerberos, NTLM) w niestandardowy sposób. Podczas tego typu ruchu sieciowego jest akceptowana przez system Windows bez ostrzeżenia, usługi ATA jest w stanie rozpoznać potencjalnych złośliwymi działaniami. Zachowanie jest wskaźnikiem technik, takich jak życie nadmiernego-Pass--Hash i atakami, jak również używane przez ransomware zaawansowane, na przykład WannaCry luki w zabezpieczeniach.
+Osoby atakujące użyj narzędzi, które implementują różnych protokołów (protokół SMB, protokołu Kerberos, NTLM) w niestandardowy sposób. Podczas tego typu ruchu sieciowego jest akceptowana przez system Windows bez ostrzeżenia, usługi ATA jest w stanie rozpoznać potencjalnych złośliwymi działaniami. Zachowanie jest wskaźnikiem technik, takich jak nadmiernego-Pass--Hash, jak również używane przez ransomware zaawansowane, na przykład WannaCry luki w zabezpieczeniach.
 
 **Badanie**
 
@@ -513,6 +545,10 @@ Poprawka programu maszyny, szczególnie stosowania aktualizacji zabezpieczeń.
 2. [Usuń WannaCry](https://support.microsoft.com/help/890830/remove-specific-prevalent-malware-with-windows-malicious-software-remo)
 
 3. WanaKiwi może odszyfrować danych w ręce niektóre programy ransom, ale tylko wtedy, jeśli użytkownik nie ma ponownie uruchomiona lub ją wyłączyć komputer. Aby uzyskać więcej informacji, zobacz [chcesz Ransomware krzykiem](https://answers.microsoft.com/en-us/windows/forum/windows_10-security/wanna-cry-ransomware/5afdb045-8f36-4f55-a992-53398d21ed07?auth=1)
+
+
+>[!NOTE]
+> Aby wyłączyć podejrzanych działań, się z pomocą techniczną.
 
 ## <a name="related-videos"></a>Powiązane pliki wideo
 - [Dołączenie do społeczności zabezpieczeń](https://channel9.msdn.com/Shows/Microsoft-Security/Join-the-Security-Community)
