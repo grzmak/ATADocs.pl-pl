@@ -1,23 +1,23 @@
 ---
-title: "Azure instalacji Advanced Threat Protection — krok 4 | Dokumentacja firmy Microsoft"
-description: "W kroku 4 instalowania Azure ATP pomaga zainstalować czujnik autonomiczny Azure ATP."
-keywords: 
+title: Azure instalacji Advanced Threat Protection — krok 4 | Dokumentacja firmy Microsoft
+description: W kroku 4 instalowania Azure ATP pomaga zainstalować czujnik autonomiczny Azure ATP.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2017
+ms.date: 3/25/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 51911e39-76c7-4dcd-bc0b-ec6235d0403f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7b003882f21f22b3427fb95534ca2bde255b14e6
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 56b3cea2089c64e2c78361c44d049d6de67764b6
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -35,11 +35,16 @@ Przed zainstalowaniem czujnik autonomiczny Azure ATP na dedykowanym serwerze Zwe
 
 
 > [!IMPORTANT]
->Upewnij się, że .net Framework 4.7 jest zainstalowany na tym komputerze. Jeśli jest Framework 4.7 .net nie jest zainstalowany pakiet instalacyjny czujnik Azure ATP instaluje go, co wymaga ponownego uruchomienia serwera. Sprawdź, czy komputer ma połączenie z punktem końcowym usługi chmury Azure ATP: https://triprd1wceuw1sensorapi.atp.azure.com (dla Europy) lub https://triprd1wcuse1sensorapi.atp.azure.com (dla Stanów Zjednoczonych).
+>Upewnij się, że .net Framework 4.7 jest zainstalowany na tym komputerze. Jeśli jest Framework 4.7 .net nie jest zainstalowany pakiet instalacyjny czujnik Azure ATP instaluje go, co wymaga ponownego uruchomienia serwera.
 
 Wykonaj następujące czynności na serwerze czujnik Azure ATP lub kontrolera domeny.
 
-1.  Wyodrębnij pliki z archiwum zip. 
+1. Sprawdź, czy komputer ma połączenie z punktem końcowym usługi odpowiednich chmury Azure ATP:
+  - https://triprd1wceuw1sensorapi.atp.azure.com (dla Europy)  
+  - https://triprd1wcuse1sensorapi.atp.azure.com (dla Stanów Zjednoczonych)
+  - https://triprd1wcasse1sensorapi.atp.azure.com (dla Azji)
+
+2. Wyodrębnienie plików instalacyjnych z pliku zip. 
 > [!NOTE] 
 > Instalowanie bezpośrednio z pliku zip kończy się niepowodzeniem.
 
@@ -94,6 +99,6 @@ Wykonaj następujące czynności na serwerze czujnik Azure ATP lub kontrolera do
 
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)

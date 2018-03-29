@@ -1,23 +1,23 @@
 ---
 title: Advanced Threat Analytics aktualizacji w przewodniku migracji 1,9 | Dokumentacja firmy Microsoft
-description: "Procedury aktualizacji usługi ATA do wersji 1.9"
-keywords: 
+description: Procedury aktualizacji usługi ATA do wersji 1.9
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 03/21/2018
+ms.date: 03/25/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 2946310a-8e4e-48fc-9450-fc9647efeb22
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 99865293dd5aa6648516fbebbf61977176b1de36
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 0bd4bca536facb9ad4b7fea627f2ef512949728e
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="updating-ata-to-version-19"></a>Aktualizowanie usługi ATA do wersji 1.9
 
@@ -31,7 +31,7 @@ Jeśli masz już usługi ATA w wersji 1.8 wdrożone, ta procedura przeprowadzi C
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.9:
 
-1.  [Pobierz wersję aktualizacji 1.9 usługi ATA z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=55536) lub pełnej wersji z [Eval center](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
+1.  [Pobierz wersję aktualizacji 1.9 usługi ATA z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełnej wersji z [Eval center](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
 W wersji migracji pliku może służyć tylko w przypadku aktualizowania z 1.8 usługi ATA. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
 
 2.  Zaktualizuj centrum usługi ATA

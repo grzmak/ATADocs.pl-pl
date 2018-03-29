@@ -1,23 +1,23 @@
 ---
 title: Praca z raportami Azure ATP | Dokumentacja firmy Microsoft
-description: "Opisuje sposób generowania raportów w ATP Azure do monitorowania sieci."
-keywords: 
+description: Opisuje sposób generowania raportów w ATP Azure do monitorowania sieci.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 2/27/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 2c2d6b1a-fc8c-4ff7-b07d-64ce6159f84d
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 2ebc0d9bb860bd93f14c4c511b034c740b59dffb
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 8d9c7f9208ce76e6c2ca915729b9c64f769ae7bd
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -25,6 +25,7 @@ ms.lasthandoff: 02/21/2018
 # <a name="azure-atp-reports"></a>Raporty Azure ATP
 
 Sekcji raportów Azure ATP w portalu obszaru roboczego można generować raporty, które udostępniają informacje o stanie systemu, wykryte zarówno kondycji systemu, jak i raport o podejrzanych działań w danym środowisku.
+
 
 Aby uzyskać dostęp do strony raportów, kliknij ikonę raportu na pasku menu: ![ikona raportu](./media/atp-report-icon.png).
 Do raportów, które są dostępne, należą: 
@@ -51,6 +52,9 @@ Aby ustawić zaplanowany raport:
 1. W **raporty** kliknij przycisk **ustawić Zaplanowane raporty**, lub na stronie Konfiguracja portalu Azure ATP obszar roboczy w obszarze powiadomień i raportów, kliknij przycisk **Zaplanowane raporty**.
 
    ![Planowanie raportów](./media/atp-sched-reports.png)
+ 
+ > [!NOTE]
+ > Codziennych raportach są przeznaczone do wysłania wkrótce po północy czasu UTC.
 
 2. Kliknij przycisk **harmonogram** typ wybranego raportu, aby ustawić częstotliwość i adres e-mail w celu dostarczania raportów i kliknij znak plus obok adresów e-mail, aby dodać je, a następnie kliknij przycisk Dalej, aby **zapisać**.
 

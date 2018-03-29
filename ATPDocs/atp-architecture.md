@@ -1,23 +1,23 @@
 ---
 title: Architektura Advanced Threat Protection Azure | Dokumentacja firmy Microsoft
 description: Opis architektury z Azure Advanced Threat Analytics (ATP)
-keywords: 
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/11/2018
+ms.date: 3/27/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 640974bbeb0ff147b21da24d6ad6df2f54e9ab4d
-ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
+ms.openlocfilehash: 57f4eb56eaa0547d18421b17fb5804840e4997e3
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -74,7 +74,7 @@ Ustaw obszar roboczy głównego jako **głównej**. Tylko jeden obszar roboczy, 
 
 > [!NOTE]
 > Azure ATP obecnie obsługuje tworzenie dwóch obszarów roboczych. Zalecane jest tworzenie podstawowym obszarem roboczym dla środowiska produkcyjnego i dodatkowe obszar roboczy jako środowisko tymczasowe.
-> Po usunięciu obszaru roboczego można się z pomocą techniczną, aby uaktywnić go ponownie. Możesz mieć mazimum trzy usunięto obszarów roboczych. Aby zwiększyć liczbę zapisanych, usunięto obszary robocze, skontaktuj się z obsługą Azure ATP.
+> Po usunięciu obszaru roboczego można się z pomocą techniczną, aby uaktywnić go ponownie. Można mieć maksymalnie trzy obszary robocze usunięte. Aby zwiększyć liczbę zapisanych, usunięto obszary robocze, skontaktuj się z obsługą Azure ATP.
 
 
 ### <a name="azure-atp-workspace-portal"></a>Portal Azure obszaru roboczego ATP
@@ -122,7 +122,7 @@ Podczas podejmowania decyzji o liczbie Azure ATP obszarów roboczych wdrażania 
 
 -   Monitorowanie wielu kontrolerów domeny, które z czujnika jednej autonomicznej Azure ATP lub monitorują pojedynczy kontroler domeny dla czujnika Azure ATP.
 
-Azure ATP obsługuje maksymalnie 100 czujników. Jeśli chcesz zainstalować więcej, skontaktuj się z obsługą Azure ATP.
+Domyślnie Azure ATP obsługuje maksymalnie 100 czujników. Jeśli chcesz zainstalować więcej, skontaktuj się z obsługą Azure ATP.
 
 Czujnik autonomiczny Azure ATP odbiera ruch sieciowy i zdarzenia systemu Windows z sieci i przetwarza je za pomocą następujących głównych składników:
 

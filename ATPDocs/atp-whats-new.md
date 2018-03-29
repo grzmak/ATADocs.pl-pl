@@ -1,28 +1,37 @@
 ---
 title: What's new in Azure ATP | Dokumentacja firmy Microsoft
-description: "Opisuje najnowsze wersje Azure ATP i zawiera informacje o nowościach w każdej wersji."
-keywords: 
+description: Opisuje najnowsze wersje Azure ATP i zawiera informacje o nowościach w każdej wersji.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/18/2018
+ms.date: 3/25/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 6b3c9ddd1873b3139009a44e9c1f7a85ea3b6901
-ms.sourcegitcommit: adfa7a3a3918518b6b14b94d3c0a9f899142196a
+ms.openlocfilehash: 0693bd3a25d6438874d422bedf8da05931a15d54
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-226"></a>Azure ATP wersji 2.26
+
+Wydana 25 marca 2018
+
+- Gdy Azure ATP alerty można zidentyfikować jako dodatnią niegroźne podejrzane działania (uzasadnionych akcję, która nie jest podejrzanych działań) istnieje możliwość w celu wykluczenia komputerów i adresów IP dla wykryć więcej, w tym: obniżenia poziomu szyfrowania, LDAP atak siłowy, sfałszowany element PAC i siłową Pass--hash.
+-   Ulepszono wydajności czujnik Azure ATP.
+-   Nowy region została dodana do wdrożenia obszaru roboczego, można teraz wdrożyć obszaru roboczego w Azji. 
+
 
 ## <a name="azure-atp-release-225"></a>Azure wersji ATP 2,25
 

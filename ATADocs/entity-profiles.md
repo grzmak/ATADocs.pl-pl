@@ -1,23 +1,23 @@
 ---
 title: Praca z profilami jednostki w konsoli Advanced Threat Analytics | Dokumentacja firmy Microsoft
-description: "Zawiera opis sposobu badania jednostek z ekranu profilów użytkownika w konsoli usługi ATA"
-keywords: 
+description: Zawiera opis sposobu badania jednostek z ekranu profilów użytkownika w konsoli usługi ATA
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 3/25/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 581a3257-32dc-453f-b84e-b9f99186f5d3
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f9e19a1d033238f506fc0523bf50af6e204ba0cf
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: f2fd6f28eb6bf11aa3705f5320fcdae01d02f6d0
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -46,6 +46,8 @@ U góry można wyświetlić podsumowanie Kafelki, które zapewniają szybki prze
 - Liczby zasobów, dostęp do użytkownika
 - Z lokalizacji, które użytkownik jest zalogowany do sieci VPN
 
+  ![menu jednostki](media/entity-menu.png)
+
 Dla komputerów można wyświetlić:
 - Ile Otwórz podejrzanych działań są maszyny
 - Ile użytkownicy zalogowani do komputera
@@ -53,7 +55,7 @@ Dla komputerów można wyświetlić:
 - Ile lokalizacji na komputerze uzyskano z sieci VPN
 - Listę, której komputer adresów IP został użyty.
 
-![menu jednostki](media/entity-menu.png)
+  ![komputer menu jednostki](media/entity-computer.png)
 
 Przy użyciu **Filtruj według** przycisk powyżej osi czasu działań, możesz filtrować działania według typu działania. Można również odfiltrować (zakłócenia) określonego typu działania. Jest to naprawdę pomocne, aby umożliwić zbadanie problemu, gdy chcesz podstawy jednostki czynności w sieci. Można także przejść do określonej daty i działania można wyeksportować odfiltrowane do programu Excel. Wyeksportowany plik zawiera stronę zmian usług katalogowych (rzeczy, które zmienione w usłudze Active Directory dla konta) i osobnej stronie działań. 
 
