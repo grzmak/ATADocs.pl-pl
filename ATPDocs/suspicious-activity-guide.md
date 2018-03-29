@@ -1,23 +1,23 @@
 ---
-title: "Przewodnik podejrzanych działań w usłudze Azure ATP | Dokumentacja firmy Microsoft"
+title: Przewodnik podejrzanych działań w usłudze Azure ATP | Dokumentacja firmy Microsoft
 d|Description: This article provides a list of the suspicious activities Azure ATP can detect and steps for remediation.
-keywords: 
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 3/25/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ee8e45b6ef2da2d8866a1795bdab3987180acefe
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: ec9a2bc18262f88ada0a7a4ac56b5a4b2c104165
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -240,6 +240,21 @@ Sprawdź następujące uprawnienia:
 Aby uzyskać więcej informacji, zobacz [uprawnienia Grant usług domenowych Active Directory synchronizacji profilów w programie SharePoint Server 2013](https://technet.microsoft.com/library/hh296982.aspx).
 Można wykorzystać [AD ACL skanera](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub Utwórz skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
 
+
+## <a name="password-exposed-in-cleartext-report"></a>Hasło w raporcie jako zwykły tekst
+
+**Opis**
+
+Niektóre usługi wysłać poświadczenia konta w postaci zwykłego tekstu. Może to nastąpić nawet dla kont użytkowników. Osoby atakujące monitorowanie ruchu w sieci można catch, a następnie używać tych poświadczeń do celów złośliwe. 
+
+**Badanie**
+
+Kliknij na stronie Raporty i pobrać hasło widoczne w raporcie jako zwykły tekst. Arkusz kalkulacyjny programu Excel Zobacz, konta, które zostały udostępnione.
+Zazwyczaj jest skrypt lub starszych aplikacji na komputerach źródłowych, która używa proste powiązanie LDAP.
+
+**Korygowania**
+
+Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzystają z prostych powiązań LDAP. Zamiast przy użyciu prostego powiązania LDAP można użyć sal LDAP lub LDAPS.
 
 ## <a name="privilege-escalation-using-forged-authorization-data"></a>Przy użyciu eskalacji uprawnień sfałszowane danych autoryzacji
 

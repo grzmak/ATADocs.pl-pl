@@ -1,23 +1,23 @@
 ---
-title: "Praca z raportami usługi ATA | Microsoft Docs"
-description: "Opisuje sposób generowania raportów w usłudze ATA w celu monitorowania sieci."
-keywords: 
+title: Praca z raportami usługi ATA | Microsoft Docs
+description: Opisuje sposób generowania raportów w usłudze ATA w celu monitorowania sieci.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 3/27/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 38ea49b5-cd5e-43e5-bc39-5071f759633b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: b7f921bb2eb655a929eb19c849788c1bf9f64527
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 9a113d8d090c5a90a07043a0ef75e1be0fc840c3
+ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -51,6 +51,9 @@ Aby ustawić zaplanowany raport:
 1. Na stronie **Raporty** kliknij przycisk **Ustaw zaplanowane raporty** lub na stronie konfiguracji konsoli usługi ATA, w obszarze powiadomień i raportów, kliknij przycisk **Zaplanowane raporty**.
 
    ![Planowanie raportów](./media/ata-sched-reports.png)
+
+  > [!NOTE]
+  > Codziennych raportach są przeznaczone do wysłania wkrótce po północy czasu UTC.
 
 2. Kliknij przycisk **harmonogram** typ wybranego raportu, aby ustawić częstotliwość i adres e-mail w celu dostarczania raportów i kliknij znak plus obok adresów e-mail, aby dodać je, a następnie kliknij przycisk Dalej, aby **zapisać**.
 
