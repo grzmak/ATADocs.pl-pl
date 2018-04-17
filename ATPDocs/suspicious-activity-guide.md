@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/25/2018
+ms.date: 4/15/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ec9a2bc18262f88ada0a7a4ac56b5a4b2c104165
-ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
+ms.openlocfilehash: 6246849cf7e8566b27c969b73e9c96cb0e7b7978
+ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -100,14 +100,20 @@ Istnieją trzy typy wykrywania:
 
 **Badanie**
 
-Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących.
+Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących. Badanie najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
 
-1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu [skanera napisane przez zespół Azure ATP](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73).
-    Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
+1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu [skanera napisane przez zespół Azure ATP](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73). Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
 
-2.  Bilet uwierzytelniania Golden Ticket — istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie niegroźne pozytywną wartość true i można pominąć.
+2.  Bilet uwierzytelniania Golden Ticket — w arkuszu kalkulacyjnym programu excel, przejdź do karty działania sieci. Zobaczysz, że odpowiednie pole starszej jest **żądania biletu typ szyfrowania**, i **komputera źródłowego obsługiwanych typów szyfrowania** zawiera metody silniejszego szyfrowania.
 
-3.  Overpass--Hash — istnieją przypadki, w których tego alertu mogą być wyzwalane, gdy użytkownicy skonfigurowani przy użyciu kart inteligentnych są wymagane do logowania interakcyjnego, a to ustawienie jest wyłączone i włączone. Sprawdź, czy wystąpiły zmiany podobny do tego konta związane. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true, można pominąć.
+  1. Sprawdź komputer źródłowy i konta lub w przypadku wielu źródła konta komputerów i sprawdź, czy mają one coś wspólną (na przykład wszystkie marketing personelu Użyj określonej aplikacji, które mogą być przyczyną alertu wyzwolenie). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie niegroźne pozytywną wartość true i można pominąć.
+  
+  2. Wyboru zasobu dostęp do tych biletów, jeśli istnieje jeden zasób, którego wszystkie korzystają, go zweryfikować, upewnij się, że jest prawidłowy zasób, który one mają dostęp. Ponadto należy upewnić się, jeśli zasób docelowy obsługuje metody silne szyfrowanie. Można to sprawdzić w usłudze Active Directory sprawdzając atrybutu msDS-SupportedEncryptionTypes, zasobów konta usługi.
+
+3.  Overpass--Hash — w arkuszu kalkulacyjnym programu excel, przejdź do karty działania sieci. Zobaczysz, że odpowiednie pole starszej jest **szyfrowany typ szyfrowania sygnatury czasowej** i **komputera źródłowego obsługiwanych typów szyfrowania** zawiera metody silniejszego szyfrowania.
+
+  1. Istnieją przypadki, w których ten alert może wyzwalane, gdy użytkownicy logują się przy użyciu kart inteligentnych, jeśli konfiguracja karty inteligentnej zostało niedawno zmienione. Sprawdź, czy wystąpiły zmiany podobny do tego konta związane. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true, można pominąć.
+  2. Wyboru zasobu dostęp do tych biletów, jeśli istnieje jeden zasób, którego wszystkie korzystają, go zweryfikować, upewnij się, że jest prawidłowy zasób, który one mają dostęp. Ponadto należy upewnić się, jeśli zasób docelowy obsługuje metody silne szyfrowanie. Można to sprawdzić w usłudze Active Directory sprawdzając atrybutu msDS-SupportedEncryptionTypes, zasobów konta usługi.
 
 **Korygowania**
 
@@ -225,9 +231,10 @@ W tym wykrywania alert zostanie wywołany po zainicjowaniu żądania replikacji 
 
 **Badanie**
 
-1. Jest to komputer danego kontrolera domeny? Na przykład nowo utworzonego kontroler domeny, który ma problemów z replikacją. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.  
+1.  Jest to komputer danego kontrolera domeny? Na przykład nowo utworzonego kontroler domeny, który ma problemów z replikacją. Jeśli tak, **Zamknij** podejrzanych działań. 
+2.  Danego komputera powinien być replikowanie danych z usługi Active Directory? Na przykład Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+3.  Kliknij komputer źródłowy lub konta, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej replikacji, wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. Jeśli włączono integracji Windows Defender ATP kliknij wskaźnika Windows Defender ATP ![Identyfikator Windows Defender ATP](./media/wd-badge.png) w celu dalszego badania komputera. W programie Windows Defender ATP widać, które procesy i alerty wystąpił w czasie zbliżonym do alertu. 
 
-2. Danego komputera powinien być replikowanie danych z usługi Active Directory? Na przykład Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
 
 **Korygowania**
 
@@ -352,7 +359,7 @@ W protokole DNS istnieje kilka typów zapytań. Azure ATP wykrywa pochodzące z 
 
 2. Maszyna źródłowa jest uruchomiona skanera zabezpieczeń? Jeśli tak, **wykluczanie jednostek** w ATP, bezpośrednio za pomocą **Zamknij i Wyklucz** lub za pośrednictwem **wykluczeń** strony (w obszarze **konfiguracji** — dostępne dla administratorów Azure ATP).
 
-3. Jeśli odpowiedzi na wszystkie pytania poprzedniego jest założenie nie, to jest złośliwe.
+3. Jeśli odpowiedzi na wszystkie pytania poprzedniego jest nie, Zachowaj badanie koncentrujących się na komputerze źródłowym. Kliknij na komputerze źródłowym, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej żądania, wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. Jeśli włączono integracji Windows Defender ATP kliknij wskaźnika Windows Defender ATP ![Identyfikator Windows Defender ATP](./media/wd-badge.png) w celu dalszego badania komputera. W programie Windows Defender ATP widać, które procesy i alerty wystąpił w czasie zbliżonym do alertu. 
 
 **Korygowania**
 
@@ -386,7 +393,7 @@ Wykrywanie alert zostanie wywołany po wykonaniu wyliczenie sesji SMB na kontrol
 
 Użyj [Net zaprzestanie narzędzia](https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b) zabezpieczyć środowiska przed takiego ataku.
 
-## <a name="remote-execution-attempt-detected"></a>Wykryto próbę zdalne wykonywanie kodu
+## <a name="remote-execution-attempt"></a>Próba wykonania zdalnego
 
 **Opis**
 
@@ -402,7 +409,7 @@ Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj w
 
  - Jeśli odpowiedzi na oba pytania *tak*, następnie **Zamknij** alertu.
 
-3. Jeśli odpowiedzi na pytania albo jest *nie*, a następnie to należy traktować jako dodatnią wartość true.
+3. Jeśli odpowiedzi na pytania albo nie, następnie to należy traktować jako dodatnią wartość true. Spróbuj znaleźć źródła próby sprawdzając profile komputera i konta. Kliknij komputer źródłowy lub konta, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej tych prób wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. Włączenie programu Windows Defender ATPintegration kliknij wskaźnika Windows Defender ATP ![Identyfikator Windows Defender ATP](./media/wd-badge.png) w celu dalszego badania komputera. Program Windows Defender ATPyou zawiera które procesy i alerty wystąpił w czasie zbliżonym do alertu. 
 
 **Korygowania**
 
@@ -420,21 +427,25 @@ W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwie
 
 **Badanie**
 
-1. Obejmuje wiele kont, kliknij przycisk **Pobierz szczegóły** Aby wyświetlić listę w arkuszu programu Excel.
+1.  Kliknij przycisk **Pobierz szczegóły** Aby wyświetlić pełne informacje w arkuszu programu Excel. Aby uzyskać następujące informacje: 
+   -    Lista kont zaatakowane
+   -    Lista kont próbny podejmuje próbę logowania zakończone z pomyślnym uwierzytelnieniu
+   -    Jeśli prób uwierzytelnienia były wykonywane przy użyciu protokołu NTLM, zobaczysz odpowiednie zdarzenia działania 
+   -    Jeśli prób uwierzytelnienia były wykonywane przy użyciu protokołu Kerberos, zobaczysz działań w odpowiednich sieci
 
-2. Kliknij alert, aby przejść do strony szczegółów. Sprawdź czy próby logowania dowolnego została zakończona z pomyślnym uwierzytelnieniu, czy są one wyświetlane jako **odgadnąć kont** po prawej stronie infographic. Jeśli tak, czy jakakolwiek **odgadnąć kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
+2.  Kliknij na komputerze źródłowym, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej tych prób wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. Jeśli włączono integracji Windows Defender ATP kliknij wskaźnika Windows Defender ATP ![Identyfikator Windows Defender ATP](./media/wd-badge.png) w celu dalszego badania komputera. W programie Windows Defender ATP widać, które procesy i alerty wystąpił w czasie zbliżonym do alertu. 
 
-3. Jeśli istnieją nie **odgadnąć kont**, są **ataku kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
+3.  Jeśli zostało przeprowadzone uwierzytelnianie przy użyciu protokołu NTLM i zobacz, czy alert występuje wiele razy i nie jest dostępny o serwerze, który maszyny źródłowej próbował uzyskać dostęp do za mało informacji, należy włączyć **inspekcji NTLM** na kontrolery domeny związane. Aby to zrobić, Włącz zdarzenia 8004. To zdarzenie uwierzytelniania NTLM, które zawiera informacje na temat komputera źródłowego, konto użytkownika i **serwera** której maszyna źródłowa próbował uzyskać dostęp. Po określeniu, które serwer wysłał sprawdzania poprawności uwierzytelniania, serwer powinien być sprawdzony przez sprawdzenie jego zdarzeń, takie jak 4624, aby lepiej zrozumieć proces uwierzytelniania. 
 
 **Korygowania**
 
 [Złożone i długich haseł](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) podaj niezbędne pierwszy poziom zabezpieczeń przed atakami siłowymi.
 
-## <a name="suspicious-service-creation---preview-feature"></a>Tworzenie usługi podejrzane — funkcja w wersji zapoznawczej!
+## <a name="suspicious-service-creation"></a>Tworzenie usługi podejrzanych
 
 **Opis**
 
-Podejrzane usługi został utworzony na kontrolerze domeny w organizacji. Ten alert polega na zdarzenie 7045 w celu identyfikowania tej podejrzanej aktywności na punktów końcowych. Zdarzenie 7045 powinny zostać przekazane z punktów końcowych ATP konfigurując [funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md) lub przekazywania 7045 zdarzenia Siem i [konfigurowania rozwiązania SIEM](configure-event-collection.md) jako źródło danych, która przekazuje zdarzenia Aby ATP.
+Podejrzane usługi został utworzony na kontrolerze domeny w organizacji. Ten alert polega na zdarzenie 7045 w celu identyfikowania tej podejrzanej aktywności na punktów końcowych. 
 
 **Badanie**
 
@@ -488,7 +499,8 @@ Poprawka programu maszyny, szczególnie stosowania aktualizacji zabezpieczeń.
 3. WanaKiwi może odszyfrować danych w ręce niektóre programy ransom, ale tylko wtedy, jeśli użytkownik nie ma ponownie uruchomiona lub ją wyłączyć komputer. Aby uzyskać więcej informacji, zobacz [chcesz Ransomware krzykiem](https://answers.microsoft.com/en-us/windows/forum/windows_10-security/wanna-cry-ransomware/5afdb045-8f36-4f55-a992-53398d21ed07?auth=1)
 
 
->! [UWAGA] Aby wyłączyć podejrzanych działań, się z pomocą techniczną.
+> [!NOTE]
+> Aby wyłączyć podejrzanych działań, się z pomocą techniczną.
 
 
 ## <a name="see-also"></a>Zobacz też

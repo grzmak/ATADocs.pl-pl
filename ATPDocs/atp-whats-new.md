@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/25/2018
+ms.date: 4/15/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,35 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0693bd3a25d6438874d422bedf8da05931a15d54
-ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
+ms.openlocfilehash: bc81fd16c72c1b8c66c0c2f65100b3b1e04dba78
+ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+
+
+## <a name="azure-atp-release-228"></a>Azure wersji ATP 2.28
+
+Wydane 15 kwietnia 2018
+ 
+-   Użytkownicy, którzy są członkami grup ról użytkowników ATP Azure i podglądy ATP Azure teraz mieć uprawnień do wyświetlania alertów monitorowania.
+- Ta wersja zawiera poprawki i ulepszenia wielu problemów. 
+
+
+## <a name="azure-atp-release-227"></a>Azure ATP wersji 2,27
+
+Wydane 8 kwietnia 2018
+
+- Masz teraz możliwość zapewnienia opinie użytkowników z górnym pasku nawigacyjnym. Kliknięcie przycisku kroju uśmiech na pasku menu umożliwia wysłanie wiadomości e-mail do zespołu Azure Advanced Threat Protection z Twoją opinię.
+
+- Ta wersja zawiera poprawki i ulepszenia wielu problemów. 
+ 
 
 ## <a name="azure-atp-release-226"></a>Azure ATP wersji 2.26
 
