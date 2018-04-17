@@ -1,29 +1,29 @@
 ---
-title: "Opis usługi Azure ATP alertów monitorowania | Dokumentacja firmy Microsoft"
-description: "W tym artykule opisano, jak dzienniki Azure ATP umożliwia rozwiązywanie problemów"
-keywords: 
+title: Opis usługi Azure ATP alertów monitorowania | Dokumentacja firmy Microsoft
+description: W tym artykule opisano, jak dzienniki Azure ATP umożliwia rozwiązywanie problemów
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 4/15/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: d0551e91-3b21-47d5-ad9d-3362df6d47c0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: cdb440e92aef0f9d09d3aa9411d0ce65435469d1
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 34702edcde2b96ca16570af5803a03d4f0f66c6e
+ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
 # <a name="understanding-azure-atp-sensor-and-standalone-sensor-monitoring-alerts"></a>Opis czujnik Azure ATP i autonomicznych czujnik alertów monitorowania
 
-Centrum kondycji ATP Azure informuje o tym, gdy występuje problem z żadnym z worksapces Azure ATP, wyświetlając symbol alertu monitorowania. W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych składników, ich przyczyny i kroki niezbędne do rozwiązania problemu.
+Centrum kondycji ATP Azure informuje o tym, gdy występuje problem ze wszystkimi Azure ATP obszarów roboczych, podnosząc alert monitorowania. W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych składników, ich przyczyny i kroki niezbędne do rozwiązania problemu.
 
 ## <a name="read-only-user-password-to-expire-shortly"></a>Hasło użytkownika tylko do odczytu, które wkrótce wygasną
 
@@ -100,7 +100,7 @@ Centrum kondycji ATP Azure informuje o tym, gdy występuje problem z żadnym z w
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Wymagania wstępne platformy Azure ATP](atp-prerequisites.md)
+- [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 - [Planowanie pojemności Azure w ATP](atp-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
