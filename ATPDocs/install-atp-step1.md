@@ -1,23 +1,23 @@
 ---
-title: "Azure instalacji Advanced Threat Protection — krok 1 | Dokumentacja firmy Microsoft"
-description: "Pierwszy krok w celu zainstalowania Azure ATP obejmuje tworzenie obszaru roboczego dla danego wdrożenia Azure ATP."
-keywords: 
+title: Azure instalacji Advanced Threat Protection — krok 1 | Dokumentacja firmy Microsoft
+description: Pierwszy krok w celu zainstalowania Azure ATP obejmuje tworzenie obszaru roboczego dla danego wdrożenia Azure ATP.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/15/2018
+ms.date: 4/10/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 833e0bdf61ce25a8c56d820ad04981cd44321ac2
-ms.sourcegitcommit: f9d07a6b1f2193f0d2906092e252eb1d7398b493
+ms.openlocfilehash: a4c2f03955eddb4615b347fa8a211501546e6f4a
+ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -32,7 +32,8 @@ Ta procedura instalacji zawiera instrukcje dotyczące tworzenia i zarządzania o
 ATP Azure masz możliwość zarządzania i monitorowania wiele obszarów roboczych. Jest to szczególnie przydatne, jeśli chcesz utworzyć pokaz obszar roboczy oraz obszaru roboczego testu, który umożliwia ATP Azure fazy weryfikacji Koncepcji przed udostępnieniem jej do całej organizacji. Jest to również wymagane do obsługi wdrożeń z wieloma lasami. Jednego obszaru roboczego można monitorować tylko wielu domen pochodzących z jednego lasu. 
 
 > [!NOTE]
-> Może mieć co najwyżej dwa active obszarów roboczych. Po usunięciu obszaru roboczego można się z pomocą techniczną, aby uaktywnić go ponownie. Możesz mieć mazimum trzy usunięto obszarów roboczych. Aby zwiększyć liczbę zapisanych, usunięto obszary robocze, skontaktuj się z obsługą Azure ATP.
+> - Może mieć co najwyżej dwa active obszarów roboczych. Po usunięciu obszaru roboczego można się z pomocą techniczną, aby uaktywnić go ponownie. Można mieć maksymalnie trzy obszary robocze usunięte. Aby zwiększyć liczbę zapisanych, usunięto obszary robocze, skontaktuj się z obsługą Azure ATP.
+> - Obecnie centrach danych platformy Azure ATP są wdrażane w Europie, Ameryki Północnej/centralnego Ameryka/Karaibów i Azji.
 
 ## <a name="step-1-enter-the-workspace-management-portal"></a>Krok 1. Przejście do portalu zarządzania obszaru roboczego
 
