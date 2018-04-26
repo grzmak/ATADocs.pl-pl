@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/28/2018
+ms.date: 4/22/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 3c8e0b239c335981b2030021d1d4e319b2810fda
-ms.sourcegitcommit: 7c9fe4eb781bec71129310a6e0c5e76b022a0213
+ms.openlocfilehash: 9a9998360a24fd7f4d4151d4572c7715be03d34d
+ms.sourcegitcommit: d2d2750bfb0198c8488d538f1773fda6eda5e6f9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/23/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -88,7 +88,7 @@ Dla kontrolerów domeny do komunikowania się z usługą w chmurze, należy otwo
 Aby uzyskać informacje o używaniu maszyn wirtualnych z czujnika autonomiczny Azure ATP, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
 
 > [!NOTE]
-> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Dotyczy to również miejsce wymagane do plików binarnych Azure ATP, Azure ATP dzienniki i wydajności dzienników.
+> Wymagane jest co najmniej 5 GB miejsca na dysku i 10 GB jest zalecane. Dotyczy to również miejsce wymagane do plików binarnych Azure ATP, Azure ATP dzienniki i wydajności dzienników.
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 Aby uzyskać optymalną wydajność, ustaw **opcja zasilania** czujnika autonomiczny Azure ATP do **wysokiej wydajności**.<br>
@@ -107,9 +107,9 @@ Serwery kontrolerów domeny, na których zainstalowano czujnika czasu i może by
 ### <a name="network-adapters"></a>Karty sieciowe
 Czujnik autonomiczny Azure ATP wymaga co najmniej jednej karty administracyjnej i co najmniej jednej karty sieciowej przechwytywania:
 
--   **Karta sieciowa zarządzania** — używane do komunikacji w sieci firmowej. Ta karta powinna skonfigurowana z następującymi ustawieniami:
+-   **Karta sieciowa zarządzania** — używane do komunikacji w sieci firmowej. Czujnik użyje tej karty do badania kontroler domeny jest ochrona i rozpoznawania do konta komputera. <br>Ta karta powinna skonfigurowana z następującymi ustawieniami:
 
-    -   Statyczny adres IP obejmujący czujnik domyślne
+    -   Statyczny adres IP obejmujący bramę domyślną
 
     -   Preferowane i alternatywne serwery DNS
 
@@ -164,11 +164,11 @@ Kontroler domeny może być kontrolerem domeny tylko do odczytu (RODC).
 
 Dla kontrolerów domeny do komunikowania się z usługą w chmurze, należy otworzyć port 443 w zapory i serwery proxy do *. atp.azure.com.
 
-Podczas instalacji programu .net Framework 4.7 jest zainstalowany i może spowodować ponowne uruchomienie kontrolera domeny.
+Podczas instalacji programu .net Framework 4.7 jest zainstalowany i może wymagać ponowny rozruch kontrolera domeny, jeśli już oczekuje na ponowne uruchomienie.
 
 
 > [!NOTE]
-> Minimalne miejsce wymagane to 5 GB, a zalecane to 10 GB. Dotyczy to również miejsce wymagane do plików binarnych Azure ATP, Azure ATP dzienniki i wydajności dzienników.
+> Wymagane jest co najmniej 5 GB miejsca na dysku i 10 GB jest zalecane. Dotyczy to również miejsce wymagane do plików binarnych Azure ATP, Azure ATP dzienniki i wydajności dzienników.
 
 ### <a name="server-specifications"></a>Specyfikacje serwera
 
