@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/11/2018
+ms.date: 4/22/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 1e5e0d0665dfcf5251954cd8b0916c7cf80a722c
-ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
+ms.openlocfilehash: c52fa6d7cb42605f1809a40926e391bf39fe3eb2
+ms.sourcegitcommit: d2d2750bfb0198c8488d538f1773fda6eda5e6f9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/23/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -60,7 +60,7 @@ Statyczne serwera proxy jest konfigurowany za pomocą rejestru. Konfiguracja ser
 
 ## <a name="enable-access-to-azure-atp-service-urls-in-the-proxy-server"></a>Zapewnianie dostępu do adresów URL usługi Azure ATP na serwerze proxy
 
-Jeśli serwer proxy lub zapora blokuje cały ruch przez domyślny, dzięki czemu tylko określonych domen za pośrednictwem lub HTTPS skanowania (inspekcji SSL) jest włączona, upewnij się, że następujące adresy URL są wymienione biały Aby zezwolić na komunikację z usługą Windows Defender ATP w porcie 443:
+Jeśli serwer proxy lub zapora blokuje cały ruch przez domyślny, dzięki czemu tylko określonych domen za pośrednictwem lub HTTPS skanowania (inspekcji SSL) jest włączona, upewnij się, że następujące adresy URL są wymienione biały Aby zezwolić na komunikację z usługą Azure ATP w porcie 443:
 
 |Lokalizacja usługi|. Rekord Atp.Azure.com DNS|
 |----|----|

@@ -1,22 +1,22 @@
 ---
-title: "Wersje usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "W artykule opisano opcje pomocy technicznej w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA)."
+title: Wersje usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: W artykule opisano opcje pomocy technicznej w różnych wersjach usługi Microsoft Advanced Threat Analytics (ATA).
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 4/10/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: a8afbd91-c888-4dfc-94ab-72e38745163e
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 88ccd0e1667805d96ddd69145c4c85475ed6a2fc
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 93c26e0049936b3db1253a785c6b28bffe0ab197
+ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/16/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -44,7 +44,9 @@ Firma Microsoft planuje wydawanie aktualizacji usługi ATA kilka razy w roku. Ka
 |1.7|1.7.5402|31-SIE-2016|30-SIE-2017|
 |1.7.1|1.7.5647|06-PAŹ-2016|05-PAŹ-2017|
 |1.7.2|1.7.5757|15-LIS-2016|14-LIS-2017|
-
+|1.8|1.8.6645|30-CZE-2017|30-CZE-2018|
+|1.8.1|1.8.6765|2017-02-SIE|2018-02-SIE|
+|1.9|1.9.7312|2018-21-MARCA|2019-21-MARCA|
 
 
 
