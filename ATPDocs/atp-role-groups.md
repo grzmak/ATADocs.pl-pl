@@ -1,23 +1,23 @@
 ---
-title: "Azure Advanced Threat Protection roli grup do zarządzania dostępem | Dokumentacja firmy Microsoft"
-description: "Przeprowadzi Cię przez Praca z grupami roli Azure ATP."
-keywords: 
+title: Azure Advanced Threat Protection roli grup do zarządzania dostępem | Dokumentacja firmy Microsoft
+description: Przeprowadzi Cię przez Praca z grupami roli Azure ATP.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2017
+ms.date: 4/30/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: effca0f2-fcae-4fca-92c1-c37306decf84
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 86cb55fd2b5ce81460dead4b8b753c88f79edd7b
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 8fda27ed8ed4a589ff205e815e8b3cf97026b819
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -46,10 +46,9 @@ Azure ATP przedstawiono trzy rodzaje grupy zabezpieczeń: Azure ATP *nazwa obsza
 |Aktywność |Azure ATP *nazwa obszaru roboczego* administratorów|Azure ATP *nazwa obszaru roboczego* użytkowników|Azure ATP *nazwa obszaru roboczego* przeglądarki|
 |----|----|----|----|
 |Logowanie|Dostępne|Dostępne|Dostępne|
-|Wprowadzanie danych wejściowych dotyczących podejrzanych działań|Dostępne|Dostępne|Niedostępne|
 |Zmiana stanu podejrzanych działań|Dostępne|Dostępne|Niedostępne|
-|Udostępnianie/eksportowanie podejrzanych działań za pośrednictwem poczty e-mail/pobrania linku|Dostępne|Dostępne|Niedostępne|
-|Zmiana stanu alertów monitorowania|Dostępne|Dostępne|Niedostępne|
+|Udostępnianie/eksportowanie podejrzanych działań za pośrednictwem poczty e-mail/pobrania linku|Dostępne|Dostępne|Dostępne|
+|Zmiana stanu alertów monitorowania|Dostępne|Niedostępne|Niedostępne|
 |Zaktualizuj konfigurację Azure ATP|Dostępne|Niedostępne|Niedostępne|
 |Czujnik — Dodaj|Dostępne|Niedostępne|Niedostępne|
 |Czujnik — Delete |Dostępne|Niedostępne|Niedostępne|
@@ -62,7 +61,7 @@ Gdy użytkownicy próbują uzyskać dostęp do strony, która nie jest dostępna
 
 ## <a name="add-and-remove-users"></a>Dodawanie i usuwanie użytkowników 
 
-Azure ATP używa grup zabezpieczeń usługi Azure AD jako podstawy do grup ról. Grupy roli można zarządzać za pomocą [grup https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/All](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/All groups).  Tylko użytkowników usługi AAD może być dodane lub usunięte z grup zabezpieczeń. 
+Azure ATP używa grup zabezpieczeń usługi Azure AD jako podstawy do grup ról. Grupy roli można zarządzać za pomocą [ https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/All grup](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/All groups).  Tylko użytkowników usługi AAD może być dodane lub usunięte z grup zabezpieczeń. 
 
 
 ## <a name="see-also"></a>Zobacz też

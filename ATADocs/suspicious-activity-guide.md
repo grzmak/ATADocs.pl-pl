@@ -1,23 +1,23 @@
 ---
-title: "Przewodnik usługi ATA dotyczący podejrzanych działań | Microsoft Docs"
+title: Przewodnik usługi ATA dotyczący podejrzanych działań | Microsoft Docs
 d|Description: This article provides a list of the suspicious activities ATA can detect and steps for remediation.
-keywords: 
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 4/29/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d76c34b115bd38bdb1eb82fbff1c0857b0ad8dfa
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: a5e93ab47f454acc3157a9c6ee4053255be59f23
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -118,14 +118,14 @@ Istnieją trzy typy wykrywania:
 
 **Badanie**
 
-Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących.
-
-1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu [skanera napisane przez zespół usługi ATA](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73).
-    Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
-
-2.  Bilet uwierzytelniania Golden Ticket — istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie niegroźne pozytywną wartość true i można pominąć.
-
-3.  Overpass--Hash — istnieją przypadki, w których tego alertu mogą być wyzwalane, gdy użytkownicy skonfigurowani przy użyciu kart inteligentnych są wymagane do logowania interakcyjnego, a to ustawienie jest wyłączone i włączone. Sprawdź, czy wystąpiły zmiany podobny do tego konta związane. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true, można pominąć.
+Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
+1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu skanera napisane przez zespół usługi ATA. Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
+2.  Bilet uwierzytelniania Golden Ticket — w arkuszu kalkulacyjnym programu Excel, przejdź do **działań w sieci** kartę. Zobaczysz, że odpowiednie pole starszej jest **żądania biletu typ szyfrowania**, i **komputera źródłowego obsługiwanych typów szyfrowania** zawiera metody silniejszego szyfrowania.
+  a.    Sprawdź komputer źródłowy i konta lub w przypadku wielu źródła konta komputerów i sprawdź, czy mają one coś wspólną (na przykład wszystkie marketing personelu Użyj określonej aplikacji, które mogą być przyczyną alertu wyzwolenie). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true i będzie możliwe **Pomiń** go.
+  b.    Wyboru zasobu dostęp do tych biletów, jeśli istnieje jeden zasób, którego wszystkie korzystają, go zweryfikować, upewnij się, że jest prawidłowy zasób, który one mają dostęp. Ponadto należy upewnić się, jeśli zasób docelowy obsługuje metody silne szyfrowanie. Można to sprawdzić w usłudze Active Directory przez skontrolowanie atrybutu `msDS-SupportedEncryptionTypes`, zasobów konta usługi.
+3.  Overpass--Hash — w arkuszu kalkulacyjnym programu Excel, przejdź do **działań w sieci** kartę. Zobaczysz, że odpowiednie pole starszej jest **szyfrowany typ szyfrowania sygnatury czasowej** i **komputera źródłowego obsługiwanych typów szyfrowania** zawiera metody silniejszego szyfrowania.
+  a.    Istnieją przypadki, w których ten alert może wyzwalane, gdy użytkownicy logują się przy użyciu kart inteligentnych, jeśli konfiguracja karty inteligentnej zostało niedawno zmienione. Sprawdź, czy wystąpiły zmiany podobny do tego konta związane. Jeśli tak, prawdopodobnie jest to niegroźne pozytywną wartość true i będzie możliwe **Pomiń** go.
+  b.    Wyboru zasobu dostęp do tych biletów, jeśli istnieje jeden zasób, którego wszystkie korzystają, go zweryfikować, upewnij się, że jest prawidłowy zasób, który one mają dostęp. Ponadto należy upewnić się, jeśli zasób docelowy obsługuje metody silne szyfrowanie. Można to sprawdzić w usłudze Active Directory przez skontrolowanie atrybutu `msDS-SupportedEncryptionTypes`, zasobów konta usługi.
 
 **Korygowania**
 
@@ -244,9 +244,10 @@ W tym wykrywania alert zostanie wywołany po zainicjowaniu żądania replikacji 
 
 **Badanie**
 
-1. Jest to komputer danego kontrolera domeny? Na przykład nowo utworzonego kontroler domeny, który ma problemów z replikacją. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.  
+1.  Jest to komputer danego kontrolera domeny? Na przykład nowo utworzonego kontroler domeny, który ma problemów z replikacją. Jeśli tak, **Zamknij** podejrzanych działań. 
+2.  Danego komputera powinien być replikowanie danych z usługi Active Directory? Na przykład Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+3.  Kliknij komputer źródłowy lub konta, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej replikacji, wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. 
 
-2. Danego komputera powinien być replikowanie danych z usługi Active Directory? Na przykład Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
 
 **Korygowania**
 
@@ -369,11 +370,10 @@ W protokole DNS istnieje kilka typów zapytań. Usługa ATA wykrywa pochodzące 
 
 **Badanie**
 
-1. Jest maszyną źródłową (**pochodzące z...** ) serwera DNS? Jeśli tak, to wówczas prawdopodobnie wynik fałszywie dodatni. Aby sprawdzić, kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. W tabeli w obszarze **zapytania**, sprawdź skierowano domen. Czy te istniejących domen? Jeśli tak, następnie **Zamknij** podejrzanych działań (jest wynik fałszywie dodatni). Ponadto upewnij się, że UDP port 53 został otwarty między bram usługi ATA i komputera źródłowego, aby uniknąć przyszłych fałszywych alarmów.
+1. Jest maszyną źródłową (**pochodzące z...** ) serwera DNS? Jeśli tak, to wówczas prawdopodobnie wynik fałszywie dodatni. Aby sprawdzić, kliknij alert, aby uzyskać dostęp do jego stronę szczegółów. W tabeli w obszarze **zapytania**, sprawdź skierowano domen. Czy te istniejących domen? Jeśli tak, następnie **Zamknij** podejrzanych działań (jest wynik fałszywie dodatni). Ponadto upewnij się, że UDP port 53 został otwarty między bramą usługi ATA i komputera źródłowego, aby uniknąć przyszłych fałszywych alarmów.
+2.  Maszyna źródłowa jest uruchomiona skanera zabezpieczeń? Jeśli tak, **wykluczyć** jednostek w usłudze ATA bezpośrednio za pomocą **Zamknij i Wyklucz** lub za pośrednictwem **wykluczeń** strony (w obszarze **konfiguracji** — dostępne dla administratorów usługi ATA).
+3.  Jeśli odpowiedzi na wszystkie pytania poprzedniego jest nie, Zachowaj badanie koncentrujących się na komputerze źródłowym. Kliknij na komputerze źródłowym, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej żądania, wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp.
 
-2. Maszyna źródłowa jest uruchomiona skanera zabezpieczeń? Jeśli tak, **wykluczanie jednostek** w usłudze ATA bezpośrednio za pomocą **Zamknij i Wyklucz** lub za pośrednictwem **wykluczeń** strony (w obszarze **konfiguracji** — dostępne dla administratorów usługi ATA).
-
-3. Jeśli odpowiedź na wszystkie powyższe nie, założono, że jest to złośliwe.
 
 **Korygowania**
 
@@ -411,19 +411,16 @@ Użyj [Net zaprzestanie narzędzia](https://gallery.technet.microsoft.com/Net-Ce
 
 **Opis**
 
-Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj wykorzystać dzień zero zdalnego polecenia można wykonywać na kontrolerze domeny. Umożliwia to stały dostęp do sieci, zbieranie informacji, przeprowadzanie ataków typu „odmowa usługi” (DoS, denial of service) oraz wykonywanie innych działań. Usługa ATA wykrywa połączeń PSexec i zdalną usługę WMI.
+Osoby atakujące, którzy złamanie poświadczeń administracyjnych, lub użyj wykorzystać dzień zero zdalnego polecenia można wykonywać na kontrolerze domeny. Może być używany do uzyskania trwałości, zbieranie informacji, odmowa usługi (DOS) lub z innego powodu. Usługa ATA wykrywa połączeń PSexec i zdalną usługę WMI.
 
 **Badanie**
 
-1. To jest typowe dla administracyjnych stacji roboczych i członków zespołu IT oraz kont usług, które wykonują zadania administracyjne na kontrolerze domeny. Jeśli to jest wielkość liter, a alert pobiera zaktualizowane od tego samego administratora i/lub komputer jest następnie wykonania zadania, **Pomiń** alertu.
+1. To jest typowe dla administracyjnych stacji roboczych również członkowie zespołu IT i kont usług, które wykonują zadania administracyjne na kontrolerze domeny. Jeśli jest to wymagane, a alert zostanie zaktualizowany, ponieważ tego administratora lub komputera są wykonuje zadanie, następnie **Pomiń** alertu.
+2.  Danego komputera jest uprawniona do wykonania wykonania zdalnego na kontrolerze domeny?
+  - Z danego konta jest uprawniona do wykonania wykonania zdalnego na kontrolerze domeny?
+  - Jeśli odpowiedzi na oba pytania brzmią "tak", następnie **Zamknij** alertu.
+3.  Jeśli odpowiedzi na pytania albo nie, następnie to należy traktować jako dodatnią wartość true. Spróbuj znaleźć źródła próby sprawdzając profile komputera i konta. Kliknij komputer źródłowy lub konta, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej tych prób wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp.
 
-2. Jest **komputera** zagrożona może wykonać wykonania zdalnego na kontrolerze domeny?
-
- - Jest **konta** zagrożona może wykonać wykonania zdalnego na kontrolerze domeny?
-
- - Jeśli odpowiedzi na oba pytania *tak*, następnie **Zamknij** alertu.
-
-3. Jeśli odpowiedzi na pytania albo jest *nie*, a następnie to należy traktować jako dodatnią wartość true.
 
 **Korygowania**
 
@@ -460,11 +457,14 @@ W tym wykrywania alert zostanie wywołany, gdy wystąpienia wielu błędów uwie
 
 **Badanie**
 
-1. Obejmuje wiele kont, kliknij przycisk **Pobierz szczegóły** Aby wyświetlić listę w arkuszu programu Excel.
+1.  Kliknij przycisk **Pobierz szczegóły** Aby wyświetlić pełne informacje w arkuszu programu Excel. Aby uzyskać następujące informacje: 
+  - Lista kont zaatakowane
+  - Lista kont próbny podejmuje próbę logowania zakończone z pomyślnym uwierzytelnieniu
+  - Jeśli prób uwierzytelnienia były wykonywane przy użyciu protokołu NTLM, zobaczysz odpowiednie zdarzenia działania 
+  - Jeśli prób uwierzytelnienia były wykonywane przy użyciu protokołu Kerberos, zobaczysz działań w odpowiednich sieci
+2.  Kliknij na komputerze źródłowym, aby przejść do strony swojego profilu. Sprawdź, jakie wystąpiły w okolicy czasowej tych prób wyszukiwanie nietypowych działań, takich jak: kto był zalogowany, które zasoby w przypadku, gdy dostęp. 
+3.  Jeśli zostało przeprowadzone uwierzytelnianie przy użyciu protokołu NTLM i zobacz, czy alert występuje wiele razy i nie jest dostępny o serwerze maszyny źródłowej próbował uzyskać dostęp do za mało informacji, należy włączyć **inspekcji NTLM** na związane z kontrolerów domeny. Aby to zrobić, Włącz zdarzenia 8004. To zdarzenie uwierzytelniania NTLM, które zawiera informacje na temat komputera źródłowego, konto użytkownika i **serwera** próbujących uzyskać dostępu do maszyny źródłowej. Po określeniu, które serwer wysłał sprawdzania poprawności uwierzytelniania, serwer powinien być sprawdzony przez sprawdzenie jego zdarzeń, takie jak 4624, aby lepiej zrozumieć proces uwierzytelniania. 
 
-2. Kliknij alert, aby przejść do strony szczegółów. Sprawdź czy próby logowania dowolnego została zakończona z pomyślnym uwierzytelnieniu, czy są one wyświetlane jako **odgadnąć kont** po prawej stronie infographic. Jeśli tak, czy jakakolwiek **odgadnąć kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
-
-3. Jeśli istnieją nie **odgadnąć kont**, są **ataku kont** zwykle używane z komputera źródłowego? Jeśli tak, **Pomiń** podejrzanych działań.
 
 **Korygowania**
 

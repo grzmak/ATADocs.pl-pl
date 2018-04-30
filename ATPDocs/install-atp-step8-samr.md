@@ -1,23 +1,23 @@
 ---
-title: "Skonfiguruj SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Azure ATP | Dokumentacja firmy Microsoft"
-description: "Opisuje sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Azure ATP"
-keywords: 
+title: Skonfiguruj SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Azure ATP | Dokumentacja firmy Microsoft
+description: Opisuje sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Azure ATP
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 4/29/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: b09adce3-0fbc-40e3-a53f-31f57fe79ca3
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0e2ac4fb68fb1429610a0416582c871c9ae704df
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 24b42c5425933d8931a85e0ba454a69e0ca94a21
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/21/2018
 
 [Ścieżki penetracja sieci](use-case-lateral-movement-path.md) wykrywania opiera się na zapytania, które identyfikują Administratorzy lokalni na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, za pomocą konta usługi Azure ATP utworzonego w [krok 2. Łączenie z usługą AD](install-atp-step2.md).
  
-Aby zapewnić, że klienci systemu Windows i serwery Zezwalaj na konto usługi ATP Azure do wykonania tej operacji SAM-R, muszą być wprowadzane zmiany do zasad grupy.
+Zapewnienie systemu Windows klienci i serwery Zezwalaj na konto Azure ATP do wykonania tej operacji SAM-R, modyfikacja **zasad grupy** należy dodać konto usługi Azure ATP oprócz kontom naliście **Dostęp sieciowy** zasad.
 
 1. Znajdź zasad:
 

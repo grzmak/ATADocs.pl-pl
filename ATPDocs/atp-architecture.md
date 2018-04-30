@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/27/2018
+ms.date: 4/29/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 435e5141c8abda338c1115004d1876ff5b7736a4
-ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
+ms.openlocfilehash: 838c5ce470bdf78ec81aed5d6fa1cf2407abc6f9
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -30,6 +30,8 @@ Architektura Azure Advanced Threat Protection została szczegółowo opisana na 
 Azure ATP monitorowanie ruchu sieciowego kontrolera domeny przy użyciu funkcji dublowania portów Sensor autonomiczny Azure ATP za pomocą przełączników fizycznych lub wirtualnych. Jeśli wdrożono czujnik Azure ATP bezpośrednio na kontrolerach domeny, usuwa wymaganie dublowania portów. Ponadto Azure ATP może wykorzystywać zdarzenia systemu Windows (przekazywane bezpośrednio z kontrolerów domeny lub z serwera SIEM) i analizować dane pod kątem ataków i zagrożeń. Azure ATP odbiera przeanalizowany ruch z czujnika autonomiczny Azure ATP i czujnik Azure ATP. Następnie wykonuje profilowanie, uruchamia wykrywanie deterministyczne oraz uruchamia uczenie maszynowe i algorytmy behawioralne, aby uzyskać więcej informacji dotyczących sieci, włącza wykrywanie anomalii i ostrzega o podejrzanych działaniach.
 
 W tej sekcji opisano przepływ sieci i Przechwytywanie zdarzeń oraz zawarto bardziej szczegółowe informacje dotyczące funkcjonalności głównych komponentów ATP: czujnik autonomiczny Azure ATP, Azure ATP czujnik (który ma te same funkcje podstawowe jako czujnik autonomiczny Azure ATP), i usługa w chmurze Azure ATP. 
+
+Podczas instalowania bezpośrednio na kontrolerach domeny, w czujnika uzyskuje dostęp do wymaganych dzienniki zdarzeń bezpośrednio z kontrolerem domeny. Po te dzienniki i ruchu sieciowego analizie przez czujnik Azure ATP wysyła te przeanalizowane informacje z usługą Azure ATP (nie wszystkie dzienniki).
 
 ## <a name="azure-atp-components"></a>Składniki platformy Azure ATP
 Azure ATP składa się z następujących składników:

@@ -1,23 +1,23 @@
 ---
-title: "Skonfiguruj SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Opisuje sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Advanced Threat Analytics (ATA)"
-keywords: 
+title: Skonfiguruj SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Opisuje sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki penetracja sieci w Advanced Threat Analytics (ATA)
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 4/25/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 7597ed25-87f5-472c-a496-d5f205c9c391
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a49478698adea15637698f4c715cdd34a9a601c4
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 6e32f3ce59b049d0ced68a1330eefca7315bf49d
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/22/2018
 
 [Ścieżki penetracja sieci](use-case-lateral-movement-path.md) wykrywania opiera się na zapytania, które identyfikują Administratorzy lokalni na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, za pomocą konta usługi ATA utworzonego w [krok 2. Łączenie z usługą AD](install-ata-step2.md).
  
-Aby zapewnić, że klienci systemu Windows i serwery Zezwalaj na konto usługi ATA do wykonania tej operacji SAM-R, muszą być wprowadzane zmiany do zasad grupy.
+Aby upewnić się, że klienci systemu Windows i serwery zezwalają na konto usługi ATA do wykonania tej operacji SAM-R, modyfikacja Twojej **zasady grupy** muszą być wprowadzane dodaje oprócz kontom wymienione konto usługi ATA w **dostępu do sieci** zasad.
 
 1. Znajdź zasad:
 

@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/10/2018
+ms.date: 4/29/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 23386e36-2756-4291-923f-fa8607b5518a
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 2112e9fea1f316ff12d87b3a477b78bff4457a5f
-ms.sourcegitcommit: e0209c6db649a1ced8303bb1692596b9a19db60d
+ms.openlocfilehash: c430ec58c197c8fcc6e539d0923278cd8469987d
+ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/30/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -28,6 +28,24 @@ ms.lasthandoff: 04/16/2018
 ## <a name="deployment-log-location"></a>Lokalizacja dziennika wdrażania
  
 Dzienniki wdrożenia Azure ATP znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można znaleźć w folderze: C:\Users\Administrator\AppData\Local\Temp (lub w katalogu nadrzędnym % temp %).
+
+## <a name="proxy-authentication-problem-presents-as-licensing-error"></a>Problem z uwierzytelnianiem proxy przedstawia jako błąd licencjonowania
+
+Podczas instalacji czujnik wyświetlony następujący błąd: **czujnika rejestracja nie powiodła się z powodu licencjonowania.**
+
+Wpisy dziennika wdrażania: [1C 60: 1AA8] [2018-03-24T23:59:13] i000: 02:59:13.1237 2018-03-25 InteractiveDeploymentManager ValidateCreateSensorAsync informacje zwracane [\[] validateCreateSensorResult = LicenseInvalid [\]] [60 1 c : 1AA8] [2018-03-24T23:59:56] i000: zwrócone informacje InteractiveDeploymentManager ValidateCreateSensorAsync 02:59:56.4856 2018-03-25 [\[] validateCreateSensorResult = LicenseInvalid [\]] [1 C 60: 1AA8] [2018-03-25T00:27:56] i000: 03:27:56.7399 2018-03-25 debugowania SensorBootstrapperApplication Engine.Quit [\[] deploymentResultStatus = 1602 isRestartRequired = False [\]] [1 C 60: 15B8] [2018-03-25T00:27:56] i500: zamykanie, kod zakończenia: 0x642
+
+
+**Przyczyna:**
+
+W niektórych przypadkach podczas komunikacji za pośrednictwem serwera proxy podczas uwierzytelniania go może odpowiadać z powodu błędu 401 lub 403 zamiast błędu 407 czujnika Azure ATP. Czujnik Azure ATP zinterpretuje błąd 401 lub 403 jako licencjonowania problem, a nie problem uwierzytelniania serwera proxy. 
+
+**Rozwiązanie:**
+
+Upewnij się, że czujnika można przejść do *. atp.azure.com przez skonfigurowany serwer proxy bez uwierzytelniania. Aby uzyskać więcej informacji, zobacz [skonfigurować serwer proxy, aby umożliwić komunikację](configure-proxy.md).
+
+
+
 
 ## <a name="azure-atp-sensor-nic-teaming-issue"></a>Czujnik ATP Azure problem tworzenia zespołu kart interfejsu Sieciowego
 
