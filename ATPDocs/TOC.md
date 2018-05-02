@@ -6,6 +6,7 @@
 ## [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 ## [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
 ## [Planowanie pojemności Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-capacity-planning.md)
+### [Konfigurowanie serwera proxy w celu umożliwienia komunikacji](configure-proxy.md)
 # Wdróż program
 ## [1. Tworzenie obszaru roboczego w portalu zarządzania obszarami roboczymi](install-atp-step1.md)
 ## [2. Łączenie z usługą AD](install-atp-step2.md)
@@ -21,7 +22,6 @@
 ### [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
 ### [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 ### [Konfigurowanie składnika Przesyłanie dalej zdarzeń w systemie Windows](configure-event-forwarding.md)
-### [Konfigurowanie serwera proxy w celu umożliwienia komunikacji](configure-proxy.md)
 # Użycie
 ## [Centrum kondycji Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-health-center.md)
 ## [Raporty Zaawansowanej ochrony przed zagrożeniami na platformie Azure](reports.md)
@@ -44,3 +44,4 @@
 # Rozwiązywanie problemów
 ## [Rozwiązywanie typowych problemów](troubleshooting-atp-known-issues.md)
 ## [Pomoc techniczna i informacje](atp-support.md)
+## [Plan gotowości usługi Azure ATP](atp-resources.md)
