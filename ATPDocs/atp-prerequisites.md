@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/22/2018
+ms.date: 5/8/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 9a9998360a24fd7f4d4151d4572c7715be03d34d
-ms.sourcegitcommit: d2d2750bfb0198c8488d538f1773fda6eda5e6f9
+ms.openlocfilehash: ae859121fbe856c93b8568ef38bf0b4bdb77837a
+ms.sourcegitcommit: 8472f3f46fc90da7471cd1065cdb2f6a1d5a9f69
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/08/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -139,21 +139,21 @@ W poniższej tabeli wymieniono niezbędne porty, których wymaga czujnik autonom
 |LDAP do wykazu globalnego|TCP|3268|Kontrolery domeny|Wychodzące|
 |LDAPS do wykazu globalnego|TCP|3269|Kontrolery domeny|Wychodzące|
 |Kerberos|TCP i UDP|88|Kontrolery domeny|Wychodzące|
-|Netlogon (SMB, CIFS, SAM-R)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
+|Netlogon (SMB, CIFS, SAM-R)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 |Czas systemu Windows|UDP|123|Kontrolery domeny|Wychodzące|
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
 |Syslog (opcjonalnie)|TCP/UDP|514, w zależności od konfiguracji|Serwer SIEM|Przychodzące|
 |RADIUS|UDDP|1813|RADIUS|Przychodzące|
+|RDP|TCP|3389|Wszystkie urządzenia w sieci|Wychodzące|
 
 > [!NOTE]
 > - Przy użyciu konta użytkownika usługi katalogu, wysyła zapytanie czujnika punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowania do sieci), aby można było skompilować [wykres ścieżki penetracja sieci](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-atp-step8-samr.md).
 > - Następujące porty muszą być otwarte dla ruchu przychodzącego na urządzeniach w sieci z czujników autonomiczny Azure ATP:
 >   -   NTLM za pośrednictwem wywołania RPC (Port TCP 135) do celów rozpoznawania
 >   -   NetBIOS (UDP port 137) dla celów rozpoznawania
->   -   Zapytania SAM-R (port TCP/UDP 445) dla celów wykrywania
-
+>   -   RDP (TCP port 3389), tylko pierwszy pakiet *powitania klienta*, do celów rozpoznawania<br> Należy pamiętać, że uwierzytelnianie nie jest wykonywane na żadnym z portów.
 
 ## <a name="azure-atp-sensor-requirements"></a>Azure wymagania czujnik ATP
 W tej sekcji wymieniono wymagania dotyczące czujnik Azure ATP.
@@ -202,18 +202,18 @@ W poniższej tabeli wymieniono niezbędne porty, których wymaga czujnik Azure A
 |**Wewnętrznych portów**|||||
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|Netlogon (SMB, CIFS, SAM-R)|TCP/UDP|445|Kontrolery domeny|Wychodzące|
+|Netlogon (SMB, CIFS, SAM-R)|TCP/UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
 |Syslog (opcjonalnie)|TCP/UDP|514, w zależności od konfiguracji|Serwer SIEM|Przychodzące|
 |RADIUS|UDDP|1813|RADIUS|Przychodzące|
+|Protokół TLS w celu portem RDP|TCP|3389|Wszystkie urządzenia w sieci|Wychodzące|
 
 > [!NOTE]
-> - Przy użyciu konta użytkownika usługi katalogu, wysyła zapytanie czujnika punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowania do sieci), aby można było skompilować [wykres ścieżki penetracja sieci](use-case-lateral-movement-path.md).
-> - Następujące porty muszą być otwarte dla ruchu przychodzącego na urządzeniach w sieci z czujników Azure ATP:
+> - Przy użyciu konta użytkownika usługi katalogu, wysyła zapytanie czujnika punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowania do sieci), aby można było skompilować [wykres ścieżki penetracja sieci](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-atp-step8-samr.md).
+> - Następujące porty muszą być otwarte dla ruchu przychodzącego na urządzeniach w sieci z czujników autonomiczny Azure ATP:
 >   -   NTLM za pośrednictwem wywołania RPC (Port TCP 135) do celów rozpoznawania
 >   -   NetBIOS (UDP port 137) dla celów rozpoznawania
->   -   Zapytania SAM-R (port TCP/UDP 445) dla celów wykrywania
-
+>   -   RDP (TCP port 3389), tylko pierwszy pakiet *powitania klienta*, do celów rozpoznawania<br> Należy pamiętać, że uwierzytelnianie nie jest wykonywane na żadnym z portów.
 
 
 

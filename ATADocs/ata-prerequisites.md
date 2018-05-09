@@ -1,23 +1,23 @@
 ---
-title: "Wymagania wstępne usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Zawiera opis wymagań, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku"
-keywords: 
+title: Wymagania wstępne usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Zawiera opis wymagań, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 5/6/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 419df4c4404bf26a85c1a955139d0dee6f50828e
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 91ce961b832fd02ba343b3f55ae3570fe4b10207
+ms.sourcegitcommit: 39a1ddeb6c9dd0817f92870b711627350b7f6f03
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -121,9 +121,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**LDAPS** (opcjonalnie)|TCP|636|Kontrolery domeny|Wychodzące|
 |**DNS**|TCP i UDP|53|Serwery DNS|Wychodzące|
 |**Kerberos** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|88|Kontrolery domeny|Wychodzące|
-|**Netlogon** (opcjonalnie, jeśli przyłączono do domeny)|TCP i UDP|445|Kontrolery domeny|Wychodzące|
 |**Czas systemu Windows** (opcjonalne, jeśli przyłączonych do domeny)|UDP|123|Kontrolery domeny|Wychodzące|
-|**Netlogon (SMB, CIFS, SAM-R)**|TCP i UDP|445|Bramy i urządzeń|Przychodzące i wychodzące|
 
 > [!NOTE]
 > LDAP jest wymagane do przetestowania poświadczenia do użycia między bram usługi ATA i kontrolerach domeny. Uruchomienie testu jest wykonywane z Centrum usługi ATA do kontrolera domeny, aby sprawdzić poprawność tych poświadczeń, po których bramy usługi ATA używa protokołu LDAP jako część procesu zwykłej rozdzielczości.
@@ -212,7 +210,7 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 |LDAP do wykazu globalnego|TCP|3268|Kontrolery domeny|Wychodzące|
 |LDAPS do wykazu globalnego|TCP|3269|Kontrolery domeny|Wychodzące|
 |Kerberos|TCP i UDP|88|Kontrolery domeny|Wychodzące|
-|Netlogon|TCP i UDP|445|Kontrolery domeny|Wychodzące|
+|Netlogon (SMB, CIFS, SAM-R)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 |Czas systemu Windows|UDP|123|Kontrolery domeny|Wychodzące|
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
@@ -225,6 +223,10 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 >
 > -   NTLM przez RPC (port TCP 135)
 > -   NetBIOS (port UDP 137)
+> - Przy użyciu konta użytkownika usługi katalogu, bramy ATA wysyła zapytanie do punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowania do sieci), aby można było skompilować [wykres ścieżki penetracja sieci](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-ata-step9-samr.md).
+> - Następujące porty muszą być otwarte dla ruchu przychodzącego na urządzeniach w sieci z bramy usługi ATA:
+>   -   NTLM za pośrednictwem wywołania RPC (Port TCP 135) do celów rozpoznawania
+>   -   NetBIOS (UDP port 137) dla celów rozpoznawania
 
 ## <a name="ata-lightweight-gateway-requirements"></a>Wymagania dotyczące uproszczonej bramy usługi ATA
 Ta sekcja zawiera listę wymagań uproszczonej bramy usługi ATA.
@@ -280,12 +282,17 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez uproszczoną bram
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
 |Protokół SSL|TCP|443|Centrum usługi ATA|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
+|Netlogon (SMB, CIFS, SAM-R)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 
 > [!NOTE]
 > W ramach procesu rozpoznawania wykonywanego przez uproszczoną bramę usługi ATA następujące porty muszą być otwarte dla danych przychodzących z uproszczonych bram usługi ATA na urządzeniach w sieci.
 >
 > -   NTLM za pośrednictwem wywołania RPC
 > -   NetBIOS
+> - Przy użyciu konta użytkownika usługi katalogu, bramy ATA Lightweight Gateway wysyła zapytanie do punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowania do sieci), aby można było skompilować [wykres ścieżki penetracja sieci](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-ata-step9-samr.md).
+> - Następujące porty muszą być otwarte dla ruchu przychodzącego na urządzeniach w sieci z bramy usługi ATA:
+>   -   NTLM za pośrednictwem wywołania RPC (Port TCP 135) do celów rozpoznawania
+>   -   NetBIOS (UDP port 137) dla celów rozpoznawania
 
 ## <a name="ata-console"></a>Konsola usługi ATA
 Dostęp do konsoli usługi ATA jest za pośrednictwem przeglądarki, pomocniczych przeglądarki oraz ustawienia:

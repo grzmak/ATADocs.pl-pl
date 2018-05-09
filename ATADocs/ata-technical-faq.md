@@ -1,23 +1,23 @@
 ---
-title: "Często zadawane pytania dotyczące usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami"
-keywords: 
+title: Często zadawane pytania dotyczące usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Zawiera listę często zadawanych pytań dotyczących usługi ATA wraz ze skojarzonymi odpowiedziami
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 5/6/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 5fe0e6f0d8c75c099aa6623cd0f5245c955d9ffa
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: f372b4b85c240079da157052e2c20c46801398be
+ms.sourcegitcommit: 39a1ddeb6c9dd0817f92870b711627350b7f6f03
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -51,6 +51,10 @@ Do uaktualnienia informacje o wersji, zobacz [ścieżka uaktualnienia ATA](upgra
 
 Macierzy uaktualnienia wersji usługi ATA, zobacz [ścieżka uaktualnienia ATA](upgrade-path.md).
 
+
+## <a name="how-does-the-ata-center-update-its-latest-signatures"></a>Jak Centrum usługi ATA zaktualizować jej najnowszych sygnatur?
+
+Mechanizm wykrywania usługi ATA została rozszerzona o nowej wersji jest zainstalowany w Centrum usługi ATA. Centrum można uaktualnić za pomocą usługi Microsoft Update (MU) lub ręcznie pobrać nową wersję z Centrum pobierania lub licencji woluminu.
 
 ## <a name="how-do-i-verify-windows-event-forwarding"></a>Jak sprawdzić funkcję przekazywania zdarzeń systemu Windows?
 Można umieścić w pliku następujący kod, a następnie uruchomić go z wiersza polecenia w katalogu **\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** w następujący sposób:
