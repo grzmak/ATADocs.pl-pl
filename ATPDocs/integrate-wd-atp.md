@@ -1,23 +1,23 @@
 ---
 title: Integracja Advanced Threat Protection Azure z systemem Windows Defender ATP | Dokumentacja firmy Microsoft
-description: "Integrowanie usługi Azure Advanced Threat Protection z Windows Defender ATP pokrycia wykrywania zagrożeń Pełna"
-keywords: 
+description: Integrowanie usługi Azure Advanced Threat Protection z Windows Defender ATP pokrycia wykrywania zagrożeń Pełna
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 5/16/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: f6f3ed75-d6bb-4966-a9a7-5339c4f3ebac
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 3521e500548b04febbff37d3dfe9150cf6f2d35b
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 17ade33a55039eaf8abc98901cdab9ebeef850c5
+ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 05/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -96,15 +96,17 @@ Po kliknięciu wskaźnika są wprowadzane do portalu Windows Defender ATP, gdzie
  ![Szary Windows Defender ATP](./media/wd-grey.png)
 
 W portalu Windows Defender ATP po kliknięciu punktu końcowego można wyświetlić alerty Azure ATP. Po kliknięciu alerty dla tego obiektu w programie Windows Defender ATP w Azure ATP zostanie otwarta strona profilu jednostki. 
+ 
+ > ! [UWAGA] Obecnie Azure ATP Integracja z usługą Windows Defender ATP obsługuje tylko użytkownicy i komputery z lokalnej usługi AD. Użytkownicy z usługi Azure AD i maszyn wirtualnych, które są zarządzane na platformie Azure nie będą wyświetlane jako część integracji 
 
- ![Alerty systemu Windows Defender ATP](./media/wd-atp-alerts.png)
+![Alerty systemu Windows Defender ATP](./media/wd-atp-alerts.png)
 
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Badanie ścieżek penetracja sieci Azure ATP](use-case-lateral-movement-path.md)
 - [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
-- [Architektura ATP Azure](atp-architecture.md)
+- [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
 - [Zainstaluj ATP](install-atp-step1.md)
 - [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
 

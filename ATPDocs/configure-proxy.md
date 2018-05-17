@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 4/22/2018
+ms.date: 5/16/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: c52fa6d7cb42605f1809a40926e391bf39fe3eb2
-ms.sourcegitcommit: d2d2750bfb0198c8488d538f1773fda6eda5e6f9
+ms.openlocfilehash: 5a1fd5631a568419c600f35d44f09c9c61f17129
+ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/16/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/23/2018
 
 # <a name="configure-endpoint-proxy-and-internet-connectivity-settings-for-your-azure-atp-sensor"></a>Konfigurowanie serwera proxy punktu końcowego i ustawień połączeń internetowych z czujnika ATP Azure
 
-Każdy czujnik Azure Advanced Threat ochrony (ATP) wymaga łączności z Internetem do usługi w chmurze Azure ATP poprawne działanie. W niektórych organizacjach kontrolery domeny nie są połączone bezpośrednio z Internetem, ale są połączone za pośrednictwem połączenia serwera proxy sieci web. Każdego czujnik Azure ATP wymaga użycia conifguration proxy Microsoft Windows Internet (WinINET) na dane czujników raportu i komunikować się z usługą Azure ATP. Użycie konfiguracji serwera proxy WinHTTP, nadal jest konieczne skonfigurowanie ustawień serwera proxy przeglądarki Internet systemu Windows (WinINet) do komunikacji między czujnika i usługą w chmurze Azure ATP.
+Każdy czujnik Azure Advanced Threat ochrony (ATP) wymaga łączności z Internetem do usługi w chmurze Azure ATP poprawne działanie. W niektórych organizacjach kontrolery domeny nie są połączone bezpośrednio z Internetem, ale są połączone za pośrednictwem połączenia serwera proxy sieci web. Każdy czujnik Azure ATP wymaga korzystania z konfiguracji serwera proxy Microsoft Windows Internet (WinINET) do raportu danych czujnika i komunikować się z usługą Azure ATP. Użycie konfiguracji serwera proxy WinHTTP, nadal jest konieczne skonfigurowanie ustawień serwera proxy przeglądarki Internet systemu Windows (WinINet) do komunikacji między czujnika i usługą w chmurze Azure ATP.
 
 
 Podczas konfigurowania serwera proxy, należy znać osadzonych usługa czujnik Azure ATP była uruchamiana w kontekście systemu za pomocą **Usługa lokalna** konta i usługę aktualizacji czujnik ATP Azure działa w kontekście systemu za pomocą **LocalSystem** konta. 
@@ -68,6 +68,11 @@ Jeśli serwer proxy lub zapora blokuje cały ruch przez domyślny, dzięki czemu
 |Europa|triprd1wceun1sensorapi.ATP.Azure.com<br>triprd1wceuw1sensorapi.ATP.Azure.com|
 |Azja|triprd1wcasse1sensorapi.ATP.Azure.com|
 
+
+Można również ograniczenia funkcjonalności reguły zapory lub serwera proxy dla określonego obszaru roboczego, które zostały utworzone, tworząc regułę następujące rekordy DNS:
+- < nazwa obszaru roboczego >. atp.azure.com — połączeń konsoli
+- < nazwa obszaru roboczego > sensorapi.atp.azure.com — czujnik łączności
+ 
 > [!NOTE]
 > Podczas przeprowadzania inspekcji SSL na ruch sieciowy Azure ATP (między czujnika i usługę Azure ATP), kontroli SSL musi obsługiwać wzajemne inspekcji.
 

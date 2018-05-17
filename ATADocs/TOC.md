@@ -14,6 +14,7 @@
 #### [Aktualizacja usługi ATA do wersji 1.5 — przewodnik migracji](ata-update-1.5-migration-guide.md)
 ### [Co nowego w wersji 1.4 usługi ATA](whats-new-version-1.4.md)
 ## [Często zadawane pytania](ata-technical-faq.md)
+## [Zgodność, zaufanie, zabezpieczenia danych i prywatność usługi ATA](ata-privacy-compliance.md)
 # Planowanie i projektowanie
 ## [Architektura usługi ATA](ata-architecture.md)
 ## [Planowanie pojemności usługi ATA](ata-capacity-planning.md)
