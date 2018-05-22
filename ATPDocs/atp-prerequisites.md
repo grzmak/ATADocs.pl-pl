@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/8/2018
+ms.date: 5/21/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ae859121fbe856c93b8568ef38bf0b4bdb77837a
-ms.sourcegitcommit: 8472f3f46fc90da7471cd1065cdb2f6a1d5a9f69
+ms.openlocfilehash: 1fc2b3656701ee5db54a4f918ab617a2ad487780
+ms.sourcegitcommit: 3539dd3f9ab7729e5326b904fc64985c808bc8ce
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/21/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -58,7 +58,7 @@ W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki s
 
 -   Po uruchomieniu programu Wireshark na czujnik autonomiczny Azure ATP konieczne będzie ponowne uruchomienie czujnik Azure Advanced Threat Protection Service, po zatrzymaniu przechwytywania programu Wireshark. W przeciwnym razie czujnika zatrzymuje przechwytywanie ruchu.
 
-- Jeśli spróbujesz zainstalować czujnik ATP na komputerze, który został skonfigurowany z kartą zespołu kart interfejsu sieciowego, zostanie wyświetlony błąd instalacji. Jeśli chcesz zainstalować czujnik ATP na komputerze, który został skonfigurowany z zespołu kart interfejsu sieciowego, skontaktuj się z przedstawicielem pomocy technicznej Azure ATP.
+- Jeśli spróbujesz zainstalować czujnik ATP na komputerze, który został skonfigurowany z kartą zespołu kart interfejsu sieciowego, zostanie wyświetlony błąd instalacji. Jeśli chcesz zainstalować czujnik ATP na komputerze, który został skonfigurowany z zespołu kart interfejsu sieciowego, zobacz [czujnik Azure ATP problem tworzenia zespołu kart interfejsu Sieciowego](troubleshooting-atp-known-issues.md#nic-teaming).
 
 -    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Dzięki temu ATP Azure to wykrywanie zbiorczego usuwania obiektów w domenie. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
 

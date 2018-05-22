@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/6/2018
+ms.date: 5/21/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,11 +13,11 @@ ms.technology: ''
 ms.assetid: 1fe5fd6f-1b79-4a25-8051-2f94ff6c71c1
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: db63df945bf218f384c9f9dac6f111f5290aa138
-ms.sourcegitcommit: 39a1ddeb6c9dd0817f92870b711627350b7f6f03
+ms.openlocfilehash: b6c11292fd8e7436257e4616c65d76aad1aed8de
+ms.sourcegitcommit: c01f93bd9e41355d2f47f648e3fea7736e1218f6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/21/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
@@ -119,7 +119,7 @@ Istnieją trzy typy wykrywania:
 **Badanie**
 
 Najpierw sprawdź opis alertu, aby zobaczyć z powyższych trzech typów wykrywania jest zajmujących. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
-1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu skanera napisane przez zespół usługi ATA. Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
+1.  Skeleton Key — można sprawdzić, czy Skeleton Key wpłynęła na kontrolerach domeny przy użyciu [skanera napisane przez zespół usługi ATA](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73). Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest dodatnia wartość true.
 2.  Bilet uwierzytelniania Golden Ticket — w arkuszu kalkulacyjnym programu Excel, przejdź do **działań w sieci** kartę. Zobaczysz, że odpowiednie pole starszej jest **żądania biletu typ szyfrowania**, i **komputera źródłowego obsługiwanych typów szyfrowania** zawiera metody silniejszego szyfrowania.
   a.    Sprawdź komputer źródłowy i konta lub w przypadku wielu źródła konta komputerów i sprawdź, czy mają one coś wspólną (na przykład wszystkie marketing personelu Użyj określonej aplikacji, które mogą być przyczyną alertu wyzwolenie). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniania za pomocą dolnej szyfrowania szyfrowania. Sprawdź, czy istnieją takie niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźne pozytywną wartość true i będzie możliwe **Pomiń** go.
   b.    Wyboru zasobu dostęp do tych biletów, jeśli istnieje jeden zasób, którego wszystkie korzystają, go zweryfikować, upewnij się, że jest prawidłowy zasób, który one mają dostęp. Ponadto należy upewnić się, jeśli zasób docelowy obsługuje metody silne szyfrowanie. Można to sprawdzić w usłudze Active Directory przez skontrolowanie atrybutu `msDS-SupportedEncryptionTypes`, zasobów konta usługi.

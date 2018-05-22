@@ -1,11 +1,11 @@
 ---
-title: Advanced Threat Analytics zgodności, zaufania danych zabezpieczeń i prywatności | Dokumentacja firmy Microsoft
-description: Zawiera listę ATA zasobów, wideo, wprowadzenie, wdrażania i linki plan gotowości.
+title: Advanced Threat Analytics danych osobowych zasad | Dokumentacja firmy Microsoft
+description: Zawiera linki do informacji na temat sposobu usuwania prywatne informacje i dane osobowe z usługi ATA.
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/16/2018
+ms.date: 5/21/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,15 +13,15 @@ ms.technology: ''
 ms.assetid: 1b2d185c-62cd-45f0-b0dd-687b51317f32
 ms.reviewer: ophirp
 ms.suite: ems
-ms.openlocfilehash: dee55446c18ee9bc560045c94f9421840fc28fc2
-ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
+ms.openlocfilehash: cf08f2d46eaa939f414d1e3793446384cd22100b
+ms.sourcegitcommit: 3539dd3f9ab7729e5326b904fc64985c808bc8ce
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/21/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
-# <a name="ata-compliance-trust-data-security-and-privacy"></a>Zgodności usługi ATA, zaufania danych zabezpieczeń i prywatności 
+# <a name="ata-data-security"></a>Bezpieczeństwo danych usługi ATA 
 
 Aby uzyskać informacje dotyczące zaufania usługi ATA i zgodności, zobacz [portal usługi zaufania](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise GDPR zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
 
@@ -36,6 +36,10 @@ Z Centrum usługi ATA umożliwia wyświetlanie osobistych danych umożliwiający
 Dane osobowe dotyczące użytkowników i jednostek w usłudze ATA pochodzi od użytkownika AD do obiektu w Twojej organizacji. W związku z tym zmiany wprowadzone do profilu użytkownika w usłudze AD są odzwierciedlane w usłudze ATA. 
 
 ## <a name="deleting-personal-data"></a>Usuwanie danych osobowych 
+
+> [!NOTE]
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+
 
 Mimo że dane w usłudze ATA są replikowane i zawsze aktualizowane z usługi Active Directory, po usunięciu jednostki w usłudze AD, dane jednostki w usłudze ATA są obsługiwane na potrzeby badania zabezpieczeń. 
 
@@ -69,16 +73,23 @@ Ten skrypt powoduje usunięcie wszystkich danych dla wszystkich działań jednos
 
 ## <a name="exporting-personal-data"></a>Eksportowanie danych osobowych 
 
+> [!NOTE]
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+
+
 Ponieważ dane powiązane z jednostkami w usłudze ATA pochodzi z usługi Active Directory, tylko podzbiór danych są przechowywane w bazie danych usługi ATA. Z tego powodu należy wyeksportować dane dotyczące jednostki z usługi Active Directory. 
 
 Usługa ATA umożliwia eksportowanie do programu Excel, wszystkie informacje związane z zabezpieczeniami, która może obejmować dane osobowe. 
 
  
-## <a name="opt-out-of-telemetry"></a>Wypisz telemetrii 
+## <a name="opt-out-of-system-generated-logs"></a>Wypisz dzienników generowanych przez system 
 
-Usługa ATA zbiera anonimowe dane telemetryczne dotyczące każdego wdrożenia i przesyła te dane przy użyciu protokołu HTTPS do serwerów firmy Microsoft. Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA. 
+> [!NOTE]
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-Aby uzyskać więcej informacji, zobacz [Zarządzanie ustawieniami telemetrii](manage-telemetry-settings.md).
+ATA zbiera anonimowe generowanych przez system dzienników dotyczących każdego wdrożenia i przesyła te dane przy użyciu protokołu HTTPS do serwerów firmy Microsoft. Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA. 
+
+Aby uzyskać więcej informacji, zobacz [zarządzania dziennikami generowanych przez system](manage-telemetry-settings.md).
 
 Aby wyłączyć zbieranie danych:
 

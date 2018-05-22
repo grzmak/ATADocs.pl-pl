@@ -1,30 +1,33 @@
 ---
-title: "Zarządzanie ustawieniami telemetrii usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Zawiera opis danych zbieranych przez usługę ATA i kroki służące do wyłączania zbierania danych."
-keywords: 
+title: Zarządzanie dziennikami generowanych przez system Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Zawiera opis danych zbieranych przez usługę ATA i kroki służące do wyłączania zbierania danych.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 98d377dd7e09636d1866d461a981cdcf1cf8aea7
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 17e5778543b9f08d3157ed91cb0a7a73ea268c0a
+ms.sourcegitcommit: 3539dd3f9ab7729e5326b904fc64985c808bc8ce
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/21/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
-# <a name="manage-telemetry-settings"></a>Zarządzanie ustawieniami telemetrii
-Usługa Advanced Threat Analytics (ATA) zbiera anonimowe dane telemetryczne o usłudze ATA i przesyła jest za pośrednictwem połączenia HTTPS do serwerów firmy Microsoft.  Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA.
+# <a name="manage-system-generated-logs-note"></a>Zarządzanie dziennikami generowanych przez system > [!NOTE]
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+
+
+Advanced Threat Analytics (ATA) zbiera anonimowe dane dziennika generowanych przez system dotyczące usługi ATA i przesyła dane za pośrednictwem połączenia HTTPS do serwerów firmy Microsoft.  Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA.
 
 ## <a name="data-collected"></a>Zbierane dane
 Zebrane dane anonimowe zawiera następujące parametry:
