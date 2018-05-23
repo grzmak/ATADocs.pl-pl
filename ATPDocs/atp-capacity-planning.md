@@ -1,22 +1,22 @@
 ---
-title: "Planowanie wdrożenia usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft"
-description: "Ułatwia zaplanowanie wdrożenia i określić, ile serwerów Azure ATP będzie potrzebnych do obsługi sieci"
-keywords: 
+title: Planowanie wdrożenia usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Ułatwia zaplanowanie wdrożenia i określić, ile serwerów Azure ATP będzie potrzebnych do obsługi sieci
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/11/2018
+ms.date: 5/22/2018
 ms.topic: get-started-article
 ms.service: azure-advanced-threat-protection
-ms.prod: 
+ms.prod: ''
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 577b7a5105e8de773f57b1e00bc1c9cb51096799
-ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
+ms.openlocfilehash: 35d3495585cce321adccb05f202fd664356db37f
+ms.sourcegitcommit: 324dc941282f2948366afa5a919bda0b029bd59d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 05/22/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -40,7 +40,7 @@ Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia Az
 Jeśli z jakiegoś powodu nie można użyć narzędzia do określania rozmiaru ATP Azure, ręcznie zebrać informacje licznika pakietów na sekundę ze wszystkich kontrolerów domeny przez 24 godziny z krótkim interwałem zbierania (około 5 sekund). Następnie dla każdego kontrolera domeny musisz obliczyć średnią wartość dzienną i średnią z okresu o największym obciążeniu (15 minut).
 Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
 
-## Wybieranie typu czujnika prawo do wdrożenia<a name="choosing-the right-sensor-type-for-your-deployment"></a>
+## Wybieranie typu czujnika prawo do wdrożenia<a name="choosing-the-right-sensor-type-for-your-deployment"></a>
 We wdrożeniu Azure ATP dowolną kombinację typów czujnik autonomiczny Azure ATP jest obsługiwana:
 
 - Tylko czujników autonomiczny Azure ATP
@@ -74,13 +74,13 @@ Czujnik Azure ATP może obsługiwać monitorowanie jednego kontrolera domeny na 
 
 |Pakiety na sekundę *|Procesor CPU (rdzenie)|Pamięć (GB)|
 |----|----|-----|
-|0-1k|0.25|2.50|
+|0-1 k|0.25|2.50|
 |1k-5k|0.75|6.00|
 |5k-10k|1.00|6.50|
-|10k-20k|2.00|9.00|
-|20k-50k|3.50|9.50|
-|50k-75k |3.50|9.50|
-|75k-100k|3.50 |9.50|
+|10k-20k|2.00|9,00|
+|20k-50k|3.50|9,50|
+|50k-75k |3.50|9,50|
+|75k-100k|3.50 |9,50|
 
 > [!NOTE]
 > - Całkowita liczba rdzeni, które będzie używane przez usługę czujnik.<br>Zaleca się, że nie działają z rdzeni hiperwątkowych.

@@ -44,7 +44,7 @@
 ## [Zmienianie hasła do łączności z domeną](modifying-ata-config-dcpassword.md)
 ## [Wykluczanie jednostek z wykryć](excluding-entities-from-detections.md)
 ## [Eksportowanie/importowanie konfiguracji usługi ATA](ata-configuration-file.md)
-## [Zarządzanie funkcją telemetrii w usłudze ATA](manage-telemetry-settings.md)
+## [Zarządzanie dziennikami generowanymi przez system](manage-telemetry-settings.md)
 ## [Ustawianie powiadomień usługi ATA](setting-ata-alerts.md)
 ## [Określanie ustawień dziennika systemowego i serwera poczty e-mail](setting-syslog-email-server-settings.md)
 ## [Tagowanie poufnych kont](tag-sensitive-accounts.md)

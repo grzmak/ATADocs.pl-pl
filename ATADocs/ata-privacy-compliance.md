@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/21/2018
+ms.date: 5/22/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,17 +13,18 @@ ms.technology: ''
 ms.assetid: 1b2d185c-62cd-45f0-b0dd-687b51317f32
 ms.reviewer: ophirp
 ms.suite: ems
-ms.openlocfilehash: cf08f2d46eaa939f414d1e3793446384cd22100b
-ms.sourcegitcommit: 3539dd3f9ab7729e5326b904fc64985c808bc8ce
+ms.openlocfilehash: 94aa6ffff6dee7163293cd70be72de0f8ebc8f7d
+ms.sourcegitcommit: 324dc941282f2948366afa5a919bda0b029bd59d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 05/22/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
-# <a name="ata-data-security"></a>Bezpieczeństwo danych usługi ATA 
+# <a name="ata-data-security-and-privacy"></a>Bezpieczeństwo danych usługi ATA i ochrona prywatności
 
-Aby uzyskać informacje dotyczące zaufania usługi ATA i zgodności, zobacz [portal usługi zaufania](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise GDPR zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
+> [!NOTE]
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) i [GDPR sekcji witryny Microsoft 365 Enterprise zgodności](https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr). Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## <a name="searching-for-and-identifying-personal-data"></a>Wyszukiwanie i zidentyfikowaniu danych osobowych 
 
@@ -38,7 +39,7 @@ Dane osobowe dotyczące użytkowników i jednostek w usłudze ATA pochodzi od u�
 ## <a name="deleting-personal-data"></a>Usuwanie danych osobowych 
 
 > [!NOTE]
-> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) i [GDPR sekcji witryny Microsoft 365 Enterprise zgodności](https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr). Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 
 Mimo że dane w usłudze ATA są replikowane i zawsze aktualizowane z usługi Active Directory, po usunięciu jednostki w usłudze AD, dane jednostki w usłudze ATA są obsługiwane na potrzeby badania zabezpieczeń. 
@@ -74,7 +75,7 @@ Ten skrypt powoduje usunięcie wszystkich danych dla wszystkich działań jednos
 ## <a name="exporting-personal-data"></a>Eksportowanie danych osobowych 
 
 > [!NOTE]
-> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) i [GDPR sekcji witryny Microsoft 365 Enterprise zgodności](https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr). Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 
 Ponieważ dane powiązane z jednostkami w usłudze ATA pochodzi z usługi Active Directory, tylko podzbiór danych są przechowywane w bazie danych usługi ATA. Z tego powodu należy wyeksportować dane dotyczące jednostki z usługi Active Directory. 
@@ -85,7 +86,7 @@ Usługa ATA umożliwia eksportowanie do programu Excel, wszystkie informacje zwi
 ## <a name="opt-out-of-system-generated-logs"></a>Wypisz dzienników generowanych przez system 
 
 > [!NOTE]
-> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) i [GDPR sekcji witryny Microsoft 365 Enterprise zgodności](https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr). Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ATA zbiera anonimowe generowanych przez system dzienników dotyczących każdego wdrożenia i przesyła te dane przy użyciu protokołu HTTPS do serwerów firmy Microsoft. Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA. 
 
@@ -104,10 +105,4 @@ Aby wyłączyć zbieranie danych:
 
 ## <a name="additional-resources"></a>Dodatkowe zasoby
 
-[Strona 9 kanału zabezpieczeń firmy Microsoft](https://channel9.msdn.com/Shows/Microsoft-Security/)
-
-## <a name="community-resources"></a>Zasoby społeczności
-
-[Blog usługi ATA](https://aka.ms/ATABlog)
-[społeczności ATA](https://aka.ms/ATACommunity)
-[Prześlij opinię dotyczącą usługi ATA](https://aka.ms/ATAUserVoice)
+- Aby uzyskać informacje dotyczące zaufania usługi ATA i zgodności, zobacz [portal usługi zaufania](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise GDPR zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
