@@ -1,23 +1,23 @@
 ---
-title: "Konfigurowanie funkcji dublowania portów podczas wdrażania usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft"
-description: "Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby Azure ATP"
-keywords: 
+title: Konfigurowanie funkcji dublowania portów podczas wdrażania usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby Azure ATP
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 5/22/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 9ec7eb4c-3cad-4543-bbf0-b951d8fc8ffe
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 1cc622f1a8306530423920873e5efa05e8c87064
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 1f59f02f73507fe29b41fd13c96a359dee2e88fc
+ms.sourcegitcommit: 324dc941282f2948366afa5a919bda0b029bd59d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 05/22/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -51,10 +51,10 @@ Kontrolery domeny i czujnik autonomiczny Azure ATP może być fizyczne lub wirtu
 |Wirtualna|Wirtualny na tym samym hoście|Przełącznik wirtualny musi obsługiwać funkcję dublowania portów.<br /><br />Przeniesienie jednej z maszyn wirtualnych na inny host może spowodować przerwanie działania funkcji dublowania portów.|
 |Wirtualna|Wirtualny na różnych hostach|Upewnij się, że ten scenariusz jest obsługiwany przez przełącznik wirtualny.|
 |Wirtualna|Fizyczny|Wymaga dedykowanej karty sieciowej w przeciwnym razie ATP Azure widzi wszystkie ruch do i hosta, nawet ruch wysyłany do usługi w chmurze Azure ATP.|
-|Fizyczny|Wirtualna|Upewnij się, że przełącznik wirtualny obsługuje ten scenariusz oraz konfigurację funkcji dublowania portów na przełącznikach fizycznych opartą na tym scenariuszu:<br /><br />Jeśli host wirtualny korzysta tego samego przełącznika fizycznego, należy skonfigurować span na poziomie przełącznika.<br /><br />Jeśli host wirtualny korzysta z innego przełącznika, należy skonfigurować funkcję RSPAN lub ERSPAN &#42;.|
+|Fizyczny|Wirtualna|Upewnij się, że przełącznik wirtualny obsługuje ten scenariusz oraz konfigurację funkcji dublowania portów na przełącznikach fizycznych opartą na tym scenariuszu:<br /><br />Jeśli host wirtualny korzysta tego samego przełącznika fizycznego, należy skonfigurować span na poziomie przełącznika.<br /><br />Jeśli host wirtualny korzysta z innego przełącznika, należy skonfigurować RSPAN lub ERSPAN&#42;.|
 |Fizyczny|Fizyczny — ten sam przełącznik|Przełącznik fizyczny musi obsługiwać funkcję SPAN lub funkcję dublowania portów.|
 |Fizyczny|Fizyczny — inny przełącznik|Wymaga, aby przełączniki fizyczne obsługiwały funkcję RSPAN lub ERSPAN&#42;.|
-&#42; Funkcja ERSPAN jest obsługiwana tylko po dehermetyzacji jest wykonywane przed ruchu są analizowane przez ATP.
+&#42;Funkcja ERSPAN jest obsługiwana tylko po dehermetyzacji jest wykonywane przed ruchu są analizowane przez ATP.
 
 > [!NOTE]
 > Upewnij się, że kontrolery domeny i czujnik autonomiczny Azure ATP, z którym łączą jest czas synchronizowane w ciągu pięciu minut od siebie.

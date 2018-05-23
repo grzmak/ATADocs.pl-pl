@@ -1,23 +1,23 @@
 ---
-title: "Weryfikowanie funkcji dublowania portów w Azure Advanced Threat Protection | Dokumentacja firmy Microsoft"
-description: "Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowane w Azure ATP"
-keywords: 
+title: Weryfikowanie funkcji dublowania portów w Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowane w Azure ATP
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/3/2018
+ms.date: 5/22/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 0a56cf27-9eaa-4ad0-ae6c-9d0484c69094
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7628fa491ddbe477cab7eb414409028c0f94f44d
-ms.sourcegitcommit: 84556e94a3efdf20ca1ebf89a481550d7f8f0f69
+ms.openlocfilehash: b3d9d35d31eee7ae46800e0547f18330d66e90cc
+ms.sourcegitcommit: 324dc941282f2948366afa5a919bda0b029bd59d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 05/22/2018
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/08/2018
 
 # <a name="validate-port-mirroring"></a>Weryfikowanie funkcji dublowania portów
 > [!NOTE] 
-> Ten artykuł dotyczy tylko w przypadku wdrożenia wdrażanie czujnik autonomiczny ATP Azure zamiast czujnik ATP Azure. Aby określić, czy należy użyć czujnik ATP Azure, zobacz [Wybieranie prawo czujnik wdrożenia](atp-capacity-planning#choosing-the-right-sensor-type-for-your-deployment).
+> Ten artykuł dotyczy tylko w przypadku wdrożenia wdrażanie czujnik autonomiczny ATP Azure zamiast czujnik ATP Azure. Aby określić, czy należy użyć czujnik ATP Azure, zobacz [Wybieranie prawo czujnik wdrożenia](atp-capacity-planning.md#choosing-the-right-sensor-type-for-your-deployment).
  
 W poniższych krokach objaśniono proces weryfikowania, czy funkcja dublowania portów jest poprawnie skonfigurowana. Dla usługi Azure ATP działało poprawnie czujnik autonomiczny Azure ATP musi mieć możliwość widoczny ruch do i z kontrolera domeny. Główne źródło danych używane przez Azure ATP to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Dla ATP Azure zobaczyć ruchu sieciowego funkcję dublowania portów należy skonfigurować. Funkcja dublowania portów kopiuje ruch z jednego portu (portu źródłowego) do innego portu (portu docelowego).
 

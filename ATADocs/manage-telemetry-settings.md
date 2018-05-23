@@ -13,18 +13,18 @@ ms.technology: ''
 ms.assetid: 8c1c7a1b-a3de-4105-9fd0-08a061952172
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 17e5778543b9f08d3157ed91cb0a7a73ea268c0a
-ms.sourcegitcommit: 3539dd3f9ab7729e5326b904fc64985c808bc8ce
+ms.openlocfilehash: 7f1a0cb9a7e237259a9b77b96e16c6680336c2b0
+ms.sourcegitcommit: 324dc941282f2948366afa5a919bda0b029bd59d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 05/22/2018
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
 
 
 # <a name="manage-system-generated-logs-note"></a>Zarządzanie dziennikami generowanych przez system > [!NOTE]
-> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) w [sekcji GDPR witryny Microsoft 365 Enterprise zgodności] (https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr]. Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Jeśli interesuje Cię przeglądanie lub usuwanie danych osobowych, przejrzyj wskazówki firmy Microsoft w [Menedżer zgodności Microsoft](https://servicetrust.microsoft.com/ComplianceManager) i [GDPR sekcji witryny Microsoft 365 Enterprise zgodności](https://docs.microsoft.com/en-us/microsoft-365/compliance/gdpr). Jeśli szukasz ogólne informacje o GDPR, zobacz [GDPR części portalu zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 
 Advanced Threat Analytics (ATA) zbiera anonimowe dane dziennika generowanych przez system dotyczące usługi ATA i przesyła dane za pośrednictwem połączenia HTTPS do serwerów firmy Microsoft.  Te dane są używane przez firmę Microsoft w celu ulepszania przyszłych wersji usługi ATA.
