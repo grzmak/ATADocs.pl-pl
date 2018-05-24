@@ -2,6 +2,7 @@
 ## [Co to jest Zaawansowana ochrona przed zagrożeniami na platformie Azure?](what-is-atp.md)
 ## [Często zadawane pytania](atp-technical-faq.md)
 ## [Co nowego w Zaawansowanej ochronie przed zagrożeniami na platformie Azure](atp-whats-new.md)
+## [Bezpieczeństwo danych i prywatność w Zaawansowanej ochronie przed zagrożeniami na platformie Azure](atp-privacy-compliance.md)
 # Planowanie i projektowanie
 ## [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 ## [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
