@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/22/2018
+ms.date: 5/29/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,11 +13,12 @@ ms.technology: ''
 ms.assetid: 224e629a-0e82-458c-bb03-b67070a9241d
 ms.reviewer: ophirp
 ms.suite: ems
-ms.openlocfilehash: d6bf11d55743b7422985577f512f16af93159618
-ms.sourcegitcommit: 571297209b15e9dc4d43c5e57da359973da8d207
+ms.openlocfilehash: 1f9ed3dba82d032b0cd13bdc462ff6e58a4af6ad
+ms.sourcegitcommit: 3eade64779002d2c8ae005565bc69e1b3f89fb7d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34560228"
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 
@@ -44,7 +45,7 @@ Po usunięciu użytkownika z usługi Active Directory w organizacji, Azure ATP a
 
 ## <a name="export-personal-data"></a>Eksportuj dane osobowe 
 
-W usłudze Azure ATP masz możliwość [export]((working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) zabezpieczeń informacji o alertach do programu Excel. Będzie to również eksportować dane osobowe. 
+Azure ATP możesz mieć możliwość [wyeksportować](working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) zabezpieczeń informacji o alertach do programu Excel. Będzie to również eksportować dane osobowe. 
  
 ## <a name="audit-personal-data"></a>Dane osobowe inspekcji
 
