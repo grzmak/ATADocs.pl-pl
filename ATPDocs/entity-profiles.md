@@ -1,15 +1,15 @@
 ---
-title: "Praca z profilami użytkowników w portalu Azure Advanced Threat Protection obszaru roboczego | Dokumentacja firmy Microsoft"
-description: "Zawiera opis sposobu badania użytkowników na ekranie profile użytkowników w portalu Azure ATP obszaru roboczego"
-keywords: 
+title: Praca z profilami użytkowników w portalu Azure Advanced Threat Protection obszaru roboczego | Dokumentacja firmy Microsoft
+description: Zawiera opis sposobu badania użytkowników na ekranie profile użytkowników w portalu Azure ATP obszaru roboczego
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 2/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 17458706-79fb-4c23-aa42-66979164a45f
 ms.reviewer: itargoet
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/21/2018
+ms.locfileid: "29446071"
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 

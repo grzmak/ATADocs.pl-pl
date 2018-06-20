@@ -1,15 +1,15 @@
 ---
-title: "Instalowanie usługi Advanced Threat Analytics — Krok 4 | Dokumentacja firmy Microsoft"
-description: "W kroku 4 instalowania usługi ATA znajdują się informacje ułatwiające instalowanie bramy usługi ATA."
-keywords: 
+title: Instalowanie usługi Advanced Threat Analytics — Krok 4 | Dokumentacja firmy Microsoft
+description: W kroku 4 instalowania usługi ATA znajdują się informacje ułatwiające instalowanie bramy usługi ATA.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 6bbc50c3-bfa8-41db-a2f9-56eed68ef5d2
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30009676"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

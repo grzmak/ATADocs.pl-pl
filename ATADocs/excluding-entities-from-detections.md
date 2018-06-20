@@ -1,15 +1,15 @@
 ---
-title: "Wykluczanie jednostek z wykryć w usłudze Advanced Threat Analytics | Microsoft Docs"
-description: "Opisuje, jak uniemożliwić usłudze ATA wykrywanie określonych działań jednostek jako podejrzanych"
-keywords: 
+title: Wykluczanie jednostek z wykryć w usłudze Advanced Threat Analytics | Microsoft Docs
+description: Opisuje, jak uniemożliwić usłudze ATA wykrywanie określonych działań jednostek jako podejrzanych
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 344c0f33-45e1-42e2-a051-f722a4504531
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010265"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

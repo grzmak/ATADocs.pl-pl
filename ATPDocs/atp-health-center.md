@@ -1,15 +1,15 @@
 ---
 title: Monitorowanie kondycji systemu Azure Advanced Threat Protection i zdarzenia | Dokumentacja firmy Microsoft
-description: "Sprawdź, jak działa usługa Azure ATP za pomocą Centrum kondycji obszaru roboczego Azure ATP oraz otrzymywać alerty o potencjalnych problemach i wyświetlać zdarzenia systemowe w Podglądzie zdarzeń."
-keywords: 
+description: Sprawdź, jak działa usługa Azure ATP za pomocą Centrum kondycji obszaru roboczego Azure ATP oraz otrzymywać alerty o potencjalnych problemach i wyświetlać zdarzenia systemowe w Podglądzie zdarzeń.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 2/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 1b7e72c3-a538-443f-981c-398ffafa5ab8
 ms.reviewer: itargoet
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/21/2018
+ms.locfileid: "29446022"
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 

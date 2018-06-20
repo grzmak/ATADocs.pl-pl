@@ -1,15 +1,15 @@
 ---
-title: "Weryfikowanie funkcji dublowania portów w usłudze Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowana."
-keywords: 
+title: Weryfikowanie funkcji dublowania portów w usłudze Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Opis sposobu weryfikacji, czy funkcja dublowania portów jest prawidłowo skonfigurowana.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: ebd41719-c91a-4fdd-bcab-2affa2a2cace
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30009806"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

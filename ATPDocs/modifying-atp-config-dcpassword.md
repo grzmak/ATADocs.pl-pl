@@ -1,15 +1,15 @@
 ---
-title: "Zmienianie konfiguracji usługi Azure Advanced Threat Protection — hasło do łączności z domeną | Dokumentacja firmy Microsoft"
-description: "Zawiera opis sposobu zmiany hasła do łączności domeny w czujnik autonomiczny Azure ATP."
-keywords: 
+title: Zmienianie konfiguracji usługi Azure Advanced Threat Protection — hasło do łączności z domeną | Dokumentacja firmy Microsoft
+description: Zawiera opis sposobu zmiany hasła do łączności domeny w czujnik autonomiczny Azure ATP.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 2/14/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: e7f065fa-1ad1-4e87-bd80-99cc695efbf5
 ms.reviewer: itargoet
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/21/2018
+ms.locfileid: "29445966"
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 

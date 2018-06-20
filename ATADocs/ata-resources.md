@@ -1,15 +1,15 @@
 ---
-title: "Advanced Threat Analytics zasobów i gotowości roadamp | Dokumentacja firmy Microsoft"
-description: "Zawiera listę ATA zasobów, wideo, wprowadzenie, wdrażania i linki plan gotowości."
-keywords: 
+title: Advanced Threat Analytics zasobów i gotowości roadamp | Dokumentacja firmy Microsoft
+description: Zawiera listę ATA zasobów, wideo, wprowadzenie, wdrażania i linki plan gotowości.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 42a1a34f-ed6b-4538-befb-452168a30e8c
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010231"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

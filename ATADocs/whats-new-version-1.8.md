@@ -1,23 +1,24 @@
 ---
-title: "Co nowego w wersji 1.8 usługi ATA | Microsoft Docs"
-description: "Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.8 usługi ATA"
-keywords: 
+title: Co nowego w wersji 1.8 usługi ATA | Microsoft Docs
+description: Zawiera listę nowych funkcji oraz znanych problemów w wersji 1.8 usługi ATA
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 9/03/2017
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 71e7f723d02b4e86f1799e5a92998363766de7a2
 ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/07/2017
+ms.locfileid: "24019055"
 ---
 # <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 

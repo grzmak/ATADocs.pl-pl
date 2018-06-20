@@ -1,15 +1,15 @@
 ---
-title: "Odwołanie do Identyfikatora zdarzeń usługi ATA | Dokumentacja firmy Microsoft"
-description: "Zawiera listę zdarzeń usługi ATA identyfikatorów i ich opisy."
-keywords: 
+title: Odwołanie do Identyfikatora zdarzeń usługi ATA | Dokumentacja firmy Microsoft
+description: Zawiera listę zdarzeń usługi ATA identyfikatorów i ich opisy.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 5d639e84-2e37-43a9-9667-49be6c4fa8b7
 ms.reviewer: arzinger
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30009357"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

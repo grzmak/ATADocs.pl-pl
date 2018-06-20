@@ -1,15 +1,15 @@
 ---
-title: "Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu liczników wydajności | Dokumentacja firmy Microsoft"
-description: "W tym temacie opisano sposób rozwiązywania problemów z usługą ATA przy użyciu liczników wydajności."
-keywords: 
+title: Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu liczników wydajności | Dokumentacja firmy Microsoft
+description: W tym temacie opisano sposób rozwiązywania problemów z usługą ATA przy użyciu liczników wydajności.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010435"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

@@ -1,15 +1,15 @@
 ---
-title: "Instalowanie usługi Advanced Threat Analytics — Krok 7 | Microsoft Docs"
-description: "W tym kroku procesu instalowania usługi ATA można zintegrować z sieci VPN."
-keywords: 
+title: Instalowanie usługi Advanced Threat Analytics — Krok 7 | Microsoft Docs
+description: W tym kroku procesu instalowania usługi ATA można zintegrować z sieci VPN.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: e0aed853-ba52-46e1-9c55-b336271a68e7
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010333"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

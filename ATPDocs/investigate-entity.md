@@ -18,6 +18,7 @@ ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190455"
 ---
 *Dotyczy: Azure Advanced Threat Protection wersji 1.9*
 

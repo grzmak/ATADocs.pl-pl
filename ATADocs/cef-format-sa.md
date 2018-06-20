@@ -1,15 +1,15 @@
 ---
-title: "Dokumentacja dzienników rozwiązania SIEM usługi ATA | Microsoft Docs"
-description: "Zawiera przykłady dzienników podejrzanych działań wysłanych z usługi ATA do rozwiązania SIEM."
-keywords: 
+title: Dokumentacja dzienników rozwiązania SIEM usługi ATA | Microsoft Docs
+description: Zawiera przykłady dzienników podejrzanych działań wysłanych z usługi ATA do rozwiązania SIEM.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 601b48ba-a327-4aff-a1f9-2377a2bb7a42
 ms.reviewer: arzinger
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30009874"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

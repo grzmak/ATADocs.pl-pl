@@ -1,23 +1,24 @@
 ---
-title: "Co nowego w wersji 1.7 usługi ATA | Dokumentacja firmy Microsoft"
-description: "Lista nowości oraz znanych problemów w wersji 1.7 usługi ATA"
-keywords: 
+title: Co nowego w wersji 1.7 usługi ATA | Dokumentacja firmy Microsoft
+description: Lista nowości oraz znanych problemów w wersji 1.7 usługi ATA
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 1/23/2017
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: be9ee613-4eb3-40f1-8973-e7f0a707ff57
-ms.reviewer: 
+ms.reviewer: ''
 ms.suite: ems
 ms.openlocfilehash: 7bbca4eeb6ad8c5b9cf161f60144bbd27ca3c8d2
 ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/07/2017
+ms.locfileid: "24018222"
 ---
 # <a name="whats-new-in-ata-version-17"></a>Co nowego w wersji 1.7 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.

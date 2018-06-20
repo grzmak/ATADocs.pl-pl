@@ -1,15 +1,15 @@
 ---
-title: "Architektura usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft"
-description: "Opis architektury usługi Microsoft Advanced Threat Analytics (ATA)."
-keywords: 
+title: Architektura usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
+description: Opis architektury usługi Microsoft Advanced Threat Analytics (ATA).
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010061"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

@@ -1,15 +1,15 @@
 ---
-title: "Zainstaluj Azure Zaawansowana ochrona przed zagrożeniami w trybie dyskretnym | Dokumentacja firmy Microsoft"
-description: "Opisuje sposób instalacji dyskretnej Azure ATP."
-keywords: 
+title: Zainstaluj Azure Zaawansowana ochrona przed zagrożeniami w trybie dyskretnym | Dokumentacja firmy Microsoft
+description: Opisuje sposób instalacji dyskretnej Azure ATP.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/11/2017
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 24eca4c6-c949-42ea-97b9-41ef0fb611f1
 ms.reviewer: itargoet
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 912e453753156902618ae6ebb8489c2320c06fc6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/12/2018
+ms.locfileid: "29856485"
 ---
 *Dotyczy: Azure Advanced Threat Protection*
 

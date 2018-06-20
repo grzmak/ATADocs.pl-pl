@@ -1,15 +1,15 @@
 ---
-title: "Konfigurowanie funkcji przekazywania zdarzeń systemu Windows w Azure Advanced Threat Protection | Dokumentacja firmy Microsoft"
-description: "Opisuje opcje konfigurowania funkcji przekazywania zdarzeń systemu Windows za pomocą usługi Azure ATP"
-keywords: 
+title: Konfigurowanie funkcji przekazywania zdarzeń systemu Windows w Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Opisuje opcje konfigurowania funkcji przekazywania zdarzeń systemu Windows za pomocą usługi Azure ATP
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 02/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: 3547519f-8d9c-40a9-8f0e-c7ba21081203
 ms.reviewer: itargoet
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/21/2018
+ms.locfileid: "29446092"
 ---
 *Dotyczy: Azure Advanced Threat Protection wersji 1.9*
 

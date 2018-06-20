@@ -1,15 +1,15 @@
 ---
-title: "Instalowanie usługi Advanced Threat Analytics — Krok 6 | Dokumentacja firmy Microsoft"
-description: "W ramach tego kroku instalowania usługi ATA są konfigurowane źródła danych."
-keywords: 
+title: Instalowanie usługi Advanced Threat Analytics — Krok 6 | Dokumentacja firmy Microsoft
+description: W ramach tego kroku instalowania usługi ATA są konfigurowane źródła danych.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: get-started-article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010377"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

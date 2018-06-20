@@ -1,11 +1,12 @@
 ---
 layout: LandingPage
-description: "Dowiedz się, jak używać Zaawansowanej ochrony przed zagrożeniami na platformie Azure."
+description: Dowiedz się, jak używać Zaawansowanej ochrony przed zagrożeniami na platformie Azure.
 ms.openlocfilehash: 0d7ec7d0aefceb27ba435af98a75538e5be37b6e
 ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/21/2018
+ms.locfileid: "29444133"
 ---
 # <a name="azure-advanced-threat-protection-documentation"></a>Dokumentacja Zaawansowanej ochrony przed zagrożeniami na platformie Azure
 

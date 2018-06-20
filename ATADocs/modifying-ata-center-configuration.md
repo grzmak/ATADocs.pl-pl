@@ -1,14 +1,14 @@
 ---
-title: "Zmienianie konfiguracji usługi Advanced Threat Analytics w centrum usługi ATA | Microsoft Docs"
-description: "Zawiera opis sposobu zmiany adresu IP, portu, adresu URL konsoli lub certyfikatu centrum usługi ATA."
-keywords: 
+title: Zmienianie konfiguracji usługi Advanced Threat Analytics w centrum usługi ATA | Microsoft Docs
+description: Zawiera opis sposobu zmiany adresu IP, portu, adresu URL konsoli lub certyfikatu centrum usługi ATA.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 93b27f15-f7e5-49bb-870a-d81d09dfe9fc
 ms.reviewer: bennyl
 ms.suite: ems
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30010044"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 

@@ -1,15 +1,15 @@
 ---
-title: "Monitorowanie kondycji i zdarzeń systemu Advanced Threat Analytics | Microsoft Docs"
-description: "Korzystając z centrum kondycji usługi ATA, można sprawdzić, czy usługa ATA działa prawidłowo, otrzymywać alerty o potencjalnych problemach i wyświetlać zdarzenia systemowe w podglądzie zdarzeń."
-keywords: 
+title: Monitorowanie kondycji i zdarzeń systemu Advanced Threat Analytics | Microsoft Docs
+description: Korzystając z centrum kondycji usługi ATA, można sprawdzić, czy usługa ATA działa prawidłowo, otrzymywać alerty o potencjalnych problemach i wyświetlać zdarzenia systemowe w podglądzie zdarzeń.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: d6c783b2-46c5-4211-b21a-d6b17f08d03d
 ms.reviewer: bennyl
 ms.suite: ems
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30009789"
 ---
 *Dotyczy: Advanced Threat Analytics wersji 1.9*
 
