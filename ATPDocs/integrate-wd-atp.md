@@ -1,11 +1,11 @@
 ---
-title: Integracja Advanced Threat Protection Azure z systemem Windows Defender ATP | Dokumentacja firmy Microsoft
-description: Integrowanie usługi Azure Advanced Threat Protection z Windows Defender ATP pokrycia wykrywania zagrożeń Pełna
+title: Integracja usługi Azure zaawansowanej ochrony przed zagrożeniami w usłudze Windows Defender ATP | Dokumentacja firmy Microsoft
+description: Integracja usługi Azure Advanced Threat Protection przy użyciu usługi Windows Defender ATP dla zasięgu wykrywania zagrożeń pełne
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/16/2018
+ms.date: 6/5/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,100 +13,98 @@ ms.technology: ''
 ms.assetid: f6f3ed75-d6bb-4966-a9a7-5339c4f3ebac
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 17ade33a55039eaf8abc98901cdab9ebeef850c5
-ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
+ms.openlocfilehash: 6d6c2cdb157d4e3f75794c8c40abfc7556e314d5
+ms.sourcegitcommit: b218f60b42a25fe486d774d97719590e6fa74e10
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34760077"
 ---
-*Dotyczy: Azure Advanced Threat Protection*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="integrating-azure-atp-with-windows-defender-atp"></a>Integrowanie Azure ATP z usługi Windows Defender ATP
+# <a name="integrating-azure-atp-with-windows-defender-atp"></a>Integrowanie usługi Azure ATP z usługą Windows Defender ATP
 
-Azure Advanced Threat Protection umożliwia Azure ATP można zintegrować z Windows Defender ATP, aby jeszcze bardziej kompleksowe rozwiązanie ochrony zagrożeń. Podczas Azure ATP monitoruje ruch na kontrolerach domeny, Windows Defender ATP monitoruje punktów końcowych, jednocześnie zapewniając jeden interfejs, z którego można chronić środowisko.
+Usługa Azure Advanced Threat Protection umożliwia Integrowanie usługi Azure ATP za pomocą usługi Windows Defender ATP, dla bardziej pełne rozwiązanie do ochrony przed zagrożeniami. Gdy usługi Azure ATP monitoruje ruch na kontrolerach domeny, usługi Windows Defender ATP monitoruje punktów końcowych, jednocześnie zapewniając jeden interfejs, w którym można chronić środowisko.
 
-> [!NOTE]
-> Integracja jest włączona tylko wtedy, gdy klient Windows Defender ATP prywatnej wersji zapoznawczej.
- 
-Dzięki integracji z systemem Windows Defender ATP do Azure ATP, możesz korzystać ze wszystkich możliwości obu usług i zabezpieczeniu środowiska, w tym:
+Po zintegrowaniu usługi Windows Defender ATP do usługi Azure ATP, możesz korzystać ze wszystkich możliwości obydwu usług i zabezpieczyć swoje środowisko, w tym:
 
-- Autonomiczny czujniki i Azure czujników ATP: można sit bezpośrednio na kontrolerach domeny lub dublowanie portów z kontrolerów domeny do ATP do przechwytywania i analizowania ruchu sieciowego na wiele protokołów (na przykład protokołu Kerberos, DNS, RPC, NTLM i inne) do uwierzytelniania, Autoryzacja i zbierania informacji. 
+- Azure ATP czujniki i autonomicznych czujniki: może się znajdować bezpośrednio na kontrolerach domeny lub dublowanie portów z kontrolerów domeny do zaawansowanej ochrony przed zagrożeniami, do przechwytywania i analizowania ruchu sieciowego wielu protokołów (takich jak Kerberos, DNS, RPC, NTLM i inne) do uwierzytelniania, autoryzacji i gromadzenia informacji. 
 
--   Czujniki zachowania punktu końcowego: osadzone w systemie Windows 10, takich czujników zbierania i przetwarzania behawioralnej sygnały z systemu operacyjnego (na przykład procesu, rejestru, plików i komunikacji sieciowej) i wysyła te dane czujników do chmury prywatnej, izolowanych, wystąpienie programu Windows Defender ATP.
+-   Punkt końcowy czujnikach behawioralnych: osadzone w systemie Windows 10, czujniki te zbierania i przetwarzania sygnałów zachowania systemu operacyjnego (na przykład procesu, rejestru, plików i komunikację sieciową) i wysyła te dane czujników do chmury prywatnej, izolowane, wystąpienie usługi Windows Defender ATP.
 
-- Analiza zabezpieczeń w chmurze: wykorzystanie danych big data, uczenie maszynowe i unikatowe widoku firmy Microsoft w ekosystemie systemu Windows (takie jak [Microsoft usuwania złośliwego oprogramowania](https://www.microsoft.com/download/malicious-software-removal-tool-details.aspx)), produktów chmury przedsiębiorstwa (takich jak Office 365), i zasoby online (na przykład reputacji Bing i adres URL SmartScreen), behawioralnej sygnały są przetłumaczyć wgląd, wykrywania i zalecane odpowiedzi na zagrożenia zaawansowane.
+- Analiza zabezpieczeń w chmurze: Korzystanie z danych big data, uczenia maszynowego i unikatowy widoku firmy Microsoft w ekosystemie Windows (takie jak [Microsoft usuwania złośliwego oprogramowania](https://www.microsoft.com/download/malicious-software-removal-tool-details.aspx)), produktów w chmurze organizacji (np. Office 365) i zasoby online (np. Bing i filtr SmartScreen adresu URL reputacji) zachowań sygnały są tłumaczone w analizy i wykrywania zagrożeń i zalecane odpowiedzi na zaawansowane zagrożenia.
 
-- Analizy zagrożeń: wygenerowany myśliwi Microsoft zespoły zabezpieczeń i rozszerzony o analizy zagrożeń zapewniana przez partnerów, zagrożenie analizy umożliwia Windows Defender ATP do identyfikowania osoby atakującej narzędzia, technik i procedur i generowania alertów podczas te są przestrzegane czujnik zebranych danych.
+- Analiza zagrożeń: generowane przez program Microsoft łowców, zespoły zabezpieczeń i rozszerzone analizy zagrożeń oferowanych przez partnerów, analiza umożliwia usłudze Windows Defender ATP zidentyfikować narzędzia osoba atakująca, technik i procedur i generowanie ostrzeżenia o zagrożeniach kiedy te pojawiają się w danych zebranych czujnika.
 
-Technologia ATP Azure wykrywa wiele podejrzanych działań koncentrujących się na tym łańcuchu kill ataku przez kilka faz:
+Technologii Azure ATP wykrywa wiele podejrzanych działań, skupiając się na poszczególnych fazach ataku cybernetycznego ataku typu kill chain, takich jak:
 
-- Rekonesans, podczas których osoby atakujące Zbierz informacje dotyczące sposobu środowiska są wbudowane i jakie różne zasoby są i którymi obiektami istnieje. Tworzenie one zazwyczaj ich planu dla następnej fazy ataku.
+- Są jaki różne zasoby Rekonesans, podczas którego osoby atakujące zbierają informacje, w jaki zaprojektowano środowisko i którymi obiektami istnieje. Kompilowanie one zazwyczaj ogólny plan następnych faz ataku.
 
 - Cykl penetracji sieci, podczas którego osoby atakujące inwestują czas i wysiłek w rozszerzanie obszaru ataku wewnątrz sieci.
 
-- Podczas którego osoba atakująca przechwytuje informacje, dzięki czemu można wznowić ich kampanii przy użyciu różnych zestawów punktów wejścia, poświadczeń i technik zdominowanie domeny (trwałości).
+- W którym osoba atakująca przechwytuje informacje pozwalające na wznowienie kampanii przy użyciu różnych zestawów punkty wejścia, poświadczeń i technik zdominowanie domeny (trwałość).
 
-W tym samym czasie Windows Defender ATP korzysta z technologii firmy Microsoft i doświadczenia w celu wykrywania zaawansowanych ataków przez, zapewniając:
+W tym samym czasie usługi Windows Defender ATP korzysta z technologii firmy Microsoft i doświadczenia w zakresie wykrywania zaawansowanych ataków cybernetycznych, zapewniając:
 
-- Wykrywanie ataków opartych na zachowanie, obsługiwane w chmurze, zaawansowane<br></br>Znajduje atakami wprowadzone go poza innych zabezpieczenia (po wykrywanie naruszenia), można wykonać, skorelowane alerty do znanych i nieznanych atakujący próby Ukryj ich działania w punktach końcowych.
+- Wykrywanie ataków opartych na zachowanie bazujących na chmurze, zaawansowane<br></br>Umożliwia znalezienie przed atakami, które pozwoliło po wszystkich innych mechanizmów obronnych (po wykrycia naruszenia zabezpieczeń), zapewnia przydatnych, skorelowane alerty dotyczące znanych i nieznanych przeciwników próby ukryć swoje działania na punktach końcowych.
 
-- Oś czasu sformatowanego w przypadku postępowania śledczego i środki zaradcze<br></br>Zbadaj łatwo zakresu naruszenia lub podejrzane zachowania na dowolnym komputerze za pomocą zaawansowanych maszyny osi czasu. Plik, adresy URL i spisu połączenia sieciowe w sieci. Uzyskać szczegółowe informacje o dodatkowych za pomocą bezpośrednich zbierania i analizowania ("detonację") dla dowolnego pliku lub adresy URL.
+- Rozbudowane osi czasu w przypadku postępowania śledczego i środki zaradcze<br></br>Łatwo badać zakresu naruszenia lub podejrzane zachowania na dowolnym komputerze, za pomocą osi czasu sformatowanego maszyny. Plik, adresy URL i spisu połączenia sieciowe w sieci. Uzyskaj dodatkowy wgląd przy użyciu kolekcji głębokie i analiza ("detonation") dla dowolnego pliku lub adresów URL.
 
-- Wbudowane bazy wiedzy analizy zagrożeń unikatowy<br></br>Światłowodowa bezkonkurencyjne zagrożeń zawiera informacje aktora i konwersji kontekst dla każdego z procesorem intel wykrywanie zagrożeń — łączenie analizy pierwszy i innych źródeł.
+- Wbudowane bazy wiedzy analizy zagrożeń unikatowy<br></br>Szczegóły aktora i kontekst elementu intent zapewnia optyką niezrównany threat co opartych na architekturze intel wykrywanie zagrożeń — łączenie analizy pierwszy i innych źródeł.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Aby włączyć tę funkcję, potrzebna jest licencja Azure ATP i programu Windows Defender ATP. 
+Aby włączyć tę funkcję, potrzebujesz licencji zarówno dla usługi Azure ATP i usługi Windows Defender ATP. 
 
 
-## <a name="how-to-integrate-azure-atp-with-windows-defender-atp"></a>Integrowanie Azure ATP z systemem Windows Defender ATP
+## <a name="how-to-integrate-azure-atp-with-windows-defender-atp"></a>Jak zintegrować narzędzia Azure ATP z usługą Windows Defender ATP
 
-1. Ustaw obszar roboczy chcesz zintegrować jako **głównej**. Tylko jeden obszar roboczy może być podstawowym obszarem roboczym i tylko podstawowym obszarem roboczym można zintegrować z innymi usługami. Chcąc, w pewnym momencie w przyszłości, należy utworzyć ten obszar roboczy nie jest już podstawowym obszarem roboczym, należy najpierw usunąć integrację przed skonfigurowaniem jako innego niż podstawowy.
+1. Ustaw obszar roboczy, którą chcesz zintegrować jako **głównej**. Tylko jeden obszar roboczy może być podstawowy obszar roboczy, i tylko podstawowy obszar roboczy można zintegrować z innymi usługami. Jeśli w pewnym momencie w przyszłości, należy chcesz, aby ten obszar roboczy nie jest już podstawowym obszarem roboczym, należy najpierw usunąć integracji, zanim będzie można skonfigurować jako innych niż podstawowe.
 
- ![podstawowym obszarem roboczym](./media/primary-workspace.png)
+ ![podstawowy obszar roboczy](./media/primary-workspace.png)
 
-2. Kliknij przycisk **konfiguracji**, a następnie w obszarze **źródeł danych** wybierz **Windows Defender ATP**. Następnie kliknij łącze, aby **zarządzania obszaru roboczego**. Jest to dostępne tylko wtedy, jeśli masz licencję dla Windows Defender ATP i wykonano już procesu dołączania dla Windows Defender ATP. 
+2. Kliknij przycisk **konfiguracji**, a następnie w obszarze **źródeł danych** wybierz **usługi Windows Defender ATP**. Następnie kliknij link, aby **Zarządzanie obszarem roboczym**. Jest on dostępny tylko wtedy, jeśli masz licencję dla usługi Windows Defender ATP i już przeprowadzono proces wdrażania dla usługi Windows Defender ATP. 
 
-3. W podstawowym obszarem roboczym kliknij koło zębate ustawień.
+3. Na podstawowym obszarem roboczym kliknij przypominającą koło zębate.
 
  ![Integracja z obszaru roboczego](./media/edit-workspace.png)
  
-3. Ustaw integrację **na**. 
+3. Ustaw integracji **na**. 
 
- ![Włącz integrację](./media/enable-integration.png)
+ ![Włączanie integracji](./media/enable-integration.png)
 
-4. W [portalu Windows Defender ATP](https://beta.securitycenter.windows.com/preferences/advanced), przejdź do **ustawienia**, **zaawansowane funkcje** i ustaw **integracji Azure ATP** do  **ON**. 
+4. W [portalu usługi Windows Defender ATP](https://beta.securitycenter.windows.com/preferences/advanced), przejdź do **ustawienia**, **zaawansowane funkcje** i ustaw **integracji usługi Azure ATP** do  **ON**. 
 
- ![Integracja Włącz Windows Defender ATP](./media/wd-atp-enable.png)
+ ![Integracja Włączanie usługi Windows Defender ATP](./media/wd-atp-enable.png)
 
-5. Aby sprawdzić stan integracji, w portalu Azure ATP obszaru roboczego, przejdź do **ustawienia** , a następnie **integracji Windows Defender ATP**. Można wyświetlić stan integracji; Jeśli dany element jest nieprawidłowe, zostanie wyświetlony błąd. Można również sprawdzić, które obszaru roboczego jest zintegrowany z Windows Defender ATP.
+5. Aby sprawdzić stan integracji, w portalu usługi Azure ATP obszaru roboczego wybierz **ustawienia** i następnie **integracji usługi Windows Defender ATP**. Można wyświetlić stan integracji; Jeśli coś jest nie tak, zostanie wyświetlony błąd. Można również zobaczyć, który obszar roboczy jest zintegrowana z usługą Windows Defender ATP.
 
 ## <a name="how-it-works"></a>Jak to działa
 
-Po Azure ATP i programu Windows Defender ATP są w pełni zintegrowane, w portalu Azure ATP obszaru roboczego, w oknie podręcznym mini profilu i strony profilu jednostki, każdy obiekt, który istnieje w systemie Windows Defender ATP zawiera znak, aby pokazać, że jest zintegrowane z systemem Windows Usługa Defender ATP 
+Po zaawansowanej ochrony przed zagrożeniami w usłudze Azure i usługi Windows Defender ATP są w pełni zintegrowane, w portalu usługi Azure ATP obszar roboczy, w oknie podręcznym spowoduje wyświetlenie mini profilu i na stronie profilu jednostki każda jednostka, która znajduje się w usłudze Windows Defender ATP zawiera wskaźnik do pokazania, że jest zintegrowany z Windows Usługa Defender ATP. 
 
- ![Alerty systemu Windows Defender ATP](./media/profile-alerts-wd.png)
+ ![Alerty usługi Windows Defender ATP](./media/profile-alerts-wd.png)
 
-Jeśli obiekt zawiera alerty w programie Windows Defender ATP, jest liczbą obok wskaźnika informacją o tym, jak wiele alertów zostały zgłoszone.
+Jednostka zawiera alertów w usłudze Windows Defender ATP, czy liczba obok wskaźnika z informacją, ile alertów zostały zgłoszone.
 
- ![Azure alerty ATP](./media/atp-integrated-wd-icon-alerts.png)
+ ![Alerty usługi Azure ATP](./media/atp-integrated-wd-icon-alerts.png)
 
-Po kliknięciu wskaźnika są wprowadzane do portalu Windows Defender ATP, gdzie można przeglądać i ograniczyć alerty. Jeśli jednostka nie jest rozpoznawany przez program Windows Defender ATP, wskaźnik jest szary. 
+Po kliknięciu karty identyfikacyjnej są przenoszone do portalu usługi Windows Defender ATP, gdzie można wyświetlać i eliminowanie alertów. Jeśli jednostki nie jest rozpoznawane przez usługi Windows Defender ATP, wskaźnik jest szary. 
 
- ![Szary Windows Defender ATP](./media/wd-grey.png)
+ ![Szary usługi Windows Defender ATP](./media/wd-grey.png)
 
-W portalu Windows Defender ATP po kliknięciu punktu końcowego można wyświetlić alerty Azure ATP. Po kliknięciu alerty dla tego obiektu w programie Windows Defender ATP w Azure ATP zostanie otwarta strona profilu jednostki. 
+W portalu usługi Windows Defender ATP, po kliknięciu w punkcie końcowym, możesz wyświetlić alerty usługi Azure ATP. Po kliknięciu alerty dla tej jednostki w usłudze Windows Defender ATP stronę profilu jednostki zostanie otwarty w narzędzia Azure ATP. 
  
- > ! [UWAGA] Obecnie Azure ATP Integracja z usługą Windows Defender ATP obsługuje tylko użytkownicy i komputery z lokalnej usługi AD. Użytkownicy z usługi Azure AD i maszyn wirtualnych, które są zarządzane na platformie Azure nie będą wyświetlane jako część integracji 
+ > ! [UWAGA] Obecnie usługa Azure ATP integracji z usługą Windows Defender ATP obsługuje tylko użytkowników i maszyn ze środowiska lokalnego usługi AD. Użytkownicy z usługi Azure AD i maszyn wirtualnych, które są zarządzane na platformie Azure nie będą wyświetlane jako część integracji 
 
-![Alerty systemu Windows Defender ATP](./media/wd-atp-alerts.png)
+![Alerty usługi Windows Defender ATP](./media/wd-atp-alerts.png)
 
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Badanie ścieżek penetracja sieci Azure ATP](use-case-lateral-movement-path.md)
-- [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
+- [Badanie ścieżek penetracji sieci za pomocą narzędzia Azure ATP](use-case-lateral-movement-path.md)
+- [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
-- [Zainstaluj ATP](install-atp-step1.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Zainstaluj zaawansowanej ochrony przed zagrożeniami](install-atp-step1.md)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
 

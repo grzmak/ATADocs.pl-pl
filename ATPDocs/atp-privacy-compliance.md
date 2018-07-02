@@ -1,11 +1,11 @@
 ---
-title: Azure zasad danych osobowych Advanced Threat Protection | Dokumentacja firmy Microsoft
-description: Zawiera linki do informacji na temat sposobu usuwania prywatne informacje i dane osobowe z Azure ATP.
+title: Usługa Azure policy danych osobowych zaawansowanej ochrony przed zagrożeniami | Dokumentacja firmy Microsoft
+description: Zawiera łącza do informacji o tym, jak usunąć informacje prywatne, jak i dane osobiste z narzędzia Azure ATP.
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/29/2018
+ms.date: 6/26/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,44 +13,44 @@ ms.technology: ''
 ms.assetid: 224e629a-0e82-458c-bb03-b67070a9241d
 ms.reviewer: ophirp
 ms.suite: ems
-ms.openlocfilehash: 1f9ed3dba82d032b0cd13bdc462ff6e58a4af6ad
-ms.sourcegitcommit: 3eade64779002d2c8ae005565bc69e1b3f89fb7d
+ms.openlocfilehash: d64cc0d40acc31e2187305c38a625924a91db06b
+ms.sourcegitcommit: 7d025a2518ce63f38ce609dc21d8c3bacdd6a8e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34560228"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948935"
 ---
-*Dotyczy: Azure Advanced Threat Protection*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="azure-atp-data-security-and-privacy"></a>Azure ATP danych zabezpieczenia i prywatność
+# <a name="azure-atp-data-security-and-privacy"></a>Bezpieczeństwo danych w usłudze Azure ATP i ochrona prywatności
 
 [!INCLUDE [Handle personal data](../includes/gdpr-intro-sentence.md)]
 
-## <a name="search-for-and-identify-personal-data"></a>Wyszukiwanie i identyfikowanie danych osobowych 
+## <a name="search-for-and-identify-personal-data"></a>Wyszukiwanie i zidentyfikować dane osobowe 
 
-W usłudze Azure Advanced Threat Protection można wyświetlić identyfikowalne dane osobowe z [portalu obszaru roboczego](workspace-portal.md) przy użyciu [pasek wyszukiwania](workspace-portal.md#search-bar). 
+W usłudze Azure Advanced Threat Protection można wyświetlić identyfikowalne dane osobowe [portalem obszarów roboczych](workspace-portal.md) przy użyciu [paska wyszukiwania](workspace-portal.md#search-bar). 
 
-Możesz wyszukać określonego użytkownika lub komputera, a kliknięcie jednostki spowoduje do użytkownika lub komputera [strony profilu](entity-profiles.md). Profil zapewnia kompleksowe szczegóły jednostki z usługi Active Directory, w tym sieci działania związane z jednostki i jej historii.
+Możesz wyszukać konkretnego użytkownika lub komputera, a kliknięcie jednostki spowoduje wyświetlenie użytkownika lub komputera [stronę profilu](entity-profiles.md). Profil, który zapewnia kompleksowe szczegóły jednostki z usługi Active Directory, w tym powiązane z daną jednostką a jego historię aktywności w sieci.
 
-Azure danych osobowych ATP jest zbieranych z usługi Active Directory za pomocą czujnika Azure ATP i przechowywane w bazie danych zaplecza.
+Azure ATP dane osobowe są zbierane z usługi Active Directory przy użyciu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure i przechowywane w wewnętrznej bazy danych.
 
-## <a name="update-personal-data"></a>Aktualizowanie danych osobowych 
+## <a name="update-personal-data"></a>Zaktualizuj dane osobowe 
 
-Ponieważ dane osobiste użytkownika Azure ATP pochodzi z obiektu użytkownika w usłudze Active Directory organizacji, wszelkie zmiany wprowadzone do profilu użytkownika w usłudze AD zostaną odzwierciedlone w Azure ATP.
+Ponieważ dane osobowe użytkownika usługi Azure ATP jest tworzony na podstawie obiektu użytkownika w usłudze Active Directory w organizacji, wszelkie zmiany wprowadzone do profilu użytkownika w usłudze AD zostaną odzwierciedlone w usłudze Azure ATP.
 
 
-## <a name="delete-personal-data"></a>Usuwanie danych osobowych 
+## <a name="delete-personal-data"></a>Usunięcie danych osobowych 
 
-Po usunięciu użytkownika z usługi Active Directory w organizacji, Azure ATP automatycznie usuwa profilu użytkownika i wszelkie działania związane z siecią w roku. Możesz również [usunąć](working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) alerty zabezpieczeń, które zawierają dane osobowe. 
+Po usunięciu użytkownika z usługi Active Directory w Twojej organizacji usługi Azure ATP automatycznie usuwa profil użytkownika i wszelkie działania związane z siecią w ciągu roku. Możesz również [Usuń](working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) alertów zabezpieczeń, które zawierają dane osobowe. 
 
-## <a name="export-personal-data"></a>Eksportuj dane osobowe 
+## <a name="export-personal-data"></a>Eksportowanie danych osobowych 
 
-Azure ATP możesz mieć możliwość [wyeksportować](working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) zabezpieczeń informacji o alertach do programu Excel. Będzie to również eksportować dane osobowe. 
+W przypadku narzędzia Azure ATP masz możliwość [wyeksportować](working-with-suspicious-activities.md#review-suspicious-activities-on-the-attack-time-line) informacje o alertach zabezpieczeń do programu Excel. Spowoduje to również wyeksportować dane osobowe. 
  
 ## <a name="audit-personal-data"></a>Dane osobowe inspekcji
 
-Azure ATP implementuje inspekcji zmian danych osobowych, włącznie z usunięciem i eksportowanie rekordów danych osobowych. Czas przechowywania dziennik inspekcji wynosi 90 dni. Inspekcji w usłudze Azure ATP jest funkcją zaplecza i nie jest dostępna dla klientów.
+Narzędzie Azure ATP implementuje inspekcji zmian danych osobowych, włącznie z usunięciem i eksportowanie rekordów danych osobowych. Czas przechowywania dziennik inspekcji wynosi 90 dni. Inspekcji w usłudze Azure ATP jest funkcją zaplecza i nie jest dostępny dla klientów.
  
 ## <a name="additional-resources"></a>Dodatkowe zasoby
 
-- Informacje dotyczące zaufania Azure ATP i zgodności, zobacz [portal usługi zaufania](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise GDPR zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
+- Aby uzyskać informacje dotyczące relacji zaufania usługi Azure ATP i zgodności, zobacz [portal zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise RODO zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).

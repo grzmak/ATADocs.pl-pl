@@ -1,11 +1,11 @@
 ---
-title: Konfigurowanie serwera proxy lub zapory, aby umożliwić komunikację Azure ATP z czujnika | Dokumentacja firmy Microsoft
-description: Opisuje sposób skonfigurować zaporę lub serwer proxy, aby umożliwić komunikację między czujniki Azure ATP i usługi w chmurze Azure ATP
+title: Konfigurowanie serwera proxy lub zapory, aby umożliwić komunikację usługi Azure ATP z czujnikiem | Dokumentacja firmy Microsoft
+description: W tym artykule opisano sposób konfigurowania zapory lub serwera proxy, aby umożliwić komunikację między czujniki zaawansowanej ochrony przed zagrożeniami w usłudze Azure i usługi w chmurze usługi Azure ATP
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 5/16/2018
+ms.date: 5/29/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,70 +13,72 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 5a1fd5631a568419c600f35d44f09c9c61f17129
-ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
+ms.openlocfilehash: 2f39c0d3628c3a3cc9e034fa1da8bb5a66bc704b
+ms.sourcegitcommit: 3eade64779002d2c8ae005565bc69e1b3f89fb7d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34560245"
 ---
-*Dotyczy: Azure Advanced Threat Protection*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="configure-endpoint-proxy-and-internet-connectivity-settings-for-your-azure-atp-sensor"></a>Konfigurowanie serwera proxy punktu końcowego i ustawień połączeń internetowych z czujnika ATP Azure
+# <a name="configure-endpoint-proxy-and-internet-connectivity-settings-for-your-azure-atp-sensor"></a>Konfigurowanie serwera proxy punktu końcowego i ustawień połączenia internetowego dla czujnika zaawansowanej ochrony przed zagrożeniami usługi platformy Azure
 
-Każdy czujnik Azure Advanced Threat ochrony (ATP) wymaga łączności z Internetem do usługi w chmurze Azure ATP poprawne działanie. W niektórych organizacjach kontrolery domeny nie są połączone bezpośrednio z Internetem, ale są połączone za pośrednictwem połączenia serwera proxy sieci web. Każdy czujnik Azure ATP wymaga korzystania z konfiguracji serwera proxy Microsoft Windows Internet (WinINET) do raportu danych czujnika i komunikować się z usługą Azure ATP. Użycie konfiguracji serwera proxy WinHTTP, nadal jest konieczne skonfigurowanie ustawień serwera proxy przeglądarki Internet systemu Windows (WinINet) do komunikacji między czujnika i usługą w chmurze Azure ATP.
+Czujnik każdej usługi Azure Advanced Threat Protection (ATP) wymaga łączności z Internetem do usługi w chmurze usługi Azure ATP działanie pomyślnie. W niektórych organizacjach kontrolery domeny nie są bezpośrednio połączone z Internetem, ale są połączone za pośrednictwem połączenia serwera proxy sieci web. Każdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure wymaga korzystania z konfiguracji serwera proxy programu Microsoft Windows Internet (WinINET) raportować dane czujników, a następnie komunikować się z usługą Azure ATP. Jeśli używasz konfiguracji serwera proxy WinHTTP, nadal należy skonfigurować ustawienia serwera proxy przeglądarki Internet Windows (WinINet) do komunikacji między czujnikiem i usługą w chmurze usługi Azure ATP.
 
 
-Podczas konfigurowania serwera proxy, należy znać osadzonych usługa czujnik Azure ATP była uruchamiana w kontekście systemu za pomocą **Usługa lokalna** konta i usługę aktualizacji czujnik ATP Azure działa w kontekście systemu za pomocą **LocalSystem** konta. 
+Podczas konfigurowania serwera proxy, konieczne będzie wiedzieć, że osadzony usługi czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure działa w kontekście systemu przy użyciu **LocalService** konta i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami Azure działa w kontekście systemowym, za pomocą **LocalSystem** konta. 
 
 > [!NOTE]
-> Jeśli używasz przezroczystego obiektu pośredniczącego lub WPAD w topologii sieci, nie ma potrzeby konfigurowania WinINET dla serwera proxy.
+> Jeśli używasz przezroczystym serwerem proxy lub WPAD w topologii sieci, nie ma potrzeby konfigurowania WinINET dla serwera proxy.
 
 ## <a name="configure-the-proxy"></a>Skonfiguruj serwer proxy 
 
-Skonfiguruj serwer proxy ręcznie przy użyciu opartych na rejestrze statycznych serwera proxy, aby umożliwić czujnik Azure ATP do raportu danych diagnostycznych i komunikować się z usługą w chmurze Azure ATP po komputer nie ma uprawnień do łączenia się z Internetem.
+Skonfiguruj serwer proxy ręcznie przy użyciu opartych na rejestrze statyczny serwera proxy, aby zezwolić na czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure raportować dane diagnostyczne i komunikować się z usługą w chmurze usługi Azure ATP, gdy komputer nie ma uprawnień do łączenia się z Internetem.
 
 > [!NOTE]
-> Zmiany w rejestrze powinny być stosowane tylko do Usługa lokalna i system lokalny.
+> Zmiany w rejestrze powinna dotyczyć tylko Usługa lokalna i LocalSystem.
 
-Statyczne serwera proxy jest konfigurowany za pomocą rejestru. Konfiguracja serwera proxy, którego można używać w kontekście użytkownika należy skopiować do systemu lokalnego, a Usługa lokalna. Aby skopiować ustawienia serwera proxy kontekst użytkownika:
+Statyczny serwera proxy jest konfigurowane za pomocą rejestru. System lokalny i Usługa lokalna, należy skopiować konfigurację serwera proxy, którego używasz w kontekście użytkownika. Aby skopiować ustawienia serwera proxy w kontekście użytkownika:
 
-1.   Upewnij się utworzyć kopię zapasową kluczy rejestru przed ich modyfikować.
+1.   Upewnij się utworzyć kopię zapasową kluczy rejestru, przed ich zmodyfikowaniem.
 
 2. W rejestrze, wyszukaj wartość `DefaultConnectionSetting` jako REG_BINARY w kluczu rejestru `HKCU\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting` i skopiuj go.
  
-2.  Jeśli system lokalny nie ma ustawienia serwera proxy poprawne (nie są skonfigurowane lub są one różne od Current_User), następnie skopiować ustawienia serwera proxy z Current_User jako LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
+2.  Jeśli system lokalny nie jest prawidłowe ustawienia serwera proxy (nie są skonfigurowane lub są one różne od Current_User), a następnie skopiuj ustawienia serwera proxy z Current_User LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
 
-3.  Wklej wartość Current_user `DefaultConnectionSetting` jako REG_BINARY.
+3.  Wklej wartość z Current_user `DefaultConnectionSetting` jako REG_BINARY.
 
-4.  Jeśli Usługa lokalna nie ma ustawienia serwera proxy poprawne, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
+4.  Jeśli Usługa lokalna nie ma prawidłowe ustawienia serwera proxy, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
 
-5.  Wklej wartość Current_User `DefaultConnectionSetting` jako REG_BINARY.
+5.  Wklej wartość z Current_User `DefaultConnectionSetting` jako REG_BINARY.
 
 > [!NOTE]
-> To będzie miało wpływ na wszystkie aplikacje w tym usług systemu Windows, które wykorzystują WinINET z Usługa lokalna, LocalSytem kontekstu.
+> Ma to wpływu na wszystkie aplikacje, w tym usługi Windows, które używają interfejsu WinINET z Usługa lokalna, LocalSytem kontekstu.
 
 
 ## <a name="enable-access-to-azure-atp-service-urls-in-the-proxy-server"></a>Zapewnianie dostępu do adresów URL usługi Azure ATP na serwerze proxy
 
-Jeśli serwer proxy lub zapora blokuje cały ruch przez domyślny, dzięki czemu tylko określonych domen za pośrednictwem lub HTTPS skanowania (inspekcji SSL) jest włączona, upewnij się, że następujące adresy URL są wymienione biały Aby zezwolić na komunikację z usługą Azure ATP w porcie 443:
+Czy serwer proxy lub zapora blokuje cały ruch domyślnie i zezwolenie tylko do określonych domen za pośrednictwem protokołu HTTPS, skanowanie (inspekcji połączenia SSL) jest włączona, upewnij się, że następujące adresy URL są białe wymienionymi w celu zezwalania na komunikację z usługą Azure ATP w porcie 443:
 
 |Lokalizacja usługi|. Rekord Atp.Azure.com DNS|
 |----|----|
-|US |triprd1wcusw1sensorapi.ATP.Azure.com<br>triprd1wcuswb1sensorapi.ATP.Azure.com<br>triprd1wcuse1sensorapi.ATP.Azure.com|
+|USA |triprd1wcusw1sensorapi.ATP.Azure.com<br>triprd1wcuswb1sensorapi.ATP.Azure.com<br>triprd1wcuse1sensorapi.ATP.Azure.com|
 |Europa|triprd1wceun1sensorapi.ATP.Azure.com<br>triprd1wceuw1sensorapi.ATP.Azure.com|
 |Azja|triprd1wcasse1sensorapi.ATP.Azure.com|
 
 
-Można również ograniczenia funkcjonalności reguły zapory lub serwera proxy dla określonego obszaru roboczego, które zostały utworzone, tworząc regułę następujące rekordy DNS:
-- < nazwa obszaru roboczego >. atp.azure.com — połączeń konsoli
-- < nazwa obszaru roboczego > sensorapi.atp.azure.com — czujnik łączności
+Można również utrwalanie reguły zapory lub serwera proxy dla określonego obszaru roboczego, które zostało utworzone, tworząc reguły dla następujących rekordów DNS:
+- < nazwa obszaru roboczego >. atp.azure.com — łączność z konsoli. Na przykład contosoATP.atp.azure.com
+- < nazwa obszaru roboczego > sensorapi.atp.azure.com — łączność czujników. Na przykład contosoATPsensorapi.atp.azure.com
+
  
 > [!NOTE]
-> Podczas przeprowadzania inspekcji SSL na ruch sieciowy Azure ATP (między czujnika i usługę Azure ATP), kontroli SSL musi obsługiwać wzajemne inspekcji.
+> Podczas przeprowadzania inspekcji połączenia SSL dla usługi Azure ATP ruch sieciowy (między czujnikiem i usługi Azure ATP), inspekcji połączenia SSL musi obsługiwać wzajemnego inspekcji.
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Konfigurowanie funkcji przekazywania zdarzeń](configure-event-forwarding.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
