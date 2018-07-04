@@ -18,6 +18,7 @@
 ## [7. Wykluczenia i konta wystawione jako przynęta](install-atp-step7.md)
 ## [8. Konfigurowanie wymaganych uprawnień SAM-R](install-atp-step8-samr.md)
 ## [Instalacja dyskretna](ATP-silent-installation.md)
+## [Aktualizowanie czujników Zaawansowanej ochrony przed zagrożeniami](sensor-update.md)
 ## Dodatkowe kroki dotyczące czujnika Zaawansowanej ochrony przed zagrożeniami na platformie Azure
 ### [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md)
 ### [Weryfikowanie funkcji dublowania portów](validate-port-mirroring.md)
