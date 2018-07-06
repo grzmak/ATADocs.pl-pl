@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 6/10/2018
+ms.date: 7/5/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: de0b8f1673098a1b4b00255f4543ca18a903c83f
-ms.sourcegitcommit: f61616a8269d27a8fcde6ecf070a00e2c56481ac
+ms.openlocfilehash: 610a84ac0e9b3c199971ced47dc5a5d08db00287
+ms.sourcegitcommit: 4170888deee71060e9a17c8a1ac772cc2fe4b51e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35259229"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37800678"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -182,25 +182,44 @@ Pass--Ticket to technika ruchu poprzecznego, w którym osoby atakujące dokonuj�
 
 2. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania w [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
 
-## Protokół Kerberos Golden Ticket<a name="golden-ticket"></a>
+## Bilet uwierzytelniania golden protokołu Kerberos<a name="golden-ticket"></a>
 
 **Opis**
 
-Osoby atakujące przy użyciu uprawnień administratora domeny może naruszyć [konta krbtgt w DOMENIE](https://technet.microsoft.com/library/dn745899(v=ws.11).aspx#Sec_KRBTGT). Przy użyciu konta krbtgt w DOMENIE, można utworzyć biletu protokołu Kerberos udzielania biletu (TGT) zapewniający autoryzację do dowolnego zasobu i ustawienia wygasania biletu do dowolnego dowolnego czasu. Tego BILETU fałszywych nosi nazwę "Złoty bilet" i pozwala osobom atakującym na uzyskanie stałego dostępu do sieci.
+Osoby atakujące przy użyciu uprawnień administratora domeny może naruszyć [konta krbtgt w DOMENIE](https://technet.microsoft.com/library/dn745899(v=ws.11).aspx#Sec_KRBTGT). Przy użyciu konta krbtgt w DOMENIE, można utworzyć biletu protokołu Kerberos udzielania biletu (TGT) zapewniający autoryzację do dowolnego zasobu i ustawienia wygasania biletu do dowolnego dowolnego czasu. Tego BILETU fałszywych nosi nazwę "goldentTicket" i pozwala osobom atakującym na uzyskanie stałego dostępu do sieci.
 
-W tym wykrywanie alert jest wyzwalany, gdy bilet protokołu Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx) zasady zabezpieczeń.
+W tym wykrywanie alert jest wyzwalany, gdy bilet protokołu Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx), to **anomalii czasu**atak metodą złotego biletu lub nieistniejące konta, to **nieistniejące konto** atak metodą złotego biletu.
+zasady zabezpieczeń.
 
 **Badanie**
 
-1. Została każda zmiana ostatnio (w ciągu ostatnich kilku godzin), wprowadzone do **maksymalny okres istnienia biletu użytkownika** ustawienie w zasadach grupy? Jeśli tak, następnie **Zamknij** alertu (było to wynik fałszywie dodatni).
+- **Czas anomalii**
+   1.   Czy były wszelkie zmiany ostatnio (w ciągu ostatnich kilku godzin), wprowadzone do maksymalny okres istnienia biletu użytkownika w zasadach grupy — ustawienie? Sprawdź, czy określone wartości i sprawdzić, czy jest niższy niż czas, jaki był używany--ticket. Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
+   2.   Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zaangażowane w tym alercie maszynę wirtualną? Jeśli tak, on niedawno wychodzi z zapisanego stanu? Jeśli tak, zamknij ten alert.
+   3.   Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
+- **Nieistniejące konta**
+   1.   Należy odpowiedzieć na następujące pytania:
+         - Czy użytkownik jest użytkownikiem domeny znane i prawidłowe? Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
+         - Użytkownik zostało ostatnio dodane? Jeśli tak, zamknij ten alert, zmiana może nie zostały jeszcze zsynchronizowane.
+         - Użytkownik został ostatnio usunięty z usługi AD? Jeśli tak, zamknij ten alert.
+   2.   Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
 
-2. Czujnik autonomiczny narzędzia Azure ATP jest zaangażowane w tym alercie maszynę wirtualną? Jeśli tak, on niedawno wychodzi z zapisanego stanu? Jeśli tak, następnie **Zamknij** ten alert.
+1. Oba rodzaje ataków na bilet uwierzytelniania golden ticket, kliknij polecenie na komputerze źródłowym, aby przejść do jego **profilu** strony. Sprawdź, jakie wystąpiły w okolicy czasowej działania, a wyszukiwanie nietypowych działań, w tym, kto został zalogowany, jakie zasoby są dostępne? 
 
-3. Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
+2.  Czy wszyscy użytkownicy, którzy są zalogowani do komputera powinien być zalogowany do? Co to są ich uprawnienia? 
+
+3.  Ci użytkownicy mają mieć dostęp do tych zasobów?<br>
+Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![wskaźnika WD](./media/wd-badge.png).
+ 
+ 4. Aby badać maszyny, w usłudze Windows Defender ATP, sprawdź, które procesy i alerty wystąpił zbliżonym do momentu alertu.
 
 **Korygowanie**
 
+
 Zmień hasło biletu udzielania biletu protokołu Kerberos (KRBTGT) dwa razy, zgodnie z zaleceniami w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)przy użyciu [resetowania haseł kont KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+
+
+
 
 ## <a name="malicious-data-protection-private-information-request"></a>Złośliwe żądanie informacji prywatnych z zakresu ochrony danych
 
@@ -232,9 +251,14 @@ W tym wykrywanie alert jest wyzwalany, gdy żądanie replikacji jest inicjowane 
 
 **Badanie**
 
-1.  Jest to komputer w pytanie kontrolera domeny? Na przykład nowo wypromowaną kontroler domeny, który ma problemy z replikacją. Jeśli tak, **Zamknij** podejrzanych działań. 
-2.  Dany komputer powinien być replikowanie danych z usługi Active Directory? Na przykład, program Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
-3.  Kliknij komputer źródłowy lub konta, aby przejść do strony profilu. Sprawdź, jakie wystąpiły w okolicy czasowej replikacji, wyszukiwanie nietypowych działań, takich jak: kto zalogowano, które zasoby w przypadku, gdy dostępne. Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu. 
+> [!NOTE]
+> W przypadku kontrolerów domeny, na których nie zainstalowano narzędzia Azure ATP czujniki te kontrolery domeny nie są objęte usługi Azure ATP. W takim przypadku w przypadku wdrożenia nowego kontrolera domeny na kontrolerze domeny wyrejestrowany lub niechronione go nie zostaną zidentyfikowane przez narzędzia Azure ATP jako kontroler domeny, na początku. Zdecydowanie zaleca się instalowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure na każdym kontrolerze domeny, aby uzyskać pełne.
+
+1. Jest to komputer w pytanie kontrolera domeny? Na przykład nowo wypromowaną kontroler domeny, który ma problemy z replikacją. Jeśli tak, **Zamknij** podejrzanych działań. 
+2.  Dany komputer powinien być replikowanie danych z usługi Active Directory? Na przykład usługi Azure AD Connect lub sieci monitorowanie wydajności urządzeń. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+3. Czy adres IP, z której wysłano żądanie replikacji NAT lub serwer proxy? Jeśli tak, sprawdź w przypadku nowego kontrolera domeny za urządzeniem czy wystąpiły inne podejrzanych działań z niego. 
+
+4. Kliknij komputer źródłowy lub konta, aby przejść do strony profilu. Sprawdź, jakie wystąpiły w okolicy czasowej replikacji, wyszukiwanie nietypowych działań, takich jak: kto zalogowano, które zasoby w przypadku, gdy dostępne. Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu. 
 
 
 **Korygowanie**
@@ -505,9 +529,9 @@ Aby ustalić, czy jest to atak WannaCry, wykonaj następujące czynności:
 
 2. Jeśli nie zostaną znalezione żadne narzędzia ataku, sprawdź, czy komputer źródłowy jest uruchomiona aplikacja, która implementuje stos protokołu NTLM lub SMB.
 
-3. W przeciwnym razie sprawdź, jeśli jest to spowodowane WannaCry, uruchamiając skrypt skanera WannaCry, na przykład [tego skanera](https://github.com/apkjet/TrustlookWannaCryToolkit/tree/master/scanner) względem komputera źródłowego związane z podejrzanych działań. Jeżeli skaner stwierdza, że komputer jako zainfekowane lub narażone, praca na instalowaniu poprawek maszyny i usuwania złośliwego oprogramowania i blokowanie go z sieci.
+3. Kliknij na komputerze źródłowym, aby przejść do strony profilu. Sprawdź, jakie wystąpiły w okolicy czasowej alertu wyszukiwanie nietypowych działań, takich jak: kto zalogowano, które zasoby w przypadku, gdy dostępne. Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![WD wskaźnika](./media/wd-badge.png) Aby badać na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
 
-4. Nie znaleziono skryptu, czy maszyny są zainfekowane lub narażone, a następnie nadal mogą być zainfekowane, ale może być wyłączone SMBv1 lub ma została zainstalowana poprawka zapewniająca maszyną, która wpłynie na narzędzie do skanowania.
+
 
 **Korygowanie**
 

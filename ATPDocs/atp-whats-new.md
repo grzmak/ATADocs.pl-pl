@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/4/2018
+ms.date: 7/5/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,17 +13,25 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f38e7fc2fb1c50718cac27664737e46d83fa6084
-ms.sourcegitcommit: 40dbce8045f689376a50275fb12e3c5c32ca8092
-ms.translationtype: HT
+ms.openlocfilehash: f533d835c9129dd56db5ac6e0ef2cca4b33cc043
+ms.sourcegitcommit: 4170888deee71060e9a17c8a1ac772cc2fe4b51e
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37799097"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37800712"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-239"></a>Usługa Azure ATP release 2.39
+
+Wydanej 5 lipca 2018 r.
+-   **Nowe wykrycie dodane: bilet protokołu Kerberos, uwierzytelniania golden - nieistniejące konto** (wersja zapoznawcza)<br>Wykrycie nowych pomaga chronić swoją organizację przed atakami, w których bilet uwierzytelniania golden ticket jest tworzony dla konta które nie istnieje w domenie. Aby uzyskać więcej informacji, zobacz [Przewodnik po podejrzanych działaniach usługi Azure Advanced Threat Protection](suspicious-activity-guide.md#golden-ticket)
+
+- Ta wersja zawiera poprawki i ulepszenia w przypadku wielu problemów. 
+
 
 ## <a name="azure-atp-release-238"></a>Usługa Azure ATP release 2,38
 
