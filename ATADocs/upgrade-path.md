@@ -1,11 +1,11 @@
 ---
-title: Advanced Threat Analytics zalecane ścieżka uaktualnienia | Dokumentacja firmy Microsoft
+title: Usługi Advanced Threat Analytics zalecane ścieżka uaktualnienia | Dokumentacja firmy Microsoft
 description: Zawiera instrukcje dotyczące uaktualniania wersji Advanced Threat Analytics (ATA).
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 7/15/2018
 ms.topic: article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,17 +13,17 @@ ms.technology: ''
 ms.assetid: 88720401-1fb2-4353-ad39-32bc0088f0de
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 314c86b1a1e13dd20e52210e4b75ff5fe66ecd2c
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 52d500bfb61818b9cc1785382f92c7d3b4ca3501
+ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009976"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39064155"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
-# <a name="recommended-upgrade-path-for-ata"></a>Zalecane ścieżka uaktualnienia do usługi ATA
-Ten artykuł zawiera informacje o dostępnych wersji Advanced Threat Analytics i sposobu uaktualniania usługi ATA, w zależności od instalowanej wersji masz uruchomiony.
+# <a name="recommended-upgrade-path-for-ata"></a>Zalecane ścieżka uaktualnienia dla usługi ATA
+Ten artykuł zawiera informacje dotyczące dostępnych wersji usługi Advanced Threat Analytics i sposobu uaktualniania usługi ATA, w zależności od instalowanej wersji masz uruchomiony.
 
 
 ## <a name="ata-versions"></a>Wersje usługi ATA
@@ -38,10 +38,11 @@ Ten artykuł zawiera informacje o dostępnych wersji Advanced Threat Analytics i
 |1.8|1.8.6645|
 |1.8 update 1|1.8.6765|
 |1.9|1.9.7312|
+|1.9 update 1|1.9.7412|
 
 ## <a name="ata-version-upgrade-matrix"></a>Macierz uaktualniania wersji usługi ATA
 
-![Macierz uaktualniania wersji usługi ATA](./media/version-matrix.png)
+![Macierz uaktualniania wersji usługi ATA](./media/upgrade-path.png)
 
 
 

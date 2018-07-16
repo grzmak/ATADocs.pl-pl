@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/5/2018
+ms.date: 7/15/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,17 +13,25 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f533d835c9129dd56db5ac6e0ef2cca4b33cc043
-ms.sourcegitcommit: 4170888deee71060e9a17c8a1ac772cc2fe4b51e
+ms.openlocfilehash: 9e28c18f118f7a2dc9d516cf62a113245a7be1fa
+ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37800712"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39064087"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-240"></a>Usługa Azure ATP release 2,40
+
+Wydanie: 15 lipca 2018 r.
+
+- Teraz za pomocą wykrywania pass--ticket zawiera sekcja dowodów na stronie szczegółów alertu. Zapewnia to dodatkowe informacje dotyczące badania alertu.
+
+- Flagi kontroli dostępu użytkownika, które znajdują się w profilu użytkownika w katalogu danych, obejmują teraz legendy, dzięki czemu można lepiej zrozumieć, których atrybutów znajdują się na i które są wyłączone.  
 
 ## <a name="azure-atp-release-239"></a>Usługa Azure ATP release 2.39
 

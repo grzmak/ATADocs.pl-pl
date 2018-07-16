@@ -1,11 +1,11 @@
 ---
 title: Advanced Threat Analytics zasobów i gotowości roadamp | Dokumentacja firmy Microsoft
-description: Zawiera listę ATA zasobów, wideo, wprowadzenie, wdrażania i linki plan gotowości.
+description: Zawiera listę ATA zasoby, materiały wideo, wprowadzenie, wdrażania i linki plan gotowości.
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 7/15/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,86 +13,86 @@ ms.technology: ''
 ms.assetid: 42a1a34f-ed6b-4538-befb-452168a30e8c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a56a24a2012239ed05f0a2f214dba345a817df39
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 39451c20d934c0d3e49f8790dc55169a230e238c
+ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010231"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39064053"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 # <a name="ata-readiness-roadmap"></a>Plan gotowości usługi ATA 
-Ten dokument zawiera plan gotowości, która pomoże rozpocząć pracę z Advanced Threat Analytics.
+Ten dokument zawiera mapę gotowości, która pomoże Ci rozpocząć pracę z usługi Advanced Threat Analytics.
 
 ## <a name="understanding-ata"></a>Opis usługi ATA
 
-Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych, ukierunkowanych ataków cybernetycznych oraz zagrożeniami wewnętrznymi. Aby dowiedzieć się więcej na temat usługi ATA, należy użyć następujących zasobów:
+Usługa Advanced Threat Analytics (ATA) jest lokalną platformą, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych, ukierunkowanych ataków cybernetycznych oraz zagrożeniami wewnętrznymi. Użyj następujących zasobów, aby dowiedzieć się więcej na temat usługi ATA:
 
-- [Omówienie usługi ATA](https://aka.ms/ATAOverview)
+- [Omówienie usługi ATA](what-is-ata.md)
 
-- [Usługa ATA wprowadzenie wideo - krótki](https://aka.ms/ATAShort)
+- [Usługa ATA wideo z wprowadzeniem — krótki](https://aka.ms/ATAShort)
 
-- [Wprowadzenie wideo usługi ATA — pełne](https://aka.ms/ATAVideo) 
+- [Usługa ATA klip wideo z wprowadzeniem — pełny](https://aka.ms/ATAVideo) 
 
 
 ## <a name="deployment-decisions"></a>Decyzji dotyczących wdrożenia
 
-Usługa ATA składa się z Centrum usługi ATA, które można zainstalować na serwerze, i bram usługi ATA, które można zainstalować na oddzielnych komputerach lub przy użyciu bramy Lightweight bezpośrednio na kontrolerach domeny. Zanim można rozpocząć pracę, należy podjąć następujące decyzje dotyczące wdrażania:
+Usługa ATA składa się z Centrum usługi ATA, które można zainstalować na serwerze, i bram usługi ATA, które można zainstalować na oddzielnych komputerach lub przy użyciu bramy uproszczonej bezpośrednio na kontrolerach domeny. Zanim można rozpocząć pracę, należy podjąć następujące decyzje dotyczące wdrażania:
 
-|KONFIGURACJA|DECYZJI|
+|KONFIGURACJA|DECYZJA|
 |----|----|
-|Typ sprzętu|Fizycznych, wirtualnych, maszyny Wirtualnej Azure|
-|Grupy roboczej lub domeny|Workgroup, domain|
-|Ustalanie rozmiaru bramy|Pełne, lekkie bramy|
-|Certyfikaty|Infrastruktura kluczy publicznych, z podpisem własnym|
+|Typ sprzętu|Fizycznych, wirtualnych i maszyn wirtualnych platformy Azure|
+|Grupie roboczej lub domenie|Domena, grupy roboczej|
+|Ustalanie rozmiaru bramy|Pełne bramy uproszczonej bramy|
+|Certyfikaty|Infrastruktury kluczy publicznych z podpisem własnym|
 
-Jeśli korzystasz z serwerów fizycznych, należy zaplanować pojemność. Można uzyskać pomoc od narzędzie ustalania wielkości, aby przydzielić miejsce dla usługi ATA:
+Jeśli używasz serwerów fizycznych należy zaplanować pojemność. Możesz uzyskać pomoc przy użyciu narzędzia określania rozmiaru do alokowania miejsca dla usługi ATA:
 
-[Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizing) — narzędzia do określania rozmiaru automatyzuje kolekcji ilość ruchu sieciowego, usługa ATA wymaga. Możliwość obsługi i zalecenia dotyczące zasobów automatycznie zapewnia dla Centrum usługi ATA i bram ATA Lightweight Gateway.
+[Narzędzia do określania rozmiaru usługi ATA](ata-capacity-planning.md) — narzędzia do określania rozmiaru automatyzuje zbiór ilość ruchu sieciowego w ATA potrzebuje. Zalecenia dotyczące zasobów i możliwości obsługi automatycznie zapewnia Centrum usługi ATA i uproszczonych bram usługi ATA.
 
-[Planowanie pojemności usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/ata-capacity-planning)
+[Planowanie pojemności usługi ATA](ata-capacity-planning.md)
 
-## <a name="deploy-ata"></a>Wdrażanie usługi ATA
+## <a name="deploy-ata"></a>Wdrożenia usługi ATA
 
-Te zasoby będą pomóc pobranie i zainstalowanie Centrum usługi ATA, połączyć z usługą Active Directory, Pobierz pakiet bramy usługi ATA, Konfigurowanie zbierania zdarzeń i opcjonalnie zintegrować z serwera VPN i skonfiguruj wykluczenia i kont wystawionych jako przynęta.
+Te zasoby pomoże pobieranie i instalowanie Centrum usługi ATA, nawiązać połączenie z usługi Active Directory, pobieranie pakietu bramy usługi ATA, Konfigurowanie zbierania zdarzeń i opcjonalnie zintegrować z sieci VPN i konfigurowanie konta wystawione jako przynęta i wykluczenia.
 
-[Pobierz usługę ATA](http://aka.ms/ataeval) — przed wdrożeniem usługi ATA, jeśli nie utworzono decyzji w celu zakupu usługi ATA, możesz pobrać wersję ewaluacyjną. 
+[Pobierz usługę ATA](http://aka.ms/ataeval) — przed wdrożeniem usługi ATA, jeśli nie utworzono decyzję o zakupie usługi ATA, możesz pobrać wersję ewaluacyjną. 
 
-[Fazy weryfikacji Koncepcji ATA podręcznikowym](http://aka.ms/atapoc) — przewodnik wszystkich kroków wymaganych w celu pomyślnego wdrożenia usługi ATA fazy weryfikacji Koncepcji.
+[Podręcznik Prototypu ATA](http://aka.ms/atapoc) — Przewodnik po wszystkich kroków wymaganych w celu pomyślnego wdrożenia weryfikacji Koncepcji usługi ATA.
 
-[Wdrożenie usługi ATA wideo](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes) — ten klip wideo zawiera omówienie wdrożenia usługi ATA czynności w mniej niż 10 minut.
+[Wdrożenie usługi ATA wideo](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes) — to wideo zawiera omówienie wdrożenia usługi ATA kroków w mniej niż 10 minut.
 
 ## <a name="ata-settings"></a>Ustawienia usługi ATA
 
-Podstawowe ustawienia niezbędne w usłudze ATA są skonfigurowane jako część Kreatora instalacji. Istnieje jednak wiele innych ustawień, które można skonfigurować w celu dostosowania ATA wchodzące wykryć większej dokładności dla danego środowiska, takich jak integracji SIEM a ustawień inspekcji.
+Podstawowe ustawienia niezbędne w usłudze ATA są konfigurowane jako część Kreatora instalacji. Jednak istnieje szereg innych ustawień, które można skonfigurować w celu dostosowania ATA wprowadzić bardziej precyzyjne dla danego środowiska, takie jak integracja rozwiązania SIEM wykrywania, które ustawienia inspekcji.
 
-[Ustawienia inspekcji](https://aka.ms/ataauditingblog) — inspekcji Twojej kondycji kontrolera domeny, przed i po wdrożeniu usługi ATA.
+[Ustawienia inspekcji](https://aka.ms/ataauditingblog) — Inspekcja usługi kondycji kontrolera domeny, przed i po wdrożeniu usługi ATA.
 
-[Dokumentacja ogólna usługi ATA](https://docs.microsoft.com/en-us/advanced-threat-analytics/)
+[Ogólna dokumentacja usługi ATA](https://docs.microsoft.com/advanced-threat-analytics/)
 
 ## <a name="work-with-ata"></a>Praca z usługi ATA
 
-Po skonfigurowaniu i uruchomieniu usługi ATA będzie mogła wyświetlać podejrzanych działań wykrytych na osi czasu ataków. Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można również sprawdzić ważność przypisaną do poszczególnych działań. Sprawdź poszczególne podejrzane działania przez przechodzenie jednostek (komputerów, urządzeń, użytkowników) otwieranie stron ich profilu, które dostarczają więcej informacji. Te zasoby będą pomocne podczas pracy z podejrzanych działań usługi ATA:
+Po skonfigurowaniu i uruchomieniu usługi ATA będzie można wyświetlić podejrzanych działań, które są wykrywane na osi czasu ataków. Jest to domyślna strona docelowa wyświetlana po zalogowaniu się do konsoli usługi ATA. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można również sprawdzić ważność przypisaną do poszczególnych działań. Badanie każdego podejrzanego działania, przechodzenie jednostek (komputerów, urządzeń, użytkowników) aby otworzyć ich strony profilów, które zawierają więcej informacji. Te zasoby ułatwiają pracę z podejrzanych działań usługi ATA:
 
-[Podręcznika dotyczącego podejrzanego działania usługa ATA](http://aka.ms/ataplaybook) — w tym artykule przedstawiono ataku technik kradzieży poświadczeń, za pomocą narzędzi research łatwo dostępne w Internecie. W każdym punkcie ataku widać, jak usługa ATA pomaga uzyskać wgląd w tych zagrożeń.
+[Podręcznik dotyczący podejrzanych działań usługa ATA](http://aka.ms/ataplaybook) — w tym artykule opisano przy użyciu technik ataku kradzieży poświadczeń przy użyciu łatwo dostępnych narzędzi badawczych w Internecie. W każdym punkcie ataku zobaczysz, jak usługa ATA pomaga uzyskać wgląd w te zagrożenia.
 
-[Przewodnik po podejrzanych działań usługi ATA](http://aka.ms/atasaguide)
+[Przewodnik po podejrzanych działań usługi ATA](suspicious-activity-guide.md)
 
 
 
-## <a name="security-best-practices"></a>Najlepsze rozwiązania
+## <a name="security-best-practices"></a>Najlepsze rozwiązania dotyczące zabezpieczeń
 
-[Najlepsze rozwiązania w zakresie usługi ATA](https://aka.ms/atasecbestpractices) — najlepsze rozwiązania dotyczące zabezpieczania usługi ATA.
+[Najlepsze rozwiązania ATA](https://aka.ms/atasecbestpractices) — najlepsze rozwiązania dotyczące zabezpieczania usługi ATA.
 
-[Często zadawane pytania dotyczące usługi ATA](http://aka.ms/atafaq) — ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA oraz wskazówki i odpowiedzi.
+[Często zadawane pytania dotyczące usługi ATA](ata-technical-faq.md) — ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA oraz wskazówki i odpowiedzi.
 
 ## <a name="additional-resources"></a>Dodatkowe zasoby
 
-[Strona 9 kanału zabezpieczeń firmy Microsoft](https://channel9.msdn.com/Shows/Microsoft-Security/)
+[Strona firmy Microsoft Security Channel 9](https://channel9.msdn.com/Shows/Microsoft-Security/)
 
 ## <a name="community-resources"></a>Zasoby społeczności
 
 [Blog usługi ATA](https://aka.ms/ATABlog)
-[społeczności ATA](https://aka.ms/ATACommunity)
-[Prześlij opinię dotyczącą usługi ATA](https://aka.ms/ATAUserVoice)
+[społeczności usługi ATA](https://aka.ms/ATACommunity)
+[opinią na temat usługi ATA](https://aka.ms/ATAUserVoice)

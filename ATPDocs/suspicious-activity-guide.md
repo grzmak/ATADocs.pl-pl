@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 610a84ac0e9b3c199971ced47dc5a5d08db00287
-ms.sourcegitcommit: 4170888deee71060e9a17c8a1ac772cc2fe4b51e
+ms.openlocfilehash: 83c855a89ad418769c81a4f1da3950ae0b6c54f7
+ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37800678"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39064121"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -107,9 +107,11 @@ Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów
 
 2.  Bilet uwierzytelniania Golden Ticket — w arkuszu kalkulacyjnym programu excel, przejdź na kartę działań sieci. Zobaczysz, że odpowiednie pole starszej jest **żądania typ szyfrowania biletu**, i **komputera źródłowego obsługiwane typy szyfrowania** zawiera silniejszych metod szyfrowania.
 
-  1. Sprawdź komputer źródłowy i konta lub w przypadku wielu źródłowych konta komputerów i sprawdzenia, czy ich coś mają wspólne, (na przykład wszystkie marketingu personelu użyj konkretnej aplikacji, które mogą być przyczyną alertu). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniany przy użyciu niższe szyfrowania szyfrowanie. Sprawdź, czy istnieją niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźnie prawdziwie dodatni i można pominąć.
+  1. Wyboru zasobu uzyskiwał dostęp do tych biletów, w przypadku jeden zasób, z których korzystają wszystkie zweryfikuje go, upewnij się, że jest prawidłowy zasób, które one powinien uzyskać dostęp. Ponadto sprawdź, czy zasób docelowy obsługuje metody silne szyfrowanie. Możesz sprawdzić to w usłudze Active Directory, sprawdzając atrybutu msDS-SupportedEncryptionTypes, zasobów konta usługi.
   
-  2. Wyboru zasobu uzyskiwał dostęp do tych biletów, w przypadku jeden zasób, z których korzystają wszystkie zweryfikuje go, upewnij się, że jest prawidłowy zasób, które one powinien uzyskać dostęp. Ponadto sprawdź, czy zasób docelowy obsługuje metody silne szyfrowanie. Możesz sprawdzić to w usłudze Active Directory, sprawdzając atrybutu msDS-SupportedEncryptionTypes, zasobów konta usługi.
+  2. Sprawdź komputer źródłowy i konta lub w przypadku wielu źródłowych konta komputerów i sprawdzenia, czy ich coś mają wspólne, (na przykład wszystkie marketingu personelu użyj konkretnej aplikacji, które mogą być przyczyną alertu). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniany przy użyciu niższe szyfrowania szyfrowanie. Sprawdź, czy istnieją niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźnie prawdziwie dodatni i można pominąć.
+  
+  
 
 3.  Overpass--Hash — w arkuszu kalkulacyjnym programu excel, przejdź na kartę działań sieci. Zobaczysz, że odpowiednie pole starszej jest **szyfrowany typ szyfrowania sygnatura czasowa** i **komputera źródłowego obsługiwane typy szyfrowania** zawiera silniejszych metod szyfrowania.
 
@@ -197,7 +199,8 @@ zasady zabezpieczeń.
    1.   Czy były wszelkie zmiany ostatnio (w ciągu ostatnich kilku godzin), wprowadzone do maksymalny okres istnienia biletu użytkownika w zasadach grupy — ustawienie? Sprawdź, czy określone wartości i sprawdzić, czy jest niższy niż czas, jaki był używany--ticket. Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
    2.   Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zaangażowane w tym alercie maszynę wirtualną? Jeśli tak, on niedawno wychodzi z zapisanego stanu? Jeśli tak, zamknij ten alert.
    3.   Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
-- **Nieistniejące konta**
+
+- **Nieistniejące konto** (wersja zapoznawcza)
    1.   Należy odpowiedzieć na następujące pytania:
          - Czy użytkownik jest użytkownikiem domeny znane i prawidłowe? Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
          - Użytkownik zostało ostatnio dodane? Jeśli tak, zamknij ten alert, zmiana może nie zostały jeszcze zsynchronizowane.
