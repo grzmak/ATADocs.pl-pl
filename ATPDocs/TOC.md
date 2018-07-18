@@ -17,6 +17,7 @@
 ## [6. Integracja połączenia VPN](install-atp-step6-vpn.md)
 ## [7. Wykluczenia i konta wystawione jako przynęta](install-atp-step7.md)
 ## [8. Konfigurowanie wymaganych uprawnień SAM-R](install-atp-step8-samr.md)
+## [9 Konfigurowanie obsługi wielu lasów](atp-multi-forest.md)
 ## [Instalacja dyskretna](ATP-silent-installation.md)
 ## [Aktualizowanie czujników Zaawansowanej ochrony przed zagrożeniami](sensor-update.md)
 ## Dodatkowe kroki dotyczące czujnika Zaawansowanej ochrony przed zagrożeniami na platformie Azure
