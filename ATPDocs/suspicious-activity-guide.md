@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/5/2018
+ms.date: 7/20/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 83c855a89ad418769c81a4f1da3950ae0b6c54f7
-ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
+ms.openlocfilehash: 089481d393acd0c18ad098d22a63bc521946b4e3
+ms.sourcegitcommit: 7909deafdd9323f074d0ff2f590e307bcfaaabad
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2018
-ms.locfileid: "39064121"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202085"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -468,6 +468,72 @@ W tym wykrywanie alert jest wyzwalany, gdy wystąpiło wiele błędów uwierzyte
 **Korygowanie**
 
 [Złożone, długie hasła](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) zapewnić wymagany pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
+## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack"></a>Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow)
+
+**Opis**
+
+Atak w tle (DCShadow) kontroler domeny jest atakiem przeznaczone do modyfikowania obiektów katalogu przy użyciu złośliwa replikacja. Atak można wykonać z dowolnego komputera, tworząc nieautoryzowany kontrolera domeny przy użyciu procesu replikacji.
+ 
+DCShadow używa RPC i protokołu LDAP na:
+1. Zarejestruj konto komputera jako kontrolera domeny (przy użyciu uprawnień administratora domeny), a
+2. Wykonaj replikację (z wykorzystaniem udzielone prawa replikacji) za pośrednictwem interfejsu DRSUAPI i wysłać zmiany do obiektów katalogu.
+ 
+W tym wykrywanie alert jest wyzwalany, gdy komputer w sieci próbuje zarejestrować się jako kontroler domeny nieautoryzowany. 
+
+**Badanie**
+ 
+1. Jest to komputer w pytanie kontrolera domeny? Na przykład nowo wypromowaną kontroler domeny, który ma problemy z replikacją. Jeśli tak, **Zamknij** podejrzanych działań.
+2. Dany komputer powinien być replikowanie danych z usługi Active Directory? Na przykład, program Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+3. Kliknij komputer źródłowy lub konta, aby przejść do strony profilu. Sprawdź, jakie wystąpiły w okolicy czasowej replikacji, wyszukiwanie nietypowych działań, takich jak: kto został zalogowany do określonych zasobów i co to jest komputer system operacyjny?
+   1. Czy wszyscy użytkownicy, którzy są zalogowani do komputera powinien zalogowanie do niej? Co to są ich uprawnienia? Czy mają uprawnienia do podwyższenia poziomu serwera do kontrolera domeny (są one Administratorzy domeny)?
+   2. Użytkownicy mają dostęp do tych zasobów?
+   3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
+Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
+
+4. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń błąd krytyczny, ale jeśli ten alert recurrs, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+
+**Korygowanie**
+
+Sprawdź, kto w organizacji ma następujące uprawnienia: 
+- Replikuj zmiany katalogu 
+- Replikuj wszystkie zmiany w katalogu 
+ 
+ 
+Aby uzyskać więcej informacji, zobacz [uprawnienia Grant Active Directory Domain Services dla synchronizacji profilów w programie SharePoint Server 2013](https://technet.microsoft.com/library/hh296982.aspx). 
+
+Możesz wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
+ 
+
+
+
+## <a name="suspicious-replication-request-potential-dcshadow-attack"></a>Podejrzana replikacja żądania (potencjalny atak DCShadow)
+
+**Opis** 
+
+Replikacja usługi Active Directory to proces, za pomocą którego zmiany wprowadzone na jednym kontrolerze domeny są synchronizowane z innymi kontrolerami domeny. Biorąc pod uwagę niezbędne uprawnienia, osoby atakujące można przyznać uprawnienia dla konta komputera umożliwiające podszyć się pod kontroler domeny. Osoby atakujące będzie Dokładamy wszelkich starań zainicjować żądanie złośliwa replikacja, umożliwiając im do modyfikowania obiektów usługi Active Directory na kontrolerze domeny oryginalnego osoby atakujące mogą dawać trwałości w domenie.
+W tym wykrywanie alert jest wyzwalany, gdy żądanie podejrzana replikacja jest generowane przy użyciu kontrolera domeny oryginalny, chronione przez usługi Azure ATP. To zachowanie jest wskaźnikiem technik stosowanych w atakach w tle kontrolera domeny.
+
+**Badanie** 
+ 
+1. Jest to komputer w pytanie kontrolera domeny? Na przykład nowo wypromowaną kontroler domeny, który ma problemy z replikacją. Jeśli tak, **Zamknij** podejrzanych działań.
+2. Dany komputer powinien być replikowanie danych z usługi Active Directory? Na przykład, program Azure AD Connect. Jeśli tak, **Zamknij i Wyklucz** podejrzanych działań.
+3. Kliknij na komputerze źródłowym, aby przejść do strony profilu. Sprawdź, co się stało **zbliżonym do momentu** replikacji, wyszukiwanie nietypowych działań, takich jak: kto zalogowano, które zasoby zostały użyte i komputer system operacyjny?
+
+   1.  Czy wszyscy użytkownicy, którzy są zalogowani do komputera powinien zalogowanie do niej? Co to są ich uprawnienia? Czy mają uprawnienia do wykonywać replikacje (są one Administratorzy domeny)
+   2.  Użytkownicy mają dostęp do tych zasobów?
+   3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
+Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
+1. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń błąd krytyczny, ale jeśli ten alert recurrs, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+
+**Korygowanie**
+
+Sprawdź, kto w organizacji ma następujące uprawnienia: 
+- Replikuj zmiany katalogu 
+- Replikuj wszystkie zmiany w katalogu 
+
+Aby to zrobić, można wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
+
 
 ## <a name="suspicious-service-creation"></a>Podejrzanie utworzenie usługi
 

@@ -5,7 +5,7 @@ keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 7/15/2018
+ms.date: 7/21/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,17 +13,40 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 9e28c18f118f7a2dc9d516cf62a113245a7be1fa
-ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
+ms.openlocfilehash: 032dde1ccbbfe0b2585c96410d4e19a799d8133a
+ms.sourcegitcommit: 7909deafdd9323f074d0ff2f590e307bcfaaabad
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2018
-ms.locfileid: "39064087"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202153"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+
+## <a name="azure-atp-release-241"></a>Usługa Azure ATP release 2.41
+
+Wydana 22 lipca 2018 r.
+
+- **Obsługa wielu lasów usługi Azure ATP jest stopniowo wdrażana (wersja zapoznawcza)** <br> Narzędzie Azure ATP może teraz obsługiwać organizacji z wieloma lasami, które umożliwia monitorowanie działań związanych z możliwością i profilów użytkowników w lasach. Ta nowa funkcja pozwala na:
+
+  - Wyświetlanie i badanie działań wykonywanych przez użytkowników w wielu lasach z jedną taflę szkła.
+  - Zwiększa wykrywania i zmniejszenie liczby fałszywych alarmów dzięki zaawansowanej integracji usługi Active Directory i rozpoznawanie konta.
+  - Uzyskaj lepsze monitorowanie alertów i raportowanie dla pokrycia w całej organizacji.
+
+
+-   **Wykrywanie nowych zagrożeń: DCShadow**<br>Dwie nowe funkcje wykrywania zostały dodane do ochrony przed atakami w tle (DCShadow) kontrolera domeny:
+
+    -   Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow) — wykrywanie pomaga wykrywać ataki, w których maszynę podszyć się pod kontroler domeny, a następnie próbuje przy użyciu replikacji się propagujące zmiany do innych kontrolerów domeny w domenie.
+
+    -   Podejrzana replikacja żądania (potencjalny atak DCShadow) — to wykrywanie, który pomaga chronić przed atakami wykorzystującymi podjął próbę podwyższenia poziomu kontrolera domeny maszyn, które nie są kontrolerami domeny w celu zmiany obiektów katalogu.
+
+-   **Ulepszone informacje o obniżenie poziomu szyfrowania**<br>Teraz wykrywanie obniżenia poziomu szyfrowania zawiera więcej informacji na temat określonego rodzaju atak: overpass--hash i bilet uwierzytelniania golden ticket, złośliwe oprogramowanie skeleton key. Ponadto te alerty mają zostały zagregowane umożliwiające łatwiejszego badania.
+- Ta wersja zawiera poprawki i ulepszenia w przypadku wielu problemów. 
+
+
 
 ## <a name="azure-atp-release-240"></a>Usługa Azure ATP release 2,40
 
