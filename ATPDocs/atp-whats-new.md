@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 032dde1ccbbfe0b2585c96410d4e19a799d8133a
-ms.sourcegitcommit: 7909deafdd9323f074d0ff2f590e307bcfaaabad
+ms.openlocfilehash: be3a4315384d5df03b1f04f0a71a960c66858b05
+ms.sourcegitcommit: 63a36cd96aec30e90dd77bee1d0bddb13d2c4c64
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202153"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39227227"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -68,7 +68,7 @@ Wydanej 5 lipca 2018 r.
 
 Wydana 1 lipca 2018 r.
 
-- Ta wersja zawiera poprawki i ulepszenia dla wielu problemów, a także ulepszenia w portalu usługi Azure ATP. 
+- Ta wersja zawiera poprawki i ulepszenia dla wielu problemów, a także ulepszenia w portalu usługi Azure ATP.
 
 ## <a name="azure-atp-release-237"></a>Usługa Azure ATP release 2,37
 
