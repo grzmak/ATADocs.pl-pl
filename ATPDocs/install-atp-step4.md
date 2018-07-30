@@ -1,6 +1,6 @@
 ---
-title: Azure instalacji Advanced Threat Protection — krok 4 | Dokumentacja firmy Microsoft
-description: W kroku 4 instalowania Azure ATP pomaga zainstalować czujnik autonomiczny Azure ATP.
+title: Install Azure Zaawansowana ochrona przed zagrożeniami — krok 4 | Dokumentacja firmy Microsoft
+description: W kroku 4 instalowania usługi Azure ATP pomaga zainstalować czujnik autonomiczny narzędzia Azure ATP.
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
@@ -14,79 +14,79 @@ ms.assetid: 51911e39-76c7-4dcd-bc0b-ec6235d0403f
 ms.reviewer: itargoet
 ms.suite: ems
 ms.openlocfilehash: 56b3cea2089c64e2c78361c44d049d6de67764b6
-ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 07/30/2018
 ms.locfileid: "30202276"
 ---
-*Dotyczy: Azure Advanced Threat Protection*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="install-azure-atp---step-4"></a>Zainstaluj Azure ATP — krok 4
+# <a name="install-azure-atp---step-4"></a>Zainstaluj narzędzie Azure ATP — krok 4
 
 >[!div class="step-by-step"]
 [« Krok 3](install-atp-step3.md)
 [Krok 5 »](install-atp-step5.md)
 
-## <a name="step-4-install-the-azure-atp-sensor"></a>Krok 4. Zainstaluj czujnik Azure ATP
+## <a name="step-4-install-the-azure-atp-sensor"></a>Krok 4. Instalowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
 
-Przed zainstalowaniem czujnik autonomiczny Azure ATP na dedykowanym serwerze Zweryfikuj, że funkcja dublowania portów jest poprawnie skonfigurowany i czy czujnik autonomiczny Azure ATP widzą ruchu do i z kontrolerów domeny. 
+Przed zainstalowaniem narzędzia Azure ATP czujnik autonomiczny na dedykowanym serwerze Zweryfikuj, czy funkcja dublowania portów jest prawidłowo skonfigurowane i że czujnik autonomiczny narzędzia Azure ATP może widzieć ruch do i z kontrolerów domeny. 
 
 
 > [!IMPORTANT]
->Upewnij się, że .net Framework 4.7 jest zainstalowany na tym komputerze. Jeśli jest Framework 4.7 .net nie jest zainstalowany pakiet instalacyjny czujnik Azure ATP instaluje go, co wymaga ponownego uruchomienia serwera.
+>Upewnij się, że .net Framework 4.7 jest zainstalowany na komputerze. Jeśli .net Framework 4.7 to nie jest zainstalowany pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure instaluje go, co wymaga ponownego uruchomienia serwera.
 
-Wykonaj następujące czynności na serwerze czujnik Azure ATP lub kontrolera domeny.
+Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure lub kontrolera domeny.
 
-1. Sprawdź, czy komputer ma połączenie z punktem końcowym usługi odpowiednich chmury Azure ATP:
-  - https://triprd1wceuw1sensorapi.atp.azure.com (dla Europy)  
+1. Sprawdź, czy komputer ma łączność z odpowiednimi punktu końcowego usługi chmury usługi Azure ATP:
+  - https://triprd1wceuw1sensorapi.atp.azure.com (w przypadku Europy)  
   - https://triprd1wcuse1sensorapi.atp.azure.com (dla Stanów Zjednoczonych)
-  - https://triprd1wcasse1sensorapi.atp.azure.com (dla Azji)
+  - https://triprd1wcasse1sensorapi.atp.azure.com (w przypadku Azja)
 
 2. Wyodrębnienie plików instalacyjnych z pliku zip. 
 > [!NOTE] 
 > Instalowanie bezpośrednio z pliku zip kończy się niepowodzeniem.
 
-2.  Uruchom **setup.exe czujnik Azure ATP** i postępuj zgodnie z kreatorem.
+2.  Uruchom **setup.exe czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure** i postępuj zgodnie z Kreatora instalacji.
 
 3.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-     ![Język instalacji czujnik autonomiczny Azure ATP](media/sensor-install-language.png)
+     ![Azure język instalacji czujnika zaawansowanej ochrony przed zagrożeniami autonomiczny](media/sensor-install-language.png)
 
 
-4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny dedykowanego serwera. Jeśli jest kontrolerem domeny, czujnik Azure ATP jest zainstalowany, jeśli jest dedykowany serwer czujnik autonomiczny Azure ATP jest zainstalowany. 
+4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest kontrolerem domeny, czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zainstalowany, jeśli jest dedykowany serwer, jest zainstalowany czujnik autonomiczny narzędzia Azure ATP. 
     
-    Na przykład dla czujnika autonomiczny Azure ATP, następujący ekran jest wyświetlany pozwala stwierdzić, że czujnik autonomiczny Azure ATP jest zainstalowana na dedykowanym serwerze:
+    Na przykład dla usługi Azure ATP czujnik autonomiczny, wyświetlony jest następujący ekran z informacją, że czujnik autonomiczny narzędzia Azure ATP jest zainstalowany na dedykowanym serwerze:
     
-    ![Azure ATP czujnik autonomicznej](media/sensor-install-deployment-type.png)
+    ![Instalowanie czujnika autonomicznego w usłudze Azure ATP](media/sensor-install-deployment-type.png)
 
     Kliknij przycisk **Dalej**.
 
     > [!NOTE] 
-    > Jeśli kontroler domeny lub dedykowany serwer nie spełnia minimalne wymagania sprzętowe dotyczące instalacji, zostanie wyświetlone ostrzeżenie. To nie uniemożliwia kliknięcia przycisku **Dalej** ani kontynuowania instalacji. Może to być odpowiedniej opcji instalacji Azure ATP w środowisku testowym małych laboratorium, w którym nie ma potrzeby tyle samo miejsca do przechowywania danych. W środowiskach produkcyjnych zalecane jest praca z Azure ATP [planowania pojemności](atp-capacity-planning.md) przewodnik upewnij się, że z kontrolerów domeny lub dedykowanych serwerów spełnia niezbędnych wymagań.
+    > Jeśli kontroler domeny lub dedykowany serwer nie spełnia minimalnych wymagań sprzętowych dla instalacji, zostanie wyświetlone ostrzeżenie. To nie uniemożliwia kliknięcia przycisku **Dalej** ani kontynuowania instalacji. Może to być odpowiedniej opcji instalacji narzędzia Azure ATP w małym, laboratoryjnym środowisku testowym, w którym nie potrzeba tak dużo miejsca, do przechowywania danych. W środowiskach produkcyjnych zdecydowanie zaleca do pracy z narzędzia Azure ATP [planowania pojemności](atp-capacity-planning.md) przewodnika, aby upewnić się, że kontrolery domeny lub dedykowane serwery spełniają niezbędne wymagania.
 
-4.  W obszarze **skonfigurować czujnika**, wprowadź ścieżkę instalacji i klucza dostępu, który został skopiowany w poprzednim kroku, w zależności od używanego środowiska:
+4.  W obszarze **Konfiguracja czujnika**, wprowadź ścieżkę instalacji i klucz dostępu, który został skopiowany w poprzednim kroku, w zależności od używanego środowiska:
 
-    ![Obraz konfiguracji czujnik autonomiczny Azure ATP](media/sensor-install-config.png)
+    ![Azure ATP autonomicznego czujnik konfiguracji obrazu](media/sensor-install-config.png)
 
-      - Ścieżka instalacji: Jest to lokalizacja zainstalowanym czujnik autonomiczny Azure ATP. Domyślnie jest to %programfiles%\Azure czujnik Advanced Threat Protection. Pozostaw wartość domyślną.
+      - Ścieżka instalacji: To lokalizacja, w którym jest zainstalowany czujnik autonomiczny narzędzia Azure ATP. Domyślnie jest to czujnika zaawansowanej ochrony przed zagrożeniami %programfiles%\Azure. Pozostaw wartość domyślną.
 
       - Klucz dostępu: jest pobierana z portalu obszaru roboczego w poprzednim kroku.
     
-5. Kliknij przycisk **Zainstaluj**. Następujące składniki zostaną zainstalowane i skonfigurowane podczas instalacji czujnik Azure ATP:
+5. Kliknij przycisk **Zainstaluj**. Następujące składniki są zainstalowane i skonfigurowane podczas instalacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure:
 
     -   KB 3047154 (tylko dla systemu Windows Server 2012 R2)
 
         > [!IMPORTANT]
         > -   Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji (host, który uruchamia wirtualizację; można uruchomić ją na maszynie wirtualnej). Może to spowodować nieprawidłowe działanie funkcji dublowania portów. 
-        > -   Jeśli Wireshark jest zainstalowany na maszynie czujnik ATP po uruchomieniu programu Wireshark, musisz ponownie uruchomić czujnik ATP, ponieważ wykorzystuje te same sterowniki.
+        > -   Jeśli program Wireshark jest zainstalowany na komputerze z czujnika zaawansowanej ochrony przed zagrożeniami, po uruchomieniu programu Wireshark zachodzi potrzeba ponownego uruchomienia czujnika zaawansowanej ochrony przed zagrożeniami, ponieważ używa ona te same sterowniki.
 
-    -   Azure usługi czujnik ATP i Azure ATP czujnik updater
+    -   Usługa Azure service czujnika zaawansowanej ochrony przed zagrożeniami i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
     -   Pakiet redystrybucyjny Microsoft Visual C++ 2013
 
-5.  Po zakończeniu instalacji kliknij przycisk **uruchamianie** Otwórz przeglądarkę i zalogować się do portalu Azure ATP obszaru roboczego.
+5.  Po zakończeniu instalacji kliknij przycisk **Uruchom** Otwórz przeglądarkę i zaloguj się do portalu obszaru roboczego usługi Azure ATP.
 
 
 >[!div class="step-by-step"]
@@ -96,10 +96,10 @@ Wykonaj następujące czynności na serwerze czujnik Azure ATP lub kontrolera do
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
+- [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
