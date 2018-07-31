@@ -14,13 +14,13 @@ ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 2c8f67d0c8d9020eb0e7ae16e8410db473ace044
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 07/30/2018
 ms.locfileid: "30010248"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -30,23 +30,23 @@ ms.locfileid: "30010248"
 > W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 
 
-W celu zwiększenia możliwości wykrywania usługa ATA wymaga następujących zdarzeń systemu Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757, 7045. Można albo je odczytać automatycznie przez bramę ATA Lightweight Gateway lub w przypadku bramy ATA Lightweight Gateway nie została wdrożona, jego może być przekazywany do bramy usługi ATA na jeden z dwóch sposobów przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez skonfigurowanie zdarzeń systemu Windows Przekazywanie.
+W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje następujących zdarzeń Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757, 7045. One może odczytywać je automatycznie przez bramę ATA Lightweight Gateway lub w przypadku uproszczonej bramy usługi ATA nie została wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów, przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez skonfigurowanie zdarzeń Windows Przekazywanie.
 
 
 
 ### <a name="wef-configuration-for-ata-gateways-with-port-mirroring"></a>Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
-Po skonfigurowaniu funkcji dublowania portów z kontrolerów domeny do bramy usługi ATA wykonaj następujące instrukcje dotyczące konfigurowania funkcji przekazywania zdarzeń systemu Windows za pomocą konfiguracji źródła zainicjowane. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
+Po skonfigurowaniu funkcji dublowania portów z kontrolerów domeny do bramy usługi ATA wykonaj następujące instrukcje konfigurowania przekazywania zdarzeń Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
 **Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
 
-W tym scenariuszu założono, że bramy usługi ATA jest elementem członkowskim domeny.
+W tym scenariuszu założono, że brama usługi ATA jest elementem członkowskim domeny.
 
-1.  Otwórz przystawkę Użytkownicy usługi Active Directory i komputery, przejdź do **wbudowane** folder i kliknij dwukrotnie **Czytelnicy dzienników zdarzeń**. 
+1.  Otwórz narzędzie Użytkownicy usługi Active Directory i komputerów, przejdź do **BuiltIn** folder i kliknij dwukrotnie plik **Czytelnicy dzienników zdarzeń**. 
 2.  Wybierz **członków**.
 4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
-Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, ponownego uruchamiania kontrolerów domeny, aby zmiany zaczęły obowiązywać.
+Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, przeprowadź ponowny rozruch kontrolerów domeny, aby zmiana zaczęła obowiązywać.
 
 **Krok 2: Utwórz zasady na kontrolerach domeny, aby skonfigurować ustawienie Konfiguruj docelowego Menedżera subskrypcji** 
 > [!Note] 
@@ -58,7 +58,7 @@ Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, p
 
  ![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
 
-4.  Kliknij dwukrotnie **konfigurowanie docelowej subskrypcji Menedżera**.
+4.  Kliknij dwukrotnie **Konfiguruj docelowego Menedżera subskrypcji**.
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
@@ -76,7 +76,7 @@ Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, p
 3.  Kliknij prawym przyciskiem myszy **subskrypcje** i wybierz **Utwórz subskrypcję**. 
 
    1.   Wprowadź nazwę i opis subskrypcji. 
-   2.   Dla **Dziennik docelowy**, upewnij się, że **zdarzenia przekazane** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
+   2.   Aby uzyskać **Dziennik docelowy**, upewnij się, że **zdarzenia przesyłane dalej** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
    3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
         2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
@@ -88,11 +88,11 @@ Po dodaniu **usługi sieciowej** do **Czytelnicy dzienników zdarzeń** grupy, p
    4.   Kliknij przycisk **Wybierz zdarzenia**.
 
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
-        2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w poniższym przykładzie.
+        2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w następującym przykładzie.
 
  ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
 
-   5.   Kliknij prawym przyciskiem myszy utworzona subskrypcja i wybierz **stanu w czasie wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
+   5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
    6.   Po kilku minutach sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w bramie usługi ATA.
 
 
