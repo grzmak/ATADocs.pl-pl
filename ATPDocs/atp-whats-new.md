@@ -2,10 +2,10 @@
 title: What's new in Azure ATP | Dokumentacja firmy Microsoft
 description: W tym artykule opisano zainstalowane najnowsze wersje usługi Azure ATP i zawiera informacje o nowościach w każdej wersji.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/21/2018
+ms.date: 7/29/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,17 +13,23 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: be3a4315384d5df03b1f04f0a71a960c66858b05
-ms.sourcegitcommit: 63a36cd96aec30e90dd77bee1d0bddb13d2c4c64
+ms.openlocfilehash: ebdae7617dd550631186ab87cba922758649fd45
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227227"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39335983"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-242"></a>Usługa Azure ATP release 2,42
+
+Wydana 29 lipca 2018 r.
+
+- Ta wersja zawiera poprawki i ulepszenia w przypadku wielu problemów. 
 
 
 ## <a name="azure-atp-release-241"></a>Usługa Azure ATP release 2.41

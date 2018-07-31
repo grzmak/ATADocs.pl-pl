@@ -1,78 +1,78 @@
 ---
-title: "Badanie ataków ścieżki penetracja sieci z Azure ATP | Dokumentacja firmy Microsoft"
-description: "W tym artykule opisano sposób wykrywania ataków ścieżki penetracja sieci z Azure Advanced Threat ochrony (ATP)."
-keywords: 
-author: rkarlin
-ms.author: rkarlin
+title: Badanie ataków ścieżki ruchu poprzecznego za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
+description: W tym artykule opisano, jak wykrywać ataki ścieżki ruchu poprzecznego za pomocą usługi Azure Advanced Threat Protection (ATP).
+keywords: ''
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 7/29/2018
 ms.topic: article
-ms.prod: 
+ms.prod: ''
 ms.service: azure-advanced-threat-protection
-ms.technology: 
+ms.technology: ''
 ms.assetid: de15c920-8904-4124-8bdc-03abd9f667cf
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7deeec2c2ee2c2d964b6495921eba0fa378bd8ee
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: b89cc6e7933c4f75e69cd045551518b2806b3cf0
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39336134"
 ---
-*Dotyczy: Azure Advanced Threat Protection wersji 1.9*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="investigating-lateral-movement-paths-with-azure-atp"></a>Badanie ścieżek penetracja sieci Azure ATP
+# <a name="investigating-lateral-movement-paths-with-azure-atp"></a>Badanie ścieżek penetracji sieci za pomocą narzędzia Azure ATP
 
-Azure ATP ułatwia zapobieganie atakom, które używają ścieżek penetracji sieci. Nawet wtedy, gdy użytkownik starań w celu ochrony poufnych użytkowników, administratorów ma złożonych haseł, które często zmienia, mają wzmocnione zabezpieczenia ich maszyn i bezpiecznie, są przechowywane ich dane osoby atakujące można nadal używać ścieżek penetracja sieci, przeniesienie w sieci między użytkownikami i komputerami, dopóki ich trafień jackpot wirtualnego zabezpieczeń: poświadczeń konta administratora poufnych.
 
-## <a name="what-is-a-lateral-movement-path"></a>Co to jest ścieżka penetracja sieci?
+Penetracja sieci to gdy osoba atakująca używa niewrażliwe konta w celu uzyskania dostępu do wrażliwych kont. Można to zrobić za pomocą metod opisanych w [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md). Penetracji sieci jest używana przez osoby atakujące do identyfikowania i uzyskiwanie dostępu do wrażliwych kont i komputerach w sieci przy użyciu niewrażliwe konta, mających poświadczenia przechowywane w dzienniku w kont, grup i komputerów. Gdy osoba atakująca ma uzyskali dostęp, osoba atakująca również korzystać z zalet danych na kontrolerach domeny.
 
-Penetracja sieci to, gdy osoba atakująca aktywnie używa konta niepoufnych uzyskanie dostępu do kont poufnych. Ich użyć dowolnej z metod opisanych w [przewodnik podejrzanych działań](suspicious-activity-guide.md) uzyskanie hasła początkowego niepoufnych, a następnie użyć narzędzia, takie jak Bloodhound, zrozumienie, którzy są administratorami w Twojej sieci i komputery, które one dostępne. Można następnie korzystać z dostępnych danych na ataki na kontrolerach domeny, aby dowiedzieć się, kto ma, które konta i dostęp do zasobów i plików i mogą wykradać poświadczeń innych użytkowników (użytkownicy czasami poufnych) przechowywanych na komputerach, które mają już dostępne, a następnie bok przenieść więcej użytkowników i zasoby do momentu osiągnięcia one uprawnień administratora w sieci. 
 
-Azure ATP umożliwiają przełączanie uprzedzające działania w sieci, aby uniemożliwić osobom atakującym pomyślne o penetracji sieci.
+## <a name="discovery-your-at-risk-sensitive-accounts"></a>Odnajdowanie usługi zagrożonych wrażliwych kont
 
-## <a name="discovery-your-at-risk-sensitive-accounts"></a>Odnajdywanie zagrożonych kont poufnych
+Aby sprawdzić, które wrażliwych kont w sieci są dostępne ze względu na ich połączenie do zwykłych kont, grup i komputerów, wykonaj następujące kroki. 
 
-Aby dowiedzieć się, które poufnych konta w sieci są narażone z powodu ich połączenie do kont niepoufnych lub zasobów, wykonaj następujące kroki. Aby zabezpieczyć sieć przed atakami penetracja sieci, Azure ATP działa z elementu end z poprzednimi wersjami, co oznacza, że Azure ATP zapewnia mapy, który rozpoczyna się od konta uprzywilejowanego, a następnie pokaże Ci, którzy użytkownicy i urządzenia znajdują się w ścieżce penetracji tych użytkowników i ich poświadczenia.
+1. W menu portalu obszaru roboczego usługi Azure ATP kliknij ikonę raportów ![Ikona raportów](./media/atp-report-icon.png).
 
-1. W menu portalu obszaru roboczego Azure ATP kliknij ikonę raportów ![Ikona raportów](./media/atp-report-icon.png).
-
-2. W obszarze **penetracji przeniesień ścieżki do kont poufnych**, jeśli brak znaleziono ścieżek penetracja sieci, raport będzie szary. W przypadku ścieżek penetracja sieci, następnie daty automatycznie wybierz raport pierwszy data po odpowiednich danych. Raport ścieżki penetracja sieci zawiera dane w ciągu ostatnich 60 dni.
+2. W obszarze **boczne ścieżki ruchów do wrażliwych kont**, jeśli nie ma potencjał, nie można odnaleźć ścieżki ruchu poprzecznego raportu jest wyszarzona. W przypadku potencjalnych ścieżki ruchu poprzecznego raport automatycznie wstępnie wybiera pierwszy data, gdy ma odpowiednich danych. Raport ścieżki ruchu poprzecznego udostępnia dane dla maksymalnie 60 dni.
 
  ![raporty](./media/reports.png)
 
 3. Kliknij przycisk **Pobierz**.
 
-3. Plik programu Excel, który jest tworzony udostępnia szczegółowe informacje dotyczące konta poufnych, które są narażeni na ataki. **Podsumowanie** karta zawiera wykresy, które zawierają liczby kont poufnych, komputerów i średnie zagrożonych zasobów. **Szczegóły** karta zawiera listę kont poufnych, które należy zwrócić uwagę.
+4. Utworzono plik programu Excel, która zawiera szczegółowe informacje o potencjalnych ścieżki ruchu poprzecznego i ujawnienia poufnych kont dla dat wybrano. **Podsumowanie** karta zawiera wykresy, które szczegółowo liczby wrażliwych kont, komputerów i średnie odpływowi dostępu. **Szczegóły** karta zawiera listę kont poufnych, które powinny zbadania. Należy pamiętać, że ścieżki szczegółowe w raporcie do pobrania może nie będą już dostępne, ponieważ zostały one wykryte w ciągu ostatnich 60 dni i mogą mieć zmieniony lub została zmodyfikowana.
 
-4. Aby uzyskać instrukcje dotyczące sposobu konfigurowania serwerów umożliwiają ATP Azure do wykonywania operacji SAM-R, potrzebnego do wykrycia ścieżki penetracja sieci [skonfigurować SAM-R](install-atp-step8-samr.md).
 
 ## <a name="investigate"></a>Badanie
 
-Teraz, znając kont poufnych, które są narażeni na ataki, możesz głębokość zajrzyj dostęp ATP Azure, aby dowiedzieć się więcej i podjęcia środków zapobiegawczych.
-
-1. W portalu Azure ATP obszaru roboczego przeglądać użytkownika, którego konto jest wymieniony jako zagrożone w **penetracji przeniesień ścieżki do kont poufnych** raport, na przykład Samira Abbasi. Można również wyszukać wskaźnika przepływu penetracja dodawanej do profilu jednostki, gdy obiekt jest w ścieżce penetracja sieci ![penetracji ikona](./media/lateral-movement-icon.png) lub ![ikonę ścieżki](./media/paths-icon.png). To jest dostępna, jeśli wystąpił penetracja sieci w ciągu ostatnich dwóch dni. 
-
-2. Na stronie profilu użytkownika, którego kliknięcie spowoduje otwarcie, kliknij przycisk **penetracji ścieżki przepływu** kartę. 
-
-3. Diagram, który jest wyświetlany zawiera mapy możliwych ścieżek użytkownikowi poufnych. Wykres przedstawia połączeń, które zostały wprowadzone w ciągu ostatnich dwóch dni, więc narażenia jest odświeżona. Jeśli działanie nie została wykryta w ciągu ostatnich dwóch dni wykresu nie jest wyświetlana, ale [penetracji przepływu Ścieżka raportu](reports.md) będą nadal dostępne uzyskać informacje o penetracji sieci ścieżek w ciągu ostatnich 60 dni.
-
-4. Przejrzyj wykres tak, aby zobaczyć, jakie informacje na temat zagrożeń poświadczeń użytkowników poufnych. Na przykład na tej mapie, możesz wykonać Samira Abbasi **zalogowanym przez** szary strzałki, aby zobaczyć, których Samira zalogował się za pomocą ich poświadczeń uprzywilejowanych. W takim przypadku na komputerze REDMOND-WA-odchyleń zostały zapisane poświadczenia poufnych przez Samira Następnie sprawdź, która zalogowani inni użytkownicy na komputery, które tworzone najbardziej zagrożeń i luk w zabezpieczeniach. Zobacz ten analizując **administratora na** czarne strzałki, aby zobaczyć, kto ma uprawnienia administratora na zasobie. W tym przykładzie wszyscy użytkownicy w grupie wszystkie firmy Contoso ma możliwość dostępu do poświadczeń użytkownika z tego zasobu.  
-
- ![ścieżki penetracja sieci profilu użytkownika](media/user-profile-lateral-movement-paths.png)
 
 
-## <a name="preventative-best-practices"></a>Program prewencyjnej najlepsze rozwiązania
+1. W portalu obszaru roboczego usługi Azure ATP Wyszukaj wskaźnika przenoszenia poprzecznych dodaną do profilu jednostki, gdy jednostka jest ścieżki ruchu poprzecznego ![Ikona poprzecznego](./media/lateral-movement-icon.png) lub ![Ikona ścieżki](./media/paths-icon.png). Należy pamiętać, że znaczka będą wyświetlane tylko w przypadku ruchu poprzecznego w ostatnich 48 godzinach. 
 
-- Należy upewnić się, że użytkownicy poufnych poświadczeń administratora tylko po zalogowaniu się na komputerach ze wzmocnionymi zabezpieczeniami jest najlepszy sposób, aby zapobiec penetracji sieci. W tym przykładzie upewnij się, że jeśli administrator Samira musi mieć dostęp do deweloperów — WA-REDMOND, rejestrują się przy użyciu nazwy użytkownika i hasło, ich poświadczeń administratora.
+2. Na stronie profilu użytkownika, która zostanie otwarta, kliknij przycisk **ścieżki ruchu poprzecznego** kartę. 
 
-- Zalecane jest również, że należy upewnić się, że nikt nie ma uprawnienia administracyjne na niepotrzebne. W tym przykładzie należy sprawdzić, czy wszyscy w Contoso wszystkie rzeczywiście wymaga uprawnień administratora na REDMOND-WA-odchyleń
+3. Wykres, który jest wyświetlany zawiera mapę możliwe ścieżki do wrażliwego użytkownika. Na wykresie przedstawiono możliwe połączenia zaobserwowane w ciągu ostatnich 48 godzin. Jeśli działanie nie zostało wykryte w ciągu ostatnich dwóch dni, nie pojawi się wykres. 
 
-- On jest zawsze upewnij się, że osoby tylko mają dostęp do zasobów konieczne. Jak widać w przykładzie Oscar Posada znacznie rozszerzenie narażenia na Samira. Czy jest umieszczenie użytkownika w Contoso wszystkie niezbędne? Czy istnieją podgrupy, które można utworzyć, aby zminimalizować ryzyko?
+4. Przejrzyj wykres, aby zobaczyć, co omówiono ujawniania poświadczeń użytkownika wielkość liter. Na przykład na tej mapie możesz wykonać **Zalogowało** szary strzałki, aby zobaczyć, gdzie Samira zalogowania się przy użyciu swoich poświadczeń dla konta uprzywilejowanego. W tym przypadku poświadczenia poufne firmy Samira zostały zapisane na komputerze REDMOND-WA-DEV. Teraz, zwróć uwagę, które użytkownicy zalogowani na komputerach, które tworzone najbardziej zagrożeń i luk w zabezpieczeniach. Można to zobaczyć, analizując **administratora na** czarne strzałki, aby zobaczyć, kto ma uprawnienia administratora dla zasobu. W tym przykładzie każdy grupy cała firma Contoso ma możliwość dostępu do poświadczeń użytkownika z tego zasobu.  
+
+ ![ścieżki ruchu poprzecznego profilu użytkownika](media/user-profile-lateral-movement-paths.png)
+
+
+## <a name="preventative-best-practices"></a>Zapobiegawczych najlepszych rozwiązań
+
+- Najlepszym sposobem, aby zapobiec penetracji sieci jest upewnij się, czy tylko wtedy, gdy logując się do komputerów ze wzmocnionymi zabezpieczeniami użytkownicy poufnych przy użyciu poświadczeń administratora. W przykładzie upewnij się, że jeśli Samira administrator musi mieć dostęp do REDMOND-WA-DEV, zalogowaniu się przy użyciu nazwy użytkownika i hasło, ich poświadczeń administratora.
+
+- Zalecane jest również przez należy upewnić się, że nikt nie miał niepotrzebnych uprawnień administracyjnych. W tym przykładzie należy sprawdzić, jeśli wszyscy w Contoso wszystkie faktycznie wymaga uprawnień administratora w REDMOND-WA-DEV.
+
+- Upewnij się, że osoby mają tylko dostęp do niezbędnych zasobów. W tym przykładzie Oscar Posada rozszerza znacznie się zagrożeń Samira firmy. Jest to konieczne, czy ten użytkownik jest uwzględniona w grupie **wszystkie Contoso**? Czy istnieją podgrupy, które można utworzyć, aby zminimalizować ryzyko?
+
+**Porada** — po wykryciu żadnych działań w ciągu ostatnich 48 godzin i wykres jest niedostępny, raport ścieżki ruchu poprzecznego jest nadal dostępne i udostępnia informacje o potencjalnych ścieżek penetracji sieci wykryte w ciągu ostatnich 60 dni. 
+
+**Porada** — instrukcje dotyczące sposobu ustawiania klientów i serwerów Zezwalaj na narzędzia Azure ATP do wykonywania operacji SAM-R służące do wykrywania ścieżki ruchu poprzecznego, znajdują się [skonfigurować SAM-R](install-atp-step8-samr.md).
 
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Skonfiguruj SAM-R wymagane uprawnienia](install-atp-step8-samr.md)
+- [Konfigurowanie uprawnień SAM-R wymagane](install-atp-step8-samr.md)
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)

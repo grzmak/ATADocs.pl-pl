@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7ae5ac30d1d17084df4c30d502a58767b97a4582
-ms.sourcegitcommit: 63a36cd96aec30e90dd77bee1d0bddb13d2c4c64
+ms.openlocfilehash: 4e6a7d90ad5670b3d1c01ba70d7b5a81e8808b5e
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227176"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39335881"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -101,7 +101,7 @@ Istnieją trzy typy wykrywania:
 
 **Badanie**
 
-Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów wykrywania są zajmujących. Opis alertu, aby dowiedzieć się, które z powyższych trzech typów wykrywania są zajmujących najpierw sprawdzić, badania. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
+Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów wykrywania są zajmujących. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
 
 1.  Złośliwe oprogramowanie Skeleton Key — możesz sprawdzić, jeśli złośliwe oprogramowanie Skeleton Key ma wpływ na kontrolerach domeny przy użyciu [skanera przygotowanego przez zespół usługi Azure ATP](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73). Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest prawdziwie dodatni.
 
@@ -109,9 +109,9 @@ Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów
 
   1. Wyboru zasobu uzyskiwał dostęp do tych biletów, w przypadku jeden zasób, z których korzystają wszystkie zweryfikuje go, upewnij się, że jest prawidłowy zasób, które one powinien uzyskać dostęp. Ponadto sprawdź, czy zasób docelowy obsługuje metody silne szyfrowanie. Możesz sprawdzić to w usłudze Active Directory, sprawdzając atrybutu msDS-SupportedEncryptionTypes, zasobów konta usługi.
   
-  2. Sprawdź komputer źródłowy i konta lub w przypadku wielu źródłowych konta komputerów i sprawdzenia, czy ich coś mają wspólne, (na przykład wszystkie marketingu personelu użyj konkretnej aplikacji, które mogą być przyczyną alertu). Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniany przy użyciu niższe szyfrowania szyfrowanie. Sprawdź, czy istnieją niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźnie prawdziwie dodatni i można pominąć.
+  2. Sprawdź komputer źródłowy i konta lub w przypadku wielu źródłowych konta komputerów i sprawdzenia, czy ich mają coś wspólnych. Na przykład wszystkich pracowników marketingu użyj konkretnej aplikacji, które mogą być przyczyną alertu. Istnieją przypadki, w których niestandardową aplikację, która jest rzadko używana jest uwierzytelniany przy użyciu niższe szyfrowania szyfrowanie. Sprawdź, czy istnieją niestandardowe aplikacje na komputerze źródłowym. Jeśli tak, prawdopodobnie jest niegroźnie prawdziwie dodatni i można pominąć.
   
-  
+
 
 3.  Overpass--Hash — w arkuszu kalkulacyjnym programu excel, przejdź na kartę działań sieci. Zobaczysz, że odpowiednie pole starszej jest **szyfrowany typ szyfrowania sygnatura czasowa** i **komputera źródłowego obsługiwane typy szyfrowania** zawiera silniejszych metod szyfrowania.
 
@@ -120,7 +120,7 @@ Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów
 
 **Korygowanie**
 
-1.  Szkielet klucza — Usuń złośliwe oprogramowanie. Aby uzyskać więcej informacji, zobacz [analizy złośliwe oprogramowanie Skeleton Key](https://www.secureworks.com/research/skeleton-key-malware-analysis) przez SecureWorks.
+1.  Szkielet klucza — Usuń złośliwe oprogramowanie. Aby uzyskać więcej informacji, zobacz [analizy złośliwe oprogramowanie Skeleton Key](https://www.virusbulletin.com/virusbulletin/2016/01/paper-digital-bian-lian-face-changing-skeleton-key-malware).
 
 2.  Uwierzytelniania Golden Ticket — postępuj zgodnie z instrukcjami [bilet uwierzytelniania Golden Ticket](#golden-ticket) podejrzanych działań.   
     Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).

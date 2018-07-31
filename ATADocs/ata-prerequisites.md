@@ -2,10 +2,10 @@
 title: Wymagania wstępne usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: Zawiera opis wymagań, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 5/6/2018
+ms.date: 7/25/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 90c4bcad1b5a2d6da06153706129d9670ad57e1c
-ms.sourcegitcommit: 321ff1af2c140f41600c4c42ac4d455b3cdb9440
+ms.openlocfilehash: 199830a6cd0b84cf897311cc80472a078f582b59
+ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36233008"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39335915"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -129,7 +129,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 
 ### <a name="certificates"></a>Certyfikaty
 
-Aby ułatwić instalację usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Po wdrożeniu, należy zastąpić podpisem własnym certyfikatem z wewnętrznego urzędu certyfikacji, który ma być używany przez Centrum usługi ATA.
+Aby zainstalować i szybciej wdrożenia usługi ATA, podczas instalacji możesz zainstalować certyfikaty z podpisem własnym. Jeśli zamierzasz używać certyfikatów z podpisem własnym, po początkowym wdrożeniu zalecane jest aby zamienić certyfikaty z podpisem własnym za pomocą certyfikatów z wewnętrznego urzędu certyfikacji, który ma być używany przez Centrum usługi ATA.
 
 
 Upewnij się, że Centrum usługi ATA i bram usługi ATA mają dostęp do punktu dystrybucji z listy CRL. Jeśli nie mają dostępu do Internetu, postępuj zgodnie z [procedurę ręcznego importowania listy CRL](https://technet.microsoft.com/library/aa996972%28v=exchg.65%29.aspx), zwracając szczególną uwagę na instalowanie wszystkich dystrybucji listy CRL punkty dla całego łańcucha.
@@ -139,6 +139,7 @@ Certyfikat musi mieć:
 -   Typ dostawcy, dostawca usług kryptograficznych (CSP) lub dostawca magazynu kluczy (KSP)
 -   Publiczny klucz o długości 2048 bitów
 -   Wartość KeyEncipherment i ServerAuthentication flagi użycia
+-   Parametr KeySpec (KeyNumber) wartość "KeyExchange" (w\_KEYEXCHANGE). Należy pamiętać, że wartość "Podpis" (w\_podpisu) nie jest obsługiwane. 
 
 Na przykład, można użyć standardowego **serwera sieci Web** lub **komputera** szablonów.
 
