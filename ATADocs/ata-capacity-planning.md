@@ -14,7 +14,7 @@ ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: e58fe62fc655fed8f17ae800dda20e022e198a26
 ms.sourcegitcommit: 63a36cd96aec30e90dd77bee1d0bddb13d2c4c64
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/30/2018
 ms.locfileid: "30010027"
@@ -57,7 +57,7 @@ Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika 
 W celu wykonania analizy behawioralnej użytkowników zaleca się, aby centrum usługi ATA dysponowało danymi z co najmniej 30 dni.
  
 
-|Pakiety na sekundę ze wszystkich kontrolerów domeny|Procesor CPU (rdzenie&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;& #42;|
+|Pakiety na sekundę ze wszystkich kontrolerów domeny|Procesor CPU (rdzenie&#42;)|Pamięć (GB)|Przestrzeń dyskowa bazy danych dziennie (GB)|Przestrzeń dyskowa bazy danych miesięcznie (GB)|Operacje we/wy na sekundę&#42;&#42;|
 |---------------------------|-------------------------|-------------------|---------------------------------|-----------------------------------|-----------------------------------|
 |1000|2|32|0,3|9|30 (100)
 |40,000|4|48|12|360|500 (750)
