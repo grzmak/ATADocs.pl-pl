@@ -1,6 +1,6 @@
 ---
-title: Jak badać użytkowników i komputerów z Azure ATP | Dokumentacja firmy Microsoft
-description: Zawiera opis sposobu badania podejrzane działania wykonywane przez użytkowników, jednostek, komputery lub urządzenia przy użyciu usługi Azure Advanced Threat ochrony (ATP)
+title: Jak badać użytkownicy i komputery za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
+description: Zawiera opis sposobu badania podejrzanych działań wykonywanych przez użytkowników, jednostki, komputery lub urządzenia przy użyciu usługi Azure Advanced Threat Protection (ATP)
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
@@ -13,66 +13,66 @@ ms.technology: ''
 ms.assetid: 43e57f87-ca85-4922-8ed0-9830139fe7cb
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4ef4151a311dd5b076737cba9f3c7aa7454a32a7
-ms.sourcegitcommit: 714a01edc9006b38d1163d03852dafc2a5fddb5f
+ms.openlocfilehash: 32f5ab58ba9e17d36761ce5b99f4711d0e390ff7
+ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190455"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567869"
 ---
-*Dotyczy: Azure Advanced Threat Protection wersji 1.9*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="investigate-an-entity-with-azure-atp"></a>Zbadaj jednostki z Azure ATP
+# <a name="investigate-an-entity-with-azure-atp"></a>Badanie jednostki za pomocą narzędzia Azure ATP
 
-W tym artykule opisano proces badanie jednostek po podejrzanych działań wykryto z Azure Advanced Threat ochrony (ATP). Po wyświetleniu podejrzanych działań w osi czasu, można przejść do jednostki zaangażowane w działaniu i użyj następujące parametry i szczegóły, aby dowiedzieć się więcej o co się stało i co należy zrobić w celu ograniczenia ryzyka.
+W tym artykule opisano proces badania jednostki po wykryciu podejrzanych działań za pomocą usługi Azure Advanced Threat Protection (ATP). Po obejrzeniu podejrzanych działań na osi czasu, możesz przejść do szczegółów do jednostki, które są zaangażowani w działanie i użyj następujących parametrów i szczegółowe informacje, aby dowiedzieć się więcej na temat co się stało i co należy zrobić, aby zmniejszyć zagrożenie.
 
 ## <a name="look-at-the-entity-profile"></a>Przyjrzyj się profilu jednostki
 
-Profilu jednostki zapewnia kompleksowe jednostki strony z przeznaczone do badania pełnej szczegółowo użytkowników, komputerów, urządzeń, i zasoby, które mają dostęp do historii. Strony profilu korzysta z nowych translator aktywności logicznej Azure ATP, można przyjrzeć się grupy działań występujących (zagregowane maksymalnie minutę) i grupować w pojedyncze działanie logiczne które pozwalają na lepsze zrozumienie działania rzeczywiste Użytkownicy.
+Profilu jednostki zawiera ze stroną kompleksowej jednostki przeznaczone do badania szczegółowym omówieniu użytkowników, komputerów, urządzeń i zasobów, do których mają dostęp wraz z ich historii. Strona profilu korzysta z nowych translator aktywności logicznego usługi Azure ATP, można przyjrzeć się grupę działań, które pojawiają się (zagregowane maksymalnie minutę) i zgrupować je w jedno działanie logicznych daje lepsze zrozumienie działania rzeczywistych Użytkownicy.
 
-Aby uzyskać dostęp do strony profilu jednostki, kliknij nazwę podmiotu, takie jak nazwa użytkownika, na osi czasu podejrzanych działań. Można również sprawdzić minimalnej wersji na stronie podejrzanych działań profilu jednostki, ustawiając kursor nad nazwa jednostki.
+Aby uzyskać dostęp do strony profilu jednostki, kliknij nazwę jednostki, takie jak nazwa użytkownika, na osi czasu podejrzanych działań. Widać również minimalnej wersji na stronie podejrzanych działań profilu jednostki, ustawiając kursor nad nazwa jednostki.
 
-Profilu jednostki umożliwia wyświetlanie jednostki działań, wyświetlać dane katalogu i wyświetlanie ścieżek penetracja sieci dla jednostki. Aby uzyskać więcej informacji, zobacz [badanie profile jednostek ](entity-profiles.md).
+Profilu jednostki pozwala wyświetlić jednostki działania, wyświetlić danych katalogowych oraz ścieżki ruchu poprzecznego dla jednostki. Aby uzyskać więcej informacji, zobacz [badanie profile jednostek ](entity-profiles.md).
 
-## <a name="check-entity-tags"></a>Wybierz tagi jednostek
+## <a name="check-entity-tags"></a>Wybierz tagi jednostki
 
-Azure ATP pobiera tagi z usługi Active Directory, aby mieć jeden interfejs monitorowanie użytkowników usługi Active Directory i jednostek. Znaczniki dostarczają informacji na temat jednostki z usługi Active Directory, w tym:
-- Częściowe: Użytkownika, komputera lub grupy nie został zsynchronizowany z domeny, a częściowo został rozwiązany za pomocą wykazu globalnego. Niektóre atrybuty nie są dostępne.
-- Nierozpoznane: Tego komputera nie została rozpoznana na prawidłową jednostkę w lesie usługi active directory. Informacje katalogu są niedostępne.
+Narzędzie Azure ATP ściąga tagi z usługi Active Directory, aby zapewnić pojedynczy interfejs do monitorowania usługi Active Directory, użytkowników i jednostek. Tagi te udostępniają informacje o tej jednostce z usługi Active Directory, w tym:
+- Częściowa: Użytkownika, komputera lub grupy nie jest zsynchronizowane z domeny, a częściowo został rozwiązany za pomocą wykazu globalnego. Niektóre atrybuty nie są dostępne.
+- Nierozpoznane: Ten komputer nie została rozpoznana na prawidłową jednostkę w lesie usługi active directory. Brak informacji o katalogu jest dostępna.
 - Usunięto: Jednostka została usunięta z usługi Active Directory.
-- Wyłączone: Jednostka jest wyłączone w usłudze Active Directory.
-- Zablokowane: Jednostka wprowadzony zbyt wiele razy nieprawidłowe hasło i jest zablokowany.
+- Wyłączone: Jednostka jest wyłączona w usłudze Active Directory.
+- Zablokowane: Jednostka wprowadziła niepoprawne hasło zbyt wiele razy i jest zablokowany.
 - Ważność: Jednostka wygasła w usłudze Active Directory.
-- Nowy: Mniej niż 30 dni temu została utworzona jednostka.
+- Nowość: Jednostka została utworzona mniej niż 30 dni temu.
 
-## <a name="look-at-the-user-access-control-flags"></a>Przyjrzyj się flag kontroli dostępu użytkownika
+## <a name="look-at-the-user-account-control-flags"></a>Przyjrzyj się flagi kontroli konta użytkownika
 
-Flagi kontrolne dostępu użytkownika również są importowane z usługi Active Directory. Azure ATP zawiera 10 flagi, które zostaną zastosowane do badania: 
+Flagi kontroli konta użytkownika, również są importowane z usługi Active Directory. Narzędzie Azure ATP obejmuje 10 flagi, które zostaną zastosowane na badania: 
 - Hasło nigdy nie wygasa
-- Zaufany w kwestii delegowania
+- Zaufany do delegowania
 - Wymagana karta inteligentna
 - Hasło wygasło
-- Puste hasło może
-- Przechowywane hasła zwykłego tekstu
-- Nie może być delegowane
-- Tylko szyfrowania DES
-- Wstępne uwierzytelnianie Kerberos nie jest wymagane
+- Puste hasło jest dozwolone
+- Przechowywanie hasła w postaci zwykłego tekstu
+- Nie można delegować
+- Tylko szyfrowanie DES
+- Niewymagane w uwierzytelnianiu wstępnym protokołu Kerberos
 - Konto jest wyłączone 
 
-Azure ATP informuje o tym, jeśli te flagi są lub wyłącz w usłudze Azure Active Directory. Kolorowe ikony wskazują, że flaga jest na, w usłudze Active Directory; w przykładzie poniżej tylko **Konto wyłączone** jest włączona w usłudze Active Directory.
+Narzędzie Azure ATP poinformuje Cię o tym, jeśli te flagi są lub wyłączyć w usłudze Azure Active Directory. Kolorowe ikony wskazują, czy flaga jest włączona w usłudze Active Directory; w przykładzie poniżej, tylko **Konto wyłączone** znajduje się na usłudze Active Directory.
 
- ![Flagi kontrolne dostępu użytkownika](./media/user-access-flags.png)
+ ![flagi kontroli konta użytkownika](./media/user-access-flags.png)
 
-## <a name="cross-check-with-windows-defender"></a>Zweryfikować usługa Windows Defender
+## <a name="cross-check-with-windows-defender"></a>Zweryfikować za pomocą usługi Windows Defender
 
-Aby zapewnić iloczyn wektorowy szczegółowe informacje, profilu jednostki udostępnia obiektów, które mają otwarte alerty w programie Windows Defender z wskaźnika. Wyróżnienie informuje liczbę otwartych alertów jednostka znajduje się w usłudze Windows Defender i ich poziom ważności jest. Kliknij pozycję wskaźnika, aby przejść bezpośrednio do alerty powiązane z tą jednostką w usłudze Windows Defender.
+Aby zapewnić wgląd obejmujących wiele produktów, profilu jednostki zawiera obiektów, które są otwarte alerty w usłudze Windows Defender za pomocą wskaźnika. Wyróżnienie informuje o tym, ile otwartych alertów, jednostka ma w usłudze Windows Defender i ich poziom ważności jest. Kliknij wskaźnik, aby przejść bezpośrednio do alerty związane z tej jednostki w usłudze Windows Defender.
 
 
-## <a name="keep-an-eye-on-sensitive-users-and-groups"></a>Śledzić poufnych użytkowników i grup
+## <a name="keep-an-eye-on-sensitive-users-and-groups"></a>Zwracaj uwagę na wrażliwi użytkownicy i grupy
 
-Azure ATP importuje informacje o grupie użytkowników i z usługi Azure Active Directory, dzięki któremu można zidentyfikować użytkowników, którzy automatycznie są traktowane jako poufne, ponieważ są oni członkami następujących grup w usłudze Active Directory:
+Narzędzie Azure ATP Importuje grupę informacji o użytkowniku i z usługi Azure Active Directory, dzięki któremu można zidentyfikować użytkowników, którzy automatycznie są traktowane jako poufne, ponieważ są oni członkami następujących grup w usłudze Active Directory:
 
 -   Administratorzy
 -   Użytkownicy zaawansowani
@@ -88,28 +88,28 @@ Azure ATP importuje informacje o grupie użytkowników i z usługi Azure Active 
 -   Kontrolery domeny
 -   Twórcy-właściciele zasad grupy 
 -   Kontrolery domeny tylko do odczytu 
--   Kontrolery domeny tylko do odczytu 
+-   Kontrolery domeny tylko do odczytu przedsiębiorstwa 
 -   Administratorzy schematu 
 -   Enterprise Admins
 
-Ponadto można **ręcznie tagu** jednostek jako poufne w Azure ATP. Jest to ważne, ponieważ niektóre wykryć Azure ATP, takich jak grupy poufnej modyfikacji wykrywania i ścieżka penetracja sieci, korzystają z stan czułości jednostki. Jeśli ręcznie tagu dodatkowych użytkowników lub grup jako poufne, takie jak tablicy elementów członkowskich, członkowie kadry kierowniczej w firmie i dyrektora sprzedaży Azure ATP będzie uwzględniać ich poufnych. Aby uzyskać więcej informacji, zobacz [Praca z kont poufnych](sensitive-accounts.md).
+Ponadto mogą **ręcznie oznaczyć** jednostki jako poufnych w ramach usługi Azure ATP. Jest to ważne, ponieważ niektóre wykrywania zagrożeń usługi Azure ATP, np. wykrywania modyfikacji wrażliwych grup i ścieżki ruchu poprzecznego zależą od stanu czułości jednostki. Jeśli ręcznie oznaczyć dodatkowych użytkowników lub grup jako poufne, takie jak elementy członkowskie tablicy, kierownictwo firmy i dyrektorów sprzedaży narzędzia Azure ATP uzna je poufnych. Aby uzyskać więcej informacji, zobacz [Praca z kontami poufnymi](sensitive-accounts.md).
 
-## <a name="be-aware-of-lateral-movement-paths"></a>Należy pamiętać o penetracji sieci ścieżki
+## <a name="be-aware-of-lateral-movement-paths"></a>Należy pamiętać o ścieżki ruchu poprzecznego
 
-Azure ATP ułatwia zapobieganie atakom, które używają ścieżek penetracji sieci. Penetracja sieci to, gdy osoba atakująca aktywnie używa konta niepoufnych uzyskanie dostępu do kont poufnych.
+Narzędzie Azure ATP może pomóc w przed atakami wykorzystującymi ścieżki ruchu poprzecznego. Penetracja sieci to gdy osoba atakująca aktywnie używa niewrażliwe konta do uzyskania dostępu do wrażliwych kont.
 
-Jeśli istnieje ścieżka penetracja sieci dla jednostki, na stronie profilu jednostki można kliknąć przycisk **penetracji ścieżki przepływu** kartę. Diagram, który jest wyświetlany zawiera mapy możliwych ścieżek użytkownikowi poufnych. 
+Jeśli ścieżki ruchu poprzecznego istnieje dla jednostki, na stronie profilu jednostki można kliknąć przycisk **ścieżki ruchu poprzecznego** kartę. Diagram, który jest wyświetlany zawiera mapę możliwe ścieżki do wrażliwych użytkowników. 
 
-Aby uzyskać więcej informacji, zobacz [Investigating ścieżek penetracja sieci Azure ATP](use-case-lateral-movement-path.md).
+Aby uzyskać więcej informacji, zobacz [Investigating ścieżkom penetracji sieci za pomocą narzędzia Azure ATP](use-case-lateral-movement-path.md).
 
 
-## <a name="is-it-a-honeytoken-entity"></a>Jest to jednostka wystawionego jako przynęta?
+## <a name="is-it-a-honeytoken-entity"></a>To jest jednostka wystawionego jako przynęta
 
-Przed przeniesieniem o badaniu należy sprawdzić, czy jednostka jest wystawionego jako przynęta. Dla wygody Azure ATP umożliwia utworzenie tagu konta i jednostki jako honeytokens. Następnie podczas badania, po otwarciu profilu jednostki lub mini profilu, zobaczysz wskaźnika wystawionego jako przynęta, aby ostrzec o tym, że działanie, które są patrzeć została wykonana przez użytkownika konta, które są oznaczone jako wystawionego jako przynęta.
+Przed przeniesieniem dochodzenie jest ważne, aby dowiedzieć się, czy jednostka jest wystawionego jako przynęta. Konta i jednostki można oznaczyć jako honeytokens w narzędzia Azure ATP. Po otwarciu profilu jednostki lub spowoduje wyświetlenie mini profilu konta lub obiekt, który został opatrzony tagami jako wystawionego jako przynęta, zostanie wyświetlony wskaźnik wystawionego jako przynęta. Podczas badania, wskaźnik wystawionego jako przynęta ostrzega o tym, czy wykonano działanie w ramach przeglądu, za pomocą konta, który został opatrzony tagami jako wystawionego jako przynęta.
 
 
     
 ## <a name="see-also"></a>Zobacz też
 
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)

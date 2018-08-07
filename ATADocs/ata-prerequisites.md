@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/25/2018
+ms.date: 8/1/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 199830a6cd0b84cf897311cc80472a078f582b59
-ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
+ms.openlocfilehash: 6a51832f3dbff55ed2ad396307a487ad607b3a2b
+ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39335915"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567665"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -49,7 +49,7 @@ System ATA działa na granicy lasu usługi Active Directory i obsługuje poziom 
 ![Diagram architektury usługi ATA](media/ATA-architecture-topology.jpg)
 
 ## <a name="before-you-start"></a>Przed rozpoczęciem
-W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
+Ta sekcja zawiera informacje, które należy zebrać, a także konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi ATA.
 
 
 -   Konto użytkownika i hasło z dostępem do odczytu do wszystkich obiektów w monitorowanej domeny.
@@ -57,7 +57,7 @@ W tej sekcji opisano informacje, które należy zebrać, oraz konta i jednostki 
     > [!NOTE]
     > Jeśli ustawiono niestandardowe listy kontroli dostępu w różnych jednostkach organizacyjnych w domenie, upewnij się, że wybrany użytkownik ma uprawnienia do odczytu do tych jednostek organizacyjnych.
 
--   Nie należy instalować analizatora komunikatów firmy Microsoft na bramie usługi ATA lub uproszczonej bramy. Sterownik Analizatora komunikatów powoduje konflikt ze sterownikami bramy usługi ATA i uproszczonej bramy usługi ATA. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. W przeciwnym razie brama przestanie Przechwytywanie ruchu. Uruchomienie programu Wireshark na uproszczonej bramy usługi ATA nie zakłóca uproszczonej bramy usługi ATA.
+-   Nie należy instalować analizatora komunikatów firmy Microsoft na bramie usługi ATA lub uproszczonej bramy. Konflikty sterownik analizatora komunikatów ze sterownikami bramy usługi ATA i uproszczonej bramy. Jeśli uruchomiono program Wireshark na bramie usługi ATA, to należy ponownie uruchomić bramę usługi Microsoft Advanced Threat Analytics po zatrzymaniu przechwytywania za pomocą programu Wireshark. W przeciwnym razie brama przestanie Przechwytywanie ruchu. Uruchomienie programu Wireshark na uproszczonej bramy usługi ATA nie zakłóca uproszczonej bramy usługi ATA.
 
 -    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Dzięki temu usługa ATA to wykrywanie zbiorczego usuwania obiektów w domenie. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
 
@@ -117,7 +117,7 @@ W poniższej tabeli wymieniono niezbędne porty, które należy otworzyć, aby c
 |**HTTPS**|TCP|443|Sieć firmowa i brama usługi ATA|Przychodzące|
 |**SMTP** (opcjonalnie)|TCP|25|Serwer SMTP|Wychodzące|
 |**SMTPS** (opcjonalnie)|TCP|465|Serwer SMTP|Wychodzące|
-|**Syslog** (opcjonalnie)|TCP|514|Serwer Syslog|Wychodzące|
+|**Syslog** (opcjonalnie)|TCP/UPS/TLS (z możliwością konfiguracji)|514 (ustawienie domyślne)|Serwer Syslog|Wychodzące|
 |**LDAP**|TCP i UDP|389|Kontrolery domeny|Wychodzące|
 |**LDAPS** (opcjonalnie)|TCP|636|Kontrolery domeny|Wychodzące|
 |**DNS**|TCP i UDP|53|Serwery DNS|Wychodzące|

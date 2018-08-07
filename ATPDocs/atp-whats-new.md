@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/29/2018
+ms.date: 8/06/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,17 +13,25 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ebdae7617dd550631186ab87cba922758649fd45
-ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
+ms.openlocfilehash: 0062fc22df357e338d8eaf446688ea8bba56019c
+ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39335983"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567954"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+
+## <a name="azure-atp-release-243"></a>Usługa Azure ATP release 2.43
+
+Wydanej 5 sierpnia 2018 r.
+
+- Ta wersja zawiera poprawki i ulepszenia w przypadku wielu problemów.
+
+
 
 ## <a name="azure-atp-release-242"></a>Usługa Azure ATP release 2,42
 

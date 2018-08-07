@@ -2,10 +2,10 @@
 title: Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure | Dokumentacja firmy Microsoft
 description: W tym artykule opisano architekturę z usługi Azure Advanced Threat Analytics (ATP)
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/4/2018
+ms.date: 8/05/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,18 +13,18 @@ ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 3f99aff656f6eff67a4077817c761c7627511bb2
-ms.sourcegitcommit: 40dbce8045f689376a50275fb12e3c5c32ca8092
+ms.openlocfilehash: 8264799f3aad2fb27287f56513458f34a3a7b0c6
+ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37799198"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567648"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="azure-atp-architecture"></a>Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure
-Architektura zaawansowanej ochrony przed zagrożeniami dla platformy Azure została szczegółowo opisana na poniższym diagramie:
+Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure:
 
 ![Diagram topologii architektury usługi Azure ATP](media/atp-architecture-topology.png)
 
@@ -116,7 +116,7 @@ Podczas podejmowania decyzji o liczbie narzędzia Azure ATP obszarów roboczych 
 
 -   Odbieranie zdarzeń Windows, bezpośrednio z kontrolerów domeny (dla zaawansowanej ochrony przed zagrożeniami, czujniki) lub z serwerów SIEM lub Syslog (dla zaawansowanej ochrony przed zagrożeniami czujników autonomiczne)
 
--  Odbieranie informacji o kontach usługi RADIUS z dostawcę sieci VPN
+-   Odbieranie informacji o kontach usługi RADIUS z dostawcę sieci VPN
 
 -   Pobierają dane o użytkownikach i komputerach z domeny usługi Active Directory
 
@@ -176,7 +176,7 @@ Jeśli usługi Active Directory potrzebuje więcej mocy obliczeniowej, przydzia�
 
 
 ## <a name="your-network-components"></a>Składniki Twojej sieci
-Aby można było pracować z usługą Azure ATP, upewnij się sprawdzić, czy następujące składniki są skonfigurowane.
+Sprawdź, czy następujące składniki są skonfigurowane, aby pracować z narzędzia Azure ATP.
 
 ### <a name="port-mirroring"></a>Dublowanie portów
 Jeśli używasz narzędzia Azure ATP autonomiczny czujników, masz do skonfigurowania portu dublowania dla kontrolerów domeny, które są monitorowane oraz ustawić czujnik autonomiczny narzędzia Azure ATP jako miejsce docelowe za pomocą przełączników fizycznych lub wirtualnych. Innym rozwiązaniem jest użycie funkcji podsłuchu sieci. Narzędzie Azure ATP działa, gdy niektóre, ale nie wszystkie kontrolery domeny są monitorowane, ale w przypadku wykrycia są mniej skuteczne.

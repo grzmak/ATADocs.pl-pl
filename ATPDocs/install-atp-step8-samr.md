@@ -2,10 +2,10 @@
 title: Konfigurowanie SAM-R, aby włączyć wykrywanie ścieżki ruchu poprzecznego w narzędzia Azure ATP | Dokumentacja firmy Microsoft
 description: W tym artykule opisano sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki ruchu poprzecznego w narzędzia Azure ATP
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/17/2018
+ms.date: 7/31/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: b09adce3-0fbc-40e3-a53f-31f57fe79ca3
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a529c9751fc993ec0913a54772d46161f39199f6
-ms.sourcegitcommit: 8feb9b65dc0e1de0ace00aca11784e54f9852a15
+ms.openlocfilehash: 955051a93b017af2f1d97bccf32735e9ceaaf19f
+ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39098172"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567852"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -30,9 +30,9 @@ ms.locfileid: "39098172"
 
 ## <a name="step-8-configure-sam-r-required-permissions"></a>Krok 8. Konfigurowanie uprawnień SAM-R wymagane
 
-[Ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md) metoda wykrywania polega na zapytania, które identyfikują administratorami lokalnymi na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, za pomocą konta usługi Azure ATP Service utworzonego w [krok 2. Łączenie z usługą AD](install-atp-step2.md).
+[Ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md) metoda wykrywania polega na zapytania, które identyfikują administratorami lokalnymi na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, przy użyciu usługi Azure ATP konto utworzone w [krok 2. Łączenie z usługą AD](install-atp-step2.md).
  
-Aby upewnić się, Windows klienci i serwery Zezwalaj na konto usługi Azure ATP do wykonania tej operacji SAM-R modyfikację **zasad grupy** należy dodać konto usługi Azure ATP oprócz skonfigurowanego konta, na liście  **Dostęp sieciowy** zasad.
+Upewnij się, Windows klienci i serwery zezwolić na koncie usługi Azure ATP przeprowadzić SAM-R, modyfikację **zasad grupy** należy dodać konto usługi Azure ATP oprócz skonfigurowanego konta, na liście  **Dostęp sieciowy** zasad.
 
 1. Znajdź zasady:
 
@@ -45,7 +45,10 @@ Aby upewnić się, Windows klienci i serwery Zezwalaj na konto usługi Azure ATP
  
   ![Dodaj usługę](./media/samr-add-service.png)
 
-3. **Usługi AATP** (usługa Azure ATP tworzone podczas instalacji) teraz ma odpowiednie uprawnienia, aby wykonać SAMR w środowisku.
+3. **Usługa AATP** (usługa Azure ATP tworzone podczas instalacji) ma teraz uprawnienia wymagane do wykonania SAM-R w środowisku.
+
+> [!NOTE]
+> Przed wymuszeniem nowe zasady, upewnij się, że środowisko pozostanie bezpieczne, bez wywierania wpływu na zgodność swojej aplikacji dzięki umożliwieniu oraz weryfikowanie proponowanych zmian w trybie inspekcji.
 
 Aby uzyskać więcej informacji na SAM-R i tych zasad grupy, zobacz [dostęp sieciowy: ogranicza dostępu klientów zezwolenie na wykonywanie wywołań zdalnych do Menedżera kont zabezpieczeń](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls).
 
