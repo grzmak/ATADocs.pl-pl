@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 1b7e72c3-a538-443f-981c-398ffafa5ab8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 5fb4acaca989922ad894cee4a799378bb912643d
-ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
+ms.openlocfilehash: 75a0c9515f552c0ca18dbe2fd88cf27990fd59e1
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567988"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585004"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -51,8 +51,8 @@ Aby sprawdzić ogólną kondycję obszaru roboczego, kliknij ikonę Centrum kond
 -   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Jeśli istnieje podobny alert usługi Azure ATP nie otworzyć go ponownie. Ale jeśli alert zatrzymuje przez siedem dni, a następnie zostanie zauważony ponownie, zostanie wyświetlony alert ponownie.
 
 -   **Otwórz ponownie**: Możesz ponownie otworzyć problem zamknięte lub pominięte wygląda tak, jakby Otwórz ponownie na osi czasu.
-- 
-- **Usuń**: Z w obrębie osi czasu podejrzanych działań, masz również opcję, aby usunąć problem z kondycją. Jeśli usuniesz alert, jest on usuwany z obszaru roboczego i nie można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
+
+-   **Usuń**: Z w obrębie osi czasu podejrzanych działań, masz również opcję, aby usunąć problem z kondycją. Jeśli usuniesz alert, jest on usuwany z obszaru roboczego i nie można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
 
 
 

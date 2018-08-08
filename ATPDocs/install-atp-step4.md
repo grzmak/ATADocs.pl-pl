@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 51911e39-76c7-4dcd-bc0b-ec6235d0403f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 56b3cea2089c64e2c78361c44d049d6de67764b6
-ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
+ms.openlocfilehash: a6876de4f5cf293d58da08ab4e3a8443e76480f1
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "30202276"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585073"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -49,14 +49,14 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
 > [!NOTE] 
 > Instalowanie bezpośrednio z pliku zip kończy się niepowodzeniem.
 
-2.  Uruchom **setup.exe czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure** i postępuj zgodnie z Kreatora instalacji.
+3.  Uruchom **setup.exe czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure** i postępuj zgodnie z Kreatora instalacji.
 
-3.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
+4.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
      ![Azure język instalacji czujnika zaawansowanej ochrony przed zagrożeniami autonomiczny](media/sensor-install-language.png)
 
 
-4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest kontrolerem domeny, czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zainstalowany, jeśli jest dedykowany serwer, jest zainstalowany czujnik autonomiczny narzędzia Azure ATP. 
+5.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest kontrolerem domeny, czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zainstalowany, jeśli jest dedykowany serwer, jest zainstalowany czujnik autonomiczny narzędzia Azure ATP. 
     
     Na przykład dla usługi Azure ATP czujnik autonomiczny, wyświetlony jest następujący ekran z informacją, że czujnik autonomiczny narzędzia Azure ATP jest zainstalowany na dedykowanym serwerze:
     
@@ -67,7 +67,7 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
     > [!NOTE] 
     > Jeśli kontroler domeny lub dedykowany serwer nie spełnia minimalnych wymagań sprzętowych dla instalacji, zostanie wyświetlone ostrzeżenie. To nie uniemożliwia kliknięcia przycisku **Dalej** ani kontynuowania instalacji. Może to być odpowiedniej opcji instalacji narzędzia Azure ATP w małym, laboratoryjnym środowisku testowym, w którym nie potrzeba tak dużo miejsca, do przechowywania danych. W środowiskach produkcyjnych zdecydowanie zaleca do pracy z narzędzia Azure ATP [planowania pojemności](atp-capacity-planning.md) przewodnika, aby upewnić się, że kontrolery domeny lub dedykowane serwery spełniają niezbędne wymagania.
 
-4.  W obszarze **Konfiguracja czujnika**, wprowadź ścieżkę instalacji i klucz dostępu, który został skopiowany w poprzednim kroku, w zależności od używanego środowiska:
+6.  W obszarze **Konfiguracja czujnika**, wprowadź ścieżkę instalacji i klucz dostępu, który został skopiowany w poprzednim kroku, w zależności od używanego środowiska:
 
     ![Azure ATP autonomicznego czujnik konfiguracji obrazu](media/sensor-install-config.png)
 
@@ -75,7 +75,7 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
 
       - Klucz dostępu: jest pobierana z portalu obszaru roboczego w poprzednim kroku.
     
-5. Kliknij przycisk **Zainstaluj**. Następujące składniki są zainstalowane i skonfigurowane podczas instalacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure:
+7. Kliknij przycisk **Zainstaluj**. Następujące składniki są zainstalowane i skonfigurowane podczas instalacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure:
 
     -   KB 3047154 (tylko dla systemu Windows Server 2012 R2)
 
@@ -86,7 +86,7 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
     -   Usługa Azure service czujnika zaawansowanej ochrony przed zagrożeniami i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
     -   Pakiet redystrybucyjny Microsoft Visual C++ 2013
 
-5.  Po zakończeniu instalacji kliknij przycisk **Uruchom** Otwórz przeglądarkę i zaloguj się do portalu obszaru roboczego usługi Azure ATP.
+8.  Po zakończeniu instalacji kliknij przycisk **Uruchom** Otwórz przeglądarkę i zaloguj się do portalu obszaru roboczego usługi Azure ATP.
 
 
 >[!div class="step-by-step"]

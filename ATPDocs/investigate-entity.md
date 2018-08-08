@@ -2,10 +2,10 @@
 title: Jak badać użytkownicy i komputery za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
 description: Zawiera opis sposobu badania podejrzanych działań wykonywanych przez użytkowników, jednostki, komputery lub urządzenia przy użyciu usługi Azure Advanced Threat Protection (ATP)
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 5/6/2018
+ms.date: 8/6/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 43e57f87-ca85-4922-8ed0-9830139fe7cb
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 32f5ab58ba9e17d36761ce5b99f4711d0e390ff7
-ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
+ms.openlocfilehash: 722ef73fe2c039a567b4f3d807f97e4ede16dc67
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567869"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585224"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -34,7 +34,7 @@ Profilu jednostki zawiera ze stroną kompleksowej jednostki przeznaczone do bada
 
 Aby uzyskać dostęp do strony profilu jednostki, kliknij nazwę jednostki, takie jak nazwa użytkownika, na osi czasu podejrzanych działań. Widać również minimalnej wersji na stronie podejrzanych działań profilu jednostki, ustawiając kursor nad nazwa jednostki.
 
-Profilu jednostki pozwala wyświetlić jednostki działania, wyświetlić danych katalogowych oraz ścieżki ruchu poprzecznego dla jednostki. Aby uzyskać więcej informacji, zobacz [badanie profile jednostek ](entity-profiles.md).
+Profilu jednostki pozwala wyświetlić jednostki działania, wyświetlić danych katalogowych oraz ścieżki ruchu poprzecznego dla jednostki. Aby uzyskać więcej informacji, zobacz [Opis profilów jednostki ](entity-profiles.md).
 
 ## <a name="check-entity-tags"></a>Wybierz tagi jednostki
 
@@ -49,7 +49,7 @@ Narzędzie Azure ATP ściąga tagi z usługi Active Directory, aby zapewnić poj
 
 ## <a name="look-at-the-user-account-control-flags"></a>Przyjrzyj się flagi kontroli konta użytkownika
 
-Flagi kontroli konta użytkownika, również są importowane z usługi Active Directory. Narzędzie Azure ATP obejmuje 10 flagi, które zostaną zastosowane na badania: 
+Flagi kontroli konta użytkownika, również są importowane z usługi Active Directory. Danych jednostki w usłudze Azure ATP obejmuje 10 flagi, które zostaną zastosowane na badania: 
 - Hasło nigdy nie wygasa
 - Zaufany do delegowania
 - Wymagana karta inteligentna
@@ -61,7 +61,7 @@ Flagi kontroli konta użytkownika, również są importowane z usługi Active Di
 - Niewymagane w uwierzytelnianiu wstępnym protokołu Kerberos
 - Konto jest wyłączone 
 
-Narzędzie Azure ATP poinformuje Cię o tym, jeśli te flagi są lub wyłączyć w usłudze Azure Active Directory. Kolorowe ikony wskazują, czy flaga jest włączona w usłudze Active Directory; w przykładzie poniżej, tylko **Konto wyłączone** znajduje się na usłudze Active Directory.
+Narzędzie Azure ATP poinformuje Cię o tym, jeśli te flagi są lub wyłączyć w usłudze Azure Active Directory. Kolorowymi ikonami i odpowiedniego przełącznika wskazują stan każdego flagi. W przykładzie poniżej, tylko **hasło nigdy nie wygasa** znajduje się na usłudze Active Directory.
 
  ![flagi kontroli konta użytkownika](./media/user-access-flags.png)
 

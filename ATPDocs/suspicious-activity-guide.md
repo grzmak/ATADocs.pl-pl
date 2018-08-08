@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4e6a7d90ad5670b3d1c01ba70d7b5a81e8808b5e
-ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
+ms.openlocfilehash: 4667e13af4e86a18d1b50a2ea575f9c749f0c541
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39335881"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585241"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -101,7 +101,7 @@ Istnieją trzy typy wykrywania:
 
 **Badanie**
 
-Najpierw sprawdź opis alertu, aby zobaczyć, który z powyższych trzech typów wykrywania są zajmujących. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
+Najpierw sprawdź opis alertu, aby zobaczyć, z trzech typów wykrywania wymienione powyżej są zajmujących się. Aby uzyskać więcej informacji Pobierz arkusz kalkulacyjny programu Excel.
 
 1.  Złośliwe oprogramowanie Skeleton Key — możesz sprawdzić, jeśli złośliwe oprogramowanie Skeleton Key ma wpływ na kontrolerach domeny przy użyciu [skanera przygotowanego przez zespół usługi Azure ATP](https://gallery.technet.microsoft.com/Aorato-Skeleton-Key-24e46b73). Jeśli skaner wykryje złośliwe oprogramowanie na 1 lub więcej kontrolerów domeny, jest prawdziwie dodatni.
 
@@ -191,7 +191,7 @@ Pass--Ticket to technika ruchu poprzecznego, w którym osoby atakujące dokonuj�
 Osoby atakujące przy użyciu uprawnień administratora domeny może naruszyć [konta krbtgt w DOMENIE](https://technet.microsoft.com/library/dn745899(v=ws.11).aspx#Sec_KRBTGT). Przy użyciu konta krbtgt w DOMENIE, można utworzyć biletu protokołu Kerberos udzielania biletu (TGT) zapewniający autoryzację do dowolnego zasobu i ustawienia wygasania biletu do dowolnego dowolnego czasu. Tego BILETU fałszywych nosi nazwę "goldentTicket" i pozwala osobom atakującym na uzyskanie stałego dostępu do sieci.
 
 W tym wykrywanie alert jest wyzwalany, gdy bilet protokołu Kerberos przyznania biletu jest używany dla więcej niż dozwolony czas dozwolone określonych w [maksymalny okres istnienia biletu użytkownika](https://technet.microsoft.com/library/jj852169(v=ws.11).aspx), to **anomalii czasu**atak metodą złotego biletu lub nieistniejące konta, to **nieistniejące konto** atak metodą złotego biletu.
-zasady zabezpieczeń.
+
 
 **Badanie**
 
@@ -275,21 +275,6 @@ Zweryfikuj następujące uprawnienia:
 Aby uzyskać więcej informacji, zobacz [uprawnienia Grant Active Directory Domain Services dla synchronizacji profilów w programie SharePoint Server 2013](https://technet.microsoft.com/library/hh296982.aspx).
 Możesz wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
 
-
-## <a name="password-exposed-in-cleartext-report"></a>Hasła ujawnione w zwykłym tekście raportu
-
-**Opis**
-
-Niektóre usługi wysyłają poświadczenia kont w postaci zwykłego tekstu. Można to zrobić nawet dla kont użytkowników. Osoby atakujące monitorujące ruch sieciowy może przechwytywać i korzystać z nich te poświadczenia do złośliwych celów. 
-
-**Badanie**
-
-Kliknij na stronie raportów, a pobieranie hasła ujawnione w zwykłym tekście raportu. Zobacz, w arkuszu kalkulacyjnym programu Excel narażonych kontach.
-Zazwyczaj jest skrypt lub starsza wersja aplikacji na komputerach źródłowych, która korzysta z prostego powiązania LDAP.
-
-**Korygowanie**
-
-Sprawdź konfigurację komputerów źródłowych i upewnij się, że nie korzystają z prostych powiązań LDAP. Zamiast prostych powiązań LDAP można Użyj warstwy LDAP SALS lub protokołu LDAPS.
 
 ## <a name="privilege-escalation-using-forged-authorization-data"></a>Eskalacja uprawnień przy użyciu sfałszowanych danych autoryzacji
 

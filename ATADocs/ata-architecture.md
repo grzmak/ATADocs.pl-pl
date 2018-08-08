@@ -13,14 +13,14 @@ ms.technology: ''
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: b620e5b6203d387de389cfb857c2dd6125239ed9
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: fa2b5fa5da1d73f90cac6937bef71fd239e498fc
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010061"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585056"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -92,6 +92,7 @@ Centrum usługi ATA odbiera przeanalizowany ruch z bramy usługi ATA i uproszczo
 |Baza danych|Usługa ATA korzysta z bazy danych MongoDB do przechowywania wszystkich danych w systemie:<br /><br />— działania w sieci<br />— działania związane ze zdarzeniami<br />— unikatowe jednostki<br />— podejrzane działania<br />— konfiguracja usługi ATA|
 |Detektory|Detektory używają algorytmów uczenia maszynowego i reguł deterministycznych do znajdowania podejrzanych działań i nietypowego zachowania użytkowników w sieci.|
 |Konsola usługi ATA|Konsola usługi ATA służy do konfigurowania usługi ATA i monitorowania podejrzanych działań wykrytych przez usługę ATA w sieci użytkownika. Konsola usługi ATA jest niezależna od centrum usługi ATA i będzie działać nawet wtedy, gdy centrum usługi ATA zostanie zatrzymane, pod warunkiem, że będzie mogła komunikować się z bazą danych.|
+
 Podczas podejmowania decyzji o liczbie centrów usługi ATA, które mają zostać wdrożone w sieci, należy wziąć pod uwagę następujące kryteria:
 
 -   Jedno centrum usługi ATA może monitorować pojedynczy las usługi Active Directory. Jeśli masz wiele lasów usługi Active Directory, na każdy las usługi Active Directory potrzebujesz co najmniej jednego centrum usługi ATA.
@@ -134,16 +135,16 @@ Następujące funkcje działają inaczej w zależności od tego, czy jest urucho
 
 -   **Kandydat synchronizatora domeny**<br>
 Brama synchronizatora domeny jest odpowiedzialna za aktywne synchronizowanie wszystkich jednostek z konkretnej domeny usługi Active Directory (podobnie do mechanizmu używanego przez kontrolery domeny w przypadku replikacji). Z listy kandydatów wybierana jest losowo jedna brama, która będzie służyć jako synchronizator domeny. <br><br>
-Jeśli synchronizator będzie w trybie offline przez ponad 30 minut, zamiast niego zostanie wybrany inny kandydat. Nie jest dostępny dla określonej domeny Synchronizatora domeny, usługa ATA jest mogła aktywnie synchronizować jednostek i ich zmian, jednak usługa ATA będzie reagować i odbierać nowe jednostki po ich wykryciu w monitorowanym ruchu. 
-<br>Jeśli nie ma dostępnego Synchronizatora domeny, a następnie wyszukaj jednostki, która nie ma żadnych ruch związany z jej, nie wyszukiwania są wyświetlane wyniki.<br><br>
+Jeśli synchronizator będzie w trybie offline przez ponad 30 minut, zamiast niego zostanie wybrany inny kandydat. Żadnego Synchronizatora domeny jest dostępny dla określonej domeny, usługa ATA jest mogła aktywnie synchronizować jednostek i ich zmian, jednak usługa ATA będzie reagować i odbierać nowe jednostki po ich wykryciu w monitorowanym ruchu. 
+<br>Jeśli żadnego Synchronizatora domeny jest dostępny i wyszukiwać jednostkę, które nie mają cały ruch odnoszących się do niego, są wyświetlane żadne wyniki wyszukiwania.<br><br>
 Domyślnie wszystkie bramy usługi ATA są kandydatami synchronizatora.<br><br>
 Ponieważ wszystkie uproszczone bramy usługi ATA są najprawdopodobniej wdrażane w oddziałach i małych kontrolerach domeny, nie są domyślnymi kandydatami synchronizatora.
 
 
 -   **Ograniczenia zasobów**<br>
-Brama ATA Lightweight Gateway zawiera składnik monitorowania, które ocenia dostępne moc obliczeniową i pamięć na kontrolerze domeny, na którym jest uruchomiony. Proces monitorowania jest wykonywany co 10 sekund i dynamicznie aktualizuje przydział użycia procesora CPU i pamięci w procesie uproszczonej bramy usługi ATA, aby upewnić się, że w każdym momencie kontroler domeny ma co najmniej 15% wolnej mocy obliczeniowej i zasobów pamięci.<br><br>
+Uproszczona brama usługi ATA zawiera składnik monitorowania, który ocenia dostępne moc obliczeniową i pamięć na kontrolerze domeny, na którym jest uruchomiony. Proces monitorowania jest wykonywany co 10 sekund i dynamicznie aktualizuje przydział użycia procesora CPU i pamięci w procesie uproszczonej bramy usługi ATA, aby upewnić się, że w każdym momencie kontroler domeny ma co najmniej 15% wolnej mocy obliczeniowej i zasobów pamięci.<br><br>
 Niezależnie od tego, co się dzieje w kontrolerze domeny, proces ten zawsze zwalnia zasoby, aby upewnić się, że podstawowa funkcjonalność kontrolera domeny nie zostanie zaburzona.<br><br>
-Powoduje to bramy ATA Lightweight Gateway brakować zasobów, tylko część ruchu będzie monitorowana, a alert monitorowania "Opuszczono ruch sieciowy dublowaniu portów" pojawia się na stronie kondycji.
+Jeśli powoduje to, że bramy ATA Lightweight Gateway brakować zasobów, tylko część ruchu będzie monitorowana, a alert monitorowania "Opuszczono ruch po dublowaniu portów sieciowych" pojawia się na stronie kondycji.
 
 W poniższej tabeli zawarto przykład kontrolera domeny z wystarczającą ilością zasobów obliczeniowych, która umożliwia zastosowanie większego limitu przydziału niż obecnie wymagany, dzięki czemu cały ruch jest monitorowany:
 
@@ -163,12 +164,12 @@ Jeśli usługa Active Directory potrzebuje więcej mocy obliczeniowej, przydzia�
 
 
 ## <a name="your-network-components"></a>Składniki Twojej sieci
-Aby pracować z usługą ATA, upewnij się sprawdzić, czy następujące składniki są skonfigurowane.
+Aby można było pracować z usługą ATA, upewnij się sprawdzić, czy następujące składniki są skonfigurowane.
 
 ### <a name="port-mirroring"></a>Dublowanie portów
-Jeśli używasz bram usługi ATA, należy skonfigurować dublowanie portów dla kontrolerów domeny, które są monitorowane oraz ustawić bramę usługi ATA jako miejsce docelowe za pomocą przełączników fizycznych lub wirtualnych. Innym rozwiązaniem jest użycie funkcji podsłuchu sieci. Usługa ATA działa, jeśli niektóre, ale nie wszystkie kontrolery domeny są monitorowane, ale wykryć są mniej skuteczne.
+Jeśli używasz bram usługi ATA, musisz skonfigurować dublowanie portów dla kontrolerów domeny, które są monitorowane oraz ustawić bramę usługi ATA jako miejsce docelowe za pomocą przełączników fizycznych lub wirtualnych. Innym rozwiązaniem jest użycie funkcji podsłuchu sieci. Usługa ATA działa, gdy niektóre, ale nie wszystkie kontrolery domeny są monitorowane, ale wykrywania są mniej skuteczne.
 
-Choć funkcja dublowania portów dubluje całość ruchu sieciowego kontrolera domeny do bramy usługi ATA, tylko niewielką część tego ruchu jest następnie wysyłana, kompresji do Centrum usługi ATA do analizy.
+Choć funkcja dublowania portów dubluje całość ruchu sieciowego kontrolera domeny do bramy usługi ATA, tylko niewielką część tego ruchu jest następnie wysyłana, kompresji do Centrum usługi ATA w celu analizy.
 
 Kontrolery domeny i bramy usługi ATA mogą być fizyczne lub wirtualne. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
 
@@ -178,10 +179,10 @@ Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków 
 
 -   Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM <br>Skonfiguruj system SIEM do przekazywania określonych zdarzeń systemu Windows do usługi ATA. Usługa ATA obsługuje wielu dostawców systemów SIEM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie zbierania zdarzeń](configure-event-collection.md).
 
--   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń usługi ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń systemu Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding). Dotyczy to tylko fizycznych bram usługi ATA — nie do bramy ATA Lightweight Gateway.
+-   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń usługi ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding). Dotyczy to tylko fizycznych bram usługi ATA, aby nie uproszczonej bramy usługi ATA.
 
-## <a name="related-videos"></a>Powiązane pliki wideo
-- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+## <a name="related-videos"></a>Pokrewne wideo
+- [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
 
 
 ## <a name="see-also"></a>Zobacz też

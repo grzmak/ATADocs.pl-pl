@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 2c8f67d0c8d9020eb0e7ae16e8410db473ace044
-ms.sourcegitcommit: 759e99f670c42c2dd60d07b2200d3de01ddf6055
+ms.openlocfilehash: 755450654d870ec0235232e08194c1094c22f030
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "30010248"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585092"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -56,15 +56,15 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
 2.  W wierszu polecenia wpisz ciąg *gpedit.msc*.
 3.  Rozwiń węzeł **Konfiguracja komputera > Szablony administracyjne > Składniki systemu Windows > Przesyłanie dalej zdarzeń**
 
- ![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
+![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
 
 4.  Kliknij dwukrotnie **Konfiguruj docelowego Menedżera subskrypcji**.
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
-    3.  W obszarze **SubscriptionManagers**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server=http://<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC,Odśwież=10* (For example: serwer=http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Odśwież=10)
+    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: * Server =`http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` (na przykład: Server =`http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
  
-   ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
+    ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
    
     5.  Kliknij przycisk **OK**.
     6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
@@ -75,25 +75,25 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
 2.  Otwórz **Podgląd zdarzeń**. 
 3.  Kliknij prawym przyciskiem myszy **subskrypcje** i wybierz **Utwórz subskrypcję**. 
 
-   1.   Wprowadź nazwę i opis subskrypcji. 
-   2.   Aby uzyskać **Dziennik docelowy**, upewnij się, że **zdarzenia przesyłane dalej** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
-   3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
+    1.  Wprowadź nazwę i opis subskrypcji. 
+    2.  Aby uzyskać **Dziennik docelowy**, upewnij się, że **zdarzenia przesyłane dalej** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
+    3.  Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
         2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
-       
-        ![Obraz Podglądu zdarzeń](media/wef3 event viewer.png)
-   
-        
+ 
+    ![Obraz Podglądu zdarzeń](media/wef3 event viewer.png)
+ 
+ 
         3.  Kliknij przycisk **OK**.
-   4.   Kliknij przycisk **Wybierz zdarzenia**.
+     4. Kliknij przycisk **Wybierz zdarzenia**.
 
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
         2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w następującym przykładzie.
 
- ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
+    ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
 
-   5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
-   6.   Po kilku minutach sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w bramie usługi ATA.
+    5.  Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
+    6.  Po kilku minutach sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w bramie usługi ATA.
 
 
 Aby uzyskać więcej informacji, zobacz: [Konfigurowanie komputerów do przekazywania i zbierania zdarzeń](https://technet.microsoft.com/library/cc748890)

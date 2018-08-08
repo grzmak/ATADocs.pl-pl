@@ -43,7 +43,8 @@
 ## [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
 ## [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md)
 ## [Badanie ścieżek penetracji sieci za pomocą Zaawansowanej ochrony przed zagrożeniami na platformie Azure](use-case-lateral-movement-path.md)
-## [Badanie jednostek](entity-profiles.md)
+## [Badanie jednostek](investigate-entity.md)
+## [Opis profilów jednostki](entity-profiles.md)
 # Rozwiązywanie problemów
 ## [Rozwiązywanie typowych problemów](troubleshooting-atp-known-issues.md)
 ## [Pomoc techniczna i informacje](atp-support.md)

@@ -13,14 +13,14 @@ ms.technology: ''
 ms.assetid: bff20bf7-8b53-49da-81e5-b818a1c3b24e
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a77e7e86d635d80ee09338843c42e003220133a0
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: f415fabe71512a5f9948a824d04e7bfece086ba4
+ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010163"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39585039"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -41,8 +41,9 @@ Usługa ATA może generować powiadomienia po wykryciu podejrzanych działań. A
     |---------|---------------|---------|
     |Punkt końcowy serwera SMTP (wymagane)|Wprowadź nazwę FQDN serwera SMTP i opcjonalnie zmień numer portu (domyślnie 25).|Przykład:<br />smtp.contoso.com|
     |Protokół SSL|Włącz protokół SSL, jeśli serwer SMTP wymaga protokołu SSL. **Uwaga:** włączenie protokołu SSL, należy również zmienić numer portu.|Ta opcja jest domyślnie wyłączona.|
-    |Uwierzytelnianie|Tę opcję należy włączyć, jeśli serwer SMTP wymaga uwierzytelniania. **Uwaga:** włączenia uwierzytelniania, należy podać nazwę użytkownika i hasło konta e-mail, które ma uprawnienia do łączenia się z serwerem SMTP.|Ta opcja jest domyślnie wyłączona.|
+    |Uwierzytelnianie|Tę opcję należy włączyć, jeśli serwer SMTP wymaga uwierzytelniania. **Uwaga:** po włączeniu uwierzytelniania, należy podać nazwę użytkownika i hasło konta e-mail, które ma uprawnienia do łączenia się z serwerem SMTP.|Ta opcja jest domyślnie wyłączona.|
     |Wyślij z (wymagane)|Wprowadź adres e-mail, z którego wiadomości e-mail będą wysyłane.|Przykład:<br />ATA@contoso.com|
+    
     ![Ilustracja ustawień serwera poczty e-mail usługi ATA](media/ata-email-server.png)
 
 ## <a name="provide-ata-with-your-syslog-server-settings"></a>Udostępnianie usłudze ATA ustawień serwera Syslog
@@ -71,7 +72,7 @@ W przypadku wykrycia podejrzanych działań usługa ATA może generować powiado
     |Pole|Opis|
     |---------|---------------|
     |Punkt końcowy serwera Syslog|Wprowadź nazwę FQDN serwera Syslog i opcjonalnie zmień numer portu (domyślnie 514).|
-    |Transport|UDP, TCP lub TLS (zabezpieczony protokół Syslog)|
+    |Transport|Może być UDP, TCP lub TLS (zabezpieczony protokół Syslog)|
     |Format|Format używany przez usługę ATA do wysyłania zdarzeń do serwera rozwiązania SIEM — RFC 5424 lub RFC 3164.|
 
  ![Obraz ustawień serwera Syslog usługi ATA](media/ata-syslog-server-settings.png)
