@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 8ae459ac-9fca-4923-9a1a-dc10d5c50b29
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 58e3b0d04b196f0c49b6e146952c1819c8413ee3
-ms.sourcegitcommit: eebf1156aaae199b6aaa7e431cd6372e572b1e9f
+ms.openlocfilehash: 281db5cfee9366babfcdf30e14a80122aa6d04c8
+ms.sourcegitcommit: 7ab273d1a4c05b457ee02f1631f642346d687b1e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "29977577"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39625612"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -30,7 +30,7 @@ Użyj następujących zasobów, Dowiedz się więcej o, wdrażania i obsługi us
 
 |Aby to zrobić...|...korzystać to:|
 |----|----|
-|Zobacz dokumentację najbardziej popularne|Odczyt stron pięć:|- [Co to jest Zaawansowana ochrona przed zagrożeniami dla platformy Azure?](what-is-atp.md)<br>- [Wymagania wstępne usługi Azure ATP](atp-prerequisites.md)<br>- [Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)<br>- [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)<br>- [Tworzenie obszaru roboczego](install-atp-step1.md)|
+|Zobacz dokumentację najbardziej popularne|Odczyt stron pięć:<br>- [Co to jest Zaawansowana ochrona przed zagrożeniami dla platformy Azure?](what-is-atp.md)<br>- [Wymagania wstępne usługi Azure ATP](atp-prerequisites.md)<br>- [Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)<br>- [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)<br>- [Tworzenie obszaru roboczego](install-atp-step1.md)|
 |Skontaktuj się z zespołem produktu i uczniami|Odwiedź stronę [społeczności technicznej](https://techcommunity.microsoft.com/t5/Azure-Advanced-Threat-Protection/bd-p/AzureAdvancedThreatProtection) dla platformy Azure Zaawansowana ochrona przed zagrożeniami.|
 |Sprawdź informacje o subskrypcji i Uzyskaj listę, które funkcje są obsługiwane|Zobacz [informacji o subskrypcji](https://www.microsoft.com/cloud-platform/azure-information-protection-pricing) i [lista funkcji](https://www.microsoft.com/cloud-platform/azure-information-protection-features) z witryny sieci Web usługi Azure Advanced Threat Protection.|
 
