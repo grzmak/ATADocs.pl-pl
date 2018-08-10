@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/1/2018
+ms.date: 8/9/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 6a51832f3dbff55ed2ad396307a487ad607b3a2b
-ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
+ms.openlocfilehash: 04284a622aec1985e363bac7f0215cfd031d9854
+ms.sourcegitcommit: 1de2b047c0e9f92a106169f7634c480f694baf10
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567665"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39723416"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -215,8 +215,8 @@ W poniższej tabeli wymieniono niezbędne porty, których skonfigurowanie na kar
 |Netlogon (SAM-R protokół SMB, CIFS)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 |Czas systemu Windows|UDP|123|Kontrolery domeny|Wychodzące|
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
-|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Oba|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Oba|
 |Protokół SSL|TCP|443|Centrum usługi ATA|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 
@@ -282,8 +282,8 @@ W poniższej tabeli wymieniono niezbędne porty wymagane przez uproszczoną bram
 |Protokół|Transport|Port|Do/z|Kierunek|
 |------------|-------------|--------|-----------|-------------|
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
-|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Oba|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Oba|
 |Protokół SSL|TCP|443|Centrum usługi ATA|Wychodzące|
 |Syslog (opcjonalnie)|UDP|514|Serwer SIEM|Przychodzące|
 |Netlogon (SAM-R protokół SMB, CIFS)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|

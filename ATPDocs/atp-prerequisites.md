@@ -2,10 +2,10 @@
 title: Wymagania wstępne usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
 description: Opisuje wymagania dotyczące pomyślnego wdrożenia usługi Azure ATP w danym środowisku
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 6/7/2018
+ms.date: 8/9/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 070062cccb26bd99be48614bf8d40bd781d7b240
-ms.sourcegitcommit: 37b9ff946aad31eed1c6eab5d55d44fce167e20a
+ms.openlocfilehash: 0a7cd9825f5b921b9dbe6cffe54e82d3249f10b7
+ms.sourcegitcommit: 583f2f144384a6a0cb9875d5f2b0fef7e7e3735d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827489"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39723280"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -143,11 +143,11 @@ Poniższej tabeli wymieniono niezbędne porty, których wymaga usługi Azure ATP
 |Netlogon (SAM-R protokół SMB, CIFS)|TCP i UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
 |Czas systemu Windows|UDP|123|Kontrolery domeny|Wychodzące|
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
-|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Oba|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Oba|
 |Syslog (opcjonalnie)|TCP/UDP|514, w zależności od konfiguracji|Serwer SIEM|Przychodzące|
 |USŁUGI RADIUS|UDP|1813|USŁUGI RADIUS|Przychodzące|
-|RDP|TCP|3389|Wszystkie urządzenia w sieci|Wychodzące|
+|Protokołu TLS dla protokołu RDP|TCP|3389|Wszystkie urządzenia w sieci|Oba|
 
 > [!NOTE]
 > - Przy użyciu konta użytkownika usługi katalogu, czujnika zapytania punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowanie do sieci), aby można było tworzyć [wykres ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-atp-step8-samr.md).
@@ -203,11 +203,11 @@ Poniższej tabeli wymieniono niezbędne porty, których wymaga czujnika zaawanso
 |**Wewnętrznych portów**|||||
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
 |NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|Netlogon (SAM-R protokół SMB, CIFS)|TCP/UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
-|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Wychodzące|
+|Netlogon (SAM-R protokół SMB, CIFS)|TCP/UDP|445|Wszystkie urządzenia w sieci|Oba|
+|NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Oba|
 |Syslog (opcjonalnie)|TCP/UDP|514, w zależności od konfiguracji|Serwer SIEM|Przychodzące|
 |USŁUGI RADIUS|UDP|1813|USŁUGI RADIUS|Przychodzące|
-|Protokół TLS w celu portu RDP|TCP|3389|Wszystkie urządzenia w sieci|Wychodzące|
+|Protokół TLS w celu portu RDP|TCP|3389|Wszystkie urządzenia w sieci|Oba|
 
 > [!NOTE]
 > - Przy użyciu konta użytkownika usługi katalogu, czujnika zapytania punktów końcowych w organizacji dla administratorów lokalnych przy użyciu SAM-R (logowanie do sieci), aby można było tworzyć [wykres ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md). Aby uzyskać więcej informacji, zobacz [SAM-R skonfigurować wymagane uprawnienia](install-atp-step8-samr.md).
