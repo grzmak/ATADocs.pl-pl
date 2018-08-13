@@ -14,13 +14,13 @@ ms.assetid: 14cb7513-5dc8-49cb-b3e0-94f469c443dd
 ms.reviewer: bennyl
 ms.suite: ems
 ms.openlocfilehash: 0b4d783d55d38d2a50c651ba47c584fed8bcee50
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.sourcegitcommit: 1de2b047c0e9f92a106169f7634c480f694baf10
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 08/13/2018
 ms.locfileid: "30010146"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -28,11 +28,11 @@ ms.locfileid: "30010146"
 Usługa ATA może wysyłać powiadomienia w przypadku wykrycia podejrzanych działań za pośrednictwem poczty e-mail lub przy użyciu funkcji przekazywania zdarzeń usługi ATA, przekazując zdarzenia do serwera SIEM/Syslog. Zanim określisz, które powiadomienia chcesz otrzymywać, musisz [skonfigurować serwer poczty e-mail i serwer Syslog](setting-syslog-email-server-settings.md).
 
 > [!NOTE]
-> -   Powiadomienia e-mail zawierają łącza użytkownika bezpośrednio do podejrzanego działania, które zostało wykryte. Część linku zawierająca nazwę hosta jest pobierana z ustawienia adresu URL konsoli usługi ATA na stronie centrum usługi ATA. Domyślnie adres URL konsoli usługi ATA jest adresem IP wybranym podczas instalacji centrum usługi ATA. Jeśli chcesz skonfigurować powiadomienia e-mail, zalecane jest użycie nazwy FQDN jako adresu URL konsoli usługi ATA.
+> -   Powiadomienia e-mail zawierają link umożliwiający przejście użytkownika bezpośrednio do podejrzanego działania, które zostało wykryte. Część linku zawierająca nazwę hosta jest pobierana z ustawienia adresu URL konsoli usługi ATA na stronie centrum usługi ATA. Domyślnie adres URL konsoli usługi ATA jest adresem IP wybranym podczas instalacji centrum usługi ATA. Jeśli zamierzasz skonfigurować powiadomienia e-mail, zalecane jest użycie nazwy FQDN jako adresu URL konsoli usługi ATA.
 > -   Powiadomienia są wysyłane z centrum usługi ATA do serwera SMTP i serwera Syslog.
 
 
-Aby otrzymywać powiadomienia, należy ustawić następujące parametry:
+Aby otrzymywać powiadomienia, ustaw następujące parametry:
 
 
 1. Na pasku narzędzi w konsoli usługi ATA wybierz opcję ustawień, a następnie wybierz pozycję **Konfiguracja**.
@@ -43,7 +43,7 @@ Aby otrzymywać powiadomienia, należy ustawić następujące parametry:
 3. W obszarze **Powiadomienia pocztowe** określ powiadomienia, które mają być wysyłane za pośrednictwem poczty e-mail — nowe podejrzane działania i nowe problemy dotyczące kondycji. Dla podejrzanych działań i dla alertów dotyczących kondycji można ustawić osobne adresy e-mail, aby na przykład powiadomienia o podejrzanych działaniach były wysyłane do analityka ds. zabezpieczeń, a powiadomienia o alertach dotyczących problemów z kondycją — do administratora IT.
 >   [!NOTE]
 >   Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
-3. W obszarze **powiadomienia Syslog**, określ powiadomienia, które mają być wysyłane do serwera Syslog — nowe podejrzane działania, zaktualizowane podejrzanych działań i nowe problemy kondycji.
+3. W obszarze **powiadomienia Syslog**, określ powiadomienia, które mają być wysyłane do serwera Syslog — nowe podejrzane działania, zaktualizowane podejrzane działania i nowe problemy dotyczące kondycji.
 5. Kliknij polecenie **Zapisz**.
 
 ![Obraz ustawień powiadomień pocztowych usługi ATA](media/ata-mail-notification-settings.png)
