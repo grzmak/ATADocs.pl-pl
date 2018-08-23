@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: effca0f2-fcae-4fca-92c1-c37306decf84
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 8e7af3846d31031b645c65c7550b696fe4738e5d
-ms.sourcegitcommit: a9b8bc26d3cb5645f21a68dc192b4acef8f54895
+ms.openlocfilehash: a6b4f668533ab3169c10cfc9b194b8bd392db6d1
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/16/2018
-ms.locfileid: "39064070"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734758"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -31,14 +31,14 @@ Narzędzie Azure ATP oferuje oparte na rolach zabezpieczeń, aby chronić dane z
 
 [!INCLUDE [Handle personal data](../includes/gdpr-intro-sentence.md)]
 
-Grupy ról umożliwiają zarządzanie dostępem do usługi Azure ATP. Korzystając z grup ról, można segregować obowiązki w obrębie zespołu zabezpieczeń i udzielać uprawnień dostępu w minimalnym zakresie potrzebnym użytkownikom do wykonania zadań. W tym artykule opisano zarządzanie dostępem i autoryzacji ról usługi Azure ATP oraz ułatwia rozpoczęcie pracy z grupami ról w usłudze ATP.
+Grupy ról umożliwiają zarządzanie dostępem do usługi Azure ATP. Korzystając z grup ról, można segregować obowiązki w obrębie zespołu zabezpieczeń i udzielać uprawnień dostępu w minimalnym zakresie potrzebnym użytkownikom do wykonania zadań. W tym artykule opisano zarządzanie dostępem i autoryzacji ról usługi Azure ATP, ułatwia rozpoczęcie pracy z grupami ról w usłudze ATP.
 
 > [!NOTE]
 > Wszelkie administratorem globalnym lub administratorem zabezpieczeń w ramach dzierżawcy usługi Azure Active Directory jest automatycznie administratorem usługi Azure ATP.
 
-## <a name="accessing-the-workspace-management-portal"></a>Uzyskiwanie dostępu do portalu zarządzania obszarami roboczymi
+## <a name="accessing-the-management-portal"></a>Uzyskiwanie dostępu do portalu zarządzania
 
-Dostęp do portalu zarządzania obszarami roboczymi (portal.atp.azure.com) można wykonywać tylko przez użytkownika usługi Azure AD z rolą katalogu administratora globalnego lub administratora zabezpieczeń. Po wprowadzeniu portalu, można utworzyć różne obszary robocze. Dla każdego obszaru roboczego usługi Azure ATP tworzy trzy grupy zabezpieczeń w swojej dzierżawie usługi Azure Active Directory: Administratorzy, użytkownicy, przeglądarki. 
+Dostęp do portalu zarządzania (portal.atp.azure.com) można wykonywać tylko przez użytkownika usługi Azure AD z rolą katalogu administratora globalnego lub administratora zabezpieczeń. Po wprowadzeniu portalu, można utworzyć obszaru roboczego. Usługa Azure ATP tworzy trzy grupy zabezpieczeń w swojej dzierżawie usługi Azure Active Directory: Administratorzy, użytkownicy, przeglądarki. 
 
 > [!NOTE]
 > Dostęp do portalu obszaru roboczego usługi Azure ATP jest udzielone tylko do użytkowników w grupach zabezpieczeń usługi Azure AD dla tego obszaru roboczego, a administratorzy globalni i Administratorzy zabezpieczeń.

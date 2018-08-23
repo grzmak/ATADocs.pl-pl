@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/24/2018
+ms.date: 8/20/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4667e13af4e86a18d1b50a2ea575f9c749f0c541
-ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
+ms.openlocfilehash: 4aa58228ea23f58ea37b10f941467e9dc076992f
+ms.sourcegitcommit: f534a318be71b840aecb6a84744d8cd1f251a7aa
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39585241"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41734842"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -200,7 +200,7 @@ W tym wykrywanie alert jest wyzwalany, gdy bilet protokołu Kerberos przyznania 
    2.   Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zaangażowane w tym alercie maszynę wirtualną? Jeśli tak, on niedawno wychodzi z zapisanego stanu? Jeśli tak, zamknij ten alert.
    3.   Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
 
-- **Nieistniejące konto** (wersja zapoznawcza)
+- **Nieistniejące konta**
    1.   Należy odpowiedzieć na następujące pytania:
          - Czy użytkownik jest użytkownikiem domeny znane i prawidłowe? Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
          - Użytkownik zostało ostatnio dodane? Jeśli tak, zamknij ten alert, zmiana może nie zostały jeszcze zsynchronizowane.
@@ -454,7 +454,7 @@ W tym wykrywanie alert jest wyzwalany, gdy wystąpiło wiele błędów uwierzyte
 
 [Złożone, długie hasła](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) zapewnić wymagany pierwszy poziom zabezpieczeń przed atakami siłowymi.
 
-## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack---preview"></a>Podejrzane podwyższania poziomu kontrolera domeny (potencjalny atak DCShadow) — wersja zapoznawcza
+## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack---new"></a>Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow) — nowe
 
 **Opis**
 
@@ -489,10 +489,11 @@ Aby uzyskać więcej informacji, zobacz [uprawnienia Grant Active Directory Doma
 
 Możesz wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
  
+> [!NOTE]
+> Wykrywanie podwyższania poziomu (potencjalny atak DCShadow) kontrolera domeny podejrzane są obsługiwane przez tylko czujników zaawansowanej ochrony przed zagrożeniami. 
 
 
-
-## <a name="suspicious-replication-request-potential-dcshadow-attack---preview"></a>Podejrzana replikacja żądania (potencjalny atak DCShadow) — wersja zapoznawcza
+## <a name="suspicious-replication-request-potential-dcshadow-attack---new"></a>Podejrzana replikacja żądania (potencjalny atak DCShadow) — nowe
 
 **Opis** 
 
@@ -519,6 +520,9 @@ Sprawdź, kto w organizacji ma następujące uprawnienia:
 
 Aby to zrobić, można wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsoft.com/pfesweplat/2013/05/13/take-control-over-ad-permissions-and-the-ad-acl-scanner-tool/) lub utworzyć skrypt programu Windows PowerShell, aby określić, kto w domenie ma te uprawnienia.
 
+> [!NOTE]
+> Podejrzana replikacja żądania (potencjalny atak DCShadow) wykrywania są obsługiwane przez tylko czujników zaawansowanej ochrony przed zagrożeniami. 
+
 
 ## <a name="suspicious-service-creation"></a>Podejrzanie utworzenie usługi
 
@@ -542,7 +546,7 @@ Podejrzane usługi został utworzony na kontrolerze domeny w Twojej organizacji.
 
 - Implementowanie mniej uprzywilejowanego dostępu do domeny na maszynach w celu zezwalanie wyłącznie określonym użytkownikom uprawnienia do tworzenia nowych usług.
 
-## Podejrzane połączenia sieci VPN — wersja zapoznawcza<a name="suspicious-vpn-detection"></a>
+## Podejrzane połączenia sieci VPN <a name="suspicious-vpn-detection"></a>
 
 **Opis**
 

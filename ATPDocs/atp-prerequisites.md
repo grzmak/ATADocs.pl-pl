@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/9/2018
+ms.date: 8/15/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0a7cd9825f5b921b9dbe6cffe54e82d3249f10b7
-ms.sourcegitcommit: 583f2f144384a6a0cb9875d5f2b0fef7e7e3735d
+ms.openlocfilehash: 74fea95d0cfdcca96eba1f77b6dbd81a101b3782
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39723280"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734824"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -31,20 +31,20 @@ W tym artykule opisano wymagania dotyczące pomyślnego wdrożenia usługi Azure
 > Aby uzyskać informacje o planowaniu zasobów i pojemności, zobacz [Planowanie pojemności usługi Azure ATP](atp-capacity-planning.md).
 
 
-Narzędzie Azure ATP składa się z narzędzia Azure ATP usługę w chmurze, która składa się z portalu zarządzania obszarami roboczymi i portalem obszarów roboczych, czujnik autonomiczny narzędzia Azure ATP i/lub czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure. Aby uzyskać więcej informacji na temat składników usługi Azure ATP zobacz [architektury usługi Azure ATP](atp-architecture.md).
+Narzędzie Azure ATP składa się z narzędzia Azure ATP usługę w chmurze, która składa się z portalu zarządzania, portalu obszaru roboczego, czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure i/lub czujnik autonomiczny narzędzia Azure ATP. Aby uzyskać więcej informacji o poszczególnych składników usługi Azure ATP, zobacz [architektury usługi Azure ATP](atp-architecture.md).
 
-Każdy obszar roboczy usługi Azure ATP obsługuje granicy lasu usługi Active Directory oraz lasu funkcjonalności poziomu (FFL) systemu Windows 2003 lub nowszym. W przypadku wdrożeń z wieloma lasami oddzielny obszar roboczy usługi Azure ATP jest wymagana dla każdego lasu.
+Każde wystąpienie usługi Azure ATP obsługuje wiele granica lasu usługi Active Directory i lasu funkcjonalności poziomu (FFL) systemu Windows 2003 lub nowszym. 
 
 
 [Przed rozpoczęciem](#before-you-start): w tej sekcji opisano informacje należy zebrać oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi Azure ATP.
 
-[Portalu zarządzania obszarami roboczymi w usłudze Azure ATP](#azure-atp-workspace-management-portal-and-workspace-portal-requirements): w tej sekcji opisano wymagania dotyczące przeglądarki portalu zarządzania obszaru roboczego.
+[Portal zarządzania systemu Azure ATP](#azure-atp-workspace-management-portal-and-workspace-portal-requirements): w tej sekcji opisano wymagania dotyczące przeglądarki portalu zarządzania usługi Azure ATP.
 
 [Portalu obszaru roboczego usługi Azure ATP](#azure-atp-workspace-management-portal-and-workspace-portal-requirements): w tej sekcji opisano wymagania dotyczące przeglądarki dla uruchamiania portalu obszaru roboczego usługi Azure ATP.
 
-[Czujnik autonomiczny usługi Azure ATP](#azure-atp-sensor-requirements): w tej sekcji przedstawiono sprzętu czujnik autonomiczny narzędzia Azure ATP, wymagania dotyczące oprogramowania, a także ustawienia należy skonfigurować na serwerach czujnik autonomiczny narzędzia Azure ATP.
-
 [Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami](#azure-atp-lightweight-sensor-requirements): w tej sekcji przedstawiono narzędzia Azure ATP czujnik, wymagania sprzętowe i programowe.
+
+[Czujnik autonomiczny usługi Azure ATP](#azure-atp-sensor-requirements): w tej sekcji przedstawiono sprzętu czujnik autonomiczny narzędzia Azure ATP, wymagania dotyczące oprogramowania, a także ustawienia należy skonfigurować na serwerach czujnik autonomiczny narzędzia Azure ATP.
 
 ![Diagram architektury usługi Azure ATP](media/ATP-architecture-topology.png)
 
@@ -65,7 +65,7 @@ W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki s
 
 -   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowane jako użytkownika wystawionego jako przynęta Azure ATP. Aby uzyskać więcej informacji, zobacz [Konfigurowanie wykluczeń i użytkownika wystawionego jako przynęta](install-atp-step7.md).
 
--   Opcjonalnie: Wdrażając czujnik autonomiczny jest niezbędne do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045 do zaawansowanej ochrony przed zagrożeniami w celu dodatkowego zwiększenia Azure ATP Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup i przynęty, i tworzenia usługi złośliwe. W czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure te zdarzenia są odbierane automatycznie. W przypadku narzędzia Azure ATP czujnik autonomiczny te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
+-   Opcjonalnie: Wdrażając czujnik autonomiczny jest niezbędne do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045 do zaawansowanej ochrony przed zagrożeniami w celu dodatkowego zwiększenia Azure ATP Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup i przynęty, i tworzenia usługi złośliwe. Azure czujnika zaawansowanej ochrony przed zagrożeniami, które automatycznie otrzymuje tych zdarzeń. W przypadku narzędzia Azure ATP czujnik autonomiczny te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 
 ## <a name="azure-atp-workspace-management-portal-and-workspace-portal-requirements"></a>Wymagania platformy Azure ATP obszar roboczy zarządzania portalu i w obszarze roboczym portalu
@@ -74,7 +74,7 @@ Dostęp do portalu usługi Azure ATP obszaru roboczego i portalu zarządzania ob
 -   Internet Explorer 10 i nowsze
 -   Google Chrome 4.0 i nowsze wersje
 -   Minimalna rozdzielczość ekranu w poziomie: 1700 pikseli
--   Zapora/serwera proxy otwarty — do komunikowania się z usługą w chmurze usługi Azure ATP, konieczne jest posiadanie open: *. atp.azure.com portu 443 w zapory/serwera proxy. 
+-   Serwera proxy i zapory jest otwarty — do komunikowania się z usługą w chmurze usługi Azure ATP *. atp.azure.com portu 443, musi być otwarty w zapory/serwera proxy. 
 
 ## <a name="azure-atp-standalone-sensor-requirements"></a>Wymagania dotyczące usługi Azure ATP autonomiczny czujnika
 W tej sekcji przedstawiono wymagania dotyczące usługi Azure ATP czujnik autonomiczny.
@@ -83,7 +83,7 @@ Czujnik autonomiczny narzędzia Azure ATP obsługuje instalację na serwerze z s
 Czujnik autonomiczny narzędzia Azure ATP można zainstalować na serwerze, który jest elementem członkowskim domeny lub grupy roboczej.
 Czujnik autonomiczny narzędzia Azure ATP może służyć do monitorowania kontrolerów domeny z domeny funkcjonalności poziomu systemu Windows 2003 lub nowszym.
 
-Dla Twojej czujnik autonomiczny do komunikowania się z usługą w chmurze, należy otworzyć port 443 zapór i serwerów proxy do *. atp.azure.com
+Dla Twojej czujnik autonomiczny do komunikowania się z usługą w chmurze, portu 443 w zapór i serwerów proxy do *. atp.azure.com musi być otwarty.
 
 
 Aby uzyskać informacje o używaniu maszyn wirtualnych za pomocą narzędzia Azure ATP czujnik autonomiczny, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).
@@ -202,8 +202,8 @@ Poniższej tabeli wymieniono niezbędne porty, których wymaga czujnika zaawanso
 |SSL (*.atp.azure.com)|TCP|443|Usługa w chmurze Azure ATP|Wychodzące|
 |**Wewnętrznych portów**|||||
 |systemem DNS,|TCP i UDP|53|Serwery DNS|Wychodzące|
-|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Wychodzące|
-|Netlogon (SAM-R protokół SMB, CIFS)|TCP/UDP|445|Wszystkie urządzenia w sieci|Oba|
+|Netlogon (SAM-R protokół SMB, CIFS)|TCP/UDP|445|Wszystkie urządzenia w sieci|Wychodzące|
+|NTLM za pośrednictwem wywołania RPC|TCP|135|Wszystkie urządzenia w sieci|Oba|
 |NetBIOS|UDP|137|Wszystkie urządzenia w sieci|Oba|
 |Syslog (opcjonalnie)|TCP/UDP|514, w zależności od konfiguracji|Serwer SIEM|Przychodzące|
 |USŁUGI RADIUS|UDP|1813|USŁUGI RADIUS|Przychodzące|

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/23/2018
+ms.date: 8/15/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 34dc152c-6b7f-4128-93fe-aad56c282730
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 498d1b4d14db079583da1999bfb68a5648111362
-ms.sourcegitcommit: 63a36cd96aec30e90dd77bee1d0bddb13d2c4c64
+ms.openlocfilehash: 7018fb46a9d9da326ba999aff34a5ac2de6b860c
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227142"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734828"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,17 +26,17 @@ ms.locfileid: "39227142"
 
 # <a name="azure-atp-readiness-guide"></a>Podręcznik gotowości usługi Azure ATP
 
-Ten artykuł zawiera mapę gotowości, która udostępnia listę zasobów, które umożliwia wprowadzenie do usługi Azure Advanced Threat Analytics. 
+Ten artykuł zawiera mapę gotowości, która udostępnia listę zasobów, które ułatwi rozpoczęcie korzystania z usługi Azure Advanced Threat Protection. 
 
 ## <a name="understanding-azure-atp"></a>Omówienie usługi Azure ATP
 
-Azure zaawansowanych Threat Protection (ATP) to usługa w chmurze, która pomaga chronić przedsiębiorstwo przed wieloma rodzajami zaawansowanych ukierunkowanych cyberataków i zagrożeniami wewnętrznymi. Użyj następujących zasobów, aby dowiedzieć się więcej na temat usługi Azure ATP: 
+Azure zaawansowanych Threat Protection (ATP) to usługa w chmurze, która ułatwia identyfikowanie i Chroń swoje przedsiębiorstwo przed wieloma rodzajami zaawansowanych ukierunkowanych cyberataków i zagrożeniami wewnętrznymi. Użyj następujących zasobów, aby dowiedzieć się więcej na temat usługi Azure ATP: 
 - [Omówienie usługi Azure ATP](what-is-atp.md)
 - [Usługa Azure ATP klip wideo z wprowadzeniem — pełny](https://www.youtube.com/watch?v=KX-xpFc0sBw) 
 
 ## <a name="deployment-decisions"></a>Decyzji dotyczących wdrożenia
 
-Narzędzie Azure ATP składa się z usługą w chmurze znajdującymi się na platformie Azure i czujniki, które mogą być instalowane na kontrolerze domeny lub na dedykowanych serwerach. Przed zagłębieniem się narzędzia Azure ATP uruchomiona, jest należy wybrać typ lepiej spełniane były czujniki, które wdrożenie.<br>Jeśli używasz serwerów fizycznych należy zaplanować pojemność. Możesz uzyskać pomoc przy użyciu narzędzia rozmiaru do alokowania miejsca dla Twojego czujniki: 
+Narzędzie Azure ATP składa się z usługą w chmurze znajdującymi się na platformie Azure i zintegrowane czujniki, które mogą być instalowane na kontrolerze domeny lub autonomiczny czujników na dedykowanych serwerach. Przed zagłębieniem się narzędzia Azure ATP uruchomiona, jest należy wybrać typ czujniki, że najlepiej własnych wdrożenia i potrzeb. Azure czujników zaawansowanej ochrony przed zagrożeniami zintegrowane zapewniają większe bezpieczeństwo, obniżyć koszty operacyjne i łatwiejsze wdrażanie. Azure ATP autonomiczny czujników wymagają sprzętu fizycznego, czynności konfiguracyjne additionl i heavier koszty operacyjne. <br>Jeśli używasz serwerów fizycznych, planowania pojemności ma kluczowe znaczenie. Możesz uzyskać pomoc przy użyciu narzędzia rozmiaru do alokowania miejsca dla Twojego czujniki: 
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool) — narzędzia do określania rozmiaru automatyzuje zbiór natężenia ruchu, które monitoruje usługi Azure ATP. Automatycznie zapewnia wsparcie dla zasobów and recommendations for i czujniki. 
 - [Wytyczne dotyczące planowania pojemności usługi ATA](atp-capacity-planning.md)
 
@@ -49,14 +49,14 @@ Te zasoby ułatwia konfigurowanie usługi Azure ATP, nawiązać połączenie z u
 
 ## <a name="azure-atp-settings"></a>Ustawienia usługi Azure ATP
 
-Podstawowe ustawienia niezbędne w narzędzia Azure ATP są skonfigurowane, podczas tworzenia obszaru roboczego. Jednak istnieje kilka innych ustawień, które można skonfigurować w celu dostosowania narzędzia Azure ATP wprowadzić bardziej precyzyjne dla danego środowiska, takie jak integracja rozwiązania SIEM wykrywania, które ustawienia inspekcji. 
+Podstawowe ustawienia niezbędne w przypadku narzędzia Azure ATP są skonfigurowane, podczas tworzenia obszaru roboczego. Istnieje jednak kilka dodatkowych ustawień, które można skonfigurować w celu dostosowania narzędzia Azure ATP wprowadzić bardziej precyzyjne dla danego środowiska, takie jak integracja rozwiązania SIEM wykrywania, które ustawienia inspekcji. 
 
 - [Ogólna dokumentacja usługi Azure ATP](what-is-atp.md)
-- [Ustawienia inspekcji](https://blogs.technet.microsoft.com/positivesecurity/2017/08/18/ata-auditing-auditpol-advanced-audit-settings-enforcement-lightweight-gateway-service-discovery/) — Inspekcja usługi kondycji kontrolera domeny, przed i po wdrożeniu usługi ATA. 
+- [Ustawienia inspekcji](https://blogs.technet.microsoft.com/positivesecurity/2017/08/18/ata-auditing-auditpol-advanced-audit-settings-enforcement-lightweight-gateway-service-discovery/) — Inspekcja usługi kondycji kontrolera domeny, przed i po wdrożeniu zaawansowanej ochrony przed zagrożeniami. 
 
 ## <a name="work-with-azure-atp"></a>Praca z usługi Azure ATP
 
-Po skonfigurowaniu i uruchomieniu narzędzia Azure ATP można wyświetlić podejrzanych działań, które są wykrywane na osi czasu działania. Jest to domyślna strona docelowa, którego nastąpi przejście na po zalogowaniu się do portalu usługi Azure ATP. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można również sprawdzić ważność przypisaną do poszczególnych działań. Badanie każdego podejrzanego działania, przechodzenie jednostek (komputerów, urządzeń, użytkowników) aby otworzyć ich strony profilów, które zawierają więcej informacji. Te zasoby ułatwiają pracę z narzędzia Azure ATP podejrzanych działań: 
+Po narzędzia Azure ATP jest uruchomiony i działa, Wyświetl wykrytych podejrzanych działań na osi czasu aktywności portalu usługi Azure ATP. Oś czasu działania jest domyślna strona docelowa po zalogowaniu się do portalu usługi Azure ATP. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można również sprawdzić ważność przypisaną do poszczególnych działań. Badanie każdego podejrzanego działania, przechodzenie do szczegółów do jednostek (komputerów, urządzeń, użytkowników) aby otworzyć ich strony profilu z większą ilością informacji. Te zasoby ułatwiają korzystanie z narzędzia Azure ATP podejrzanych działań: 
 
 - [Przewodnik po podejrzanych działaniach usługi Azure ATP](suspicious-activity-guide.md) Dowiedz się, jak klasyfikowanie i wykonaj kolejne kroki z usługi wykrywania usługi Azure ATP.
 - [Tag grupy jako poufny](sensitive-accounts.md) wgląd w widoczności poświadczeń na grupach zabezpieczeń poufnych.

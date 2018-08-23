@@ -2,10 +2,10 @@
 title: Konfigurowanie funkcji przekazywania zdarzeń Windows w usłudze Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
 description: Opisuje opcje konfigurowania przekazywania zdarzeń Windows za pomocą narzędzia Azure ATP
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 02/21/2018
+ms.date: 08/12/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,14 +13,14 @@ ms.technology: ''
 ms.assetid: 3547519f-8d9c-40a9-8f0e-c7ba21081203
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 1b37bcbfc304ee0ef71d80eb84f6298d64e50d3f
-ms.sourcegitcommit: eebf1156aaae199b6aaa7e431cd6372e572b1e9f
+ms.openlocfilehash: 730ff2e96da8dc6329cf4855e9e7d279ef5a067d
+ms.sourcegitcommit: 845b8c0b6e0ec2d2e882672fd9f17ed573fafa56
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396421"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41734774"
 ---
-*Dotyczy: Azure Advanced Threat Protection wersji 1.9*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
@@ -63,12 +63,12 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
-    3.  W obszarze **SubscriptionManagers**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server=http://<fqdnATPSensor>: 5985/wsman/SubscriptionManager/WEC,Odśwież=10* (For example: serwer=http://atpsensor9.contoso.com:5985/wsman/SubscriptionManager/WEC,Odśwież=10)
- 
-   ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
-   
-    5.  Kliknij przycisk **OK**.
-    6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
+    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: * Server =`http://<fqdnATPSensor>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` (na przykład: Server =`http://atpsensor9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
+    
+    ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
+    
+5.  Kliknij przycisk **OK**.
+6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
 
 **Krok 3: Wykonaj następujące czynności na czujnik autonomiczny narzędzia Azure ATP** 
 
@@ -91,7 +91,7 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
         2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w następującym przykładzie:
 
- ![Obraz przedstawiający filtr kwerendy](media/wef-4-query-filter.png)
+        ![Obraz przedstawiający filtr kwerendy](media/wef-4-query-filter.png)
 
    5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
    6.   Po kilku minutach Sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w czujnik autonomiczny narzędzia Azure ATP.

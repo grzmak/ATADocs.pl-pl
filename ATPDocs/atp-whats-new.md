@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/06/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,40 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0062fc22df357e338d8eaf446688ea8bba56019c
-ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
+ms.openlocfilehash: 83b7b88d2b1ba61a2ae2733f1401d98b341ad3bd
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567954"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734729"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+
+## <a name="azure-atp-release-245"></a>Usługa Azure ATP release 2.45
+
+Wydana 19 sierpnia 2018 r.
+
+- **Narzędzie Azure ATP dodaje śledzenie zdarzeń dla Windows (ETW) jako źródło dodatkowych danych**  <br> Śledzenie zdarzeń dla Windows (ETW) jest dodawany jako źródło dodatkowych danych oprócz istniejącej ruch sieciowy i zdarzenia Windows. ETW obsługuje wykrywanie dodatkowych podejrzanych działań, w tym: podejrzane domeny kontroler promocji i replikacji kontrolera domeny podejrzane żądania (oba są potencjalnymi atakami DCShadow). <br>
+Tylko zaawansowanej ochrony przed zagrożeniami czujników instalowany na kontrolerach domeny obsługę zdarzeń systemu Windows na podstawie wykrywania. Wykrywanie zdarzeń systemu Windows nie są obsługiwane przez czujniki autonomiczny zaawansowanej ochrony przed zagrożeniami. <br>  
+
+- **Cztery nowe funkcje wykrywania teraz ogólnie** <br>
+  - Podejrzane połączenia sieci VPN
+  - Bilet protokołu Kerberos Golden — nieistniejące konta 
+  - Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DcShadow) — wykrywanie, dostępne tylko z czujników zaawansowanej ochrony przed zagrożeniami na podstawie zdarzeń systemu Windows 
+  - Żądanie replikacji kontrolera domeny podejrzane (potencjalny atak DcShadow) — wykrywanie, dostępne tylko z czujników zaawansowanej ochrony przed zagrożeniami na podstawie zdarzeń systemu Windows
+
+- Ta wersja zawiera również poprawki i ulepszenia w przypadku wielu problemów.
+
+
+## <a name="azure-atp-release-244"></a>Usługa Azure ATP release 2.44
+
+Wydana 12 sierpnia 2018 r.
+
+- Ta wersja zawiera poprawki i ulepszenia w przypadku wielu problemów.
+- Pliki dziennika nie jest już utworzonych na komputerze czujnik obejmują dziennika "Statistic wyjątek".
 
 
 ## <a name="azure-atp-release-243"></a>Usługa Azure ATP release 2.43

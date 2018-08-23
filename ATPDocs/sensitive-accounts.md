@@ -1,11 +1,11 @@
 ---
-title: Tag kont poufnych z Azure ATP | Dokumentacja firmy Microsoft
-description: Opisuje sposób tagu kont poufnych przy użyciu usługi Azure Advanced Threat ochrony (ATP)
+title: Tagowanie poufnych kont za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
+description: W tym artykule opisano jak oznaczyć wrażliwych kont przy użyciu usługi Azure Advanced Threat Protection (ATP)
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 8/12/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,22 +13,22 @@ ms.technology: ''
 ms.assetid: 43e57f87-ca85-4922-8ed0-9830139fe7cb
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4270ebda76309e19518f9d49b72bbce7f9bb5f32
-ms.sourcegitcommit: 03e959b7ce4b6df421297e1872e028793c967302
+ms.openlocfilehash: 8f1a78e8ce6005c58dc98171a4bf4d049ff60d8f
+ms.sourcegitcommit: dc56b9e9533db1a2dc314b199e90191bb25adaba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29446057"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41734702"
 ---
-*Dotyczy: Azure Advanced Threat Protection wersji 1.9*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="working-with-sensitive-accounts"></a>Praca z kont poufnych
+# <a name="working-with-sensitive-accounts"></a>Praca z kontami poufnymi
 
 ## <a name="sensitive-groups"></a>Wrażliwe grupy
 
-Poniższa lista grup są traktowane jako wrażliwe przez Azure ATP. Każda jednostka, która należy do poniższych grup, jest traktowana jako wrażliwa:
+Poniższa lista grup są traktowane jako wrażliwe przez narzędzia Azure ATP. Każda jednostka, która należy do poniższych grup, jest traktowana jako wrażliwa:
 
 -   Administratorzy
 -   Użytkownicy zaawansowani
@@ -44,24 +44,24 @@ Poniższa lista grup są traktowane jako wrażliwe przez Azure ATP. Każda jedno
 -   Kontrolery domeny
 -   Twórcy-właściciele zasad grupy 
 -   Kontrolery domeny tylko do odczytu 
--   Kontrolery domeny tylko do odczytu 
+-   Kontrolery domeny tylko do odczytu przedsiębiorstwa 
 -   Administratorzy schematu 
 -   Enterprise Admins
 
 
-## <a name="tagging-sensitive-accounts"></a>Znakowanie kont poufnych
+## <a name="tagging-sensitive-accounts"></a>Tagowanie poufnych kont
 
-Oprócz tych grup można ręcznie oznaczać grup lub kont jako poufne, w celu ułatwienia wykrycia. Jest to ważne, ponieważ korzystają wykryć niektórych ATP Azure, takich jak grupy poufnej modyfikacji wykrywania i ścieżka penetracja sieci, na które grupy i konta są traktowane jako poufne. Można ręcznie oznaczyć innym użytkownikom lub grupom jako poufne, takich jak elementy członkowskie tablicy, członkowie kadry kierowniczej w firmie, dyrektor sprzedaży itd., a Azure ATP uzna je poufnych.
+Oprócz tych grup, można ręcznie oznaczyć kont jako poufne lub grup w celu zwiększenia wykrywania. Jest to ważne, ponieważ niektóre narzędzia Azure ATP wykrywania zagrożeń, takich jak wykrywania modyfikacji wrażliwych grup i ścieżki ruchu poprzecznego zależą od tego, które grupy i konta są traktowane jako poufne. Można ręcznie oznaczyć innym użytkownikom lub grupom jako poufne, takie jak elementy członkowskie tablicy, kierownictwo firmy, Dyrektor ds. sprzedaży, itp., a zaawansowanej ochrony przed zagrożeniami w usłudze Azure traktuje je poufnych.
 
-1.  W portalu Azure ATP obszaru roboczego kliknij **konfiguracji** przypominającą koło zębate ikonę na pasku menu.
+1.  W portalu usługi Azure ATP obszaru roboczego kliknij **konfiguracji** koło zębate na pasku menu.
 
-2.  W obszarze **wykrywania** kliknij **tagi jednostek**.
+2.  W obszarze **wykrywania** kliknij **tagów jednostki**.
 
-    ![Azure tagi jednostek ATP](media/entity-tags.png)
+    ![Tagi jednostki usługi Azure ATP](media/entity-tags.png)
 
-3.  W **poufnych** sekcji, wpisz nazwę **kont poufnych** i **poufnych grup** , a następnie kliknij przycisk  **+**  Zaloguj się dodać je.
+3.  W **poufnych** sekcji, wpisz nazwę **wrażliwym kontom** i **wrażliwych grup** a następnie kliknij przycisk **+** Zaloguj się dodać je.
 
-    ![Przykładowe poufne konto w usłudze Azure ATP](media/sensitive-account-sample.png)
+    ![Przykładowy poufne konto usługi Azure ATP](media/sensitive-account-sample.png)
 
 4. Kliknij polecenie **Zapisz**.
 
@@ -69,4 +69,4 @@ Oprócz tych grup można ręcznie oznaczać grup lub kont jako poufne, w celu u�
 ## <a name="see-also"></a>Zobacz też
 
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)

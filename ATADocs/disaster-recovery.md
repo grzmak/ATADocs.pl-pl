@@ -2,10 +2,10 @@
 title: Odzyskiwanie po awarii w usłudze Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: W tym artykule opisano, jak można szybko odzyskać funkcjonalność usługi ATA po awarii
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,14 +13,14 @@ ms.technology: ''
 ms.assetid: 7620e171-76d5-4e3f-8b03-871678217a3a
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: 72598380f574e0475e4796887f44131009911be2
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 5e6fac695e1dc51a1a0afcf20330918be82c75e9
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009557"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734777"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -46,20 +46,20 @@ W tym artykule opisano sposób szybkiego odzyskiwania centrum usługi ATA i przy
 ## <a name="recover-your-ata-center"></a>Odzyskiwanie centrum usługi ATA
 
 1. Utwórz nową maszynę systemu Windows Server przy użyciu tej samej nazwy komputera i adresu IP, które były użyte dla poprzedniej maszyny centrum usługi ATA.
-2. Importuj certyfikat, którego kopia zapasowa została utworzona wcześniej, do nowego serwera.
+2. Zaimportuj certyfikat którego kopię zapasową wcześniej, do nowego serwera.
 3. Postępuj zgodnie z instrukcjami, aby [wdrożyć centrum usługi ATA](install-ata-step1.md) na nowo utworzonej maszynie systemu Windows Server. Nie ma potrzeby ponownego wdrażania bram usługi ATA. Po wyświetleniu monitu o certyfikat przedstaw certyfikat wyeksportowany podczas tworzenia kopii zapasowej konfiguracji centrum usługi ATA. 
 ![Przywracanie centrum usługi ATA](media/disaster-recovery-deploymentss.png)
 4. Zatrzymaj usługę Centrum usługi ATA.
-5. Importowanie konfiguracji kopii zapasowej Centrum usługi ATA:
+5. Importowanie kopii zapasowej konfiguracji Centrum usługi ATA:
     1. Usuń dokument domyślnego profilu systemu centrum usługi ATA z bazy danych MongoDB: 
         1. Przejdź do lokalizacji **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin**. 
-        2. Uruchom `mongo.exe ATA` 
-        3. Uruchom usługę Centrum usługi ATA.
-        4. Uruchom następujące polecenie, aby usunąć domyślny profil systemu: `db.SystemProfile.remove({})`
+        2. Uruchom polecenie `mongo.exe ATA` 
+        3. Uruchom następujące polecenie, aby usunąć domyślny profil systemu: `db.SystemProfile.remove({})`
     2. Uruchom polecenie: `mongoimport.exe --db ATA --collection SystemProfile --file "<SystemProfile.json backup file>" --upsert`, używając pliku kopii zapasowej z kroku 1.</br>
     Pełne wyjaśnienie sposobu lokalizowania i importowania plików kopii zapasowej można znaleźć w artykule [Eksportowanie i importowanie konfiguracji usługi ATA](ata-configuration-file.md). 
-    3. Otwórz konsolę usługi ATA. Wszystkie połączone bramy usługi ATA powinny być widoczne na karcie Konfiguracja/Bramy. 
-    4. Upewnij się, że został zdefiniowany [**Użytkownik usług katalogu**](install-ata-step2.md) i wybrany [**Synchronizator kontrolera domeny**](install-ata-step5.md). 
+    3. Uruchom Centrum usługi ATA.
+    4. Otwórz konsolę usługi ATA. Wszystkie połączone bramy usługi ATA powinny być widoczne na karcie Konfiguracja/Bramy.
+    5. Upewnij się, że został zdefiniowany [**Użytkownik usług katalogu**](install-ata-step2.md) i wybrany [**Synchronizator kontrolera domeny**](install-ata-step5.md). 
 
 
 

@@ -1,11 +1,11 @@
 ---
-title: Zainstaluj Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
-description: W tym kroku procesu instalowania ATP skonfigurujesz źródeł danych.
+title: Zainstaluj usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: W tym kroku instalowania usługi ATP są konfigurowane źródła danych.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/28/2018
+ms.date: 8/15/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,58 +13,56 @@ ms.technology: ''
 ms.assetid: 88692d1a-45a3-4d54-a549-4b5bba6c037b
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 2c2a8e6d70d937c559c110a18feec4afc75271e9
-ms.sourcegitcommit: 45d0108d0cbf8fe7550d13486d3d9c06c1e58506
+ms.openlocfilehash: 8f52a8e5851cee9fc0ff15d97cd39e98695f9a83
+ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30213986"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41734792"
 ---
-*Dotyczy: Azure Advanced Threat Protection*
+*Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="install-azure-atp"></a>Zainstaluj Azure ATP
+# <a name="configure-event-collection"></a>Konfigurowanie zbierania zdarzeń
 
-## <a name="configure-event-collection"></a>Konfigurowanie zbierania zdarzeń
-
-W celu zwiększenia możliwości wykrywania Azure ATP musi następujące zdarzenia systemu Windows: 4776, 4732 4733, 4728, 4729, 4756, 4757 i 7045. Można albo je odczytać automatycznie przez czujnik Azure ATP lub w przypadku, gdy czujnik Azure ATP nie została wdrożona, go mogą być przekazywane do czujnik autonomiczny Azure ATP w jeden z dwóch sposobów, konfigurując czujnik autonomiczny Azure ATP do nasłuchiwania zdarzeń SIEM lub przez [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md).
+W celu zwiększenia możliwości wykrywania, narzędzia Azure ATP potrzebuje następujących zdarzeń Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045. One może odczytywać je automatycznie za pomocą czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure lub w przypadku, gdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure nie została wdrożona, zdarzenia mogą być przekazywane do czujnika autonomicznego narzędzia Azure ATP w jeden z dwóch sposobów, konfigurując czujnik autonomiczny narzędzia Azure ATP do nasłuchiwania zdarzeń SIEM lub przez [Konfigurowanie funkcji przekazywania zdarzeń Windows](configure-event-forwarding.md).
 
 > [!NOTE]
-> Należy przeprowadzić inspekcję skryptu przed skonfigurowaniem zbierania zdarzeń usługi ATA aby upewnić się, że kontrolery domeny są poprawnie skonfigurowane do rejestrowania niezbędne zdarzenia. 
+> Należy przeprowadzić inspekcję skrypt przed skonfigurowaniem zbierania zdarzeń usługi ATA aby upewnić się, że kontrolery domeny są prawidłowo skonfigurowane i rejestrowanie zdarzeń niezbędne. 
 
-Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, Azure ATP może być dodatkowo ulepszyć wykryć zdarzeń systemu Windows. Zdarzenia 4776 używa uwierzytelniania NTLM, co zwiększa różnych wykryć i zdarzenia 4732, 4733, 4728, 4729, 4756, 4757 i 7045 zwiększenie wykrywania modyfikacji grupy poufnej i tworzenia usługi. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają Azure ATP z dodatkowymi informacjami, który nie jest dostępny za pośrednictwem ruchu sieciowego kontrolera domeny.
+Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, usługi Azure ATP może być dodatkowo ulepszyć wykrywanie zdarzeń Windows. Używa zdarzenie 4776 protokołu NTLM, różnymi rozwiązaniami do wykrywania i zdarzenia 4732, 4733, 4728, 4729, 4756, 4757 i 7045 wykrywania modyfikacji wrażliwych grup i tworzenia usługi. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
 
-### <a name="siemsyslog"></a>SIEM/Syslog
-ATP Azure można było korzystać z danych z serwera Syslog należy wykonać następujące czynności:
+## <a name="siemsyslog"></a>SIEM/Syslog
+Narzędzia Azure ATP można było używać danych z serwera Syslog należy wykonać następujące czynności:
 
--   Skonfigurować serwery czujnik Azure ATP do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
+-   Skonfiguruj serwery czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
 
  > [!NOTE]
- > Azure ATP nasłuchuje tylko na IPv4 i IPv6 nie. 
+ > Narzędzie Azure ATP nasłuchuje tylko protokołu IPv4 i IPv6 nie. 
 
--   Konfigurowanie serwera SIEM/Syslog do przekazywania określonych zdarzeń czujnika Azure ATP.
+-   Skonfiguruj serwer SIEM/Syslog do przekazywania określonych zdarzeń do czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
 
 > [!IMPORTANT]
-> -   Nie można przekazywać wszystkich danych z serwera Syslog czujnika Azure ATP.
-> -   Azure ATP obsługuje ruch UDP z serwera SIEM/Syslog.
+> -   Nie przekazuj wszystkie dane usługi Syslog do czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
+> -   Narzędzie Azure ATP obsługuje ruch UDP z serwera SIEM/Syslog.
 
 Zapoznaj się z dokumentacją produktu serwera SIEM/Syslog, aby uzyskać informacje o tym, jak skonfigurować przekazywanie określonych zdarzeń do innego serwera. 
 
 > [!NOTE]
->Jeśli nie używasz serwera SIEM/Syslog, można skonfigurować do przekazywania wszystkich zdarzeń wymagany do zbierania i analizowania przez ATP kontrolerów domeny systemu Windows.
+>Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domeny Windows do przekazywania wszystkich wymaganych zdarzeń do zbierania i analizowania przez zaawansowanej ochrony przed zagrożeniami.
 
-### <a name="configuring-the-azure-atp-sensor-to-listen-for-siem-events"></a>Konfigurowanie czujnik Azure ATP do nasłuchiwania zdarzeń SIEM
+## <a name="configuring-the-azure-atp-sensor-to-listen-for-siem-events"></a>Konfigurowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure do nasłuchiwania zdarzeń SIEM
 
-1.  W konfiguracji ATP Azure w obszarze **źródeł danych** kliknij **SIEM** i Włącz **Syslog** i kliknij przycisk **zapisać**.
+1.  W konfiguracji zaawansowanej ochrony przed zagrożeniami dla platformy Azure w obszarze **źródeł danych** kliknij **SIEM** i Włącz **Syslog** i kliknij przycisk **Zapisz**.
 
     ![Obraz włączania protokołu UDP odbiornika programu Syslog](media/atp-siem-config.png)
 
-2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania wszystkich wymaganych zdarzeń na adres IP jednego czujników Azure ATP. Aby uzyskać dodatkowe informacje na temat konfigurowania rozwiązania SIEM Zobacz z pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
+2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania wszystkich wymaganych zdarzeń na adres IP jednej z czujników narzędzia Azure ATP. Aby uzyskać dodatkowe informacje na temat konfigurowania rozwiązania SIEM Zobacz Twojej pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
-Azure ATP obsługuje zdarzenia SIEM w następujących formatach:  
+Narzędzie Azure ATP obsługuje zdarzenia SIEM w następujących formatach:  
 
-### <a name="rsa-security-analytics"></a>RSA Security Analytics
+## <a name="rsa-security-analytics"></a>RSA Security Analytics
 &lt;Nagłówek programu Syslog&gt;RsaSA\n2015-May-19 09:07:09\n4776\nMicrosoft-Windows-Security-Auditing\nSecurity\XXXXX.subDomain.domain.org.il\nYYYYY$\nMMMMM \n0x0
 
 -   Nagłówek programu Syslog jest opcjonalny.
@@ -75,7 +73,7 @@ Azure ATP obsługuje zdarzenia SIEM w następujących formatach:
 
     1.  Stała RsaSA (musi się pojawiać).
 
-    2.  Sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do ATP). Najlepiej z milisekundową dokładnością jest to ważne.
+    2.  Sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do zaawansowanej ochrony przed zagrożeniami). Najlepiej milisekundową dokładnością jest to ważne.
 
     3.  Identyfikator zdarzenia systemu Windows
 
@@ -93,7 +91,7 @@ Azure ATP obsługuje zdarzenia SIEM w następujących formatach:
 
 -   Ważna jest kolejność i nic innego nie powinno być umieszczone w komunikacie.
 
-### <a name="hp-arcsight"></a>HP Arcsight
+## <a name="hp-arcsight"></a>HP Arcsight
 CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kontroler domeny podjął próbę sprawdzenia poprawności poświadczeń konta.|Niski| externalId=4776 cat=Zabezpieczenia rt=1426218619000 shost=KKKKKK dhost=YYYYYY.subDomain.domain.com duser=XXXXXX cs2=Security cs3=Microsoft-Windows-Security-Auditing cs4=0x0 cs3Label=EventSource cs4Label=Przyczyna lub kod błędu
 
 -   Muszą być zgodne z definicją protokołu.
@@ -106,7 +104,7 @@ CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kont
 
     -   externalId = identyfikator zdarzenia systemu Windows
 
-    -   RT = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do ATP). Najlepiej z milisekundową dokładnością jest to ważne.
+    -   RT = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do zaawansowanej ochrony przed zagrożeniami). Najlepiej milisekundową dokładnością jest to ważne.
 
     -   cat = nazwa dziennika zdarzeń systemu Windows
 
@@ -124,7 +122,7 @@ CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kont
 
     -   Przyczyna lub kod błędu = kod wyniku protokołu NTLM
 
-### <a name="splunk"></a>Splunk
+## <a name="splunk"></a>Splunk
 &lt;Nagłówek programu Syslog&gt;\r\nEventCode=4776\r\nLogfile=Security\r\nSourceName=Microsoft-Windows-Security-Auditing\r\nTimeGenerated=20150310132717.784882-000\r\ComputerName=YYYYY\r\nMessage=
 
 Komputer podjął próbę zweryfikowania poświadczeń dla konta.
@@ -151,7 +149,7 @@ Kod błędu:         0x0
 
     -   SourceName = nazwa dostawcy zdarzeń systemu Windows
 
-    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do ATP). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
+    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do zaawansowanej ochrony przed zagrożeniami). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z dokładnością do milisekund, jest to ważne.
 
     -   ComputerName = nazwa hosta źródłowego
 
@@ -161,8 +159,8 @@ Kod błędu:         0x0
 
 -   Kolejność nie jest ważna dla par klucz=wartość.
 
-### <a name="qradar"></a>QRadar
-Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ Azure ATP wymaga danych milisekund, należy ustawić QRadar umożliwia zbieranie zdarzeń systemu Windows bez agentów. Aby uzyskać więcej informacji, zobacz [ http://www-01.ibm.com/support/docview.wss?uid=swg21700170 ] (http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń systemu Windows bez agenta przy użyciu protokołu MSRPC").
+## <a name="qradar"></a>QRadar
+Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługi Azure ATP wymaga danych milisekund, to należy ustawić QRadar umożliwia zbieranie zdarzeń Windows bez agenta. Aby uzyskać więcej informacji, zobacz [ http://www-01.ibm.com/support/docview.wss?uid=swg21700170 ] (http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń Windows bez agenta przy użyciu protokołu MSRPC").
 
     <13>Feb 11 00:00:00 %IPADDRESS% AgentDevice=WindowsLog AgentLogFile=Security Source=Microsoft-Windows-Security-Auditing Computer=%FQDN% User= Domain= EventID=4776 EventIDCode=4776 EventType=8 EventCategory=14336 RecordNumber=1961417 TimeGenerated=1456144380009 TimeWritten=1456144380009 Message=The computer attempted to validate the credentials for an account. Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0 Logon Account: Administrator Source Workstation: HOSTNAME Error Code: 0x0
 
@@ -174,7 +172,7 @@ Wymagane pola to:
 - W pełni kwalifikowana nazwa domeny DC
 - Identyfikator zdarzenia systemu Windows
 
-TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do ATP). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
+TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do zaawansowanej ochrony przed zagrożeniami). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z dokładnością do milisekund, jest to ważne.
 
 Message to oryginalny tekst zdarzenia ze zdarzenia systemu Windows
 
@@ -187,7 +185,7 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Narzędzia do określania rozmiaru Azure ATP](http://aka.ms/aatpsizingtool)
-- [Odwołanie do dziennika Azure ATP SIEM](cef-format-sa.md)
+- [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
+- [Dokumentacja dziennika rozwiązania SIEM zaawansowanej ochrony przed zagrożeniami usługi Azure](cef-format-sa.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Zapoznaj się z forum ATP!](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
