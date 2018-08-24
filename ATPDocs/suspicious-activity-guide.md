@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4aa58228ea23f58ea37b10f941467e9dc076992f
-ms.sourcegitcommit: f534a318be71b840aecb6a84744d8cd1f251a7aa
+ms.openlocfilehash: f382c5a7625ff29303ad92d05ec703c9ef1d72e3
+ms.sourcegitcommit: 04ec22abdfa571ec0e6e036e809f4e108a5c6f3d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41734842"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42709780"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -200,7 +200,7 @@ W tym wykrywanie alert jest wyzwalany, gdy bilet protokołu Kerberos przyznania 
    2.   Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest zaangażowane w tym alercie maszynę wirtualną? Jeśli tak, on niedawno wychodzi z zapisanego stanu? Jeśli tak, zamknij ten alert.
    3.   Jeśli odpowiedź na powyższe pytania nie przyjęto założenie, jest to złośliwy.
 
-- **Nieistniejące konta**
+- **Nieistniejące konto — nowe** 
    1.   Należy odpowiedzieć na następujące pytania:
          - Czy użytkownik jest użytkownikiem domeny znane i prawidłowe? Jeśli tak, zamknij alert (było to wynik fałszywie dodatni).
          - Użytkownik zostało ostatnio dodane? Jeśli tak, zamknij ten alert, zmiana może nie zostały jeszcze zsynchronizowane.
@@ -476,7 +476,7 @@ W tym wykrywanie alert jest wyzwalany, gdy komputer w sieci próbuje zarejestrow
    3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
 Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
 
-4. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń błąd krytyczny, ale jeśli ten alert recurrs, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+4. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
 
 **Korygowanie**
 
@@ -510,7 +510,7 @@ W tym wykrywanie alert jest wyzwalany, gdy żądanie podejrzana replikacja jest 
    2.  Użytkownicy mają dostęp do tych zasobów?
    3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
 Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
-1. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń błąd krytyczny, ale jeśli ten alert recurrs, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+1. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
 
 **Korygowanie**
 
@@ -546,7 +546,8 @@ Podejrzane usługi został utworzony na kontrolerze domeny w Twojej organizacji.
 
 - Implementowanie mniej uprzywilejowanego dostępu do domeny na maszynach w celu zezwalanie wyłącznie określonym użytkownikom uprawnienia do tworzenia nowych usług.
 
-## Podejrzane połączenia sieci VPN <a name="suspicious-vpn-detection"></a>
+
+## Podejrzane połączenia sieci VPN — nowe <a name="suspicious-vpn-detection"></a>
 
 **Opis**
 
