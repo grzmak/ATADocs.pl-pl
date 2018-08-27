@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: d8a8f5df37422f98f6ea3357c672297395907a8d
-ms.sourcegitcommit: 1de2b047c0e9f92a106169f7634c480f694baf10
+ms.openlocfilehash: 1c75b9c74e1b53f81b5f957d9e78a8b425b6b28e
+ms.sourcegitcommit: ad83eaba24d5a6af465351291ba0e423319f78d3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "30009748"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42903927"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -46,9 +46,9 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
   - **Opis**: wprowadź opis bramy usługi ATA (opcjonalnie).
   - **Port Mirrored Domain Controllers (FQDN)** (Kontrolery domeny z dublowaniem portów (FQDN))(wymagane dla bramy usługi ATA, nie można zmienić dla uproszczonej bramy usługi ATA): należy wprowadzić pełną nazwę FQDN kontrolera domeny, a następnie kliknąć znak plus, aby dodać go do listy. Na przykład **dc01.contoso.com**.
 
-      Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery domeny**:
-      - Wszystkie kontrolery domeny, których ruch jest monitorowany za pośrednictwem funkcji dublowania portów przez bramę usługi ATA, muszą znajdować się na liście **Kontrolery domeny**. Jeśli kontroler domeny nie znajduje się na liście **Kontrolery domeny**, wykrywanie podejrzanych działań może nie funkcjonować zgodnie z oczekiwaniami.
-      - Co najmniej jeden kontroler domeny znajdujący się na liście musi być wykazem globalnym. Dzięki temu usługa ATA może rozpoznać obiektów użytkowników i komputerów w innych domenach w lesie.
+    Poniższe informacje dotyczą serwerów wprowadzonych na liście **Kontrolery domeny**:
+    - Wszystkie kontrolery domeny, których ruch jest monitorowany za pośrednictwem funkcji dublowania portów przez bramę usługi ATA, muszą znajdować się na liście **Kontrolery domeny**. Jeśli kontroler domeny nie znajduje się na liście **Kontrolery domeny**, wykrywanie podejrzanych działań może nie funkcjonować zgodnie z oczekiwaniami.
+    - Co najmniej jeden kontroler domeny znajdujący się na liście musi być wykazem globalnym. Dzięki temu usługa ATA może rozpoznać obiektów użytkowników i komputerów w innych domenach w lesie.
 
   - **Karty sieciowe przechwytywania** (wymagane):
   - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. One odbierać zdublowany ruch kontrolera domeny.
