@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/15/2018
+ms.date: 8/26/2018
 ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 74fea95d0cfdcca96eba1f77b6dbd81a101b3782
-ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
+ms.openlocfilehash: f1c9e4bc90289e7c7bfb90710ecbc83beb368ba8
+ms.sourcegitcommit: 56886d06abd25035ffc9885c69aca9b0ebf14abc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41734824"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43038987"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -125,7 +125,7 @@ Czujnik autonomiczny narzędzia Azure ATP wymaga co najmniej jednej karty admini
 
     > [!IMPORTANT]
     > -   Skonfiguruj funkcję dublowania portów dla karty przechwytywania jako miejsce docelowe ruchu sieciowego kontrolera domeny. Aby uzyskać więcej informacji, zobacz [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md). Zazwyczaj potrzebne do pracy z zespołem sieci lub wirtualizacji, aby skonfigurować funkcję dublowania portów.
-    > -   Skonfiguruj statyczny adres IP bez obsługi routingu dla danego środowiska nie czujnik domyślne i bez adresów serwerów DNS. Na przykład 1.1.1.1/32. Gwarantuje to, że karta sieciowa przechwytywania może przechwytywać maksymalną ilość ruchu i że administracyjna karta sieciowa jest używana do wysyłania i odbierania wymaganego ruchu sieciowego.
+    > -   Konfigurowanie statycznego adresu IP bez obsługi routingu (przy użyciu /32 maska) dla danego środowiska bez bramy czujnik domyślnej i bez adresów serwerów DNS. Na przykład 10.10.0.10/32. Gwarantuje to, że karta sieciowa przechwytywania może przechwytywać maksymalną ilość ruchu i że administracyjna karta sieciowa jest używana do wysyłania i odbierania wymaganego ruchu sieciowego.
 
 ### <a name="ports"></a>Porty
 Poniższej tabeli wymieniono niezbędne porty, których wymaga usługi Azure ATP czujnik autonomiczny skonfigurowaną na tej karcie zarządzania:

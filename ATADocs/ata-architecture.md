@@ -2,10 +2,10 @@
 title: Architektura usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: Opis architektury usługi Microsoft Advanced Threat Analytics (ATA).
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 8/26/2018
 ms.topic: article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 892b16d2-58a6-49f9-8693-1e5f69d8299c
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: fa2b5fa5da1d73f90cac6937bef71fd239e498fc
-ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
+ms.openlocfilehash: f2ae9948f6865480797b4a2a8b761c12553728b9
+ms.sourcegitcommit: 56886d06abd25035ffc9885c69aca9b0ebf14abc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39585056"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43039023"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -179,7 +179,7 @@ Aby poprawić wykrywanie przez usługę ATA ataków typu Pass-the-Hash, ataków 
 
 -   Konfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM <br>Skonfiguruj system SIEM do przekazywania określonych zdarzeń systemu Windows do usługi ATA. Usługa ATA obsługuje wielu dostawców systemów SIEM. Aby uzyskać więcej informacji, zobacz [Konfigurowanie zbierania zdarzeń](configure-event-collection.md).
 
--   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń usługi ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby uzyskać więcej informacji na temat funkcji przekazywania zdarzeń systemu Windows w usłudze ATA, zobacz [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-collection.md#configuring-windows-event-forwarding). Dotyczy to tylko fizycznych bram usługi ATA, aby nie uproszczonej bramy usługi ATA.
+-   Konfigurowanie funkcji przekazywania zdarzeń systemu Windows<br>Innym sposobem na odbieranie zdarzeń usługi ATA jest skonfigurowanie kontrolerów domeny do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika do bramy usługi ATA. Jest to szczególnie przydatne wtedy, gdy nie jest używany system SIEM lub system SIEM nie jest aktualnie obsługiwany przez usługę ATA. Aby ukończyć konfigurację systemu Windows w usłudze ATA funkcji przekazywania zdarzeń, zobacz [Windows konfigurowania przekazywania zdarzeń](configure-event-collection.md#configuring-windows-event-forwarding). Dotyczy to tylko fizycznych bram usługi ATA, aby nie uproszczonej bramy usługi ATA.
 
 ## <a name="related-videos"></a>Pokrewne wideo
 - [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a6cb3ca9b4f9498caa0810cec129c24b0f2e587b
-ms.sourcegitcommit: 121c49d559e71741136db1626455b065e8624ff9
+ms.openlocfilehash: c7fda04658dc70406fc7c0d543286e46da4cfa86
+ms.sourcegitcommit: 56886d06abd25035ffc9885c69aca9b0ebf14abc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41734721"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43039083"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -91,9 +91,6 @@ Obszar roboczy usługi Azure ATP umożliwia zarządzanie następujące funkcje u
 
 |||
 |-|-|
-|Odbiornik jednostek|Odbiera partie jednostek ze wszystkich czujników narzędzia Azure ATP i czujniki autonomiczne narzędzia Azure ATP.|
-|Procesor aktywności sieciowej|Przetwarza wszystkie działania w sieci w ramach każdej otrzymanej partii. Dotyczy to na przykład dopasowywania między różnymi krokami protokołu Kerberos wykonywanymi z potencjalnie różnych komputerów|
-|Profiler jednostek|Profiluje wszystkie unikatowe jednostki na podstawie ruchu i zdarzeń. Na przykład narzędzia Azure ATP aktualizuje listę zalogowanych komputerów dla każdego profilu użytkownika.|
 |Portal zarządzania systemu Azure ATP|Zarządza obszaru roboczego usługi Azure ATP.|
 |Portalu obszaru roboczego usługi Azure ATP|Obszar roboczy usługi Azure ATP służy do konfigurowania usługi Azure ATP i monitorowania podejrzanych działań wykrytych przez narzędzia Azure ATP w sieci. Obszar roboczy usługi Azure ATP jest niezależna od czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure i jest uruchamiany nawet wtedy, gdy usługa czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure została zatrzymana. |
 |Detektory|Detektory używają algorytmów uczenia maszynowego i reguł deterministycznych do znajdowania podejrzanych działań i nietypowego zachowania użytkowników w sieci.|
