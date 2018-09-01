@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 755450654d870ec0235232e08194c1094c22f030
-ms.sourcegitcommit: ca6153d046d8ba225ee5bf92cf55d0bd57cf4765
+ms.openlocfilehash: e337c56730e1672ce1a4382a49bb16dab7b3a95d
+ms.sourcegitcommit: d8ee6c236dc91802a8315fb97a9dc0ac501861cf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39585092"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353100"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -79,11 +79,8 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
     2.  Aby uzyskać **Dziennik docelowy**, upewnij się, że **zdarzenia przesyłane dalej** jest zaznaczone. Aby usługa ATA mogła odczytywać zdarzenia, dla dziennika docelowego musi być wybrana opcja **Zdarzenia przesyłane dalej**. 
     3.  Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
-        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
- 
-    ![Obraz Podglądu zdarzeń](media/wef3 event viewer.png)
- 
- 
+        2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**.  
+          ![Obraz podglądu zdarzeń](media/wef3 event viewer.png)  
         3.  Kliknij przycisk **OK**.
      4. Kliknij przycisk **Wybierz zdarzenia**.
 
