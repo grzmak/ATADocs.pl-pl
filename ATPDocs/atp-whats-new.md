@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/26/2018
+ms.date: 8/30/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,18 +13,29 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: b4a72c4dbde37a415797c467afac2c7c2636bfec
-ms.sourcegitcommit: 56886d06abd25035ffc9885c69aca9b0ebf14abc
+ms.openlocfilehash: 657a3488e967979555c5d5e5d48ac02b6cc32a04
+ms.sourcegitcommit: 93a133430ac85d6db7afad5f6f2583b3a39c423a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43039042"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43469631"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
 
+## <a name="azure-atp-release-247"></a>Usługa Azure ATP release 2.47
+Wydana 2 września 2018 r.
 
+- **Narzędzie Azure ATP zaawansowane sprawdzanie zasad inspekcji**
+<br> Usługa Azure Advanced Threat Protection teraz sprawdza, czy kontroler domeny istniejących zaawansowane zasady inspekcji i zaleca zmiany zasad, aby zapewnić maksymalny zakres usług Azure zaawansowanej ochrony przed zagrożeniami dla Twojej organizacji. <br> 
+**Ten nowy test pozwala na:**
+  -  Identyfikowanie zdarzeń nie ma dzienników zdarzeń Windows, które obecnie są wykluczane z usługi Azure ATP pokrycia.
+  -  Sprawdź ustawienia idealne rozwiązanie, a następnie wprowadzić zmiany na podstawie zaleceń alertu kondycji, pod warunkiem.
+  -  Alert o jednym zagregowanej kondycji zostaną wystawione dla wszystkich kontrolerów domeny w tym sugestie dotyczące korygowania (Jeśli/jako wymagane).
+
+Przegląd sposobu [skonfigurować zaawansowane zasady inspekcji](atp-advanced-audit-policy.md)aby upewnić się, system jest skonfigurowany prawidłowo. 
+- Ta wersja zawiera również poprawki i ulepszenia w przypadku wielu problemów.
 
 ## <a name="azure-atp-release-246"></a>Usługa Azure ATP release 2.46
 

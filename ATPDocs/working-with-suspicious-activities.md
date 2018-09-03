@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a06004bd-9f77-4e8e-a0e5-4727d6651a0f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7caae52ff7402fdc8cb18ce1a01bba469c2d649b
-ms.sourcegitcommit: f61616a8269d27a8fcde6ecf070a00e2c56481ac
+ms.openlocfilehash: 4cf099faae920f23eeeaacdc8f10129005fdc896
+ms.sourcegitcommit: 93a133430ac85d6db7afad5f6f2583b3a39c423a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35259212"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43469672"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -53,7 +53,7 @@ Każde podejrzane działanie zawiera następujące informacje:
 
 ## Wykrycia (wersja zapoznawcza)<a name="preview-detections"></a>
 
-Zespół badań narzędzia Azure ATP stale pracuje nad Implementowanie wykrywanie nowych zagrożeń dla nowo odnalezionych ataków. Ponieważ usługi Azure ATP to usługa w chmurze, jest możliwość zwolnienia te nowe funkcje wykrywania szybko, aby włączyć narzędzia Azure ATP klientów do korzystania z rozwiązaniami do wykrywania nowych tak szybko, jak to możliwe.
+Zespół badań narzędzia Azure ATP stale pracuje nad Implementowanie wykrywanie nowych zagrożeń dla nowo odnalezionych ataków. Ponieważ usługi Azure ATP to usługa w chmurze, wykrywanie nowych zagrożeń są wydawane szybko umożliwiające klientom usługi Azure ATP korzystać z nowych wykryć tak szybko, jak to możliwe.
 
 Wykrywane odmiany są oznaczane za pomocą wskaźnika (wersja zapoznawcza), aby zidentyfikować wykrywanie nowych zagrożeń i wiedzieć, czy jesteś nowym użytkownikiem produktu. Jeśli wyłączysz wykrycia (wersja zapoznawcza) one nie będą wyświetlane w konsoli usługi Azure ATP — nie osi czasu lub profile jednostek — i nie będzie można otworzyć nowe alerty.
 
@@ -67,7 +67,7 @@ Aby wyłączyć wykrywanie (wersja zapoznawcza):
 2. W menu po lewej stronie w obszarze (wersja zapoznawcza), kliknij przycisk **wykrywania**.
 3. Za pomocą suwaka, aby włączyć funkcje wykrywania w wersji zapoznawczej, włączać i wyłączać.
  
-![wykrycia (wersja zapoznawcza)](./media/preview-detections.png) 
+![Wykrycia (wersja zapoznawcza)](./media/preview-detections.png) 
 
 
 ## <a name="filter-suspicious-activities-list"></a>Filtrowanie listy podejrzanych działań

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: de15c920-8904-4124-8bdc-03abd9f667cf
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 730cf886f199c101ea14a09f177d7682238c2b7e
-ms.sourcegitcommit: 14c05a210ae92d35100c984ff8c6d171db7c3856
+ms.openlocfilehash: 270b84c24ef8b52565ee97c2c15374645eb54a2c
+ms.sourcegitcommit: 93a133430ac85d6db7afad5f6f2583b3a39c423a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567716"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43469655"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -28,7 +28,7 @@ ms.locfileid: "39567716"
 Penetracja sieci to gdy osoba atakująca używa niewrażliwe konta w celu uzyskania dostępu do wrażliwych kont. Można to zrobić za pomocą metod opisanych w [Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md). Penetracji sieci jest używana przez osoby atakujące do identyfikowania i uzyskiwanie dostępu do wrażliwych kont i komputerach w sieci przy użyciu niewrażliwe konta, mających poświadczenia przechowywane w dzienniku w kont, grup i komputerów. Gdy osoba atakująca ma uzyskali dostęp, osoba atakująca również korzystać z zalet danych na kontrolerach domeny.
 
 
-## <a name="discovery-your-at-risk-sensitive-accounts"></a>Odnajdowanie usługi zagrożonych wrażliwych kont
+## <a name="discover-your-at-risk-sensitive-accounts"></a>Odkryj swoje zagrożonych wrażliwych kont
 
 Aby sprawdzić, które wrażliwych kont w sieci są dostępne ze względu na ich połączenie do zwykłych kont, grup i komputerów, wykonaj następujące kroki. 
 
