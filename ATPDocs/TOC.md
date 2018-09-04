@@ -46,6 +46,8 @@
 ## [Badanie jednostek](investigate-entity.md)
 ## [Opis profilów jednostki](entity-profiles.md)
 # Rozwiązywanie problemów
+## [Sprawdzanie zaawansowanych zasad inspekcji](atp-advanced-audit-policy.md)
 ## [Rozwiązywanie typowych problemów](troubleshooting-atp-known-issues.md)
+## [Rozwiązywanie problemów przy użyciu dzienników](troubleshooting-atp-using-logs.md)
 ## [Pomoc techniczna i informacje](atp-support.md)
 ## [Plan gotowości usługi Azure ATP](atp-resources.md)
