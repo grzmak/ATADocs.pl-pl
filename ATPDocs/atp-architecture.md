@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/20/2018
+ms.date: 8/30/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: c7fda04658dc70406fc7c0d543286e46da4cfa86
-ms.sourcegitcommit: 56886d06abd25035ffc9885c69aca9b0ebf14abc
+ms.openlocfilehash: 6b94282411cd2918e475acb08600265455d9e0f3
+ms.sourcegitcommit: 6f1406f28c4c2af6a36bc691ebaf4e819adc6b4b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43039083"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43675138"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -191,5 +191,4 @@ Aby zwiększyć pokrycie wykrywania usługi Azure ATP Pass--Hash, podejrzane bł
 - [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
 - [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md)
-
-- - [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)

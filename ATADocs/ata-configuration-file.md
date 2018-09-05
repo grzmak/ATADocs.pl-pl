@@ -2,10 +2,10 @@
 title: Eksportowanie i importowanie konfiguracji usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: Jak eksportować i importować konfigurację usługi ATA.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 9/04/2018
 ms.topic: article
 ms.prod: ''
 ms.service: advanced-threat-analytics
@@ -13,20 +13,20 @@ ms.technology: ''
 ms.assetid: 1d27dba8-fb30-4cce-a68a-f0b1df02b977
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: edbf553bf48d984f4864264643d197362c3d6042
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: f8847d8ca3671f765a1d101121eefad62073f60f
+ms.sourcegitcommit: 6f1406f28c4c2af6a36bc691ebaf4e819adc6b4b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010503"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43675155"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
 # <a name="export-and-import-the-ata-configuration"></a>Eksportowanie i importowanie konfiguracji usługi ATA
 Konfiguracja usługi ATA jest przechowywana w kolekcji „SystemProfile” w bazie danych.
-Ta kolekcja jest kopii zapasowej co godzinę przez Centrum usługi ATA do plików o nazwie: **SystemProfile_*sygnatury czasowej*JSON**. Przechowywanych jest 10 najnowszych wersji.
+Ta kolekcja kopia zapasowa jest tworzona co 4 godziny Centrum usługi ATA do plików o nazwie: **SystemProfile_*sygnatura czasowa*.json**. 300 najnowsze wersje są przechowywane.
 Ten plik znajduje się w podfolderze o nazwie **kopii zapasowej**. W przypadku domyślnej lokalizacji instalacji usługi ATA ścieżka do tego pliku ma postać: *C:\Program Files\Microsoft Advanced Threat Analytics\Center\Backup\SystemProfile_* sygnatura czasowa *.json*. 
 
 **Uwaga**: zalecane jest wykonanie kopii zapasowej tego pliku w innej lokalizacji w przypadku wprowadzania istotnych zmian w usłudze ATA.

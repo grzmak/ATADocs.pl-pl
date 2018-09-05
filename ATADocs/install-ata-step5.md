@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 2a5b6652-2aef-464c-ac17-c7e5f12f920f
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 1c75b9c74e1b53f81b5f957d9e78a8b425b6b28e
-ms.sourcegitcommit: ad83eaba24d5a6af465351291ba0e423319f78d3
+ms.openlocfilehash: 50a46bad5f138344cc3e62a3fca236e98e71f904
+ms.sourcegitcommit: 6f1406f28c4c2af6a36bc691ebaf4e819adc6b4b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42903927"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43675172"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -53,8 +53,7 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
   - **Karty sieciowe przechwytywania** (wymagane):
   - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. One odbierać zdublowany ruch kontrolera domeny.
   - W przypadku uproszczonej bramy usługi ATA powinny to być wszystkie karty sieciowe, które są wykorzystywane do komunikacji z innymi komputerami w organizacji.
-
-
+  
   - **Domain synchronizer candidate** (Kandydat na synchronizatora domeny): dowolna brama usługi ATA ustawiona jako kandydat na synchronizatora domeny może odpowiadać za synchronizację między usługą ATA a domeną usługi Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć trochę czasu i jest dużej ilości zasobów. Domyślnie wszystkie bramy usługi ATA są kandydatami na synchronizatora.
    Zaleca się wyłączenie bram usługi ATA z Kandydat Synchronizatora domeny dla lokacji zdalnych.
    Jeśli kontroler domeny jest kontrolerem tylko do odczytu, nie należy ustawiać go jako kandydata synchronizatora domeny. Aby uzyskać więcej informacji, zobacz [Architektura usługi ATA](ata-architecture.md#ata-lightweight-gateway-features).
