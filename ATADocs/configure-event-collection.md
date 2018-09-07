@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: e337c56730e1672ce1a4382a49bb16dab7b3a95d
-ms.sourcegitcommit: d8ee6c236dc91802a8315fb97a9dc0ac501861cf
+ms.openlocfilehash: a20353d8db038ccdeef81390631f7ea84557b13d
+ms.sourcegitcommit: d9e7c108bd2e070eec583cd57cb5d45d19e4a0f4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353100"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44045951"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -56,7 +56,7 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
 2.  W wierszu polecenia wpisz ciąg *gpedit.msc*.
 3.  Rozwiń węzeł **Konfiguracja komputera > Szablony administracyjne > Składniki systemu Windows > Przesyłanie dalej zdarzeń**
 
-![Obraz edytora lokalnych zasad grupy](media/wef 1 local group policy editor.png)
+![Obraz edytora lokalnych zasad grupy](media/wef%201%20local%20group%20policy%20editor.png)
 
 4.  Kliknij dwukrotnie **Konfiguruj docelowego Menedżera subskrypcji**.
    
@@ -64,7 +64,7 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
     3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: * Server =`http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` (na przykład: Server =`http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
  
-    ![Obraz konfigurowania subskrypcji docelowej](media/wef 2 config target sub manager.png)
+    ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
    
     5.  Kliknij przycisk **OK**.
     6.  Otwórz wiersz polecenia z podwyższonym poziomem uprawnień i wpisz *gpupdate /force*. 
