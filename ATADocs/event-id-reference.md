@@ -1,135 +1,135 @@
 ---
-title: Odwołanie do Identyfikatora zdarzeń usługi ATA | Dokumentacja firmy Microsoft
+title: Odniesienie identyfikator zdarzenia usługi ATA | Dokumentacja firmy Microsoft
 description: Zawiera listę zdarzeń usługi ATA identyfikatorów i ich opisy.
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 5d639e84-2e37-43a9-9667-49be6c4fa8b7
 ms.reviewer: arzinger
 ms.suite: ems
-ms.openlocfilehash: e9147f4333f481eaec4967dd32846bd123866941
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 0c37024719a9037cb0522ba40115714a35a399b2
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009357"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166446"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
-# <a name="ata-event-id-reference"></a>Odwołanie do Identyfikatora zdarzeń usługi ATA
+# <a name="ata-event-id-reference"></a>Odniesienie identyfikator zdarzenia usługi ATA
 
-Podgląd zdarzeń Centrum usługi ATA w dziennikach zdarzeń usługi ATA. Ten artykuł zawiera listę identyfikatorów zdarzeń i zawiera opis każdego z nich.
+Podgląd zdarzeń Centrum usługi ATA rejestruje zdarzenia usługi ATA. Ten artykuł zawiera listę identyfikatorów zdarzeń i zawiera opis każdego z nich.
 
 Zdarzenia można znaleźć tutaj:
 
 ![Lokalizacja identyfikator zdarzenia](./media/event-id-location.png)
 
-## <a name="ata-health-events"></a>Zdarzenia kondycji usługi ATA
+## <a name="ata-health-events"></a>Zdarzenia dotyczące kondycji usługi ATA
 
-1001 — dane z bazy danych Centrum usługi ATA dysk alertu health wolnego miejsca 
+1001 — Centrum usługi ATA bazy danych dysku alertów dotyczących kondycji wolnego miejsca 
 
-1003 — Centrum usługi ATA przeciążony alertu health 
+1003 — Centrum usługi ATA przeciążone alertów dotyczących kondycji 
 
 1004 — alert dotyczący kondycji wygaśnięcia certyfikatu 
 
-1005 — baza danych Centrum rozłączona alertu health 
+1005 — baza danych Centrum Rozłączono alertów dotyczących kondycji 
 
-1006 — brama usługi ATA katalogu usług klienta konto hasła wygaśnięcia alert dotyczący kondycji 
+1006 — brama usługi ATA katalogu usług klienta konta hasła ważności alertu dotyczącego kondycji 
 
-1007 — alert kondycji nieprzypisany Synchronizatora domeny bramy usługi ATA 
+1007 — brama usługi ATA alertów dotyczących kondycji nie przypisano Synchronizatora domeny 
 
-1008 — brama usługi ATA przechwytywania sieci karty błędnej kondycja alertu 
+1008 — brama usługi ATA Przechwytywanie sieci karty uszkodzoną kondycji alertu 
 
-1009 — Brak alertu health sieci karty przechwytywania bramy usługi ATA 
+1009 — brama usługi ATA Przechwytywanie sieci karty Brak alertów dotyczących kondycji 
 
-1010 — alert dotyczący bramy usługi ATA katalogu usług klienta łączności kondycji 
+1010 — alert kondycji łączności klienta bramy usługi ATA katalogu usług 
 
-1011 — brama usługi ATA odłączona alertu health 
+1011 — brama usługi ATA Rozłączono alertów dotyczących kondycji 
 
-1012 — brama usługi ATA przeciążony alertu health działania zdarzenia 
+1012 — brama usługi ATA przeciążone alertu kondycji działania zdarzenia 
 
-1013 — alert dotyczący kondycji działania sieci przeciążona bramy usługi ATA 
+1013 — brama usługi ATA przeciążone alertów dotyczących kondycji działania sieci 
 
-1014 — alert dotyczący kondycji poczty center 
+1014 — Centrum wiadomości e-mail alertów dotyczących kondycji 
 
-1015 — alertu health Syslog center 
+1015 — Centrum alertów dotyczących kondycji usługi Syslog 
 
 1016 — alert dotyczący kondycji nieaktualne bram usługi ATA 
 
-1017 — Centrum nie odbiera ruch alertu health 
+1017 — Centrum nie odbierają ruchu alertów dotyczących kondycji 
 
-1018 — alert dotyczący kondycji błąd uruchomienia bramy usługi ATA 
+1018 — brama usługi ATA Niepowodzenie uruchamiania alertów dotyczących kondycji 
 
-1019 — alert dotyczący bramy usługi ATA Brak pamięci kondycji 
+1019 — alert o kondycji bramy usługi ATA małej ilości pamięci 
 
-1020 — alertu health odbiornika zdarzeń RADIUS bramy usługi ATA 
+1020 — alert o kondycji odbiornika usługi RADIUS z bramy usługi ATA zdarzenie 
 
-1021 — alertu health odbiornika zdarzeń Syslog bramy usługi ATA 
+1021 — alert o kondycji odbiornika Syslog do bramy usługi ATA zdarzenie 
 
-1022 — Centrum usługi ATA zewnętrznego adresu IP adres rozpoznawania kondycji alert o niepowodzeniu 
+1022 — Centrum usługi ATA zewnętrznego adresu IP adres rozpoznawania błędu alertów dotyczących kondycji 
  
 ## <a name="ata-suspicious-activity-events"></a>Zdarzenia podejrzanych działań usługi ATA
 
-2001 – podejrzane działania nietypowe zachowanie 
+2001 – podejrzane działanie nietypowe zachowanie 
 
-2002 — protokół nietypowe podejrzanego działania 
+2002 – podejrzane działanie nietypowy protokół 
 
-2003 — konto wyliczenie podejrzanego działania 
+2003 – podejrzane działanie wyliczenia kont 
 
-2004 — LDAP ukierunkowany wymusić podejrzanego działania 
+2004 — LDAP atak wymusić podejrzanego działania 
 
-2006 — directory usługi replikacji podejrzanego działania 
+2006 — katalog usług replikacji podejrzanego działania 
 
-2007 — podejrzane działania Rekonesans DNS 
+2007 — podejrzanych działań rekonesansu DNS 
 
-2008 — szyfrowanie obniżenia poziomu podejrzanego działania 
+2008 — podejrzane działanie obniżenia poziomu szyfrowania 
 
 2012 — Wyliczanie sesji podejrzanego działania 
 
-2013 — forged PAC podejrzanych działań. 
+2013 — podejrzane działanie sfałszowany element PAC 
 
-2014 — wystawionego jako przynęta działania podejrzanego działania 
+2014 — wystawione jako przynęta działanie podejrzanego działania 
 
-2016 — dużego obiektu usunięcia podejrzanego działania 
+2016 — dużej liczby obiektów usunięciu podejrzanej aktywności 
 
-2017 — przebieg skrótu podejrzanego działania 
+2017 — przebiegu skrótu podejrzanego działania 
 
-2018 — dostęp próbny biletu podejrzanego działania 
+2018 — przekazać bilet podejrzanego działania 
 
-2019 — zdalne wykonywanie kodu podejrzanego działania 
+2019 — podejrzane działanie zdalne wykonywanie kodu 
 
 2020 — pobieranie danych kopii zapasowej klucza podejrzanych działań ochrony 
 
-2021 — SAMR Rekonesans podejrzanego działania 
+2021 — podejrzanych działań rekonesansu SAMR 
 
-2022 — golden ticket podejrzanego działania 
+2022 — biletu uwierzytelniania Golden Ticket podejrzanego działania 
 
-2023 — siłowych podejrzanego działania 
+2023 — atak siłowy podejrzanego działania 
 
-2024 - podejrzane działania zmiany członkostwa grupy poufnej nietypowe  
+2024 - podejrzane działania zmiany członkostwa nietypowe wrażliwych grup  
 
 ## <a name="ata-auditing-events"></a>Zdarzenia inspekcji usługi ATA
 
-3001 — Zmień konfigurację usługi ATA 
+3001 — Zmienianie konfiguracji usługi ATA 
 
 3002 — bramy usługi ATA dodano
 
-3003 — bramy usługi ATA usunięte
+3003 — bramy usługi ATA usunięto
 
 3004 - licencja ATA aktywowany
 
-3005 — logowanie się do konsoli usługi ATA
+3005 — Zaloguj się do konsoli usługi ATA
 
-3006 — ręczne zmiana stanu działania kondycji 
+3006 — ręczne zmiany kondycji stanu działania 
 
-3007 — ręczne zmiana stanu podejrzanego działania 
+3007 — ręczne zmiany stan podejrzanego działania 
 
 
 ## <a name="see-also"></a>Zobacz też

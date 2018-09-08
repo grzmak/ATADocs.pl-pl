@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 6361cf277d1b27ab6792e4780827377835c9abd3
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 0adbf6fe0c3cd475c50ea5fbe62b90eecc3214bf
+ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010377"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126437"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -32,15 +32,15 @@ ms.locfileid: "30010377"
 
 ## <a name="step-6-configure-event-collection"></a>Krok 6. Konfigurowanie zbierania zdarzeń
 ### <a name="configure-event-collection"></a>Konfigurowanie zbierania zdarzeń
-W celu zwiększenia możliwości wykrywania usługa ATA wymaga następujących zdarzeń systemu Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045. Uproszczona brama usługi ATA może odczytywać je automatycznie. W przypadku gdy nie jest ona wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń rozwiązania SIEM lub przez [skonfigurowanie przekazywania zdarzeń systemu Windows](configure-event-collection.md). 
+W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje następujących zdarzeń Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045. Uproszczona brama usługi ATA może odczytywać je automatycznie. W przypadku gdy nie jest ona wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów: przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń rozwiązania SIEM lub przez [skonfigurowanie przekazywania zdarzeń systemu Windows](configure-event-collection.md). 
 
 > [!NOTE]
 > W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
 
-Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie przy użyciu zdarzeń systemu Windows. Zdarzenia 4776 używa uwierzytelniania NTLM, co zwiększa różnych wykryć i zdarzenia 4732, 4733 4728, 4729, 4756 i 4757 zwiększenie wykrywania poufnych grupy zmian. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
+Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny usługa ATA może dodatkowo ulepszyć wykrywanie przy użyciu zdarzeń systemu Windows. Używa zdarzenie 4776 protokołu NTLM, różnymi rozwiązaniami do wykrywania i zdarzenia 4732, 4733, 4728, 4729, 4756 i 4757 w celu udoskonalenia wykrywania modyfikacji wrażliwych grup. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 #### <a name="siemsyslog"></a>SIEM/Syslog
-Aby usługa ATA mogła wykorzystywać dane z serwera Syslog należy wykonać następujące czynności:
+Aby można było używać danych z serwera Syslog usłudze ATA należy wykonać następujące czynności:
 
 -   Skonfigurowanie serwerów bramy usługi ATA do nasłuchiwania i akceptowania zdarzeń przekazywanych z serwera SIEM/Syslog.
 > [!NOTE]
@@ -62,7 +62,7 @@ Zapoznaj się z dokumentacją produktu serwera SIEM/Syslog, aby uzyskać informa
 
     ![Obraz włączania protokołu UDP odbiornika programu Syslog](media/ATA-enable-siem-forward-events.png)
 
-2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Aby uzyskać dodatkowe informacje na temat konfigurowania rozwiązania SIEM Zobacz z pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
+2.  Skonfiguruj serwer SIEM lub Syslog do przekazywania zdarzenia systemu Windows o identyfikatorze 4776 na adres IP jednej z bram usługi ATA. Aby uzyskać dodatkowe informacje na temat konfigurowania rozwiązania SIEM Zobacz Twojej pomocy online rozwiązania SIEM lub opcjach pomocy technicznej dotyczących specyficznych wymagań formatowania dla każdego serwera SIEM.
 
 Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:  
 
@@ -77,7 +77,7 @@ Usługa ATA obsługuje zdarzenia SIEM w następujących formatach:
 
     1.  Stała RsaSA (musi się pojawiać).
 
-    2.  Sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Najlepiej z milisekundową dokładnością jest to ważne.
+    2.  Sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Najlepiej milisekundową dokładnością jest to ważne.
 
     3.  Identyfikator zdarzenia systemu Windows
 
@@ -108,7 +108,7 @@ CEF:0|Microsoft|Microsoft Windows||Microsoft-Windows-Security-Auditing:4776|Kont
 
     -   externalId = identyfikator zdarzenia systemu Windows
 
-    -   RT = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu Siem lub wysłania do usługi ATA). Najlepiej z milisekundową dokładnością jest to ważne.
+    -   RT = sygnatura czasowa rzeczywistego zdarzenia (Upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Najlepiej milisekundową dokładnością jest to ważne.
 
     -   cat = nazwa dziennika zdarzeń systemu Windows
 
@@ -153,7 +153,7 @@ Kod błędu:         0x0
 
     -   SourceName = nazwa dostawcy zdarzeń systemu Windows
 
-    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
+    -   TimeGenerated = sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z dokładnością do milisekund, jest to ważne.
 
     -   ComputerName = nazwa hosta źródłowego
 
@@ -164,7 +164,7 @@ Kod błędu:         0x0
 -   Kolejność nie jest ważna dla par klucz=wartość.
 
 #### <a name="qradar"></a>QRadar
-Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługa ATA wymaga danych milisekund, platformę QRadar należy ustawić tak, aby zbieranie zdarzeń systemu Windows odbywało się bez użycia agentów. Aby uzyskać więcej informacji, zobacz [ http://www-01.ibm.com/support/docview.wss?uid=swg21700170 ] (http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń systemu Windows bez agenta przy użyciu protokołu MSRPC").
+Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługa ATA wymaga danych milisekund, platformę QRadar należy ustawić tak, aby zbieranie zdarzeń systemu Windows odbywało się bez użycia agentów. Aby uzyskać więcej informacji, zobacz [ http://www-01.ibm.com/support/docview.wss?uid=swg21700170 ] (http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń Windows bez agenta przy użyciu protokołu MSRPC").
 
     <13>Feb 11 00:00:00 %IPADDRESS% AgentDevice=WindowsLog AgentLogFile=Security Source=Microsoft-Windows-Security-Auditing Computer=%FQDN% User= Domain= EventID=4776 EventIDCode=4776 EventType=8 EventCategory=14336 RecordNumber=1961417 TimeGenerated=1456144380009 TimeWritten=1456144380009 Message=The computer attempted to validate the credentials for an account. Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0 Logon Account: Administrator Source Workstation: HOSTNAME Error Code: 0x0
 
@@ -176,7 +176,7 @@ Wymagane pola to:
 - W pełni kwalifikowana nazwa domeny DC
 - Identyfikator zdarzenia systemu Windows
 
-TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z milisekundową dokładnością jest to ważne.
+TimeGenerated to sygnatura czasowa rzeczywistego zdarzenia (upewnij się, że nie jest to sygnatura czasowa odebrania w rozwiązaniu SIEM lub wysłania do usługi ATA). Format powinien być zgodny z rrrrmmddggmmss.uuuuuu, najlepiej z dokładnością do milisekund, jest to ważne.
 
 Message to oryginalny tekst zdarzenia ze zdarzenia systemu Windows
 
@@ -193,13 +193,13 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 
 
 
-## <a name="related-videos"></a>Powiązane pliki wideo
-- [Przegląd wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
-- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+## <a name="related-videos"></a>Pokrewne wideo
+- [Omówienie wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
+- [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Przewodnik wdrażania usługi ATA fazy weryfikacji Koncepcji](http://aka.ms/atapoc)
+- [Przewodnik wdrażania weryfikacji Koncepcji usługi ATA](http://aka.ms/atapoc)
 - [Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

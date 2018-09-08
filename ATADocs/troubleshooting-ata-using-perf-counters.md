@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 78f23d3f2552ed7ddc086be2620fbb627b676722
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 9952eed3557616a63cf137e65d1e968123340924
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010435"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166667"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -34,25 +34,25 @@ Aby uzyskać informacje na temat przepływu wewnętrznych składników usługi A
 
 2.  Wtedy poprzedni składnik zacznie zwiększać **swój** rozmiar, aż zablokuje poprzedzający go składnik, uniemożliwiając wysyłanie kolejnych jednostek.
 
-3.  Dzieje się to wszystkie tyłu aż do składnika NetworkListener, który będzie pomijać ruch sieciowy, gdy nie można przekazywać jednostek.
+3.  Kojarzenie jest wykonywane aż do składnika NetworkListener, który będzie pomijać ruch sieciowy, gdy już nie mogą przesyłać dalej jednostek.
 
 
 ## <a name="retrieving-performance-monitor-files-for-troubleshooting"></a>Pobieranie plików monitora wydajności w celu rozwiązywania problemów
 
 Aby pobrać pliki monitora wydajności (BLG) z różnych składników ATA:
 1.  Otwórz monitora wydajności.
-2.  Zatrzymaj zestaw modułów zbierających dane o nazwie: **brama usługi Microsoft ATA** lub **Microsoft ATA Center**.
+2.  Zatrzymaj zestaw modułów zbierających dane o nazwie: **Microsoft ATA Gateway** lub **Microsoft ATA Center**.
 3.  Przejdź do folderu zestawu modułów zbierających dane (domyślnie jest to „C:\Program Files\Microsoft Advanced Threat Analytics\Gateway\Logs\DataCollectorSets” lub „C:\Program Files\Microsoft Advanced Threat Analytics\Center\Logs\DataCollectorSets”).
 4.  Skopiuj plik BLG z najnowszą datą modyfikacji.
-5.  Ponownie uruchom zestaw modułów zbierających dane o nazwie: **brama usługi Microsoft ATA** lub **Microsoft ATA Center**.
+5.  Ponownie uruchom zestaw modułów zbierających dane o nazwie: **Microsoft ATA Gateway** lub **Microsoft ATA Center**.
 
 
 ## <a name="ata-gateway-performance-counters"></a>Liczniki wydajności bramy usługi ATA
 
 W tej sekcji każde odwołanie do bramy usługi ATA odnosi się także do bramy uproszczonej bramy usługi ATA.
 
-Możesz obserwować stan wydajności w czasie rzeczywistym bramy usługi ATA, dodając liczniki wydajności bramy usługi ATA.
-W tym celu należy otworzyć **monitora wydajności** i dodać wszystkie liczniki dla bramy usługi ATA. Nazwa obiektu liczników wydajności to: **brama usługi Microsoft ATA**.
+Możesz obserwować stan wydajności w czasie rzeczywistym, bramy usługi ATA, dodając liczniki wydajności bramy usługi ATA.
+Jest to realizowane przez otwarcie **monitora wydajności** i dodać wszystkie liczniki dla bramy usługi ATA. Nazwa obiektu liczników wydajności to: **Microsoft ATA Gateway**.
 
 Oto lista głównych liczników bramy usługi ATA, na które należy zwrócić uwagę:
 
@@ -69,13 +69,13 @@ Oto lista głównych liczników bramy usługi ATA, na które należy zwrócić u
 
 > [!NOTE]
 > -   Wartości liczników czasu są podawane w milisekundach.
-> -   Czasami jest więcej wygodniej jest monitorować pełną listę liczników przy użyciu **raport** typu programu graph (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym)
+> -   Jest to czasami więcej wygodniej jest monitorować pełną listę liczników przy użyciu **raportu** typu wykresu (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym)
 
 ## <a name="ata-lightweight-gateway-performance-counters"></a>Liczniki wydajności uproszczonej bramy usługi ATA
 Liczniki wydajności mogą służyć do zarządzania przydziałem w uproszczonej bramie w celu zapewnienia, że usługa ATA nie wyczerpuje zbyt wielu zasobów z kontrolerów domeny, na których jest zainstalowana.
 W celu mierzenia ograniczeń zasobów, które usługa ATA wymusza w uproszczonej bramie, dodaj następujące liczniki:
 
-W tym celu należy otworzyć **monitora wydajności** i dodać wszystkie liczniki dla bramy ATA Lightweight Gateway. Nazwy obiektów liczników wydajności: **brama usługi Microsoft ATA** i **Microsoft ATA Gateway Updater**.
+Jest to realizowane przez otwarcie **monitora wydajności** i dodać wszystkie liczniki dla uproszczonej bramy usługi ATA. Nazwy obiektów liczników wydajności to: **Microsoft ATA Gateway** i **Microsoft ATA Gateway Updater**.
 
 > [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
@@ -99,7 +99,7 @@ Aby zobaczyć rzeczywiste zużycie, sprawdź następujące liczniki:
 ## <a name="ata-center-performance-counters"></a>Liczniki wydajności centrum usługi ATA
 Możesz obserwować stan wydajności centrum usługi ATA w czasie rzeczywistym, dodając liczniki wydajności centrum usługi ATA.
 
-W tym celu należy otworzyć **monitora wydajności** i dodać wszystkie liczniki dla Centrum usługi ATA. Nazwa obiektu liczników wydajności to: **Microsoft ATA Center**.
+Jest to realizowane przez otwarcie **monitora wydajności** i dodać wszystkie liczniki dla Centrum usługi ATA. Nazwa obiektu liczników wydajności to: **Microsoft ATA Center**.
 
 Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić uwagę:
 
@@ -114,10 +114,10 @@ Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić
 
 > [!NOTE]
 > -   Wartości liczników czasu są podawane w milisekundach.
-> -   Czasami jest więcej wygodniej jest monitorować pełną listę liczników przy użyciu wykresu dla raportu (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym).
+> -   Jest to czasami więcej wygodne jest monitorować pełną listę liczników przy użyciu wykresu raport (przykład: monitorowanie wszystkich liczników w czasie rzeczywistym).
 
 ## <a name="operating-system-counters"></a>Liczniki systemu operacyjnego
-W poniższej tabeli wymieniono liczniki główne systemu operacyjnego, aby zwrócić uwagę na:
+Poniższa tabela zawiera listę głównych liczników systemu operacyjnego na które należy zwrócić uwagę:
 
 > [!div class="mx-tableFixed"]
 |Licznik|Opis|Próg|Rozwiązywanie problemów|
@@ -125,9 +125,9 @@ W poniższej tabeli wymieniono liczniki główne systemu operacyjnego, aby zwró
 |Procesor(_Total)\% Czas procesora|Procent czasu, który upłynął, przeznaczony przez procesor na wykonywanie wątku czynnego.|Przeciętnie mniej niż 80%.|Sprawdź, czy istnieje proces zużywający znacznie większą ilość czasu procesora niż powinien.<br /><br />Dodaj więcej procesorów.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.<br /><br />Licznik „Procesor(_Total)\% Czas procesora” może być mniej dokładny w przypadku serwerów wirtualnych, na których bardziej dokładne pomiary braku mocy procesora umożliwia licznik „System\Długość kolejki procesora”.|
 |System\Przełączenia kontekstu/s|Łączna szybkość przełączania wątków we wszystkich procesorach.|Mniej niż 5000&#42; rdzeni (fizycznych).|Sprawdź, czy istnieje proces zużywający znacznie większą ilość czasu procesora niż powinien.<br /><br />Dodaj więcej procesorów.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.<br /><br />Licznik „Procesor(_Total)\% Czas procesora” może być mniej dokładny w przypadku serwerów wirtualnych, na których bardziej dokładne pomiary braku mocy procesora umożliwia licznik „System\Długość kolejki procesora”.|
 |System\Długość kolejki procesora|Liczba wątków gotowych do wykonania i oczekujących na zaplanowanie.|Mniej niż pięć&#42;rdzeni (fizycznych)|Sprawdź, czy istnieje proces zużywający znacznie większą ilość czasu procesora niż powinien.<br /><br />Dodaj więcej procesorów.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.<br /><br />Licznik „Procesor(_Total)\% Czas procesora” może być mniej dokładny w przypadku serwerów wirtualnych, na których bardziej dokładne pomiary braku mocy procesora umożliwia licznik „System\Długość kolejki procesora”.|
-|Pamięć\Dostępna pamięć (MB)|Ilość pamięci fizycznej (RAM) dostępnej do przydzielenia.|Powinien być więcej niż 512.|Sprawdź, czy istnieje proces zużywający znacznie większą ilość pamięci fizycznej niż powinien.<br /><br />Zwiększ ilość pamięci fizycznej.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.|
-|Dysk logiczny(&#42;)\Średnia czas dysku w s/Odczyt|Średnie opóźnienie odczytu danych z dysku (należy wybrać dysk bazy danych jako wystąpienie).|Ta wartość powinna być mniejsza niż 10 milisekund.|Sprawdź, czy istnieje określony proces wykorzystujący dysk bazy danych znacznie intensywniej niż powinien.<br /><br />Jeśli dany dysk może obsługiwać bieżące obciążenie przy jednoczesnym zachowaniu mniej niż 10 ms opóźnienia, zapoznaj się z team/dostawcą magazynu. Bieżące obciążenie można ustalić przy użyciu liczników wykorzystania dysku.|
-|Dysk logiczny(&#42;)\Średnia czas dysku w s/Zapis|Średnie opóźnienie zapisu danych na dysku (należy wybrać dysk bazy danych jako wystąpienie).|Ta wartość powinna być mniejsza niż 10 milisekund.|Sprawdź, czy istnieje określony proces wykorzystujący dysk bazy danych znacznie intensywniej niż powinien.<br /><br />Jeśli dany dysk może obsługiwać bieżące obciążenie przy jednoczesnym zachowaniu mniej niż 10 ms opóźnienia, zapoznaj się z team\vendor Twojego magazynu. Bieżące obciążenie można ustalić przy użyciu liczników wykorzystania dysku.|
+|Pamięć\Dostępna pamięć (MB)|Ilość pamięci fizycznej (RAM) dostępnej do przydzielenia.|Powinno być więcej niż 512.|Sprawdź, czy istnieje proces zużywający znacznie większą ilość pamięci fizycznej niż powinien.<br /><br />Zwiększ ilość pamięci fizycznej.<br /><br />Zmniejsz ilość ruchu sieciowego przypadającą na serwer.|
+|Dysk logiczny(&#42;)\Średnia czas dysku w s/Odczyt|Średnie opóźnienie odczytu danych z dysku (należy wybrać dysk bazy danych jako wystąpienie).|Ta wartość powinna być mniejsza niż 10 milisekund.|Sprawdź, czy istnieje określony proces wykorzystujący dysk bazy danych znacznie intensywniej niż powinien.<br /><br />Zapoznaj się z z zespołem/dostawcą magazynu, jeśli dany dysk może obsługiwać bieżące obciążenie, a jednocześnie ma mniej niż 10 ms opóźnienia. Bieżące obciążenie można ustalić przy użyciu liczników wykorzystania dysku.|
+|Dysk logiczny(&#42;)\Średnia czas dysku w s/Zapis|Średnie opóźnienie zapisu danych na dysku (należy wybrać dysk bazy danych jako wystąpienie).|Ta wartość powinna być mniejsza niż 10 milisekund.|Sprawdź, czy istnieje określony proces wykorzystujący dysk bazy danych znacznie intensywniej niż powinien.<br /><br />Zapoznaj się z Twojego team\vendor magazynu, jeśli dany dysk może obsługiwać bieżące obciążenie, a jednocześnie ma mniej niż 10 ms opóźnienia. Bieżące obciążenie można ustalić przy użyciu liczników wykorzystania dysku.|
 |\Dysk logiczny(&#42;)\Odczyty dysku/s|Szybkość wykonywania operacji odczytu z dysku.|Brak wartości progowej.|Liczniki wykorzystania dysku zapewniają szczegółowe informacje podczas rozwiązywania problemów z opóźnieniem magazynu.|
 |\Dysk logiczny(&#42;)\Bajty odczytu dysku/s|Liczba bajtów odczytywanych z dysku w ciągu sekundy.|Brak wartości progowej.|Liczniki wykorzystania dysku zapewniają szczegółowe informacje podczas rozwiązywania problemów z opóźnieniem magazynu.|
 |\Dysk logiczny&#42;\Zapisy dysku/s|Szybkość wykonywania operacji zapisu na dysku.|Brak wartości progowej.|Liczniki wykorzystania dysku zapewniają szczegółowe informacje podczas rozwiązywania problemów z opóźnieniem magazynu.|

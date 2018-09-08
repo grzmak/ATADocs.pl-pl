@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 9/03/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 9592d413-df0e-4cec-8e03-be1ae00ba5dc
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: 71e7f723d02b4e86f1799e5a92998363766de7a2
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 4d8000f7a50b4847f647a9bcc10843786aeb1285
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24019055"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166650"
 ---
 # <a name="whats-new-in-ata-version-18"></a>Co nowego w wersji 1.8 usługi ATA
 
@@ -77,12 +77,12 @@ Te informacje o wersji obejmują aktualizacje, nowe funkcje, poprawki i znane pr
 
 - Usunięto opcję dodawania notatek z podejrzanych działań
 - Zalecenia dotyczące eliminacji podejrzanych działań zostały usunięte z ich osi czasu.
-- Począwszy od wersji 1.8 usługi ATA bramy usługi ATA i bram Lightweight zarządzanym własne certyfikaty i wymagają interakcji ze strony administratora do zarządzania nimi.
+- Począwszy od wersji 1.8 usługi ATA bramy usługi ATA i uproszczonych bram są własne certyfikaty i zarządzanie muszą interakcji ze strony administratora do zarządzania nimi.
 
 ## <a name="known-issues"></a>Znane problemy
 
 > [!WARNING]
-> Aby uniknąć tych znanych problemów można aktualizacji lub wdrożyć przy użyciu 1.8 aktualizacji 1.
+> Aby uniknąć tych znanych problemów, aktualizacji lub wdrożyć przy użyciu 1.8 update 1.
 
 ### <a name="ata-gateway-on-windows-server-core"></a>Brama usługi ATA w systemie Windows Server Core
 
@@ -128,13 +128,13 @@ W systemie Windows Server 2016 Core błąd może nie zostać wyświetlony, ale p
 
 **Obejście**: Nie używaj serwera proxy na koncie bramy usługi ATA. W przyszłej wersji zostanie wprowadzona aktualizacja rozwiązująca ten problem.
 
-### <a name="report-settings-reset"></a>Resetowanie ustawień raportu
+### <a name="report-settings-reset"></a>Resetuj ustawienia raportu
 
-**Objawy**: wszystkie ustawienia, które zostały wprowadzone Zaplanowane raporty są czyszczone po zaktualizowaniu do 1,8 update 1.
+**Objawy**: wszystkie ustawienia, które zostały wprowadzone do Zaplanowane raporty zostaną wyczyszczone, podczas aktualizacji do 1.8 update 1.
 
-**Opis elementu**: aktualizowanie 1,8 aktualizacji 1 z resetowaniem 1,8 raporty ustawienia harmonogramu.
+**Opis**: aktualizacji do 1.8 update 1 z 1.8 resetuje ustawienia harmonogramu raportów.
 
-**Obejście**: przed zaktualizowaniem 1,8 aktualizacji 1, Utwórz kopię ustawień raportu i wprowadź je ponownie, może to być również za pomocą skryptu, aby uzyskać więcej informacji, zobacz [eksportowania i importowania konfiguracji usługi ATA](ata-configuration-file.md).
+**Obejście**: przed zaktualizowaniem do 1.8 update 1, Utwórz kopię ustawień raportu i wprowadź je ponownie, może to być również za pośrednictwem skryptu, aby uzyskać więcej informacji, zobacz [eksportowanie i importowanie konfiguracji usługi ATA](ata-configuration-file.md).
 
 
 ## <a name="see-also"></a>Zobacz też

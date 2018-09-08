@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: fb65eb41-b215-4530-93a2-0b8991f4e980
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 654312c841c38c86c9efa826227d7cc93eb772cf
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 4a134c2a6b53df5243385b4c2bcdb9e15a0a843f
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24019327"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44165749"
 ---
 # <a name="ata-update-to-15-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.5
 Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
@@ -41,7 +41,7 @@ Aktualizacja usługi ATA do wersji 1.5 zapewnia następujące ulepszenia:
 > [!NOTE]
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.5 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już usługi ATA w wersji 1.4 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji instalacji.
+Jeśli masz już usługę ATA w wersji 1.4 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji instalacji.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
@@ -71,15 +71,15 @@ Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.5:
 
     1.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    2.  Przeczytaj umowę licencyjną użytkownika końcowego i jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij przycisk **dalej**.
+    2.  Przeczytaj umowę licencyjną użytkownika końcowego, a jeśli akceptujesz jej warunki, zaznacz pole wyboru i kliknij **dalej**.
 
     3.  Określ, czy chcesz przeprowadzić migrację pełną (domyślnie), czy częściową.
 
         ![Wybieranie migracji pełnej lub częściowej](media/ATA-center-fullpartial.png)
 
-        -   W przypadku wybrania **częściowe** migracji, wszelkie zebrane ruch sieciowy i zdarzenia systemu Windows przekazywane przez usługę ATA są usuwane i profile behawioralne użytkowników musi być relearned; trwa to co najmniej trzy tygodnie. Jeśli masz mało miejsca na dysku, a następnie warto Uruchom **częściowe** migracji.
+        -   Jeśli wybierzesz **częściowe** migracji dowolnej zbierane ruch sieciowy i zdarzenia przesyłane dalej Windows analizowanych przez usługi ATA są usuwane i rozpoznanie profilów behawioralnych użytkowników muszą być relearned; trwa to co najmniej trzy tygodnie. Jeśli masz mało miejsca na dysku, a następnie warto uruchomić **częściowe** migracji.
 
-        -   Po uruchomieniu **pełne** migracji, potrzebne dodatkowe miejsce na dysku, obliczone na stronie uaktualnienia, a migracja może trwać dłużej, w zależności od ruchu sieciowego. Podczas pełnej migracji zachowywane są wszystkie uprzednio zebrane dane i profile behawioralne użytkowników, co oznacza, że usługa ATA nie wymaga dodatkowego czasu na rozpoznanie profilów behawioralnych, a nietypowe zachowania mogą być wykrywane bezpośrednio po aktualizacji.
+        -   Jeśli uruchamiasz **pełne** migracji potrzebne dodatkowe miejsce na dysku, obliczone na stronie uaktualnienia, a migracja może trwać dłużej, w zależności od ruchu sieciowego. Podczas pełnej migracji zachowywane są wszystkie uprzednio zebrane dane i profile behawioralne użytkowników, co oznacza, że usługa ATA nie wymaga dodatkowego czasu na rozpoznanie profilów behawioralnych, a nietypowe zachowania mogą być wykrywane bezpośrednio po aktualizacji.
 
 3.  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
 
@@ -118,7 +118,7 @@ Plik zip zawiera następujące pliki:
     > [!NOTE]
     > Tego pakietu bramy usługi ATA możesz również używać do instalowania nowych bram usługi ATA.
 
-2.  Twoje poprzednie ustawienia zostaną zachowane, ale może potrwać kilka minut, aż na ponowne uruchomienie usługi.
+2.  Twoje poprzednie ustawienia zostaną zachowane, ale może potrwać kilka minut, zanim do momentu ponowne uruchomienie usługi.
 
 3.  Powtórz ten krok dla wszystkich innych wdrożonych bram usługi ATA.
 

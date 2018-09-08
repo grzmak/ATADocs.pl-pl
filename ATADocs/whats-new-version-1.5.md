@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: a0d64aff-ca9e-4300-b3f8-eb3c8b8ae045
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: a00a555c0dc4590043f93abcd650f6e38d719e6c
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: 0639a1732d542f570b988402d2de72e2519cedcb
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24018273"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44165868"
 ---
 # <a name="whats-new-in-ata-version-15"></a>Co nowego w wersji 1.5 usługi ATA
 Te informacje o wersji zawierają znane problemy w tej wersji usługi Advanced Threat Analytics.
@@ -48,13 +48,13 @@ Po zaktualizowaniu wdrożenia usługi ATA do wersji 1.5 podczas instalowania now
 
 ![Błąd bramy usługi ATA](media/ata-install-error.png)
 
-<b>Obejście:</b> wyślij wiadomość e-mail na adres <ataeval@microsoft.com>, aby uzyskać instrukcje dotyczące obejścia.
+<b>Obejście:</b> Wyślij wiadomość e-mail do <ataeval@microsoft.com> Aby uzyskać instrukcje dotyczące obejścia.
 ### <a name="deployment"></a>wdrażania
 Folder określony w ustawieniach „Ścieżka danych bazy danych” i „Ścieżka dziennika bazy danych” musi być pusty (nie może zawierać plików ani podfolderów).
-Jeśli nie jest pusta, nie postępu wdrożenia.
+Jeśli nie jest pusty, wdrażanie postępu.
 
 ### <a name="installation-from-zip-file"></a>Instalacja z pliku Zip
-Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio w pliku zip lub niepowodzenie instalacji.
+Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio z poziomu w pliku zip lub instalacja zakończy się niepowodzeniem.
 
 ### <a name="configuration"></a>Konfiguracja
 Po ustawieniu konfiguracji bramy usługi ATA podczas pierwszego uruchomienia bramy usługi ATA jest wyświetlana etykieta „Nie zsynchronizowano” do momentu pełnego uruchomienia usługi, co może potrwać do 10 minut, gdy usługa jest uruchamiana po raz pierwszy.

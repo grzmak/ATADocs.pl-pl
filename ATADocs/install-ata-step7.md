@@ -1,25 +1,26 @@
 ---
-title: "Zainstaluj Advanced Threat Analytics — krok 8 | Dokumentacja firmy Microsoft"
-description: "W ostatnim kroku instalowania usługi ATA można skonfigurować użytkownika wystawionego jako przynęta."
-keywords: 
+title: Instalowanie usługi Advanced Threat Analytics — krok 8 | Dokumentacja firmy Microsoft
+description: W ostatnim kroku instalowania usługi ATA można skonfigurować użytkownika wystawionego jako przynęta.
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
-ms.topic: get-started-article
-ms.prod: 
+ms.date: 6/14/2018
+ms.topic: conceptual
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 8d7d53222c4eb98fba554b59f14d8728a88c9d95
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: f15f897539f2f41941675960e425f669cba2c878
+ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126029"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -34,7 +35,7 @@ Usługa ATA umożliwia wykluczenie konkretnych adresów IP lub użytkowników z 
 
 Na przykład można **wykluczyć z rekonesansu przy użyciu systemu DNS** skaner zabezpieczeń, który wykorzystuje system DNS jako mechanizm skanowania. Wykluczenie pozwala usłudze ATA ignorować takie skanery. Przykładem wykluczenia dotyczącego *ataku typu Pass-the-Ticket* jest urządzenie translatora adresów sieciowych (NAT).    
 
-Usługa ATA umożliwia również konfigurację użytkownika wystawionego jako przynęta, który jest używany jako pułapki złośliwych osób — uwierzytelniania skojarzone z tym kontem (zwykle nieaktywni) wyzwala alert.
+Usługa ATA umożliwia również konfigurację użytkownika wystawionego jako przynęta, które jest używane jako pułapka dla uczestników złośliwych działań — dowolne uwierzytelnianie związane z tym kontem (kontem zwykle nieaktywnym) powoduje wyzwolenie alertu.
 
 Aby to skonfigurować, wykonaj następujące kroki:
 
@@ -42,9 +43,9 @@ Aby to skonfigurować, wykonaj następujące kroki:
 
     ![Ustawienia konfiguracji usługi ATA](media/ATA-config-icon.png)
 
-2.  W obszarze **Wykrywanie** kliknij pozycję **Ogólne**.
+2.  W obszarze **wykrywania**, kliknij przycisk **tagów jednostki**.
 
-2. W polu **Konta wystawione jako przynęta** podaj nazwę konta wystawionego jako przynęta. W polu kont wystawionych jako przynęta jest wyszukiwalna i automatycznie wyświetla jednostek w sieci.
+2. W polu **Konta wystawione jako przynęta** podaj nazwę konta wystawionego jako przynęta. Pole konta wystawione jako przynęta umożliwia wyszukiwanie i automatycznie wyświetla jednostki w sieci.
 
    ![Przynęta](media/honeytoken.png)
 
@@ -59,7 +60,7 @@ Gratulacje, usługa Microsoft Advanced Threat Analytics została pomyślnie wdro
 
 Sprawdź wiersz czasu ataku, aby wyświetlić wykryte podejrzane działania i wyszukać użytkowników lub komputery i wyświetlić ich profile.
 
-Usługa ATA zaczyna od razu skanowanie w poszukiwaniu podejrzanych działań. Niektóre działania, takie jak niektóre podejrzane działania, jest niedostępny, dopóki usługa ATA miał czas na utworzenie profilów zachowania (co najmniej trzy tygodnie).
+Usługa ATA uruchamia skanowanie w poszukiwaniu podejrzanych działań od razu. Niektóre działania, takie jak niektóre podejrzane działania, jest niedostępny, dopóki usługa ATA czas na utworzenie profilów zachowania (co najmniej trzy tygodnie).
 
 Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sieci, możesz zapoznać się z [podręcznikiem symulacji ataku za pomocą usługi ATA](https://docs.microsoft.com/enterprise-mobility-security/solutions/ata-attack-simulation-playbook).
 
@@ -69,13 +70,13 @@ Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sie
 [kroku 9»](install-ata-step9-samr.md)
 
 
-## <a name="related-videos"></a>Powiązane pliki wideo
-- [Przegląd wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
-- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+## <a name="related-videos"></a>Pokrewne wideo
+- [Omówienie wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
+- [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Przewodnik wdrażania usługi ATA fazy weryfikacji Koncepcji](http://aka.ms/atapoc)
+- [Przewodnik wdrażania weryfikacji Koncepcji usługi ATA](http://aka.ms/atapoc)
 - [Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

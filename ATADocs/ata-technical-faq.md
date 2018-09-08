@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 5/6/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: a7d378ec-68ed-4a7b-a0db-f5e439c3e852
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: f372b4b85c240079da157052e2c20c46801398be
-ms.sourcegitcommit: 39a1ddeb6c9dd0817f92870b711627350b7f6f03
+ms.openlocfilehash: c28783170764c117a07fa19946c83638f24dc1a6
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33913311"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166497"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 # <a name="ata-frequently-asked-questions"></a>Usługa ATA — często zadawane pytania
 Ten artykuł zawiera listę często zadawanych pytań dotyczących usługi ATA oraz wskazówki i odpowiedzi.
@@ -46,16 +46,16 @@ Musi on zostać zdalnie uruchomiony na monitorowanym kontrolerze domeny, a nie z
 
 ## <a name="which-ata-build-corresponds-to-each-version"></a>Które kompilacje usługi ATA odnoszą się do poszczególnych wersji?
 
-Do uaktualnienia informacje o wersji, zobacz [ścieżka uaktualnienia ATA](upgrade-path.md).
+Dla uaktualnienie informacje o wersji, zobacz [ATA ścieżka uaktualnienia](upgrade-path.md).
 
 ## <a name="what-version-should-i-use-to-upgrade-my-current-ata-deployment-to-the-latest-version"></a>Której wersji mam użyć, aby uaktualnić moje aktualne wdrożenie usługi ATA do najnowszej wersji?
 
-Macierzy uaktualnienia wersji usługi ATA, zobacz [ścieżka uaktualnienia ATA](upgrade-path.md).
+Macierz uaktualniania wersji usługi ATA można zobaczyć [ATA ścieżka uaktualnienia](upgrade-path.md).
 
 
-## <a name="how-does-the-ata-center-update-its-latest-signatures"></a>Jak Centrum usługi ATA zaktualizować jej najnowszych sygnatur?
+## <a name="how-does-the-ata-center-update-its-latest-signatures"></a>Jak Centrum usługi ATA może zaktualizować jego najnowszych sygnatur?
 
-Mechanizm wykrywania usługi ATA została rozszerzona o nowej wersji jest zainstalowany w Centrum usługi ATA. Centrum można uaktualnić za pomocą usługi Microsoft Update (MU) lub ręcznie pobrać nową wersję z Centrum pobierania lub licencji woluminu.
+Mechanizm wykrywania usługi ATA został rozszerzony, po zainstalowaniu nowej wersji Centrum usługi ATA. Centrum można uaktualnić za pomocą usługi Microsoft Update (MU) lub ręcznie pobrać nową wersję z Centrum pobierania lub witryny licencji woluminu.
 
 ## <a name="how-do-i-verify-windows-event-forwarding"></a>Jak sprawdzić funkcję przekazywania zdarzeń systemu Windows?
 Można umieścić w pliku następujący kod, a następnie uruchomić go z wiersza polecenia w katalogu **\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin** w następujący sposób:
@@ -71,7 +71,7 @@ mongo.exe ATA nazwa_pliku
         });
 
 ## <a name="does-ata-work-with-encrypted-traffic"></a>Czy usługa ATA współpracuje z ruchem zaszyfrowanym?
-Usługa ATA polega na analizowanie wielu protokołów sieciowych, a także zdarzenia zebrane z systemu SIEM lub za pośrednictwem funkcji przekazywania zdarzeń systemu Windows. Wykryć oparte na protokołach sieciowych z ruchem zaszyfrowanym (na przykład: LDAPS i IPSEC) nie zostanie przeanalizowany.
+Usługa ATA bazuje na analizowaniu wielu protokołów sieciowych, a także zdarzeń zebranych z rozwiązania SIEM lub za pośrednictwem funkcji przekazywania zdarzeń Windows. Wykrywanie oparte na protokołach sieciowych z ruchem zaszyfrowanym (na przykład LDAPS i IPSEC) nie zostanie przeanalizowany.
 
 
 ## <a name="does-ata-work-with-kerberos-armoring"></a>Czy usługa ATA działa z ochroną protokołu Kerberos?
@@ -90,12 +90,12 @@ Dzieje się tak, gdy konto jest członkiem pewnych grup, które zostały wyznacz
 
 Aby dowiedzieć się, dlaczego konto jest poufne, można przejrzeć jego przynależność do grup i zobaczyć, do jakich poufnych grup należy (te grupy mogą być również poufne z powodu innej grupy, a więc ten proces należy kontynuować do momentu zlokalizowania grupy poufnej najwyższego poziomu). 
 
-Ponadto można ręcznie oznaczyć użytkownika, grupy lub komputera jako poufne. Aby uzyskać więcej informacji, zobacz [kont poufne Tag](tag-sensitive-accounts.md).
+Ponadto, można ręcznie oznaczyć użytkownika, grupy lub komputera jako poufne. Aby uzyskać więcej informacji, zobacz [Tagowanie poufnych kont](tag-sensitive-accounts.md).
 
 ## <a name="how-do-i-monitor-a-virtual-domain-controller-using-ata"></a>Jak monitorować kontroler domeny za pomocą usługi ATA?
 Większość wirtualnych kontrolerów domeny może być objętych przez uproszczoną bramę usługi ATA. Aby określić, czy uproszczona brama usługi ATA jest odpowiednia dla danego środowiska, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
 
-Jeśli wirtualny kontroler domeny nie może być objęte przez bramy ATA Lightweight Gateway, może mieć albo wirtualne lub fizyczne bramy usługi ATA, zgodnie z opisem w [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).  <br />Najprostszym sposobem jest zainstalowanie wirtualnej bramy usługi ATA na każdym hoście, na którym znajduje się wirtualny kontroler domeny.<br />Jeśli wirtualne kontrolery domeny są przenoszone między hostami, należy wykonać jedną z następujących czynności:
+Jeśli wirtualny kontroler domeny nie może być objęte przez bramy ATA Lightweight Gateway, może mieć albo dla wirtualnych lub fizycznych bramy usługi ATA, zgodnie z opisem w [Konfigurowanie funkcji dublowania portów](configure-port-mirroring.md).  <br />Najprostszym sposobem jest zainstalowanie wirtualnej bramy usługi ATA na każdym hoście, na którym znajduje się wirtualny kontroler domeny.<br />Jeśli wirtualne kontrolery domeny są przenoszone między hostami, należy wykonać jedną z następujących czynności:
 
 -   Jeśli wirtualny kontroler domeny jest przenoszony na innego hosta, należy wstępnie skonfigurować bramę usługi ATA na tym hoście, aby odbierać ruch z ostatnio przeniesionego wirtualnego kontrolera domeny.
 -   Upewnić się, że wirtualna brama usługi ATA jest powiązana z wirtualnym kontrolerem domeny, tak aby w przypadku jego przeniesienia wirtualna brama usługi ATA była przenoszona razem z nim.
@@ -113,10 +113,10 @@ Usługa ATA wykrywa znane złośliwe ataki oraz techniki, problemy z zabezpiecze
 Pełna lista zagrożeń wykrywanych przez usługę ATA znajduje się w artykule [Jakie zagrożenia wykrywa usługa ATA?](ata-threats.md).
 
 ## <a name="what-kind-of-storage-do-i-need-for-ata"></a>Jakiego rodzaju magazynu potrzebuje usługa ATA?
-Firma Microsoft zaleca szybki magazyn (dyski 7200 OBR nie są zalecane) o małych opóźnieniach dostępu do dysku (mniej niż 10 ms). Konfiguracja RAID powinna obsługiwać wysokie obciążenia podczas zapisu danych (nie zaleca się stosowania konfiguracji RAID-5/6 i ich pochodnych).
+Firma Microsoft zaleca szybki magazyn (nie są zalecane dyski 7200 obr. / min) z małymi opóźnieniami dostępu do dysku (mniej niż 10 ms). Konfiguracja RAID powinna obsługiwać wysokie obciążenia podczas zapisu danych (nie zaleca się stosowania konfiguracji RAID-5/6 i ich pochodnych).
 
 ## <a name="how-many-nics-does-the-ata-gateway-require"></a>Jak wiele kart sieciowych wymaga brama usługi ATA?
-Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do łączenia się z siecią wewnętrzną i centrum usługi ATA<br>2. Karta sieciowa, która jest używana do przechwytywania ruchu sieciowego kontrolera domeny za pomocą funkcji dublowania portów.<br>* Nie dotyczy to uproszczonej bramy usługi ATA, która natywnie wykorzystuje wszystkie karty sieciowe używane przez kontroler domeny.
+Brama ATA wymaga co najmniej dwóch kart sieciowych:<br>1. Karta sieciowa do łączenia się z siecią wewnętrzną i centrum usługi ATA<br>2. Karta sieciowa, która jest używana do przechwytywania ruchu sieciowego kontrolera domeny za pośrednictwem funkcji dublowania portów.<br>* Nie dotyczy to uproszczonej bramy usługi ATA, która natywnie wykorzystuje wszystkie karty sieciowe używane przez kontroler domeny.
 
 ## <a name="what-kind-of-integration-does-ata-have-with-siems"></a>Jakiego rodzaju integracji używa usługa ATA z rozwiązaniem SIEM?
 Usługa ATA ma dwukierunkową integrację z rozwiązaniem SIEM, zgodnie z poniższym opisem:
@@ -149,13 +149,13 @@ Dublowanie portów, zwane również funkcją SPAN (Switched Port Analyzer), jest
 Nie. Usługa ATA monitoruje wszystkie urządzenia w sieci wysyłające żądania uwierzytelniania i autoryzacji do usługi Active Directory, w tym urządzenia z systemem innym niż Windows i urządzenia przenośne.
 
 ## <a name="does-ata-monitor-computer-accounts-as-well-as-user-accounts"></a>Czy usługa ATA monitoruje zarówno konta komputerów, jak i konta użytkowników?
-Tak. Ponieważ komputera konta (a także innych jednostek) może służyć do wykonywania złośliwych działań, usługa ATA monitoruje zachowanie wszystkich kont komputerów i wszystkie inne jednostki w środowisku.
+Tak. Ponieważ komputer konta (a także innych jednostek) może służyć do wykonywania złośliwych działań, usługa ATA monitoruje zachowanie wszystkich kont komputerów i wszystkie inne jednostki w środowisku.
 
 ## <a name="can-ata-support-multi-domain-and-multi-forest"></a>Czy usługa ATA może obsługiwać wiele domen i wiele lasów?
 Usługa Microsoft Advanced Threat Analytics obsługuje środowiska wielu domen w obrębie granicy pojedynczego lasu. Większa liczba lasów wymaga wdrożenia usługi ATA w każdym lesie.
 
 ## <a name="can-you-see-the-overall-health-of-the-deployment"></a>Czy można przeglądać informacje dotyczące ogólnej kondycji wdrożenia?
-Tak, można wyświetlić ogólnej kondycji wdrożenia oraz jak określone problemy związane z konfiguracją, łącznością itp. i są alerty w przypadku występowania.
+Tak, można wyświetlić ogólnej kondycji wdrożenia oraz jak określonych problemach związanych z konfiguracji, łącznością itp., a alerty są wyzwalane w momencie ich wystąpienia.
 
 
 ## <a name="see-also"></a>Zobacz też

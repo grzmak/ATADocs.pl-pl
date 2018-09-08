@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 0756ef64-3aef-4a69-8981-24fa8f285c6a
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: c1be20cc147e88f55d227818331f06d409dd08e7
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: f3507b344d41fd5ba4cc2fff8195178bd735b6e4
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24018188"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166480"
 ---
 # <a name="ata-update-to-16-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.6
 Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
@@ -41,10 +41,10 @@ Aktualizacja usługi ATA do wersji 1.6 zapewnia następujące ulepszenia:
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.6 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już usługi ATA w wersji 1.5 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
+Jeśli masz już usługę ATA w wersji 1.5 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
-> Nie można zainstalować usługi ATA w wersji 1.6 bezpośrednio na usłudze ATA w wersji 1.4. Należy najpierw zainstalować usługę ATA w wersji 1.5. Jeśli użytkownik przypadkowo spróbuje zainstalować 1.6 usługi ATA bez instalowania usługi ATA w wersji 1.5, wystąpi błąd informujący, że **na tym komputerze jest już zainstalowana nowsza wersja.** Należy odinstalować wszystkie elementy w wersji 1.6 usługi ATA, które pozostają na komputerze — nawet jeśli instalacja nie powiodła się — przed zainstalowaniem usługi ATA w wersji 1.5.
+> Nie można zainstalować usługi ATA w wersji 1.6 bezpośrednio na usłudze ATA w wersji 1.4. Należy najpierw zainstalować usługę ATA w wersji 1.5. Jeśli przypadkowo spróbuje zainstalować usługę ATA w wersji 1.6, bez konieczności instalowania usługi ATA w wersji 1.5, wystąpi błąd informujący, że **na tym komputerze jest już zainstalowana nowsza wersja.** Należy odinstalować wszystkie elementy w wersji 1.6 usługi ATA, które pozostają na komputerze — nawet, jeśli instalacja nie powiodła się — przed zainstalowaniem usługi ATA w wersji 1.5.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.6:
 
@@ -72,20 +72,20 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
 2.  Uruchom plik instalacyjny Microsoft ATA Center Setup.exe i postępuj zgodnie z instrukcjami na ekranie, aby zainstalować aktualizację.
 
-    1.  Usługa ATA w wersji 1.6 wymaga zainstalowania platformy .NET Framework 4.6.1. Jeśli nie jest jeszcze zainstalowana, instalacja usługi ATA zainstaluje .net Framework 4.6.1 w ramach instalacji.
+    1.  Usługa ATA w wersji 1.6 wymaga zainstalowania platformy .NET Framework 4.6.1. Jeśli nie jest jeszcze zainstalowana, instalacja usługi ATA instaluje platformę .net Framework 4.6.1 w ramach instalacji.
     
         > [!NOTE] 
         > Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Instalacja usługi ATA będzie kontynuowana dopiero po ponownym uruchomieniu serwera.
     
     2.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    3.  Przeczytaj umowę licencyjną użytkownika końcowego i jeśli akceptujesz jej warunki, kliknij przycisk **dalej**.
+    3.  Przeczytaj umowę licencyjną użytkownika końcowego, a jeśli akceptujesz jej warunki, kliknij przycisk **dalej**.
 
     4.  Obecnie istnieje możliwość użycia usługi Microsoft Update w celu utrzymania aktualnej usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Zachowaj ATA aktualny obraz](media/ata_ms_update.png) to można dostosować ustawienia systemu Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano poniżej. 
+    ![Zachowaj aktualny obraz usługi ATA](media/ata_ms_update.png) to dostosowuje ustawienia Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano tutaj. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
-    5.  Przed rozpoczęciem instalacji usługi ATA wykonuje sprawdzanie gotowości. Przejrzyj wyniki sprawdzania, aby upewnić się, że wymagania wstępne zostały odpowiednio skonfigurowane i że masz co najmniej minimalną ilość miejsca na dysku. 
+    5.  Przed rozpoczęciem instalacji Usługa ATA wykonuje sprawdzenie gotowości. Przejrzyj wyniki sprawdzania, aby upewnić się, że wymagania wstępne zostały odpowiednio skonfigurowane i że masz co najmniej minimalną ilość miejsca na dysku. 
     ![Obraz sprawdzania gotowości usługi ATA](media/ata_install_readinesschecks.png)
 
     6.  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
@@ -132,7 +132,7 @@ Plik zip zawiera następujące pliki:
 > [!NOTE] 
 > Po pomyślnym zaktualizowaniu bramy usługi ATA nieaktualne powiadomienie dla tej bramy usługi ATA zostanie rozwiązane.
 
-Wiadomo, że wszystkie bramy usługi ATA zostały pomyślnie zaktualizowane gdy raport wszystkich bram usługi ATA będą sygnalizować pomyślne zsynchronizowanie, a nie jest wyświetlany komunikat, że zaktualizowanego pakietu bramy usługi ATA jest dostępny.
+Wiesz, że wszystkie bramy usługi ATA zostały pomyślnie zaktualizowane po wszystkich bram usługi ATA zgłosić, że pomyślne zsynchronizowanie, a komunikat, że zaktualizowany pakiet bramy usługi ATA jest dostępna nie będzie już wyświetlany.
 
 ![Obraz przedstawiający zaktualizowane bramy](media/ATA-gw-updated.png)
 

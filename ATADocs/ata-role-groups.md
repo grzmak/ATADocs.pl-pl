@@ -6,35 +6,35 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 3715b69e-e631-449b-9aed-144d0f9bcee7
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 3fdee9a98adaaacfa354a4ce95ad45c12b9be548
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: b9779476187d22e8fdd35c0958b52de527b3830c
+ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010197"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126522"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
 
 # <a name="ata-role-groups"></a>Grupy ról usługi ATA
 
-Rola grupy umożliwiają zarządzanie dostępem dla usługi ATA. Korzystając z grup ról, można segregować obowiązki w obrębie zespołu zabezpieczeń i udzielać uprawnień dostępu w minimalnym zakresie potrzebnym użytkownikom do wykonania zadań. W tym artykule przedstawiono sposób zarządzania dostępem i autoryzacji ról usługi ATA, co ułatwia rozpoczęcie korzystania z grup ról w usłudze w ATA.
+Grupy ról umożliwiają zarządzanie dostępem do usługi ATA. Korzystając z grup ról, można segregować obowiązki w obrębie zespołu zabezpieczeń i udzielać uprawnień dostępu w minimalnym zakresie potrzebnym użytkownikom do wykonania zadań. W tym artykule przedstawiono sposób zarządzania dostępem i autoryzacji ról usługi ATA, co ułatwia rozpoczęcie korzystania z grup ról w usłudze w ATA.
 
 > [!NOTE]
 > Każdy lokalny administrator centrum usługi ATA jest automatycznie administratorem usługi Microsoft Advanced Threat Analytics.
 
 ## <a name="types-of-ata-role-groups"></a>Typy grup ról usługi ATA 
 
-ATA przedstawiono trzy rodzaje ról grupy: Administratorzy usługi ATA, użytkownicy usługi ATA i podglądy usługi ATA. W poniższej tabeli opisano typy dostępu w usłudze ATA, z których mogą korzystać poszczególne role. W zależności od roli przypisać różnych ekranach i menu opcji w usłudze ATA nie są dostępne, w następujący sposób:
+Usługa ATA wprowadza trzy typy grup ról: Administratorzy ATA, użytkownicy ATA oraz osoby przeglądające ATA. W poniższej tabeli opisano typy dostępu w usłudze ATA, z których mogą korzystać poszczególne role. W zależności od roli, które można przypisać różne ekrany i menu opcji w usłudze ATA nie są dostępne, w następujący sposób:
 
 |Aktywność |Administratorzy usługi Microsoft Advanced Threat Analytics|Użytkownicy usługi Microsoft Advanced Threat Analytics|Osoby przeglądające usługę Microsoft Advanced Threat Analytics|
 |----|----|----|----|
@@ -51,7 +51,7 @@ ATA przedstawiono trzy rodzaje ról grupy: Administratorzy usługi ATA, użytkow
 |Wyświetlanie alertów i podejrzanych działań|Dostępne|Dostępne|Dostępne|
 
 
-Gdy użytkownicy próbują uzyskać dostęp do strony, która nie jest dostępna dla grupy, roli, zostanie przekierowany do strony nieautoryzowanego usługi ATA. 
+Gdy użytkownicy próbują uzyskać dostęp do strony, która nie jest dostępna dla danej grupy ról, zostanie przekierowany do nieautoryzowanej strony usługi ATA. 
 
 ## <a name="add--remove-users---ata-role-groups"></a>Dodawanie\usuwanie użytkowników — grupy ról usługi ATA 
 

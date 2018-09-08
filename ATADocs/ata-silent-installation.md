@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 44002cc41abc39f3c70b7a2f5ff131604fd703ba
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: fb77d47e7dcdad120958bac7ae996bddedc55f08
+ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009840"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126403"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 # <a name="ata-silent-installation"></a>Instalacja usługi ATA w trybie dyskretnym
@@ -30,11 +30,11 @@ Ten artykuł zawiera instrukcje dotyczące instalowania usługi ATA w trybie dys
 
 Usługa ATA 1.8 wymaga zainstalowania programu Microsoft .NET Framework 4.6.1. 
 
-Po instalacji lub aktualizacji usługi ATA, .net Framework 4.6.1 jest automatycznie instalowany jako część wdrożenia Microsoft ATA.
+Podczas instalowania lub aktualizowania usługi ATA, .net Framework 4.6.1 jest automatycznie instalowany jako część wdrożenia program Microsoft ATA.
 
 > [!Note] 
 > Instalacja platformy .Net Framework 4.6.1 może wymagać ponownego uruchomienia serwera. Podczas instalowania bramy usługi ATA na kontrolerach domeny warto pomyśleć o zaplanowaniu okna obsługi dla tych kontrolerów domeny.
-W przypadku użycia dyskretnej metody instalacji usługi ATA instalator jest skonfigurowany tak, aby automatycznie uruchomić ponownie serwer na końcu instalacji (w razie potrzeby). Z powodu błędu Instalatora Windows norestart, flaga nie może być niezawodnie stosowany do upewnij się, że serwer nie jest ponownie uruchamiany, dlatego upewnij się, że tylko uruchamiania instalacji dyskretnej w oknie obsługi.
+W przypadku użycia dyskretnej metody instalacji usługi ATA instalator jest skonfigurowany tak, aby automatycznie uruchomić ponownie serwer na końcu instalacji (w razie potrzeby). Z powodu usterki Instalatora Windows norestart nie można niezawodnie użyć flagi do upewnij się, że serwer nie jest ponownie uruchamiany, dlatego upewnij się, że jest uruchamiana tylko instalacja dyskretna podczas okna obsługi.
 
 Aby śledzić postępy wdrażania, Monitoruj dzienniki Instalatora usługi ATA, które znajdują się w **%AppData%\Local\Temp**.
 
@@ -67,9 +67,9 @@ Użyj poniższego polecenia, aby zainstalować centrum usługi ATA:
 |DatabaseDataPath|DatabaseDataPath="<DBPath>"|Nie|Ustawia ścieżkę folderu danych bazy danych usługi ATA. Domyślna ścieżka to C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|
 |CenterIpAddress|CenterIpAddress=<CenterIPAddress>|Tak|Ustawia adres IP centrum usługi ATA.|
 |CenterPort|CenterPort=<CenterPort>|Tak|Ustawia port sieciowy centrum usługi ATA.|
-|CenterCertificateThumbprint|CenterCertificateThumbprint="<CertThumbprint>"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. Jeśli nie zestawu, instalacja wygeneruje certyfikat z podpisem własnym.|
+|CenterCertificateThumbprint|CenterCertificateThumbprint="<CertThumbprint>"|Nie|Ustawia odcisk palca certyfikatu dla centrum usługi ATA. Ten certyfikat jest wykorzystywany do zabezpieczenia komunikacji między centrum usługi ATA i bramą usługi ATA. W przeciwnym razie zestawu, instalacja wygeneruje certyfikat z podpisem własnym.|
 |ConsoleIpAddress|ConsoleIpAddress=<ConsoleIPAddress>|Tak|Ustawia adres IP konsoli usługi ATA.|
-|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint="<CertThumbprint >"|Nie|Określa odcisk palca certyfikatu dla konsoli usługi ATA. Ten certyfikat służy do sprawdzania tożsamości witryny konsoli usługi ATA. Jeśli nie zostanie określony, instalacja wygeneruje certyfikatu z podpisem własnym|
+|ConsoleCertificateThumbprint|ConsoleCertificateThumbprint="<CertThumbprint >"|Nie|Określa odcisk palca certyfikatu dla konsoli usługi ATA. Ten certyfikat jest używany do sprawdzania tożsamości witryny konsoli usługi ATA. Jeśli nie zostanie określony, instalacja wygeneruje certyfikat z podpisem własnym|
 
 **Przykłady**: aby zainstalować centrum usługi ATA przy użyciu domyślnych ścieżek instalacji i pojedynczego adresu IP:
 
@@ -137,7 +137,7 @@ Aby przeprowadzić odinstalowywanie centrum usługi ATA w trybie dyskretnym, uż
 ## <a name="ata-gateway-silent-installation"></a>Instalacja bramy usługi ATA w trybie dyskretnym
 
 > [!NOTE]
-> Wdrażając dyskretnie bramy ATA Lightweight Gateway, za pomocą programu System Center Configuration Manager lub inny system wdrożenia oprogramowania, zalecane jest tworzenie dwa pakiety wdrożeniowe:</br>-Net Framework 4.6.1 w tym ponowny rozruch kontrolera domeny</br>— Brama usługi ATA. </br>Skonfiguruj pakiet bramy usługi ATA zależał od wdrożenia programu .net Framework wdrożenia pakietu. </br>Pobierz [.Net Framework 4.6.1 pakietu wdrożeniowego w trybie offline](https://www.microsoft.com/download/details.aspx?id=49982). 
+> Wdrażając dyskretnie bramy ATA Lightweight Gateway, za pomocą programu System Center Configuration Manager lub innym systemem wdrażania oprogramowania, zalecane jest tworzenie dwa pakiety wdrażania:</br>-Net Framework 4.6.1 w tym ponowny rozruch kontrolera domeny</br>— Brama usługi ATA. </br>Wprowadź pakiet bramy usługi ATA zależy od wdrożenia programu .net Framework wdrożenia pakietu. </br>Pobierz [.Net Framework 4.6.1 wdrożenie w trybie offline pakietu](https://www.microsoft.com/download/details.aspx?id=49982). 
 
 
 Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskretnym:
@@ -169,7 +169,7 @@ Użyj poniższego polecenia, aby zainstalować bramę usługi ATA w trybie dyskr
 |ConsoleAccountName|ConsoleAccountName="<AccountName>"|Tak|Określa nazwę konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 |ConsoleAccountPassword|ConsoleAccountPassword="<AccountPassword>"|Tak|Określa hasło konta użytkownika (user@domain.com), które jest używane do rejestrowania bramy usługi ATA przy użyciu centrum usługi ATA.|
 
-**Przykłady**: aby dyskretnie zainstalować bramę usługi ATA, zaloguj się do domeny przyłączony komputer przy użyciu poświadczeń administratora usługi ATA, dzięki czemu nie trzeba określić poświadczenia w ramach instalacji. W przeciwnym razie zarejestruj ją w centrum usługi ATA za pomocą podanych poświadczeń:
+**Przykłady**: aby dyskretnie zainstalować bramę usługi ATA, zaloguj się do domeny przyłączone do komputera przy użyciu poświadczeń administratora usługi ATA, dzięki czemu nie musisz określić poświadczenia, jako część instalacji. W przeciwnym razie zarejestruj ją w centrum usługi ATA za pomocą podanych poświadczeń:
 
     "Microsoft ATA Gateway Setup.exe" /quiet NetFrameworkCommandLineArguments="/q" 
     ConsoleAccountName="user@contoso.com" ConsoleAccountPassword="userpwd"

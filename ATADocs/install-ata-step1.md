@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 27a016fe71d08dd8e8852fc44d5dea142f914d9e
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 028b27b36ed483338f73c30551b9f0296731a87e
+ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30010095"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126216"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 # <a name="install-ata---step-1"></a>Instalowanie usługi ATA — Krok 1
@@ -28,10 +28,10 @@ ms.locfileid: "30010095"
 >[!div class="step-by-step"]
 [Krok 2 »](install-ata-step2.md)
 
-Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA dla wersji 1.9](ata-update-1.9-migration-guide.md).
+Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA do wersji 1.9](ata-update-1.9-migration-guide.md).
 
 > [!IMPORTANT] 
-> Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia komputera w trakcie instalacji usługi ATA.
+> Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia instalacji usługi ATA.
 
 ## <a name="step-1-download-and-install-the-ata-center"></a>Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
@@ -50,15 +50,15 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 > [!NOTE]   
 > Pamiętaj, aby uruchomić plik instalacyjny z dysku lokalnego, a nie z zainstalowanego pliku ISO. Pozwoli to na uniknięcie problemów w przypadku, gdy w ramach instalacji jest wymagany ponowny rozruch.   
 
-4.  Jeśli nie zainstalowano programu Microsoft .net Framework, są monit o jej zainstalowanie po rozpoczęciu instalacji. Po zakończeniu instalacji platformy .Net Framework może pojawić się prośba o ponowne uruchomienie.
+4.  Jeśli nie zainstalowano programu Microsoft .net Framework, monit go zainstalować, po rozpoczęciu instalacji. Po zakończeniu instalacji platformy .Net Framework może pojawić się prośba o ponowne uruchomienie.
 5.  Na stronie **Zapraszamy** wybierz język do zastosowania na ekranach instalacji usługi ATA i kliknij przycisk **Dalej**.
 
-6.  Przeczytaj postanowienia licencyjne dotyczące oprogramowania firmy Microsoft i, jeśli akceptujesz jej warunki, zaznacz pole wyboru, a następnie kliknij przycisk **dalej**.
+6.  Przeczytaj postanowienia licencyjne dotyczące oprogramowania firmy Microsoft, a jeśli akceptujesz jej warunki, kliknij pole wyboru, a następnie kliknij przycisk **dalej**.
 
-7.  Zaleca się ustawienie automatycznej aktualizacji usługi ATA. Jeśli system Windows nie jest skonfigurowany w tym celu na komputerze, możesz uzyskać **Użyj usługi Microsoft Update, aby chronić komputer i aktualne** ekranu. 
+7.  Zaleca się ustawienie automatycznej aktualizacji usługi ATA. Jeśli Windows nie jest ustawione w tym celu na komputerze, możesz uzyskać **Użyj usługi Microsoft Update do zapewnienia bezpieczeństwa i bądź na bieżąco komputera** ekranu. 
     ![Obraz utrzymywania aktualności usługi ATA](media/ata_ms_update.png)
 
-8. Wybierz opcję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**. To można dostosować ustawienia systemu Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano poniżej. 
+8. Wybierz opcję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**. To pozwala dopasować ustawienia Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano tutaj. 
 
     ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
@@ -67,8 +67,8 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
     |Pole|Opis|Komentarze|
     |---------|---------------|------------|
     |Ścieżka instalacji|Jest to lokalizacja, w którym zainstalowano Centrum usługi ATA. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center|Pozostaw wartość domyślną.|
-    |Ścieżka danych bazy danych|Jest to lokalizacja, w którym znajdują się pliki bazy danych MongoDB. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|Zmień lokalizację na taką, w której będzie wystarczająca ilość miejsca do przechowywania powiększającej się bazy danych na podstawie ustalonego rozmiaru. **Uwaga:** <ul><li>W środowisku produkcyjnym należy używać dysku, który ma za mało miejsca na podstawie podczas planowania pojemności.</li><li>W przypadku dużych wdrożeń baza danych powinna znajdować się na oddzielnym dysku fizycznym.</li></ul>Aby uzyskać informacje dotyczące ustalania rozmiaru, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).|
-    |Certyfikat SSL centrum usługi|Jest to certyfikat, który jest używany przez usługę konsoli usługi ATA i Centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym. Istnieje możliwość utworzenia certyfikatu z podpisem własnym.|
+    |Ścieżka danych bazy danych|Jest to lokalizacja, w którym znajdują się pliki bazy danych MongoDB. Domyślna lokalizacja to %programfiles%\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data|Zmień lokalizację na taką, w której będzie wystarczająca ilość miejsca do przechowywania powiększającej się bazy danych na podstawie ustalonego rozmiaru. **Uwaga:** <ul><li>W środowiskach produkcyjnych należy użyć dysku, który ma wystarczającą ilość miejsca, w oparciu o planowaniu pojemności.</li><li>W przypadku dużych wdrożeń baza danych powinna znajdować się na oddzielnym dysku fizycznym.</li></ul>Aby uzyskać informacje dotyczące ustalania rozmiaru, zobacz [Planowanie pojemności usługi ATA](ata-capacity-planning.md).|
+    |Certyfikat SSL centrum usługi|Jest to certyfikat, który jest używany przez konsolę usługi ATA i Centrum usługi ATA.|Kliknij ikonę klucza, aby wybrać zainstalowany certyfikat, lub zaznacz opcję Certyfikat z podpisem własnym w przypadku wdrażania w środowisku laboratoryjnym. Masz możliwość utworzenia certyfikatu z podpisem własnym.|
         
     ![Obraz przedstawiający konfigurowanie centrum usługi ATA](media/ATA-Center-Configuration.png)
 
@@ -84,17 +84,17 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
     -   Certyfikaty z podpisem własnym (jeśli zostały wybrane podczas instalacji)
 
 11.  Po zakończeniu instalacji kliknij przycisk **Uruchom**, aby otworzyć konsolę usługi ATA i zakończyć instalację na stronie **Konfiguracja**.
-W tym momencie zostanie wyświetlona automatycznie **ogólne** strony ustawień umożliwiająca kontynuowanie konfiguracji i wdrażania bram usługi ATA.
-Ponieważ logujesz się do witryny przy użyciu adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem. jest to normalne, i kliknij przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
+W tym momencie użytkownik zostanie automatycznie wyświetlona **ogólne** stronę ustawień, aby kontynuować, konfiguracji i wdrażania bram usługi ATA.
+Ponieważ logujesz się do witryny przy użyciu adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem, jest to normalne i kliknij przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
 
 ### <a name="validate-installation"></a>Weryfikowanie instalacji
 
 1.  Sprawdź, czy usługa o nazwie **Microsoft Advanced Threat Analytics Center** jest uruchomiona.
 2.  Na pulpicie kliknij skrót do usługi **Microsoft Advanced Threat Analytics**, aby nawiązać połączenie z konsolą usługi ATA. Zaloguj się przy użyciu tych samych poświadczeń użytkownika, które zostały użyte do zainstalowania centrum usługi ATA.
 
-### <a name="set-anti-virus-exclusions"></a>Zestaw wyłączenia oprogramowania antywirusowego
+### <a name="set-anti-virus-exclusions"></a>Wyłączenia oprogramowania antywirusowego zestawu
 
-Po zainstalowaniu Centrum usługi ATA należy wykluczyć katalog bazy danych MongoDB ze stale skanowania przez oprogramowanie antywirusowe aplikacji. Domyślna lokalizacja bazy danych to: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data**.
+Po zainstalowaniu Centrum usługi ATA należy wykluczyć katalog bazy danych MongoDB z stale skanowanych przez aplikację oprogramowanie antywirusowe. Domyślna lokalizacja bazy danych to: **C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\data**.
 
 
 
@@ -102,13 +102,13 @@ Po zainstalowaniu Centrum usługi ATA należy wykluczyć katalog bazy danych Mon
 [« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
 [Krok 2 »](install-ata-step2.md)
 
-## <a name="related-videos"></a>Powiązane pliki wideo
-- [Wybieranie odpowiedniej typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
-- [Przegląd wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
+## <a name="related-videos"></a>Pokrewne wideo
+- [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)
+- [Omówienie wdrożenia usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/Overview-of-ATA-Deployment-in-10-Minutes)
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Przewodnik wdrażania usługi ATA fazy weryfikacji Koncepcji](http://aka.ms/atapoc)
+- [Przewodnik wdrażania weryfikacji Koncepcji usługi ATA](http://aka.ms/atapoc)
 - [Narzędzia do określania rozmiaru usługi ATA](http://aka.ms/atasizingtool)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

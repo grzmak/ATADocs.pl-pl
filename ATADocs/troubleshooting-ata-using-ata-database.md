@@ -6,21 +6,21 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 377a3c81-5c1d-486f-8942-85249aacf560
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 7bd17d6ac340f1acf0166aadbfcbb7f3ef164fc3
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 7b6073de5b6a7ae5e53f0070dab7b9d62cd5d988
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009442"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166635"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
@@ -44,9 +44,9 @@ Domyślną i najbardziej podstawową metodą wysyłania zapytań do bazy danych 
 |Znajdowanie ruchu NTLM pochodzącego z określonego komputera i związanego z określonym kontem w określonym dniu.|`db.Ntlm_<datetime>.find({SourceComputerId: "<Id of the source computer>", SourceAccountId: "<Id of the account>"})`|Aby uzyskać wartość &lt;ID of the source computer&gt; (identyfikator komputera źródłowego) i &lt;ID of the account&gt; (identyfikator konta), można wykonać zapytanie względem kolekcji UniqueEntity, jak pokazano w przykładzie.<br /><br />Każdy typ działania w sieci, na przykład uwierzytelnienia NTLM, ma swoją własną kolekcję dla daty UTC.|
 |Wprowadzanie zaawansowanych zmian konfiguracji. W tym przykładzie należy zmienić rozmiar kolejki wysyłania dla wszystkich bram usługi ATA do 10 000.|`db.SystemProfile.update( {_t: "GatewaySystemProfile"} ,`<br>`{$set:{"Configuration.EntitySenderConfiguration.EntityBatchBlockMaxSize" : "10000"}})`|`|
 
-W poniższym przykładzie przedstawiono przykładowy kod przy użyciu składni wydanego wcześniej. Jeśli badane są podejrzane działania z dnia 2015-10-20 i chcesz dowiedzieć się więcej o działaniach związanych z protokołem NTLM podejmowanych przez użytkownika „John Doe” w tym dniu:<br /><br />Po pierwsze znajdź identyfikator użytkownika „John Doe”.
+W poniższym przykładzie przedstawiono przykładowy kod przy użyciu składni podany wcześniej. Jeśli badane są podejrzane działania z dnia 2015-10-20 i chcesz dowiedzieć się więcej o działaniach związanych z protokołem NTLM podejmowanych przez użytkownika „John Doe” w tym dniu:<br /><br />Po pierwsze znajdź identyfikator użytkownika „John Doe”.
 
-`db.UniqueEntity.find({Name: "John Doe"})`<br>Zanotuj identyfikator określony przez wartość `_id` na przykład, że identyfikator to `123bdd24-b269-h6e1-9c72-7737as875351`<br>Następnie wyszukaj kolekcję z najbliższą datę, która jest wcześniejsza od daty, którego szukasz, w tym przykładzie 2015-20-10.<br>Następnie wyszukaj działania związane z protokołem NTLM konta użytkownika John Doe: 
+`db.UniqueEntity.find({Name: "John Doe"})`<br>Zanotuj identyfikator określony przez wartość `_id` Załóżmy na przykład, jego identyfikator to `123bdd24-b269-h6e1-9c72-7737as875351`<br>Następnie wyszukaj kolekcję z najbliższą datę, która jest wcześniejsza od daty, którego szukasz, w przykładzie 20/10/2015.<br>Następnie wyszukaj działania związane z protokołem NTLM konta użytkownika John Doe: 
 
 `db.Ntlms_<closest date>.find({SourceAccountId: "123bdd24-b269-h6e1-9c72-7737as875351"})`
 

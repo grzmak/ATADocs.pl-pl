@@ -1,73 +1,80 @@
 ---
-title: "Badanie ataków ścieżki penetracja sieci przy użyciu usługi ATA | Dokumentacja firmy Microsoft"
-description: "W tym artykule opisano sposób wykrywania ataków ścieżki penetracja sieci z Advanced Threat Analytics (ATA)."
-keywords: 
+title: Badanie ataków ścieżki ruchu poprzecznego za pomocą usługi ATA | Dokumentacja firmy Microsoft
+description: W tym artykule opisano, jak wykrywać ataki ścieżki ruchu poprzecznego z Advanced Threat Analytics (ATA).
+keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
-ms.date: 3/21/2018
-ms.topic: article
-ms.prod: 
+ms.date: 6/14/2018
+ms.topic: conceptual
+ms.prod: ''
 ms.service: advanced-threat-analytics
-ms.technology: 
+ms.technology: ''
 ms.assetid: 710f01bd-c878-4406-a7b2-ce13f98736ea
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: dc03cfe1719541dac0f8509c0f8f22987ecb96bb
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 11f67ba077251d552c5a5a4d0391e5668b349215
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166305"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
-# <a name="investigating-lateral-movement-paths-with-ata"></a>Badanie ścieżek penetracja sieci przy użyciu usługi ATA
+# <a name="investigating-lateral-movement-paths-with-ata"></a>Badanie ścieżek penetracji sieci za pomocą usługi ATA
 
-Nawet wtedy, gdy użytkownik starań w celu ochrony poufnych użytkowników i administratorów są złożone hasła, które często zmienia, mają wzmocnione zabezpieczenia swoich urządzeń i ich dane są bezpiecznie przechowywane, osoby atakujące do można nadal używać ścieżki penetracja sieci dostęp do poufnych konta. W ataków penetracja sieci osoba atakująca wykorzystuje wystąpień podczas logowania użytkowników poufnych na maszynę gdzie niepoufnych użytkownik ma lokalne prawa. Osoby atakujące mogą następnie penetrację, uzyskiwanie dostępu do mniej poufnych użytkownika, a następnie przeniesieniu na komputerze przejęcie poświadczeń dla poufnych użytkownika. 
+Nawet wtedy, gdy użytkownik starań w celu ochrony poufnych użytkownikom i administratorom są złożonych haseł, które zmieniają się często, ich maszyn są wzmocnione i ich dane są bezpiecznie przechowywane, osoby atakujące można nadal używać ścieżki ruchu poprzecznego do dostępu do poufnych konta. W ataki, penetracji sieci osoba atakująca wykorzystuje wystąpień wrażliwi użytkownicy po zalogowaniu się na maszynę gdzie niewrażliwych użytkownik ma lokalne prawa. Osoby atakujące mogą następnie przenieść bok, uzyskiwanie dostępu do mniej wrażliwych użytkowników, a następnie przenoszenia na komputerze w przejęcie poświadczeń dla poufnych użytkownika. 
 
-## <a name="what-is-a-lateral-movement-path"></a>Co to jest ścieżka penetracja sieci?
+## <a name="what-is-a-lateral-movement-path"></a>Jaka jest ścieżka ruchu poprzecznego?
 
-Penetracja sieci to, gdy osoba atakująca aktywnie używa konta niepoufnych uzyskanie dostępu do kont poufnych. Ich użyć dowolnej z metod opisanych w [przewodnik podejrzanych działań](suspicious-activity-guide.md) uzyskanie hasła początkowego niepoufnych, a następnie użyć narzędzia, takie jak Bloodhound, zrozumienie, którzy są administratorami w Twojej sieci i komputery, które one dostępne. Mogą one następnie uzyskać dostęp do danych na kontrolerach domeny, aby wiedzieć, kto ma kont, które i dostęp do zasobów i plików, kradzież poświadczeń innych użytkowników (czasami poufnych użytkowników), które są przechowywane na komputerach już mieć dostęp, a następnie bok przenieść między użytkownikami i zasobami, aż do osiągnięcia ich uprawnień administratora w sieci. 
+Penetracja sieci to gdy osoba atakująca używa niewrażliwe konta w celu uzyskania dostępu do wrażliwych kont. Można to zrobić za pomocą metod opisanych w[Przewodnik po podejrzanych działaniach](suspicious-activity-guide.md). Aby dowiedzieć się, kto administratorów znajdują się w sieci i komputery, które osoba atakująca może uzyskać dostęp, osoba atakująca może wykorzystać dane na kontrolerach domeny. 
 
-Usługa ATA włącza podjęcia odpowiednich działań uprzedzające w sieci, aby uniemożliwić osobom atakującym pomyślne o penetracji sieci.
+Usługa ATA umożliwia konieczności podjęcia odpowiednich akcji wyprzedzających w sieci, aby uniemożliwić osobom atakującym powodzeniem w ruchu poprzecznego.
 
-## <a name="discovery-your-at-risk-sensitive-accounts"></a>Odnajdywanie zagrożonych kont poufnych
+## <a name="discovery-your-at-risk-sensitive-accounts"></a>Odnajdowanie usługi zagrożonych wrażliwych kont
 
-Aby dowiedzieć się, które poufnych konta w sieci są narażone z powodu ich połączenie do kont niepoufnych lub zasobów, wykonaj następujące kroki. Aby zabezpieczyć sieć przed atakami penetracja sieci, usługa ATA działa z elementu end z poprzednimi wersjami, co oznacza, że ATA zapewnia mapy, który rozpoczyna się od konta uprzywilejowanego, a następnie przedstawia użytkowników, którzy i urządzenia są w ścieżce penetracji tych użytkowników i ich poświadczeń.
+Aby dowiedzieć się, które wrażliwych kont w sieci są narażone ze względu na ich połączenie niewrażliwe konta lub zasobów w określonym przedziale czasu, wykonaj następujące kroki. 
 
-1. W menu konsoli usługi ATA kliknij ikonę raportów ![Ikona raportów](./media/ata-report-icon.png).
+1. W przedstawionym menu konsoli usługi ATA kliknij ikonę raportów ![Ikona raportów](./media/ata-report-icon.png).
 
-2. W obszarze **penetracji przeniesień ścieżki do kont poufnych**, jeśli brak znaleziono ścieżek penetracja sieci, raport będzie szary. W przypadku ścieżek penetracja sieci, następnie daty automatycznie wybierz raport pierwszy data po odpowiednich danych. 
+2. W obszarze **boczne ścieżki ruchów do wrażliwych kont**, jeśli znaleziono żadnych ścieżek ruchu poprzecznego raportu jest wyszarzona. W przypadku ścieżki ruchu poprzecznego następnie daty raport automatycznie wybierz pierwszy daty po odpowiednich danych. 
 
  ![raporty](./media/reports.png)
 
 3. Kliknij przycisk **Pobierz**.
 
-3. Plik programu Excel, który jest tworzony udostępnia szczegółowe informacje dotyczące konta poufnych, które są narażeni na ataki. **Podsumowanie** karta zawiera wykresy, które zawierają liczby kont poufnych, komputerów i średnie zagrożonych zasobów. **Szczegóły** karta zawiera listę kont poufnych, które należy zwrócić uwagę.
+3. Plik programu Excel, który jest tworzony zapewnia szczegółowe informacje o Twojej wrażliwych kont, które są zagrożone. **Podsumowanie** karta zawiera wykresy, które szczegółowo liczby wrażliwych kont, komputerów i średnie odpływowi zasobów. **Szczegóły** karta zawiera listę kont poufnych, które powinny być zajmującym się ochroną. Należy pamiętać, że ścieżki są ścieżki, które wcześniej istniejących i mogą nie być dostępne już dzisiaj.
 
 
 ## <a name="investigate"></a>Badanie
 
-Teraz, znając kont poufnych, które są narażeni na ataki, możesz głębokość zajrzyj dostęp usługi ATA, aby dowiedzieć się więcej i podjęcia środków zapobiegawczych.
+Teraz, gdy wiesz, które wrażliwych kont są zagrożone, możesz głębokiego zajrzyj, aby dowiedzieć się więcej i podjęcia środków zapobiegawczych w usłudze ATA.
 
-1. W konsoli usługi ATA, przeglądać użytkownika, którego konto jest wymieniony jako zagrożone w **penetracji przeniesień ścieżki do kont poufnych** raport, na przykład Samira Abbasi. Możesz również wyszukać wskaźnika przepływu penetracja dodawanej do profilu jednostki, gdy obiekt jest w ścieżce penetracja sieci ![penetracji ikona](./media/lateral-movement-icon.png) lub ![ikonę ścieżki](./media/paths-icon.png).
+1. W konsoli usługi ATA Wyszukaj wskaźnika przenoszenia poprzecznych dodaną do profilu jednostki, gdy jednostka jest ścieżki ruchu poprzecznego ![Ikona poprzecznego](./media/lateral-movement-icon.png) lub ![Ikona ścieżki](./media/paths-icon.png). Jest on dostępny, jeśli wystąpił ścieżki ruchu poprzecznego w ciągu ostatnich dwóch dni.
 
-2. Na stronie profilu użytkownika, którego kliknięcie spowoduje otwarcie, kliknij przycisk **penetracji ścieżki przepływu** kartę.
+2. Na stronie profilu użytkownika, która zostanie otwarta, kliknij przycisk **ścieżki ruchu poprzecznego** kartę.
 
-3. Diagram, który jest wyświetlany zawiera mapy możliwych ścieżek użytkownikowi poufnych. Wykres przedstawia połączeń, które zostały wprowadzone w ciągu ostatnich dwóch dni, więc narażenia jest odświeżona.
+3. Wykres, który jest wyświetlany zawiera mapę możliwe ścieżki do wrażliwego użytkownika. Na wykresie widać połączeń, które zostały wprowadzone w ciągu ostatnich dwóch dni.
 
-4. Przejrzyj wykres tak, aby zobaczyć, jakie informacje na temat zagrożeń poświadczeń użytkowników poufnych. Na przykład na tej mapie, możesz wykonać Samira Abbasi **zalogowanym przez** szary strzałki, aby zobaczyć, których Samira zalogowania się przy użyciu swoich poświadczeń uprzywilejowanych. W takim przypadku na komputerze REDMOND-WA-odchyleń zostały zapisane poświadczenia poufnych przez Samira Następnie sprawdź, która zalogowani inni użytkownicy na komputery, które tworzone najbardziej zagrożeń i luk w zabezpieczeniach. Zobacz ten analizując **administratora na** czarne strzałki, aby zobaczyć, kto ma uprawnienia administratora na zasobie. W tym przykładzie wszyscy użytkownicy w grupie wszystkie firmy Contoso ma możliwość dostępu do poświadczeń użytkownika z tego zasobu.  
+4. Przejrzyj wykres, aby zobaczyć, co omówiono ujawniania poświadczeń użytkownika wielkość liter. Na przykład na tej mapie możesz wykonać **Zalogowało** szary strzałki, aby zobaczyć, gdzie Samira zalogowania się przy użyciu swoich poświadczeń uprzywilejowanych. W tym przypadku poświadczenia poufne firmy Samira zostały zapisane na komputerze REDMOND-WA-DEV. Następnie sprawdź, która zalogowani inni użytkownicy w komputery, które tworzone najbardziej zagrożeń i luk w zabezpieczeniach. Można to zobaczyć, analizując **administratora na** czarne strzałki, aby zobaczyć, kto ma uprawnienia administratora dla zasobu. W tym przykładzie, wszystkie osoby w grupie **wszystkie Contoso** umożliwia dostęp do poświadczeń użytkownika z tego zasobu.  
 
- ![ścieżki penetracja sieci profilu użytkownika](media/user-profile-lateral-movement-paths.png)
+ ![ścieżki ruchu poprzecznego profilu użytkownika](media/user-profile-lateral-movement-paths.png)
 
 
-## <a name="preventative-best-practices"></a>Program prewencyjnej najlepsze rozwiązania
+## <a name="preventative-best-practices"></a>Zapobiegawczych najlepszych rozwiązań
 
-- Najlepszy sposób, aby zapobiec penetracja sieci jest należy upewnić się, że użytkownicy poufnych poświadczeń administratora tylko po zalogowaniu się na komputerach ze wzmocnionymi zabezpieczeniami w przypadku, gdy nie ma żadnego niepoufnych użytkownika, który ma prawa administratora na tym samym komputerze. W przykładzie upewnij się, że jeśli Samira potrzebuje dostępu do deweloperów — WA-REDMOND, użytkownik zaloguje się za pomocą nazwy użytkownika i hasła innego niż swoje poświadczenia administratora lub Usuń grupę wszystkich Contoso z grupy administratorów lokalnych na REDMOND-WA-odchyleń
+- Najlepszym sposobem, aby zapobiec penetracji sieci jest upewnienie się, czy tylko wtedy, gdy logując się do komputerów ze wzmocnionymi zabezpieczeniami użytkownicy poufnych przy użyciu poświadczeń administratora w przypadku, gdy nie ma żadnego użytkownika niewrażliwych, kto ma uprawnienia administratora na tym samym komputerze. W przykładzie upewnij się, że jeśli Samira musi mieć dostęp do REDMOND-WA-DEV, ona zaloguje się za pomocą nazwy użytkownika i hasła innych niż swoje poświadczenia administratora lub Usuń grupę wszystkich Contoso z lokalnej grupy administratorów na REDMOND-WA-DEV.
 
-- Zalecane jest również, że należy upewnić się, że nikt nie ma niepotrzebnych lokalne uprawnienia administracyjne. W tym przykładzie należy sprawdzić, czy wszyscy w Contoso wszystkie rzeczywiście wymaga uprawnień administratora na REDMOND-WA-odchyleń
+- Zalecane jest również przez należy upewnić się, że nikt nie miał niepotrzebne lokalnych uprawnień administracyjnych. W tym przykładzie należy sprawdzić, czy wszyscy w Contoso wszystkie naprawdę potrzebuje uprawnień administratora w REDMOND-WA-DEV.
 
-- On jest zawsze upewnij się, że osoby tylko mają dostęp do zasobów konieczne. Jak widać w przykładzie Oscar Posada znacznie rozszerzenie narażenia na Samira. Jest on zostać uwzględnione w Contoso wszystkie niezbędne? Czy istnieją podgrupy, które można utworzyć, aby zminimalizować ryzyko?
+- Upewnij się, że osoby mają tylko dostęp do niezbędnych zasobów. W tym przykładzie Oscar Posada rozszerza znacznie się zagrożeń Samira firmy. Jest to konieczne, on być uwzględniona w grupie **wszystkie Contoso**? Czy istnieją podgrupy, które można utworzyć, aby zminimalizować ryzyko?
+
+**Porada** — Jeśli działanie nie zostanie wykryty w ciągu ostatnich dwóch dni, wykres jest niewidoczny, ale raport ścieżki ruchu poprzecznego nadal będzie można uzyskać informacje na temat ścieżek ruchu poprzecznego ostatnich 60 dni.
+
+**Porada** — Aby uzyskać instrukcje dotyczące sposobu konfigurowania serwerów Zezwalaj na wykonywanie operacji SAM-R służące do wykrywania ścieżki ruchu poprzecznego, usługa ATA [skonfigurować SAM-R](install-ata-step9-samr.md).
+
+
 
 
 ## <a name="see-also"></a>Zobacz też

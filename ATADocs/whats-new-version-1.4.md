@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: cbea47f9-34c1-42b6-ae9e-6a472b49e1a5
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: c60e577ed5df2beecd9737a4637c7a3162a9e706
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: a4e9b9f5213322b21a22cb22bbede9db60144e6b
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24018528"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166855"
 ---
 # <a name="what39s-new-in-ata-version-14"></a>Co nowego w wersji 1.4 usługi ATA
 Te informacje o wersji zawierają znane problemy w wersji 1.4 usługi Advanced Threat Analytics.
@@ -35,7 +35,7 @@ Te informacje o wersji zawierają znane problemy w wersji 1.4 usługi Advanced T
 
 -   Ulepszenia wydajności umożliwiające obsługę większej liczby bram usługi ATA przez pojedyncze centrum usługi ATA.
 
--   Dodano nowy proces automatycznego rozpoznawania nazw, który dopasowuje nazwy komputerów i adresy IP — ta wyjątkowa możliwość zapisuje cenny czas w procesie dochodzenia i zapewni silne dowody dla analityków zabezpieczeń.
+-   Dodano nowy proces automatycznego rozpoznawania nazw, który dopasowuje nazwy komputerów i adresy IP — ta wyjątkowa możliwość zapisuje oszczędzi cenny czas w procesie dochodzenia i zapewni silne dowody dla analityków zabezpieczeń.
 
 -   Ulepszona możliwość gromadzenia danych wejściowych od użytkowników w celu automatycznego dostosowania procesu wykrywania.
 
@@ -59,23 +59,23 @@ Te informacje o wersji zawierają znane problemy w wersji 1.4 usługi Advanced T
 W tej wersji występują następujące znane problemy.
 
 ### <a name="network-capture-software"></a>Oprogramowanie do przechwytywania ruchu sieciowego
-Jedynym obsługiwanym oprogramowaniem do przechwytywania ruchu sieciowego, które można zainstalować na bramie usługi ATA, jest program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865). Nie należy instalować programu Microsoft Message Analyzer ani żadnego innego oprogramowania do przechwytywania ruchu sieciowego. Zainstalowanie innego oprogramowania powoduje, że bramy usługi ATA przestanie działać prawidłowo.
+Jedynym obsługiwanym oprogramowaniem do przechwytywania ruchu sieciowego, które można zainstalować na bramie usługi ATA, jest program [Microsoft Network Monitor 3.4](http://www.microsoft.com/download/details.aspx?id=4865). Nie należy instalować programu Microsoft Message Analyzer ani żadnego innego oprogramowania do przechwytywania ruchu sieciowego. Zainstalowanie innego oprogramowania powoduje, że brama usługi ATA przestanie działać poprawnie.
 
 ### <a name="installation-from-zip-file"></a>Instalacja z pliku Zip
-Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio w pliku zip lub niepowodzenie instalacji.
+Podczas instalacji bramy usługi ATA należy wyodrębnić pliki z pliku zip do katalogu lokalnego i zainstalować ją z tej lokalizacji. Nie należy instalować bramy usługi ATA bezpośrednio z poziomu w pliku zip lub instalacja zakończy się niepowodzeniem.
 
 ### <a name="uninstalling-previous-versions-of-ata"></a>Odinstalowywanie poprzednich wersji usługi ATA
 Jeśli zainstalowano poprzednią wersję usługi ATA, publiczną wersję zapoznawczą lub prywatną wersję zapoznawczą, należy odinstalować centrum usługi ATA i bramy usługi ATA przed zainstalowaniem tej wersji usługi ATA.
 
 Należy również usunąć pliki bazy danych i pliki dziennika. Bazy danych poprzednich wersji usługi ATA nie są zgodne z wersją GA usługi ATA.
 
-Instalacja usługi ATA otwiera zamiast dezinstalację, podczas próby odinstalowania Centrum ATA lub bramy usługi ATA, należy dodać następujący klucz rejestru, a następnie ponownie odinstalować usługę ATA.
+Jeśli zamiast dezinstalacji otwiera instalacji usługi ATA, podczas próby odinstalowania Centrum ATA lub bramy usługi ATA, należy dodać następujący klucz rejestru, a następnie ponownie odinstalować usługę ATA.
 
 **Centrum usługi ATA**
 
 -   HKLM\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Center
 
--   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Center`. To jest domyślny folder instalacji. Zmiana folderu instalacji, wprowadź ścieżkę, której zainstalowano usługę ATA.
+-   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Center`. To jest domyślny folder instalacji. Jeśli folder instalacji został zmieniony, wprowadź ścieżkę, której zainstalowano usługę ATA.
 
     ![Wprowadzanie ścieżki instalacji centrum usługi ATA w edytorze rejestru](media/ATA-uninstall-center-bug.jpg)
 
@@ -83,14 +83,14 @@ Instalacja usługi ATA otwiera zamiast dezinstalację, podczas próby odinstalow
 
 -   HKLM\SOFTWARE\Microsoft\Microsoft Advanced Threat Analytics\Gateway
 
--   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Gateway`. To jest domyślny folder instalacji.  Zmiana folderu instalacji, wprowadź ścieżkę, której zainstalowano usługę ATA.
+-   Dodaj nową wartość ciągu o nazwie `InstallationPath` i wartości `C:\Program Files\Microsoft Advanced Threat Analytics\Gateway`. To jest domyślny folder instalacji.  Jeśli folder instalacji został zmieniony, wprowadź ścieżkę, której zainstalowano usługę ATA.
 
     ![Wprowadzanie ścieżki instalacji bramy usługi ATA w edytorze rejestru](media/ATA-GW-uninstall-bug.jpg)
 
 Po odinstalowaniu usuń folder instalacji w centrum usługi ATA i bramie usługi ATA.  Jeśli baza danych została zainstalowana w oddzielnym folderze, usuń folder bazy danych w centrum usługi ATA.
 
 ### <a name="health-alert---disconnected-ata-gateway"></a>Alert dotyczący kondycji — rozłączona brama usługi ATA
-Jeśli masz więcej niż jedna brama usługi ATA i mieć alertów dotyczących rozłączenia bramy ATA, automatyczne rozwiązanie działa tylko na jednym z nich, a reszta pozostanie w stanie otwarte. Ręcznie upewnij się, że bramy usługi ATA działa i jest uruchomiona, a następnie ręcznie rozwiązać alert.
+Jeśli masz więcej niż jedna brama usługi ATA i mieć alertów dotyczących rozłączenia bramy ATA, automatycznie rozwiązać działa tylko na jednym z nich reszta pozostanie w stanie otwarte. Ręcznie upewnij się, że brama usługi ATA została uruchomiona, a usługa jest uruchomiona, a następnie ręcznie rozwiązać alert.
 
 ### <a name="kb-on-virtualization-host"></a>Aktualizacja na hoście wirtualizacji
 Nie należy instalować aktualizacji KB 3047154 na hoście wirtualizacji. Może to spowodować nieprawidłowe działanie funkcji dublowania portów.

@@ -1,39 +1,39 @@
 ---
-title: Advanced Threat Analytics aktualizacji w przewodniku migracji 1,9 | Dokumentacja firmy Microsoft
+title: Aktualizacją usługi Advanced Threat Analytics do przewodnika migracji 1.9 | Dokumentacja firmy Microsoft
 description: Procedury aktualizacji usługi ATA do wersji 1.9
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 03/25/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 2946310a-8e4e-48fc-9450-fc9647efeb22
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 0bd4bca536facb9ad4b7fea627f2ef512949728e
-ms.sourcegitcommit: 158bf048d549342f2d4689f98ab11f397d9525a2
+ms.openlocfilehash: bd96cf2b2048aa37e559649d15565c3244684e35
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30202337"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166003"
 ---
 # <a name="updating-ata-to-version-19"></a>Aktualizowanie usługi ATA do wersji 1.9
 
 > [!NOTE] 
-> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.9 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
+> Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera informacje dotyczące wersji 1.9 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już usługi ATA w wersji 1.8 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
+Jeśli masz już usługę ATA w wersji 1.8 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
->  Tylko usługi ATA w wersji 1.8 (1.8.6645) i aktualizacja usługi ATA 1.8 1 (1.8.6765) można zaktualizować usługę ATA do wersji 1.9, jakakolwiek wcześniejsza wersja usługi ATA nie można bezpośrednio zaktualizować usługę ATA do wersji 1.9.
+>  Tylko wersji 1.8 usługi ATA (1.8.6645) i usłudze ATA 1.8, aktualizacja 1 (1.8.6765) można zaktualizować usługę ATA do wersji 1.9, jego wcześniejszą wersję usługi ATA nie można bezpośrednio zaktualizować usługę ATA do wersji 1.9.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.9:
 
-1.  [Pobierz wersję aktualizacji 1.9 usługi ATA z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełnej wersji z [Eval center](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
-W wersji migracji pliku może służyć tylko w przypadku aktualizowania z 1.8 usługi ATA. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
+1.  [Pobierz wersję aktualizacyjną usługi ATA 1.9 z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełną wersję z [Centrum wersji ewaluacyjnych](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
+W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z usługi ATA 1.8. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
 
 2.  Zaktualizuj centrum usługi ATA
 
@@ -54,14 +54,14 @@ W wersji migracji pliku może służyć tylko w przypadku aktualizowania z 1.8 u
 
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    -  Jeśli nie włączysz aktualizacji automatycznych w wersji 1.8, zostanie wyświetlony monit ustawić ATA Użyj usługi Microsoft Update, aby usługa ATA pozostaje aktualne.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    -  Jeśli nie zostały włączone aktualizacje automatyczne w wersji 1.8, pojawia się monit o skonfigurowanie usługi ATA do używania usługi Microsoft Update, aby usługa ATA aktualnych.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
     ![Zachowaj aktualny obraz usługi ATA](media/ata_ms_update.png)
      
-     To można dostosować ustawienia systemu Windows w celu włączenia aktualizacji usługi ATA. 
+     To pozwala dopasować ustawienia Windows w celu włączenia aktualizacji usługi ATA. 
     
-    -  **Migracji danych z częściowa** ekranu informujące, że ruch sieciowy wcześniej przechwycone, zdarzenia, jednostki i wykrywania powiązane dane zostaną usunięte. Wszystkie wykrycia pracować bezpośrednio z wyjątkiem wykrywania nietypowe zachowanie, nietypowe grupy modyfikacji, Rekonesans przy użyciu usług katalogowych (SAM-R) i wykrycia obniżenia poziomu szyfrowania, przyjmujących trzy tygodnie do tworzenia profilu pełną po czas nauki wymagane. 
+    -  **Częściowe dane migracji** ekran informuje o tym, że ruchu sieciowego przechwyconego wcześniej, zdarzenia, jednostek i wykrywanie powiązane dane zostaną usunięte. Wszystkie wykrycia działać natychmiast z wyjątkiem wykrywania nietypowych zachowań, modyfikacja grupy nietypowe, Rekonesans przy użyciu usług katalogu (SAM-R) i wykrycia obniżenia poziomu szyfrowania, które maksymalnie trzy tygodnie po utworzeniu pełnego profilu czas wymagany uczenia. 
      
-      ![Częściowe migracji usługi ATA](media/partial-migration.png)
+      ![Częściowej migracji usługi ATA](media/partial-migration.png)
 
     -  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
 
@@ -69,7 +69,7 @@ W wersji migracji pliku może służyć tylko w przypadku aktualizowania z 1.8 u
 
      ![Ekran powodzenia aktualizacji](media/migration-center-success.png)
 
-5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania one aktualizacji w tym momencie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
+5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania są zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
   
      ![Obraz przedstawiający zaktualizowane bramy](media/migration-update-gw.png)
 
@@ -78,7 +78,7 @@ W wersji migracji pliku może służyć tylko w przypadku aktualizowania z 1.8 u
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
  
 > [!NOTE] 
-> Aby zainstalować nowych bram usługi ATA, przejdź **bram** ekranu, a następnie kliknij przycisk **Pobierz instalatora bramy** pobrać pakiet instalacyjny bramy usługi ATA 1.9, a następnie postępuj zgodnie z instrukcjami dotyczącymi nowa instalacja bramy jako opisane w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
+> Aby zainstalować nowych bram usługi ATA, przejdź **bram** ekranu, a następnie kliknij przycisk **Pobierz instalatora bramy** uzyskać pakiet instalacyjny bramy usługi ATA 1.9 usług i postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy jako opisane w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
 
 
 ## <a name="see-also"></a>Zobacz też

@@ -6,19 +6,19 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 8eefcd45-7a4b-4074-ac5b-1ffc48e6654a
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 891ba71bcb8c1ee362b92be2404c65c7b5158055
-ms.sourcegitcommit: 4d2ac5b02c682840703edb0661be09055d57d728
+ms.openlocfilehash: b8190552b91aa240b303bbe1a81e68086d19ded7
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
-ms.locfileid: "24019242"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166395"
 ---
 # <a name="ata-update-to-17-migration-guide"></a>Przewodnik po migracji związanej z aktualizacją usługi ATA do wersji 1.7
 Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
@@ -33,7 +33,7 @@ Aktualizacja usługi ATA do wersji 1.7 zapewnia następujące ulepszenia:
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera wersję 1.7 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już usługi ATA w wersji 1.6 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
+Jeśli masz już usługę ATA w wersji 1.6 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
 > Nie można zainstalować usługi ATA w wersji 1.7 bezpośrednio na usłudze ATA w wersji 1.4 lub 1.5. Należy najpierw zainstalować usługę ATA w wersji 1.6. 
@@ -62,11 +62,11 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    -  Jeśli nie włączysz aktualizacji automatycznych w wersji 1.6, zostanie wyświetlony monit ustawić ATA Użyj usługi Microsoft Update, aby usługa ATA pozostaje aktualne.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
-    ![Zachowaj ATA aktualny obraz](media/ata_ms_update.png) to można dostosować ustawienia systemu Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano poniżej. 
+    -  Jeśli nie zostały włączone aktualizacje automatyczne w wersji 1.6, pojawia się monit o skonfigurowanie usługi ATA do używania usługi Microsoft Update, aby usługa ATA aktualnych.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    ![Zachowaj aktualny obraz usługi ATA](media/ata_ms_update.png) to dostosowuje ustawienia Windows, aby włączyć aktualizacje dla innych produktów firmy Microsoft (w tym usługi ATA), jak pokazano tutaj. 
      ![Obraz automatycznej aktualizacji systemu Windows](media/ata_installupdatesautomatically.png)
 
-    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli wybierzesz przeprowadzenie migracji tylko części danych, wcześniej przechwycone profile ruchu sieciowego i zachowania nie zostaną poddane migracji. Oznacza to, że ma trzy tygodnie przed wykrywania nietypowe zachowanie ma pełne profilu, aby włączyć wykrywanie nietypowych działań. W tych trzech tygodniach wszystkie wykrycia ATA działać prawidłowo. **Częściowa** migracja danych wymaga mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Szacowana ilość czasu i wymaganego miejsca na dysku, które są wyświetlane na ekranie **Migracja danych**, zależą od ilości ruchu sieciowego przechwyconego wcześniej i zapisanego w poprzednich wersjach usługi ATA. Przed wybraniem opcji **Częściowa** lub **Pełna** koniecznie sprawdź te wymagania.  
+    -  Na ekranie **Migracja danych** wybierz, czy chcesz przeprowadzić migrację wszystkich danych czy ich części. Jeśli wybierzesz przeprowadzenie migracji tylko części danych, wcześniej przechwycone profile ruchu sieciowego i zachowania nie zostaną poddane migracji. Oznacza to, że ma trzy tygodnie przed wykrywania nietypowych zachowań, ma pełen profil umożliwiający wykrywanie nietypowego działania. Podczas tych trzech tygodni wszystkie pozostałe mechanizmy wykrywania usługi ATA działać prawidłowo. **Częściowa** migracja danych wymaga mniej czasu na instalację. W przypadku wybrania opcji **Pełna** dla migracji danych ukończenie instalacji może zająć znaczną ilość czasu. Szacowana ilość czasu i wymaganego miejsca na dysku, które są wyświetlane na ekranie **Migracja danych**, zależą od ilości ruchu sieciowego przechwyconego wcześniej i zapisanego w poprzednich wersjach usługi ATA. Przed wybraniem opcji **Częściowa** lub **Pełna** koniecznie sprawdź te wymagania.  
     
     ![Migracja danych usługi ATA](media/migration-data-migration17.png)
 
@@ -75,7 +75,7 @@ W tej wersji ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest uż
 4.  Po pomyślnym ukończeniu aktualizacji centrum usługi ATA kliknij przycisk **Uruchom**, aby otworzyć ekran **Aktualizacja** w konsoli bram usługi ATA.
     ![Ekran powodzenia aktualizacji](media/migration-center-success17.png)
 
-5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania one aktualizacji w tym momencie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
+5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania są zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
   ![Obraz aktualizowania bram](media/migration-update-gw-17.png)
 
   

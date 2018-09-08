@@ -1,41 +1,42 @@
 ---
-title: Rozwiązywanie problemów z uruchomienia usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
+title: Rozwiązywanie problemów z uruchamianiem usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: W tym artykule opisano, jak można rozwiązywać problemy z uruchamianiem usługi ATA
 keywords: ''
 author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 5a65285c-d1de-4025-9bb4-ef9c20b13cfa
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 87d3f1de8167c1198e6b334826f90df83cc96780
-ms.sourcegitcommit: 49c3e41714a5a46ff2607cbced50a31ec90fc90c
+ms.openlocfilehash: 637f26736a520def329ba8599c3927079fdf354d
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30009272"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44165919"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
-# <a name="troubleshooting-service-startup"></a>Rozwiązywanie problemów z uruchomienia usługi
+# <a name="troubleshooting-service-startup"></a>Rozwiązywanie problemów z uruchamianiem usługi
 
 ## <a name="troubleshooting-ata-center-service-startup"></a>Rozwiązywanie problemów z uruchomieniem centrum usługi ATA
 
 Jeśli nie można uruchomić Centrum usługi ATA, wykonaj następującą procedurę rozwiązywania problemów:
 
-1.  Uruchom następujące polecenie programu Windows PowerShell: `Get-Service Pla | Select Status` się upewnić, że działa usługa licznika wydajności. Jeśli nie, wówczas jest to problem z platformą i musisz się upewnić, że ta usługa zostanie uruchomiona ponownie.
-2.  Jeśli była uruchomiona, spróbuj uruchomić go ponownie i zobacz, czy spowodowało to rozwiązanie problemu: `Restart-Service Pla`
+1.  Uruchom następujące polecenie programu Windows PowerShell: `Get-Service Pla | Select Status`
+    Aby upewnić się, że usługa licznika wydajności jest uruchomiona. Jeśli nie, wówczas jest to problem z platformą i musisz się upewnić, że ta usługa zostanie uruchomiona ponownie.
+2.  Jeśli była uruchomiona, spróbuj uruchomić go ponownie i sprawdź, czy rozwiązało problemu: `Restart-Service Pla`
 3.  Spróbuj ręcznie utworzyć nowy moduł zbierający dane (nada się dowolny moduł, nawet tylko zbierający dane procesorów CPU komputera).
-Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Jeśli nie, nadal jest to problem platformy.
+Platforma jest prawdopodobnie nie jest uszkodzona, jeśli można go uruchomić. Jeśli nie, nadal jest to problem z platformą.
 
-4.  Spróbuj ponownie ręcznie utworzyć ATA modułów zbierających dane, przy użyciu wierszu polecenia z podwyższonym poziomem uprawnień, uruchomienie tych poleceń:
+4.  Spróbuj ręcznie ponownie utworzyć ATA modułów zbierających dane, przy użyciu wiersza z podwyższonym poziomem uprawnień, uruchamiając następujące polecenia:
 
         sc stop ATACenter
         logman stop "Microsoft ATA Center"
@@ -45,22 +46,23 @@ Jeśli można go uruchomić, platforma to prawdopodobnie nie jest uszkodzona. Je
         logman start "Microsoft ATA Center"
         sc start ATACenter
 
-## <a name="troubleshooting-ata-lightweight-gateway-startup"></a>Rozwiązywanie problemów z uruchomienia bramy ATA Lightweight Gateway
+## <a name="troubleshooting-ata-lightweight-gateway-startup"></a>Rozwiązywanie problemów z uruchamiania uproszczonej bramy usługi ATA
 
-**Symptom**
+**Objaw**
 
 Nie można uruchomić bramy usługi ATA, a ten błąd:<br></br>
-*System.Net.Http.HttpRequestException: Kod stanu odpowiedzi nie wskazuje powodzenia: 500 (wewnętrzny błąd serwera)*
+*System.Net.Http.HttpRequestException: Kod stanu odpowiedzi nie wskazuje Powodzenie: 500 (wewnętrzny błąd serwera)*
 
 **Opis**
 
-Dzieje się tak, ponieważ w ramach procesu instalacji Lightweight Gateway, usługa ATA przydziela próg procesora CPU, umożliwiającą bramy Lightweight mogą korzystać z buforu, 15% procesora CPU. Jeśli niezależnie wybrano progu za pomocą klucza rejestru: ten konflikt uniemożliwi uruchamianie bramy Lightweight. 
+Dzieje się tak, ponieważ podczas procesu instalacji uproszczonej bramy usługi ATA przydziela progu procesora CPU, umożliwiająca uproszczonej bramy wykorzystanie procesora CPU z buforu, 15%. Jeśli ma niezależnie ustawić próg, przy użyciu klucza rejestru: ten konflikt uniemożliwi uproszczonej bramy uruchamianie. 
 
 **Rozdzielczość**
 
-1. W rejestrze kluczy, jeśli istnieje wartość DWORD o nazwie **Wyłącz liczniki wydajności** upewnij się, że jest ustawiona na **0**:  `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\` `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfProc\Performance`
+1. W rejestrze kluczy, jeśli ma wartość DWORD o nazwie **Wyłącz liczniki wydajności** upewnij się, że jest ustawiona na **0**: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\`
+    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfProc\Performance`
  
-2. Następnie uruchom ponownie usługę Pla. Brama ATA Lightweight Gateway automatycznie wykryje zmianę i ponownie uruchom usługę.
+2. Następnie uruchom ponownie usługę Pla. Uproszczona brama usługi ATA automatycznie wykryje zmianę i ponownie uruchomić usługę.
 
 
 ## <a name="see-also"></a>Zobacz też

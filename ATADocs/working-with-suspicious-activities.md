@@ -6,26 +6,26 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 4/29/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: ''
 ms.service: advanced-threat-analytics
 ms.technology: ''
 ms.assetid: 44d7c899-816c-4f7f-91d3-84a09d291a24
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: fdc83443c30db4278ccffde35e070e8b17b423bb
-ms.sourcegitcommit: 5c0f914b44bfb8e03485f12658bfa9a7cd3d8bbc
+ms.openlocfilehash: 21841082a619a220e22d93f895f638162d4450fd
+ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "32298456"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44166309"
 ---
-*Dotyczy: Advanced Threat Analytics wersji 1.9*
+*Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
 # <a name="working-with-suspicious-activities"></a>Praca z podejrzanymi działaniami
-W tym artykule opisano podstawy sposób pracy z Advanced Threat Analytics.
+W tym artykule opisano podstawowe informacje dotyczące korzystania z usługi Advanced Threat Analytics.
 
 ## <a name="review-suspicious-activities-on-the-attack-time-line"></a>Przeglądanie podejrzanych działań na osi czasu ataków
 Po zalogowaniu się do konsoli usługi ATA jest automatycznie otwierana **Oś czasu podejrzanych działań**. Podejrzane działania są wymienione na liście w kolejności chronologicznej. Najnowsze podejrzane działania znajdują się u góry osi czasu.
@@ -47,16 +47,16 @@ Każde podejrzane działanie zawiera następujące informacje:
 
 > [!NOTE]
 > -   Umieszczenie wskaźnika myszy na użytkowniku lub komputerze spowoduje wyświetlenie mini profilu zawierającego dodatkowe informacje o tej jednostce oraz liczbie podejrzanych działań, z którymi powiązana jest ta jednostka.
-> -   Po kliknięciu jednostki go przejście do profilu jednostki użytkownika lub komputera.
+> -   Po kliknięciu jednostki jego przejście do profilu jednostki użytkownika lub komputera.
 
 ![Obraz osi czasu podejrzanych działań usługi ATA](media/ATA-Suspicious-Activity-Timeline.JPG)
 
 ## <a name="filter-suspicious-activities-list"></a>Filtrowanie listy podejrzanych działań
 Aby filtrować listę podejrzanych działań:
 
-1.  W **Filtruj według** w okienku po lewej stronie ekranu wybierz jedną z następujących opcji: **wszystkie**, **Otwórz**, **zamknięte**, lub **Pomijane**.
+1.  W **filtrowanie według** w okienku po lewej stronie ekranu, wybierz jedną z następujących opcji: **wszystkich**, **Otwórz**, **zamknięte**, lub **Pominięte**.
 
-2.  Aby dokładniej przefiltrować listę, wybierz **wysokiej**, **średni**, lub **małej**.
+2.  Aby dokładniej przefiltrować listę, wybierz pozycję **wysokiej**, **średni**, lub **niski**.
 
 **Poziom ważności podejrzanego działania**
 
@@ -70,13 +70,13 @@ Aby filtrować listę podejrzanych działań:
 
 -   **Wysoki**
 
-    Wskazuje podejrzane działania, które mogą prowadzić do kradzieży tożsamości, podwyższenia poziomu uprawnień lub inne ataki poważnych
+    Wskazuje podejrzane działania, które mogą prowadzić do kradzieży tożsamości, eskalacją uprawnień lub innymi atakami wywierającymi duży wpływ
 
 
 
 
 ## <a name="remediating-suspicious-activities"></a>Korygowanie podejrzanych działań
-Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących **Otwórz**, **Suppressed**, **zamknięte**, lub **usunięte**.
+Stan podejrzanego działania można zmienić, klikając bieżący stan podejrzanego działania i wybierając jedną z następujących **Otwórz**, **pominięte**, **zamknięte**, lub **usunięte**.
 Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określonego podejrzanego działania, aby wyświetlić listę dostępnych akcji.
 
 ![Akcje usługi ATA dla podejrzanych działań](./media/sa-actions.png)
@@ -85,25 +85,25 @@ Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określon
 
 -   **Otwórz**: Na tej liście są wyświetlane wszystkie nowe podejrzane działania.
 
--   **Zamknij**: służy do śledzenia podejrzanych działań, które zidentyfikowane, zbadane i naprawione lub uniemożliwione.
+-   **Zamknij**: jest używane do śledzenia podejrzanych działań, które identyfikowane, zbadane i stałej uniemożliwione.
 
     > [!NOTE]
-    > W przypadku wykrycia tego samego działania ponownie w krótkim czasie, usługa ATA może ponownie otworzyć zamkniętego działania.
+    > W przypadku wykrycia tego samego działania ponownie w krótkim okresie czasu, usługa ATA może ponownie otworzyć zamkniętych działań.
 
--   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Oznacza to, że w przypadku podobnych alertów usługi ATA nie otwórz go ponownie. Jednak jeśli alert zatrzymuje na siedem dni, a następnie pojawia się ponownie, zostanie wyświetlony alert ponownie.
+-   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Oznacza to, że, jeśli istnieje podobny alert, usługa ATA nie otworzyć go ponownie. Ale jeśli alert zatrzymuje przez siedem dni, a następnie zostanie zauważony ponownie, zostanie wyświetlony alert ponownie.
 
-- **Usuń**: Jeśli usuniesz alertu, zostaje usunięte z systemu z bazy danych i nie można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
+- **Usuń**: Jeśli usuniesz alert, jest on usuwany z systemu, z bazy danych i nie można go przywrócić. Po kliknięciu przycisku usuwania będzie można usunąć wszystkie podejrzane działania tego samego typu.
 
 - **Wyklucz**: Możliwość wykluczania jednostki z wywoływania większej liczby alertów określonego typu. Na przykład możesz ustawić usługę ATA do wykluczania określonej jednostki (użytkownika lub komputera) z ponownego wysyłania alertów dla określonego typu podejrzanych działań, takich jak konkretny administrator, który uruchamia zdalny kod, lub skaner zabezpieczeń, który wykonuje rekonesans DNS. Oprócz możliwości dodawania wykluczeń bezpośrednio do podejrzanego działania, gdy zostanie ono wykryte na osi czasu, możesz też przejść do strony konfiguracji, do pozycji **Wykluczenia**, i dla każdego podejrzanego działania możesz ręcznie dodawać i usuwać wykluczone jednostki lub podsieci (na przykład w przypadku ataku typu Pass-the-Ticket). 
 > [!NOTE]
 > Strony konfiguracji mogą być modyfikowane tylko przez administratorów usługi ATA.
 
 
-## <a name="related-videos"></a>Powiązane pliki wideo
+## <a name="related-videos"></a>Pokrewne wideo
 - [Dołączenie do społeczności zabezpieczeń](https://channel9.msdn.com/Shows/Microsoft-Security/Join-the-Security-Community)
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Podręcznika dotyczącego podejrzanych działań usługi ATA](http://aka.ms/ataplaybook)
+- [Podręcznik dotyczący podejrzanych działań usługi ATA](http://aka.ms/ataplaybook)
 - [Forum usługi ATA](https://social.technet.microsoft.com/Forums/security/home?forum=mata)
 - [Modyfikowanie konfiguracji usługi ATA](modifying-ata-center-configuration.md)
