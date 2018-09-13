@@ -2,10 +2,10 @@
 title: Integracja usługi Azure zaawansowanej ochrony przed zagrożeniami w usłudze Windows Defender ATP | Dokumentacja firmy Microsoft
 description: Integracja usługi Azure Advanced Threat Protection przy użyciu usługi Windows Defender ATP dla zasięgu wykrywania zagrożeń pełne
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 6/5/2018
+ms.date: 9/12/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: f6f3ed75-d6bb-4966-a9a7-5339c4f3ebac
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 097769c53eefd1c6e5242086cd56d47b89b36e68
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: f2f211dd5882b1a671904d3d241eaf21b2fe3133
+ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126267"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44697229"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -59,13 +59,9 @@ Aby włączyć tę funkcję, potrzebujesz licencji zarówno dla usługi Azure AT
 
 ## <a name="how-to-integrate-azure-atp-with-windows-defender-atp"></a>Jak zintegrować narzędzia Azure ATP z usługą Windows Defender ATP
 
-1. Ustaw obszar roboczy, którą chcesz zintegrować jako **głównej**. Tylko jeden obszar roboczy może być podstawowy obszar roboczy, i tylko podstawowy obszar roboczy można zintegrować z innymi usługami. Jeśli w pewnym momencie w przyszłości, należy chcesz, aby ten obszar roboczy nie jest już podstawowym obszarem roboczym, należy najpierw usunąć integracji, zanim będzie można skonfigurować jako innych niż podstawowe.
+1. Kliknij przycisk **konfiguracji**, a następnie w obszarze **źródeł danych** wybierz **usługi Windows Defender ATP**. Następnie kliknij link, aby **Zarządzanie obszarem roboczym**. Jest on dostępny tylko wtedy, jeśli masz licencję dla usługi Windows Defender ATP i już przeprowadzono proces wdrażania dla usługi Windows Defender ATP. 
 
- ![podstawowy obszar roboczy](./media/primary-workspace.png)
-
-2. Kliknij przycisk **konfiguracji**, a następnie w obszarze **źródeł danych** wybierz **usługi Windows Defender ATP**. Następnie kliknij link, aby **Zarządzanie obszarem roboczym**. Jest on dostępny tylko wtedy, jeśli masz licencję dla usługi Windows Defender ATP i już przeprowadzono proces wdrażania dla usługi Windows Defender ATP. 
-
-3. Na podstawowym obszarem roboczym kliknij przypominającą koło zębate.
+2. W obszarze roboczym kliknij przypominającą koło zębate.
 
  ![Integracja z obszaru roboczego](./media/edit-workspace.png)
  

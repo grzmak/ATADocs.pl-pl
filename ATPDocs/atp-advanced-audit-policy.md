@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ab1e8dd9-a6c2-4c68-89d5-343b8ec56142
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 8889d04063ce4e165104639281322b32178b93ec
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: d7207388702c659a08258862326ee89a49ae3ac2
+ms.sourcegitcommit: f3f80c5d3e2e5c1bcf975ae0cbae1469da7ab74d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126097"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44515512"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -32,7 +32,7 @@ Aby ułatwić sprawdzić bieżący stan poszczególnych zasad inspekcji zaawanso
 ![Alert zasad dotyczących kondycji zaawansowanej inspekcji](media/atp-health-alert-audit-policy.png)
 
 
-Zaawansowane zasady inspekcji zabezpieczeń jest włączone za pośrednictwem zasad grupy. Te inspekcji na kontrolerze domeny Windows zdarzenia są rejestrowane zdarzenia. To powinno być włączone na **domyślne zasady kontrolerów domeny** w usłudze Active Directory.
+Zaawansowane zasady inspekcji zabezpieczeń jest włączone za pomocą **domyślne zasady kontrolerów domeny** obiektu zasad grupy. Te inspekcji na kontrolerze domeny Windows zdarzenia są rejestrowane zdarzenia. 
 
 <br>Modyfikowanie zasad inspekcji zaawansowanych, kontrolera domeny przy użyciu następujących instrukcji:
 
@@ -50,7 +50,7 @@ Zaawansowane zasady inspekcji zabezpieczeń jest włączone za pośrednictwem za
 
     ![Sprawdzanie poprawności poświadczeń](media/atp-advanced-audit-policy-check-step-3.png)
 
-6. Przejdź do konta logowania, kliknij dwukrotnie **Inspekcja zarządzania grupami zabezpieczeń** i wybierz **Konfiguruj następujące zdarzenia inspekcji** sukcesów i niepowodzeń zdarzenia.
+6. Przejdź do zarządzania kontami, kliknij dwukrotnie **Inspekcja zarządzania grupami zabezpieczeń** i wybierz **Konfiguruj następujące zdarzenia inspekcji** sukcesów i niepowodzeń zdarzenia.
 
     ![Inspekcja zarządzania grupami zabezpieczeń](media/atp-advanced-audit-policy-check-step-4.png)
 

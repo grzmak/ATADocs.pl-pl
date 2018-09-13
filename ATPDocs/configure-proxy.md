@@ -2,10 +2,10 @@
 title: Konfigurowanie serwera proxy lub zapory, aby umożliwić komunikację usługi Azure ATP z czujnikiem | Dokumentacja firmy Microsoft
 description: W tym artykule opisano sposób konfigurowania zapory lub serwera proxy, aby umożliwić komunikację między czujniki zaawansowanej ochrony przed zagrożeniami w usłudze Azure i usługi w chmurze usługi Azure ATP
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 5/29/2018
+ms.date: 9/12/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7aadacc98daa5ff259a4eb14fcd81c1cab9e5acd
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 2e8a4cdccad7f371601941e20ede20000aeef5ec
+ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126505"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44697195"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -71,8 +71,8 @@ Czy serwer proxy lub zapora blokuje cały ruch domyślnie i zezwolenie tylko do 
 
 
 Można również utrwalanie reguły zapory lub serwera proxy dla określonego obszaru roboczego, które zostało utworzone, tworząc reguły dla następujących rekordów DNS:
-- < nazwa obszaru roboczego >. atp.azure.com — łączność z konsoli. Na przykład contosoATP.atp.azure.com
-- < nazwa obszaru roboczego > sensorapi.atp.azure.com — łączność czujników. Na przykład contosoATPsensorapi.atp.azure.com
+- \<Twój nazwa obszaru roboczego >. atp.azure.com — łączność z konsoli. Na przykład "Contoso-corp.atp.azure.com"
+- \<Twój nazwa obszaru roboczego > sensorapi.atp.azure.com — łączność czujników. Na przykład "contoso-corpsensorapi.atp.azure.com"
 
  
 > [!NOTE]

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/06/2018
+ms.date: 9/12/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 603d9e09-a07d-4357-862f-d5682c8bc3dd
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 8dce45be6b1e4fa383eea3993f120fa504239f34
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 8a6481070abf1188507f31dbd01b26f7221b2e36
+ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44125723"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44697246"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -28,7 +28,9 @@ Istotne jest usługi Azure Advanced Threat Protection na bieżąco umożliwiają
 
 Usługi Azure ATP jest aktualizowane kilka razy w miesiącu poprawki błędów, ulepszenia wydajności i wykrywanie nowych zagrożeń. Czasami te aktualizacje wymagają odpowiednich aktualizacji do czujników. 
 
-Jeśli nie zaktualizujesz z czujników, nie może być może komunikować się z narzędzia Azure ATP usługę w chmurze, co może spowodować uszkodzenie usługi.
+Jeśli nie zaktualizujesz z czujników, nie może być może komunikować się z narzędzia Azure ATP usługę w chmurze, co może spowodować uszkodzenie usługi. 
+
+Uwierzytelnianie między z czujników i usługi w chmurze platformy Azure przy użyciu silnego, oparte na certyfikatach wzajemnego uwierzytelniania. 
 
 Każda aktualizacja jest przetestowane i zweryfikowane na wszystkich obsługiwanych systemach operacyjnych, aby spowodować minimalny wpływ na sieć i operacji.
 

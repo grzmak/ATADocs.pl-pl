@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 50d23f23432305c47ff14b8a1d68e204de9e32d7
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 0a939f36a86e1ad6cd275a16a4dd4468defa7a76
+ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44125808"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44697212"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -80,14 +80,14 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
     3.  Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
         2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**.  
-          ![Obraz podglądu zdarzeń](media/wef3 event viewer.png)  
+          ![Obraz podglądu zdarzeń](media/wef3%20event%20viewer.png)  
         3.  Kliknij przycisk **OK**.
      4. Kliknij przycisk **Wybierz zdarzenia**.
 
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
         2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w następującym przykładzie.
 
-    ![Obraz przedstawiający filtr kwerendy](media/wef 4 query filter.png)
+        ![Obraz przedstawiający filtr kwerendy](media/wef%204%20query%20filter.png)
 
     5.  Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
     6.  Po kilku minutach sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w bramie usługi ATA.
