@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 4308f03e-b2a7-4e38-a750-540ff94faa81
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 080b3469c862d4063db5a4832f63dd3614905fac
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: c3fc5adbb700c4b8df66c243a655cf98aacc79af
+ms.sourcegitcommit: 9f02f0f6669b25f39b616bb0885bb55b8c4f050b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166068"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46362429"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -39,8 +39,8 @@ Aby otrzymywać powiadomienia na konkretny adres e-mail, ustaw następujące par
  
  >  [!NOTE]
  >   Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
-
-5. Kliknij polecenie **Zapisz**.
+ 
+4. Kliknij polecenie **Zapisz**.
 
  ![Powiadomienia usługi Azure ATP](media/atp-notifications.png)
 
