@@ -7,18 +7,18 @@ ms.author: rkarlin
 manager: mbaldwin
 ms.date: 3/21/2018
 ms.topic: conceptual
-ms.prod: ''
-ms.service: advanced-threat-analytics
+ms.prod: advanced-threat-analytics
+ms.service: ''
 ms.technology: ''
 ms.assetid: 14cb7513-5dc8-49cb-b3e0-94f469c443dd
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 808268a10a4de0bb4d3a1655064ee3c6b08b0943
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 444fd71f4c343619ceeea4056fbe98dce4f06b6a
+ms.sourcegitcommit: 9f02f0f6669b25f39b616bb0885bb55b8c4f050b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166735"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46362446"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -42,8 +42,8 @@ Aby otrzymywać powiadomienia, ustaw następujące parametry:
 1. W sekcji **Powiadomienia i raporty** wybierz pozycję **Powiadomienia**.
 1. W obszarze **Powiadomienia pocztowe** określ powiadomienia, które mają być wysyłane za pośrednictwem poczty e-mail — nowe podejrzane działania i nowe problemy dotyczące kondycji. Dla podejrzanych działań i dla alertów dotyczących kondycji można ustawić osobne adresy e-mail, aby na przykład powiadomienia o podejrzanych działaniach były wysyłane do analityka ds. zabezpieczeń, a powiadomienia o alertach dotyczących problemów z kondycją — do administratora IT.
     
-    >   [!NOTE]
-    >   Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
+  > [!NOTE]
+  > Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
 
 1. W obszarze **powiadomienia Syslog**, określ powiadomienia, które mają być wysyłane do serwera Syslog — nowe podejrzane działania, zaktualizowane podejrzane działania i nowe problemy dotyczące kondycji.
 1. Kliknij polecenie **Zapisz**.
