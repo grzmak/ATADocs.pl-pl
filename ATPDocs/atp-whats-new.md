@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/05/2018
+ms.date: 9/16/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,32 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f6f291ebed680278391498361737e0f8be5ea710
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: f9959f1b517890b725845f8dd01156f9a3e8198b
+ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166684"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750558"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-248"></a>Usługa Azure ATP release 2,48
+Wydana 16 września 2018 r.
+- **Alarm zabezpieczeń:** zapytań usług Rekonesans przy użyciu katalogu
+
+  Ten alert zabezpieczeń teraz ulepszono grafika informacyjna o systemie i dokumenty. 
+
+- **Wykluczanie jednostek z wykryć** 
+
+  Aby zmniejszyć liczbę fałszywych alarmów, można teraz wykluczać jednostki z następujących wykryć: 
+  - Podejrzane połączenia sieci VPN (wykluczanie użytkowników)
+  - Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DcShadow)
+  - Podejrzana replikacja żądania (potencjalny atak DcShadow)
+
+- Ta wersja zawiera również poprawki i ulepszenia w przypadku wielu problemów.
+
 
 ## <a name="azure-atp-release-247"></a>Usługa Azure ATP release 2.47
 Wydana 2 września 2018 r.

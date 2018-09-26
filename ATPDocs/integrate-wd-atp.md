@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: f6f3ed75-d6bb-4966-a9a7-5339c4f3ebac
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f2f211dd5882b1a671904d3d241eaf21b2fe3133
-ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
+ms.openlocfilehash: 4dca942b6c7b066cfec44e51aaad0f1e003da6ec
+ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44697229"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750422"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -91,7 +91,8 @@ Po kliknięciu karty identyfikacyjnej są przenoszone do portalu usługi Windows
 
 W portalu usługi Windows Defender ATP, po kliknięciu w punkcie końcowym, możesz wyświetlić alerty usługi Azure ATP. Po kliknięciu alerty dla tej jednostki w usłudze Windows Defender ATP stronę profilu jednostki zostanie otwarty w narzędzia Azure ATP. 
  
- > ! [UWAGA] Obecnie usługa Azure ATP integracji z usługą Windows Defender ATP obsługuje tylko użytkowników i maszyn ze środowiska lokalnego usługi AD. Użytkownicy z usługi Azure AD i maszyn wirtualnych, które są zarządzane na platformie Azure nie będą wyświetlane jako część integracji 
+ > [!NOTE]
+ > Obecnie usługa Azure ATP integracji z usługą Windows Defender ATP obsługuje tylko użytkowników i maszyn ze środowiska lokalnego usługi AD. Użytkownicy z usługi Azure AD i maszyn wirtualnych, które są zarządzane na platformie Azure nie będą wyświetlane jako część integracji 
 
 ![Alerty usługi Windows Defender ATP](./media/wd-atp-alerts.png)
 

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 43e57f87-ca85-4922-8ed0-9830139fe7cb
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: b8b48b8090e109c9fc23c52b05f986b34e2549eb
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: ccb87ab6b3fabed5edaf7c32324701c74259f098
+ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44165885"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750441"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -37,7 +37,6 @@ Poniższa lista grup są traktowane jako wrażliwe przez narzędzia Azure ATP. K
 -   Operatorzy drukowania
 -   Operatorzy kopii zapasowych
 -   Replikatorzy
--   Użytkownicy pulpitu zdalnego 
 -   Operatorzy konfiguracji sieci 
 -   Konstruktorzy przychodzących zaufań lasu
 -   Administratorzy domeny
@@ -48,6 +47,8 @@ Poniższa lista grup są traktowane jako wrażliwe przez narzędzia Azure ATP. K
 -   Administratorzy schematu 
 -   Enterprise Admins
 
+ > [!NOTE]
+ > Do września 2018 r. Użytkownicy pulpitu zdalnego są również automatycznie zdaniem wrażliwych narzędzia Azure ATP. Jednostki usług pulpitu zdalnego lub grup dodanych po tej dacie nie będzie automatycznie są oznaczone jako poufne podczas jednostek usług pulpitu zdalnego lub grup dodanych przed tą datą mogą pozostać oznaczone jako poufne. Teraz można ręcznie zmienić ustawienie poufnych.  
 
 ## <a name="tagging-sensitive-accounts"></a>Tagowanie poufnych kont
 

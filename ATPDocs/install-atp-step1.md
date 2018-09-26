@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 6f44bbf50cff2e983a7ddb1ef1cf54ebaf928741
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 6874c8a23372950dacdf328b1e885b7d039c8433
+ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126233"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750507"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -51,7 +51,7 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
 
 1. Kliknij przycisk **Utwórz obszar roboczy**.
 
-2. W **Utwórz nowy obszar roboczy** okno dialogowe, nazwij obszar roboczy, a następnie wybierz pozycję **Geolokalizacja** dla centrum danych. Tylko jeden obszar roboczy można ustawić jako podstawowy. Ustawienia obszaru roboczego, ponieważ podstawowy ma wpływ na integracji — narzędzia Azure ATP można tylko zintegrować z usługą Windows Defender ATP, aby podstawowego obszaru roboczego. Można zmienić, który obszar roboczy jest podstawową później, ale aby można było zrobić, należy usunąć wszystkie integracje skonfigurowane dla bieżącego podstawowym obszarem roboczym.
+2. W **Utwórz nowy obszar roboczy** okno dialogowe, nazwij obszar roboczy, a następnie wybierz pozycję **Geolokalizacja** dla centrum danych. Jeden obszar roboczy można ustawić jako podstawowy. Ustawienia obszaru roboczego, ponieważ podstawowy ma wpływ na integracji — narzędzia Azure ATP można tylko zintegrować z usługą Windows Defender ATP, aby podstawowego obszaru roboczego. Można zmienić, który obszar roboczy jest podstawową później, ale aby można było zrobić, należy usunąć wszystkie integracje skonfigurowane dla bieżącego podstawowym obszarem roboczym.
  > [!NOTE]
  > Po wybraniu Geolokalizacji, nie można go modyfikować.
     ![Usługa Azure ATP obszaru roboczego](media/create-workspace.png)
@@ -65,7 +65,7 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
 
     ![Usługa Azure ATP obszarów roboczych.](media/atp-workspaces.png)
 
-- Można edytować tylko podstawowy obszar roboczy. Aby wprowadzić zmiany do innych obszarów roboczych, można je usunąć i dodać je ponownie. Jeśli chcesz usunąć podstawowym obszarem roboczym, najpierw należy wyłączyć integracje i ustaw obszar roboczy, aby nie może być **głównej** będzie on mógł zostać usunięty.
+- Można edytować tylko podstawowy obszar roboczy. Jeśli chcesz usunąć podstawowym obszarem roboczym, najpierw należy wyłączyć integracje i ustaw obszar roboczy, aby nie może być **głównej** będzie on mógł zostać usunięty.
 - Edytowanie podstawowego obszaru roboczego, należy wyłączyć integracje istniejących w obszarze roboczym.
 
 - Przechowywanie danych — usunięto obszarów roboczych nie są wyświetlane w interfejsie użytkownika. Aby uzyskać więcej informacji na temat przechowywania danych usługi Azure ATP, zobacz [Azure zaawansowanej ochrony przed zagrożeniami bezpieczeństwa danych i prywatności](atp-privacy-compliance.md).

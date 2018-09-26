@@ -6,18 +6,18 @@ author: rkarlin
 ms.author: rkarlin
 manager: mbaldwin
 ms.date: 5/22/2018
-ms.topic: conceptual
+ms.topic: get-started-article
 ms.service: azure-advanced-threat-protection
 ms.prod: ''
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 3426829c0c3b9b52ec1c0fb2c7f19e5a0944bfdf
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: d2fce6a4cf3b3440e3ceedc524fe8457e8831bbe
+ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126369"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750490"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -58,7 +58,7 @@ Podczas wybierania typu wdrożenia czujnika, należy wziąć pod uwagę następu
 Podejmując decyzję o ile czujników autonomiczne narzędzia Azure ATP do wdrożenia, należy wziąć pod uwagę następujące kwestie.
 
 -   **Lasy i domeny usługi Active Directory**<br>
-    Narzędzie Azure ATP można monitorować ruch z wielu domen w jednym lesie usługi Active Directory dla każdego obszaru roboczego, który tworzysz. Aby monitorować wiele lasów, należy utworzyć wiele obszarów roboczych. 
+    Narzędzie Azure ATP można monitorować ruch z wielu domen w obrębie wielu lasów usługi Active Directory dla każdego obszaru roboczego, który tworzysz. 
 
 -   **Dublowanie portów**<br>
 Specyfika funkcji dublowania portów mogą wymagać można wdrażać wiele czujników autonomiczne narzędzia Azure ATP na witrynę Centrum lub gałęzi danych.
