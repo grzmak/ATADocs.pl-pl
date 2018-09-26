@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 37d3234694b92c988fcd1153c79d37dbba371aaa
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 20360658a310feb4553077b460ee013e268f9239
+ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133603"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47168590"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -44,7 +44,7 @@ W tym scenariuszu założono, że brama usługi ATA jest elementem członkowskim
 
 1.  Otwórz narzędzie Użytkownicy usługi Active Directory i komputerów, przejdź do **BuiltIn** folder i kliknij dwukrotnie plik **Czytelnicy dzienników zdarzeń**. 
 2.  Wybierz **członków**.
-4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+3.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
 Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, przeprowadź ponowny rozruch kontrolerów domeny, aby zmiana zaczęła obowiązywać.
 
@@ -62,7 +62,9 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
-    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: \*Server =`http://<fqdnATAGateway>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` (na przykład: Server =`http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
+    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server = http: / /<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC, Refresh = 10* 
+    
+        *(Na przykład: Server =http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)*
  
     ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
    

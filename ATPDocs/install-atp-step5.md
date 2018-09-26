@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/12/2018
+ms.date: 9/25/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: d7c95f8c-04f8-4946-9bae-c27ed362fcb0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 353845c3fb03d5bd4af18ea467fceea57010f33e
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 03aa84b4288e4155b579acc12f03b7ecdb55b160
+ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126012"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47168607"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -32,7 +32,7 @@ ms.locfileid: "44126012"
 
 
 ## <a name="step-5-configure-the-azure-atp-sensor-settings"></a>Krok 5. Konfigurowanie ustawień czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
-Po zainstalowaniu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, wykonaj następujące kroki, aby skonfigurować ustawienia dla czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
+Po zainstalowaniu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, wykonaj następujące kroki, aby skonfigurować ustawienia czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
 
 1.  W portalu obszaru roboczego usługi Azure ATP, przejdź do **konfiguracji** i w obszarze **systemu**, wybierz opcję **czujnika**.
    
@@ -51,12 +51,15 @@ Po zainstalowaniu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze 
       - Co najmniej jeden kontroler domeny znajdujący się na liście musi być wykazem globalnym. Dzięki temu usługi Azure ATP można rozpoznać obiektów użytkowników i komputerów w innych domenach w lesie.
 
   - **Karty sieciowe przechwytywania** (wymagane):
-     - Dla czujnik autonomiczny narzędzia Azure ATP na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. One odbierać zdublowany ruch kontrolera domeny.
+   
      - Dla czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure powinna to być wszystkie karty sieciowe, które są używane do komunikacji z innymi komputerami w Twojej organizacji.
+    - Dla czujnik autonomiczny narzędzia Azure ATP na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. One odbierać zdublowany ruch kontrolera domeny.
 
-    - **Kandydat Synchronizatora domeny**: czujnik autonomiczny dowolnego narzędzia Azure ATP ustawiona jako kandydat Synchronizatora domeny mogą odpowiadać za synchronizację między usługą Azure ATP i domeny usługi Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć trochę czasu i jest dużej ilości zasobów. Domyślnie tylko czujników autonomiczne narzędzia Azure ATP są ustawione jako kandydaci Synchronizatora domeny.
-   Zalecane jest, aby wyłączyć jakiegokolwiek czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure lokacji zdalnej z Kandydat Synchronizatora domeny.
-   Jeśli kontroler domeny jest kontrolerem tylko do odczytu, nie należy ustawiać go jako kandydata synchronizatora domeny. Aby uzyskać więcej informacji, zobacz [architektury usługi Azure ATP](atp-architecture.md#azure-atp-sensor-features).
+    - **Kandydat Synchronizatora domeny**: domyślnie czujników narzędzia Azure ATP nie są kandydatami Synchronizatora domeny, są czujników autonomiczne narzędzia Azure ATP. Aby ręcznie wybrać czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jako kandydat syncronizer domeny, przełącz się **kandydat Synchronizatora domeny** Przełącz opcję **ON** na ekranie konfiguracji. 
+    
+        Synchronizator domeny jest odpowiedzialny za synchronizację między usługą Azure ATP i domeny usługi Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć trochę czasu i jest dużej ilości zasobów. 
+   Zaleca się wyłączenie usługi Azure ATP czujnik(-i) miałyby kandydatami Synchronizatora domeny dla lokacji zdalnych.
+   Jeśli kontroler domeny jest kontrolerem tylko do odczytu, nie należy ustawiać go jako kandydata synchronizatora domeny. Aby uzyskać więcej informacji na temat synchronizacji domeny usługi Azure ATP zobacz [architektury usługi Azure ATP](atp-architecture.md#azure-atp-sensor-features)
   
 4. Kliknij polecenie **Zapisz**.
 

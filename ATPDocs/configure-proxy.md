@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/12/2018
+ms.date: 9/25/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 2e8a4cdccad7f371601941e20ede20000aeef5ec
-ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
+ms.openlocfilehash: fa6bb10b029649a158d7733b10fec51c52acb9f7
+ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44697195"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47168556"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -45,15 +45,15 @@ Statyczny serwera proxy jest konfigurowane za pomocą rejestru. System lokalny i
 
 1.   Upewnij się utworzyć kopię zapasową kluczy rejestru, przed ich zmodyfikowaniem.
 
-2. W rejestrze, wyszukaj wartość `DefaultConnectionSetting` jako REG_BINARY w kluczu rejestru `HKCU\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting` i skopiuj go.
+2. W rejestrze, wyszukaj wartość `DefaultConnectionSettings` jako REG_BINARY w kluczu rejestru `HKCU\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings` i skopiuj go.
  
-2.  Jeśli system lokalny nie jest prawidłowe ustawienia serwera proxy (nie są skonfigurowane lub są one różne od Current_User), a następnie skopiuj ustawienia serwera proxy z Current_User LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
+2.  Jeśli system lokalny nie jest prawidłowe ustawienia serwera proxy (nie są skonfigurowane lub są one różne od Current_User), a następnie skopiuj ustawienia serwera proxy z Current_User LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings`.
 
-3.  Wklej wartość z Current_user `DefaultConnectionSetting` jako REG_BINARY.
+3.  Wklej wartość z Current_user `DefaultConnectionSettings` jako REG_BINARY.
 
-4.  Jeśli Usługa lokalna nie ma prawidłowe ustawienia serwera proxy, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSetting`.
+4.  Jeśli Usługa lokalna nie ma prawidłowe ustawienia serwera proxy, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings`.
 
-5.  Wklej wartość z Current_User `DefaultConnectionSetting` jako REG_BINARY.
+5.  Wklej wartość z Current_User `DefaultConnectionSettings` jako REG_BINARY.
 
 > [!NOTE]
 > Ma to wpływu na wszystkie aplikacje, w tym usługi Windows, które używają interfejsu WinINET z Usługa lokalna, LocalSytem kontekstu.

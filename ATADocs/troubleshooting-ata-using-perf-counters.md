@@ -2,10 +2,10 @@
 title: Rozwiązywanie problemów z usługą Advanced Threat Analytics przy użyciu liczników wydajności | Dokumentacja firmy Microsoft
 description: W tym temacie opisano sposób rozwiązywania problemów z usługą ATA przy użyciu liczników wydajności.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/21/2018
+ms.date: 9/25/2018
 ms.topic: conceptual
 ms.prod: advanced-threat-analytics
 ms.service: ''
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: df162a62-f273-4465-9887-94271f5000d2
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: c7a0ded6092740f92c12fbd7c57100293bf735c2
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 455e66b286916f125fcc34d61b167b86ccc59740
+ms.sourcegitcommit: caaa864708ec631ca4903f6270ad0012951ceef1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134130"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47114463"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -108,7 +108,7 @@ Oto lista głównych liczników centrum usługi ATA, na które należy zwrócić
 |-----------|---------------|-------------|-------------------|
 |Microsoft ATA Center\EntityReceiver Entity Batch Block Size (Centrum usługi Microsoft ATA\rozmiar bloku partii jednostek składnika EntityReceiver)|Liczba partii jednostek umieszczonych w kolejce przez centrum usługi ATA.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 10 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener.  Zapoznaj się z powyższymi **proces składnika usługi ATA**.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
 |Microsoft ATA Center\NetworkActivityProcessor Network Activity Block Size (Centrum usługi Microsoft ATA\rozmiar bloku działań sieciowych składnika NetworkActivityProcessor)|Liczba działań w sieci znajdujących się w kolejce w celu przetworzenia.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 50 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener. Zapoznaj się z powyższymi **proces składnika usługi ATA**.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
-|Microsoft ATA Center\EntityProfiler Network Activity Block Size (Centrum usługi Microsoft ATA\rozmiar bloku działań sieciowych składnika EntityProfiler)|Liczba działań w sieci znajdujących się w kolejce w celu profilowania.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 10 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener. Zapoznaj się z powyższymi **proces składnika usługi ATA**.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
+|Microsoft ATA Center\EntityProfiler Network Activity Block Size (Centrum usługi Microsoft ATA\rozmiar bloku działań sieciowych składnika EntityProfiler)|Liczba działań w sieci znajdujących się w kolejce w celu profilowania.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 100 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener. Zapoznaj się z powyższymi **proces składnika usługi ATA**.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
 |Microsoft ATA Center\Database &#42; Block Size (Centrum usługi Microsoft ATA\rozmiar bloku składnika Database&#42;)|Liczba działań w sieci określonego typu znajdujących się w kolejce w celu zapisania w bazie danych.|Ta wartość powinna być mniejsza niż wartość maksymalna – 1 (domyślna wartość maksymalna: 50 000).|Sprawdź, czy jakikolwiek składnik osiągnął maksymalny rozmiar i blokuje poprzednie składniki, aż do składnika NetworkListener. Zapoznaj się z powyższymi **proces składnika usługi ATA**.<br /><br />Sprawdź, czy nie wystąpił problem z procesorem CPU lub pamięcią.|
 
 

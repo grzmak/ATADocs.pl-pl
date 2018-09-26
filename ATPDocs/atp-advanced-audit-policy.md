@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/30/2018
+ms.date: 9/25/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ab1e8dd9-a6c2-4c68-89d5-343b8ec56142
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: d7207388702c659a08258862326ee89a49ae3ac2
-ms.sourcegitcommit: f3f80c5d3e2e5c1bcf975ae0cbae1469da7ab74d
+ms.openlocfilehash: d54bfa71c2f587450fe7c68aaca1e721356c11d7
+ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44515512"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47168539"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -33,6 +33,8 @@ Aby ułatwić sprawdzić bieżący stan poszczególnych zasad inspekcji zaawanso
 
 
 Zaawansowane zasady inspekcji zabezpieczeń jest włączone za pomocą **domyślne zasady kontrolerów domeny** obiektu zasad grupy. Te inspekcji na kontrolerze domeny Windows zdarzenia są rejestrowane zdarzenia. 
+
+
 
 <br>Modyfikowanie zasad inspekcji zaawansowanych, kontrolera domeny przy użyciu następujących instrukcji:
 
@@ -53,6 +55,9 @@ Zaawansowane zasady inspekcji zabezpieczeń jest włączone za pomocą **domyśl
 6. Przejdź do zarządzania kontami, kliknij dwukrotnie **Inspekcja zarządzania grupami zabezpieczeń** i wybierz **Konfiguruj następujące zdarzenia inspekcji** sukcesów i niepowodzeń zdarzenia.
 
     ![Inspekcja zarządzania grupami zabezpieczeń](media/atp-advanced-audit-policy-check-step-4.png)
+
+> [!NOTE]
+> - Jeśli zdecydujesz się przy użyciu zasad lokalnych, upewnij się dodać **konto logowania** i **zarządzania kontami** dzienniki w lokalnych zasadach inspekcji. W przypadku konfigurowania zasad inspekcji zaawansowanych, upewnij się wymusić [podkategorii zasad inspekcji](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/audit-force-audit-policy-subcategory-settings-to-override).
 
 7. Po zastosowaniu za pośrednictwem zasad grupy, nowe zdarzenia są widoczne w obszarze usługi **dzienniki zdarzeń Windows**.
 
