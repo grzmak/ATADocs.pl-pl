@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3f0498f9-061d-40e6-ae07-98b8dcad9b20
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 20360658a310feb4553077b460ee013e268f9239
-ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
+ms.openlocfilehash: 512e7fa979a6fd5e140d65836b533b720a6dc03b
+ms.sourcegitcommit: 1b23381ca4551a902f6343428d98f44480077d30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168590"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47403220"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -27,16 +27,16 @@ ms.locfileid: "47168590"
 # <a name="configuring-windows-event-forwarding"></a>Konfigurowanie funkcji przekazywania zdarzeń systemu Windows
 
 > [!NOTE]
-> W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA może teraz odczytywać zdarzenia lokalnie — bez potrzeby konfigurowania przekazywania zdarzeń.
-
+> W przypadku usługi ATA w wersji 1.8 i nowszych nie trzeba już konfigurować zbierania zdarzeń dla uproszczonych bram usługi ATA. Uproszczona brama usługi ATA teraz odczytywać zdarzenia lokalnie — bez konieczności konfigurowania przekazywania zdarzeń.
 
 W celu zwiększenia możliwości wykrywania usługa ATA potrzebuje następujących zdarzeń Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757, 7045. One może odczytywać je automatycznie przez bramę ATA Lightweight Gateway lub w przypadku uproszczonej bramy usługi ATA nie została wdrożona, zdarzenia mogą być przekazywane do bramy usługi ATA na jeden z dwóch sposobów, przez skonfigurowanie bramy usługi ATA do nasłuchiwania zdarzeń SIEM lub przez skonfigurowanie zdarzeń Windows Przekazywanie.
 
-
+> [!NOTE]
+> Jeśli używasz Server Core [wecutil](https://docs.microsoft.com/windows-server/administration/windows-commands/wecutil) może służyć do tworzenia i zarządzania subskrypcjami zdarzeń, które są przekazywane z komputerów zdalnych.
 
 ### <a name="wef-configuration-for-ata-gateways-with-port-mirroring"></a>Konfiguracja funkcji przekazywania zdarzeń (WEF) bramy usługi ATA z dublowaniem portów
 
-Po skonfigurowaniu funkcji dublowania portów z kontrolerów domeny do bramy usługi ATA wykonaj następujące instrukcje konfigurowania przekazywania zdarzeń Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
+Po skonfigurowaniu funkcji dublowania portów z kontrolerów domeny do bramy usługi ATA, wykonaj następujące instrukcje konfigurowania przekazywania zdarzeń Windows za pomocą konfiguracji inicjowanej przez obiekt źródłowy. Jest to jeden ze sposobów konfigurowania przekazywania zdarzeń systemu Windows. 
 
 **Krok 1: Dodaj konto usługi sieciowej do grupy Czytelnicy dzienników zdarzeń domeny** 
 

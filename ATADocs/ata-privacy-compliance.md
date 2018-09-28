@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/04/2018
+ms.date: 9/27/2018
 ms.topic: conceptual
 ms.prod: advanced-threat-analytics
 ms.service: ''
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 1b2d185c-62cd-45f0-b0dd-687b51317f32
 ms.reviewer: ophirp
 ms.suite: ems
-ms.openlocfilehash: 0f4a7546b6231fb263d1734b731f6be3cae7570a
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 08876085e3fe5d86c8219c6b0ad7beb8c44c700a
+ms.sourcegitcommit: 1b23381ca4551a902f6343428d98f44480077d30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134013"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47403237"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -44,7 +44,7 @@ Aby trwale usunąć dane związane z bazy danych usługi ATA, wykonaj poniższą
 
 1. [Pobierz](https://aka.ms/ata-gdpr-script) skryptu bazy danych MongoDB (gdpr.js).  
 
-2. Skopiuj skrypt na komputerze Centrum usługi ATA i uruchom następujące polecenie z poziomu maszyny Centrum usługi ATA: 
+2. Skopiuj skrypt do folderu usługi ATA (znajdujący się w `"C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB` i uruchom następujące polecenie z poziomu maszyny Centrum usługi ATA: 
 
 Użyj skryptu bazy danych RODO ATA usuwanie jednostek i usunąć dane o aktywności jednostki, zgodnie z opisem w poniższych sekcjach.
 

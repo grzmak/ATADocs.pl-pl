@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/9/2018
+ms.date: 9/27/2018
 ms.topic: conceptual
 ms.prod: advanced-threat-analytics
 ms.service: ''
@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: a5f90544-1c70-4aff-8bf3-c59dd7abd687
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 06789ac50d52a9b202eea9fb9fb6ea74aaf7a5f3
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: f5a21b1b84d164542e04d77e3a6a57fe5c944102
+ms.sourcegitcommit: 1b23381ca4551a902f6343428d98f44480077d30
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133958"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47403203"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 
 # <a name="ata-prerequisites"></a>Wymagania wstępne usługi ATA
-W tym artykule opisano wymagania, które należy spełnić w celu pomyślnego wdrożenia usługi ATA w środowisku.
+W tym artykule opisano wymagania dotyczące pomyślnego wdrożenia usługi ATA w środowisku.
 
 > [!NOTE]
 > Aby uzyskać więcej informacji o planowaniu zasobów i pojemności, zobacz temat [Planowanie pojemności usługi ATA](ata-capacity-planning.md).
@@ -61,7 +61,7 @@ Ta sekcja zawiera informacje, które należy zebrać, a także konta i jednostki
 
 -    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Dzięki temu usługa ATA to wykrywanie zbiorczego usuwania obiektów w domenie. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
 
--   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowane jako użytkownika wystawionego jako przynęta usługi ATA. Aby skonfigurować użytkownika wystawionego jako przynęta, potrzebny jest identyfikator SID konta użytkownika, a nie nazwa użytkownika. Aby uzyskać więcej informacji, zobacz [wykluczeń adresów IP, konfigurowanie i użytkownika wystawionego jako przynęta](install-ata-step7.md).
+-   Opcjonalnie: Konto użytkownika użytkownika z żadne działania w sieci. To konto jest możliwość skonfigurowania użytkownika wystawionego jako przynęta usługi ATA. Aby skonfigurować konto usługi jako użytkownika wystawionego jako przynęta, wymagany jest tylko nazwy użytkownika. Aby uzyskać informacje o konfiguracji pułapki, zobacz [wykluczeń adresów IP, konfigurowanie i użytkownika wystawionego jako przynęta](install-ata-step7.md).
 
 -   Opcjonalnie: Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, usługa ATA umożliwia Windows zdarzeń 4776, 4732, 4733, 4728, 4729, 4756 i 4757 z dziennika ulepszanie ATA Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup i Związane wystawionym jako przynęta wykrywania tokenów. Te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają usłudze ATA dodatkowe informacje niedostępne za pośrednictwem ruchu sieciowego kontrolera domeny.
 
