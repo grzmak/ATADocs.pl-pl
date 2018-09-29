@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: e1c5ff41-d989-46cb-aa38-5a3938f03c0f
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 4b2e7ae1dad939db3a2394876acfe9ed4042924b
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 431368a1ceee57870a3eadf176b5899b69784c98
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133263"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454126"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -26,9 +26,9 @@ ms.locfileid: "46133263"
 
 # <a name="install-ata---step-2"></a>Instalowanie usługi ATA — Krok 2
 
->[!div class="step-by-step"]
-[« Krok 1](install-ata-step1.md)
-[Krok 3 »](install-ata-step3.md)
+> [!div class="step-by-step"]
+> [« Krok 1](install-ata-step1.md)
+> [Krok 3 »](install-ata-step3.md)
 
 ## <a name="step-2-provide-a-username-and-password-to-connect-to-your-active-directory-forest"></a>Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
 
@@ -51,9 +51,9 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 3. W konsoli kliknij opcję **Download Gateway setup and install the first Gateway** (Pobierz instalator bramy i zainstaluj pierwszą bramę), aby kontynuować.
 
 
->[!div class="step-by-step"]
-[« Krok 1](install-ata-step1.md)
-[Krok 3 »](install-ata-step3.md)
+> [!div class="step-by-step"]
+> [« Krok 1](install-ata-step1.md)
+> [Krok 3 »](install-ata-step3.md)
 
 
 ## <a name="see-also"></a>Zobacz też

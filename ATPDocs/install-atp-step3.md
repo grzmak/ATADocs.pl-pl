@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 95bb4ec1-841f-41b7-92fe-fbd144085724
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f10dd0714b2574ff9e1e476bc1865b1a0ed337b8
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 96d459bd00d39bb21ce363d079b5b24ceca4ace7
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44125910"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454024"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,9 +26,9 @@ ms.locfileid: "44125910"
 
 # <a name="install-azure-atp---step-3"></a>Zainstaluj narzędzie Azure ATP — krok 3
 
->[!div class="step-by-step"]
-[« Krok 2](install-atp-step2.md)
-[Krok 4 »](install-atp-step4.md)
+> [!div class="step-by-step"]
+> [« Krok 2](install-atp-step2.md)
+> [Krok 4 »](install-atp-step4.md)
 
 ## <a name="step-3-download-the-azure-atp-sensor-setup-package"></a>Krok 3. Pobierz pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
 Po skonfigurowaniu ustawień łączności domeny, można pobrać pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure. Pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure można zainstalować na dedykowanym serwerze lub na kontrolerze domeny. Instalowanie bezpośrednio na kontrolerze domeny, jest instalowana jako czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure podczas instalowania na dedykowanym serwerze i za pomocą funkcji dublowania portów, instalowana jako czujnik autonomiczny narzędzia Azure ATP. Aby uzyskać więcej informacji na temat czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, zobacz [architektura zaawansowanej ochrony przed zagrożeniami platformy](atp-architecture.md). 
@@ -52,9 +52,9 @@ Plik zip zawiera następujące pliki:
 -   Plik ustawień konfiguracji, podając wymagane informacje, aby nawiązać połączenie z usługą w chmurze usługi Azure ATP
 
 
->[!div class="step-by-step"]
-[« Krok 2](install-atp-step2.md)
-[Krok 4 »](install-atp-step4.md)
+> [!div class="step-by-step"]
+> [« Krok 2](install-atp-step2.md)
+> [Krok 4 »](install-atp-step4.md)
 
 
 ## <a name="see-also"></a>Zobacz też

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: d7c95f8c-04f8-4946-9bae-c27ed362fcb0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 03aa84b4288e4155b579acc12f03b7ecdb55b160
-ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
+ms.openlocfilehash: 15e3639aa08e48a40ae65bf229964ae589ce1ba8
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168607"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454075"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,9 +26,9 @@ ms.locfileid: "47168607"
 
 # <a name="install-azure-atp---step-5"></a>Zainstaluj narzędzie Azure ATP — krok 5
 
->[!div class="step-by-step"]
-[« Krok 4](install-atp-step4.md)
-[Krok 6 »](install-atp-step6-vpn.md)
+> [!div class="step-by-step"]
+> [« Krok 4](install-atp-step4.md)
+> [Krok 6 »](install-atp-step6-vpn.md)
 
 
 ## <a name="step-5-configure-the-azure-atp-sensor-settings"></a>Krok 5. Konfigurowanie ustawień czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
@@ -78,9 +78,9 @@ Aby sprawdzić, czy czujnika zaawansowanej ochrony przed zagrożeniami w usłudz
 
 
 
->[!div class="step-by-step"]
-[« Krok 4](install-atp-step4.md)
-[Krok 6 »](install-atp-step6-vpn.md)
+> [!div class="step-by-step"]
+> [« Krok 4](install-atp-step4.md)
+> [Krok 6 »](install-atp-step6-vpn.md)
 
 
 ## <a name="see-also"></a>Zobacz też

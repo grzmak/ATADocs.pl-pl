@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: e0aed853-ba52-46e1-9c55-b336271a68e7
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 409dfa161c12c22d41deb399e9d4e256fa2863dc
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 8a651e177d37361ccbca178075fb2ac33a434a90
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133841"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47453922"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -26,9 +26,9 @@ ms.locfileid: "46133841"
 
 # <a name="install-ata---step-7"></a>Instalowanie usługi ATA — Krok 7
 
->[!div class="step-by-step"]
-[«Krok 5](install-ata-step5.md)
-[krok 8»](install-ata-step7.md)
+> [!div class="step-by-step"]
+> [«Krok 5](install-ata-step5.md)
+> [krok 8»](install-ata-step7.md)
 
 ## <a name="step-7-integrate-vpn"></a>Krok 7. Integracja sieci VPN
 
@@ -93,9 +93,9 @@ Po bramy usługi ATA odbiera zdarzenia sieci VPN i wysyła je do Centrum usługi
 
 
 
->[!div class="step-by-step"]
-[« Krok 6](install-ata-step5.md)
-[Krok 8 »](install-ata-step7.md)
+> [!div class="step-by-step"]
+> [« Krok 6](install-ata-step5.md)
+> [Krok 8 »](install-ata-step7.md)
 
 
 

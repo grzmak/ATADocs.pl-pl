@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: 7597ed25-87f5-472c-a496-d5f205c9c391
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: df128b4f8258a7d937934795db92cf8fb89fb214
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: 7fae5fa320aab6a2ad6db4695b0087eab72344e8
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133405"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47453956"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 # <a name="install-ata---step-9"></a>Instalowanie usługi ATA — krok 9
 
->[!div class="step-by-step"]
-[«Krok 8](install-ata-step7.md)
+> [!div class="step-by-step"]
+> [«Krok 8](install-ata-step7.md)
 
 ## <a name="step-9-configure-sam-r-required-permissions"></a>Krok 9. Konfigurowanie uprawnień SAM-R wymagane
 
@@ -52,8 +52,8 @@ Aby upewnić się, czy serwery i klienci Windows zezwalają na konto usługi ATA
  Aby uzyskać więcej informacji na temat SAM-R i zasad grupy, zobacz [dostęp sieciowy: ogranicza dostępu klientów zezwolenie na wykonywanie wywołań zdalnych do Menedżera kont zabezpieczeń](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls).
 
 
->[!div class="step-by-step"]
-[«Krok 8](install-ata-step7.md)
+> [!div class="step-by-step"]
+> [«Krok 8](install-ata-step7.md)
 
 ## <a name="see-also"></a>Zobacz też
 - [Przewodnik wdrażania weryfikacji Koncepcji usługi ATA](http://aka.ms/atapoc)

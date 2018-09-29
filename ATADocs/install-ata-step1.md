@@ -13,20 +13,20 @@ ms.technology: ''
 ms.assetid: b3cceb18-0f3c-42ac-8630-bdc6b310f1d6
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: e37954252708da31347b0af6479fbafbfd9433a7
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: ea20c87fe7990542ad68de7ae6dfeefad062e378
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133739"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454160"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
 
 # <a name="install-ata---step-1"></a>Instalowanie usługi ATA — Krok 1
 
->[!div class="step-by-step"]
-[Krok 2 »](install-ata-step2.md)
+> [!div class="step-by-step"]
+> [Krok 2 »](install-ata-step2.md)
 
 Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.8. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA do wersji 1.9](ata-update-1.9-migration-guide.md).
 
@@ -98,9 +98,9 @@ Po zainstalowaniu Centrum usługi ATA należy wykluczyć katalog bazy danych Mon
 
 
 
->[!div class="step-by-step"]
-[« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
-[Krok 2 »](install-ata-step2.md)
+> [!div class="step-by-step"]
+> [« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
+> [Krok 2 »](install-ata-step2.md)
 
 ## <a name="related-videos"></a>Pokrewne wideo
 - [Wybieranie odpowiedniego typu bramy usługi ATA](https://channel9.msdn.com/Shows/Microsoft-Security/ATA-Deployment-Choose-the-Right-Gateway-Type)

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 7fb024e6-297a-4ad9-b962-481bb75a0ba3
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: 86941e2081c3893d3ea8499b435968fbad243015
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: d49770f435985027690ddfc05a9359e84841c0ff
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133161"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454041"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -26,9 +26,9 @@ ms.locfileid: "46133161"
 
 # <a name="install-ata---step-3"></a>Instalowanie usługi ATA — Krok 3
 
->[!div class="step-by-step"]
-[« Krok 2](install-ata-step2.md)
-[Krok 4 »](install-ata-step4.md)
+> [!div class="step-by-step"]
+> [« Krok 2](install-ata-step2.md)
+> [Krok 4 »](install-ata-step4.md)
 
 ## <a name="step-3-download-the-ata-gateway-setup-package"></a>Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
 Po skonfigurowaniu ustawień łączności domeny możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub w kontrolerze domeny. Jeśli zostanie zainstalowana na kontrolerze domeny, jest on instalowany jako uproszczonej bramy usługi ATA. Więcej informacji dotyczących uproszczonej bramy usługi ATA można znaleźć w temacie [Architektura usługi ATA](ata-architecture.md). 
@@ -52,9 +52,9 @@ Plik zip zawiera następujące pliki:
 -   Plik ustawień konfiguracji z informacjami wymaganymi do nawiązywania połączeń z centrum usługi ATA
 
 
->[!div class="step-by-step"]
-[« Krok 2](install-ata-step2.md)
-[Krok 4 »](install-ata-step4.md)
+> [!div class="step-by-step"]
+> [« Krok 2](install-ata-step2.md)
+> [Krok 4 »](install-ata-step4.md)
 
 
 ## <a name="related-videos"></a>Pokrewne wideo

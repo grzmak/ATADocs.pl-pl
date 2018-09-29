@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 8980e724-06a6-40b0-8477-27d4cc29fd2b
 ms.reviewer: bennyl
 ms.suite: ems
-ms.openlocfilehash: eacc3c2449e6fd7771c43b97b8ed08276ab130d2
-ms.sourcegitcommit: 959b1f7753b9a8ad94870d2014376d55296fbbd4
+ms.openlocfilehash: b45012f82a2457d09a616c2bd9e7e8866d0f5cdc
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46133549"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47453939"
 ---
 *Dotyczy: Advanced Threat Analytics w wersji 1.9*
 
@@ -26,9 +26,9 @@ ms.locfileid: "46133549"
 
 # <a name="install-ata---step-8"></a>Instalowanie usługi ATA — krok 8
 
->[!div class="step-by-step"]
-[«Krok 7](vpn-integration-install-step.md)
-[kroku 9»](install-ata-step9-samr.md)
+> [!div class="step-by-step"]
+> [«Krok 7](vpn-integration-install-step.md)
+> [kroku 9»](install-ata-step9-samr.md)
 
 ## <a name="step-8-configure-ip-address-exclusions-and-honeytoken-user"></a>Krok 8. Konfigurowanie wykluczeń adresów IP i konta użytkownika wystawionego jako przynęta
 Usługa ATA umożliwia wykluczenie konkretnych adresów IP lub użytkowników z wykrywania według pewnych kryteriów. 
@@ -65,9 +65,9 @@ Usługa ATA uruchamia skanowanie w poszukiwaniu podejrzanych działań od razu. 
 Aby sprawdzić, czy usługa ATA działa i wykrywa naruszenia bezpieczeństwa sieci, możesz zapoznać się z [podręcznikiem symulacji ataku za pomocą usługi ATA](https://docs.microsoft.com/enterprise-mobility-security/solutions/ata-attack-simulation-playbook).
 
 
->[!div class="step-by-step"]
-[«Krok 7](vpn-integration-install-step.md)
-[kroku 9»](install-ata-step9-samr.md)
+> [!div class="step-by-step"]
+> [«Krok 7](vpn-integration-install-step.md)
+> [kroku 9»](install-ata-step9-samr.md)
 
 
 ## <a name="related-videos"></a>Pokrewne wideo

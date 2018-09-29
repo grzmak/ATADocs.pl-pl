@@ -13,20 +13,20 @@ ms.technology: ''
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 6874c8a23372950dacdf328b1e885b7d039c8433
-ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
+ms.openlocfilehash: c9fc833a315c5e2259080d922c24e6a64de98905
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45750507"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47453820"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="creating-a-workspace-in-the-azure-atp-workspace-management-portal---step-1"></a>Tworzenie obszaru roboczego w portalu zarządzania obszarami roboczymi usługi Azure ATP — krok 1
 
->[!div class="step-by-step"]
-[Krok 2 »](install-atp-step2.md)
+> [!div class="step-by-step"]
+> [Krok 2 »](install-atp-step2.md)
 
 Ta procedura instalacji zawiera instrukcje dotyczące tworzenia i zarządzania nimi swojego wystąpienia usługi Azure ATP. Aby uzyskać informacje dotyczące architektury usługi Azure ATP, zobacz [architektury usługi Azure ATP](atp-architecture.md).
 
@@ -71,9 +71,9 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
 - Przechowywanie danych — usunięto obszarów roboczych nie są wyświetlane w interfejsie użytkownika. Aby uzyskać więcej informacji na temat przechowywania danych usługi Azure ATP, zobacz [Azure zaawansowanej ochrony przed zagrożeniami bezpieczeństwa danych i prywatności](atp-privacy-compliance.md).
 
 
->[!div class="step-by-step"]
-[« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
-[Krok 2 »](install-atp-step2.md)
+> [!div class="step-by-step"]
+> [« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
+> [Krok 2 »](install-atp-step2.md)
 
 
 ## <a name="see-also"></a>Zobacz też

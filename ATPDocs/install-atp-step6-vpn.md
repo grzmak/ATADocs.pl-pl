@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 0d9d2a1d-6c76-4909-b6f9-58523df16d4f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4923056f72147b327ca85f842acf328d6d8ef6f3
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 9ce1bbbda96cc8a10b026f2f422ac79b1b2bae55
+ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126131"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454109"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,9 +26,9 @@ ms.locfileid: "44126131"
 
 # <a name="install-azure-atp---step-6"></a>Zainstaluj narzędzie Azure ATP — krok 6
 
->[!div class="step-by-step"]
-[« Krok 5](install-atp-step5.md)
-[Krok 7 »](install-atp-step7.md)
+> [!div class="step-by-step"]
+> [« Krok 5](install-atp-step5.md)
+> [Krok 7 »](install-atp-step7.md)
 
 ## <a name="step-6-integrate-vpn"></a>Krok 6. Integracja sieci VPN
 
@@ -91,9 +91,9 @@ Po czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure odbiera z
 
 
 
->[!div class="step-by-step"]
-[«Krok 6](install-atp-step5.md)
-[krok 7»](install-atp-step7.md)
+> [!div class="step-by-step"]
+> [«Krok 6](install-atp-step5.md)
+> [krok 7»](install-atp-step7.md)
 
 
 ## <a name="see-also"></a>Zobacz też
