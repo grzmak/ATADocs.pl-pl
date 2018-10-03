@@ -51,25 +51,25 @@ Po zainstalowaniu bramy usługi ATA wykonaj następujące kroki, aby skonfigurow
     - Co najmniej jeden kontroler domeny znajdujący się na liście musi być wykazem globalnym. Dzięki temu usługa ATA może rozpoznać obiektów użytkowników i komputerów w innych domenach w lesie.
 
   - **Karty sieciowe przechwytywania** (wymagane):
-  - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. One odbierać zdublowany ruch kontrolera domeny.
+  - W przypadku bramy usługi ATA na dedykowanym serwerze wybierz karty sieciowe, które są skonfigurowane jako docelowy port dublowania. Będą one odbierać zdublowany ruch kontrolera domeny.
   - W przypadku uproszczonej bramy usługi ATA powinny to być wszystkie karty sieciowe, które są wykorzystywane do komunikacji z innymi komputerami w organizacji.
   
-  - **Domain synchronizer candidate** (Kandydat na synchronizatora domeny): dowolna brama usługi ATA ustawiona jako kandydat na synchronizatora domeny może odpowiadać za synchronizację między usługą ATA a domeną usługi Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć trochę czasu i jest dużej ilości zasobów. Domyślnie wszystkie bramy usługi ATA są kandydatami na synchronizatora.
-   Zaleca się wyłączenie bram usługi ATA z Kandydat Synchronizatora domeny dla lokacji zdalnych.
+  - **Domain synchronizer candidate** (Kandydat na synchronizatora domeny): dowolna brama usługi ATA ustawiona jako kandydat na synchronizatora domeny może odpowiadać za synchronizację między usługą ATA a domeną Active Directory. W zależności od wielkości domeny początkowa synchronizacja może zająć trochę czasu i wymagać dużej ilości zasobów. Domyślnie wszystkie bramy usługi ATA są kandydatami na synchronizatora.
+   Zaleca się wyłączenie bram usługi ATA z listy Kandydatów Synchronizatora domeny dla lokacji zdalnych.
    Jeśli kontroler domeny jest kontrolerem tylko do odczytu, nie należy ustawiać go jako kandydata synchronizatora domeny. Aby uzyskać więcej informacji, zobacz [Architektura usługi ATA](ata-architecture.md#ata-lightweight-gateway-features).
 
   > [!NOTE] 
   > Pierwsze uruchomienie bramy usługi ATA po instalacji potrwa kilka minut. Jest to spowodowane tworzeniem pamięci podręcznej analizatorów przechwytywania ruchu sieciowego.
-  > Zmiany konfiguracji są stosowane do bramy usługi ATA na następnej zaplanowanej synchronizacji między bramą usługi ATA a Centrum usługi ATA.
+  > Zmiany konfiguracji są stosowane do bramy usługi ATA podczas następnej zaplanowanej synchronizacji między bramą usługi ATA a Centrum usługi ATA.
 
 3. Opcjonalnie możesz ustawić [odbiornik programu Syslog i funkcję zbierania przekazywania zdarzeń systemu Windows](configure-event-collection.md). 
-4. Włącz **Aktualizuj bramę usługi ATA automatycznie** , że w nadchodzących wersjach gdy użytkownik zaktualizuje Centrum usługi ATA, ta brama usługi ATA jest automatycznie aktualizowana.
+4. Włącz **Aktualizuj bramę usługi ATA automatycznie** , aby sprawić, że w nadchodzących wersjach gdy użytkownik zaktualizuje Centrum usługi ATA, ta brama usługi ATA jest również automatycznie aktualizowana.
 
 5. Kliknij polecenie **Zapisz**.
 
 
 ## <a name="validate-installations"></a>Weryfikowanie instalacji
-Aby sprawdzić, czy brama usługi ATA został wdrożony pomyślnie, sprawdź następujące kroki:
+Aby sprawdzić, czy brama usługi ATA został wdrożona pomyślnie, wykonaj następujące kroki:
 
 1.  Sprawdź, czy jest uruchomiona usługa o nazwie **Microsoft Advanced Threat Analytics Gateway**. Po zapisaniu ustawień bramy usługi ATA może minąć kilka minut, zanim usługa zostanie uruchomiona.
 
