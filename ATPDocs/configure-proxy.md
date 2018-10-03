@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: fa6bb10b029649a158d7733b10fec51c52acb9f7
-ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
+ms.openlocfilehash: a007a277641835be292ae6ab0b3004f154dad753
+ms.sourcegitcommit: 0634dda829699edf8bfd984eb9f896a67c5b15e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168556"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48039366"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -29,10 +29,10 @@ ms.locfileid: "47168556"
 Czujnik każdej usługi Azure Advanced Threat Protection (ATP) wymaga łączności z Internetem do usługi w chmurze usługi Azure ATP działanie pomyślnie. W niektórych organizacjach kontrolery domeny nie są bezpośrednio połączone z Internetem, ale są połączone za pośrednictwem połączenia serwera proxy sieci web. Każdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure wymaga korzystania z konfiguracji serwera proxy programu Microsoft Windows Internet (WinINET) raportować dane czujników, a następnie komunikować się z usługą Azure ATP. Jeśli używasz konfiguracji serwera proxy WinHTTP, nadal należy skonfigurować ustawienia serwera proxy przeglądarki Internet Windows (WinINet) do komunikacji między czujnikiem i usługą w chmurze usługi Azure ATP.
 
 
-Podczas konfigurowania serwera proxy, konieczne będzie wiedzieć, że osadzony usługi czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure działa w kontekście systemu przy użyciu **LocalService** konta i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami Azure działa w kontekście systemowym, za pomocą **LocalSystem** konta. 
+Podczas konfigurowania serwera proxy, musisz wiedzieć, że osadzony usługi czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure działa w kontekście systemu przy użyciu **LocalService** konta i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami Azure działa w kontekście systemu przy użyciu  **System lokalny** konta. 
 
 > [!NOTE]
-> Jeśli używasz przezroczystym serwerem proxy lub WPAD w topologii sieci, nie ma potrzeby konfigurowania WinINET dla serwera proxy.
+> Jeśli używasz przezroczystym serwerem proxy lub WPAD w topologii sieci, nie trzeba skonfigurować WinINET dla serwera proxy.
 
 ## <a name="configure-the-proxy"></a>Skonfiguruj serwer proxy 
 
@@ -45,13 +45,13 @@ Statyczny serwera proxy jest konfigurowane za pomocą rejestru. System lokalny i
 
 1.   Upewnij się utworzyć kopię zapasową kluczy rejestru, przed ich zmodyfikowaniem.
 
-2. W rejestrze, wyszukaj wartość `DefaultConnectionSettings` jako REG_BINARY w kluczu rejestru `HKCU\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings` i skopiuj go.
+2. W rejestrze, wyszukaj wartość `DefaultConnectionSettings` jako REG_BINARY w kluczu rejestru `HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections\DefaultConnectionSettings` i skopiuj go.
  
-2.  Jeśli system lokalny nie jest prawidłowe ustawienia serwera proxy (nie są skonfigurowane lub są one różne od Current_User), a następnie skopiuj ustawienia serwera proxy z Current_User LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings`.
+2.  Jeśli system lokalny nie jest prawidłowe ustawienia serwera proxy (nie są skonfigurowane lub są one różne od Current_User), a następnie skopiuj ustawienia serwera proxy z Current_User LocalSystem. W kluczu rejestru `HKU\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections\DefaultConnectionSettings`.
 
 3.  Wklej wartość z Current_user `DefaultConnectionSettings` jako REG_BINARY.
 
-4.  Jeśli Usługa lokalna nie ma prawidłowe ustawienia serwera proxy, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\InternetSetting\Connections\DefaultConnectionSettings`.
+4.  Jeśli Usługa lokalna nie ma prawidłowe ustawienia serwera proxy, następnie skopiować ustawienia serwera proxy z Current_User do Usługa lokalna. W kluczu rejestru `HKU\S-1-5-19\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections\DefaultConnectionSettings`.
 
 5.  Wklej wartość z Current_User `DefaultConnectionSettings` jako REG_BINARY.
 

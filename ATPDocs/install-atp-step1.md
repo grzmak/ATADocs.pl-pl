@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/04/2018
+ms.date: 9/25/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: c9fc833a315c5e2259080d922c24e6a64de98905
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
-ms.translationtype: MT
+ms.openlocfilehash: b30c9df27deed308c9c725ff1d6d193329721135
+ms.sourcegitcommit: 0634dda829699edf8bfd984eb9f896a67c5b15e7
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47453820"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48039383"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -51,7 +51,7 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
 
 1. Kliknij przycisk **Utwórz obszar roboczy**.
 
-2. W **Utwórz nowy obszar roboczy** okno dialogowe, nazwij obszar roboczy, a następnie wybierz pozycję **Geolokalizacja** dla centrum danych. Jeden obszar roboczy można ustawić jako podstawowy. Ustawienia obszaru roboczego, ponieważ podstawowy ma wpływ na integracji — narzędzia Azure ATP można tylko zintegrować z usługą Windows Defender ATP, aby podstawowego obszaru roboczego. Można zmienić, który obszar roboczy jest podstawową później, ale aby można było zrobić, należy usunąć wszystkie integracje skonfigurowane dla bieżącego podstawowym obszarem roboczym.
+2. W **Utwórz nowy obszar roboczy** okno dialogowe, nazwij obszar roboczy, a następnie wybierz pozycję **Geolokalizacja** dla centrum danych. Twój obszar roboczy jest **głównej** domyślnie. 
  > [!NOTE]
  > Po wybraniu Geolokalizacji, nie można go modyfikować.
     ![Usługa Azure ATP obszaru roboczego](media/create-workspace.png)
@@ -61,14 +61,13 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
  > [!NOTE]
  > Pomyślnie zalogować się do usługi Azure ATP, musisz zalogować się jako użytkownik, który został przypisany do właściwej roli usługi Azure ATP dostęp do portalu obszaru roboczego usługi Azure ATP. Aby uzyskać więcej informacji na temat kontroli dostępu opartej na rolach (RBAC) w usłudze Azure ATP zobacz [Praca z grupami ról usługi Azure ATP](atp-role-groups.md).
 
-4. Kliknij nazwę nowego obszaru roboczego do korzystania z portalu obszaru roboczego usługi Azure ATP dla danego obszaru roboczego.
+4. Kliknij nazwę obszaru roboczego w celu korzystania z portalu obszaru roboczego usługi Azure ATP.
 
     ![Usługa Azure ATP obszarów roboczych.](media/atp-workspaces.png)
 
-- Można edytować tylko podstawowy obszar roboczy. Jeśli chcesz usunąć podstawowym obszarem roboczym, najpierw należy wyłączyć integracje i ustaw obszar roboczy, aby nie może być **głównej** będzie on mógł zostać usunięty.
-- Edytowanie podstawowego obszaru roboczego, należy wyłączyć integracje istniejących w obszarze roboczym.
+- Można edytować tylko podstawowy obszar roboczy. Jeśli chcesz usunąć swojego aktywnego obszaru roboczego, należy najpierw wyłączyć integracje będzie on mógł zostać usunięty.
 
-- Przechowywanie danych — usunięto obszarów roboczych nie są wyświetlane w interfejsie użytkownika. Aby uzyskać więcej informacji na temat przechowywania danych usługi Azure ATP, zobacz [Azure zaawansowanej ochrony przed zagrożeniami bezpieczeństwa danych i prywatności](atp-privacy-compliance.md).
+- Przechowywanie danych — wcześniej usuniętych obszarów roboczych nie są wyświetlane w interfejsie użytkownika. Aby uzyskać więcej informacji na temat przechowywania danych usługi Azure ATP, zobacz [Azure zaawansowanej ochrony przed zagrożeniami bezpieczeństwa danych i prywatności](atp-privacy-compliance.md).
 
 
 > [!div class="step-by-step"]
