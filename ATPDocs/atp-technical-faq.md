@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/2/2018
+ms.date: 10/3/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 6a9b5273-eb26-414e-9cdd-f64406e24ed8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 33493463eeb4ed23e33d81c9eb60b17c23285649
-ms.sourcegitcommit: 0634dda829699edf8bfd984eb9f896a67c5b15e7
-ms.translationtype: HT
+ms.openlocfilehash: 34a9b1deb9c5d2d709e333e78e87ded09fff134a
+ms.sourcegitcommit: 04ed0b9faf72d82cd10bf84efd9dc5aa525be212
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48039400"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245387"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -49,7 +49,7 @@ Firma Microsoft wykorzystuje te dane, aby:
 Microsoft nie Moje danych do celów reklamowych i do żadnych innych celów innych niż zapewnia usługa. 
 
 ### <a name="does-azure-atp-only-leverage-traffic-from-active-directory"></a>Usługi Azure ATP jedynie z ruchu pochodzącego z usługi Active Directory?
-Oprócz analizowania ruchu usługi Active Directory przy użyciu technologii głębokiej inspekcji pakietów, narzędzia Azure ATP również zbiera odpowiednie zdarzenia z Security Information and Event Management (SIEM) i tworzy profile jednostek na podstawie informacji z usługi Active Directory Usługi domenowe. Jeśli używasz czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, wyodrębnia te zdarzenia automatycznie. Windows funkcji przekazywania zdarzeń służy do wysyłania tych zdarzeń do usługi Azure ATP czujnik autonomiczny. Narzędzie Azure ATP obsługuje również odbieranie ewidencjonowania aktywności usługi RADIUS sieci VPN dzienników pochodzących od różnych dostawców (firmy Microsoft, Cisco, F5 i punktu kontrolnego).
+Oprócz analizowania ruchu usługi Active Directory przy użyciu technologii głębokiej inspekcji pakietów, narzędzia Azure ATP zbiera istotne zdarzenia Windows z poziomu kontrolera domeny i tworzy profile jednostek na podstawie informacji z usług domenowych w usłudze Active Directory. Narzędzie Azure ATP obsługuje również odbieranie ewidencjonowania aktywności usługi RADIUS sieci VPN dzienników pochodzących od różnych dostawców (firmy Microsoft, Cisco, F5 i punktu kontrolnego).
 
 ### <a name="does-azure-atp-monitor-only-domain-joined-devices"></a>Usługi Azure ATP monitoruje tylko urządzenia przyłączone do domeny?
 Nie. Narzędzie Azure ATP monitoruje wszystkie urządzenia w sieci wysyłające żądania uwierzytelniania i autoryzacji w usłudze Active Directory, w tym innych niż Windows i urządzenia przenośne.
@@ -89,7 +89,7 @@ Ponadto firma Microsoft przeprowadza testy weryfikacyjne opisane w tle na niekt�
 Każdy kontroler domeny w środowisku powinny być objęte przez zaawansowanej ochrony przed zagrożeniami czujnik lub czujnik autonomiczny. Aby uzyskać więcej informacji, zobacz [czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure rozmiaru](atp-capacity-planning.md#sizing). 
 
 ### <a name="does-azure-atp-work-with-encrypted-traffic"></a>Narzędzia Azure ATP działa z ruchem zaszyfrowanym?
-Narzędzie Azure ATP opiera się na analizowaniu wielu protokołów sieciowych, a także zdarzeń zebranych z rozwiązania SIEM lub za pośrednictwem funkcji przekazywania zdarzeń Windows.  Protokoły sieciowe przy użyciu ruchu szyfrowanego (na przykład LDAPS i IPSEC) nie są odszyfrowywane, ale są analizowane.
+Protokoły sieciowe przy użyciu ruchu szyfrowanego (na przykład LDAPS i IPSEC) nie są odszyfrowywane, ale są analizowane przez czujników.
 
 ### <a name="does-azure-atp-work-with-kerberos-armoring"></a>Narzędzia Azure ATP działa z ochroną protokołu Kerberos?
 Włączanie ochrony protokołu Kerberos, znanej także jako elastyczne Authentication Secure Tunneling (FAST), jest obsługiwana przez zaawansowanej ochrony przed zagrożeniami, z wyjątkiem nadmiernego przekazywania wykrywanie wyznaczania wartości skrótu, które nie obsługuje ochrony protokołu Kerberos.
@@ -119,10 +119,7 @@ Tak, można wyświetlić ogólnej kondycji wdrożenia oraz jak określonych prob
 ## <a name="operation"></a>Operacja
 
 ### <a name="what-kind-of-integration-does-azure-atp-have-with-siems"></a>Jakiego rodzaju integracji usługi Azure ATP ma z rozwiązaniem Siem?
-Narzędzie Azure ATP ma dwukierunkową integrację z rozwiązaniem Siem w następujący sposób:
-
-1. Narzędzie Azure ATP można skonfigurować do wysyłania alertu Syslog do dowolnego serwera rozwiązania SIEM używającego formatu CEF, alerty dotyczące kondycji i po wykryciu podejrzanych działań.
-2. Narzędzie Azure ATP można skonfigurować do odbierania komunikatów Syslog dotyczących zdarzeń Windows [tych rozwiązań Siem](configure-event-collection.md).
+Narzędzie Azure ATP można skonfigurować do wysyłania alertu Syslog do dowolnego serwera rozwiązania SIEM używającego formatu CEF, dla alertów dotyczących kondycji i w przypadku wykrycia alertu zabezpieczeń. Zobacz [dokumentacja dziennika rozwiązania SIEM](cef-format-sa.md) Aby uzyskać więcej informacji.
 
 ### <a name="why-are-certain-accounts-considered-sensitive"></a>Dlaczego niektóre konta są traktowane jako poufne?
 Tak się stanie, gdy konto jest członkiem grupy, które są oznaczone jako poufne (na przykład: "Administratorzy domeny").

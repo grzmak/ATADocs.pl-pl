@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 15ee7d0b-9a0c-46b9-bc71-98d0b4619ed0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: b30c9df27deed308c9c725ff1d6d193329721135
-ms.sourcegitcommit: 0634dda829699edf8bfd984eb9f896a67c5b15e7
-ms.translationtype: HT
+ms.openlocfilehash: 8a6238b6d3cd05c3896b88701c15d17404db43cf
+ms.sourcegitcommit: 04ed0b9faf72d82cd10bf84efd9dc5aa525be212
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48039383"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245353"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -30,7 +30,7 @@ ms.locfileid: "48039383"
 
 Ta procedura instalacji zawiera instrukcje dotyczące tworzenia i zarządzania nimi swojego wystąpienia usługi Azure ATP. Aby uzyskać informacje dotyczące architektury usługi Azure ATP, zobacz [architektury usługi Azure ATP](atp-architecture.md).
 
-W przypadku narzędzia Azure ATP będziesz mieć jeden obszar roboczy lub wystąpienie, aby umożliwić zarządzanie wielu lasów z jedną taflę szkła. 
+W przypadku narzędzia Azure ATP będziesz mieć jeden obszar roboczy lub wystąpieniu, dzięki któremu można zarządzać wieloma lasami z jedną taflę szkła. 
 
 > [!NOTE]
 > Obecnie narzędzia Azure ATP centra danych są wdrażane w Europie oraz Azja i Ameryka Ameryka Północna/środkowa/Karaiby.
@@ -70,9 +70,10 @@ Po upewnieniu się, że sieć spełnia wymagania czujnika, możesz kontynuować 
 - Przechowywanie danych — wcześniej usuniętych obszarów roboczych nie są wyświetlane w interfejsie użytkownika. Aby uzyskać więcej informacji na temat przechowywania danych usługi Azure ATP, zobacz [Azure zaawansowanej ochrony przed zagrożeniami bezpieczeństwa danych i prywatności](atp-privacy-compliance.md).
 
 
-> [!div class="step-by-step"]
-> [« Przed rozpoczęciem instalacji](configure-port-mirroring.md)
-> [Krok 2 »](install-atp-step2.md)
+>[!div class="step-by-step"]
+[« Przed rozpoczęciem instalacji](atp-prerequisites.md)
+[Krok 2 »](install-atp-step2.md)
+
 
 
 ## <a name="see-also"></a>Zobacz też
