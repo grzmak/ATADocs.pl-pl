@@ -1,11 +1,11 @@
 ---
-title: Omówienie portalu obszaru roboczego usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
-description: Zawiera opis sposobu logowania się do portalu obszaru roboczego usługi Azure ATP oraz składniki portalu obszaru roboczego
+title: Omówienie portalu usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Zawiera opis sposobu logowania się do portalu usługi Azure ATP oraz składniki portalu
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 5/22/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,45 +13,45 @@ ms.technology: ''
 ms.assetid: 4ba46d60-3a74-480e-8f0f-9a082d62f343
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0fa8c1e19fde1ec779699b3a2c5411dea0908451
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: c4a437055c2fec0d242fe9de62ac9220ed2b66e6
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166320"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783801"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
-# <a name="working-with-the-azure-atp-workspace-portal"></a>Praca z portalem obszaru roboczego usługi Azure ATP
+# <a name="working-with-the-azure-atp-portal"></a>Praca z portalem usługi Azure ATP
 
-Do monitorowania i odpowiadanie na podejrzane działania wykrywane przez zaawansowanej ochrony przed zagrożeniami, należy korzystać z portalu obszaru roboczego usługi Azure ATP.
+Monitorowanie i odpowiadanie na podejrzane działania wykrywane przez zaawansowanej ochrony przed zagrożeniami, użyj portalu usługi Azure ATP.
 
-Wpisywanie `?` klucz znajdują się skróty klawiaturowe dla portalu ułatwień dostępu w obszarze roboczym usługi Azure ATP. 
+Wpisywanie `?` klucz znajdują się skróty klawiaturowe ułatwień dostępu z portalu usługi Azure ATP. 
 
-Portal obszaru roboczego usługi Azure ATP zapewnia szybki przegląd wszystkich podejrzanych działań w kolejności chronologicznej. Umożliwia przejście do szczegółów dowolnego działania i wykonanie operacji w oparciu o te działania. Portal obszaru roboczego są również wyświetlane alerty i powiadomienia wyróżniające problemy występujące przez narzędzia Azure ATP lub nowe działania uznane za podejrzane.
+Portal usługi Azure ATP zapewnia szybki przegląd wszystkich podejrzanych działań w kolejności chronologicznej. Umożliwia przejście do szczegółów dowolnego działania i wykonanie operacji w oparciu o te działania. Portal usługi Azure ATP są również wyświetlane alerty i powiadomienia wyróżniające problemy występujące przez narzędzia Azure ATP lub nowe działania uznane za podejrzane.
 
-W tym artykule opisano sposób pracy z kluczowych elementów portalu obszaru roboczego usługi Azure ATP.
-
-
-## <a name="enabling-access-to-the-azure-atp-workspace-portal"></a>Umożliwianie dostępu do portalu obszaru roboczego usługi Azure ATP
-Aby pomyślnie zalogować się do portalu usługi Azure ATP obszar roboczy, musisz zalogować się jako użytkownik, który został przypisany do odpowiedniej grupy zabezpieczeń usługi Azure Active Directory dostępu do portalu obszaru roboczego usługi Azure ATP. Aby uzyskać więcej informacji na temat kontroli dostępu opartej na rolach (RBAC) w usłudze Azure ATP zobacz [Praca z grupami ról usługi Azure ATP](atp-role-groups.md).
-
-## <a name="logging-into-the-azure-atp-workspace-portal"></a>Logując się do portalu obszaru roboczego usługi Azure ATP
-
-1. Możesz użyć portalu obszaru roboczego albo, logując się do portalu zarządzania obszarami roboczymi [ https://portal.atp.azure.com ](https://portal.atp.azure.com) a następnie wybierając odpowiedni obszar roboczy lub przechodząc do adresu URL obszaru roboczego: [https:// *workspacename*. atp.azure.com](https://*workspacename*.atp.azure.com).
+W tym artykule opisano sposób pracy z kluczowych elementów portalu usługi Azure ATP.
 
 
-2.  Azure ATP obsługuje logowanie jednokrotne zintegrowane z uwierzytelnianiem Windows — Jeśli został już zalogowany do komputera, usługi Azure ATP używa tego tokenu do logowania się do portalu obszaru roboczego usługi Azure ATP. Możesz również się zalogować przy użyciu karty inteligentnej. Uprawnienia w usłudze Azure ATP odnoszą się do Twojej [roli administrator](atp-role-groups.md).
+## <a name="enabling-access-to-the-azure-atp-portal"></a>Umożliwianie dostępu do portalu usługi Azure ATP
+Aby pomyślnie zalogować się do portalu usługi Azure ATP, musisz zalogować się jako użytkownik przypisany do grupy zabezpieczeń usługi Azure Active Directory dostępu do portalu usługi Azure ATP. Aby uzyskać więcej informacji na temat kontroli dostępu opartej na rolach (RBAC) w usłudze Azure ATP zobacz [Praca z grupami ról usługi Azure ATP](atp-role-groups.md).
+
+## <a name="logging-into-the-azure-atp-portal"></a>Logując się do portalu usługi Azure ATP
+
+1. Możesz użyć portalu usługi Azure ATP albo po zalogowaniu się do portalu [ https://portal.atp.azure.com ](https://portal.atp.azure.com) i wybierając odpowiedni obszar roboczy lub przechodząc do adresu URL obszaru roboczego: [https://*workspacename* . atp.azure.com](https://*workspacename*.atp.azure.com).
+
+
+2.  Azure ATP obsługuje logowanie jednokrotne zintegrowane z uwierzytelnianiem Windows — Jeśli został już zalogowany do komputera, usługi Azure ATP używa tego tokenu do logowania się do portalu usługi Azure ATP. Możesz również się zalogować przy użyciu karty inteligentnej. Uprawnienia w usłudze Azure ATP odnoszą się do Twojej [roli administrator](atp-role-groups.md).
 
  > [!NOTE]
- > Upewnij się, że do logowania się do komputera, z którego chcesz uzyskać dostęp do portalu obszaru roboczego usługi Azure ATP przy użyciu usługi Azure ATP nazwę i hasło administratora. Alternatywnie można uruchomić przeglądarkę jako inny użytkownik lub wylogować Windows i dziennika użytkownikowi administrator usługi Azure ATP. 
+ > Upewnij się, że do logowania się do komputera, z którego chcesz uzyskać dostęp do portalu usługi Azure ATP przy użyciu usługi Azure ATP nazwę i hasło administratora. Alternatywnie można uruchomić przeglądarkę jako inny użytkownik lub wylogować Windows i dziennika użytkownikowi administrator usługi Azure ATP. 
 
 
 ### <a name="attack-time-line"></a>Oś czasu ataków
 
-Jest to domyślna strona docelowa, którego nastąpi przejście na po zalogowaniu się do portalu obszaru roboczego usługi Azure ATP. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można filtrować wiersz czasu ataku, aby wyświetlać wszystkie, Otwórz, odrzucone lub Suppressed podejrzanych działań. Można również sprawdzić ważność przypisaną do poszczególnych działań.
+Oś czasu ataków to domyślna strona docelowa, którego nastąpi przejście na po zalogowaniu się do portalu obszaru roboczego usługi Azure ATP. Domyślnie wszystkie otwarte podejrzane działania są wyświetlane na osi czasu ataków. Można filtrować wiersz czasu ataku, aby wyświetlać wszystkie, Otwórz, odrzucone lub Suppressed podejrzanych działań. Można również sprawdzić ważność przypisaną do poszczególnych działań.
 
 ![Obraz osi czasu ataków w usłudze Azure ATP](media/atp-sa-timeline.png)
 
@@ -69,7 +69,7 @@ Podejrzane działania wyświetlane na osi czasu ataków lub na karcie podejrzany
 
 W górnym menu można znaleźć na pasku wyszukiwania. Możesz wyszukać konkretnego użytkownika, komputera lub grupy usługi Azure ATP. Aby go wypróbować, po prostu zacznij wpisywać tekst. W dolnej części paska wyszukiwania wskazuje liczbę wyników wyszukiwania. 
 
-![Obraz wyszukiwania portalu obszaru roboczego usługi Azure ATP](media/atp-workspace-portal-search.png)
+![Obraz wyszukiwania portalu usługi Azure ATP](media/atp-workspace-portal-search.png)
 
 Możesz kliknąć pozycję numer, można przejść do strony wyników wyszukiwania, w którym można filtrować wyniki według typu jednostki w celu bliższego zbadania problemu.
 
@@ -87,7 +87,7 @@ Dowolnym momencie, gdy system napotka problem, takie jak błąd łączności lub
 
 ### <a name="sensitive-groups"></a>Wrażliwe grupy
 
-Aby uzyskać informacji na temat wrażliwych grup w usłudze ATP, zobacz [Praca z grupami poufnych](sensitive-accounts.md).
+Aby uzyskać informacji na temat wrażliwych grup w usłudze Azure ATP, zobacz [Praca z grupami poufnych](sensitive-accounts.md).
 
 ### <a name="mini-profile"></a>Mini profil
 
@@ -115,4 +115,4 @@ Jeśli możesz najechać kursorem myszy jednostki, w dowolnym miejscu portalu ob
 ## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie obszarów roboczych usługi Azure ATP](install-atp-step1.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

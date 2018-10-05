@@ -1,11 +1,11 @@
 ---
-title: Badanie ataków ścieżki ruchu poprzecznego za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
-description: W tym artykule opisano, jak wykrywać ataki ścieżki ruchu poprzecznego za pomocą usługi Azure Advanced Threat Protection (ATP).
+title: Badanie ataków penetracji sieci za pomocą narzędzia Azure ATP | Dokumentacja firmy Microsoft
+description: W tym artykule opisano, jak wykrywać ataki penetracji sieci za pomocą usługi Azure Advanced Threat Protection (ATP).
 keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/05/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: de15c920-8904-4124-8bdc-03abd9f667cf
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0fcdfdbeaeed7e42aff9d63f4f88300346c73465
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: e6a223405f4aa1e8daa1d393428db43c4e692daa
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44165579"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783495"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -32,7 +32,7 @@ Penetracja sieci to gdy osoba atakująca używa niewrażliwe konta w celu uzyska
 
 Aby sprawdzić, które wrażliwych kont w sieci są dostępne ze względu na ich połączenie do zwykłych kont, grup i komputerów, wykonaj następujące kroki. 
 
-1. W menu portalu obszaru roboczego usługi Azure ATP kliknij ikonę raportów ![Ikona raportów](./media/atp-report-icon.png).
+1. W menu portalu usługi Azure ATP kliknij ikonę raportów ![Ikona raportów](./media/atp-report-icon.png).
 
 2. W obszarze **boczne ścieżki ruchów do wrażliwych kont**, jeśli nie ma potencjał, nie można odnaleźć ścieżki ruchu poprzecznego raportu jest wyszarzona. W przypadku potencjalnych ścieżki ruchu poprzecznego raport automatycznie wstępnie wybiera pierwszy data, gdy ma odpowiednich danych. Raport ścieżki ruchu poprzecznego udostępnia dane dla maksymalnie 60 dni.
 
@@ -47,7 +47,7 @@ Aby sprawdzić, które wrażliwych kont w sieci są dostępne ze względu na ich
 
 
 
-1. W portalu obszaru roboczego usługi Azure ATP Wyszukaj wskaźnika przenoszenia poprzecznych dodaną do profilu jednostki, gdy jednostka jest ścieżki ruchu poprzecznego ![Ikona poprzecznego](./media/lateral-movement-icon.png) lub ![Ikona ścieżki](./media/paths-icon.png). Należy pamiętać, że znaczka będą wyświetlane tylko w przypadku ruchu poprzecznego w ostatnich 48 godzinach. 
+1. Wyszukaj w portalu usługi Azure ATP wskaźnika przenoszenia poprzecznych dodaną do profilu jednostki, gdy jednostka jest ścieżki ruchu poprzecznego ![Ikona poprzecznego](./media/lateral-movement-icon.png) lub ![Ikona ścieżki](./media/paths-icon.png). Należy pamiętać, że znaczka będą wyświetlane tylko w przypadku ruchu poprzecznego w ostatnich 48 godzinach. 
 
 2. Na stronie profilu użytkownika, która zostanie otwarta, kliknij przycisk **ścieżki ruchu poprzecznego** kartę. 
 
@@ -73,6 +73,6 @@ Aby sprawdzić, które wrażliwych kont w sieci są dostępne ze względu na ich
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Konfigurowanie uprawnień SAM-R wymagane](install-atp-step8-samr.md)
-- [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Konfigurowanie usługi Azure ATP na wykonywanie zdalnych połączeń do Menedżera kont zabezpieczeń](install-atp-step8-samr.md)
+- [Praca z alertami zabezpieczeń](working-with-suspicious-activities.md)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/7/2017
+ms.date: 10/04/2017
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 24eca4c6-c949-42ea-97b9-41ef0fb611f1
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 363400531fe2b4e2634fa80ec1f65ad80923606f
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: e15884d46227c9dce32ee48f30d546eab6868116
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44125791"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783393"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -58,7 +58,7 @@ Użyj następującego polecenia do wykonania w pełni dyskretnej instalacji czuj
    
 
 > [!NOTE]
-> Skopiuj klucz dostępu z portalem obszarów roboczych w obszarze **konfiguracji** i następnie **czujnika**.
+> Kopiowanie klucza dostępu z poziomu portalu usługi Azure ATP w obszarze **konfiguracji** i następnie **czujnika**.
 
 
 **Opcje instalacji**:
@@ -131,6 +131,7 @@ Użyj następującego polecenia, aby przeprowadzić odinstalowywanie dyskretnej 
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Instalowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure](install-atp-step4.md)
+- [Konfiguracja czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure](install-atp-step5.md)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

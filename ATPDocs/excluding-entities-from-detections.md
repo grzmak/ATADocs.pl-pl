@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/2/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: cae3ed45-8fbc-4f25-ba24-3cc407c6ea93
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: d5ac2ae53dfe13b850a06f6dd4b89a91ffedd946
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 432f55891440975e511ab5cd3e2972a1c7a33f37
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166038"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48782934"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 
 # <a name="excluding-entities-from-detections"></a>Wykluczanie jednostek z wykryć
-W tym artykule wyjaśniono, jak wykluczać jednostki z procesu wyzwalania alertów, aby zminimalizować niegroźne prawdziwie dodatnie, ale w tym samym czasie, upewnij się, że catch prawdziwie dodatnich. Aby zachować narzędzia Azure ATP miałyby alertów dotyczących działań, które od określonych użytkowników, może być częścią zwykłej działalności biznesowej, możesz wyciszyć — lub wykluczyć — pewne jednostki z procesu zgłaszania alertów.
+W tym artykule wyjaśniono, jak wykluczać jednostki z procesu wyzwalania alertów, aby zminimalizować niegroźne prawdziwie dodatnie, podczas gdy upewniając się, użytkownik może przechwycić prawdziwie dodatnich. Aby zachować narzędzia Azure ATP miałyby alertów dotyczących działań, które od określonych użytkowników, może być częścią zwykłej działalności biznesowej, możesz wyciszyć — lub wykluczyć — pewne jednostki z procesu zgłaszania alertów.
 
 Na przykład masz skaner zabezpieczeń, który przeprowadza rekonesans systemu DNS, lub administratora, który zdalnie uruchamia skrypty na kontrolerze domeny — i są to oficjalnie zaakceptowane działania przeprowadzane w ramach normalnych operacji IT w Twojej organizacji. Aby uzyskać więcej informacji na temat wykrywania usługi Azure ATP ułatwią podjęcie decyzji o których jednostek do wykluczenia, zobacz [Przewodnik po podejrzanych działań](suspicious-activity-guide.md).
 
@@ -63,4 +63,4 @@ Jeśli masz możliwości wyłączenia komputera lub adres IP, można wykluczyć 
 ## <a name="see-also"></a>Zobacz też
 
 - [Integracja z usługą Windows Defender ATP](integrate-wd-atp.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

@@ -2,10 +2,10 @@
 title: Praca z raportami usługi Azure ATP | Dokumentacja firmy Microsoft
 description: W tym artykule opisano, jak można generować raporty z usługi Azure ATP w celu monitorowania sieci.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 2/27/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: 2c2d6b1a-fc8c-4ff7-b07d-64ce6159f84d
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: eb1a29038d8afb47328970ff7179f0e1ff01614d
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 367ad07bd1d0be80486bfc10c2b70546d360805c
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44165936"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783189"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="azure-atp-reports"></a>Raporty usługi Azure ATP
 
-W sekcji raporty usługi Azure ATP w portalu obszaru roboczego umożliwia generowanie raportów, które udostępniają informacje o stanie systemu, zarówno w kondycję systemu, jak i raport o podejrzanych działaniach wykrytych w Twoim środowisku.
+W sekcji raporty usługi Azure ATP w portalu usługi Azure ATP umożliwia generowanie raportów, które udostępniają informacje o stanie systemu, zarówno w kondycję systemu, jak i raport o podejrzanych działaniach wykrytych w Twoim środowisku.
 
 
 Aby uzyskać dostęp do strony raportów, kliknij ikonę raportu na pasku menu: ![ikona raportu](./media/atp-report-icon.png).
@@ -43,7 +43,7 @@ Istnieją dwa sposoby generowania raportu: na żądanie albo zaplanowanie okreso
 
 Aby wygenerować raport na żądanie:
 
-1. W pasku menu portalu usługi Azure ATP obszaru roboczego kliknij ikonę raportu na pasku menu: ![ikona raportu](./media/atp-report-icon.png).
+1. Na pasku menu portalu usługi Azure ATP kliknij ikonę raportu na pasku menu: ![ikona raportu](./media/atp-report-icon.png).
 
 2. W obszarze typu wybranego raportu, ustaw **z** i **do** dat i kliknij przycisk **Pobierz**. 
  ![raporty](./media/reports.png)
@@ -67,4 +67,4 @@ Aby ustawić zaplanowany raport:
 - [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

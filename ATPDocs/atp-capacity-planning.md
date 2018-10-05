@@ -2,22 +2,22 @@
 title: Planowanie wdrożenia usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
 description: Ułatwia zaplanowanie wdrożenia i zdecydować, ile serwerów usługi Azure ATP będzie potrzebnych do obsługi sieci
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 5/22/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.service: azure-advanced-threat-protection
 ms.prod: ''
 ms.assetid: da0ee438-35f8-4097-b3a1-1354ad59eb32
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: e894422e7264650186c6f4eea28d5a9099ca7914
-ms.sourcegitcommit: 56065ee43dac299203871cd6f025315520750b3b
+ms.openlocfilehash: 9f2b8f31f88c14f67c8a03b748ac3d2fb6179a62
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47233902"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783461"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,11 +26,11 @@ ms.locfileid: "47233902"
 # <a name="azure-atp-capacity-planning"></a>Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami
 W tym artykule zawarto informacje ułatwiające określenie, ile narzędzia Azure ATP czujniki i czujniki autonomicznego należy.
 
-> [!NOTE] 
-> Narzędzia do określania rozmiaru ma dwa arkusze — jeden dla usługi ATA i jeden dla usługi Azure ATP. Upewnij się, że poprawne arkusza.
-
 ## <a name="using-the-sizing-tool"></a>Korzystanie z narzędzia do określania rozmiaru
 Zalecaną i najprostszą metodą ustalenia pojemności na potrzeby wdrożenia usługi Azure ATP jest użycie [narzędzie zmiany rozmiaru do usługi Azure ATP](http://aka.ms/aatpsizingtool). Uruchom narzędzie Azure ATP rozmiaru i z wyników pliku programu Excel, należy użyć następujących pól do określenia pamięci i procesora CPU używanej przez czujnik:
+
+> [!NOTE] 
+> Narzędzia do określania rozmiaru ma dwa arkusze — jeden dla usługi ATA i jeden dla usługi Azure ATP. Upewnij się, że używasz poprawne arkusza.
 
 - Azure czujnika zaawansowanej ochrony przed zagrożeniami: dopasowanie **zajęte pakiety/s** pola w tabeli czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, w pliku wyników do **pakietów na SEKUNDĘ** pole [tabeli czujnik autonomiczny narzędzia Azure ATP](#azure-atp-sensor-sizing)lub [tabeli czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure](#azure-atp-standalone-sensor-sizing), w zależności od [wybranego typu czujnika](#choosing-the-right-sensor-type-for-your-deployment).
 
@@ -42,10 +42,10 @@ Jeśli z jakiegoś powodu nie można użyć narzędzia platformy Azure do okreś
 Poniższe sekcje zawierają instrukcje dotyczące zbierania informacji licznika pakietów na sekundę z jednego kontrolera domeny.
 
 ## Wybieranie typu czujnika odpowiednie dla danego wdrożenia<a name="choosing-the-right-sensor-type-for-your-deployment"></a>
-We wdrożeniu usługi Azure ATP dowolnej kombinacji typów czujnik autonomiczny narzędzia Azure ATP jest obsługiwane:
+We wdrożeniu usługi Azure ATP dowolnej kombinacji typów czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure jest obsługiwane:
 
+- Tylko usługi Azure ATP czujników
 - Tylko czujników autonomiczne narzędzia Azure ATP
-- Tylko czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
 - Kombinacja obu bram
 
 Podczas wybierania typu wdrożenia czujnika, należy wziąć pod uwagę następujące korzyści:
@@ -61,7 +61,7 @@ Podejmując decyzję o ile czujników autonomiczne narzędzia Azure ATP do wdro�
     Narzędzie Azure ATP można monitorować ruch z wielu domen w obrębie wielu lasów usługi Active Directory dla każdego obszaru roboczego, który tworzysz. 
 
 -   **Dublowanie portów**<br>
-Specyfika funkcji dublowania portów mogą wymagać można wdrażać wiele czujników autonomiczne narzędzia Azure ATP na witrynę Centrum lub gałęzi danych.
+    Specyfika funkcji dublowania portów mogą wymagać można wdrażać wiele czujników autonomiczne narzędzia Azure ATP na witrynę Centrum lub gałęzi danych.
 
 -   **Wydajność**<br>
     Czujnik autonomiczny narzędzia Azure ATP może obsługiwać monitorowanie wielu kontrolerów domeny, w zależności od ilości ruchu sieciowego monitorowanych kontrolerów domeny. 
@@ -149,4 +149,4 @@ Aby określić liczbę pakietów na sekundę, wykonaj następujące kroki na ka�
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 - [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

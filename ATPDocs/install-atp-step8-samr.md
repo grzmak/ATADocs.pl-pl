@@ -1,11 +1,11 @@
 ---
 title: Konfigurowanie SAM-R, aby włączyć wykrywanie ścieżki ruchu poprzecznego w narzędzia Azure ATP | Dokumentacja firmy Microsoft
-description: W tym artykule opisano sposób konfigurowania SAM-R, aby włączyć wykrywanie ścieżki ruchu poprzecznego w narzędzia Azure ATP
+description: W tym artykule opisano sposób konfigurowania usługi Azure ATP na wykonywanie zdalnych połączeń do Menedżera kont zabezpieczeń
 keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/31/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,24 +13,28 @@ ms.technology: ''
 ms.assetid: b09adce3-0fbc-40e3-a53f-31f57fe79ca3
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 34ee1589d59b0740e9d3b05eb117991325619295
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
+ms.openlocfilehash: d7875202c05deb98c301cb18153f8080fa42459c
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47453996"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48782883"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="install-azure-atp---step-8"></a>Zainstaluj narzędzie Azure ATP - kroku 8
+# <a name="configure-azure-atp-to-make-remote-calls-to-sam"></a>Konfigurowanie usługi Azure ATP na wykonywanie zdalnych połączeń do Menedżera kont zabezpieczeń
 
+<a name="-head"></a><<<<<<< HEAD
+=======
 > [!div class="step-by-step"]
 > [«Krok 7](install-atp-step7.md)
 > [kroku 9»](atp-multi-forest.md)
+>>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
-## <a name="step-8-configure-sam-r-required-permissions"></a>Krok 8. Konfigurowanie uprawnień SAM-R wymagane
+## <a name="configure-sam-r-required-permissions"></a>Konfigurowanie uprawnień SAM-R wymagane
 
-[Ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md) metoda wykrywania polega na zapytania, które identyfikują administratorami lokalnymi na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, przy użyciu usługi Azure ATP konto utworzone w [krok 2. Łączenie z usługą AD](install-atp-step2.md).
+
+[Ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md) metoda wykrywania polega na zapytania, które identyfikują administratorami lokalnymi na określonych komputerach. Te zapytania są wykonywane przy użyciu protokołu SAM-R, przy użyciu konta usługi Azure ATP Service tworzone podczas instalacji narzędzia Azure ATP [krok 2. Łączenie z usługą AD](install-atp-step2.md).
  
 Upewnij się, Windows klienci i serwery zezwolić na koncie usługi Azure ATP przeprowadzić SAM-R, modyfikację **zasad grupy** należy dodać konto usługi Azure ATP oprócz skonfigurowanego konta, na liście  **Dostęp sieciowy** zasad.
 
@@ -53,12 +57,15 @@ Upewnij się, Windows klienci i serwery zezwolić na koncie usługi Azure ATP pr
 Aby uzyskać więcej informacji na SAM-R i tych zasad grupy, zobacz [dostęp sieciowy: ogranicza dostępu klientów zezwolenie na wykonywanie wywołań zdalnych do Menedżera kont zabezpieczeń](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls).
 
 
+<a name="-head"></a><<<<<<< HEAD
+=======
 > [!div class="step-by-step"]
 > [«Krok 7](install-atp-step7.md)
 > [kroku 9»](atp-multi-forest.md)
 
 
+>>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
 ## <a name="see-also"></a>Zobacz też
 - [Badanie ataków ścieżki ruchu poprzecznego za pomocą narzędzia Azure ATP](use-case-lateral-movement-path.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

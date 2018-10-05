@@ -1,11 +1,11 @@
 ---
-title: Install Azure Zaawansowana ochrona przed zagrożeniami — krok 4 | Dokumentacja firmy Microsoft
-description: W kroku 4 instalowania usługi Azure ATP pomaga zainstalować czujnik autonomiczny narzędzia Azure ATP.
+title: Zainstaluj usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: W kroku 4 instalowania usługi Azure ATP ułatwiające instalowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 3/25/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 51911e39-76c7-4dcd-bc0b-ec6235d0403f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 87a2b47261293fffffe9d822d698b551a332a481
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
+ms.openlocfilehash: 52ffbac6acd762d4cf2898c170d7a026d2a37826
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454143"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783733"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -32,13 +32,10 @@ ms.locfileid: "47454143"
 
 ## <a name="step-4-install-the-azure-atp-sensor"></a>Krok 4. Instalowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
 
-Przed zainstalowaniem narzędzia Azure ATP czujnik autonomiczny na dedykowanym serwerze Zweryfikuj, czy funkcja dublowania portów jest prawidłowo skonfigurowane i że czujnik autonomiczny narzędzia Azure ATP może widzieć ruch do i z kontrolerów domeny. 
-
-
 > [!IMPORTANT]
 >Upewnij się, że .net Framework 4.7 jest zainstalowany na komputerze. Jeśli .net Framework 4.7 to nie jest zainstalowany pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure instaluje go, co wymaga ponownego uruchomienia serwera.
 
-Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure lub kontrolera domeny.
+Wykonaj następujące czynności na kontrolerze domeny.
 
 1. Sprawdź, czy komputer ma łączność z odpowiednimi punktu końcowego usługi chmury usługi Azure ATP:
   - https://triprd1wceuw1sensorapi.atp.azure.com (w przypadku Europy)  
@@ -73,7 +70,7 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
 
       - Ścieżka instalacji: To lokalizacja, w którym jest zainstalowany czujnik autonomiczny narzędzia Azure ATP. Domyślnie jest to czujnika zaawansowanej ochrony przed zagrożeniami %programfiles%\Azure. Pozostaw wartość domyślną.
 
-      - Klucz dostępu: jest pobierana z portalu obszaru roboczego w poprzednim kroku.
+      - Klucz dostępu: jest pobierana z portalu usługi Azure ATP w poprzednim kroku.
     
 7. Kliknij przycisk **Zainstaluj**. Następujące składniki są zainstalowane i skonfigurowane podczas instalacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure:
 
@@ -86,7 +83,7 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
     -   Usługa Azure service czujnika zaawansowanej ochrony przed zagrożeniami i usługę aktualizacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure
     -   Pakiet redystrybucyjny Microsoft Visual C++ 2013
 
-8.  Po zakończeniu instalacji kliknij przycisk **Uruchom** Otwórz przeglądarkę i zaloguj się do portalu obszaru roboczego usługi Azure ATP.
+8.  Po zakończeniu instalacji kliknij przycisk **Uruchom** Otwórz przeglądarkę i zaloguj się do portalu usługi Azure ATP.
 
 
 > [!div class="step-by-step"]
@@ -102,4 +99,4 @@ Wykonaj następujące czynności na serwerze czujnika zaawansowanej ochrony prze
 
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

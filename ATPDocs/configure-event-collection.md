@@ -5,20 +5,20 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/15/2018
-ms.topic: conceptual
+ms.date: 10/04/2018
+ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
 ms.technology: ''
 ms.assetid: 88692d1a-45a3-4d54-a549-4b5bba6c037b
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 91e3caf8e15313069e4c2cec194a11855fd45c24
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: eaf798149c828b641ba037ffbb6854ca07c6732a
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126182"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783597"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -29,7 +29,7 @@ ms.locfileid: "44126182"
 W celu zwiększenia możliwości wykrywania, narzędzia Azure ATP potrzebuje następujących zdarzeń Windows: 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045. One może odczytywać je automatycznie za pomocą czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure lub w przypadku, gdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure nie została wdrożona, zdarzenia mogą być przekazywane do czujnika autonomicznego narzędzia Azure ATP w jeden z dwóch sposobów, konfigurując czujnik autonomiczny narzędzia Azure ATP do nasłuchiwania zdarzeń SIEM lub przez [Konfigurowanie funkcji przekazywania zdarzeń Windows](configure-event-forwarding.md).
 
 > [!NOTE]
-> Należy przeprowadzić inspekcję skrypt przed skonfigurowaniem zbierania zdarzeń usługi ATA aby upewnić się, że kontrolery domeny są prawidłowo skonfigurowane i rejestrowanie zdarzeń niezbędne. 
+> Jest ważne uruchomić narzędzia Azure ATP inspekcji skrypt przed skonfigurowaniem zbierania zdarzeń aby upewnić się, że kontrolery domeny są prawidłowo skonfigurowane i rejestrowanie zdarzeń niezbędne. 
 
 Oprócz zbierania i analizowania ruchu sieciowego do i z kontrolerów domeny, usługi Azure ATP może być dodatkowo ulepszyć wykrywanie zdarzeń Windows. Używa zdarzenie 4776 protokołu NTLM, różnymi rozwiązaniami do wykrywania i zdarzenia 4732, 4733, 4728, 4729, 4756, 4757 i 7045 wykrywania modyfikacji wrażliwych grup i tworzenia usługi. Mogą być one odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń systemu Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
 
@@ -50,7 +50,7 @@ Narzędzia Azure ATP można było używać danych z serwera Syslog należy wykon
 Zapoznaj się z dokumentacją produktu serwera SIEM/Syslog, aby uzyskać informacje o tym, jak skonfigurować przekazywanie określonych zdarzeń do innego serwera. 
 
 > [!NOTE]
->Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domeny Windows do przekazywania wszystkich wymaganych zdarzeń do zbierania i analizowania przez zaawansowanej ochrony przed zagrożeniami.
+>Jeśli nie używasz serwera SIEM/Syslog, możesz skonfigurować kontrolery domeny Windows do przekazywania wszystkich wymaganych zdarzeń, zbieranie i analizowanych przez usługi Azure ATP.
 
 ## <a name="configuring-the-azure-atp-sensor-to-listen-for-siem-events"></a>Konfigurowanie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure do nasłuchiwania zdarzeń SIEM
 
@@ -160,7 +160,7 @@ Kod błędu:         0x0
 -   Kolejność nie jest ważna dla par klucz=wartość.
 
 ## <a name="qradar"></a>QRadar
-Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługi Azure ATP wymaga danych milisekund, to należy ustawić QRadar umożliwia zbieranie zdarzeń Windows bez agenta. Aby uzyskać więcej informacji, zobacz [ http://www-01.ibm.com/support/docview.wss?uid=swg21700170 ] (http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń Windows bez agenta przy użyciu protokołu MSRPC").
+Platforma QRadar umożliwia zbieranie zdarzeń za pośrednictwem agenta. Gdy dane są gromadzone przy użyciu agenta, format czasu jest gromadzony bez danych milisekund. Ponieważ usługi Azure ATP wymaga danych milisekund, to należy ustawić QRadar umożliwia zbieranie zdarzeń Windows bez agenta. Aby uzyskać więcej informacji, zobacz [http://www-01.ibm.com/support/docview.wss?uid=swg21700170](http://www-01.ibm.com/support/docview.wss?uid=swg21700170 "QRadar: zbieranie zdarzeń Windows bez agenta przy użyciu protokołu MSRPC").
 
     <13>Feb 11 00:00:00 %IPADDRESS% AgentDevice=WindowsLog AgentLogFile=Security Source=Microsoft-Windows-Security-Auditing Computer=%FQDN% User= Domain= EventID=4776 EventIDCode=4776 EventType=8 EventCategory=14336 RecordNumber=1961417 TimeGenerated=1456144380009 TimeWritten=1456144380009 Message=The computer attempted to validate the credentials for an account. Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0 Logon Account: Administrator Source Workstation: HOSTNAME Error Code: 0x0
 
@@ -188,4 +188,4 @@ Upewnij się, że między parami klucz=wartość znajduje się parametr \t.
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Dokumentacja dziennika rozwiązania SIEM zaawansowanej ochrony przed zagrożeniami usługi Azure](cef-format-sa.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

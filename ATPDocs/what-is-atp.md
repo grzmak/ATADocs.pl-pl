@@ -1,11 +1,11 @@
 ---
-title: Co to jest Azure Advanced Threat Protection (ATP)? | Microsoft Docs
-description: Wyjaśnia Azure Advanced Threat Protection (ATP) i jakiego rodzaju podejrzane działania może wykryć
+title: Co to jest Azure zaawansowanej ochrony przed zagrożeniami (ATP platformy Azure)? | Microsoft Docs
+description: Wyjaśnia, jakie usługi Azure Advanced Threat Protection jest (Azure ATP) i jakiego rodzaju podejrzane działania może wykryć
 keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/16/2018
+ms.date: 10/04/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 2d14d0e9-1b03-4bcc-ae97-8fd41526ffc5
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f3e03f5307a9a09ffb2a62e7313be4629f4bc060
-ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
+ms.openlocfilehash: 80038b04a95d09c25baf1e2b5d216796cb12c9f6
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45750474"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783686"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -33,7 +33,7 @@ Azure zaawansowanych Threat Protection (ATP) jest rozwiązaniem zabezpieczenia o
 Narzędzie Azure ATP monitoruje i analizuje aktywność użytkowników i informacji w sieci, takich jak uprawnienia oraz członkostwa w grupie tworzenia zachowań punktu odniesienia dla każdego użytkownika. Narzędzie Azure ATP następnie wykrywa anomalie za pomocą wbudowanej inteligencji adaptacyjnej, dzięki czemu umożliwia wgląd w podejrzane działania i zdarzenia, odsłaniając zaawansowanych zagrożeń, których bezpieczeństwo zostało naruszone użytkowników i zagrożeniami wewnętrznymi połączonego z Twojej organizacji. Azure ATP własności czujników monitorowania kontrolerów domeny organizacji, zapewniając kompleksowy widok dla wszystkich działań użytkownika z każdego urządzenia. 
  
 ## <a name="protect-user-identities-and-reduce-the-attack-surface"></a>Ochrona tożsamości użytkowników i zmniejszyć obszar narażony na ataki   
-Narzędzie Azure ATP zawiera cenne informacje konfiguracje tożsamości i zabezpieczeń sugerowane najlepszych rozwiązań. Raporty dotyczące zabezpieczeń i analizy profilu użytkownika usługi Azure ATP pomaga znacznie zmniejszyć obszar ataków organizacji, co utrudnia złamanie poświadczeń użytkownika i Rozwijaj ataku. ATP visual bocznej ścieżki ruchu pomóc w szybkim poznaniu, dokładnie tak jak osoba atakująca może przemieszczają wewnątrz organizacji do naruszenia bezpieczeństwa kont poufnych i ułatwia zapobieganie te zagrożenia z wyprzedzeniem. Dodatkowe, zaawansowanej ochrony przed zagrożeniami bezpieczeństwa Raporty ułatwiają identyfikowanie użytkowników i urządzeń, które przeprowadzają uwierzytelnianie przy użyciu haseł w postaci zwykłego tekstu i zapewniania dodatkowego wglądu w celu zasad i poziom bezpieczeństwa organizacji.  
+Narzędzie Azure ATP zawiera cenne informacje konfiguracje tożsamości i zabezpieczeń sugerowane najlepszych rozwiązań. Raporty dotyczące zabezpieczeń i analizy profilu użytkownika usługi Azure ATP pomaga znacznie zmniejszyć obszar ataków organizacji, co utrudnia złamanie poświadczeń użytkownika i Rozwijaj ataku. Azure ATP visual bocznej ścieżki ruchu pomóc w szybkim poznaniu, dokładnie tak jak osoba atakująca może przemieszczają wewnątrz organizacji do naruszenia bezpieczeństwa kont poufnych i ułatwia zapobieganie te zagrożenia z wyprzedzeniem. Dodatkowe, raporty dotyczące zabezpieczeń usługi Azure ATP pomóc zidentyfikować użytkowników i urządzeń, które przeprowadzają uwierzytelnianie przy użyciu haseł w postaci zwykłego tekstu i zapewniania dodatkowego wglądu w celu zasad i poziom bezpieczeństwa organizacji.  
  
 ## <a name="identify-suspicious-activities-and-advanced-attacks-across-the-attack-kill-chain"></a>Identyfikowanie podejrzanych działań i zaawansowanymi atakami w łańcuchu kończenia ataków 
 Zazwyczaj ataków uruchamianych przeciwko dowolnej jednostce dostępne, takich jak użytkownika o niskich uprawnieniach, a następnie szybko przenieść bok do momentu osoba atakująca uzyska dostęp do najcenniejszych zasobów — takich jak wrażliwych kont, Administratorzy domeny i wysoce poufne dane. Narzędzie Azure ATP identyfikuje tych zaawansowanych zagrożeń w miejscu źródłowym w całym łańcuchu kończenia ataku całego: 
@@ -70,7 +70,7 @@ Zaleca się wdrożenie usługi Azure ATP w fazach 3:
 
 ### <a name="phase-1"></a>Faza 1
 
-1. Konfigurowanie usługi Azure ATP, aby chronić swoje podstawowego środowiska. Model szybkie wdrażanie usługi Azure ATP pozwala objąć ochroną Twojej organizacji — już dzisiaj. [Zainstaluj zaawansowanej ochrony przed zagrożeniami](install-atp-step1.md)  
+1. Konfigurowanie usługi Azure ATP, aby chronić swoje podstawowego środowiska. Model szybkie wdrażanie usługi Azure ATP pozwala objąć ochroną Twojej organizacji — już dzisiaj. [Zainstaluj narzędzie Azure ATP](install-atp-step1.md)  
 2. Ustaw [wrażliwym kontom](sensitive-accounts.md) i [konta wystawione jako przynęta](install-atp-step7.md).   
 3. Przejrzyj raporty i [ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md).  
 
@@ -89,4 +89,4 @@ Zaleca się wdrożenie usługi Azure ATP w fazach 3:
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzie Azure ATP — często zadawane pytania](atp-technical-faq.md)
 - [Praca z alertami zabezpieczeń](working-with-suspicious-activities.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

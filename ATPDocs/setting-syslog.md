@@ -2,10 +2,10 @@
 title: Konfigurowanie ustawień powiadomień e-mail w usłudze Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
 description: Opis sposobu ustawiania usługi Azure ATP informujące (za pośrednictwem poczty e-mail lub funkcji przekazywania zdarzeń usługi Azure ATP), w przypadku wykrycia podejrzanych działań
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 2/21/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a2d29c9c-7ecb-4804-b74b-fde899b28648
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 399773b174f52cfc26888fcaa9923de4f258e897
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 18f6d38f871539cf0701b697c9d0c5d9d96a27e4
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166888"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783546"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,7 +26,7 @@ ms.locfileid: "44166888"
 
 # <a name="integrate-with-syslog"></a>Integracja z platformą Syslog
 
-Narzędzie Azure ATP może generować powiadomienia po wykryciu podejrzanych działań i alertów dotyczących kondycji przez wysyłanie powiadomienia do serwera Syslog. Po włączeniu powiadomień Syslog możesz określić dla nich poniższe ustawienia.
+Narzędzie Azure ATP może generować powiadomienia po wykryciu podejrzanych działań i alertów zabezpieczeń problemy, a także alerty dotyczące kondycji przez wysyłanie powiadomienia do serwera Syslog. Jeśli włączysz powiadomienia dziennika systemu, można ustawić następujące czynności:
 
 1.  Przed rozpoczęciem konfigurowania powiadomień Syslog skontaktuj się z administratorem rozwiązania SIEM, aby uzyskać następujące informacje:
 
@@ -38,7 +38,7 @@ Narzędzie Azure ATP może generować powiadomienia po wykryciu podejrzanych dzi
 
     -   Format przesyłania danych: RFC 3164 lub 5424
 
-2.  Wprowadź portalem obszarów roboczych adresu URL.
+2.  Wprowadź adres URL obszaru roboczego.
 
 3.  Wprowadź nazwę użytkownika usługi Azure Active Directory i hasło, a następnie kliknij przycisk **Zaloguj**.
 
@@ -63,4 +63,4 @@ Narzędzie Azure ATP może generować powiadomienia po wykryciu podejrzanych dzi
 ## <a name="see-also"></a>Zobacz też
 
 - [Praca z kontami poufnymi](sensitive-accounts.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

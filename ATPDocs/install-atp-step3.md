@@ -1,24 +1,24 @@
 ---
-title: Install Azure Zaawansowana ochrona przed zagrożeniami — krok 3 | Dokumentacja firmy Microsoft
-description: Kroku procesu instalowania usługi Azure ATP pomoże Ci pobrać pakiet instalacyjny czujnik autonomiczny narzędzia Azure ATP.
+title: Zainstaluj usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
+description: Pomaga kroku procesu instalowania usługi Azure ATP, możesz pobrać pakiet instalacyjny czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure.
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 2/21/2017
-ms.topic: conceptual
+ms.date: 10/04/2018
+ms.topic: get-started-article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
 ms.technology: ''
 ms.assetid: 95bb4ec1-841f-41b7-92fe-fbd144085724
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 96d459bd00d39bb21ce363d079b5b24ceca4ace7
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
+ms.openlocfilehash: 5a9eea9550af90577ad1763384a134f5889edc5f
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454024"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783784"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -42,7 +42,7 @@ Kliknij przycisk **Pobierz** na liście kroków w górnej części strony aby pr
 
 1.  Kliknij przycisk **czujnika**.
 2.  Zapisz pakiet lokalnie.
-3.  Kopiuj **klucz dostępu**. Klucz dostępu jest wymagany dla czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, nawiązać połączenia z obszaru roboczego usługi Azure ATP. Klucz dostępu jest jeden haseł dla wdrożenia czujnika, po którym cała komunikacja odbywa się za pomocą certyfikatów do uwierzytelniania i szyfrowania TLS. Użyj **ponownie wygenerować** przycisku Jeśli kiedykolwiek zajdzie potrzeba ponownie wygenerować nowy klucz dostępu, możesz i nie wpłynie to na wszystkie wcześniej wdrożonej czujników, ponieważ jest używana tylko dla wstępnej rejestracji czujnika.
+3.  Kopiuj **dostępu** **klucz**. Klucz dostępu jest wymagany dla czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, nawiązać połączenia z obszaru roboczego usługi Azure ATP. Klucz dostępu jest jeden haseł dla wdrożenia czujnika, po którym cała komunikacja odbywa się za pomocą certyfikatów do uwierzytelniania i szyfrowania TLS. Użyj **ponownie wygenerować** przycisku Jeśli kiedykolwiek zajdzie potrzeba ponownie wygenerować nowy klucz dostępu, możesz i nie wpłynie to na wszystkie wcześniej wdrożonej czujników, ponieważ jest używana tylko dla wstępnej rejestracji czujnika.
 4.  Skopiuj pakiet na dedykowany serwer lub kontroler domeny, na którym instalujesz czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure. Alternatywnie można otworzyć portalu obszaru roboczego usługi Azure ATP z dedykowanego serwera lub kontroler domeny i pominąć ten krok.
 
 Plik zip zawiera następujące pliki:
@@ -65,4 +65,4 @@ Plik zip zawiera następujące pliki:
 
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
 
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

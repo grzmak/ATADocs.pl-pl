@@ -1,11 +1,11 @@
 ---
-title: Install Azure Zaawansowana ochrona przed zagrożeniami — krok 7 | Dokumentacja firmy Microsoft
-description: W ostatnim kroku instalowania usługi Azure ATP możesz skonfigurować użytkownika wystawionego jako przynęta.
+title: Usługa Azure Advanced Threat Protection Konfigurowanie wykluczenia z wykrywania i konta wystawione jako przynęta | Dokumentacja firmy Microsoft
+description: Konfiguracja wykrywania. wykluczenia i konta użytkownika wystawionego jako przynęta.
 keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/2/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,19 @@ ms.technology: ''
 ms.assetid: 1ad5e923-9bbd-4f56-839a-b11a9f387d4b
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 9252e47978a4adc0e2059a3111b362ff2b042daf
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
+ms.openlocfilehash: a538ce4596da106d11646e27aa65131bb47380d2
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47453803"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48782991"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
+<<<<<<< HEAD
+# <a name="configure-detection-exclusions-and-honeytoken-accounts"></a>Konfiguruj wykluczenia z wykrywania i konta wystawione jako przynęta
+=======
 
 # <a name="install-azure-atp---step-7"></a>Zainstaluj narzędzie Azure ATP — krok 7
 
@@ -31,6 +34,7 @@ ms.locfileid: "47453803"
 > [Krok 8 »](install-atp-step8-samr.md)
 
 ## <a name="step-7-configure-detection-exclusions-and-honeytoken-accounts"></a>Krok 7. Konfiguruj wykluczenia z wykrywania i konta wystawione jako przynęta
+>>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
 Narzędzie Azure ATP umożliwia wyłączenie określonych adresów IP lub użytkowników z liczba wykryć. 
 
@@ -40,7 +44,7 @@ Narzędzie Azure ATP umożliwia także konfigurację konta wystawione jako przyn
 
 Aby skonfigurować, wykonaj następujące kroki:
 
-1.  W portalu usługi Azure ATP obszaru roboczego kliknij ikonę ustawień i wybierz pozycję **konfiguracji**.
+1.  W portalu usługi Azure ATP kliknij ikonę ustawień i wybierz pozycję **konfiguracji**.
 
     ![Ustawienia konfiguracji usługi Azure ATP](media/atp-config-menu.png)
 
@@ -65,13 +69,16 @@ Sprawdź wiersz czasu ataku, aby wyświetlić wykryte podejrzane działania i wy
 Usługa Azure ATP skanowanie w poszukiwaniu podejrzanych działań rozpoczyna się natychmiast. Niektóre funkcje wykrywania, takie jak nietypowe modyfikacji grup, wymagają okresu uczenia i nie są dostępne od razu po wdrożeniu usługi Azure ATP.
 
 
+<a name="-head"></a><<<<<<< HEAD
+=======
 
 > [!div class="step-by-step"]
 > [« Krok 6](install-atp-step6-vpn.md)
 > [Krok 8 »](install-atp-step8-samr.md)
 
+>>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami zure](https://aka.ms/azureatpcommunity)

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/12/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,16 @@ ms.technology: ''
 ms.assetid: f6f3ed75-d6bb-4966-a9a7-5339c4f3ebac
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 4dca942b6c7b066cfec44e51aaad0f1e003da6ec
-ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
+ms.openlocfilehash: a888cbb80bba74d920e236b04c353008c7b56daf
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45750422"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783665"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="integrating-azure-atp-with-windows-defender-atp"></a>Integrowanie usługi Azure ATP z usługą Windows Defender ATP
+# <a name="integrate-azure-atp-with-windows-defender-atp"></a>Integracja usługi Azure ATP z usługą Windows Defender ATP
 
 Usługa Azure Advanced Threat Protection umożliwia Integrowanie usługi Azure ATP za pomocą usługi Windows Defender ATP, dla bardziej pełne rozwiązanie do ochrony przed zagrożeniami. Gdy usługi Azure ATP monitoruje ruch na kontrolerach domeny, usługi Windows Defender ATP monitoruje punktów końcowych, jednocześnie zapewniając jeden interfejs, w którym można chronić środowisko.
 
@@ -73,11 +73,11 @@ Aby włączyć tę funkcję, potrzebujesz licencji zarówno dla usługi Azure AT
 
  ![Integracja Włączanie usługi Windows Defender ATP](./media/wd-atp-enable.png)
 
-5. Aby sprawdzić stan integracji, w portalu usługi Azure ATP obszaru roboczego wybierz **ustawienia** i następnie **integracji usługi Windows Defender ATP**. Można wyświetlić stan integracji; Jeśli coś jest nie tak, zostanie wyświetlony błąd. Można również zobaczyć, który obszar roboczy jest zintegrowana z usługą Windows Defender ATP.
+5. Aby sprawdzić stan integracji, w portalu usługi Azure ATP, przejdź do **ustawienia** i następnie **integracji usługi Windows Defender ATP**. Można wyświetlić stan integracji; Jeśli coś jest nie tak, zostanie wyświetlony błąd. Można również zobaczyć, który obszar roboczy jest zintegrowana z usługą Windows Defender ATP.
 
 ## <a name="how-it-works"></a>Jak to działa
 
-Po zaawansowanej ochrony przed zagrożeniami w usłudze Azure i usługi Windows Defender ATP są w pełni zintegrowane, w portalu usługi Azure ATP obszar roboczy, w oknie podręcznym spowoduje wyświetlenie mini profilu i na stronie profilu jednostki każda jednostka, która znajduje się w usłudze Windows Defender ATP zawiera wskaźnik do pokazania, że jest zintegrowany z Windows Usługa Defender ATP. 
+Po zaawansowanej ochrony przed zagrożeniami w usłudze Azure i usługi Windows Defender ATP są w pełni zintegrowane, w portalu usługi Azure ATP, w oknie podręcznym spowoduje wyświetlenie mini profilu i na stronie profilu jednostki każda jednostka, która znajduje się w usłudze Windows Defender ATP zawiera wskaźnik do pokazania, że jest zintegrowany z usługi Windows Defender ATP. 
 
  ![Alerty usługi Windows Defender ATP](./media/profile-alerts-wd.png)
 
@@ -103,5 +103,5 @@ W portalu usługi Windows Defender ATP, po kliknięciu w punkcie końcowym, moż
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
 - [Zainstaluj zaawansowanej ochrony przed zagrożeniami](install-atp-step1.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)
 

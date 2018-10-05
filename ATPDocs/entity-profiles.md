@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/06/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 17458706-79fb-4c23-aa42-66979164a45f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: b4353de9d004358ddcdc929271fd96665e1c7322
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 357973698d9d53936c3fa308bc0021ae1cd98f60
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44165851"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783512"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -51,7 +51,7 @@ Za pomocą **filtrowanie według** przycisku powyżej oś czasu działań, może
 
  ![dane katalogu profilu użytkownika](media/user-profile-dir-data.png)
 
-W **kontrola dostępu użytkownika** sekcji Ustawienia zabezpieczeń na powierzchniach narzędzia Azure ATP, które mogą wymagać Twojej attentions. Możesz zobaczyć ważne flagi o użytkowniku, takie jak naciśnięcie użytkownika można wprowadzić do obejście hasła, czy użytkownik ma hasło, które nigdy nie wygasa, itp. 
+W **kontrola dostępu użytkownika** sekcji Ustawienia zabezpieczeń na powierzchniach narzędzia Azure ATP, które mogą wymagać Twojej attentions. Widać ważne flagi o użytkowniku, na przykład w przypadku użytkownika można nacisnąć klawisz enter, aby pominąć hasła, i jeśli użytkownik ma hasło, które nigdy nie wygasa, itp. 
 
 ## <a name="view-lateral-movement-paths"></a>Ścieżki ruchu poprzecznego widoku
 
@@ -59,7 +59,7 @@ Klikając kartę ścieżki przepływu poprzecznych, możesz wyświetlić mapę p
 
 Mapa zawiera listę liczbę przeskoków między komputerów lub użytkowników musi do i z tego użytkownika do naruszenia bezpieczeństwa kont poufnych, a jeśli użytkownik ma poufne konto, możesz zobaczyć, ile zasoby i konta były bezpośrednio podłączone.
 
-Jeśli działanie nie zostanie wykryty w ciągu ostatnich dwóch dni wykresu nie jest już wyświetlany, ale [raportu ścieżki ruchu poprzecznego](reports.md) będzie można uzyskać informacje na temat ścieżek ruchu poprzecznego ostatnich 60 dni. 
+Jeśli działanie nie zostanie wykryty w ciągu ostatnich dwóch dni wykresu nie jest już wyświetlany, ale [raportu ścieżki ruchu poprzecznego](reports.md) jest dostępny uzyskać informacje na temat ścieżek penetracji sieci, które istniały w ciągu ostatnich 60 dni. 
 
 Aby uzyskać więcej informacji, zobacz [ścieżki ruchu poprzecznego](use-case-lateral-movement-path.md). 
 
@@ -69,4 +69,4 @@ Aby uzyskać więcej informacji, zobacz [ścieżki ruchu poprzecznego](use-case-
 ## <a name="see-also"></a>Zobacz też
 
 - [Badanie ścieżek penetracji sieci za pomocą Zaawansowanej ochrony przed zagrożeniami na platformie Azure](use-case-lateral-movement-path.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

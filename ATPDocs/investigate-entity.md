@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/6/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 43e57f87-ca85-4922-8ed0-9830139fe7cb
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 0c0558dbe0b4eba849adb635a84bc934e406e56f
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 72e26d9cdc539da168d1bc7c274971526eec61d1
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166565"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783308"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,13 +26,13 @@ ms.locfileid: "44166565"
 
 # <a name="investigate-an-entity-with-azure-atp"></a>Badanie jednostki za pomocą narzędzia Azure ATP
 
-W tym artykule opisano proces badania jednostki po wykryciu podejrzanych działań za pomocą usługi Azure Advanced Threat Protection (ATP). Po obejrzeniu podejrzanych działań na osi czasu, możesz przejść do szczegółów do jednostki, które są zaangażowani w działanie i użyj następujących parametrów i szczegółowe informacje, aby dowiedzieć się więcej na temat co się stało i co należy zrobić, aby zmniejszyć zagrożenie.
+W tym artykule opisano proces badania jednostki po wykryciu podejrzanych działań za pomocą usługi Azure Advanced Threat Protection (ATP). Po wyświetleniu alertu zabezpieczeń na osi czasu, można przejść do szczegółów do jednostki, które są zaangażowane w alercie i użyj następujących parametrów i szczegółowe informacje, aby dowiedzieć się więcej na temat co się stało i co należy zrobić, aby zmniejszyć zagrożenie.
 
 ## <a name="look-at-the-entity-profile"></a>Przyjrzyj się profilu jednostki
 
 Profilu jednostki zawiera ze stroną kompleksowej jednostki przeznaczone do badania szczegółowym omówieniu użytkowników, komputerów, urządzeń i zasobów, do których mają dostęp wraz z ich historii. Strona profilu korzysta z nowych translator aktywności logicznego usługi Azure ATP, można przyjrzeć się grupę działań, które pojawiają się (zagregowane maksymalnie minutę) i zgrupować je w jedno działanie logicznych daje lepsze zrozumienie działania rzeczywistych Użytkownicy.
 
-Aby uzyskać dostęp do strony profilu jednostki, kliknij nazwę jednostki, takie jak nazwa użytkownika, na osi czasu podejrzanych działań. Widać również minimalnej wersji na stronie podejrzanych działań profilu jednostki, ustawiając kursor nad nazwa jednostki.
+Aby uzyskać dostęp do strony profilu jednostki, kliknij nazwę jednostki, takie jak nazwy użytkownika, na osi czasu alertu zabezpieczeń. Widać również nieco mini profilu jednostki, na stronie alertów zabezpieczeń, ustawiając kursor nad nazwa jednostki.
 
 Profilu jednostki pozwala wyświetlić jednostki działania, wyświetlić danych katalogowych oraz ścieżki ruchu poprzecznego dla jednostki. Aby uzyskać więcej informacji, zobacz [Opis profilów jednostki ](entity-profiles.md).
 
@@ -112,4 +112,4 @@ Przed przeniesieniem dochodzenie jest ważne, aby dowiedzieć się, czy jednostk
 ## <a name="see-also"></a>Zobacz także
 
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

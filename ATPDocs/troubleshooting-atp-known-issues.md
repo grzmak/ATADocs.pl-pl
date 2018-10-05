@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/13/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 23386e36-2756-4291-923f-fa8607b5518a
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a56845c619e93ed2fae0e10876a4d49a49e23e7d
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: e65133fdd09f821c633a3095ae419df01da98b16
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166307"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783716"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -30,9 +30,9 @@ ms.locfileid: "44166307"
  
 Dzienniki wdrożenia usługi Azure ATP znajdują się w katalogu tymczasowym użytkownika, który zainstalował produkt. W domyślnej lokalizacji instalacji można znaleźć w: C:\Users\Administrator\AppData\Local\Temp (lub w katalogu % temp %). Aby uzyskać więcej informacji, zobacz [Rozwiązywanie problemów z zaawansowanej ochrony przed zagrożeniami przy użyciu dzienników](troubleshooting-atp-using-logs.md)
 
-## <a name="proxy-authentication-problem-presents-as-licensing-error"></a>Problem z uwierzytelnianiem proxy przedstawia jako błąd licencjonowania
+## <a name="proxy-authentication-problem-presents-as-a-licensing-error"></a>Problem z uwierzytelnianiem proxy przedstawia jako błąd licencjonowania
 
-Podczas instalacji czujnika zostanie wyświetlony następujący błąd: **czujnika nie powiodło się zarejestrowanie ze względu na problemy z licencjonowaniem.**
+Jeśli podczas instalacji czujnika zostanie wyświetlony następujący błąd: **czujnika nie powiodło się zarejestrowanie ze względu na problemy z licencjonowaniem.**
 
 Wpisy dziennika wdrażania: [1C 60: 1AA8] [2018-03-24T23:59:13] i000: 2018-03-25 02:59:13.1237 InteractiveDeploymentManager ValidateCreateSensorAsync informacje zwrócone [\[] validateCreateSensorResult = LicenseInvalid [\]] [1 c 60 : 1AA8] [2018-03 — 24T23:59:56] i000: 02:59:56.4856 2018-03-25 InteractiveDeploymentManager ValidateCreateSensorAsync informacje zwrócone [\[] validateCreateSensorResult = LicenseInvalid [\]] [1 C 60: 1AA8] [2018-03-25T00:27:56] i000: 2018-03-25 03:27:56.7399 debugowania SensorBootstrapperApplication Engine.Quit [\[] deploymentResultStatus = 1602 isRestartRequired = False [\]] [1 C 60: 15B8] [2018-03-25T00:27:56] i500: zamknięcia systemu, kod zakończenia: 0x642
 
@@ -50,7 +50,7 @@ Upewnij się, że czujnik przejść do *. atp.azure.com przez skonfigurowany ser
 
 ## Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami problem tworzenia zespołu kart interfejsu Sieciowego <a name="nic-teaming"></a>
 
-Jeśli spróbujesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami na maszynie skonfigurowane z kartą zespołu kart interfejsu Sieciowego, wystąpi błąd instalacji. Jeśli chcesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami na maszynie skonfigurowany z kart sieciowych, wykonaj te instrukcje:
+Jeśli spróbujesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami na maszynie skonfigurowane z kartą zespołu kart interfejsu Sieciowego, wystąpi błąd instalacji. Jeśli chcesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami na maszynie skonfigurowanej z kart sieciowych, wykonaj te instrukcje:
 
 Jeśli nie został jeszcze zainstalowany czujnik:
 
@@ -69,7 +69,7 @@ Jeśli zainstalowano już czujnika:
 
 ## <a name="windows-defender-atp-integration-issue"></a>Problem z integracją usługi Windows Defender ATP
 
-Usługa Azure Advanced Threat Protection umożliwia Integrowanie usługi Azure ATP z usługi Windows Defender ATP. 
+Usługa Azure Advanced Threat Protection umożliwia Integrowanie usługi Azure ATP z usługi Windows Defender ATP. Zobacz [integracji usługi Azure ATP za pomocą usługi Windows Defender ATP](integrate-wd-atp.md) Aby uzyskać więcej informacji. 
 
 ## <a name="vmware-virtual-machine-sensor-issue"></a>Problem czujnik maszyn wirtualnych VMware
 
@@ -88,4 +88,4 @@ Skonfigurować następujące ustawienia, **0** lub **wyłączone** w konfiguracj
 - [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

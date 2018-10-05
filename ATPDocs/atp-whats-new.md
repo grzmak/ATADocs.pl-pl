@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/16/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f9959f1b517890b725845f8dd01156f9a3e8198b
-ms.sourcegitcommit: 5ff50807f855db1051b977a64eb6e90487ea196c
+ms.openlocfilehash: bbc0717d6224b3f4173d697f0c751f6bdd1bb062
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45750558"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783954"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -286,8 +286,8 @@ Wydana 11 marca 2018 r.
  -  Infrastruktura czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure poprawiła wydajność: zagregowany widok ruchu włącza optymalizację potoku procesora CPU i pakietów, a następnie ponownie używa gniazda na kontrolerach domeny, aby zminimalizować sesji SSL do kontrolera domeny.
 
 ## <a name="see-also"></a>Zobacz też
+- [Co to jest Zaawansowana ochrona przed zagrożeniami na platformie Azure?](what-is-atp.md)
+- [Często zadawane pytania](atp-technical-faq.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
-- [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
-- [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md) (configure-event-forwarding.md#configuring-windows-event-forwarding)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

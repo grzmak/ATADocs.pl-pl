@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/05/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 1b7e72c3-a538-443f-981c-398ffafa5ab8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 033d338e9c1e5e85673e362069ff0a815cda127c
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: 8fdaa7311d39680ed8e9389f5dc9b7cdeca73197
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44165596"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48782900"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -46,8 +46,7 @@ Aby sprawdzić ogólną kondycję obszaru roboczego, kliknij ikonę Centrum kond
 
     > [!NOTE]
     > Narzędzie Azure ATP może ponownie otworzyć zamknięte działanie w przypadku wykrycia tego samego działania ponownie w krótkim czasie.
-    > Każdy obszar roboczy ma swój własny Centrum kondycji.
-
+    
 -   **Pomiń**: Pomijanie działania oznacza, że chcesz je na razie zignorować i otrzymywać alerty ponownie tylko w przypadku nowego wystąpienia. Jeśli istnieje podobny alert usługi Azure ATP nie otworzyć go ponownie. Ale jeśli alert zatrzymuje przez siedem dni, a następnie zostanie zauważony ponownie, zostanie wyświetlony alert ponownie.
 
 -   **Otwórz ponownie**: Możesz ponownie otworzyć problem zamknięte lub pominięte wygląda tak, jakby Otwórz ponownie na osi czasu.
@@ -56,7 +55,7 @@ Aby sprawdzić ogólną kondycję obszaru roboczego, kliknij ikonę Centrum kond
 
 
 
-![Usługa Azure obraz problemy z Centrum kondycji zaawansowanej ochrony przed zagrożeniami obszaru roboczego](media/atp-health-issue.png)
+![Obraz problemów z Centrum kondycji usługi Azure ATP](media/atp-health-issue.png)
 
 
 
@@ -66,4 +65,4 @@ Aby sprawdzić ogólną kondycję obszaru roboczego, kliknij ikonę Centrum kond
 ## <a name="see-also"></a>Zobacz też
 
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

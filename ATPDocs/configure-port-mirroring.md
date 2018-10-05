@@ -2,10 +2,10 @@
 title: Konfigurowanie funkcji dublowania portów podczas wdrażania usługi Azure Advanced Threat Protection | Dokumentacja firmy Microsoft
 description: Zawiera opis opcji funkcji dublowania portów i sposobu ich konfigurowana na potrzeby usługi Azure ATP
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 7/4/2018
+ms.date: 10/4/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 9ec7eb4c-3cad-4543-bbf0-b951d8fc8ffe
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 9ac3c584f5eb73b33415c6c1250eee4c41a12763
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: 5ca24df927bc91383449926bdcd67a1c29585618
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44125995"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783580"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -26,7 +26,7 @@ ms.locfileid: "44125995"
 
 # <a name="configure-port-mirroring"></a>Konfigurowanie funkcji dublowania portów
 > [!NOTE] 
-> Ten artykuł dotyczy tylko wtedy, gdy wdrażanie usługi Azure ATP czujnik autonomiczny zamiast czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure. Aby określić, jeśli musisz użyć narzędzia Azure ATP czujnik autonomiczny, zobacz [czujników odpowiednie dla danego wdrożenia wybór](atp-capacity-planning.md#choosing-the-right-sensor-type-for-your-deployment).
+> Ten artykuł dotyczy tylko wtedy, gdy wdrażanie czujników autonomiczne narzędzia Azure ATP zamiast czujników narzędzia Azure ATP. Aby określić, jeśli musisz użyć narzędzia Azure ATP autonomiczny czujników, zobacz [czujników odpowiednie dla danego wdrożenia wybór](atp-capacity-planning.md#choosing-the-right-sensor-type-for-your-deployment).
  
 Główne źródło danych używane przez usługi Azure ATP to głęboka inspekcja pakietów ruchu sieciowego do i z kontrolerów domeny. Dla usługi Azure ATP się ruch sieciowy musisz Konfigurowanie funkcji dublowania portów lub skorzystać z PODSŁUCHU sieci.
 
@@ -74,4 +74,4 @@ Po skonfigurowaniu funkcji dublowania portów, sprawdź, czy funkcja dublowania 
 
 ## <a name="see-also"></a>Zobacz też
 - [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

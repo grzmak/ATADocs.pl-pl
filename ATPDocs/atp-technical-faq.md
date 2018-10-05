@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/3/2018
+ms.date: 10/4/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 6a9b5273-eb26-414e-9cdd-f64406e24ed8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 34a9b1deb9c5d2d709e333e78e87ded09fff134a
-ms.sourcegitcommit: 04ed0b9faf72d82cd10bf84efd9dc5aa525be212
+ms.openlocfilehash: 839a21dab3962831e4c62dd4c9c2018e81bd7014
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48245387"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783699"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -86,13 +86,13 @@ Ponadto firma Microsoft przeprowadza testy weryfikacyjne opisane w tle na niekt�
 ## <a name="deployment"></a>wdrażania
 ### <a name="how-many-azure-atp-sensors-do-i-need"></a>Jak wiele czujników narzędzia Azure ATP jest potrzebne?
 
-Każdy kontroler domeny w środowisku powinny być objęte przez zaawansowanej ochrony przed zagrożeniami czujnik lub czujnik autonomiczny. Aby uzyskać więcej informacji, zobacz [czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure rozmiaru](atp-capacity-planning.md#sizing). 
+Każdy kontroler domeny w środowisku powinny być objęte przez zaawansowanej ochrony przed zagrożeniami czujnik lub czujnik autonomiczny. Aby uzyskać więcej informacji, zobacz [rozmiaru czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure](atp-capacity-planning.md#sizing). 
 
 ### <a name="does-azure-atp-work-with-encrypted-traffic"></a>Narzędzia Azure ATP działa z ruchem zaszyfrowanym?
 Protokoły sieciowe przy użyciu ruchu szyfrowanego (na przykład LDAPS i IPSEC) nie są odszyfrowywane, ale są analizowane przez czujników.
 
 ### <a name="does-azure-atp-work-with-kerberos-armoring"></a>Narzędzia Azure ATP działa z ochroną protokołu Kerberos?
-Włączanie ochrony protokołu Kerberos, znanej także jako elastyczne Authentication Secure Tunneling (FAST), jest obsługiwana przez zaawansowanej ochrony przed zagrożeniami, z wyjątkiem nadmiernego przekazywania wykrywanie wyznaczania wartości skrótu, które nie obsługuje ochrony protokołu Kerberos.
+Włączanie ochrony protokołu Kerberos, znanej także jako elastyczne Authentication Secure Tunneling (FAST), jest obsługiwana przez zure zaawansowanej ochrony przed zagrożeniami, z wyjątkiem nadmiernego przekazywania wykrywanie wyznaczania wartości skrótu, które nie obsługuje ochrony protokołu Kerberos.
 
 ### <a name="how-do-i-monitor-a-virtual-domain-controller-using-azure-atp"></a>Jak monitorować wirtualnego kontrolera domeny przy użyciu narzędzia Azure ATP?
 Większość wirtualnych kontrolerów domeny może być objętych przez czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, aby ustalić, czy narzędzia Azure ATP czujnik jest odpowiednie dla danego środowiska, zobacz [Planowanie pojemności zaawansowanej ochrony przed zagrożeniami w usłudze Azure](atp-capacity-planning.md).
@@ -142,7 +142,7 @@ Jako test end-to-end można symulować podejrzane działania. W poniższym scena
     -   Naciśnij klawisz enter
     -   Typ: -D jest <FQDN>
     -   W zależności od konfiguracji środowiska odpowiedzi będzie się różnić od "Odrzucono kwerendę" na listę rekordów DNS. 
-4. Wyświetl alert związane z symulowanego reconnaisance DNS w konsoli usługi Azure ATP. 
+4. Wyświetl alert związane z symulowanego reconnaisance DNS w portalu usługi Azure ATP. 
 
 ## <a name="see-also"></a>Zobacz też
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
@@ -150,4 +150,4 @@ Jako test end-to-end można symulować podejrzane działania. W poniższym scena
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
 - [Rozwiązywanie problemów](troubleshooting-atp-known-issues.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

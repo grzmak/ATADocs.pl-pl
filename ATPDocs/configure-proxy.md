@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/25/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 9c173d28-a944-491a-92c1-9690eb06b151
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a007a277641835be292ae6ab0b3004f154dad753
-ms.sourcegitcommit: 0634dda829699edf8bfd984eb9f896a67c5b15e7
+ms.openlocfilehash: a7dc9b6c9243377a613490e166fb7c0294ecde99
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48039366"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783325"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -81,4 +81,4 @@ Można również utrwalanie reguły zapory lub serwera proxy dla określonego ob
 
 ## <a name="see-also"></a>Zobacz też
 - [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

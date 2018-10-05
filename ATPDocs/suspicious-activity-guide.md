@@ -1,11 +1,11 @@
 ---
-title: Przewodnik po podejrzanych działaniach usługi Azure ATP | Dokumentacja firmy Microsoft
-d|Description: This article provides a list of the suspicious activities Azure ATP can detect and steps for remediation.
+title: Podręcznik usługi Azure ATP zabezpieczeń alertów | Dokumentacja firmy Microsoft
+d|Description: This article provides a list of the security alerts issued by Azure ATP and steps for remediation.
 keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/20/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7146c9830a6d3e4f9f655020aa2711e8aeeba40d
-ms.sourcegitcommit: 7f3ded32af35a433d4b407009f87cfa6099f8edf
+ms.openlocfilehash: af2c7302f97ef8e2d9fca5862246a1b7507c0433
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126454"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783937"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
-# <a name="azure-advanced-threat-protection-suspicious-activity-guide"></a>Przewodnik po podejrzanych działaniach zaawansowanej ochrony przed zagrożeniami platformy Azure
+# <a name="azure-advanced-threat-protection-security-alert-guide"></a>Usługa Azure Advanced Threat Protection alertu Przewodnik po zabezpieczeniach
 
-Następujące odpowiednie badania wszelkich podejrzanych działań, mogą być klasyfikowane jako:
+Następujące odpowiednie badania wszystkie alerty zabezpieczeń usługi Azure ATP mogą być klasyfikowane jako:
 
 -   **Prawdziwie dodatni**: złośliwa Akcja wykryta przez narzędzia Azure ATP.
 
@@ -33,7 +33,7 @@ Następujące odpowiednie badania wszelkich podejrzanych działań, mogą być k
 
 -   **Wynik fałszywie dodatni**: alarm wartość false, co oznacza działania nie się zdarzyć.
 
-Aby uzyskać więcej informacji na temat pracy z alertami usługi Azure ATP, zobacz [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md).
+Aby uzyskać więcej informacji na temat pracy z alertami zabezpieczeń usługi Azure ATP, zobacz [Praca z alertami zabezpieczeń](working-with-suspicious-activities.md).
 
 
 ## <a name="abnormal-sensitive-group-modification"></a>Nietypowa modyfikacja grupy poufnej
@@ -41,7 +41,7 @@ Aby uzyskać więcej informacji na temat pracy z alertami usługi Azure ATP, zob
 
 **Opis**
 
-Osoby atakujące dodać użytkowników do grup o wysokim poziomie uprawnień. To zrobią, aby uzyskać dostęp do większej ilości zasobów i uzyskanie stałego dostępu. Ta metoda wykrywania polega na profilowaniu działania modyfikacja grupy użytkowników oraz alerty, gdy pojawia się nietypowy dodatku wrażliwych grup. Profilowanie stale odbywa się przez zaawansowanej ochrony przed zagrożeniami. Minimalny okres wywoła alertu jest jeden miesiąc na każdym kontrolerze domeny.
+Osoby atakujące dodać użytkowników do grup o wysokim poziomie uprawnień. To zrobią, aby uzyskać dostęp do większej ilości zasobów i uzyskanie stałego dostępu. Ta metoda wykrywania polega na profilowaniu działania modyfikacja grupy użytkowników oraz alerty, gdy pojawia się nietypowy dodatku wrażliwych grup. Profilowanie stale odbywa się przez narzędzia Azure ATP. Minimalny okres wywoła alertu jest jeden miesiąc na każdym kontrolerze domeny.
 
 Aby uzyskać pełną definicję wrażliwych grup w usłudze Azure ATP, zobacz [Praca z kontami poufnymi](sensitive-accounts.md).
 
@@ -604,9 +604,9 @@ Stosowanie poprawek do wszystkich maszyn, szczególnie stosowania aktualizacji z
 
 
 > [!NOTE]
-> Aby wyłączyć podejrzane działanie, skontaktuj się z działem pomocy technicznej.
+> Aby wyłączyć alert zabezpieczeń, skontaktuj się z działem pomocy technicznej.
 
 
 ## <a name="see-also"></a>Zobacz też
 - [Praca z podejrzanymi działaniami](working-with-suspicious-activities.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/12/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 603d9e09-a07d-4357-862f-d5682c8bc3dd
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 8a6481070abf1188507f31dbd01b26f7221b2e36
-ms.sourcegitcommit: a5823d0dfc48783ab990a99ca3f65b614fb49e75
+ms.openlocfilehash: e478fc1a2ae955d66d00b3d87bd5f782354c766d
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44697246"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783767"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -60,7 +60,7 @@ Zazwyczaj czujników są aktualizowane automatycznie po zaktualizowaniu usługi 
 Dzięki temu można wybrać określone czujniki, na których aktualizacji jest wycofywany się automatycznie i aktualizacji pozostałej części Twojej czujników na opóźnienia, tylko wtedy, gdy zostanie wyświetlony, sprawnie poszło pierwszej wersji aktualizacji.
 
 > [!NOTE]
-> Jeśli wystąpi błąd i nie powoduje aktualizacji czujnika, otwórz bilet pomocy technicznej.
+> Jeśli wystąpi błąd i nie powoduje aktualizacji czujnika, otwórz bilet pomocy technicznej. Aby dodatkowo zabezpieczyć Twój serwer proxy, aby komunikować się tylko z obszaru roboczego, zobacz [konfiguracji serwera Proxy](configure-proxy.md)
 
 Aby ustawić czujnika opóźnione aktualizacji:
 
@@ -87,7 +87,7 @@ Co kilka minut, czujniki narzędzia Azure ATP Sprawdź, czy mają one najnowszej
   7. Czujnik odbiera przestrzeń w usłudze w chmurze platformy Azure. Można to sprawdzić w **aktualizacje** strony.
   8. Czujnik dalej rozpoczyna się proces aktualizacji. 
 
-4. Zaktualizowano usługę w chmurze po 24 godzinach od usługi Azure ATP, czujniki wybranych dla ** aktualizacja opóźnione uruchomienie procesu aktualizacji.
+4. Zaktualizowano usługę w chmurze po 24 godzinach od usługi Azure ATP, czujniki wybrane do **opóźnione aktualizacji** rozpocząć proces aktualizacji.
 
 ![Czujnik aktualizacji](./media/sensor-update.png)
 
@@ -101,4 +101,4 @@ W przypadku awarii jeśli czujnika nie została ukończona proces aktualizacji, 
 
 - [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
 - [Wymagania wstępne Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-prerequisites.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

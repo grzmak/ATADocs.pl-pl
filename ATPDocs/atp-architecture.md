@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 9/25/2018
+ms.date: 10/04/2018
 ms.topic: article
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,19 +13,19 @@ ms.technology: ''
 ms.assetid: 90f68f2c-d421-4339-8e49-1888b84416e6
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: fb9e99d43a800f6b7bc080fa3fe0bc2453f3d754
-ms.sourcegitcommit: 8e80f59409c65e7d8d60ec7de8b96b621795699a
+ms.openlocfilehash: 6853a2a768fabde94c7aa613c9a6c0403f14e066
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168573"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783563"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
 # <a name="azure-atp-architecture"></a>Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure
 
-Narzędzie Azure ATP monitoruje kontrolery domeny przez przechwytywania i analizowania ruchu sieciowego i wykorzystując zdarzenia Windows (bezpośrednio z kontrolerów domeny lub z serwera SIEM) i analizuje je pod kątem ataków i zagrożeń. Przy użyciu profilowania, wykrywanie deterministyczne, uczenie maszynowe i algorytmy behawioralne, które narzędzia Azure ATP uzyskuje informacje o sieci, włącza wykrywanie anomalii i ostrzega o podejrzanych działaniach.
+Narzędzie Azure ATP monitoruje kontrolery domeny przez przechwytywania i analizowania ruchu sieciowego i wykorzystując zdarzenia Windows bezpośrednio z kontrolerów domeny, a następnie analizuje dane pod kątem ataków i zagrożeń. Przy użyciu profilowania, wykrywanie deterministyczne, uczenie maszynowe i algorytmy behawioralne, które narzędzia Azure ATP uzyskuje informacje o sieci, włącza wykrywanie anomalii i ostrzega o podejrzanych działaniach.
 
 Architektura zaawansowanej ochrony przed zagrożeniami na platformie Azure:
 
@@ -40,7 +40,6 @@ Narzędzie Azure ATP składa się z następujących składników:
 
 -   **Witryna Azure portal zaawansowanej ochrony przed zagrożeniami** <br>
 Portal usługi Azure ATP pozwala na tworzenie wystąpienia usługi Azure ATP, wyświetla danych odebranych z czujników narzędzia Azure ATP i pozwala na monitorowanie, zarządzanie i badanie zagrożeń w danym środowisku sieciowym.  
-
 -   **Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami**<br>
 Usługa Azure ATP czujników są instalowane bezpośrednio na kontrolerach domeny. Czujnik bezpośrednio monitoruje ruch kontrolerów domeny, bez konieczności użycia serwera dedykowanego lub funkcji dublowania portów.
 
@@ -57,7 +56,7 @@ Użyj portalu usługi Azure ATP:
 - **Opcjonalnie**: portalu można również skonfigurować do wysyłania wiadomości e-mail i zdarzeń po wykryciu alerty zabezpieczeń lub problemów z kondycją
 
 > [!NOTE]
-> - Jeśli nie czujnik jest zainstalowany w obszarze roboczym usługi w ciągu 60 dni, obszaru roboczego mogą zostać usunięte, a użytkownik będzie należy utworzyć ją ponownie.
+> - Jeśli nie czujnik jest zainstalowany w obszarze roboczym w ciągu 60 dni, obszaru roboczego mogą zostać usunięte i należy utworzyć ją ponownie.
 
 ## <a name="azure-atp-sensor"></a>Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami
 Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure zawiera następujące podstawowe funkcje:
@@ -67,11 +66,10 @@ Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure zawiera nast
 - Pobierają dane o użytkownikach i komputerach z domeny usługi Active Directory
 - Przeprowadzają rozpoznawanie jednostek sieci (użytkowników, grup i komputerów)
 - Transferują odpowiednie dane do usługi w chmurze usługi Azure ATP
-> [!NOTE]
-> - Domyślnie narzędzia Azure ATP obsługuje maksymalnie 100 czujników. Jeśli chcesz zainstalować więcej się z pomocą techniczną usługi Azure ATP.
+
  
 ## <a name="azure-atp-sensor-features"></a>Funkcje platformy Azure czujnika zaawansowanej ochrony przed zagrożeniami
-Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami odczytuje zdarzenia lokalnie — bez konieczności zakupu i obsługa dodatkowego sprzętu ani konfiguracji. Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure obsługuje również zdarzeń wątku dla Windows (ETW) zawiera informacje dziennika dla wielu wykrywania. ETW oparte odmiany to między innymi podejrzane żądania replikacji i podejrzane podwyższania poziomu kontrolera domeny, są potencjalnymi atakami kontrolera domeny w tle.
+Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami odczytuje zdarzenia lokalnie — bez konieczności zakupu i obsługa dodatkowego sprzętu ani konfiguracji. Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure obsługuje także śledzenie zdarzeń dla Windows (ETW) zawiera informacje dziennika dla wielu wykrywania. ETW oparte odmiany to między innymi podejrzane żądania replikacji i podejrzane podwyższania poziomu kontrolera domeny, są potencjalnymi atakami DCShadow.
 - Kandydat synchronizatora domeny
 
     Kandydat Synchronizatora domeny jest odpowiedzialna za aktywne synchronizowanie wszystkich jednostek z określonej domeny usługi Active Directory (podobnie do mechanizmu używanego przez kontrolery domeny w przypadku replikacji). Jeden czujnik jest wybierany losowo, z listy kandydatów, która będzie służyć jako Synchronizator domeny. 
@@ -99,4 +97,4 @@ Usługa Azure czujnika zaawansowanej ochrony przed zagrożeniami odczytuje zdarz
 - [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
 - [Konfigurowanie składnika przesyłanie dalej zdarzeń](configure-event-forwarding.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

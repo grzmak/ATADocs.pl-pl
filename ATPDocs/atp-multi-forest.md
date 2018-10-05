@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 8/20/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: effca0f2-fcae-4fca-92c1-c37306decf84
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ad120cfe3e736935a557f66417794cd531fa5b2e
-ms.sourcegitcommit: b283bf66e63d76e6dba4564a229e804792794c6d
+ms.openlocfilehash: 84ec02cb1aa999d70808f6eaf76bb28cba9d2110
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454092"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783359"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -55,7 +55,7 @@ W przypadku lasów, na których nie narzędzia Azure ATP czujników są zainstal
 -   Jeśli czujników autonomiczne narzędzia Azure ATP są zainstalowane na komputerach autonomicznych, a nie bezpośrednio na kontrolerach domeny, upewnij się, że maszyny mogą komunikować się ze wszystkimi kontrolery domen w lesie zdalnym przy użyciu protokołu LDAP. 
 - Użytkownik, należy skonfigurować w konsoli usługi Azure ATP w obszarze **usługa katalogowa** musi być zaufana w innych lasach i musi mieć co najmniej tylko uprawnienia odczytu do wykonywania zapytań LDAP na kontrolerach domeny.
 
-- Aby dla usługi Azure ATP przekazywane za pomocą zaawansowanej ochrony przed zagrożeniami, czujniki i czujniki autonomiczny zaawansowanej ochrony przed zagrożeniami należy otworzyć następujące porty na każdym czerpać, na którym zainstalowano czujnika zaawansowanej ochrony przed zagrożeniami:
+- Aby dla usługi Azure ATP do komunikowania się za pomocą narzędzia Azure ATP czujników i zure zaawansowanej ochrony przed zagrożeniami autonomiczny czujników należy otworzyć następujące porty na każdym czerpać, na którym jest zainstalowany czujnik narzędzia Azure ATP:
 
  
   |Protokół|Transport|Port|Do/z|Kierunek|
@@ -76,7 +76,7 @@ W przypadku narzędzia Azure ATP mapuje lasów usługi, używa procesu, który m
 -   Po uruchomieniu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure zapytania zdalnego lasów usługi Active Directory i pobiera listę użytkowników i dane maszyny dla tworzenia profilu.
 -   Co 5 minut, każdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure wysyła zapytanie do jednego kontrolera domeny w każdej domenie, w każdym lesie, aby zamapować wszystkich lasów w sieci.
 -   Każdy czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure mapuje lasów, używając obiektu "trustedDomain" w usłudze Active Directory, logowania i sprawdzanie typu zaufania.
--   Podczas czujnika zaawansowanej ochrony przed zagrożeniami wykryje działanie wielu lasów, mogą pojawić ruchu ad hoc. W takiej sytuacji czujników zaawansowanej ochrony przed zagrożeniami będzie wysyłać zapytanie LDAP do odpowiednich kontrolerach domeny w celu pobrania informacji o jednostkach. 
+-   Podczas czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure wykryje działanie wielu lasów, mogą pojawić ruchu ad hoc. W takiej sytuacji czujników narzędzia Azure ATP będzie wysyłać kwerendy LDAP do odpowiednich kontrolerach domeny w celu pobrania informacji o jednostkach. 
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 -   Logowania interakcyjnego, wykonywanych przez użytkowników w jednym lesie na dostęp do zasobów w innym lesie nie są wyświetlane na pulpicie nawigacyjnym usługi Azure ATP.
@@ -87,8 +87,8 @@ W przypadku narzędzia Azure ATP mapuje lasów usługi, używa procesu, który m
 
 
 ## <a name="see-also"></a>Zobacz też
-- [Narzędzia do określania rozmiaru zaawansowanej ochrony przed zagrożeniami](http://aka.ms/aatpsizingtool)
-- [Architektura zaawansowanej ochrony przed zagrożeniami](atp-architecture.md)
-- [Zainstaluj zaawansowanej ochrony przed zagrożeniami](install-atp-step1.md)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
+- [Architektura Zaawansowanej ochrony przed zagrożeniami na platformie Azure](atp-architecture.md)
+- [Zainstaluj narzędzie Azure ATP](install-atp-step1.md)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)
 
