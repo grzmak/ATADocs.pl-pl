@@ -2,10 +2,10 @@
 title: Omówienie usługi Azure ATP alertów monitorowania | Dokumentacja firmy Microsoft
 description: W tym artykule opisano, jak dzienniki usługi Azure ATP można użyć do rozwiązywania problemów
 keywords: ''
-author: rkarlin
-ms.author: rkarlin
+author: mlottner
+ms.author: mlottner
 manager: mbaldwin
-ms.date: 4/15/2018
+ms.date: 10/04/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,30 +13,30 @@ ms.technology: ''
 ms.assetid: d0551e91-3b21-47d5-ad9d-3362df6d47c0
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 7cffaef77a80b5c1c9bb33694ef2c7a73ef80ee0
-ms.sourcegitcommit: 5ad28d7b0607c7ea36d795b72928769c629fb80a
+ms.openlocfilehash: eed1509cb31885bccdfcc40505284dbdbdfc4cca
+ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44166922"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48783886"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 # <a name="understanding-azure-atp-sensor-and-standalone-sensor-monitoring-alerts"></a>Opis czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure i czujnik autonomiczny alertów monitorowania
 
-Centrum kondycji zaawansowanej ochrony przed zagrożeniami w usłudze Azure informuje o tym, gdy istnieje problem z dowolnego z obszarów roboczych usługi Azure ATP, przez wywołanie alertu monitorowania. W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych składników, ich przyczyny i kroki niezbędne do rozwiązania problemu.
+Centrum kondycji zaawansowanej ochrony przed zagrożeniami w usłudze Azure informuje o tym, gdy występuje problem z obszarem roboczym usługi Azure ATP przez wywołanie alertu monitorowania. W tym artykule opisano wszystkie alerty monitorowania dla poszczególnych składników, ich przyczyny i kroki niezbędne do rozwiązania problemu.
 
 ## <a name="read-only-user-password-to-expire-shortly"></a>Hasło użytkownika tylko do odczytu wkrótce wygaśnie
 
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Hasło użytkownika tylko do odczytu używane do rozpoznawania jednostek w usłudze Active Directory wygaśnie za mniej niż 30 dni.|Jeśli hasło dla tego użytkownika wygaśnie, wszystkie czujniki narzędzia Azure ATP przestanie działać, a żadne nowe dane są zbierane.|[Zmienianie hasła do łączności z domeną](modifying-atp-config-dcpassword.md) , a następnie zaktualizuj hasło w konsoli usługi Azure ATP.|Średni|
+|Hasło użytkownika tylko do odczytu używane do rozpoznawania jednostek w usłudze Active Directory wygaśnie za mniej niż 30 dni.|Jeśli hasło dla tego użytkownika wygaśnie, wszystkie czujniki narzędzia Azure ATP przestanie działać, a żadne nowe dane są zbierane.|[Zmienianie hasła do łączności z domeną](modifying-atp-config-dcpassword.md) , a następnie zaktualizuj hasło w portalu usługi Azure ATP.|Średni|
 
 ## <a name="read-only-user-password-expired"></a>Hasło użytkownika tylko do odczytu wygasło
 
 |Alert|Opis|Rozwiązanie|Ważność|
 |----|----|----|----|
-|Hasło użytkownika tylko do odczytu używane do pobierania danych z katalogu wygasło.|Wszystkie czujniki narzędzia Azure ATP przestanie działać (lub przestanie działać wkrótce), a żadne nowe dane są zbierane.|[Zmienianie hasła do łączności z domeną](modifying-atp-config-dcpassword.md) , a następnie zaktualizuj hasło w konsoli usługi Azure ATP.|Wysoki|
+|Hasło użytkownika tylko do odczytu używane do pobierania danych z katalogu wygasło.|Wszystkie czujniki narzędzia Azure ATP przestanie działać (lub przestanie działać wkrótce), a żadne nowe dane są zbierane.|[Zmienianie hasła do łączności z domeną](modifying-atp-config-dcpassword.md) , a następnie zaktualizuj hasło w portalu usługi Azure ATP.|Wysoki|
 
 ## <a name="domain-synchronizer-not-assigned"></a>Brak przypisanego synchronizatora domeny
 
@@ -110,4 +110,4 @@ Centrum kondycji zaawansowanej ochrony przed zagrożeniami w usłudze Azure info
 - [Usługa Azure Planowanie pojemności zaawansowanej ochrony przed zagrożeniami](atp-capacity-planning.md)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)
 - [Konfigurowanie funkcji przekazywania zdarzeń systemu Windows](configure-event-forwarding.md#configuring-windows-event-forwarding)
-- [Skorzystaj z forum zaawansowanej ochrony przed zagrożeniami](https://aka.ms/azureatpcommunity)
+- [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)
