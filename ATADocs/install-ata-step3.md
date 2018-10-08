@@ -31,9 +31,9 @@ ms.locfileid: "47454041"
 > [Krok 4 »](install-ata-step4.md)
 
 ## <a name="step-3-download-the-ata-gateway-setup-package"></a>Krok 3. Pobieranie pakietu instalacyjnego bramy usługi ATA
-Po skonfigurowaniu ustawień łączności z domeną, możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub na kontrolerze domeny. Jeśli brama zostanie zainstalowana na kontrolerze domeny, to jest instalowana jako uproszczona brama usługi ATA. Więcej informacji dotyczących uproszczonej bramy usługi ATA można znaleźć w temacie [Architektura usługi ATA](ata-architecture.md). 
+Po skonfigurowaniu ustawień łączności z domeną możesz pobrać pakiet instalacyjny bramy usługi ATA. Brama usługi ATA może zostać zainstalowana na dedykowanym serwerze lub na kontrolerze domeny. Jeśli brama zostanie zainstalowana na kontrolerze domeny, to jest instalowana jako uproszczona brama usługi ATA. Więcej informacji dotyczących uproszczonej bramy usługi ATA można znaleźć w temacie [Architektura usługi ATA](ata-architecture.md).
 
-Kliknij przycisk **Pobierz instalatora bramy** na liście kroków w górnej części strony aby przejść do strony dotyczącej **bram**.
+Kliknij przycisk **Pobierz instalatora bramy** na liście kroków w górnej części strony, aby przejść do strony dotyczącej **bram**.
 
 ![Ustawienia konfiguracji bramy usługi ATA](media/ATA_1.7-welcome-download-gateway.PNG)
 
