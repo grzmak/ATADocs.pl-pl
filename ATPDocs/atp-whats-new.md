@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2018
+ms.date: 10/07/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,16 +13,36 @@ ms.technology: ''
 ms.assetid: 7d0f33db-2513-4146-a395-290e001f4199
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: bbc0717d6224b3f4173d697f0c751f6bdd1bb062
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: dc008506e7b19a8d6eafd455a4414b1513608811
+ms.sourcegitcommit: c4978be196e0039c7a5d5887bec4cbc5c01d64f9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783954"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848634"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 # <a name="whats-new-in-azure-atp"></a>What's new in Azure ATP 
+
+## <a name="azure-atp-release-249"></a>Usługa Azure ATP release 2,49
+Wydana 7 października 2018 r.
+-   **Wykrywanie nowych zagrożeń: podejrzane komunikacji DNS** (wersja zapoznawcza)<br>Wykrywanie nowych dodane do ochrony atakami podejrzane komunikacji DNS:
+
+    -   Wykrywanie ułatwia wykrywanie ataków protokołu DNS. W większości organizacji protokołu DNS nie jest monitorowane i rzadko zablokowane przed złośliwymi działaniami. Dzięki temu osoba atakująca na zainfekowanym komputerze nadużywają protokołu DNS. Złośliwy komunikacji za pośrednictwem DNS może służyć do wykradanie danych, poleceń i kontroli i/lub uniknięcia ograniczenia sieci firmowej.
+
+- **Nowe funkcje** <br>Narzędzie Azure ATP **roli użytkownika** rozszerzona o następujące możliwości:
+  - Zmiana stanu alertów zabezpieczeń (Otwórz ponownie, Zamknij, Wyklucz pomijanie)
+  - Ustawianie zaplanowanych raportów
+  - Ustawianie tagów jednostki (liter i wystawionego jako przynęta)
+  - Wyłączenie wykrywania
+  - Zmień język
+  - Ustawianie powiadomień pocztą e-mail lub syslog
+
+
+- Tymczasowy wzrost liczby **zapytań usług Rekonesans przy użyciu katalogu** alertów zabezpieczeń, które wystąpiły na 2018-09/16 został zidentyfikowania i rozwiązania. 
+
+- Ta wersja zawiera również poprawki i ulepszenia w przypadku wielu problemów.
+
 
 ## <a name="azure-atp-release-248"></a>Usługa Azure ATP release 2,48
 Wydana 16 września 2018 r.

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: af2c7302f97ef8e2d9fca5862246a1b7507c0433
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: f0c9dd0572d0b522346d88c09225e426ca412bfb
+ms.sourcegitcommit: c4978be196e0039c7a5d5887bec4cbc5c01d64f9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783937"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848685"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -453,6 +453,24 @@ W tym wykrywanie alert jest wyzwalany, gdy wystąpiło wiele błędów uwierzyte
 **Korygowanie**
 
 [Złożone, długie hasła](https://docs.microsoft.com/windows/device-security/security-policy-settings/password-policy) zapewnić wymagany pierwszy poziom zabezpieczeń przed atakami siłowymi.
+
+## <a name="suspicious-communication-over-dns---preview"></a>Podejrzane komunikacji za pośrednictwem DNS — wersja zapoznawcza
+
+**Opis**
+
+Protokół DNS w większości organizacji zwykle nie jest monitorowane i rzadko zablokowane przed złośliwymi działaniami. Dzięki temu osoba atakująca na zainfekowanym komputerze nadużywają protokołu DNS. Złośliwy komunikacji za pośrednictwem DNS może służyć do wykradanie danych, poleceń i kontroli i/lub uniknięcia ograniczenia sieci firmowej.
+
+**Badanie**
+> [!NOTE]
+> *Podejrzane komunikacji za pośrednictwem DNS* alerty zabezpieczeń listy podejrzanych domen. Nowe domenach lub domenach ostatnio dodane, które nie są jeszcze znane lub rozpoznawane przez narzędzia Azure ATP, ale nie są znany lub w ramach danej organizacji może zostać zamknięty. 
+
+
+1.  Niektóre firmy uzasadnione używają DNS do regularnego komunikacji. Sprawdź, czy domena zarejestrowane kwerendy należy do zaufanego źródła, takich jak dostawcy programu antywirusowego.
+3.   Jeśli domena zarejestrowane zapytanie nie jest zaufany, zidentyfikuj proces tworzenia żądania na maszynie źródłowej. Użyj [Monitor procesu](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) do pomocy dotyczącej tego zadania.
+4.  Określa, kiedy rozpocząć podejrzanego działania? Zostały dowolne nowe programy wdrożony lub zainstalowany (AV?) w organizacji Czy istnieją inne alerty z tym samym czasie?
+5.  Kliknij komputer źródłowy dostępu do swojej strony profilu. Sprawdź, co się stało z momentu zapytanie DNS, wyszukiwanie nietypowych działań, takich jak który zostało zarejestrowane w i które zostały użyte zasoby. Jeśli integracja usługi Windows Defender ATP jest już włączony, kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. Za pomocą usługi Windows Defender ATP możesz zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
+
+**Korygowanie** Jeśli domeny zarejestrowane zapytanie nie jest zaufany po badania, firma Microsoft zaleca blokuje domenę docelową, aby uniknąć całej komunikacji w przyszłości. 
 
 ## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack---new"></a>Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow) — nowe
 

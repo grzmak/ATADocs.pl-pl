@@ -1,6 +1,6 @@
 ---
 title: Pomoc techniczna platformy Azure lasu odpowiednie zaawansowanej ochrony przed zagrożeniami | Dokumentacja firmy Microsoft
-description: Jak skonfigurować obsługę wielu lasów usługi Active Directory w usłudze Azure ATP.
+description: Obsługa wielu lasów usługi Active Directory w usłudze Azure ATP.
 keywords: ''
 author: mlottner
 ms.author: mlottner
@@ -13,21 +13,19 @@ ms.technology: ''
 ms.assetid: effca0f2-fcae-4fca-92c1-c37306decf84
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 84ec02cb1aa999d70808f6eaf76bb28cba9d2110
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 40bd468226f3c8db17663d02aed561b77cc2a128
+ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783359"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848494"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
-# <a name="install-azure-atp---step-9"></a>Zainstaluj narzędzie Azure ATP - kroku 9
+# <a name="azure-advanced-threat-protection-multi-forest-support"></a>Pomoc techniczna platformy Azure obejmującego wiele lasów zaawansowanej ochrony przed zagrożeniami
 
-> [!div class="step-by-step"]
-> [«Krok 8](install-atp-step8-samr.md)
 
-## <a name="step-9--set-up-azure-advanced-threat-protection-multi-forest-support"></a>Krok 9.  Konfigurowanie obsługi wielu lasów usługi Azure Advanced Threat Protection
+## <a name="multi-forest-support-set-up"></a>Obsługa wielu lasów, konfigurowanie 
 
 Narzędzie Azure ATP może obsługiwać organizacji z wieloma lasami, które daje możliwość i łatwo monitorować działania użytkowników profilów między lasami — z jedną taflę szkła. 
 
@@ -81,9 +79,6 @@ W przypadku narzędzia Azure ATP mapuje lasów usługi, używa procesu, który m
 ## <a name="known-limitations"></a>Znane ograniczenia
 -   Logowania interakcyjnego, wykonywanych przez użytkowników w jednym lesie na dostęp do zasobów w innym lesie nie są wyświetlane na pulpicie nawigacyjnym usługi Azure ATP.
 
-
-> [!div class="step-by-step"]
-> [«Krok 8](install-atp-step8-samr.md)
 
 
 ## <a name="see-also"></a>Zobacz też

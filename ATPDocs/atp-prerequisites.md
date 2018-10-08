@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/4/2018
+ms.date: 10/7/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 127d7ad5717837c8723c71de167e04f2fdd7ddde
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: e3cf97c4bd95a1fefc0aef29009f644cd5ef907d
+ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783903"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848545"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -33,10 +33,9 @@ W tym artykule opisano wymagania dotyczące pomyślnego wdrożenia usługi Azure
 
 Narzędzie Azure ATP składa się z narzędzia Azure ATP usługę w chmurze, która składa się z portalu usługi Azure ATP, czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure i/lub czujnik autonomiczny narzędzia Azure ATP. Aby uzyskać więcej informacji na temat poszczególnych składników usługi Azure ATP zobacz [architektury usługi Azure ATP](atp-architecture.md).
 
-Każde wystąpienie usługi Azure ATP obsługuje wiele granica lasu usługi Active Directory i lasu funkcjonalności poziomu (FFL) systemu Windows 2003 lub nowszym. 
+Aby utworzyć wystąpienie usługi Azure ATP, konieczne będzie dzierżawę usługi AAD z co najmniej jednego administratora globalnego/zabezpieczeń. Każde wystąpienie usługi Azure ATP obsługuje wiele granica lasu usługi Active Directory i lasu funkcjonalności poziomu (FFL) systemu Windows 2003 lub nowszym. 
 
 Ten przewodnik wymagań wstępnych jest podzielona na sekcje, aby upewnić się, że masz wszystko, czego potrzebujesz do pomyślnego wdrożenia usługi Azure ATP. 
-
 
 [Przed rozpoczęciem](#before-you-start): Wyświetla informacje, aby zebrać i konta i jednostki sieciowe, konieczne będzie istnieć przed rozpoczęciem instalacji.
 
@@ -49,6 +48,8 @@ Ten przewodnik wymagań wstępnych jest podzielona na sekcje, aby upewnić się,
 ## <a name="before-you-start"></a>Przed rozpoczęciem
 W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi Azure ATP.
 
+- Uzyskać licencję dla pakietu Enterprise Mobility + Security (EMS E5) 5 bezpośrednio za pośrednictwem [portalu usługi Office 365](https://www.microsoft.com/cloud-platform/enterprise-mobility-security-pricing) lub za pomocą modelu licencjonowania Cloud Solution Partner (CSP).  
+
 - Sprawdź, czy zamierzasz zainstalować narzędzia Azure ATP czujników na kontrolerach domeny mają łączność z Internetem do usługi Azure ATP w chmurze. Czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure obsługuje użycia serwera proxy. Aby uzyskać więcej informacji na temat konfiguracji serwera proxy, zobacz [konfigurowania serwera proxy dla usługi Azure ATP](configure-proxy.md).  
 
 -   **Lokalnych** AD konto i hasło użytkownika z dostępem do odczytu do wszystkich obiektów w monitorowanej domeny.
@@ -60,14 +61,14 @@ W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki s
 
 - Jeśli spróbujesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure na maszynie skonfigurowane z kartą zespołu kart interfejsu Sieciowego, wystąpi błąd instalacji. Jeśli chcesz zainstalować czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure na komputerze, który został skonfigurowany z zespołu kart interfejsu Sieciowego, zobacz [czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure problem tworzenia zespołu kart interfejsu Sieciowego](troubleshooting-atp-known-issues.md#nic-teaming).
 
--    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Dzięki temu usługi Azure ATP to wykrywanie zbiorczego usuwania obiektów w domenie. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
+-    Zalecane: Użytkownik powinien mieć uprawnienia tylko do odczytu kontenera usuniętych obiektów. Dzięki temu usługi Azure ATP wykrywania usunięcia użytkownika z usługi Active Directory. Aby uzyskać informacje o konfigurowaniu uprawnień tylko do odczytu kontenera usuniętych obiektów, zobacz **Zmienianie uprawnień do kontenera usuniętych obiektów** sekcji [wyświetlanie lub ustawianie uprawnień do obiektu katalogu](https://technet.microsoft.com/library/cc816824%28v=ws.10%29.aspx) artykułu.
 
 -   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowane jako użytkownika wystawionego jako przynęta Azure ATP. Aby uzyskać więcej informacji, zobacz [Konfigurowanie wykluczeń i użytkownika wystawionego jako przynęta](install-atp-step7.md).
 
 -   Opcjonalnie: Wdrażając czujnik autonomiczny, należy go przekazywać Windows zdarzeń 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045 zure zaawansowanej ochrony przed zagrożeniami w celu dodatkowego zwiększenia Azure ATP Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup, tokeny wystawione jako przynęta wykrywanie i tworzenie złośliwe usługi. Azure czujnika zaawansowanej ochrony przed zagrożeniami, które automatycznie otrzymuje tych zdarzeń. W przypadku narzędzia Azure ATP czujnik autonomiczny te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
 
-## <a name="azure-atp-workspace-management-portal-and-workspace-portal-requirements"></a>Wymagania platformy Azure ATP obszar roboczy zarządzania portalu i w obszarze roboczym portalu
-Dostęp do portalu usługi Azure ATP obszaru roboczego i portalu zarządzania obszarami roboczymi usługi Azure ATP jest za pośrednictwem przeglądarki, obsługuje następujące przeglądarki i ustawienia:
+## <a name="azure-atp-portal-requirements"></a>Wymagania portalu usługi Azure ATP
+Dostęp do portalu usługi Azure ATP jest za pośrednictwem przeglądarki, obsługuje następujące przeglądarki i ustawienia:
 -   Microsoft Edge
 -   Internet Explorer 10 i nowsze
 -   Google Chrome 4.0 i nowsze wersje

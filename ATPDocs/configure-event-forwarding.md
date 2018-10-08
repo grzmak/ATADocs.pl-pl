@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2018
+ms.date: 10/07/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 3547519f-8d9c-40a9-8f0e-c7ba21081203
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 43582a95ac1619aaa9ef85b0c662481184a1b98b
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 90de9f0f02fa1b87fd2d741349a1d81e089b6fb1
+ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783376"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848528"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -45,7 +45,7 @@ W tym scenariuszu założono, że czujnik autonomiczny narzędzia Azure ATP jest
 
 1.  Otwórz narzędzie Użytkownicy usługi Active Directory i komputerów, przejdź do **BuiltIn** folder i kliknij dwukrotnie plik **Czytelnicy dzienników zdarzeń**. 
 2.  Wybierz **członków**.
-4.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
+3.  Jeśli pozycji **Usługa sieciowa** nie ma na liście, kliknij przycisk **Dodaj** i wpisz **Usługa sieciowa** w polu **Wprowadź nazwy obiektów do wybrania**. Następnie kliknij opcję **Sprawdź nazwy** i kliknij dwukrotnie przycisk **OK**. 
 
 Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, przeprowadź ponowny rozruch kontrolerów domeny, aby zmiana zaczęła obowiązywać.
 
@@ -63,7 +63,7 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
    
     1.  Wybierz opcję **Włączono**.
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
-    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server=`http://<fqdnATPSensor>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` (na przykład: Server=`http://atpsensor9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
+    3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: * Server =`http://<fqdnATPSensor>:5985/wsman/SubscriptionManager/WEC,Refresh=10*` * (na przykład: Server =`http://atpsensor9.contoso.com:5985/wsman/SubscriptionManager/WEC,Refresh=10`)
     
     ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
     
@@ -81,18 +81,11 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
    3.   Wybierz opcję **Zainicjowane przez komputer źródłowy** i kliknij przycisk **Wybierz grupy komputerów**.
         1.  Kliknij przycisk **Dodaj komputer w domenie**.
         2.  Wprowadź nazwę kontrolera domeny w polu **Wprowadź nazwę obiektu do wybrania**. Kliknij opcję **Sprawdź nazwy** i kliknij przycisk **OK**. 
-       
-        ![Obraz Podglądu zdarzeń](media/wef3%20event%20viewer.png)
-   
-        
         3.  Kliknij przycisk **OK**.
+        ![Obraz podglądu zdarzeń](media/wef3%20event%20viewer.png)     
    4.   Kliknij przycisk **Wybierz zdarzenia**.
-
         1. Kliknij przycisk **Według dzienników** i wybierz opcję **Zabezpieczenia**.
-        2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, podobnie jak w następującym przykładzie:
-
-        ![Obraz przedstawiający filtr kwerendy](media/wef-4-query-filter.png)
-
+        2. W polu **Obejmuje/wyklucza zdarzenie o identyfikatorze** wpisz numer zdarzenia i kliknij przycisk **OK**. Na przykład wpisz 4776, takie jak w następującym przykładzie: ![obraz przedstawiający Filtr kwerendy](media/wef-4-query-filter.png)
    5.   Kliknij prawym przyciskiem myszy utworzoną subskrypcję i wybierz **stan czasu wykonywania** aby zobaczyć, jeśli występują problemy ze stanem. 
    6.   Po kilku minutach Sprawdź, czy zdarzenia ustawione do przekazania są wyświetlane w zdarzeniach przekazanych w czujnik autonomiczny narzędzia Azure ATP.
 

@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 6a9b5273-eb26-414e-9cdd-f64406e24ed8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 839a21dab3962831e4c62dd4c9c2018e81bd7014
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 07c5d67804eb4c74df678e8752a2516af5c52cc7
+ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783699"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848511"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -107,7 +107,7 @@ Jeśli wirtualny kontroler domeny nie może być objęty czujnika zaawansowanej 
 
 Dla kontrolerów domeny do komunikowania się z usługą w chmurze, możesz otworzyć: *. atp.azure.com portu 443 w zapory/serwera proxy. Aby uzyskać instrukcje, jak to zrobić, zobacz [konfigurowania serwera proxy lub zapory, aby umożliwić komunikację za pomocą narzędzia Azure ATP czujników](configure-proxy.md).
 
-### <a name="can-azure-atp-monitor-domain-controllers-virtualized-on-your-iaas-solution"></a>Narzędzia Azure ATP monitorować kontrolery domeny zwirtualizowane w rozwiązaniu IaaS?
+### <a name="can-azure-atp-monitor-domain-controllers-be-virtualized-on-your-iaas-solution"></a>Kontrolery domeny monitora usługi Azure ATP można zwirtualizować w rozwiązaniu IaaS?
 Tak, można użyć czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure do monitorowania kontrolerów domeny, które znajdują się w dowolnym rozwiązaniu IaaS.
 
 ### <a name="can-azure-atp-support-multi-domain-and-multi-forest"></a>Narzędzia Azure ATP może obsługiwać, obejmujące wiele domen i wiele lasów?
