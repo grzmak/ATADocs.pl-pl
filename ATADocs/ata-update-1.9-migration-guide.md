@@ -25,15 +25,15 @@ ms.locfileid: "46133297"
 > [!NOTE] 
 > Jeśli usługa ATA nie jest zainstalowana w Twoim środowisku, Pobierz pełną wersję usługi ATA, która zawiera informacje dotyczące wersji 1.9 i postępuj zgodnie ze standardową procedurą instalacji opisane w [Instalowanie usługi ATA](install-ata-step1.md).
 
-Jeśli masz już usługę ATA w wersji 1.8 wdrożone, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
+Jeśli masz już wdrożoną usługę ATA w wersji 1.8, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
->  Tylko wersji 1.8 usługi ATA (1.8.6645) i usłudze ATA 1.8, aktualizacja 1 (1.8.6765) można zaktualizować usługę ATA do wersji 1.9, jego wcześniejszą wersję usługi ATA nie można bezpośrednio zaktualizować usługę ATA do wersji 1.9.
+>  Tylko wersja 1.8 usługi ATA (1.8.6645) oraz usługa ATA 1.8, aktualizacja 1 (1.8.6765) pozwala na aktualizację do wersji 1.9. Wcześniejszych wersji usługi ATA nie można bezpośrednio zaktualizować do wersji 1.9.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.9:
 
 1.  [Pobierz wersję aktualizacyjną usługi ATA 1.9 z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełną wersję z [Centrum wersji ewaluacyjnych](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
-W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z usługi ATA 1.8. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
+Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
 
 2.  Zaktualizuj centrum usługi ATA
 
@@ -46,7 +46,7 @@ W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z u
 
 1.  Utwórz kopię zapasową bazy danych: (opcjonalnie)
 
-    -   Jeśli Centrum usługi ATA jest uruchomione jako maszyny wirtualnej i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
+    -   Jeśli Centrum usługi ATA jest uruchomione jako maszyna wirtualna i chcesz utworzyć punkt kontrolny, najpierw zamknij maszynę wirtualną.
 
     -   Jeśli centrum usługi ATA jest uruchomione na serwerze fizycznym, zobacz artykuł [Odzyskiwanie po awarii](disaster-recovery.md), aby uzyskać informacje o tworzeniu kopii zapasowej bazy danych.
 
@@ -54,12 +54,12 @@ W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z u
 
     -  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-    -  Jeśli nie zostały włączone aktualizacje automatyczne w wersji 1.8, pojawia się monit o skonfigurowanie usługi ATA do używania usługi Microsoft Update, aby usługa ATA aktualnych.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
+    -  Jeśli nie zostały włączone aktualizacje automatyczne w wersji 1.8, pojawia się monit o skonfigurowanie usługi ATA do używania usługi Microsoft Update w celu aktualizacji usługi ATA.  Na stronie Microsoft Update wybierz pozycję **Użyj usługi Microsoft Update, gdy wyszukuję aktualizacje (zalecane)**.
     ![Zachowaj aktualny obraz usługi ATA](media/ata_ms_update.png)
      
      To pozwala dopasować ustawienia Windows w celu włączenia aktualizacji usługi ATA. 
     
-    -  **Częściowe dane migracji** ekran informuje o tym, że ruchu sieciowego przechwyconego wcześniej, zdarzenia, jednostek i wykrywanie powiązane dane zostaną usunięte. Wszystkie wykrycia działać natychmiast z wyjątkiem wykrywania nietypowych zachowań, modyfikacja grupy nietypowe, Rekonesans przy użyciu usług katalogu (SAM-R) i wykrycia obniżenia poziomu szyfrowania, które maksymalnie trzy tygodnie po utworzeniu pełnego profilu czas wymagany uczenia. 
+    -  Ekran **Częściowe dane migracji** informuje o tym, że dane na temat ruchu sieciowego przechwyconego wcześniej, zdarzeń, jednostek i wykrywania zostaną usunięte. Wszystkie metody wykrywania działają natychmiast z wyjątkiem wykrywania nietypowych zachowań, modyfikacji nietypowych grup, rozpoznania przy użyciu usług katalogu (SAM-R) i wykrycia obniżenia poziomu szyfrowania. Maksymalny czas utworzenia (uczenia) pełnego profilu to trzy tygodnie. 
      
       ![Częściowej migracji usługi ATA](media/partial-migration.png)
 
@@ -69,7 +69,7 @@ W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z u
 
      ![Ekran powodzenia aktualizacji](media/migration-center-success.png)
 
-5.  W **aktualizacje** ekranu, jeśli ustawisz bram usługi ATA do automatycznego aktualizowania są zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **aktualizacji** obok każdej bramy usługi ATA.
+5.  Jeżeli na ekranie **Aktualizacje** ustawiono bramy usługi ATA do automatycznego aktualizowania, to są one zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **Aktualizacja** dla każdej bramy usługi ATA.
   
      ![Obraz przedstawiający zaktualizowane bramy](media/migration-update-gw.png)
 
@@ -78,8 +78,7 @@ W przypadku wersji do migracji pliku może służyć tylko do aktualizowania z u
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
  
 > [!NOTE] 
-> Aby zainstalować nowych bram usługi ATA, przejdź **bram** ekranu, a następnie kliknij przycisk **Pobierz instalatora bramy** uzyskać pakiet instalacyjny bramy usługi ATA 1.9 usług i postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy jako opisane w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
-
+> Aby zainstalować nowe bramy usługi ATA, przejdź do ekranu **Bramy**, a następnie kliknij przycisk **Pobierz instalatora bramy**, żeby uzyskać pakiet instalacyjny bramy usługi ATA 1.9. Następnie postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy opisanymi w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
 
 ## <a name="see-also"></a>Zobacz też
 
