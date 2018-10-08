@@ -32,7 +32,7 @@ ms.locfileid: "47454126"
 
 ## <a name="step-2-provide-a-username-and-password-to-connect-to-your-active-directory-forest"></a>Krok 2. Podaj nazwę użytkownika i hasło, aby nawiązać połączenie z lasem usługi Active Directory
 
-Przy pierwszym otwarciu konsoli ATA, zostanie wyświetlony następujący ekran:
+Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
 
 ![ATA welcome stage 1 (ATA — zapraszamy, etap 1)](media/ATA_1.7-welcome-provide-username.png)
 
