@@ -42,7 +42,7 @@ Przy pierwszym otwarciu konsoli ATA zostanie wyświetlony następujący ekran:
     |---------|------------|
     |**Nazwa użytkownika** (wymagana)|Wprowadź nazwę użytkownika tylko do odczytu, na przykład: **UżytkownikATA**.|
     |**Hasło** (wymagane)|Wprowadź hasło użytkownika tylko do odczytu, na przykład: **Rysik1**.|
-    |**Domena** (wymagana)|Wprowadź domenę użytkownika tylko do odczytu, na przykład: **contoso.com**. **Uwaga:** należy wprowadzić pełną nazwę FQDN domeny, w której znajduje się użytkownik. Na przykład jeśli konto użytkownika znajduje się w domenie corp.contoso.com, należy wprowadzić `corp.contoso.com` not contoso.com|
+    |**Domena** (wymagana)|Wprowadź domenę użytkownika tylko do odczytu, na przykład: **contoso.com**. **Uwaga:** należy wprowadzić pełną nazwę FQDN domeny, w której znajduje się użytkownik. Na przykład jeśli konto użytkownika znajduje się w domenie corp.contoso.com, należy wprowadzić `corp.contoso.com` a nie contoso.com|
 
 2. Możesz kliknąć pozycję **Testuj połączenie**, aby przetestować łączność z domeną i sprawdzić, czy podane poświadczenia umożliwiają uzyskiwanie dostępu. To działa, jeśli Centrum usługi ATA ma łączność z domeną.    
 
