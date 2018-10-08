@@ -28,11 +28,11 @@ ms.locfileid: "46133297"
 Jeśli masz już wdrożoną usługę ATA w wersji 1.8, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
->  Tylko wersja 1.8 usługi ATA (1.8.6645) oraz usługa ATA 1.8, aktualizacja 1 (1.8.6765) pozwala na aktualizacę do wersji 1.9. Wcześniejszych wersji usługi ATA nie można bezpośrednio zaktualizować do wersji 1.9.
+>  Tylko wersja 1.8 usługi ATA (1.8.6645) oraz usługa ATA 1.8, aktualizacja 1 (1.8.6765) pozwala na aktualizację do wersji 1.9. Wcześniejszych wersji usługi ATA nie można bezpośrednio zaktualizować do wersji 1.9.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.9:
 
-1.  [Pobierz wersję aktualizacyjną usługi ATA 1.9 z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełną wersję testową z [Centrum wersji ewaluacyjnych](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
+1.  [Pobierz wersję aktualizacyjną usługi ATA 1.9 z Centrum pobierania](https://www.microsoft.com/download/details.aspx?id=56725) lub pełną wersję z [Centrum wersji ewaluacyjnych](http://www.microsoft.com/evalcenter/evaluate-microsoft-advanced-threat-analytics).<br>
 Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8. W przypadku wersji z centrum wersji ewaluacyjnych ten sam plik instalacyjny (Microsoft ATA Center Setup.exe) jest używany do instalowania nowych wdrożeń usługi ATA i uaktualniania istniejących wdrożeń.
 
 2.  Zaktualizuj centrum usługi ATA
@@ -63,13 +63,13 @@ Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8.
      
       ![Częściowej migracji usługi ATA](media/partial-migration.png)
 
-    -  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj, usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
+    -  Kliknij przycisk **Aktualizuj**. Po kliknięciu przycisku Aktualizuj usługa ATA pozostaje w trybie offline do chwili, gdy procedura aktualizacji zostanie ukończona.
 
 4.  Po pomyślnym ukończeniu aktualizacji centrum usługi ATA kliknij przycisk **Uruchom**, aby otworzyć ekran **Aktualizacja** w konsoli bram usługi ATA.
 
      ![Ekran powodzenia aktualizacji](media/migration-center-success.png)
 
-5.  Jeżeli w ekranie **aktualizacje** ustawisz bramy usługi ATA do automatycznego aktualizowania, to są one zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **aktualizacja** dla każdej bramy usługi ATA.
+5.  Jeżeli na ekranie **Aktualizacje** ustawiono bramy usługi ATA do automatycznego aktualizowania, to są one zaktualizowane na tym etapie, jeśli nie, kliknij przycisk **Aktualizacja** dla każdej bramy usługi ATA.
   
      ![Obraz przedstawiający zaktualizowane bramy](media/migration-update-gw.png)
 
@@ -78,8 +78,7 @@ Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8.
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
  
 > [!NOTE] 
-> Aby zainstalować nowe bramy usługi ATA, przejdź ekranu **bramy**, a następnie kliknij przycisk **Pobierz instalatora bramy** żeby uzyskać pakiet instalacyjny bramy usługi ATA 1.9. Następnie postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy opisanymi w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
-
+> Aby zainstalować nowe bramy usługi ATA, przejdź do ekranu **Bramy**, a następnie kliknij przycisk **Pobierz instalatora bramy**, żeby uzyskać pakiet instalacyjny bramy usługi ATA 1.9. Następnie postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy opisanymi w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
 
 ## <a name="see-also"></a>Zobacz też
 
