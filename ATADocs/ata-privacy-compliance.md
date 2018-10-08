@@ -28,23 +28,23 @@ ms.locfileid: "47403237"
 
 ## <a name="searching-for-and-identifying-personal-data"></a>Wyszukiwanie i identyfikowanie danych osobowych 
 
-Wszystkie dane w usłudze ATA, które odnoszą się do indywidualnych osób pochodzą z usługi Active Directory (AD) i są lokalnie replikowane do usługi ATA. Podstawowym repozytorium danych osobowych jest usługa Active Directory. 
+Wszystkie dane w usłudze ATA, które odnoszą się do indywidualnych osób, pochodzą z usługi Active Directory (AD) i są lokalnie replikowane do usługi ATA. Podstawowym repozytorium danych osobowych jest usługa Active Directory. 
 
-Centrum usługi ATA umożliwia wyświetlanie na pasku wyszukiwania danych osobowych, które są przechowywane w bazie danych. Użytkownicy mogą wyszukiwać dane dla określonego użytkownika lub urządzenia. Kliknięcie jednostki spowoduje wyświetlenie danych użytkownika lub strony profilu urządzenia. Profil zapewnia kompleksową informację o użytkowniku, jego historię oraz działania związane z siecią i pochodzące z usługi AD. 
+Centrum usługi ATA umożliwia wyświetlanie danych osobowych, które są przechowywane w bazie danych, przy użyciu paska wyszukiwania. Użytkownicy mogą wyszukiwać dane dla określonego użytkownika lub urządzenia. Kliknięcie jednostki spowoduje wyświetlenie strony profilu użytkownika lub urządzenia. Profil zapewnia kompleksowe informacje o jednostce, jej historię oraz działania związane z siecią i pochodzące z usługi AD. 
 
 ## <a name="updating-personal-data"></a>Aktualizowanie danych osobowych 
 
-Dane osobowe dotyczące użytkowników i jednostek w usłudze ATA są tworzone na podstawie danych użytkownika w AD w twojej organizacji. W efekcie wszelkie zmiany wprowadzone do profilu użytkownika w AD są odzwierciedlane w usłudze ATA. 
+Dane osobowe dotyczące użytkowników i jednostek w usłudze ATA są tworzone na podstawie obiektu użytkownika w AD w Twojej organizacji. W efekcie wszelkie zmiany wprowadzone do profilu użytkownika w AD są odzwierciedlane w usłudze ATA. 
 
 ## <a name="deleting-personal-data"></a>Usuwanie danych osobowych 
 
-Mimo że dane w usłudze ATA są replikowane i zawsze aktualizowane z usługi AD, to gdy użytkownik zostanie usunięty w AD, jego dane w usłudze ATA są obsługiwane dla potrzeb badania zabezpieczeń. 
+Mimo że dane w usłudze ATA są replikowane i zawsze aktualizowane z usługi AD, to gdy jednostka zostanie usunięta w AD, jej dane w usłudze ATA są obsługiwane na potrzeby badania zabezpieczeń. 
 
 Aby trwale usunąć dane związane z bazy danych usługi ATA, wykonaj poniższą procedurę: 
 
 1. [Pobierz](https://aka.ms/ata-gdpr-script) skrypt bazy danych MongoDB (gdpr.js).  
 
-2. Skopiuj skrypt do folderu usługi ATA (znajdujący się w `"C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB"` i uruchom następujące polecenie z poziomu maszyny Centrum Usługi ATA: 
+2. Skopiuj skrypt do folderu usługi ATA (znajdujący się w `"C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB` i uruchom następujące polecenie z poziomu maszyny Centrum usługi ATA: 
 
 Użyj skryptu bazy danych RODO ATA do usuwania jednostek i usuń dane o aktywności jednostki, zgodnie z opisem w poniższych sekcjach.
 
@@ -66,7 +66,7 @@ Przykład:
 
 `"C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\mongo.exe" ATA --eval "var params='deleteOldData,30';" GDPR.js`
 
-Ten skrypt powoduje usunięcie wszystkich danych, dla wszystkich jednostek działań i alertów zabezpieczeń z bazy danych, które są starsze niż 30 dni. Zostanie zachowane tylko ostatnich 30 dni danych.
+Ten skrypt powoduje usunięcie z bazy danych wszystkich danych dotyczących wszystkich działań jednostek i alertów zabezpieczeń, które są starsze niż 30 dni. Zostanie zachowane tylko ostatnich 30 dni danych.
 
 ## <a name="exporting-personal-data"></a>Eksportowanie danych osobowych 
 
@@ -88,4 +88,4 @@ Aby wyłączyć zbieranie danych:
 
 ## <a name="additional-resources"></a>Dodatkowe zasoby
 
-- Aby uzyskać informacji na temat usługi ATA, zaufania i zgodności, zobacz [portal zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witryny Microsoft 365 Enterprise RODO zgodności](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
+- Aby uzyskać informacje na temat zaufania i zgodności usługi ATA, zobacz [portal zaufania usługi](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) i [witrynę zgodności usługi Microsoft 365 Enterprise z RODO](https://docs.microsoft.com/microsoft-365/compliance/compliance-solutions-overview).
