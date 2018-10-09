@@ -64,7 +64,7 @@ Po dodaniu **Usługa sieciowa** do **Czytelnicy dzienników zdarzeń** grupie, p
     2.  W obszarze **opcje**, kliknij przycisk **Pokaż**.
     3.  W obszarze **menedżerowie subskrypcji**, wprowadź następujące wartości i kliknij przycisk **OK**: *Server = http: / /<fqdnATAGateway>: 5985/wsman/SubscriptionManager/WEC, Refresh = 10* 
     
-        *(Na przykład: Server =http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)*
+        *(Na przykład: Server = http://atagateway9.contoso.com:5985/wsman/SubscriptionManager/WEC, Odśwież = 10)*
  
     ![Obraz konfigurowania subskrypcji docelowej](media/wef%202%20config%20target%20sub%20manager.png)
    
