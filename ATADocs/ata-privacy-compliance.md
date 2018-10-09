@@ -66,7 +66,7 @@ Przykład:
 
 `"C:\Program Files\Microsoft Advanced Threat Analytics\Center\MongoDB\bin\mongo.exe" ATA --eval "var params='deleteOldData,30';" GDPR.js`
 
-Ten skrypt powoduje usunięcie z bazy danych wszystkich danych dotyczących wszystkich działań jednostek i alertów zabezpieczeń, które są starsze niż 30 dni. Zostanie zachowane tylko ostatnich 30 dni danych.
+Ten skrypt powoduje usunięcie  z bazy danych wszystkich danych dotyczących wszystkich działań jednostek i alertów zabezpieczeń, które są starsze niż 30 dni. Zostanie zachowane tylko ostatnich 30 dni danych.
 
 ## <a name="exporting-personal-data"></a>Eksportowanie danych osobowych 
 

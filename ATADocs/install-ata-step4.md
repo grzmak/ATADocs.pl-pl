@@ -50,7 +50,7 @@ Na serwerze bramy usługi ATA wykonaj następujące kroki.
 
 3.  Na stronie **Zapraszamy** wybierz swój język i kliknij przycisk **Dalej**.
 
-4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest kontrolerem domeny, instalowana jest uproszczona brama usługi ATA. Jeżeli jest to serwer dedykowany, instalowana jest brama usługi ATA. 
+4.  Kreator instalacji automatycznie sprawdza, czy serwer jest kontrolerem domeny czy serwerem dedykowanym. Jeśli jest kontrolerem domeny, uproszczonej bramy usługi ATA jest zainstalowany, jeśli jest dedykowany serwer, jest zainstalowana brama usługi ATA. 
     
     Przykładowo, w przypadku bramy usługi ATA wyświetlany jest następujący ekran z informacją, że brama usługi ATA zostanie zainstalowana na dedykowanym serwerze:
     

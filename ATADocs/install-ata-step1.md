@@ -31,7 +31,7 @@ ms.locfileid: "47454160"
 Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.9. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA do wersji 1.9](ata-update-1.9-migration-guide.md).
 
 > [!IMPORTANT] 
-> Jeśli używasz systemu Windows 2012 R2, możesz zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji. W przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i będzie wymagać ponownego uruchomienia w trakcie instalacji usługi ATA.
+> Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia instalacji usługi ATA.
 
 ## <a name="step-1-download-and-install-the-ata-center"></a>Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.
@@ -51,7 +51,6 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 > Pamiętaj, aby uruchomić plik instalacyjny z dysku lokalnego, a nie z zainstalowanego pliku ISO. Pozwoli to na uniknięcie problemów w przypadku, gdy w ramach instalacji jest wymagany ponowny rozruch.   
 
 4.  Jeśli nie zainstalowano programu Microsoft .Net Framework, po rozpoczęciu instalacji otrzymasz monit aby go zainstalować. Po zakończeniu instalacji platformy .Net Framework może pojawić się monit o ponowne uruchomienie.
-
 5.  Na stronie **Zapraszamy** wybierz język do zastosowania na ekranach instalacji usługi ATA i kliknij przycisk **Dalej**.
 
 6.  Przeczytaj postanowienia licencyjne dotyczące oprogramowania firmy Microsoft, a jeśli akceptujesz te warunki, kliknij pole wyboru, a następnie kliknij przycisk **Dalej**.
@@ -86,7 +85,6 @@ Na serwerze centrum usługi ATA wykonaj następujące kroki.
 
 11.  Po zakończeniu instalacji kliknij przycisk **Uruchom**, aby otworzyć konsolę usługi ATA i zakończyć instalację na stronie **Konfiguracja**.
 W tym momencie zostanie automatycznie wyświetlona strona **Ustawienia ogólne**, na której można kontynuować konfigurację i wdrażanie bram usługi ATA.
-Ponieważ logujesz się do witryny przy użyciu adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem, jest to normalne zachowanie i można kliknąć przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
 Ponieważ logujesz się do witryny przy użyciu adresu IP, zostanie wyświetlone ostrzeżenie związane z certyfikatem, jest to normalne zachowanie i można kliknąć przycisk **Kontynuuj przeglądanie tej witryny sieci Web**.
 
 ### <a name="validate-installation"></a>Weryfikowanie instalacji
