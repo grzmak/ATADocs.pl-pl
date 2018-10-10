@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2017
+ms.date: 10/09/2017
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 24eca4c6-c949-42ea-97b9-41ef0fb611f1
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: e15884d46227c9dce32ee48f30d546eab6868116
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 23d92b207c9bcfeb38afa67bdd5e4911b1a16aa4
+ms.sourcegitcommit: 02a4d7a0d44817da8e40580c5fe97f8839a7941f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783393"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48876583"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -46,7 +46,7 @@ Aby śledzić swoje postępy wdrażania, Monitoruj dzienniki Instalatora usługi
 ## <a name="azure-atp-sensor-silent-installation"></a>Usługa Azure instalacji dyskretnej czujnika zaawansowanej ochrony przed zagrożeniami
 
 > [!NOTE]
-> Wdrażając dyskretnie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure za pomocą programu System Center Configuration Manager lub innym systemem wdrażania oprogramowania, zalecane jest tworzenie dwa pakiety wdrażania:</br>-Net Framework 4.7 tym ponowny rozruch kontrolera domeny</br>— Platforma azure czujnika zaawansowanej ochrony przed zagrożeniami. </br>Wprowadź pakietu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure zależy od wdrożenia programu .net Framework wdrożenia pakietu. </br>Pobierz [.Net Framework 4.7 wdrożenie w trybie offline pakietu](https://www.microsoft.com/download/details.aspx?id=49982). 
+> Wdrażając dyskretnie czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure za pomocą programu System Center Configuration Manager lub innym systemem wdrażania oprogramowania, zalecane jest tworzenie dwa pakiety wdrażania:</br>-Net Framework 4.7 tym ponowny rozruch kontrolera domeny</br>— Platforma azure czujnika zaawansowanej ochrony przed zagrożeniami. </br>Wprowadź pakietu czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure zależy od wdrożenia programu .net Framework wdrożenia pakietu. </br>Pobierz [.Net Framework 4.7 wdrożenie w trybie offline pakietu](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows). 
 
 
 Użyj następującego polecenia do wykonania w pełni dyskretnej instalacji czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure:

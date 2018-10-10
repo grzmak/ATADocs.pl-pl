@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2018
+ms.date: 10/09/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: f0c9dd0572d0b522346d88c09225e426ca412bfb
-ms.sourcegitcommit: c4978be196e0039c7a5d5887bec4cbc5c01d64f9
+ms.openlocfilehash: 5151d2ccad994fabfa8bda224a8e5197abe1e01d
+ms.sourcegitcommit: 02a4d7a0d44817da8e40580c5fe97f8839a7941f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848685"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48876549"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -36,30 +36,6 @@ Następujące odpowiednie badania wszystkie alerty zabezpieczeń usługi Azure A
 Aby uzyskać więcej informacji na temat pracy z alertami zabezpieczeń usługi Azure ATP, zobacz [Praca z alertami zabezpieczeń](working-with-suspicious-activities.md).
 
 
-## <a name="abnormal-sensitive-group-modification"></a>Nietypowa modyfikacja grupy poufnej
-
-
-**Opis**
-
-Osoby atakujące dodać użytkowników do grup o wysokim poziomie uprawnień. To zrobią, aby uzyskać dostęp do większej ilości zasobów i uzyskanie stałego dostępu. Ta metoda wykrywania polega na profilowaniu działania modyfikacja grupy użytkowników oraz alerty, gdy pojawia się nietypowy dodatku wrażliwych grup. Profilowanie stale odbywa się przez narzędzia Azure ATP. Minimalny okres wywoła alertu jest jeden miesiąc na każdym kontrolerze domeny.
-
-Aby uzyskać pełną definicję wrażliwych grup w usłudze Azure ATP, zobacz [Praca z kontami poufnymi](sensitive-accounts.md).
-
-
-Ta metoda wykrywania polega na [zdarzenia poddawane inspekcji na kontrolerach domeny](configure-event-collection.md).
-Aby upewnić się, że domeny kontrolerów inspekcji wymaganych zdarzeń.
-
-**Badanie**
-
-1. Modyfikacja grupy jest uzasadnione? </br>Modyfikacje uzasadnione grupy, które rzadko występują i nie zostały rozpoznane jako "normal", może spowodować alertów, co mogłoby być uważane za niegroźnie prawdziwie dodatni.
-
-2. Jeśli dodano obiekt był konto użytkownika, sprawdź akcje, które konto użytkownika miało po ich dodaniu do grupy administratorów. Przejdź do strony użytkownika narzędzia Azure ATP, aby uzyskać dodatkowy kontekst. Pojawili się tam inne podejrzanych działań skojarzonych z kontem, przed lub po dodaniu miała miejsce? Pobierz **modyfikacji wrażliwych grup** raportu, aby zobaczyć, jakie były inne zmiany dokonane i przez kogo, w tym samym okresie czasu.
-
-**Korygowanie**
-
-Zminimalizowanie liczby użytkowników, które mają uprawnienia do modyfikowania grup poufnych.
-
-Konfigurowanie [Privileged Access Management dla usługi Active Directory](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) jeśli ma to zastosowanie.
 
 
 ## <a name="brute-force-attack-using-ldap-simple-bind"></a>Atak siłowy przy użyciu prostego powiązania LDAP
@@ -406,7 +382,7 @@ Wykrywanie alert zostanie wywołany podczas wyliczania sesji SMB jest wykonywane
 
 Użyj [narzędzia Net zaprzestanie](https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b) wzmacniania zabezpieczeń środowiska na atak.
 
-## <a name="remote-execution-attempt"></a>Próba zdalnego wykonania
+## <a name="remote-code-execution-attempt"></a>Próba wykonania zdalnego kodu
 
 **Opis**
 
@@ -472,7 +448,7 @@ Protokół DNS w większości organizacji zwykle nie jest monitorowane i rzadko 
 
 **Korygowanie** Jeśli domeny zarejestrowane zapytanie nie jest zaufany po badania, firma Microsoft zaleca blokuje domenę docelową, aby uniknąć całej komunikacji w przyszłości. 
 
-## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack---new"></a>Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow) — nowe
+## <a name="suspicious-domain-controller-promotion-potential-dcshadow-attack"></a>Podwyższanie poziomu kontrolera domeny podejrzane (potencjalny atak DCShadow)
 
 **Opis**
 
@@ -510,8 +486,33 @@ Możesz wykorzystać [skaner list ACL usługi AD](https://blogs.technet.microsof
 > [!NOTE]
 > Wykrywanie podwyższania poziomu (potencjalny atak DCShadow) kontrolera domeny podejrzane są obsługiwane przez tylko czujników zaawansowanej ochrony przed zagrożeniami. 
 
+## <a name="suspicious-modification-of-sensitive-groups"></a>Podejrzane modyfikacja wrażliwych grup
 
-## <a name="suspicious-replication-request-potential-dcshadow-attack---new"></a>Podejrzana replikacja żądania (potencjalny atak DCShadow) — nowe
+**Opis**
+
+Osoby atakujące dodać użytkowników do grup o wysokim poziomie uprawnień. To zrobią, aby uzyskać dostęp do większej ilości zasobów i uzyskanie stałego dostępu. Ta metoda wykrywania polega na profilowaniu działania modyfikacja grupy użytkowników oraz alerty, gdy pojawia się nietypowy dodatku wrażliwych grup. Profilowanie stale odbywa się przez narzędzia Azure ATP. Minimalny okres wywoła alertu jest jeden miesiąc na każdym kontrolerze domeny.
+
+Aby uzyskać pełną definicję wrażliwych grup w usłudze Azure ATP, zobacz [Praca z kontami poufnymi](sensitive-accounts.md).
+
+
+Ta metoda wykrywania polega na [zdarzenia poddawane inspekcji na kontrolerach domeny](configure-event-collection.md).
+Aby upewnić się, że domeny kontrolerów inspekcji wymaganych zdarzeń.
+
+**Badanie**
+
+1. Modyfikacja grupy jest uzasadnione? </br>Modyfikacje uzasadnione grupy, które rzadko występują i nie zostały rozpoznane jako "normal", może spowodować alertów, co mogłoby być uważane za niegroźnie prawdziwie dodatni.
+
+2. Jeśli dodano obiekt był konto użytkownika, sprawdź akcje, które konto użytkownika miało po ich dodaniu do grupy administratorów. Przejdź do strony użytkownika narzędzia Azure ATP, aby uzyskać dodatkowy kontekst. Pojawili się tam inne podejrzanych działań skojarzonych z kontem, przed lub po dodaniu miała miejsce? Pobierz **modyfikacji wrażliwych grup** raportu, aby zobaczyć, jakie były inne zmiany dokonane i przez kogo, w tym samym okresie czasu.
+
+**Korygowanie**
+
+Zminimalizowanie liczby użytkowników, które mają uprawnienia do modyfikowania grup poufnych.
+
+Konfigurowanie [Privileged Access Management dla usługi Active Directory](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) jeśli ma to zastosowanie.
+
+
+
+## <a name="suspicious-replication-request-potential-dcshadow-attack"></a>Podejrzana replikacja żądania (potencjalny atak DCShadow) 
 
 **Opis** 
 
@@ -565,7 +566,7 @@ Podejrzane usługi został utworzony na kontrolerze domeny w Twojej organizacji.
 - Implementowanie mniej uprzywilejowanego dostępu do domeny na maszynach w celu zezwalanie wyłącznie określonym użytkownikom uprawnienia do tworzenia nowych usług.
 
 
-## Podejrzane połączenia sieci VPN — nowe <a name="suspicious-vpn-detection"></a>
+## Podejrzane połączenia sieci VPN <a name="suspicious-vpn-detection"></a>
 
 **Opis**
 
