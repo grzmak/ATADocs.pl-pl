@@ -31,7 +31,7 @@ ms.locfileid: "47454160"
 Ta procedura instalacji zawiera instrukcje dotyczące przeprowadzania świeżej instalacji usługi ATA 1.9. Aby uzyskać informacje na temat aktualizowania istniejącego wdrożenia usługi ATA ze starszej wersji, zobacz [Przewodnik po migracji usługi ATA do wersji 1.9](ata-update-1.9-migration-guide.md).
 
 > [!IMPORTANT] 
-> Jeśli używasz systemu Windows 2012 R2, można zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji, w przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i wymaga ponownego uruchomienia instalacji usługi ATA.
+> Jeśli używasz systemu Windows 2012 R2, możesz zainstalować aktualizację KB2934520 na serwerze Centrum usługi ATA i na serwerach bramy usługi ATA przed rozpoczęciem instalacji. W przeciwnym razie instalacja usługi ATA zainstaluje tę aktualizację i będzie wymagać ponownego uruchomienia w trakcie instalacji usługi ATA.
 
 ## <a name="step-1-download-and-install-the-ata-center"></a>Krok 1. Pobieranie i instalowanie centrum usługi ATA
 Po sprawdzeniu, czy serwer spełnia wymagania, możesz kontynuować instalację centrum usługi ATA.

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/09/2018
+ms.date: 10/10/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 5151d2ccad994fabfa8bda224a8e5197abe1e01d
-ms.sourcegitcommit: 02a4d7a0d44817da8e40580c5fe97f8839a7941f
+ms.openlocfilehash: ca22fc6430556d49a6709be2f46c0c0b8746fa38
+ms.sourcegitcommit: 0c05308c832e4b03ea3945788de39feabfdb5671
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876549"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48914506"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -441,7 +441,7 @@ Protokół DNS w większości organizacji zwykle nie jest monitorowane i rzadko 
 > *Podejrzane komunikacji za pośrednictwem DNS* alerty zabezpieczeń listy podejrzanych domen. Nowe domenach lub domenach ostatnio dodane, które nie są jeszcze znane lub rozpoznawane przez narzędzia Azure ATP, ale nie są znany lub w ramach danej organizacji może zostać zamknięty. 
 
 
-1.  Niektóre firmy uzasadnione używają DNS do regularnego komunikacji. Sprawdź, czy domena zarejestrowane kwerendy należy do zaufanego źródła, takich jak dostawcy programu antywirusowego.
+1.  Niektóre firmy uzasadnione używają DNS do regularnego komunikacji. Sprawdź, czy domena zarejestrowane kwerendy należy do zaufanego źródła, takich jak dostawcy programu antywirusowego. Jeśli domena jest znane i zaufane i zapytania DNS są dozwolone, alert może zostać zamknięty, a domena może być [wykluczone](excluding-entities-from-detections.md) z następnych alertów. 
 3.   Jeśli domena zarejestrowane zapytanie nie jest zaufany, zidentyfikuj proces tworzenia żądania na maszynie źródłowej. Użyj [Monitor procesu](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) do pomocy dotyczącej tego zadania.
 4.  Określa, kiedy rozpocząć podejrzanego działania? Zostały dowolne nowe programy wdrożony lub zainstalowany (AV?) w organizacji Czy istnieją inne alerty z tym samym czasie?
 5.  Kliknij komputer źródłowy dostępu do swojej strony profilu. Sprawdź, co się stało z momentu zapytanie DNS, wyszukiwanie nietypowych działań, takich jak który zostało zarejestrowane w i które zostały użyte zasoby. Jeśli integracja usługi Windows Defender ATP jest już włączony, kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. Za pomocą usługi Windows Defender ATP możesz zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.

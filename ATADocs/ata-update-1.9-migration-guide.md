@@ -28,7 +28,7 @@ ms.locfileid: "46133297"
 Jeśli masz już wdrożoną usługę ATA w wersji 1.8, ta procedura przeprowadzi Cię przez kroki niezbędne do aktualizacji wdrożenia.
 
 > [!NOTE] 
->  Tylko wersji 1.8 usługi ATA (1.8.6645) i usłudze ATA 1.8, aktualizacja 1 (1.8.6765) można zaktualizować usługę ATA do wersji 1.9, jego wcześniejszą wersję usługi ATA nie można bezpośrednio zaktualizować usługę ATA do wersji 1.9.
+>  Tylko wersja 1.8 usługi ATA (1.8.6645) oraz usługa ATA 1.8, aktualizacja 1 (1.8.6765) pozwala na aktualizację do wersji 1.9. Wcześniejszych wersji usługi ATA nie można bezpośrednio zaktualizować do wersji 1.9.
 
 Wykonaj następujące kroki, aby zaktualizować usługę ATA do wersji 1.9:
 
@@ -59,7 +59,7 @@ Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8.
      
      To pozwala dopasować ustawienia Windows w celu włączenia aktualizacji usługi ATA. 
     
-    -  **Częściowe dane migracji** ekran informuje o tym, że ruchu sieciowego przechwyconego wcześniej, zdarzenia, jednostek i wykrywanie powiązane dane zostaną usunięte. Wszystkie wykrycia działać natychmiast z wyjątkiem wykrywania nietypowych zachowań, modyfikacja grupy nietypowe, Rekonesans przy użyciu usług katalogu (SAM-R) i wykrycia obniżenia poziomu szyfrowania, które maksymalnie trzy tygodnie po utworzeniu pełnego profilu czas wymagany uczenia. 
+    -  Ekran **Częściowe dane migracji** informuje o tym, że dane na temat ruchu sieciowego przechwyconego wcześniej, zdarzeń, jednostek i wykrywania zostaną usunięte. Wszystkie metody wykrywania działają natychmiast z wyjątkiem wykrywania nietypowych zachowań, modyfikacji nietypowych grup, rozpoznania przy użyciu usług katalogu (SAM-R) i wykrycia obniżenia poziomu szyfrowania. Maksymalny czas utworzenia (uczenia) pełnego profilu to trzy tygodnie. 
      
       ![Częściowej migracji usługi ATA](media/partial-migration.png)
 
@@ -78,7 +78,7 @@ Pakiet aktualizacyjny może służyć tylko do aktualizowania z usługi ATA 1.8.
 > Aby zapewnić prawidłowe działanie usługi ATA, zaktualizuj wszystkie bramy usługi ATA.
  
 > [!NOTE] 
-> Aby zainstalować nowych bram usługi ATA, przejdź **bram** ekranu, a następnie kliknij przycisk **Pobierz instalatora bramy** uzyskać pakiet instalacyjny bramy usługi ATA 1.9 usług i postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy jako opisane w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
+> Aby zainstalować nowe bramy usługi ATA, przejdź do ekranu **Bramy**, a następnie kliknij przycisk **Pobierz instalatora bramy**, żeby uzyskać pakiet instalacyjny bramy usługi ATA 1.9. Następnie postępuj zgodnie z instrukcjami dotyczącymi instalacji nowej bramy opisanymi w [krok 4. Instalowanie bramy usługi ATA](install-ata-step4.md).
 
 
 ## <a name="see-also"></a>Zobacz też
