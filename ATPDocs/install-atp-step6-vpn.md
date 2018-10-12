@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2018
+ms.date: 10/11/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,29 +13,19 @@ ms.technology: ''
 ms.assetid: 0d9d2a1d-6c76-4909-b6f9-58523df16d4f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 382b0f31cbc24dde3905d99bab7ed8be8feb5cb4
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 9f5caf3ef7c0c986404cfe90a6f8cc40aa9462b4
+ms.sourcegitcommit: 30d874808cfeafd46ee8fbbf34e0bbcb337f6544
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783750"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49089376"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
-
 # <a name="integrate-vpn"></a>Integracja sieci VPN
 
-<<<<<<< Główny usługi Azure Advanced Threat Protection (ATP) umożliwia zbieranie informacji o kontach z rozwiązania VPN. Po skonfigurowaniu strony profilu użytkownika zawiera informacje z połączenia sieci VPN, takie jak adresy IP i lokalizacji, skąd pochodzi połączeń. W procesie badania stanowi uzupełnienie, zapewniając dodatkowe informacje w aktywność użytkowników, a także nowe wykrycie nietypowe połączeń sieci VPN. Wywołanie do rozpoznawania lokalizacji zewnętrzny adres IP jest anonimowy. Nie identyfikatorów osobistych jest wysyłana w tym wywołaniu.
-=======
-> [!div class="step-by-step"]
-> [« Krok 5](install-atp-step5.md)
-> [Krok 7 »](install-atp-step7.md)
-
-## <a name="step-6-integrate-vpn"></a>Krok 6. Integracja sieci VPN
-
 Usługi Azure Advanced Threat Protection (ATP) umożliwia zbieranie informacji o kontach z rozwiązania VPN. Po skonfigurowaniu strony profilu użytkownika zawiera informacje z połączenia sieci VPN, takie jak adresy IP i lokalizacji, skąd pochodzi połączeń. W procesie badania stanowi uzupełnienie, zapewniając dodatkowe informacje w aktywność użytkowników, a także nowe wykrycie nietypowe połączeń sieci VPN. Wywołanie do rozpoznawania lokalizacji zewnętrzny adres IP jest anonimowy. Nie identyfikatorów osobistych jest wysyłana w tym wywołaniu.
->>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
 Narzędzie Azure ATP integruje się z Twoje rozwiązanie sieci VPN przez nasłuchiwanie w przekazywane do usługi Azure ATP czujników zdarzeń ewidencjonowania aktywności usługi RADIUS. Ten mechanizm opiera się na standardowych ewidencjonowanie aktywności usługi RADIUS ([RFC 2866](https://tools.ietf.org/html/rfc2866)), i są obsługiwane w następujących dostawców:
 
@@ -88,12 +78,6 @@ Po ta opcja jest włączona, wszystkie czujniki narzędzia Azure ATP i czujniki 
 
  Po czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure odbiera zdarzenia sieci VPN i wysyła je do usługi Azure ATP w chmurze do przetwarzania, profilu jednostki będą wskazywać distinct dostęp do lokalizacji VPN i działań w profilu będą wskazywać lokalizacji.
 
-<a name="-head"></a><<<<<<< HEAD
-=======
-> [!div class="step-by-step"]
-> [«Krok 6](install-atp-step5.md)
-> [krok 7»](install-atp-step7.md)
->>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
 
 ## <a name="see-also"></a>Zobacz też
