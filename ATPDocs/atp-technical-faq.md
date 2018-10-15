@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 6a9b5273-eb26-414e-9cdd-f64406e24ed8
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 07c5d67804eb4c74df678e8752a2516af5c52cc7
-ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
+ms.openlocfilehash: 13fbc33c1f6aa525382644a48418dceabbb9b652
+ms.sourcegitcommit: 58c75026e5ec4dcab3b0852a41f9f0a0ad6f22eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848511"
+ms.lasthandoff: 10/14/2018
+ms.locfileid: "49315731"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -92,7 +92,7 @@ Każdy kontroler domeny w środowisku powinny być objęte przez zaawansowanej o
 Protokoły sieciowe przy użyciu ruchu szyfrowanego (na przykład LDAPS i IPSEC) nie są odszyfrowywane, ale są analizowane przez czujników.
 
 ### <a name="does-azure-atp-work-with-kerberos-armoring"></a>Narzędzia Azure ATP działa z ochroną protokołu Kerberos?
-Włączanie ochrony protokołu Kerberos, znanej także jako elastyczne Authentication Secure Tunneling (FAST), jest obsługiwana przez zure zaawansowanej ochrony przed zagrożeniami, z wyjątkiem nadmiernego przekazywania wykrywanie wyznaczania wartości skrótu, które nie obsługuje ochrony protokołu Kerberos.
+Włączanie ochrony protokołu Kerberos, znanej także jako elastyczne Authentication Secure Tunneling (FAST), jest obsługiwany przez usługi Azure ATP z wyjątkiem nadmiernego przekazywania wykrywanie wyznaczania wartości skrótu, które nie obsługuje ochrony protokołu Kerberos.
 
 ### <a name="how-do-i-monitor-a-virtual-domain-controller-using-azure-atp"></a>Jak monitorować wirtualnego kontrolera domeny przy użyciu narzędzia Azure ATP?
 Większość wirtualnych kontrolerów domeny może być objętych przez czujnika zaawansowanej ochrony przed zagrożeniami w usłudze Azure, aby ustalić, czy narzędzia Azure ATP czujnik jest odpowiednie dla danego środowiska, zobacz [Planowanie pojemności zaawansowanej ochrony przed zagrożeniami w usłudze Azure](atp-capacity-planning.md).

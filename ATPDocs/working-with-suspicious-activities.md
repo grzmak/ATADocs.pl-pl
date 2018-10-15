@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: a06004bd-9f77-4e8e-a0e5-4727d6651a0f
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: 72ed08a941b5927599aa39b196634ffc21ac6395
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 59bc8cdb995b1f7473efb7c0e601aca50a9ccafe
+ms.sourcegitcommit: 58c75026e5ec4dcab3b0852a41f9f0a0ad6f22eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783818"
+ms.lasthandoff: 10/14/2018
+ms.locfileid: "49315833"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -119,5 +119,5 @@ Aby to zrobić, kliknij przycisk z wielokropkiem w prawym górnym rogu określon
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Praca z portalem obszarów roboczych Zaawansowanej ochrony przed zagrożeniami na platformie Azure](workspace-portal.md)
+- [Praca z portalem usługi Azure ATP](workspace-portal.md)
 - [Skorzystaj z forum usługi Azure ATP](https://aka.ms/azureatpcommunity)

@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/04/2018
+ms.date: 10/14/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,28 +13,17 @@ ms.technology: ''
 ms.assetid: 1ad5e923-9bbd-4f56-839a-b11a9f387d4b
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: a538ce4596da106d11646e27aa65131bb47380d2
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: 9202ba7c2519de0c7cd2eb3103578159dc437e83
+ms.sourcegitcommit: 58c75026e5ec4dcab3b0852a41f9f0a0ad6f22eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48782991"
+ms.lasthandoff: 10/14/2018
+ms.locfileid: "49315748"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
 
-<<<<<<< HEAD
 # <a name="configure-detection-exclusions-and-honeytoken-accounts"></a>Konfiguruj wykluczenia z wykrywania i konta wystawione jako przynęta
-=======
-
-# <a name="install-azure-atp---step-7"></a>Zainstaluj narzędzie Azure ATP — krok 7
-
-> [!div class="step-by-step"]
-> [« Krok 6](install-atp-step6-vpn.md)
-> [Krok 8 »](install-atp-step8-samr.md)
-
-## <a name="step-7-configure-detection-exclusions-and-honeytoken-accounts"></a>Krok 7. Konfiguruj wykluczenia z wykrywania i konta wystawione jako przynęta
->>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 
 Narzędzie Azure ATP umożliwia wyłączenie określonych adresów IP lub użytkowników z liczba wykryć. 
 
@@ -69,14 +58,6 @@ Sprawdź wiersz czasu ataku, aby wyświetlić wykryte podejrzane działania i wy
 Usługa Azure ATP skanowanie w poszukiwaniu podejrzanych działań rozpoczyna się natychmiast. Niektóre funkcje wykrywania, takie jak nietypowe modyfikacji grup, wymagają okresu uczenia i nie są dostępne od razu po wdrożeniu usługi Azure ATP.
 
 
-<a name="-head"></a><<<<<<< HEAD
-=======
-
-> [!div class="step-by-step"]
-> [« Krok 6](install-atp-step6-vpn.md)
-> [Krok 8 »](install-atp-step8-samr.md)
-
->>>>>>> 209d7e7162816a4c9e6e0ec0ff8d02f771e12d04
 ## <a name="see-also"></a>Zobacz też
 - [Narzędzia do określania rozmiaru usługi Azure ATP](http://aka.ms/aatpsizingtool)
 - [Konfigurowanie zbierania zdarzeń](configure-event-collection.md)

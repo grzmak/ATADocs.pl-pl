@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: ca5d1c7b-11a9-4df3-84a5-f53feaf6e561
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: ca22fc6430556d49a6709be2f46c0c0b8746fa38
-ms.sourcegitcommit: 0c05308c832e4b03ea3945788de39feabfdb5671
+ms.openlocfilehash: 3edcde9466ade71afe22a735256f3cb84f88df17
+ms.sourcegitcommit: 58c75026e5ec4dcab3b0852a41f9f0a0ad6f22eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48914506"
+ms.lasthandoff: 10/14/2018
+ms.locfileid: "49315867"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -99,9 +99,9 @@ Najpierw sprawdź opis alertu, aby zobaczyć, z trzech typów wykrywania wymieni
 1.  Szkielet klucza — Usuń złośliwe oprogramowanie. Aby uzyskać więcej informacji, zobacz [analizy złośliwe oprogramowanie Skeleton Key](https://www.virusbulletin.com/virusbulletin/2016/01/paper-digital-bian-lian-face-changing-skeleton-key-malware).
 
 2.  Uwierzytelniania Golden Ticket — postępuj zgodnie z instrukcjami [bilet uwierzytelniania Golden Ticket](#golden-ticket) podejrzanych działań.   
-    Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+    Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
-3.  Overpass--Hash — Jeśli zaangażowane konto nie jest uwzględniana wielkość liter, następnie zresetuj hasło tego konta. Zapobiega to osoba atakująca tworzenia nowych bilety protokołu Kerberos na podstawie skrótu hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/). Zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania z [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+3.  Overpass--Hash — Jeśli zaangażowane konto nie jest uwzględniana wielkość liter, następnie zresetuj hasło tego konta. Zapobiega to osoba atakująca tworzenia nowych bilety protokołu Kerberos na podstawie skrótu hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/). Zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania z [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
 ## <a name="honeytoken-activity"></a>Działanie wystawionego jako przynęta
 
@@ -140,7 +140,7 @@ Skrót użyto z komputera, że wybrany użytkownik jest właścicielem lub regul
 
 1. Jeśli konto zaangażowane nie jest wielkość liter, następnie zresetuj hasło tego konta. Zapobiega to osoba atakująca tworzenia nowych bilety protokołu Kerberos na podstawie skrótu hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną. 
 
-2. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania z [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+2. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania z [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
 ## <a name="identity-theft-using-pass-the-ticket-attack"></a>Kradzież tożsamości za pomocą ataku typu Pass--Ticket
 
@@ -158,7 +158,7 @@ Pass--Ticket to technika ruchu poprzecznego, w którym osoby atakujące dokonuj�
 
 1. Jeśli konto zaangażowane nie jest wielkość liter, następnie zresetuj hasło tego konta. Zapobiega to osoba atakująca tworzenia nowych bilety protokołu Kerberos na podstawie skrótu hasła, mimo że nadal można używać istniejących biletów, dopóki nie wygasną.  
 
-2. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania w [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+2. Jeśli jest kontem wrażliwym, należy rozważyć resetowania konta krbtgt w DOMENIE, dwa razy, tak jak podejrzane działanie biletu uwierzytelniania Golden Ticket. Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Zobacz wskazówki zawarte w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/), zobacz też przy użyciu [resetowanie haseł/kluczy narzędzie konta krbtgt w DOMENIE](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51).  Ponieważ jest to technika ruchu poprzecznego, stosuj najlepsze rozwiązania w [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
 ## Bilet uwierzytelniania golden protokołu Kerberos<a name="golden-ticket"></a>
 
@@ -195,7 +195,7 @@ Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Wi
 **Korygowanie**
 
 
-Zmień hasło biletu udzielania biletu protokołu Kerberos (KRBTGT) dwa razy, zgodnie z zaleceniami w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)przy użyciu [resetowania haseł kont KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+Zmień hasło biletu udzielania biletu protokołu Kerberos (KRBTGT) dwa razy, zgodnie z zaleceniami w [KRBTGT konta hasła resetowania skrypty teraz dostępna dla klientów](https://blogs.microsoft.com/microsoftsecure/2015/02/11/krbtgt-account-password-reset-scripts-now-available-for-customers/)przy użyciu [resetowania haseł kont KRBTGT/kluczy Narzędzie](https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51). Resetowanie konta KRBTGT dwa razy powoduje unieważnienie wszystkich protokołu Kerberos, bilety w tej domenie, dlatego należy planować przedtem. Implementuje są również, tworząc bilet uwierzytelniania Golden Ticket wymagają uprawnień administratora domeny, dlatego [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
 
 
@@ -217,7 +217,7 @@ W tym wykrywanie alert jest wyzwalany, gdy DPAPI służy do pobierania kopii zap
 
 **Korygowanie**
 
-Aby korzystać z interfejsu DPAPI, osoba atakująca potrzebuje uprawnienia administratora domeny. Implementowanie [przekazać zalecenia wyznaczania wartości skrótu](http://aka.ms/PtH).
+Aby korzystać z interfejsu DPAPI, osoba atakująca potrzebuje uprawnienia administratora domeny. Implementowanie [przekazać zalecenia wyznaczania wartości skrótu](https://www.microsoft.com/download/details.aspx?id=36036).
 
 ## <a name="malicious-replication-of-directory-services"></a>Złośliwa replikacja usług katalogowych
 
@@ -442,9 +442,9 @@ Protokół DNS w większości organizacji zwykle nie jest monitorowane i rzadko 
 
 
 1.  Niektóre firmy uzasadnione używają DNS do regularnego komunikacji. Sprawdź, czy domena zarejestrowane kwerendy należy do zaufanego źródła, takich jak dostawcy programu antywirusowego. Jeśli domena jest znane i zaufane i zapytania DNS są dozwolone, alert może zostać zamknięty, a domena może być [wykluczone](excluding-entities-from-detections.md) z następnych alertów. 
-3.   Jeśli domena zarejestrowane zapytanie nie jest zaufany, zidentyfikuj proces tworzenia żądania na maszynie źródłowej. Użyj [Monitor procesu](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) do pomocy dotyczącej tego zadania.
-4.  Określa, kiedy rozpocząć podejrzanego działania? Zostały dowolne nowe programy wdrożony lub zainstalowany (AV?) w organizacji Czy istnieją inne alerty z tym samym czasie?
-5.  Kliknij komputer źródłowy dostępu do swojej strony profilu. Sprawdź, co się stało z momentu zapytanie DNS, wyszukiwanie nietypowych działań, takich jak który zostało zarejestrowane w i które zostały użyte zasoby. Jeśli integracja usługi Windows Defender ATP jest już włączony, kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. Za pomocą usługi Windows Defender ATP możesz zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
+2.   Jeśli domena zarejestrowane zapytanie nie jest zaufany, zidentyfikuj proces tworzenia żądania na maszynie źródłowej. Użyj [Monitor procesu](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) do pomocy dotyczącej tego zadania.
+3.  Określa, kiedy rozpocząć podejrzanego działania? Zostały dowolne nowe programy wdrożony lub zainstalowany (AV?) w organizacji Czy istnieją inne alerty z tym samym czasie?
+4.  Kliknij komputer źródłowy dostępu do swojej strony profilu. Sprawdź, co się stało z momentu zapytanie DNS, wyszukiwanie nietypowych działań, takich jak który zostało zarejestrowane w i które zostały użyte zasoby. Jeśli integracja usługi Windows Defender ATP jest już włączony, kliknij wskaźnik usługi Windows Defender ATP ![Znaczek usługi Windows Defender ATP](./media/wd-badge.png) Aby badać na maszynie. Za pomocą usługi Windows Defender ATP możesz zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
 
 **Korygowanie** Jeśli domeny zarejestrowane zapytanie nie jest zaufany po badania, firma Microsoft zaleca blokuje domenę docelową, aby uniknąć całej komunikacji w przyszłości. 
 
@@ -470,7 +470,7 @@ W tym wykrywanie alert jest wyzwalany, gdy komputer w sieci próbuje zarejestrow
    3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
 Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
 
-4. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+4. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)/). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
 
 **Korygowanie**
 
@@ -529,7 +529,7 @@ W tym wykrywanie alert jest wyzwalany, gdy żądanie podejrzana replikacja jest 
    2.  Użytkownicy mają dostęp do tych zasobów?
    3. Czy komputer jest uruchomiony system operacyjny Windows Server (lub systemu Windows/Linux)? Machine-serwer nie powinien replikacji danych.
 Włączenie integracji usługi Windows Defender ATP kliknij wskaźnik usługi Windows Defender ATP ![znaczek usługi Windows Defender ATP](./media/wd-badge.png) do dalszego zbadania problemu na maszynie. W usłudze Windows Defender ATP można zobaczyć, które procesy i alerty wystąpił zbliżonym do momentu alertu.
-1. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
+1. Przyjrzyj się Podgląd zdarzeń, aby zobaczyć [zdarzenia usługi Active Directory, które rejestruje w dzienniku usługi katalogowej](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)/). Dziennik umożliwia monitorowanie zmian w usłudze Active Directory. Domyślnie usługi Active Directory tylko rekordy zdarzeń z powodu krytycznego błędu, ale jeśli ten alert zostanie wyświetlony ponownie, należy włączyć tej inspekcji na kontrolerze domeny odpowiednie do dalszych poszukiwań.
 
 **Korygowanie**
 
