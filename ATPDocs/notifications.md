@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 4308f03e-b2a7-4e38-a750-540ff94faa81
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: e6f3647ecaab82a32950fadd0a101385a2cc0051
-ms.sourcegitcommit: 27cf312b8ebb04995e4d06d3a63bc75d8ad7dacb
+ms.openlocfilehash: acbab806e7f49052e0789927f452217c12efd992
+ms.sourcegitcommit: 8cb370eab974652451066570e435d8a4f304fa29
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48783053"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326765"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -32,13 +32,13 @@ Aby otrzymywać powiadomienia na konkretny adres e-mail, ustaw następujące par
 
 1. W portalu usługi Azure ATP wybierz opcję ustawień, na pasku narzędzi i wybierz **konfiguracji**.
 
-![Ikona ustawień konfiguracji w usłudze Azure ATP](media/atp-config-menu.png)
+ ![Ikona ustawień konfiguracji w usłudze Azure ATP](media/atp-config-menu.png)
 
 2. Kliknij przycisk **powiadomienia**.
 3. W obszarze **powiadomienia pocztowe**, określ powiadomienia, które mają być wysyłane za pośrednictwem poczty e-mail — mogą być wysyłane do nowych alertów (podejrzanych działań) i nowe problemy dotyczące kondycji. 
  
  >  [!NOTE]
- >   Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
+ > Alerty e-mail dotyczące podejrzanych działań są wysyłane wyłącznie po utworzeniu podejrzanego działania.
  
 4. Kliknij polecenie **Zapisz**.
 
