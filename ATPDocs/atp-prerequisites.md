@@ -5,7 +5,7 @@ keywords: ''
 author: mlottner
 ms.author: mlottner
 manager: mbaldwin
-ms.date: 10/7/2018
+ms.date: 10/18/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: azure-advanced-threat-protection
@@ -13,12 +13,12 @@ ms.technology: ''
 ms.assetid: 62c99622-2fe9-4035-9839-38fec0a353da
 ms.reviewer: itargoet
 ms.suite: ems
-ms.openlocfilehash: e3cf97c4bd95a1fefc0aef29009f644cd5ef907d
-ms.sourcegitcommit: bbbe808c08ce703a314c82b46aedaae79ab256a3
+ms.openlocfilehash: f959176ddca045f421af416d5ce9dc3a777cc43a
+ms.sourcegitcommit: fdff488c79729035f89897c2ea0771a45b4c3ecf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848545"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49401916"
 ---
 *Dotyczy: Azure Zaawansowana ochrona przed zagrożeniami*
 
@@ -46,7 +46,7 @@ Ten przewodnik wymagań wstępnych jest podzielona na sekcje, aby upewnić się,
 [Czujnik autonomiczny usługi Azure ATP](#azure-atp-sensor-requirements): sprzętu czujnik autonomiczny zawiera narzędzia Azure ATP, wymagania dotyczące oprogramowania, a także ustawieniach, należy skonfigurować na serwerach czujnik autonomiczny narzędzia Azure ATP.
 
 ## <a name="before-you-start"></a>Przed rozpoczęciem
-W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki sieciowe, które powinny istnieć przed rozpoczęciem instalacji usługi Azure ATP.
+Ta sekcja zawiera informacje, które należy zebrać, a także konta i informacje o jednostki sieci, które powinny istnieć przed rozpoczęciem instalacji usługi Azure ATP.
 
 - Uzyskać licencję dla pakietu Enterprise Mobility + Security (EMS E5) 5 bezpośrednio za pośrednictwem [portalu usługi Office 365](https://www.microsoft.com/cloud-platform/enterprise-mobility-security-pricing) lub za pomocą modelu licencjonowania Cloud Solution Partner (CSP).  
 
@@ -65,7 +65,7 @@ W tej sekcji opisano informacje, które należy zebrać oraz konta i jednostki s
 
 -   Opcjonalnie: konto użytkownika, który nie ma żadnych działań w sieci. To konto jest skonfigurowane jako użytkownika wystawionego jako przynęta Azure ATP. Aby uzyskać więcej informacji, zobacz [Konfigurowanie wykluczeń i użytkownika wystawionego jako przynęta](install-atp-step7.md).
 
--   Opcjonalnie: Wdrażając czujnik autonomiczny, należy go przekazywać Windows zdarzeń 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045 zure zaawansowanej ochrony przed zagrożeniami w celu dodatkowego zwiększenia Azure ATP Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup, tokeny wystawione jako przynęta wykrywanie i tworzenie złośliwe usługi. Azure czujnika zaawansowanej ochrony przed zagrożeniami, które automatycznie otrzymuje tych zdarzeń. W przypadku narzędzia Azure ATP czujnik autonomiczny te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
+-   Opcjonalnie: Wdrażając czujnik autonomiczny jest niezbędne do przekazywania zdarzeń Windows 4776, 4732, 4733, 4728, 4729, 4756, 4757 i 7045 do usługi Azure ATP w celu dodatkowego zwiększenia Azure ATP Pass--Hash, ataków siłowych, modyfikacji wrażliwych grup, tokeny wystawione jako przynęta wykrywanie i tworzenie złośliwe usługi. Azure czujnika zaawansowanej ochrony przed zagrożeniami, które automatycznie otrzymuje tych zdarzeń. W przypadku narzędzia Azure ATP czujnik autonomiczny te zdarzenia mogą być odbierane z rozwiązania SIEM lub przez ustawienie funkcji przekazywania zdarzeń Windows z poziomu kontrolera domeny. Zebrane zdarzenia zapewniają narzędzia Azure ATP z dodatkowymi informacjami, która nie jest dostępna za pośrednictwem ruchu sieciowego kontrolera domeny.
 
 ## <a name="azure-atp-portal-requirements"></a>Wymagania portalu usługi Azure ATP
 Dostęp do portalu usługi Azure ATP jest za pośrednictwem przeglądarki, obsługuje następujące przeglądarki i ustawienia:
