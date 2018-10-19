@@ -1,4 +1,4 @@
----
+﻿---
 title: Opis konsoli usługi Advanced Threat Analytics | Dokumentacja firmy Microsoft
 description: Opis sposobu logowania się do konsoli usługi ATA oraz składników konsoli
 keywords: ''
@@ -28,8 +28,7 @@ ms.locfileid: "46133858"
 
 Konsola usługi ATA służy do monitorowania podejrzanych działań wykrytych przez usługę ATA i reagowania na nie.
 
-Wpisywanie `?` klucz zapewnia skrótów klawiaturowych dla ułatwień dostępu w portalu usługi ATA. 
-
+Skrótem klawiaturowym, który umożliwia szybki dostęp do portalu ATA jest przycisk '?';
 ## <a name="enabling-access-to-the-ata-console"></a>Włączanie dostępu do konsoli usługi ATA
 Aby pomyślnie zalogować się do konsoli usługi ATA, musisz zalogować się jako użytkownik, który został przypisany do właściwej roli usługi ATA, uzyskać dostęp do konsoli usługi ATA. Aby uzyskać więcej informacji na temat kontroli dostępu opartej na rolach (RBAC) w usłudze ATA, zobacz [Praca z grupami ról usługi ATA](ata-role-groups.md).
 
